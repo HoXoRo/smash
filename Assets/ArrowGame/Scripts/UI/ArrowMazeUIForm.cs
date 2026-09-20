@@ -68,7 +68,6 @@ namespace ArrowMaze.UI
         private bool m_IsSyncingProgressZoom;
         private bool m_ForceEliminatePendingConsume;
         private float m_PendingMakeupDisplayDollars;
-        private Sequence m_ImageHSequence;
         private const float ImageHStepInterval = 0.35f;
         private const float ImageHLoopPause = 0.35f;
         private const float ScratchCardShakeAngle = 10f;
@@ -101,7 +100,6 @@ namespace ArrowMaze.UI
             GF.Event.Subscribe(ArrowDoGuideFinishEventArgs.EventId, OnGuideFinish);
             GF.Event.Subscribe(UserSkinChangeEventArgs.EventId, OnUserSkinChange);
             GF.Event.Subscribe(BgSkinChangeEventArgs.EventId, OnBgSkinChange);
-            GF.Event.Subscribe(MakeupDataChangedEventArgs.EventId, OnMakeupDataChangedEvent);
             GF.Event.Subscribe(PlayerDataChangedEventArgs.EventId, OnPlayerDataChanged);
             GF.Event.Subscribe(UserTypeChangeEventArgs.EventId, OnUserTypeChange);
             GF.Event.Subscribe(ArrowMazeForceEliminateUsedEventArgs.EventId, OnForceEliminateUsed);
@@ -132,7 +130,6 @@ namespace ArrowMaze.UI
                 ArrowMazeManager.Instance.CameraController.SetCameraViewRect(varCameraView);
             }
             ApplyBgSkinColor(m_PlayerData != null && m_PlayerData.IsNightMode);
-            InitProgressZoom();
             CacheCutsceneBaseLayoutOnce();
             HideCutsceneRoot();
             SetGameWinVisible(false);
@@ -140,20 +137,14 @@ namespace ArrowMaze.UI
             
             UpdateUIByUserType();
             ResetForceEliminatePropState();
-            StartImageHAnimation();
         }
 
         private void UpdateUIByUserType()
         {
             // 提现相关
             InitMakeupData();
-            UpdateLevelProgressUI();
-            UpdateMakeupProgressUI();
             UpdateForceEliminateUI();
-            var isSpec = CommonHelper.IsSpec();
-            varLevelTxt.gameObject.SetActive(!isSpec);
-            varScratchCardBg.SetActive(isSpec);
-            varZoom.SetActive(isSpec);
+            
         }
 
         private void OnUserTypeChange(object sender, GameEventArgs e)
@@ -172,7 +163,6 @@ namespace ArrowMaze.UI
             if (args.DataType == PlayerDataType.Diamond)
             {
                 m_PendingMakeupDisplayDollars = 0f;
-                UpdateMakeupProgressUI();
             }
 
             if (args.DataType == PlayerDataType.Prop3)
@@ -186,14 +176,6 @@ namespace ArrowMaze.UI
                 return;
 
             m_PendingMakeupDisplayDollars += args.Value;
-            UpdateMakeupProgressUI();
-        }
-
-        // 提现信息修改，更新等级跟提现进度ui
-        private void OnMakeupDataChangedEvent(object sender, GameEventArgs e)
-        {
-            UpdateLevelProgressUI();
-            UpdateMakeupProgressUI();
         }
 
         private void InitMakeupData()
@@ -216,10 +198,7 @@ namespace ArrowMaze.UI
                 StopCoroutine(m_LoadLevelCutsceneCoroutine);
                 m_LoadLevelCutsceneCoroutine = null;
             }
-            StopPendingScratchCardOpen();
             KillCutsceneTweens();
-            StopImageHAnimation();
-            StopScratchCardShake();
             StopComboDisplay();
             HideCutsceneRoot();
             m_IsVerifyingLevel = false;
@@ -230,7 +209,6 @@ namespace ArrowMaze.UI
             GF.Event.Unsubscribe(ArrowDoGuideFinishEventArgs.EventId, OnGuideFinish);
             GF.Event.Unsubscribe(UserSkinChangeEventArgs.EventId, OnUserSkinChange);
             GF.Event.Unsubscribe(BgSkinChangeEventArgs.EventId, OnBgSkinChange);
-            GF.Event.Unsubscribe(MakeupDataChangedEventArgs.EventId, OnMakeupDataChangedEvent);
             GF.Event.Unsubscribe(PlayerDataChangedEventArgs.EventId, OnPlayerDataChanged);
             GF.Event.Unsubscribe(UserTypeChangeEventArgs.EventId, OnUserTypeChange);
             GF.Event.Unsubscribe(RewardCollectedEventArgs.EventId, OnRewardCollected);
@@ -238,7 +216,6 @@ namespace ArrowMaze.UI
             // GF.Event.Unsubscribe(ArrowMazeArrowEliminatedEventArgs.EventId, OnArrowEliminatedForCombo);
             GF.Event.Unsubscribe(ArrowMazeEliminationRewardDialogClosedEventArgs.EventId, OnEliminationRewardDialogClosed);
 
-            UninitProgressZoom();
             m_LevelManager?.SetGameplayInputBlocked(false);
             m_BlockGameplayForScratchCard = false;
             m_PendingScratchCardAfterRewardDialog = false;
@@ -256,16 +233,6 @@ namespace ArrowMaze.UI
             if (btId == "LoadLevelButton")
             {
                 OnLoadLevelButtonClick();
-            }
-            if (btId == "BtnZoomIn" || btId == "ZoomAddButton")
-            {
-                if (ArrowMazeManager.Instance != null && ArrowMazeManager.Instance.CameraController != null)
-                    ArrowMazeManager.Instance.CameraController.AddZoom();
-            }
-            if (btId == "BtnZoomOut" || btId == "ZoomSubButton")
-            {
-                if (ArrowMazeManager.Instance != null && ArrowMazeManager.Instance.CameraController != null)
-                    ArrowMazeManager.Instance.CameraController.SubZoom();
             }
             if (btId == "LevelAddButton")
             {
@@ -296,10 +263,7 @@ namespace ArrowMaze.UI
                     Debug.Log($"急速验证结果: 通关={result.Solved}, 步数={result.StepCount}, 用时={result.DurationSeconds:F2}s, 剩余箭头={result.RemainingArrows}");
                 });
             }
-            if (btId == "scratchCard")
-            {
-                OnScratchCardButtonClick();
-            }
+            
             if (btId == "ItemAutoRemove")
             {
                 UseItemAutoRemoveArrow();
@@ -506,68 +470,7 @@ namespace ArrowMaze.UI
             SetArrowColorMode(next);
             return next;
         }
-
-        private void OnScratchCardButtonClick()
-        {
-            TryOpenScratchCard();
-        }
-
-        private bool TryOpenScratchCard()
-        {
-            if (!IsScratchCardReady())
-                return false;
-            if (ShouldDeferScratchCardOnLevelWin())
-            {
-                m_DeferScratchCardToNextLevel = true;
-                return false;
-            }
-            if (IsScratchCardPopupBlocked())
-                return false;
-            if (GF.UI.HasUIForm(UIViews.ArrowScratchCardUIForm)
-                || GF.UI.HasUIForm(UIViews.ArrowScratchCardRewardUIForm))
-                return false;
-
-            m_PlayerData.ScratchCardCondition = 0;
-            m_ScratchCardWasReady = false;
-            m_DeferScratchCardToNextLevel = false;
-            m_PendingScratchCardAfterRewardDialog = false;
-            m_BlockGameplayForScratchCard = true;
-            m_LevelManager?.SetGameplayInputBlocked(true);
-
-            float totalReward = m_LevelManager.GenerateRandomReward(4);
-            var uiparms = UIParams.Create();
-            var varReward = ReferencePool.Acquire<VarSingle>();
-            varReward.Value = totalReward;
-            uiparms.Set(ArrowScratchCardUIForm.P_ScratchCardTotalReward, varReward);
-
-            var rewardCallback = ReferencePool.Acquire<VarScratchCardRewardCallback>();
-            rewardCallback.Value = OnScratchCardRewardSettled;
-            uiparms.Set(ArrowScratchCardUIForm.P_OnScratchCardReward, rewardCallback);
-
-            if (varScratchCard != null)
-            {
-                RectTransform sourceRect = varScratchCard.transform as RectTransform;
-                if (sourceRect != null)
-                {
-                    Canvas.ForceUpdateCanvases();
-                    if (ArrowScratchCardUIForm.TryCaptureWorldRect(
-                            sourceRect, out Vector3 worldCenter, out Vector2 worldSize))
-                    {
-                        var varWorldCenter = ReferencePool.Acquire<VarVector3>();
-                        varWorldCenter.Value = worldCenter;
-                        uiparms.Set(ArrowScratchCardUIForm.P_SourceWorldPosition, varWorldCenter);
-
-                        var varWorldSize = ReferencePool.Acquire<VarVector2>();
-                        varWorldSize.Value = worldSize;
-                        uiparms.Set(ArrowScratchCardUIForm.P_SourceWorldSize, varWorldSize);
-                    }
-                }
-            }
-
-            GF.UI.OpenUIForm(UIViews.ArrowScratchCardUIForm, uiparms);
-            return true;
-        }
-
+        
         private void OnScratchCardRewardSettled(ScratchCardRewardInfo rewardInfo)
         {
             if (rewardInfo == null || !rewardInfo.IsWin)
@@ -597,14 +500,7 @@ namespace ArrowMaze.UI
         private void UpdateUI()
         {
             if (m_LevelManager == null) return;
-
-            ClampScratchCardProgress();
-
-            if (varGameprogress != null && m_LevelManager.AllArrowCount > 0)
-                varGameprogress.fillAmount = (float)m_PlayerData.ScratchCardCondition / m_ScratchCardCondition;
-            if (varGameproportion != null && m_LevelManager.AllArrowCount > 0)
-                varGameproportion.text = $"{Mathf.Min(m_PlayerData.ScratchCardCondition*100f/m_ScratchCardCondition,100f):F0}%";
-
+            
             // varCountdown.SetActive(LevelManager.IS_NEED_COUNTDOWN);
             // if (LevelManager.IS_NEED_COUNTDOWN && varCountdownTxt != null)
             // {
@@ -618,158 +514,14 @@ namespace ArrowMaze.UI
                     varHeartArr[i].gameObject.SetActive((i + 1) <= m_LevelManager.Lives);
             }
 
-            UpdateScratchCardAutoPopup();
-            UpdateScratchCardGameplayBlock();
-            UpdateScratchCardShake();
-            UpdateProgressZoomUI();
         }
-
-        private void UpdateScratchCardAutoPopup()
-        {
-            if (!m_ScratchCardAutoPopup || !CommonHelper.IsSpec())
-                return;
-
-            if (GF.UI.HasUIForm(UIViews.ArrowScratchCardUIForm)
-                || GF.UI.HasUIForm(UIViews.ArrowScratchCardRewardUIForm))
-            {
-                m_ScratchCardWasReady = IsScratchCardReady();
-                return;
-            }
-
-            bool ready = IsScratchCardReady();
-            if (!ready)
-            {
-                m_ScratchCardWasReady = false;
-                return;
-            }
-
-            if (ShouldDeferScratchCardOnLevelWin())
-            {
-                m_DeferScratchCardToNextLevel = true;
-                m_ScratchCardWasReady = true;
-                return;
-            }
-
-            if (IsScratchCardPopupBlocked())
-            {
-                if (GF.UI.HasUIForm(UIViews.ArrowRewardDialogUIForm))
-                    m_PendingScratchCardAfterRewardDialog = true;
-                m_ScratchCardWasReady = true;
-                return;
-            }
-
-            if (m_PendingScratchCardAfterRewardDialog)
-            {
-                StartPendingScratchCardOpen();
-                return;
-            }
-
-            if (!m_ScratchCardWasReady)
-                TryOpenScratchCard();
-            else
-                m_ScratchCardWasReady = ready;
-        }
-
-        private void UpdateScratchCardGameplayBlock()
-        {
-            if (!m_BlockGameplayForScratchCard)
-                return;
-
-            if (GF.UI.HasUIForm(UIViews.ArrowScratchCardUIForm)
-                || GF.UI.HasUIForm(UIViews.ArrowScratchCardRewardUIForm))
-                return;
-
-            m_BlockGameplayForScratchCard = false;
-            m_LevelManager?.SetGameplayInputBlocked(false);
-        }
+        
 
         private void OnEliminationRewardDialogClosed(object sender, GameEventArgs e)
         {
-            if (ShouldDeferScratchCardOnLevelWin() || m_DeferScratchCardToNextLevel)
-            {
-                StopPendingScratchCardOpen();
-                if (IsScratchCardReady())
-                    m_DeferScratchCardToNextLevel = true;
-                m_PendingScratchCardAfterRewardDialog = false;
-                m_ScratchCardWasReady = IsScratchCardReady();
-                m_LevelManager?.RequestCheckGameWin();
-                return;
-            }
-
-            if (m_PendingScratchCardAfterRewardDialog && IsScratchCardReady())
-            {
-                StartPendingScratchCardOpen();
-                return;
-            }
-
-            StopPendingScratchCardOpen();
-            m_PendingScratchCardAfterRewardDialog = false;
             m_LevelManager?.RequestCheckGameWin();
         }
-
-        private void StartPendingScratchCardOpen()
-        {
-            if (m_PendingScratchCardCoroutine != null)
-                return;
-
-            m_PendingScratchCardCoroutine = StartCoroutine(OpenPendingScratchCardAfterRewardDialog());
-        }
-
-        private void StopPendingScratchCardOpen()
-        {
-            if (m_PendingScratchCardCoroutine == null)
-                return;
-
-            StopCoroutine(m_PendingScratchCardCoroutine);
-            m_PendingScratchCardCoroutine = null;
-        }
-
-        private IEnumerator OpenPendingScratchCardAfterRewardDialog()
-        {
-            while (GF.UI.HasUIForm(UIViews.ArrowRewardDialogUIForm))
-                yield return null;
-
-            m_PendingScratchCardCoroutine = null;
-
-            if (!m_PendingScratchCardAfterRewardDialog || !IsScratchCardReady())
-            {
-                m_PendingScratchCardAfterRewardDialog = false;
-                m_LevelManager?.RequestCheckGameWin();
-                yield break;
-            }
-
-            if (ShouldDeferScratchCardOnLevelWin())
-            {
-                m_DeferScratchCardToNextLevel = true;
-                m_PendingScratchCardAfterRewardDialog = false;
-                m_ScratchCardWasReady = IsScratchCardReady();
-                m_LevelManager?.RequestCheckGameWin();
-                yield break;
-            }
-
-            m_PendingScratchCardAfterRewardDialog = false;
-            m_ScratchCardWasReady = false;
-            if (!TryOpenScratchCard())
-            {
-                m_PendingScratchCardAfterRewardDialog = true;
-                m_ScratchCardWasReady = false;
-            }
-        }
-
-        private bool ShouldDeferScratchCardOnLevelWin()
-        {
-            if (!IsScratchCardReady() || m_LevelManager == null)
-                return false;
-
-            return m_LevelManager.IsLastArrowOnField() || m_LevelManager.IsGameWon;
-        }
-
-        private bool IsScratchCardPopupBlocked()
-        {
-            return GF.UI.HasUIForm(UIViews.ArrowRewardDialogUIForm)
-                || m_GameWinCoroutine != null
-                || (m_LevelManager != null && m_LevelManager.IsGameWon);
-        }
+        
 
         private void TryOpenDeferredScratchCardAfterLevelLoad()
         {
@@ -778,110 +530,11 @@ namespace ArrowMaze.UI
                 m_DeferScratchCardToNextLevel = false;
                 return;
             }
-
-            if (!m_DeferScratchCardToNextLevel || !IsScratchCardReady())
-            {
-                m_DeferScratchCardToNextLevel = false;
-                return;
-            }
+            
 
             m_DeferScratchCardToNextLevel = false;
             m_ScratchCardWasReady = true;
             m_LevelManager?.SetGameplayInputBlocked(true);
-            if (!TryOpenScratchCard())
-                m_LevelManager?.SetGameplayInputBlocked(false);
-        }
-
-        private bool IsScratchCardReady()
-        {
-            return m_ScratchCardCondition > 0
-                && m_PlayerData != null
-                && m_PlayerData.m_ScratchCardCondition >= m_ScratchCardCondition;
-        }
-
-        private void ClampScratchCardProgress()
-        {
-            if (m_ScratchCardCondition <= 0 || m_PlayerData == null)
-                return;
-
-            if (m_PlayerData.m_ScratchCardCondition > m_ScratchCardCondition)
-                m_PlayerData.ScratchCardCondition = m_ScratchCardCondition;
-        }
-
-        private bool ShouldPlayScratchCardShake()
-        {
-            if (!IsScratchCardReady() || varScratchCard == null)
-                return false;
-
-            return !GF.UI.HasUIForm(UIViews.ArrowScratchCardUIForm)
-                && !GF.UI.HasUIForm(UIViews.ArrowScratchCardRewardUIForm);
-        }
-
-        private void UpdateScratchCardShake()
-        {
-            if (ShouldPlayScratchCardShake())
-            {
-                if (!m_ScratchCardShakeActive)
-                    StartScratchCardShake();
-                return;
-            }
-
-            if (m_ScratchCardShakeActive)
-                StopScratchCardShake();
-        }
-
-        private void StartScratchCardShake()
-        {
-            StopScratchCardShake();
-
-            Transform shakeTarget = varScratchCard.transform;
-            m_ScratchCardBaseLocalEuler = shakeTarget.localEulerAngles;
-            Vector3 baseEuler = m_ScratchCardBaseLocalEuler;
-            Vector3 rightEuler = baseEuler + new Vector3(0f, 0f, ScratchCardShakeAngle);
-            Vector3 leftEuler = baseEuler + new Vector3(0f, 0f, -ScratchCardShakeAngle);
-
-            m_ScratchCardShakeSequence = DOTween.Sequence();
-            m_ScratchCardShakeSequence.Append(
-                shakeTarget.DOLocalRotate(rightEuler, ScratchCardShakeStepDuration).SetEase(Ease.InOutSine));
-            m_ScratchCardShakeSequence.Append(
-                shakeTarget.DOLocalRotate(leftEuler, ScratchCardShakeStepDuration).SetEase(Ease.InOutSine));
-            m_ScratchCardShakeSequence.Append(
-                shakeTarget.DOLocalRotate(rightEuler, ScratchCardShakeStepDuration).SetEase(Ease.InOutSine));
-            m_ScratchCardShakeSequence.Append(
-                shakeTarget.DOLocalRotate(leftEuler, ScratchCardShakeStepDuration).SetEase(Ease.InOutSine));
-            m_ScratchCardShakeSequence.Append(
-                shakeTarget.DOLocalRotate(baseEuler, ScratchCardShakeStepDuration).SetEase(Ease.InOutSine));
-            m_ScratchCardShakeSequence.AppendInterval(ScratchCardShakePauseDuration);
-            m_ScratchCardShakeSequence.SetLoops(-1);
-            m_ScratchCardShakeSequence.SetUpdate(true);
-            m_ScratchCardShakeActive = true;
-        }
-
-        private void StopScratchCardShake()
-        {
-            if (m_ScratchCardShakeSequence != null && m_ScratchCardShakeSequence.IsActive())
-                m_ScratchCardShakeSequence.Kill();
-
-            m_ScratchCardShakeSequence = null;
-
-            if (varScratchCard != null)
-                varScratchCard.transform.localEulerAngles = m_ScratchCardBaseLocalEuler;
-
-            m_ScratchCardShakeActive = false;
-        }
-
-        private void InitProgressZoom()
-        {
-            if (varProgressZoom == null) return;
-            varProgressZoom.minValue = 0f;
-            varProgressZoom.maxValue = 1f;
-            varProgressZoom.onValueChanged.AddListener(OnProgressZoomValueChanged);
-        }
-
-        private void UninitProgressZoom()
-        {
-            if (varProgressZoom == null) return;
-            varProgressZoom.onValueChanged.RemoveListener(OnProgressZoomValueChanged);
         }
 
         private void OnProgressZoomValueChanged(float value)
@@ -890,27 +543,6 @@ namespace ArrowMaze.UI
             var cam = ArrowMazeManager.Instance?.CameraController;
             if (cam == null || cam.IsEntranceAnimating) return;
             cam.SetZoomProgress(value, immediate: true);
-        }
-
-        private void UpdateProgressZoomUI()
-        {
-            var cam = ArrowMazeManager.Instance?.CameraController;
-            if (cam == null || varProgressZoom == null) return;
-
-            if (!Mathf.Approximately(varProgressZoom.minValue, cam.ZoomProgressMin)
-                || !Mathf.Approximately(varProgressZoom.maxValue, cam.ZoomProgressMax))
-            {
-                varProgressZoom.minValue = cam.ZoomProgressMin;
-                varProgressZoom.maxValue = cam.ZoomProgressMax;
-            }
-
-            float progress = cam.GetZoomProgress();
-            if (m_IsSyncingProgressZoom || Mathf.Approximately(varProgressZoom.value, progress))
-                return;
-
-            m_IsSyncingProgressZoom = true;
-            varProgressZoom.SetValueWithoutNotify(progress);
-            m_IsSyncingProgressZoom = false;
         }
 
         /// <summary>
@@ -922,44 +554,7 @@ namespace ArrowMaze.UI
                 return m_LevelIndex;
             return m_PlayerData != null ? m_PlayerData.LevelId : 1;
         }
-
-        private void UpdateLevelProgressUI()
-        {
-            if (CommonHelper.IsSpec() && m_makeupData != null && m_makeupData.makeupStep == MakeupStep.Step1)
-            {
-                varLevelProgressBg.SetActive(true);
-                int linearLevelId = GetDisplayLinearLevelId();
-                var progress = ArrowLevelProgressUtility.GetStateFromLinearLevelId(linearLevelId);
-                int step1Target = GetStep1TargetLevel();
-                int displayMain = Mathf.Min(
-                    ArrowLevelProgressUtility.GetDisplayCurrentMainLevel(linearLevelId),
-                    step1Target);
-
-                if (varLevelCurTxt != null)
-                    varLevelCurTxt.text = $"Lv.{displayMain}";
-                if (varLevelLastTxt != null && m_banknotesConfig != null)
-                    varLevelLastTxt.text = $"Lv.{step1Target}";
-                if (varImgHit != null)
-                {
-                    bool step1Completed = HasCompletedStep1(linearLevelId);
-                    varImgHit.SetActive(!step1Completed && progress.TotalSubLevel > 1 && progress.MainLevel <= step1Target);
-                }
-                if (varLevelSubProgressTxt != null)
-                {
-                    if (progress.TotalSubLevel > 1)
-                        varLevelSubProgressTxt.text = $"{progress.CurrentSubLevel}/{progress.TotalSubLevel}";
-                    else
-                        varLevelSubProgressTxt.text = string.Empty;
-                }
-
-                UpdateLevelArrowIndicators(linearLevelId);
-            }
-            else
-            {
-                varLevelProgressBg.SetActive(false);
-                UpdateLevelArrowIndicators(0, false);
-            }
-        }
+        
 
         private int GetStep1TargetLevel()
         {
@@ -974,60 +569,10 @@ namespace ArrowMaze.UI
                 && ArrowLevelProgressUtility.GetCompletedMainLevelCount(linearLevelId) >= m_banknotesConfig.Step1_Lv;
         }
 
-        /// <summary>
-        /// 主关卡进度条箭头/节点：未完成时第1关显示 First、2-Step1_Lv关显示 Cur；Step1 全部完成后显示 Redeem。
-        /// </summary>
-        private void UpdateLevelArrowIndicators(int linearLevelId, bool visible = true)
-        {
-            if (!visible)
-            {
-                SetProgressIndicatorActive(varImgArrowFirst, false);
-                SetProgressIndicatorActive(varImgArrowCur, false);
-                SetProgressIndicatorActive(varImgRedeem, false);
-                return;
-            }
-
-            int step1Target = GetStep1TargetLevel();
-            if (HasCompletedStep1(linearLevelId))
-            {
-                SetProgressIndicatorActive(varImgArrowFirst, false);
-                SetProgressIndicatorActive(varImgArrowCur, false);
-                SetProgressIndicatorActive(varImgRedeem, true);
-                return;
-            }
-
-            var progress = ArrowLevelProgressUtility.GetStateFromLinearLevelId(linearLevelId);
-            int mainLevel = progress.MainLevel;
-            SetProgressIndicatorActive(varImgArrowFirst, mainLevel == 1);
-            SetProgressIndicatorActive(varImgArrowCur, mainLevel >= 2 && mainLevel <= step1Target);
-            SetProgressIndicatorActive(varImgRedeem, false);
-        }
-
         private static void SetProgressIndicatorActive(GameObject target, bool active)
         {
             if (target != null)
                 target.SetActive(active);
-        }
-
-        private void UpdateMakeupProgressUI()
-        {
-            if (CommonHelper.IsSpec() && m_makeupData != null && m_makeupData.makeupStep == MakeupStep.Step2)
-            {
-                varMakeupProgressBg.SetActive(true);
-                var maxValue = CommonHelper.GetStep2TargetStored(m_makeupData, m_banknotesConfig);
-                float currentDollars = m_PlayerData.Dollars + m_PendingMakeupDisplayDollars;
-                var diffValue = Mathf.Max(0f, maxValue - currentDollars);
-                if (diffValue.Equals(0))
-                {
-                    CommonHelper.LogEvent(AdjustEventCodeEvent.withdraw_step2);
-                }
-
-                varMakeuptxt.text = string.Format(GF.Localization.GetString("ArrowMazeUIForm.makeuptxt"), CommonHelper.GetDollarString(diffValue, diffValue >= 0.01f));
-            }
-            else
-            {
-                varMakeupProgressBg.SetActive(false);
-            }
         }
 
         /// <summary>
@@ -1052,7 +597,6 @@ namespace ArrowMaze.UI
                 ResetBubbleReward();
             var progress = ArrowLevelProgressUtility.GetStateFromLinearLevelId(linearLevelId);
             int levelFileIndex = progress.ActualLevelFileIndex;
-            UpdateLevelProgressUI();
             // varGuideComponet.SetActive(linearLevelId > 1);
             string levelName = $"Level{levelFileIndex}";
 
@@ -1083,55 +627,7 @@ namespace ArrowMaze.UI
                 varBottomImage.DOKill();
         }
 
-        private void StartImageHAnimation()
-        {
-            StopImageHAnimation();
-            if (varImageHArr == null || varImageHArr.Length == 0)
-                return;
-
-            ResetImageHHighlight();
-
-            m_ImageHSequence = DOTween.Sequence();
-            for (int i = 0; i < varImageHArr.Length; i++)
-            {
-                int index = i;
-                m_ImageHSequence.AppendCallback(() => SetImageHHighlightIndex(index));
-                m_ImageHSequence.AppendInterval(ImageHStepInterval);
-            }
-
-            m_ImageHSequence.AppendCallback(ResetImageHHighlight);
-            m_ImageHSequence.AppendInterval(ImageHLoopPause);
-            m_ImageHSequence.SetLoops(-1);
-        }
-
-        private void StopImageHAnimation()
-        {
-            if (m_ImageHSequence != null)
-            {
-                m_ImageHSequence.Kill();
-                m_ImageHSequence = null;
-            }
-
-            ResetImageHHighlight();
-        }
-
-        private void ResetImageHHighlight()
-        {
-            SetImageHHighlightIndex(-1);
-        }
-
-        private void SetImageHHighlightIndex(int index)
-        {
-            if (varImageHArr == null)
-                return;
-
-            for (int i = 0; i < varImageHArr.Length; i++)
-            {
-                if (varImageHArr[i] != null)
-                    varImageHArr[i].SetActive(i == index);
-            }
-        }
-
+        
         private void HideCutsceneRoot()
         {
             KillCutsceneTweens();
@@ -1203,7 +699,6 @@ namespace ArrowMaze.UI
                 m_LevelManager.LoadLevel(loadedLevel);
                 if (varLevelTxt != null)
                     varLevelTxt.text = GF.Localization.GetString("ArrowMazeUIForm.LevelTxt", linearLevelId);
-                UpdateLevelProgressUI();
                 yield return PlayCutsceneRevealThenHide();
             }
             else
@@ -1446,7 +941,6 @@ namespace ArrowMaze.UI
 
         private void ReStartGame()
         {
-            StopPendingScratchCardOpen();
             m_DeferScratchCardToNextLevel = false;
             m_PendingScratchCardAfterRewardDialog = false;
             LoadLevelData(m_LevelIndex);
@@ -1455,7 +949,6 @@ namespace ArrowMaze.UI
         {
             SetGameWinVisible(false);
             m_LevelIndex = m_PlayerData.LevelId;
-            UpdateLevelProgressUI();
             LoadLevelData(m_LevelIndex);
         }
 

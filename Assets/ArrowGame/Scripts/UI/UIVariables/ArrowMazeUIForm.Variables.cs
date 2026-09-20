@@ -1,6 +1,6 @@
 //---------------------------------
 //此文件由工具自动生成,请勿手动修改
-//更新自:DESKTOP-E1MNMD0
+//更新自:BF-202608261653
 //---------------------------------
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,8 +21,6 @@ public partial class ArrowMazeUIForm
 	[SerializeField] private Image[] varHeartArr = null;
 	[SerializeField] private TextMeshProUGUI varCountdownTxt = null;
 	[SerializeField] private GameObject varRed = null;
-	[SerializeField] private Image varGameprogress = null;
-	[SerializeField] private TextMeshProUGUI varGameproportion = null;
 	[SerializeField] private GameObject varGuideComponet = null;
 	[SerializeField] private GameObject varBubbleRewardItem = null;
 	[SerializeField] private GameObject varComboFloatItem = null;
@@ -37,25 +35,10 @@ public partial class ArrowMazeUIForm
 	[SerializeField] private SkeletonGraphic varZongSpine = null;
 	[SerializeField] private RectTransform varTopImage = null;
 	[SerializeField] private RectTransform varBottomImage = null;
-	[SerializeField] private TextMeshProUGUI varLevelCurTxt = null;
-	[SerializeField] private TextMeshProUGUI varLevelLastTxt = null;
-	[SerializeField] private TextMeshProUGUI varLevelSubProgressTxt = null;
-	[SerializeField] private GameObject varImgHit = null;
-	[SerializeField] private GameObject varMakeupProgressBg = null;
-	[SerializeField] private GameObject varLevelProgressBg = null;
-	[SerializeField] private TextMeshProUGUI varMakeuptxt = null;
-	[SerializeField] private Slider varProgressZoom = null;
-	[SerializeField] private GameObject varImgArrowFirst = null;
-	[SerializeField] private GameObject varImgArrowCur = null;
-	[SerializeField] private GameObject varImgRedeem = null;
 	[SerializeField] private GameObject varGameWin = null;
 	[SerializeField] private GameObject varImgPropHit = null;
 	[SerializeField] private GameObject varImgEliminateAd = null;
 	[SerializeField] private GameObject varImgEliminateTime = null;
 	[SerializeField] private TextMeshProUGUI varTxtEliminateTime = null;
-	[SerializeField] private GameObject[] varImageHArr = null;
-	[SerializeField] private GameObject varScratchCard = null;
-	[SerializeField] private GameObject varScratchCardBg = null;
-	[SerializeField] private GameObject varZoom = null;
 }
 }
