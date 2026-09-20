@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ba56dab4ba25f4d821b71761946b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CompressImgToolBackupDir: CompressImageTool\ImgBackupDir
+  CompressImgToolCoverRaw: 1
+  CompressImgToolOutputDir: CompressImageTool\ImgCompressedDir
+  CompressImgToolKeys:
+  - xxxx
+  CompressImgToolItemList:
+  - {fileID: 102900000, guid: 63da4c37d98267b489f72c490266e65c, type: 3}
+  - {fileID: 102900000, guid: 1514a05b61ba75c4d9823c2c761e30f8, type: 3}
+  - {fileID: 102900000, guid: f87bc75dfd1e2f443a4b6099c0ed7382, type: 3}
+  - {fileID: 102900000, guid: 9c1f72cca4e84b84e9df12e91f8b5d19, type: 3}
+  - {fileID: 102900000, guid: e65881687c2809b41b18b050174e7473, type: 3}
+  - {fileID: 102900000, guid: 67a73cd605cfed54b9c4297823523fd1, type: 3}
+  - {fileID: 102900000, guid: 4c3fe87026662fc43ba74112fd44c3a2, type: 3}
+  - {fileID: 102900000, guid: 08ce24f307cee6c49b4364c757869016, type: 3}
+  CompressImgToolOffline: 1
+  CompressImgToolFastLv: 1
+  CompressImgToolQualityLv: 80
+  CompressImgToolQualityMinLv: 0
+  CompressImgMode: 2
+  FontCroppingCharSetsOutput: Tools\FontMinify
+  FontCroppingCharSetsFile: Tools\FontMinify\CharacterSetsBase.txt
+  ChatGPTKey: 
+  ChatGPTRandomness: 0
+  ChatGPTTimeout: 60
+  LanguagesSupport: 0e00000024000000250000002d00000012000000270000001b000000
+  BaiduTransAppId: 20250615002382382
+  BaiduTransSecretKey: Ja489s4QQxrSaTbZPuBP
+  BaiduTransMaxLength: 2000
+  UIFieldToolUseSerializeMode: 1

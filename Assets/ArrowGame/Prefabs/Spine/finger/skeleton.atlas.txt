@@ -1,0 +1,20 @@
+﻿
+skeleton.png
+size: 306,147
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+20260611-220140
+  rotate: false
+  xy: 2, 2
+  size: 180, 143
+  orig: 180, 143
+  offset: 0, 0
+  index: -1
+fx_c_ring_002
+  rotate: false
+  xy: 184, 25
+  size: 120, 120
+  orig: 128, 128
+  offset: 4, 6
+  index: -1

@@ -1,0 +1,11 @@
+﻿#	LocalizationMoney							
+#	ID		LanguageName	NameStr	SymbolStr	CurrencyConverter	Precision	Currency
+#	int		string	string	string	float	int	string[]
+#		备注	语言名	货币名	货币符号	汇率换算（对美元）	小数精度（保留n位小数）	
+	1	美国（默认）	English	美元	$	1	2	PayPal,CashApp,GooglePlay,amazon,VISA,PagBank
+	2	巴西	PortugueseBrazil	巴西雷亚尔	R$	6	2	Pix,NUbank,PicPay
+	3	欧洲（法国）	French	欧元	€	0.8	2	PayPal,PayPay,Paytm,YandexMoney,OVO
+	4	俄罗斯	Russian	俄罗斯卢布	RUB	60	2	Qiwi-Wallet,YandexMoney
+	5	日本	Japanese	日元	￥	140	2	PayPal,Line-Pay
+	6	墨西哥	Spanish	墨西哥元	MX$	20	2	PayPal,PayPay,Pay,Paytm,YandexMoney,OVO
+	7	葡萄牙	PortuguesePortugal	美元	$	1	2	PayPal,PayPay,Pay,Paytm,YandexMoney,OVO

@@ -1,0 +1,104 @@
+﻿
+niudan.png
+size: 1744,813
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+d
+  rotate: true
+  xy: 1132, 151
+  size: 660, 461
+  orig: 662, 463
+  offset: 1, 1
+  index: -1
+d2
+  rotate: true
+  xy: 730, 83
+  size: 728, 400
+  orig: 732, 403
+  offset: 2, 1
+  index: -1
+q1
+  rotate: false
+  xy: 1595, 664
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+q10
+  rotate: false
+  xy: 1595, 664
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+q11
+  rotate: false
+  xy: 1430, 2
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+q2
+  rotate: false
+  xy: 1595, 515
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+q3
+  rotate: false
+  xy: 1595, 366
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+q4
+  rotate: false
+  xy: 1595, 217
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+q5
+  rotate: false
+  xy: 1595, 68
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+q6
+  rotate: false
+  xy: 1595, 68
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+q7
+  rotate: false
+  xy: 1132, 2
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+q8
+  rotate: false
+  xy: 1281, 2
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+q9
+  rotate: false
+  xy: 1281, 2
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+qianjing
+  rotate: false
+  xy: 2, 19
+  size: 726, 792
+  orig: 730, 796
+  offset: 2, 1
+  index: -1

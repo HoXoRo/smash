@@ -1,0 +1,27 @@
+﻿#	UI界面表						
+#	Id		SortOrder	UIPrefab	PauseCoveredUI	UIGroupId	EscapeClose
+#	int		int	string	bool	int	bool
+#		备注	显示顺序,相对于Group,每个Group间隔100		同组界面被覆盖时是否隐藏	UI组Id	返回键触发关闭界面
+#	主界面(顶层)						
+	1	ArrowMazeUIForm	1	ArrowMazeUIForm	True	1	False
+	2	ArrowMazeWinUIForm	1	ArrowMazeWinUIForm	False	2	False
+	3	ArrowMazeOverUIForm	2	ArrowMazeOverUIForm	False	2	False
+	4	顶部资源栏	2	ArrowUITopbar	False	1	False
+#	对话框(中层)						
+	5	设置	3	ArrowSettingDialog	True	2	True
+	6	语言设置	2	LanguagesDialog	False	2	True
+#	提示(顶层)						
+	7	吐司提示	1	ArrowToastTips	False	4	False
+	8	奖励弹窗	10	ArrowRewardDialogUIForm	False	2	False
+	9	提现	4	ArrowMakeupUIForm	False	3	False
+	10	支付方式	5	ArrowSelectPaymentUIForm	False	3	False
+	11	确认提现方式	6	ArrowMakeupInfoUIForm	False	3	False
+	12	PrivacyPolicy隐私协议	20	ArrowPrivacyPolicyUIForm	False	2	False
+	13	GuideUIForm	2	ArrowGuideUIForm	False	4	False
+	14	提现记录	12	ArrowMakeupOrdemUIForm	False	3	False
+	15	提现说明	13	ArrowMakeupTipsUIForm	False	3	False
+	16	提现引导	11	ArrowMakeupGuideUIForm	False	2	False
+	17	扭蛋奖励界面	12	ArrowCapsuleToysUIForm	False	2	False
+	18	刮卡界面	12	ArrowScratchCardUIForm	False	2	False
+	19	刮卡奖励界面	13	ArrowScratchCardRewardUIForm	False	2	False
+	20	奖励领取界面	13	ArrowRewardUIForm	False	2	False
