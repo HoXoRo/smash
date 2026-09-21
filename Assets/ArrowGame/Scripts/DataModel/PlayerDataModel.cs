@@ -67,9 +67,6 @@ public class PlayerDataModel : DataModelStorageBase
 
     private string m_LastBubbleTime = "0";  // 使用字符串存储时间戳
 
-    private List<MakeupData> m_MakeupDatas = new List<MakeupData>();
-
-    private MakeupPaymentInfo m_MakeupPaymentInfo = new MakeupPaymentInfo();
     private int m_Prop1;
     private int m_Prop2;
     private int m_Prop3;
@@ -96,11 +93,9 @@ public class PlayerDataModel : DataModelStorageBase
     private int m_RewardDialogDoubleTimes;
     [SerializeField] public string m_NewDayTime;
     [SerializeField] public bool isFreeSpin;
-    [SerializeField] public string Payment;
     [SerializeField] public List<int> CompleteGuideIds = new List<int>();
     [SerializeField] public string Language;
     [SerializeField] public string PlayerName;
-    [SerializeField] public int TodayWithdrawalNum;
     private int m_MahjongSkinId;
     private int m_MahjongBgSkinId;
     [SerializeField] public List<int> SkinUnLockedTileIds = new List<int>();
@@ -121,37 +116,6 @@ public class PlayerDataModel : DataModelStorageBase
     /// 箭头高级皮肤 ID，0 表示默认皮肤。持久化存储。
     /// </summary>
     private int m_ArrowAdvancedSkinId;
-
-    /// <summary>
-    /// 兑换记录
-    /// </summary>
-    public List<MakeupData> makeupDatas
-    {
-        get => m_MakeupDatas;
-        set
-        {
-            // if (m_MakeupDatas != value)
-            // {
-            m_MakeupDatas = value;
-            // 触发提现数据变更事件
-            // GF.Event.Fire(this, MakeupDataChangedEventArgs.Create(MakeupDataChangeType.Updated));
-            // }
-        }
-    }
-
-    public MakeupPaymentInfo MakeupPaymentInfo
-    {
-        get => m_MakeupPaymentInfo;
-        set
-        {
-            // if (m_MakeupPaymentInfo != value)
-            // {
-            m_MakeupPaymentInfo = value;
-            // 触发支付信息变更事件
-            GF.Event.Fire(this, PaymentInfoChangedEventArgs.Create(PaymentInfoChangeType.All));
-            // }
-        }
-    }
 
     public string LastSigninTime
     {
@@ -245,7 +209,6 @@ public class PlayerDataModel : DataModelStorageBase
         set
         {
             m_CollectCount = value;
-            GF.Event.Fire(null, MakeupTaskChangeEventArgs.Create());
         }
     }
     public int RewardArrowEliminateCount
@@ -365,9 +328,6 @@ public class PlayerDataModel : DataModelStorageBase
         LastSigninTime = string.Empty;
         SigninIndex = 0;
         m_LastBingoCardRecoverTime = UtilityBuiltin.GetTimeStamp();
-        makeupDatas = new List<MakeupData>();
-        Payment = "0";
-        m_MakeupPaymentInfo = new MakeupPaymentInfo();
         m_Prop1 = GF.Config.GetInt("DefaultProp");
         m_Prop2 = GF.Config.GetInt("DefaultProp");
         m_Prop3 = GF.Config.GetInt("DefaultProp");
@@ -384,7 +344,6 @@ public class PlayerDataModel : DataModelStorageBase
         m_MahjongSkinId = 0;
         m_MahjongBgSkinId = 0;
         PlayerName = string.Empty;
-        TodayWithdrawalNum = UnityEngine.Random.Range(12000, 26000);
         SkinUnLockedTileIds = new List<int>();
         SkinUnLockedBgIds = new List<int>();
         if (SkinUnLockedTileIds.Count == 0)
@@ -477,7 +436,6 @@ public class PlayerDataModel : DataModelStorageBase
             case PlayerDataType.Diamond:
                 oldValue = m_Dollars;
                 m_Dollars = formattedValue;
-                CommonHelper.LogStep2CompleteEvents(oldValue, formattedValue);
                 break;
             case PlayerDataType.Coins:
                 oldValue = m_Coins;
@@ -486,12 +444,10 @@ public class PlayerDataModel : DataModelStorageBase
             case PlayerDataType.LevelId:
                 oldValue = m_LevelId;
                 m_LevelId = (int)formattedValue;
-                GF.Event.Fire(null, MakeupTaskChangeEventArgs.Create());
                 break;
             case PlayerDataType.Gems:
                 oldValue = m_Gems;
                 m_Gems = (int)formattedValue;
-                GF.Event.Fire(null, MakeupTaskChangeEventArgs.Create());
                 break;
             case PlayerDataType.Prop1:
                 oldValue = m_Prop1;
@@ -550,8 +506,7 @@ public class PlayerDataModel : DataModelStorageBase
             m_MatchCountDict = new Dictionary<int, int>();
             m_AchievingCount = 0;
             m_NewDayTime = UtilityBuiltin.GetTimeStamp();
-            TodayWithdrawalNum = UnityEngine.Random.Range(12000, 26000);
-            isFreeSpin = false;
+        isFreeSpin = false;
             return;
         }
         DateTime last = DateTimeOffset.FromUnixTimeSeconds(long.Parse(m_NewDayTime)).UtcDateTime;
@@ -561,8 +516,7 @@ public class PlayerDataModel : DataModelStorageBase
             m_MatchCountDict = new Dictionary<int, int>();
             m_AchievingCount = 0;
             m_NewDayTime = UtilityBuiltin.GetTimeStamp();
-            TodayWithdrawalNum = UnityEngine.Random.Range(12000, 26000);
-            isFreeSpin = false;
+        isFreeSpin = false;
         }
         if(SkinUnLockedTileIds.Count == 0)
         {
@@ -574,116 +528,4 @@ public class PlayerDataModel : DataModelStorageBase
         }
     }
 
-    /// <summary>
-    /// 添加提现数据
-    /// </summary>
-    public void AddMakeupData(MakeupData makeupData)
-    {
-        if (makeupData == null) return;
-
-        makeupDatas.Add(makeupData);
-
-        // 触发提现数据添加事件
-        GF.Event.Fire(this, MakeupDataChangedEventArgs.Create(MakeupDataChangeType.Added, makeupData.makeupType, makeupData.id, makeupData.makeupStep));
-
-        // 保存数据
-        Save(false);
-    }
-
-    /// <summary>
-    /// 更新提现数据
-    /// </summary>
-    public void UpdateMakeupData(MakeupData makeupData)
-    {
-        if (makeupData == null) return;
-
-        var existingData = makeupDatas.Find(x => x.makeupType == makeupData.makeupType && x.id == makeupData.id);
-        if (existingData != null)
-        {
-            var oldStep = existingData.makeupStep;
-            // 更新数据
-            existingData.makeupStep = makeupData.makeupStep;
-            existingData.step1TaskNum = makeupData.step1TaskNum;
-            existingData.step2TaskNum = makeupData.step2TaskNum;
-
-            // 如果步骤发生变化，触发步骤变更事件
-            if (oldStep != makeupData.makeupStep)
-            {
-                GF.Event.Fire(this, MakeupDataChangedEventArgs.Create(MakeupDataChangeType.StepChanged, makeupData.makeupType, makeupData.id, makeupData.makeupStep));
-            }
-            else
-            {
-                // 触发数据更新事件
-                // GF.Event.Fire(this, MakeupDataChangedEventArgs.Create(MakeupDataChangeType.Updated, makeupData.makeupType, makeupData.id, makeupData.makeupStep));
-            }
-
-            // 保存数据
-            Save(false);
-        }
-    }
-
-    /// <summary>
-    /// 移除提现数据
-    /// </summary>
-    public void RemoveMakeupData(MakeupType makeupType, int makeupId)
-    {
-        var existingData = makeupDatas.Find(x => x.makeupType == makeupType && x.id == makeupId);
-        if (existingData != null)
-        {
-            makeupDatas.Remove(existingData);
-
-            // 触发提现数据移除事件
-            GF.Event.Fire(this, MakeupDataChangedEventArgs.Create(MakeupDataChangeType.Removed, makeupType, makeupId, existingData.makeupStep));
-
-            // 保存数据
-            Save(false);
-        }
-    }
-
-    /// <summary>
-    /// 更新支付信息
-    /// </summary>
-    public void UpdatePaymentInfo(string payment, string accountId, string email, string cpf = "")
-    {
-        if (MakeupPaymentInfo == null)
-        {
-            MakeupPaymentInfo = new MakeupPaymentInfo();
-        }
-
-        bool hasChanged = false;
-
-        if (MakeupPaymentInfo.payment != payment)
-        {
-            MakeupPaymentInfo.payment = payment;
-            hasChanged = true;
-        }
-
-        if (MakeupPaymentInfo.accountId != accountId)
-        {
-            MakeupPaymentInfo.accountId = accountId;
-            hasChanged = true;
-        }
-
-        if (MakeupPaymentInfo.email != email)
-        {
-            MakeupPaymentInfo.email = email;
-            hasChanged = true;
-        }
-        if (MakeupPaymentInfo.cpf != cpf)
-        {
-            MakeupPaymentInfo.cpf = cpf;
-            hasChanged = true;
-        }
-        if (hasChanged)
-        {
-            // 触发支付信息变更事件
-            GF.Event.Fire(this, PaymentInfoChangedEventArgs.Create(PaymentInfoChangeType.All, payment, accountId, email));
-
-            // 同步支付信息到所有提现数据（暂定 提现信息已绑定有支付账号数据 就不会修改）
-            // SyncPaymentInfoToAllMakeupData();
-
-            // 保存数据
-            Save(false);
-        }
-    }
 }

@@ -56,11 +56,8 @@ namespace ArrowMaze.UI
         private Vector2 m_CutsceneTopImageBaseAnchoredPos;
         private Vector2 m_CutsceneBottomImageBaseAnchoredPos;
         private bool m_CutsceneBaseLayoutCached;
-        private ArrowMakeupBanknotes m_banknotesConfig;
-        private MakeupData m_makeupData;
         private bool m_IsSyncingProgressZoom;
         private bool m_ForceEliminatePendingConsume;
-        private float m_PendingMakeupDisplayDollars;
         private const float ImageHStepInterval = 0.35f;
         private const float ImageHLoopPause = 0.35f;
         private ArrowComboDisplayController m_ComboDisplay;
@@ -81,7 +78,6 @@ namespace ArrowMaze.UI
             GF.Event.Subscribe(ArrowMazeGameWinEventArgs.EventId, OnGameWin);
             GF.Event.Subscribe(ArrowMazeGameOverEventArgs.EventId, OnGameOver);
             GF.Event.Subscribe(ArrowMazeArrowHitEventArgs.EventId, OnArrowHit);
-            GF.Event.Subscribe(ArrowDoGuideFinishEventArgs.EventId, OnGuideFinish);
             GF.Event.Subscribe(UserSkinChangeEventArgs.EventId, OnUserSkinChange);
             GF.Event.Subscribe(BgSkinChangeEventArgs.EventId, OnBgSkinChange);
             GF.Event.Subscribe(PlayerDataChangedEventArgs.EventId, OnPlayerDataChanged);
@@ -89,8 +85,6 @@ namespace ArrowMaze.UI
             GF.Event.Subscribe(ArrowMazeForceEliminateUsedEventArgs.EventId, OnForceEliminateUsed);
             // GF.Event.Subscribe(ArrowMazeArrowEliminatedEventArgs.EventId, OnArrowEliminatedForCombo);
             GF.Event.Subscribe(ArrowMazeEliminationRewardDialogClosedEventArgs.EventId, OnEliminationRewardDialogClosed);
-            GF.Event.Subscribe(RewardCollectedEventArgs.EventId, OnRewardCollected);
-
             // ResetComboDisplay();
             // InitComboDisplay();
 
@@ -125,10 +119,7 @@ namespace ArrowMaze.UI
 
         private void UpdateUIByUserType()
         {
-            // 提现相关
-            InitMakeupData();
             UpdateForceEliminateUI();
-            
         }
 
         private void OnUserTypeChange(object sender, GameEventArgs e)
@@ -144,30 +135,8 @@ namespace ArrowMaze.UI
             PlayerDataChangedEventArgs args = e as PlayerDataChangedEventArgs;
             if (args == null) return;
 
-            if (args.DataType == PlayerDataType.Diamond)
-            {
-                m_PendingMakeupDisplayDollars = 0f;
-            }
-
             if (args.DataType == PlayerDataType.Prop3)
                 UpdateForceEliminateUI();
-        }
-
-        private void OnRewardCollected(object sender, GameEventArgs e)
-        {
-            var args = e as RewardCollectedEventArgs;
-            if (args == null || args.type != PlayerDataType.Diamond)
-                return;
-
-            m_PendingMakeupDisplayDollars += args.Value;
-        }
-
-        private void InitMakeupData()
-        {
-            // 暂时只是设置一条提现，固定取id==1的配置
-            var banknotesTable = GF.DataTable.GetDataTable<ArrowMakeupBanknotes>();
-            m_banknotesConfig = banknotesTable.GetDataRow(1);
-            m_makeupData = m_PlayerData.makeupDatas.Find(x => x.makeupType == MakeupType.Mon && x.id == 1);
         }
 
         protected override void OnClose(bool isShutdown, object userData)
@@ -190,12 +159,10 @@ namespace ArrowMaze.UI
             GF.Event.Unsubscribe(ArrowMazeGameWinEventArgs.EventId, OnGameWin);
             GF.Event.Unsubscribe(ArrowMazeGameOverEventArgs.EventId, OnGameOver);
             GF.Event.Unsubscribe(ArrowMazeArrowHitEventArgs.EventId, OnArrowHit);
-            GF.Event.Unsubscribe(ArrowDoGuideFinishEventArgs.EventId, OnGuideFinish);
             GF.Event.Unsubscribe(UserSkinChangeEventArgs.EventId, OnUserSkinChange);
             GF.Event.Unsubscribe(BgSkinChangeEventArgs.EventId, OnBgSkinChange);
             GF.Event.Unsubscribe(PlayerDataChangedEventArgs.EventId, OnPlayerDataChanged);
             GF.Event.Unsubscribe(UserTypeChangeEventArgs.EventId, OnUserTypeChange);
-            GF.Event.Unsubscribe(RewardCollectedEventArgs.EventId, OnRewardCollected);
             GF.Event.Unsubscribe(ArrowMazeForceEliminateUsedEventArgs.EventId, OnForceEliminateUsed);
             // GF.Event.Unsubscribe(ArrowMazeArrowEliminatedEventArgs.EventId, OnArrowEliminatedForCombo);
             GF.Event.Unsubscribe(ArrowMazeEliminationRewardDialogClosedEventArgs.EventId, OnEliminationRewardDialogClosed);
@@ -222,7 +189,6 @@ namespace ArrowMaze.UI
                 m_PlayerData.LevelId  = m_LevelIndex;
                 m_PlayerData.Save();
                 LoadLevelData(m_LevelIndex);
-                CommonHelper.DebugPrintStep2SpecRewardBaseValue(200);
             }
             if (btId == "LevelSubButton")
             {
@@ -511,19 +477,6 @@ namespace ArrowMaze.UI
         }
         
 
-        private int GetStep1TargetLevel()
-        {
-            return m_banknotesConfig != null
-                ? m_banknotesConfig.Step1_Lv
-                : ArrowLevelProgressUtility.GetTargetMainLevel();
-        }
-
-        private bool HasCompletedStep1(int linearLevelId)
-        {
-            return m_banknotesConfig != null
-                && ArrowLevelProgressUtility.GetCompletedMainLevelCount(linearLevelId) >= m_banknotesConfig.Step1_Lv;
-        }
-
         private static void SetProgressIndicatorActive(GameObject target, bool active)
         {
             if (target != null)
@@ -691,43 +644,12 @@ namespace ArrowMaze.UI
         {
             if (!CommonHelper.IsSpec()) return;
 
-            // 买量新用户第一步：先引导 ArrowMakeupGuideUIForm，去掉这一步引导
-            /*if (!GF.GuideManager.IsGuideCompleted(2))
-            {
-                TryOpenMakeupGuideUIForm();
-                return;
-            }*/
-
-            // 第一关过关后再引导点击 Topbar 进入 ArrowMakeupUIForm
-            if (!GF.GuideManager.IsGuideCompleted(3) && m_PlayerData.LevelId > 1)
-            {
-                GF.Event.Fire(null, ArrowDoGuideEventArgs.Create(3));
-                return;
-            }
-
             if (m_PlayerData.LevelId == 2 && !m_PlayerData.CompleteGuideIds.Contains(4))
             {
                 GuideManager.Instance.ShowGuide(4, varCameraView, true, null);
             }
         }
 
-        private void TryOpenMakeupGuideUIForm()
-        {
-            Log.Info("未完成引导2，打开ArrowMakeupGuideUIForm界面,执行引导2");
-            GF.UI.OpenUIForm(UIViews.ArrowMakeupGuideUIForm);
-        }
-
-        private bool TryStartGuide3AfterFirstLevel(int completedLinearLevel)
-        {
-            if (!CommonHelper.IsSpec() || completedLinearLevel != 1)
-                return false;
-            if (GF.GuideManager.IsGuideCompleted(3))
-                return false;
-
-            Log.Info("第一关过关，开始引导3：点击Topbar进入提现页");
-            GF.Event.Fire(null, ArrowDoGuideEventArgs.Create(3));
-            return true;
-        }
         private void OnGameWin(object sender, GameEventArgs e)
         {
             int completedLinearLevel = m_PlayerData.LevelId;
@@ -769,8 +691,6 @@ namespace ArrowMaze.UI
             rewardParams.OnDialogClosed = () =>
             {
                 SetGameWinVisible(false);
-                if (TryStartGuide3AfterFirstLevel(completedLinearLevel))
-                    return;
                 NextLevel();
             };
 
@@ -877,22 +797,6 @@ namespace ArrowMaze.UI
         {
             m_ComboDisplay?.Reset();
         }
-        private void OnGuideFinish(object sender, GameEventArgs e)
-        {
-            var args = e as ArrowDoGuideFinishEventArgs;
-            if (args == null) return;
-            var guideId = args.GuideId;
-            if (guideId == 3)
-            {
-                if (m_LevelManager != null)
-                    m_LevelManager.CheckGuide();
-                if ((m_LevelIndex != m_PlayerData.LevelId))
-                    NextLevel();
-                else
-                    CheckGuide();
-            }
-        }
-
         private void ReStartGame()
         {
             LoadLevelData(m_LevelIndex);

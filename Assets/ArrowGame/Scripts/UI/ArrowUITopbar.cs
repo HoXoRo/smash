@@ -42,12 +42,8 @@ public partial class ArrowUITopbar : UIFormBase
         GF.Event.Subscribe(LargeDollarRewardEventArgs.EventId, OnLargeDollarReward);
         GF.Event.Subscribe(TreasureBoxRewardEventArgs.EventId, OnTreasureBoxReward);
         GF.Event.Subscribe(UserTypeChangeEventArgs.EventId, OnUserTypeChange);
-        GF.Event.Subscribe(ArrowDoGuideEventArgs.EventId, OnCheckGuide);
         GF.Event.Subscribe(UserSkinChangeEventArgs.EventId, OnUserSkinChange);
         GF.Event.Subscribe(BgSkinChangeEventArgs.EventId, OnBgSkinChange);
-        GF.Event.Subscribe(MakeupDataChangedEventArgs.EventId, OnMakeupDataChanged);
-        GF.Event.Subscribe(MakeupTaskChangeEventArgs.EventId, OnMakeupTaskChanged);
-
         varBg.enabled = Params.Get<VarBoolean>(P_EnableBG, true);
        
 
@@ -66,7 +62,8 @@ public partial class ArrowUITopbar : UIFormBase
 
         ApplyBgSkinColor(playerDm.IsNightMode);
         SetSkinButtonSprite(playerDm.UseColorfulArrows);
-        UpdateGuideSpineVisibility();
+        if (varGuideSpine != null)
+            varGuideSpine.SetActive(false);
         if (varTxtUpGem != null)
         {
             m_TxtUpGemRestPos = varTxtUpGem.rectTransform.anchoredPosition;
@@ -104,11 +101,8 @@ public partial class ArrowUITopbar : UIFormBase
         GF.Event.Unsubscribe(LargeDollarRewardEventArgs.EventId, OnLargeDollarReward);
         GF.Event.Unsubscribe(TreasureBoxRewardEventArgs.EventId, OnTreasureBoxReward);
         GF.Event.Unsubscribe(UserTypeChangeEventArgs.EventId, OnUserTypeChange);
-        GF.Event.Unsubscribe(ArrowDoGuideEventArgs.EventId, OnCheckGuide);
         GF.Event.Unsubscribe(UserSkinChangeEventArgs.EventId, OnUserSkinChange);
         GF.Event.Unsubscribe(BgSkinChangeEventArgs.EventId, OnBgSkinChange);
-        GF.Event.Unsubscribe(MakeupDataChangedEventArgs.EventId, OnMakeupDataChanged);
-        GF.Event.Unsubscribe(MakeupTaskChangeEventArgs.EventId, OnMakeupTaskChanged);
         base.OnClose(isShutdown, userData);
     }
     protected override void InternalSetVisible(bool visible)
@@ -144,24 +138,8 @@ public partial class ArrowUITopbar : UIFormBase
         if (args == null) return;
         varGem.SetActive(CommonHelper.IsSpec());
         // varCoin.SetActive(!CommonHelper.IsSpec());
-        UpdateGuideSpineVisibility();
     }
 
-    private void OnMakeupDataChanged(object sender, GameEventArgs e)
-    {
-        UpdateGuideSpineVisibility();
-    }
-
-    private void OnMakeupTaskChanged(object sender, GameEventArgs e)
-    {
-        UpdateGuideSpineVisibility();
-    }
-
-    private void UpdateGuideSpineVisibility()
-    {
-        if (varGuideSpine == null) return;
-        varGuideSpine.SetActive(CommonHelper.ShouldShowTopbarGuideSpine());
-    }
     private void OnUserSkinChange(object sender, GameEventArgs e)
     {
         var args = e as UserSkinChangeEventArgs;
@@ -173,14 +151,6 @@ public partial class ArrowUITopbar : UIFormBase
         if (varSkin_Button != null)
             varSkin_Button.SetSprite(UseColorfulArrows ? "UI/GameAtlas/btn_sk_1.png" : "UI/GameAtlas/btn_sk_0.png");
     }
-    private void OnCheckGuide(object sender, GameEventArgs e)
-    {
-        var args = e as ArrowDoGuideEventArgs;
-        if (args == null) return;
-        var guideId = args.GuideId;
-        CheckGuide(guideId);
-    }
-    
     private void OnRewardCollected(object sender, GameEventArgs e)
     {
         var args = e as RewardCollectedEventArgs;
@@ -505,22 +475,6 @@ public partial class ArrowUITopbar : UIFormBase
         }
         varLv.text = playerDm.LevelId.ToString();
     }
-    private void CheckGuide(int guide = -1)
-    {
-        if (guide != 3) return;
-        if (!playerDm.CompleteGuideIds.Contains(guide))
-        {
-            GF.GuideManager.ShowGuide(guide, varGembutton.transform, true, () =>
-            { 
-                var uiParams = UIParams.Create();
-                uiParams.CloseCallback = (UIFormLogic form) =>
-                {
-                    GF.Event.Fire(null, ArrowDoGuideFinishEventArgs.Create(guide));
-                };
-                GF.UI.OpenUIForm(UIViews.ArrowMakeupUIForm, uiParams);
-            });
-        }
-    }
     protected override void OnButtonClick(object sender, Button btSelf)
     {
         base.OnButtonClick(sender, btSelf);
@@ -539,10 +493,7 @@ public partial class ArrowUITopbar : UIFormBase
         }
         else if (btSelf == varGembutton)
         {
-            // if(AppSettings.Instance.DebugMode)
-            // playerDm.SetData(PlayerDataType.Diamond, playerDm.Dollars+10000, true);
-
-            GF.UI.OpenUIForm(UIViews.ArrowMakeupUIForm);
+            // B 面美元仅作游戏内货币展示，不再打开提现界面。
         }
     }
     protected override void OnButtonClick(object sender, string btSelf)

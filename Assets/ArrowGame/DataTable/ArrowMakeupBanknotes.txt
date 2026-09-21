@@ -1,5 +1,0 @@
-﻿#	ArrowMakeupBanknotes			
-#	ID		Step1_Lv	Step2_Mon
-#	int		int	float
-#		备注	第一步（通关数）	第三步（收集美元）
-	1		15	1000

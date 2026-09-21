@@ -12,8 +12,6 @@ public class GF : GFBuiltin
     public static VariablePoolComponent VariablePool { get; private set; }
     public static StaticUIComponent StaticUI { get; private set; }
     public static TimerManager Timer { get; private set; }
-    public static MakeupSys makeupSys { get; private set; }
-
     // public static DataCollectManager DataCollectManager { get; private set; }
     public static GuideManager GuideManager { get; private set; }
     
@@ -68,7 +66,6 @@ public class GF : GFBuiltin
             Log.Info("初始化自定义管理器Custom managers initialized after framework ready.");
             // 初始化自定义管理器
             // FirebaseMseeageManage.Instance.LogEvent("login");
-            makeupSys = new MakeupSys();
             GuideManager = GuideManager.Instance;
             // taskManager = new TaskManager();
             // LevelDataManager = LevelDataManager.Instance;

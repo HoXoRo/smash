@@ -18,7 +18,6 @@ public enum ArrowRewardType
 public static class ArrowRewardCalculator
 {
     const float DefaultNonSpecReward = 10f;
-    const float FixedGradientOverflowReward = 0.0000001f;
     const int FirstRewardRowId = 1;
 
     public static float CalculateReward(ArrowRewardType rewardType)
@@ -26,84 +25,15 @@ public static class ArrowRewardCalculator
         if (!CommonHelper.IsSpec())
             return DefaultNonSpecReward;
 
-        if (!CommonHelper.TryGetStep2MakeupContext(out var makeupData, out var config, out float target, out float currentDollars))
-            return CalculatePreStep2Reward(rewardType);
-
-        if (makeupData.makeupStep != MakeupStep.Step2)
-            return CalculatePreStep2Reward(rewardType);
-
-        float gradient = CalculateStep2GradientPreRatio(currentDollars, makeupData.step2OriginVlue);
-        return CalculateStep2Reward(rewardType, gradient, CommonHelper.GetStep2MonStored(config), target, currentDollars, config);
+        return CalculateSpecReward(rewardType);
     }
 
-    static float CalculatePreStep2Reward(ArrowRewardType rewardType)
+    static float CalculateSpecReward(ArrowRewardType rewardType)
     {
         if (!TryGetFirstRowRange(rewardType, out float[] range))
             return 0f;
 
         return RandomInRange(range);
-    }
-
-    static float CalculateStep2Reward(
-        ArrowRewardType rewardType,
-        float gradientPreRatio,
-        float step2MonStored,
-        float targetDollars,
-        float currentDollars,
-        ArrowMakeupBanknotes config)
-    {
-        if (step2MonStored <= 0f)
-            return 0f;
-
-        if (!TryFindRowByGradient(rewardType, gradientPreRatio, out _, out float[] range))
-        {
-            float remainingStored = targetDollars - currentDollars;
-            if (remainingStored <= 0f)
-                return 0f;
-
-            float minGapStored = CommonHelper.GetStep2RemainingMinGap(config);
-            if (remainingStored - minGapStored < FixedGradientOverflowReward)
-                return 0f;
-
-            return FixedGradientOverflowReward;
-        }
-
-        return RandomInRange(range);
-    }
-
-    /// <summary>
-    /// 玩家存储美元与 Step2 目标均为存储值；配表 Step2_Mon、Currency 梯度为乘以提现比例后的展示值。
-    /// 展示梯度 = 存储进度 * MakeupRatio。
-    /// </summary>
-    static float CalculateStep2GradientPreRatio(float currentDollars, float step2OriginValue)
-    {
-        return Mathf.Max(0f, currentDollars - step2OriginValue);
-    }
-
-    static bool TryFindRowByGradient(
-        ArrowRewardType rewardType,
-        float gradient,
-        out float matchedCurrency,
-        out float[] range)
-    {
-        matchedCurrency = 0f;
-        range = null;
-
-        var rows = GetSortedRows(rewardType);
-        if (rows == null || rows.Count == 0)
-            return false;
-
-        foreach (var row in rows)
-        {
-            if (gradient <= row.Currency)
-            {
-                matchedCurrency = row.Currency;
-                range = row.RewardRange;
-                return range != null && range.Length > 0;
-            }
-        }
-
-        return false;
     }
 
     static bool TryGetFirstRowRange(ArrowRewardType rewardType, out float[] range)
@@ -123,49 +53,6 @@ public static class ArrowRewardCalculator
                 Log.Warning($"ArrowRewardCalculator: unsupported reward type {rewardType}");
                 return false;
         }
-    }
-
-    static List<RewardTableRowSnapshot> GetSortedRows(ArrowRewardType rewardType)
-    {
-        switch (rewardType)
-        {
-            case ArrowRewardType.Normal:
-                return BuildSortedRows(GF.DataTable.GetDataTable<ArrowNormalRewardTable>(), row => row.Currency, row => row.RewardRange);
-            case ArrowRewardType.Combo:
-                return BuildSortedRows(GF.DataTable.GetDataTable<ArrowComboRewardTable>(), row => row.Currency, row => row.RewardRange);
-            case ArrowRewardType.Bubble:
-                return BuildSortedRows(GF.DataTable.GetDataTable<ArrowBubbleRewardTable>(), row => row.Currency, row => row.RewardRange);
-            case ArrowRewardType.Win:
-                return BuildSortedRows(GF.DataTable.GetDataTable<ArrowWinRewardTable>(), row => row.Currency, row => row.RewardRange);
-            default:
-                Log.Warning($"ArrowRewardCalculator: unsupported reward type {rewardType}");
-                return null;
-        }
-    }
-
-    static List<RewardTableRowSnapshot> BuildSortedRows<T>(
-        IDataTable<T> table,
-        Func<T, float> getCurrency,
-        Func<T, float[]> getRange) where T : DataRowBase
-    {
-        if (table == null)
-        {
-            Log.Warning($"ArrowRewardCalculator: data table {typeof(T).Name} is missing.");
-            return null;
-        }
-
-        var rows = new List<RewardTableRowSnapshot>();
-        foreach (var row in table.GetAllDataRows())
-        {
-            rows.Add(new RewardTableRowSnapshot
-            {
-                Currency = getCurrency(row),
-                RewardRange = getRange(row),
-            });
-        }
-
-        rows.Sort((a, b) => a.Currency.CompareTo(b.Currency));
-        return rows;
     }
 
     static bool TryGetRowRange(float[] sourceRange, out float[] range)
@@ -222,11 +109,5 @@ public static class ArrowRewardCalculator
         }
 
         return maxPrecision;
-    }
-
-    struct RewardTableRowSnapshot
-    {
-        public float Currency;
-        public float[] RewardRange;
     }
 }

@@ -20,7 +20,6 @@ MonoBehaviour:
   - ArrowLevelProgress
   - ArrowLevelTable
   - ArrowLocalizationMoney
-  - ArrowMakeupBanknotes
   - ArrowNormalRewardTable
   - ArrowWinRewardTable
   - Core/ArrowLanguagesTable

@@ -21,18 +21,13 @@
 	CollectCountTask	收集任务（合成道具数量*3）	3000
 	ShowVideoRewardCoin	广告加金币数	50
 	BubbleAdWeight	广告类型气泡出现权重（点击气泡直接播放广告领取奖励，百分比）	50
-	MakeupAmount	提现数值	1000
 	DefaultProp	玩家初始道具数量	3
 	GuideType	引导开关（0关1开）	1
-	SavingPotRewards	存钱罐任务美元奖励	10,20,30,40,50
 	GameTimeOut	挑战关卡默认初始时长（秒）	300
 	ReviveAddTime	看广告复活增加挑战时间（秒）	30
 	FireWinReward	第一关通关赠送货币数量	30
 	MakeupRatio	提现比例	10
 	NormalReward	普通奖励	100,230
-	Step2ExpectedAdCount	Step2预计广告次数（渐近趋近目标）	25
-	Step2AsymptoteRatio	Step2预计广告后趋近目标比例（0-1）	0.95
-	Step2MinRemainRatio	Step2距目标最小保留缺口（占Step2_Mon比例，实际钳制在0.001~0.01）	0.01
 	EliminationRewardCount	连续消除弹出奖励弹窗次数	25
 	ComboRewardRate	普通奖励倍数	5
 	WinRewardRate	胜利奖励倍数	10

@@ -13,13 +13,7 @@
 #	提示(顶层)						
 	7	吐司提示	1	ArrowToastTips	False	4	False
 	8	奖励弹窗	10	ArrowRewardDialogUIForm	False	2	False
-	9	提现	4	ArrowMakeupUIForm	False	3	False
-	10	支付方式	5	ArrowSelectPaymentUIForm	False	3	False
-	11	确认提现方式	6	ArrowMakeupInfoUIForm	False	3	False
 	12	PrivacyPolicy隐私协议	20	ArrowPrivacyPolicyUIForm	False	2	False
 	13	GuideUIForm	2	ArrowGuideUIForm	False	4	False
-	14	提现记录	12	ArrowMakeupOrdemUIForm	False	3	False
-	15	提现说明	13	ArrowMakeupTipsUIForm	False	3	False
-	16	提现引导	11	ArrowMakeupGuideUIForm	False	2	False
 	17	扭蛋奖励界面	12	ArrowCapsuleToysUIForm	False	2	False
 	20	奖励领取界面	13	ArrowRewardUIForm	False	2	False
