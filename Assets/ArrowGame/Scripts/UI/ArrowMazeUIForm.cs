@@ -48,13 +48,6 @@ namespace ArrowMaze.UI
         private bool m_IsBubbleActive = false;  // 是否有活跃的气泡
         private const int BubbleUnlockLevel = 4; // 前3关不展示气泡
         #endregion
-        private int m_ScratchCardCondition = 0;
-        private bool m_ScratchCardAutoPopup;
-        private bool m_ScratchCardWasReady;
-        private bool m_DeferScratchCardToNextLevel;
-        private bool m_PendingScratchCardAfterRewardDialog;
-        private bool m_BlockGameplayForScratchCard;
-        private Coroutine m_PendingScratchCardCoroutine;
         private const float LevelLoadCutsceneMinDurationSeconds = 0.4f;
         private const float CutsceneRevealDurationSeconds = 0.8f;
         private const float GameWinRewardDelaySec = 1.5f;
@@ -70,12 +63,6 @@ namespace ArrowMaze.UI
         private float m_PendingMakeupDisplayDollars;
         private const float ImageHStepInterval = 0.35f;
         private const float ImageHLoopPause = 0.35f;
-        private const float ScratchCardShakeAngle = 10f;
-        private const float ScratchCardShakeStepDuration = 0.08f;
-        private const float ScratchCardShakePauseDuration = 1f;
-        private Sequence m_ScratchCardShakeSequence;
-        private bool m_ScratchCardShakeActive;
-        private Vector3 m_ScratchCardBaseLocalEuler;
         private ArrowComboDisplayController m_ComboDisplay;
 
         protected override void OnOpen(object userData)
@@ -86,9 +73,6 @@ namespace ArrowMaze.UI
             uiparms.Set<VarBoolean>(ArrowUITopbar.P_EnableBG, true);
             uiparms.Set<VarBoolean>(ArrowUITopbar.P_EnableSettingBtn, true);
             this.OpenSubUIForm(UIViews.ArrowUITopbar, 1, uiparms);
-            m_ScratchCardCondition = GF.Config.GetInt("ScratchCardCondition");
-            m_ScratchCardAutoPopup = GF.Config.GetInt("ScratchCardAutoPopup", 0) == 1;
-            m_ScratchCardWasReady = false;
             varDebugObj.SetActive(CommonHelper.IsDebug());
 
             m_PlayerData = GF.DataModel.GetDataModel<PlayerDataModel>();
@@ -217,8 +201,6 @@ namespace ArrowMaze.UI
             GF.Event.Unsubscribe(ArrowMazeEliminationRewardDialogClosedEventArgs.EventId, OnEliminationRewardDialogClosed);
 
             m_LevelManager?.SetGameplayInputBlocked(false);
-            m_BlockGameplayForScratchCard = false;
-            m_PendingScratchCardAfterRewardDialog = false;
             ResetForceEliminatePropState();
             ResetBubbleReward();
             base.OnClose(isShutdown, userData);
@@ -471,19 +453,6 @@ namespace ArrowMaze.UI
             return next;
         }
         
-        private void OnScratchCardRewardSettled(ScratchCardRewardInfo rewardInfo)
-        {
-            if (rewardInfo == null || !rewardInfo.IsWin)
-                return;
-
-            var uiParams = UIParams.Create();
-            var varReward = ReferencePool.Acquire<VarSingle>();
-            varReward.Value = rewardInfo.TotalRewardValue;
-            uiParams.Set(ArrowScratchCardRewardUIForm.P_ScratchCardRewardValue, varReward);
-            GF.UI.OpenUIForm(UIViews.ArrowScratchCardRewardUIForm, uiParams);
-
-            Log.Info($"刮刮卡中奖，匹配 {rewardInfo.MatchCount} 个，总奖励 {rewardInfo.TotalRewardValue}");
-        }
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
@@ -522,20 +491,6 @@ namespace ArrowMaze.UI
             m_LevelManager?.RequestCheckGameWin();
         }
         
-
-        private void TryOpenDeferredScratchCardAfterLevelLoad()
-        {
-            if (!m_ScratchCardAutoPopup || !CommonHelper.IsSpec())
-            {
-                m_DeferScratchCardToNextLevel = false;
-                return;
-            }
-            
-
-            m_DeferScratchCardToNextLevel = false;
-            m_ScratchCardWasReady = true;
-            m_LevelManager?.SetGameplayInputBlocked(true);
-        }
 
         private void OnProgressZoomValueChanged(float value)
         {
@@ -709,7 +664,6 @@ namespace ArrowMaze.UI
             }
 
             CheckGuide();
-            TryOpenDeferredScratchCardAfterLevelLoad();
             m_LoadLevelCutsceneCoroutine = null;
         }
 
@@ -941,8 +895,6 @@ namespace ArrowMaze.UI
 
         private void ReStartGame()
         {
-            m_DeferScratchCardToNextLevel = false;
-            m_PendingScratchCardAfterRewardDialog = false;
             LoadLevelData(m_LevelIndex);
         }
         private void NextLevel()

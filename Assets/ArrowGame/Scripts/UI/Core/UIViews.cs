@@ -21,7 +21,5 @@ public enum UIViews : int
 	ArrowMakeupTipsUIForm = 15,
 	ArrowMakeupGuideUIForm = 16,
 	ArrowCapsuleToysUIForm = 17,
-	ArrowScratchCardUIForm = 18,
-	ArrowScratchCardRewardUIForm = 19,
 	ArrowRewardUIForm = 20
 }

@@ -1153,7 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Key: ArrowScratchCardRewardUIForm.claim
+  m_Key: ArrowRewardDialogUIForm.claim
 --- !u!1 &7882990980621671404
 GameObject:
   m_ObjectHideFlags: 0

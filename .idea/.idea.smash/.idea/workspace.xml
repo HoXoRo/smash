@@ -17,6 +17,65 @@
     <commands />
     <urls />
   </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0000000948354402" />
+      <entry key="MS500" value="1.0420304644544085" />
+      <entry key="S2" value="2.1162528441795216" />
+      <entry key="S5" value="4.599396050276916" />
+      <entry key="S10" value="6.626514353559564" />
+      <entry key="S30" value="8.677771661173608" />
+      <entry key="S60" value="9.310356560783651" />
+      <entry key="M2" value="9.64772316032911" />
+      <entry key="M5" value="9.857257004330412" />
+      <entry key="M10" value="9.928319465762407" />
+      <entry key="M15" value="9.952144028645437" />
+      <entry key="M30" value="9.976037471354804" />
+      <entry key="H1" value="9.988010087029137" />
+      <entry key="H2" value="9.994002879737073" />
+      <entry key="H4" value="9.997000898722101" />
+      <entry key="D1" value="9.999500074610634" />
+      <entry key="W1" value="9.999928580245959" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9526380890161723" />
+      <entry key="MS500" value="1.0320249123062057" />
+      <entry key="S2" value="2.1112182488882416" />
+      <entry key="S5" value="4.594802913609193" />
+      <entry key="S10" value="6.623136730107641" />
+      <entry key="S30" value="8.676277477717761" />
+      <entry key="S60" value="9.309552425152068" />
+      <entry key="M2" value="9.647305861379957" />
+      <entry key="M5" value="9.857086298195709" />
+      <entry key="M10" value="9.928233470378611" />
+      <entry key="M15" value="9.95208655481024" />
+      <entry key="M30" value="9.976008662435886" />
+      <entry key="H1" value="9.987995664529567" />
+      <entry key="H2" value="9.993995663972278" />
+      <entry key="H4" value="9.996997289710327" />
+      <entry key="D1" value="9.999499472951758" />
+      <entry key="W1" value="9.999928494290847" />
+    </decayedShown>
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "node.js.selected.package.tslint": "(autodetect)",

@@ -22,6 +22,4 @@
 	15	提现说明	13	ArrowMakeupTipsUIForm	False	3	False
 	16	提现引导	11	ArrowMakeupGuideUIForm	False	2	False
 	17	扭蛋奖励界面	12	ArrowCapsuleToysUIForm	False	2	False
-	18	刮卡界面	12	ArrowScratchCardUIForm	False	2	False
-	19	刮卡奖励界面	13	ArrowScratchCardRewardUIForm	False	2	False
 	20	奖励领取界面	13	ArrowRewardUIForm	False	2	False

@@ -22,7 +22,6 @@ MonoBehaviour:
   - ArrowLocalizationMoney
   - ArrowMakeupBanknotes
   - ArrowNormalRewardTable
-  - ArrowScratchRewardTable
   - ArrowWinRewardTable
   - Core/ArrowLanguagesTable
   - Core/ArrowSoundGroupTable

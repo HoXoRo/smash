@@ -107,9 +107,6 @@ public class PlayerDataModel : DataModelStorageBase
     [SerializeField] public List<int> SkinUnLockedBgIds = new List<int>();
     public Dictionary<int, int> m_LevelStarRecords = new Dictionary<int, int>();
 
-    /// <summary> 刮刮卡消除进度（0 到 ScratchCardCondition 阈值，达标后可刮一次）。 </summary>
-    public int m_ScratchCardCondition;
-
     /// <summary>
     /// 箭头彩色模式：true=普通箭头随机彩色，false=默认黑色。持久化存储。
     /// </summary>
@@ -355,7 +352,6 @@ public class PlayerDataModel : DataModelStorageBase
     /// 广告网络(归因数据)
     /// </summary>
     public string AdNetwork { get => m_AdNetwork; set => m_AdNetwork = value; }
-    public int ScratchCardCondition { get => m_ScratchCardCondition; set => m_ScratchCardCondition = value; }
     public PlayerDataModel()
     {
     }
@@ -402,7 +398,6 @@ public class PlayerDataModel : DataModelStorageBase
         m_UserType = 0;
         m_IsRecognition = false;
         m_RewardArrowEliminateCount = 0;
-        m_ScratchCardCondition = 0;
         m_UseColorfulArrows = false;
         m_IsNightMode = false;
         m_ArrowAdvancedSkinId = 0;

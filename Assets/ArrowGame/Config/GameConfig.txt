@@ -33,12 +33,6 @@
 	Step2ExpectedAdCount	Step2预计广告次数（渐近趋近目标）	25
 	Step2AsymptoteRatio	Step2预计广告后趋近目标比例（0-1）	0.95
 	Step2MinRemainRatio	Step2距目标最小保留缺口（占Step2_Mon比例，实际钳制在0.001~0.01）	0.01
-	ScratchCardCondition	刮卡奖励条件（每累计消除n次）	60
-	ScratchCardWinRate	刮刮卡中奖概率（0~100，百分比）	100
-	ScratchCardMatchCountWeights	刮刮卡中奖个数权重（1~3个，对应权重）	10,10,10
-	ScratchCardAutoPopup	刮卡满足条件后是否自动弹出（0否1是）	1
-	ScratchCardProbability	刮刮卡中奖概率（小奖，中奖，大奖）	70,25,5
 	EliminationRewardCount	连续消除弹出奖励弹窗次数	25
 	ComboRewardRate	普通奖励倍数	5
 	WinRewardRate	胜利奖励倍数	10
-	ScratchRewardRate	刮卡奖励倍数	10

@@ -1359,7 +1359,6 @@ MonoBehaviour:
     TodayWithdrawalNum: 0
     SkinUnLockedTileIds: 
     SkinUnLockedBgIds: 
-    m_ScratchCardCondition: 0
   varTxtCoin: {fileID: 5459746011768178925}
   varTxtGem: {fileID: 658673048086433185}
   varBtnCoin: {fileID: 2422618728492469359}

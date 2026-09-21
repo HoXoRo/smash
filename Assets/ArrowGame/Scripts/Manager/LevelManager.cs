@@ -816,20 +816,7 @@ namespace ArrowMaze
             if (arrow == null || m_IsGameOver) return;
             if (!m_RewardGrantedArrowIds.Add(arrow.Id)) return;
 
-            AddScratchCardEliminateProgress();
             OnRewardArrowEliminated(arrow);
-        }
-
-        void AddScratchCardEliminateProgress()
-        {
-            if (m_PlayerData == null)
-                return;
-
-            int threshold = GF.Config.GetInt("ScratchCardCondition");
-            if (threshold <= 0 || m_PlayerData.ScratchCardCondition >= threshold)
-                return;
-
-            m_PlayerData.ScratchCardCondition += 1;
         }
 
         /// <summary>
@@ -1102,16 +1089,10 @@ namespace ArrowMaze
         }
 
         /// <summary>
-        /// 生成随机奖励，rewardType 1:普通奖励，2：通关奖励，3：气泡奖励，4：刮刮卡奖励
+        /// 生成随机奖励，rewardType 1:普通奖励，2：通关奖励，3：气泡奖励
         /// </summary>
         public float GenerateRandomReward(int rewardType = 0)
         {
-            if (rewardType == 4)
-            {
-                var scratchResult = ArrowRewardCalculator.CalculateScratchCardReward();
-                return scratchResult.IsValid ? scratchResult.Value : 0f;
-            }
-
             if (!Enum.IsDefined(typeof(ArrowRewardType), rewardType))
                 return 0f;
 
