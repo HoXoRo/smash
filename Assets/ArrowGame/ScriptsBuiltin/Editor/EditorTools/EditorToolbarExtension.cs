@@ -6,7 +6,7 @@ using GameFramework;
 using System.Linq;
 using System.Reflection;
 using UnityEditor.SceneManagement;
-using UnityEngine.SceneManagement;
+using UnityScene = UnityEngine.SceneManagement.Scene;
 using Unity.CodeEditor;
 
 namespace UGF.EditorTools
@@ -42,7 +42,7 @@ namespace UGF.EditorTools
             UnityEditorToolbar.LeftToolbarGUI.Add(OnLeftToolbarGUI);
         }
 
-        private static void OnSceneOpened(Scene scene, OpenSceneMode mode)
+        private static void OnSceneOpened(UnityScene scene, OpenSceneMode mode)
         {
             switchSceneBtContent.text = scene.name;
         }
@@ -146,7 +146,7 @@ namespace UGF.EditorTools
             {
                 var scenePath = sceneAssetList[menuIdx];
                 var curScene = EditorSceneManager.GetActiveScene();
-                if (curScene != null && curScene.isDirty)
+                if (curScene.IsValid() && curScene.isDirty)
                 {
                     int opIndex = EditorUtility.DisplayDialogComplex("警告", $"当前场景{curScene.name}未保存,是否保存?", "保存", "取消", "不保存");
                     switch (opIndex)

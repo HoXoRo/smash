@@ -13,29 +13,32 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://E:/unityPro/smash/Assets/StompyRobot/SRDebugger/Scripts/UI/Other/PinnedUIRoot.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000000031109448" />
-      <entry key="MS500" value="1.0198874933950703" />
-      <entry key="S2" value="1.4054494599305538" />
-      <entry key="S5" value="2.138883919907033" />
-      <entry key="S10" value="2.9955688320461014" />
-      <entry key="S30" value="4.136907341035343" />
-      <entry key="S60" value="4.788692807232166" />
-      <entry key="M2" value="6.222422863896164" />
-      <entry key="M5" value="9.933516869292374" />
-      <entry key="M10" value="14.34781992662076" />
-      <entry key="M15" value="17.44354922268606" />
-      <entry key="M30" value="22.622059698832782" />
-      <entry key="H1" value="26.580016787278524" />
-      <entry key="H2" value="29.071747780700925" />
-      <entry key="H4" value="30.47605889310099" />
-      <entry key="D1" value="31.73721252281092" />
-      <entry key="W1" value="31.962236781824316" />
+      <entry key="MS100" value="1.0000077438270858" />
+      <entry key="MS500" value="1.1189757112751086" />
+      <entry key="S2" value="1.9486869986616733" />
+      <entry key="S5" value="2.4788899404432017" />
+      <entry key="S10" value="2.718802973141937" />
+      <entry key="S30" value="2.901251680986065" />
+      <entry key="S60" value="2.954877138488039" />
+      <entry key="M2" value="3.1148972718933687" />
+      <entry key="M5" value="4.036468491233528" />
+      <entry key="M10" value="5.0889515072759215" />
+      <entry key="M15" value="5.945689697921363" />
+      <entry key="M30" value="9.583384909862321" />
+      <entry key="H1" value="16.859827181367784" />
+      <entry key="H2" value="24.865020141932533" />
+      <entry key="H4" value="30.925254174978956" />
+      <entry key="D1" value="37.487365287045634" />
+      <entry key="W1" value="38.77941689950652" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -57,31 +60,31 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.959264122248068" />
-      <entry key="MS500" value="1.0113576367354626" />
-      <entry key="S2" value="1.4021442912679527" />
-      <entry key="S5" value="2.136834533942377" />
-      <entry key="S10" value="2.9941586076722406" />
-      <entry key="S30" value="4.13626992159309" />
-      <entry key="S60" value="4.788322574531138" />
-      <entry key="M2" value="6.222175672423878" />
-      <entry key="M5" value="9.933353891720778" />
-      <entry key="M10" value="14.347701175136134" />
-      <entry key="M15" value="17.44345268146544" />
-      <entry key="M30" value="22.62199686004648" />
-      <entry key="H1" value="26.57997978376483" />
-      <entry key="H2" value="29.0717275180286" />
-      <entry key="H4" value="30.47604826507791" />
-      <entry key="D1" value="31.737210677087322" />
-      <entry key="W1" value="31.96223651625284" />
+      <entry key="MS100" value="0.9592714455368235" />
+      <entry key="MS500" value="1.109446094693006" />
+      <entry key="S2" value="1.9442551464922355" />
+      <entry key="S5" value="2.4766100208452815" />
+      <entry key="S10" value="2.7175493128039556" />
+      <entry key="S30" value="2.9008050850198526" />
+      <entry key="S60" value="2.954649618112426" />
+      <entry key="M2" value="3.114777071304238" />
+      <entry key="M5" value="4.036405513364875" />
+      <entry key="M10" value="5.0889114993074465" />
+      <entry key="M15" value="5.945658357474797" />
+      <entry key="M30" value="9.583359183788378" />
+      <entry key="H1" value="16.859804194160855" />
+      <entry key="H2" value="24.86500306420111" />
+      <entry key="H4" value="30.925243519647086" />
+      <entry key="D1" value="37.48736312888968" />
+      <entry key="W1" value="38.77941658044164" />
     </decayedShown>
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "node.js.selected.package.tslint": "(autodetect)",
-    "unity.profiler.toolWindow.autoShown": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;unity.profiler.toolWindow.autoShown&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <servers />
   </component>
