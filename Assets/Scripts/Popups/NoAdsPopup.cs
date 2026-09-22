@@ -26,8 +26,7 @@ namespace Popups
 			}
 			if (purchaseButton != null)
 			{
-				purchaseButton.OnClick.RemoveListener(OnPurchaseClicked);
-				purchaseButton.OnClick.AddListener(OnPurchaseClicked);
+				purchaseButton.gameObject.SetActive(false);
 			}
 			if (Time.frameCount != _lastPreparedFrame)
 			{
@@ -48,18 +47,9 @@ namespace Popups
 			}
 		}
 
-		private void OnPurchaseClicked()
-		{
-		}
-
 		private void OnCloseClicked()
 		{
 			Close();
-		}
-
-		private void OnProductsUpdated()
-		{
-			Prepare(null);
 		}
 
 		private void OnDisable()
@@ -67,10 +57,6 @@ namespace Popups
 			if (closeButton != null)
 			{
 				closeButton.OnClick.RemoveListener(OnCloseClicked);
-			}
-			if (purchaseButton != null)
-			{
-				purchaseButton.OnClick.RemoveListener(OnPurchaseClicked);
 			}
 		}
 	}

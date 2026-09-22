@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using IAP;
 using Shop;
 using UnityEngine;
 
@@ -15,7 +14,11 @@ namespace Menu.Page
 
 		public override void Prepare()
 		{
-			ReprepareWithSameSource();
+			if (sections == null) return;
+			foreach (ShopSection section in sections)
+			{
+				if (section != null) section.gameObject.SetActive(false);
+			}
 		}
 
 		private void ReprepareWithSameSource()
@@ -24,28 +27,9 @@ namespace Menu.Page
 			{
 				return;
 			}
-			int visibleCount = 0;
 			foreach (ShopSection section in sections)
 			{
-				if (section != null && section.ShouldShowSection())
-				{
-					visibleCount++;
-				}
-			}
-			foreach (ShopSection section in sections)
-			{
-				if (section == null)
-				{
-					continue;
-				}
-				bool shouldShow = section.ShouldShowSection();
-				section.gameObject.SetActive(shouldShow);
-				if (!shouldShow)
-				{
-					continue;
-				}
-				section.Init(IAPSource.ShopPage, ReprepareWithSameSource);
-				section.SetHeaderActive(visibleCount > 1);
+				if (section != null) section.gameObject.SetActive(false);
 			}
 		}
 	}

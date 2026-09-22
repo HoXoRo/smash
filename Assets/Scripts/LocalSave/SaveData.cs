@@ -1,7 +1,6 @@
 using System;
 using ABTesting;
 using Gameplay.GameplayTutorial;
-using IAP.Persisted;
 using Newtonsoft.Json;
 
 namespace LocalSave
@@ -46,9 +45,6 @@ namespace LocalSave
 		private readonly SaveItem<int> _tryCount = new SaveItem<int>(0, SaveBehaviour.SaveAtFrameEnd);
 
 		[JsonIgnore]
-		private readonly SaveItem<bool> _hasNoAds = new SaveItem<bool>(false, SaveBehaviour.SaveAtFrameEnd);
-
-		[JsonIgnore]
 		private readonly SaveItem<int> _installDay = new SaveItem<int>(-1, SaveBehaviour.SaveAtFrameEnd);
 
 		[JsonIgnore]
@@ -65,9 +61,6 @@ namespace LocalSave
 
 		[JsonIgnore]
 		private readonly SaveItem<PersistedABEntries> _abEntries = new SaveItem<PersistedABEntries>(PersistedABEntries.GetDefault(), SaveBehaviour.SaveNow);
-
-		[JsonIgnore]
-		private readonly SaveItem<PersistedPurchases> _purchases = new SaveItem<PersistedPurchases>(PersistedPurchases.GetDefault(), SaveBehaviour.SaveAtFrameEnd);
 
 		[JsonIgnore]
 		private readonly SaveItem<int> _streakCount = new SaveItem<int>(0, SaveBehaviour.SaveAtFrameEnd);
@@ -180,13 +173,6 @@ namespace LocalSave
 			set => _tryCount.Value = value;
 		}
 
-		[JsonProperty("has_no_ads")]
-		public bool HasNoAds
-		{
-			get => _hasNoAds.Value;
-			set => _hasNoAds.Value = value;
-		}
-
 		[JsonProperty("install_day")]
 		public int InstallDay
 		{
@@ -227,13 +213,6 @@ namespace LocalSave
 		{
 			get => _abEntries.Value;
 			set => _abEntries.Value = value;
-		}
-
-		[JsonProperty("purchases")]
-		public PersistedPurchases Purchases
-		{
-			get => _purchases.Value;
-			set => _purchases.Value = value;
 		}
 
 		[JsonProperty("streak_count")]

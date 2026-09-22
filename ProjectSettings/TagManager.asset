@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - Ball
+  - Ground
+  - Object
+  - Tabletop
+  - Blocker
   layers:
   - Default
   - TransparentFX
@@ -12,15 +17,15 @@ TagManager:
   - WorldUI
   - Water
   - UI
-  - Player
-  - Bg
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - ObjectCollider
+  - Table
+  - Graound
+  - ParticleObject
+  - BreakableCollider
+  - BreakableTrigger
+  - Ball
+  - GroundHitParticleObject
+  - Obstacle
   - 
   - 
   - 

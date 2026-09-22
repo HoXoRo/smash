@@ -9,8 +9,6 @@ namespace Segmentation
 
 		private const string AdToken = "ADROAS";
 
-		private const string IapToken = "IAPROAS";
-
 		public static UserSegment GetSegment()
 		{
 			return GetPersistedSegment();
@@ -54,10 +52,6 @@ namespace Segmentation
 			if (Contains(campaign, BlendedToken))
 			{
 				return UserSegment.BlendedUser;
-			}
-			if (Contains(campaign, IapToken))
-			{
-				return UserSegment.IAPUser;
 			}
 			return Contains(campaign, AdToken) ? UserSegment.AdUser : UserSegment.Default;
 		}

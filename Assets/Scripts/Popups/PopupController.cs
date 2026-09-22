@@ -17,25 +17,10 @@ namespace Popups
 		private BasePopup egoPopup;
 
 		[SerializeField]
-		private BasePopup purchaseSuccessPopup;
-
-		[SerializeField]
-		private BasePopup purchaseFailedPopup;
-
-		[SerializeField]
-		private BasePopup purchaseCancelledPopup;
-
-		[SerializeField]
 		private BasePopup moreLivesPopup;
 
 		[SerializeField]
 		private BasePopup levelExitPopup;
-
-		[SerializeField]
-		private BasePopup shopPopup;
-
-		[SerializeField]
-		private BasePopup noAdsPopup;
 
 		[SerializeField]
 		private BasePopup prelevelPopup;
@@ -82,12 +67,6 @@ namespace Popups
 
 		public void Open(PopupType type, Dictionary<string, object> openParameters = null)
 		{
-			if (type == PopupType.Shop || type == PopupType.NoAds ||
-				type == PopupType.PurchaseSuccess || type == PopupType.PurchaseFailed || type == PopupType.PurchaseCancelled)
-			{
-				return;
-			}
-
 			PruneInactivePopups();
 
 			if (_isOpeningPopup || _isAnyPopupOpening)
@@ -232,13 +211,8 @@ namespace Popups
 			{
 				PopupType.Win => winPopup,
 				PopupType.Ego => egoPopup,
-				PopupType.PurchaseSuccess => purchaseSuccessPopup,
-				PopupType.PurchaseFailed => purchaseFailedPopup,
 				PopupType.MoreLives => moreLivesPopup,
-				PopupType.PurchaseCancelled => purchaseCancelledPopup,
 				PopupType.LevelExit => levelExitPopup,
-				PopupType.Shop => shopPopup,
-				PopupType.NoAds => noAdsPopup,
 				PopupType.Prelevel => prelevelPopup,
 				PopupType.PrelevelBoosterBuy => prelevelBoosterBuyPopup,
 				_ => null
@@ -249,13 +223,8 @@ namespace Popups
 		{
 			yield return winPopup;
 			yield return egoPopup;
-			yield return purchaseSuccessPopup;
-			yield return purchaseFailedPopup;
-			yield return purchaseCancelledPopup;
 			yield return moreLivesPopup;
 			yield return levelExitPopup;
-			yield return shopPopup;
-			yield return noAdsPopup;
 			yield return prelevelPopup;
 			yield return prelevelBoosterBuyPopup;
 		}

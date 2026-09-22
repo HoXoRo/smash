@@ -14,6 +14,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://E:/unityPro/smash/Assets/StompyRobot/SRDebugger/Scripts/Editor/SRInternalEditorUtil.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/unityPro/smash/Assets/StompyRobot/SRDebugger/Scripts/SRDebug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://E:/unityPro/smash/Assets/StompyRobot/SRDebugger/Scripts/UI/Other/PinnedUIRoot.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
@@ -22,23 +24,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000077438270858" />
-      <entry key="MS500" value="1.1189757112751086" />
-      <entry key="S2" value="1.9486869986616733" />
-      <entry key="S5" value="2.4788899404432017" />
-      <entry key="S10" value="2.718802973141937" />
-      <entry key="S30" value="2.901251680986065" />
-      <entry key="S60" value="2.954877138488039" />
-      <entry key="M2" value="3.1148972718933687" />
-      <entry key="M5" value="4.036468491233528" />
-      <entry key="M10" value="5.0889515072759215" />
-      <entry key="M15" value="5.945689697921363" />
-      <entry key="M30" value="9.583384909862321" />
-      <entry key="H1" value="16.859827181367784" />
-      <entry key="H2" value="24.865020141932533" />
-      <entry key="H4" value="30.925254174978956" />
-      <entry key="D1" value="37.487365287045634" />
-      <entry key="W1" value="38.77941689950652" />
+      <entry key="MS100" value="1.0010841931279686" />
+      <entry key="MS500" value="1.3127647595908531" />
+      <entry key="S2" value="2.2005024695478324" />
+      <entry key="S5" value="2.6239434448035395" />
+      <entry key="S10" value="2.800941153320828" />
+      <entry key="S30" value="2.9310175144332415" />
+      <entry key="S60" value="2.965171080165849" />
+      <entry key="M2" value="2.9905609280499084" />
+      <entry key="M5" value="3.94746132104147" />
+      <entry key="M10" value="7.860803789010241" />
+      <entry key="M15" value="11.939777842911052" />
+      <entry key="M30" value="22.50293035272654" />
+      <entry key="H1" value="37.85645781230389" />
+      <entry key="H2" value="55.561594394661924" />
+      <entry key="H4" value="70.77716173905574" />
+      <entry key="D1" value="89.37910752026816" />
+      <entry key="W1" value="93.31819888790974" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -60,34 +62,39 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9592714455368235" />
-      <entry key="MS500" value="1.109446094693006" />
-      <entry key="S2" value="1.9442551464922355" />
-      <entry key="S5" value="2.4766100208452815" />
-      <entry key="S10" value="2.7175493128039556" />
-      <entry key="S30" value="2.9008050850198526" />
-      <entry key="S60" value="2.954649618112426" />
-      <entry key="M2" value="3.114777071304238" />
-      <entry key="M5" value="4.036405513364875" />
-      <entry key="M10" value="5.0889114993074465" />
-      <entry key="M15" value="5.945658357474797" />
-      <entry key="M30" value="9.583359183788378" />
-      <entry key="H1" value="16.859804194160855" />
-      <entry key="H2" value="24.86500306420111" />
-      <entry key="H4" value="30.925243519647086" />
-      <entry key="D1" value="37.48736312888968" />
-      <entry key="W1" value="38.77941658044164" />
+      <entry key="MS100" value="0.9669763523218331" />
+      <entry key="MS500" value="1.3031875273144806" />
+      <entry key="S2" value="2.1961079824724195" />
+      <entry key="S5" value="2.621796243848007" />
+      <entry key="S10" value="2.7997857406722324" />
+      <entry key="S30" value="2.9306122916065687" />
+      <entry key="S60" value="2.964965829090833" />
+      <entry key="M2" value="2.990457361594692" />
+      <entry key="M5" value="3.9474069969292347" />
+      <entry key="M10" value="7.860750241242864" />
+      <entry key="M15" value="11.93972366945378" />
+      <entry key="M30" value="22.502878805553756" />
+      <entry key="H1" value="37.85641344011894" />
+      <entry key="H2" value="55.56156101479737" />
+      <entry key="H4" value="70.77714011968826" />
+      <entry key="D1" value="89.37910289763356" />
+      <entry key="W1" value="93.31819819647704" />
     </decayedShown>
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;unity.profiler.toolWindow.autoShown&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "ml.llm.LLMThirdPartyAiProvidersConfigurable",
+    "unity.profiler.toolWindow.autoShown": "true"
   }
-}</component>
+}]]></component>
   <component name="TaskManager">
     <servers />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
 </project>

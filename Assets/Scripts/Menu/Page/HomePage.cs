@@ -35,11 +35,6 @@ namespace Menu.Page
 
 		private void Start()
 		{
-			if (noAdsButton != null)
-			{
-				noAdsButton.OnClick.RemoveListener(OnNoAdsClicked);
-				noAdsButton.OnClick.AddListener(OnNoAdsClicked);
-			}
 			OnNoAdsUpdated();
 		}
 
@@ -87,11 +82,6 @@ namespace Menu.Page
 			{
 				selectedButton.gameObject.SetActive(true);
 			}
-			OnNoAdsUpdated();
-		}
-
-		private void OnProductsUpdated()
-		{
 			OnNoAdsUpdated();
 		}
 
@@ -199,10 +189,6 @@ namespace Menu.Page
 			}
 		}
 
-		private void OnNoAdsClicked()
-		{
-		}
-
 		private void OnNoAdsUpdated()
 		{
 			if (noAdsButton != null)
@@ -222,10 +208,6 @@ namespace Menu.Page
 						x.OnClick.RemoveListener(OnPlayClicked);
 					}
 				});
-			}
-			if (noAdsButton != null)
-			{
-				noAdsButton.OnClick.RemoveListener(OnNoAdsClicked);
 			}
 		}
 	}

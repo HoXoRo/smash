@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "defaults": {
+    "inter_enabled": "true",
+    "bundles_enabled": "false",
+    "inter_frequency": "120",
+    "inter_on_every_try": "false",
+    "rewarded_more_lives_enabled": "true",
+    "level_collection": "prod-14",
+    "bidfloor_enabled": "false"
+  },
+  "overrides": [
+    {
+      "countries": [
+        "all"
+      ],
+      "segments": [
+        "IAPUser"
+      ],
+      "values": {
+        "bundles_enabled": "true",
+        "inter_enabled": "false",
+        "rewarded_more_lives_enabled": "false"
+      }
+    },
+    {
+      "countries": [
+        "DK"
+      ],
+      "segments": [
+        "all"
+      ],
+      "values": {
+        "bidfloor_enabled": "true"
+      }
+    }
+  ],
+  "experiments": []
+}

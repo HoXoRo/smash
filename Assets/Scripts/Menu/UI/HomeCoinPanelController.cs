@@ -1,4 +1,3 @@
-using Service;
 using UnityEngine;
 
 namespace Menu.UI
@@ -14,10 +13,6 @@ namespace Menu.UI
 			{
 				button.Interactable = false;
 			}
-		}
-
-		private void OnButtonClick()
-		{
 		}
 	}
 }

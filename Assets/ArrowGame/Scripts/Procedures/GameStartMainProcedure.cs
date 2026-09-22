@@ -1,4 +1,6 @@
-﻿using GameFramework;
+using Cysharp.Threading.Tasks;
+using UnityEngine.SceneManagement;
+using GameFramework;
 using GameFramework.Event;
 using GameFramework.Fsm;
 using GameFramework.Procedure;
@@ -8,6 +10,7 @@ using UnityGameFramework.Runtime;
 public class GameStartMainProcedure : ProcedureBase
 {
     int menuUIFormId = -1;
+    private bool _isLoadingGameplay;
 
     IFsm<IProcedureManager> procedure;
     protected override void OnInit(IFsm<IProcedureManager> procedureOwner)
@@ -41,6 +44,7 @@ public class GameStartMainProcedure : ProcedureBase
     }
     public void ShowLevel()
     {
+        if (_isLoadingGameplay) return;
         if (GF.Base.IsGamePaused)
         {
             GF.Base.ResumeGame();
@@ -49,50 +53,38 @@ public class GameStartMainProcedure : ProcedureBase
         GF.UI.CloseAllLoadedUIForms();
         GF.Entity.HideAllLoadingEntities();
         GF.Entity.HideAllLoadedEntities();
-
-
-
-        // 检查是否需要弹出签到
-        var playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
-        playerDm.RefreshNewDay();
-        playerDm.RefreshSignin();
-
-        // 处理归因信息并设置用户类型
-        CommonHelper.ApplySpecStatusUserType();
-        if (playerDm != null && playerDm.IsRecognition)
-        {
-            Log.Info($"===> 用户类型已识别过，跳过更新。当前类型: {(playerDm.UserType == 0 ? "自然量用户" : "非自然量用户")}");
-        }
-#if UNITY_EDITOR
-        // playerDm.LevelId = 1;
-        // playerDm.CompleteGuideIds.Clear();
-        // playerDm.ArrowAdvancedSkinId = 0;
-        // playerDm.CapsuleToysCondition = 20;
-#endif
-
-        GF.Sound.PlayBGM("bgm/bgm.mp3");
-        GF.Event.FireNow(this, GFEventArgs.Create(GFEventType.AppOpenMenu));
-        if (playerDm.LastBubbleTime == "0")
-        {
-            playerDm.LastBubbleTime = TimerManager.Instance.GetCurrentTime().ToString();
-        }
-
-        // if (CommonHelper.IsSpec() && !GuideManager.Instance.IsGuideCompleted(0))
-        // {
-        //     StartGame();
-        // }
-        // else if (CommonHelper.IsSpec())
-        // {
-        //     //异步打开主菜单UI
-        //     menuUIFormId = GF.UI.OpenUIForm(UIViews.MahjongMenuUIForm);
-        // }
-        // else
-        // {
-        // GF.Sound.PlayBGM("flower/flowerBgm.mp3");
-        // GF.UI.OpenUIForm(UIViews.FlowerGameUIForm);
-        // }
-        ChangeState<ArrowMazeProcedure>(procedure);
+        LoadGameplayAsync().Forget();
     }
+
+    private async UniTask LoadGameplayAsync()
+    {
+        _isLoadingGameplay = true;
+        try
+        {
+            Time.timeScale = 1f;
+            GF.BuiltinView.SetLoadingProgress(0.9f);
+            // Keep the launch scene's framework services alive.
+            var operation = SceneManager.LoadSceneAsync("Gameplay", LoadSceneMode.Additive);
+            if (operation == null)
+            {
+                throw new System.InvalidOperationException("Unable to load Gameplay scene.");
+            }
+            await operation;
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Gameplay"));
+            await UniTask.Yield(PlayerLoopTiming.LastPostLateUpdate);
+            GF.BuiltinView.SetLoadingProgress(1f);
+            GF.BuiltinView.HideLoadingProgress();
+        }
+        catch (System.Exception exception)
+        {
+            Log.Error($"Failed to load Gameplay: {exception}");
+        }
+        finally
+        {
+            _isLoadingGameplay = false;
+        }
+    }
+
     public void ToHome()
     {
         // GF.UI.OpenUIForm(UIViews.MahjongGameTransitionUIForm);

@@ -9,7 +9,7 @@ namespace SRDebugger.Editor
 
     static class SRInternalEditorUtil
     {
-        // Path to this file from the root path
+        // Path to this script from the plugin root.
         private const string TestPath = "/Scripts/Editor/SRInternalEditorUtil.cs";
 
         private static GUIStyle _bgStyle;
@@ -24,7 +24,6 @@ namespace SRDebugger.Editor
         /// <returns></returns>
         public static string GetRootPath()
         {
-            // Locate this script so documentation files are not required.
             var potentialAssets = AssetDatabase.FindAssets("SRInternalEditorUtil t:MonoScript");
 
             foreach (var potentialAsset in potentialAssets)
@@ -38,7 +37,7 @@ namespace SRDebugger.Editor
                 }
             }
 
-            throw new Exception("Unable to find SRDebugger root path. Please ensure Scripts/Editor/SRInternalEditorUtil.cs exists and has been imported by Unity.");
+            throw new Exception("Unable to find SRDebugger root path. Please ensure Scripts/Editor/SRInternalEditorUtil.cs has been imported by Unity.");
         }
 
         /// <summary>

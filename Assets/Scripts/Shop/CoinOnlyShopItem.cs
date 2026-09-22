@@ -16,11 +16,6 @@ namespace Shop
 		protected override void Prepare()
 		{
 			base.Prepare();
-			if (ItemData?.Payload == null || ItemData.Payload.Count == 0)
-			{
-				return;
-			}
-			rewardAmountText.text = FormatAmount(ItemData.Payload[0].Amount);
 		}
 
 		private string FormatAmount(int number)

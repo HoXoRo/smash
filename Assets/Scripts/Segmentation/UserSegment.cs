@@ -4,7 +4,6 @@ namespace Segmentation
 	{
 		Default = 0,
 		AdUser = 1,
-		BlendedUser = 2,
-		IAPUser = 3
+		BlendedUser = 2
 	}
 }

@@ -1,9 +1,4 @@
-using System;
 using System.Collections.Generic;
-using ABTesting;
-using Gameplay;
-using IAP;
-using LocalSave;
 using UnityEngine;
 
 namespace Shop
@@ -18,21 +13,6 @@ namespace Shop
 
 		[SerializeField]
 		private GameObject header;
-
-		public void Init(IAPSource source, Action onPurchaseSuccess)
-		{
-			if (items == null)
-			{
-				return;
-			}
-			foreach (ShopItemBase item in items)
-			{
-				if (item != null)
-				{
-					item.Init(source, onPurchaseSuccess, null);
-				}
-			}
-		}
 
 		public bool ShouldShowSection()
 		{

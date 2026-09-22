@@ -42,6 +42,7 @@ namespace Scene
 
 		public static void LoadScene(SceneType nextScene, bool forceDisableLoading = false)
 		{
+			nextScene = ResolveAvailableScene(nextScene);
 			if (IsInLoading)
 			{
 				return;
@@ -69,6 +70,7 @@ namespace Scene
 
 		public static IEnumerator LoadingRoutine(SceneType currentScene, SceneType nextScene)
 		{
+			nextScene = ResolveAvailableScene(nextScene);
 			StopMusicSafely();
 			if (_loadingCanvas != null)
 			{
@@ -95,6 +97,11 @@ namespace Scene
 		private static bool ShouldShowLoading(SceneType currentScene, SceneType nextScene)
 		{
 			return nextScene == SceneType.Gameplay && currentScene != SceneType.Gameplay;
+		}
+
+		private static SceneType ResolveAvailableScene(SceneType scene)
+		{
+			return scene == SceneType.Menu ? SceneType.Gameplay : scene;
 		}
 
 		public static SceneType GetCurrentScene()

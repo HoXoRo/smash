@@ -33,7 +33,7 @@ MonoBehaviour:
   CompressImgMode: 2
   FontCroppingCharSetsOutput: Tools\FontMinify
   FontCroppingCharSetsFile: Tools\FontMinify\CharacterSetsBase.txt
-  ChatGPTKey: 
+  ChatGPTKey: sk-3e1be53d82de7c41d34e10ec0442d4fc8a3cb21f57d5245f0bfde95ecde30436
   ChatGPTRandomness: 0
   ChatGPTTimeout: 60
   LanguagesSupport: 0e00000024000000250000002d00000012000000270000001b000000

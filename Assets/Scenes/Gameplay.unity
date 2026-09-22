@@ -216859,7 +216859,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa11a9f83a3efb599b5cddb10678e3d, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  iapType: 8
   purchaseButton: {fileID: 3402}
   priceText: {fileID: 3175}
   bundleNameText: {fileID: 3062}
@@ -216893,7 +216892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc935a3a41b42ed015ce8984e98ef018, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  iapType: 3
   purchaseButton: {fileID: 3881}
   priceText: {fileID: 3137}
   rewardIcon: {fileID: 3544}
@@ -217295,7 +217293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc935a3a41b42ed015ce8984e98ef018, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  iapType: 2
   purchaseButton: {fileID: 3887}
   priceText: {fileID: 3140}
   rewardIcon: {fileID: 3517}
@@ -219085,7 +219082,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa11a9f83a3efb599b5cddb10678e3d, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  iapType: 11
   purchaseButton: {fileID: 3803}
   priceText: {fileID: 3155}
   bundleNameText: {fileID: 3170}
@@ -220278,7 +220274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa11a9f83a3efb599b5cddb10678e3d, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  iapType: 7
   purchaseButton: {fileID: 3627}
   priceText: {fileID: 3165}
   bundleNameText: {fileID: 3092}
@@ -230358,7 +230353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc935a3a41b42ed015ce8984e98ef018, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  iapType: 0
   purchaseButton: {fileID: 3443}
   priceText: {fileID: 3113}
   rewardIcon: {fileID: 3794}
@@ -230993,7 +230987,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc935a3a41b42ed015ce8984e98ef018, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  iapType: 1
   purchaseButton: {fileID: 3460}
   priceText: {fileID: 3124}
   rewardIcon: {fileID: 3779}
@@ -231639,7 +231632,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc935a3a41b42ed015ce8984e98ef018, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  iapType: 4
   purchaseButton: {fileID: 3373}
   priceText: {fileID: 3098}
   rewardIcon: {fileID: 3755}
@@ -233878,7 +233870,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc935a3a41b42ed015ce8984e98ef018, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  iapType: 5
   purchaseButton: {fileID: 3344}
   priceText: {fileID: 3093}
   rewardIcon: {fileID: 3689}
@@ -234122,7 +234113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa11a9f83a3efb599b5cddb10678e3d, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  iapType: 10
   purchaseButton: {fileID: 3906}
   priceText: {fileID: 3065}
   bundleNameText: {fileID: 3180}
@@ -235192,7 +235182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa11a9f83a3efb599b5cddb10678e3d, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  iapType: 9
   purchaseButton: {fileID: 3964}
   priceText: {fileID: 3077}
   bundleNameText: {fileID: 3192}

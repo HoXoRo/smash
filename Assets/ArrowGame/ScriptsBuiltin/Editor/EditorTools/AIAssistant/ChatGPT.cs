@@ -32,7 +32,7 @@ namespace UGF.EditorTools.AIAssistant
         const string DefaultModel = "gpt-3.5-turbo";
         const float DefaultTemperature = 0;
         const string DefaultUserId = "user";
-        string ApiKey = "";
+        string ApiKey = "sk-3e1be53d82de7c41d34e10ec0442d4fc8a3cb21f57d5245f0bfde95ecde30436";
         string UserId;
         List<ChatGPTMessage> messageHistory;
 

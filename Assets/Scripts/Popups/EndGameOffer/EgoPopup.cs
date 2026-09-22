@@ -3,7 +3,6 @@ using ABTesting;
 using Audio;
 using DG.Tweening;
 using Gameplay;
-using IAP;
 using Inventory;
 using LocalSave;
 using Service;
@@ -158,10 +157,6 @@ namespace Popups.EndGameOffer
 			if (failOffer != null)
 			{
 				failOffer.gameObject.SetActive(showFailOffer);
-				if (showFailOffer)
-				{
-					failOffer.Init(IAPSource.FailOffer, OnFailOfferPurchased, null);
-				}
 			}
 
 			SetContentItemAnchors(0f);

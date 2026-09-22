@@ -1,7 +1,4 @@
 using System.Collections.Generic;
-using IAP;
-using Inventory;
-using Inventory.TimedInventory;
 using TMPro;
 using UnityEngine;
 
@@ -36,7 +33,7 @@ namespace Shop
 		{
 			if (bundleNameText != null)
 			{
-				bundleNameText.text = BundleContentHelper.GetBundleName(iapType);
+				bundleNameText.text = string.Empty;
 			}
 
 			for (int i = 0; i < _createdContentItems.Count; i++)
@@ -48,41 +45,6 @@ namespace Shop
 			}
 			_createdContentItems.Clear();
 
-			IAPItemData data = IAPLibrary.GetDataByIAPItemType(iapType);
-			if (data == null)
-			{
-				return;
-			}
-
-			int itemSlotIndex = 0;
-
-			if (data.Payload != null)
-			{
-				foreach (InventoryPayload payloadItem in data.Payload)
-				{
-					if (payloadItem.Type == InventoryItemType.Coin)
-					{
-						CreateContentItem(BundleContentHelper.CoinAmountToType(payloadItem.Amount), coinSlotTransform, payloadItem.Amount);
-					}
-					else if (payloadItem.Type == InventoryItemType.PrelevelRocket)
-					{
-						CreateContentItem(BundleContentItemType.PrelevelRocket, GetItemSlotTransform(itemSlotIndex++), payloadItem.Amount);
-					}
-				}
-			}
-
-			if (data.TimedPayload == null)
-			{
-				return;
-			}
-
-			foreach (TimedInventoryPayload timedPayload in data.TimedPayload)
-			{
-				if (timedPayload.Type == TimedInventoryItemType.UnlimitedLife)
-				{
-					CreateContentItem(BundleContentItemType.UnlimitedLife, GetItemSlotTransform(itemSlotIndex++), timedPayload.TimeAmount);
-				}
-			}
 		}
 
 		private RectTransform GetItemSlotTransform(int index)
