@@ -85,6 +85,12 @@ public static class RemoteTableManager
         return s_TableKinds.TryGetValue(tableName, out kind);
     }
 
+    public static bool IsExcludedDataTable(string tableName)
+    {
+        // All data tables currently registered in AppConfigs are eligible for remote export and sync.
+        return false;
+    }
+
     public static async UniTask SyncAsync(Action<float> onProgress = null)
     {
         if (!IsEnabled())
