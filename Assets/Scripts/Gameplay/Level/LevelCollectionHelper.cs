@@ -63,8 +63,7 @@ namespace Gameplay.Level
 					return File.ReadAllText(extractedPath);
 				}
 			}
-			TextAsset asset = Resources.Load<TextAsset>(string.Format("levels/{0}/Level{1}", collection, levelIndex));
-			return asset != null ? asset.text : null;
+			return LevelBundledAssetReader.ReadText(UtilityBuiltin.AssetsPath.GetLevelJsonPath(collection, levelIndex));
 		}
 
 		public static string GetExtractedCollectionPath(string collection)
@@ -96,8 +95,10 @@ namespace Gameplay.Level
 					return JsonConvert.DeserializeObject<LevelCollectionMetaData>(File.ReadAllText(extractedPath));
 				}
 			}
-			TextAsset asset = Resources.Load<TextAsset>(string.Format("levels/{0}/metadata", collection));
-			return asset != null ? JsonConvert.DeserializeObject<LevelCollectionMetaData>(asset.text) : null;
+			string metadataJson = LevelBundledAssetReader.ReadText(UtilityBuiltin.AssetsPath.GetLevelMetadataPath(collection));
+			return !string.IsNullOrEmpty(metadataJson)
+				? JsonConvert.DeserializeObject<LevelCollectionMetaData>(metadataJson)
+				: null;
 		}
 	}
 }

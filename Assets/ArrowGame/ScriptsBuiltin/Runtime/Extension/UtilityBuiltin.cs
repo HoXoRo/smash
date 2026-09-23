@@ -173,6 +173,16 @@ public static class UtilityBuiltin
         {
             return Utility.Text.Format("Assets/ArrowGame/ScriptableAssets/{0}.asset", v);
         }
+
+        public static string GetLevelJsonPath(string collection, int levelIndex)
+        {
+            return Utility.Text.Format("Assets/ArrowGame/levels/{0}/Level{1}.json", collection, levelIndex);
+        }
+
+        public static string GetLevelMetadataPath(string collection)
+        {
+            return Utility.Text.Format("Assets/ArrowGame/levels/{0}/metadata.json", collection);
+        }
     }
     public class Json
     {

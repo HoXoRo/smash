@@ -824,7 +824,7 @@ namespace SmashFest.Editor
 		private static string GetLevelPath(string collection, int levelIndex)
 		{
 			string projectRoot = Directory.GetParent(Application.dataPath).FullName;
-			return Path.Combine(projectRoot, "Assets", "Resources", "levels", collection ?? string.Empty, "Level" + levelIndex + ".json");
+			return Path.Combine(projectRoot, "Assets", "ArrowGame", "levels", collection ?? string.Empty, "Level" + levelIndex + ".json");
 		}
 
 		private void SetStatus(string message, MessageType type)
