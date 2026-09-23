@@ -115,7 +115,6 @@ public class PlayerDataModel : DataModelStorageBase
     /// <summary>
     /// 箭头高级皮肤 ID，0 表示默认皮肤。持久化存储。
     /// </summary>
-    private int m_ArrowAdvancedSkinId;
 
     public string LastSigninTime
     {
@@ -189,20 +188,6 @@ public class PlayerDataModel : DataModelStorageBase
         }
     }
 
-    /// <summary>
-    /// 箭头高级皮肤 ID（持久化）。0=默认皮肤，非 0 时从 ArrowAdvancedSkinDatabase 取配置应用。
-    /// </summary>
-    public int ArrowAdvancedSkinId
-    {
-        get => m_ArrowAdvancedSkinId;
-        set
-        {
-            // if (m_ArrowAdvancedSkinId == value) return;
-            m_ArrowAdvancedSkinId = value;
-            Save(false);
-        }
-    }
-
     public int CollectCount
     {
         get => m_CollectCount;
@@ -239,10 +224,7 @@ public class PlayerDataModel : DataModelStorageBase
         get => m_LevelId;
         set
         {
-            var lvTb = GF.DataTable.GetDataTable<ArrowLevelTable>();
-            int nextLvId = Const.RepeatLevel ? value : Mathf.Clamp(value, lvTb.MinIdDataRow.Id, lvTb.MaxIdDataRow.Id);
-            SetData(PlayerDataType.LevelId, nextLvId);
-            // SetData(PlayerDataType.LevelId, value);
+            SetData(PlayerDataType.LevelId, Mathf.Max(1, value));
         }
     }
     public int InterstitialTimes
@@ -359,7 +341,6 @@ public class PlayerDataModel : DataModelStorageBase
         m_RewardArrowEliminateCount = 0;
         m_UseColorfulArrows = false;
         m_IsNightMode = false;
-        m_ArrowAdvancedSkinId = 0;
     }
 
     public int GetLevelStarRecord(int levelId)

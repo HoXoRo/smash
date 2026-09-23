@@ -9,8 +9,6 @@ using UnityGameFramework.Runtime;
 
 public static class RemoteTableManager
 {
-    public const string ExcludedDataTableName = "ArrowLevelTable";
-
     private static readonly HashSet<string> s_SyncTableNames = new HashSet<string>(StringComparer.Ordinal);
     private static readonly Dictionary<string, RemoteTableKind> s_TableKinds = new Dictionary<string, RemoteTableKind>(StringComparer.Ordinal);
     private static bool s_Initialized;
@@ -37,11 +35,6 @@ public static class RemoteTableManager
         {
             foreach (string dataTableName in appConfigs.DataTables)
             {
-                if (IsExcludedDataTable(dataTableName))
-                {
-                    continue;
-                }
-
                 RegisterTable(dataTableName, RemoteTableKind.DataTable);
             }
         }
@@ -90,18 +83,6 @@ public static class RemoteTableManager
     public static bool TryGetTableKind(string tableName, out RemoteTableKind kind)
     {
         return s_TableKinds.TryGetValue(tableName, out kind);
-    }
-
-    public static bool IsExcludedDataTable(string tableName)
-    {
-        if (string.IsNullOrWhiteSpace(tableName))
-        {
-            return false;
-        }
-
-        string fileName = System.IO.Path.GetFileName(tableName);
-        return string.Equals(fileName, ExcludedDataTableName, StringComparison.Ordinal)
-            || string.Equals(tableName, ExcludedDataTableName, StringComparison.Ordinal);
     }
 
     public static async UniTask SyncAsync(Action<float> onProgress = null)

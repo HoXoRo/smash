@@ -4,9 +4,6 @@
 #endif
 public enum UIViews : int
 {
-	ArrowMazeUIForm = 1,
-	ArrowMazeWinUIForm = 2,
-	ArrowMazeOverUIForm = 3,
 	ArrowUITopbar = 4,
 	ArrowSettingDialog = 5,
 	LanguagesDialog = 6,

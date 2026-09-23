@@ -3,9 +3,6 @@
 #	int		int	string	bool	int	bool
 #		备注	显示顺序,相对于Group,每个Group间隔100		同组界面被覆盖时是否隐藏	UI组Id	返回键触发关闭界面
 #	主界面(顶层)						
-	1	ArrowMazeUIForm	1	ArrowMazeUIForm	True	1	False
-	2	ArrowMazeWinUIForm	1	ArrowMazeWinUIForm	False	2	False
-	3	ArrowMazeOverUIForm	2	ArrowMazeOverUIForm	False	2	False
 	4	顶部资源栏	2	ArrowUITopbar	False	1	False
 #	对话框(中层)						
 	5	设置	3	ArrowSettingDialog	True	2	True

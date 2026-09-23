@@ -14,14 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LoadFromBytes: 1
   mDataTables:
-  - ArrowBubbleRewardTable
-  - ArrowComboRewardTable
   - ArrowGuideTable
-  - ArrowLevelProgress
-  - ArrowLevelTable
   - ArrowLocalizationMoney
-  - ArrowNormalRewardTable
-  - ArrowWinRewardTable
   - Core/ArrowLanguagesTable
   - Core/ArrowSoundGroupTable
   - Core/ArrowUIGroupTable

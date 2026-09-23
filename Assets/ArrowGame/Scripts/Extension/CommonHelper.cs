@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using ArrowMaze;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
@@ -100,23 +99,6 @@ public static class CommonHelper
 
         Log.Info($"log_event: {eventName}");
         AdjustManager.Instance.LogEvent(eventName, eventValues);
-    }
-
-    public static void LogLevelCompleteEvents(int completedLinearLevel)
-    {
-        LogEvent(AdjustEventCodeEvent.level, new Dictionary<string, string> { { "level_id", completedLinearLevel.ToString() } });
-        
-        var mainLevel = ArrowLevelProgressUtility.GetStateFromLinearLevelId(completedLinearLevel).MainLevel;
-        if (mainLevel == 1 || mainLevel == 2
-            || mainLevel == 3 || mainLevel == 4 || mainLevel == 5
-            || mainLevel == 6 || mainLevel == 7
-            || mainLevel == 8 || mainLevel == 9
-            || mainLevel == 10 || mainLevel == 11
-            || mainLevel == 12 || mainLevel == 13
-            || mainLevel == 14 || mainLevel == 15)
-        {
-            LogEvent(AdjustEventCodeEvent.level_main,  new Dictionary<string, string> { { "level_id", completedLinearLevel.ToString() } });
-        }
     }
 
     /// <summary>
