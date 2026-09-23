@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/ArrowGame/Scene/ArrowLaunch.unity
     guid: 033522206bef69843832f6a27fc16ee7
   - enabled: 1
-    path: Assets/ArrowGame/Scene/ArrowMazeGameScene.unity
-    guid: 2f858cbf3183cc34da8f571105caa33a
-  - enabled: 1
     path: Assets/ArrowGame/Scene/Gameplay.unity
     guid: c7c326bdd039604478ecd8a866a6c58e
   m_configObjects: {}

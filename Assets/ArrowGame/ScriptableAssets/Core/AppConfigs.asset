@@ -39,6 +39,5 @@ MonoBehaviour:
   - Russian
   - Spanish
   mProcedures:
-  - ArrowMazeProcedure
   - GameStartMainProcedure
   - GameStartPreloadProcedure

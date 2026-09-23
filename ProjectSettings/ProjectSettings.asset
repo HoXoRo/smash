@@ -809,7 +809,7 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   webWasm2023: 0
   scriptingDefineSymbols:
-    Android: AMPLIFY_SHADER_EDITOR;DOTWEEN;DISABLE_HYBRIDCLR;ENABLE_OBFUZ
+    Android: AMPLIFY_SHADER_EDITOR;DOTWEEN;DISABLE_HYBRIDCLR;ENABLE_OBFUZ;ENABLE_LOG
     EmbeddedLinux: DOTWEEN
     GameCoreScarlett: DOTWEEN
     GameCoreXboxOne: DOTWEEN
@@ -819,12 +819,12 @@ PlayerSettings:
     PS5: DOTWEEN
     QNX: DOTWEEN
     Stadia: DOTWEEN
-    Standalone: AMPLIFY_SHADER_EDITOR;DOTWEEN;DISABLE_HYBRIDCLR;ENABLE_OBFUZ
+    Standalone: AMPLIFY_SHADER_EDITOR;DOTWEEN;DISABLE_HYBRIDCLR;ENABLE_OBFUZ;ENABLE_LOG
     VisionOS: DOTWEEN
-    WebGL: AMPLIFY_SHADER_EDITOR;DOTWEEN;DISABLE_HYBRIDCLR
-    Windows Store Apps: DOTWEEN
+    WebGL: AMPLIFY_SHADER_EDITOR;DOTWEEN;DISABLE_HYBRIDCLR;ENABLE_LOG
+    Windows Store Apps: DOTWEEN;ENABLE_LOG
     XboxOne: DOTWEEN
-    iPhone: DOTWEEN;DISABLE_HYBRIDCLR;tenjin_applovin_enabled
+    iPhone: DOTWEEN;DISABLE_HYBRIDCLR;tenjin_applovin_enabled;ENABLE_LOG
     tvOS: DOTWEEN
   additionalCompilerArguments: {}
   platformArchitecture: {}
