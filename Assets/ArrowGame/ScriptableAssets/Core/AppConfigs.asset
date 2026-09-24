@@ -16,6 +16,7 @@ MonoBehaviour:
   mDataTables:
   - ArrowGuideTable
   - ArrowLocalizationMoney
+  - TaskReward
   - Core/ArrowLanguagesTable
   - Core/ArrowSoundGroupTable
   - Core/ArrowUIGroupTable

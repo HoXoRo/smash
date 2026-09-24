@@ -4,4 +4,5 @@
 #		备注		每个组的起始Order,用于控制显示顺序
 	1	全屏界面	UIForm	1
 	2	对话框	Dialog	200
+	3	提现	Makeup	300
 	4	提示	Tips	500
