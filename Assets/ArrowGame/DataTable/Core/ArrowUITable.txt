@@ -3,14 +3,20 @@
 #	int		int	string	bool	int	bool
 #		备注	显示顺序,相对于Group,每个Group间隔100		同组界面被覆盖时是否隐藏	UI组Id	返回键触发关闭界面
 #	主界面(顶层)						
+	1	ArrowMazeUIForm	1	ArrowMazeUIForm	True	1	False
+	2	ArrowMazeWinUIForm	1	ArrowMazeWinUIForm	False	2	False
+	3	ArrowMazeOverUIForm	2	ArrowMazeOverUIForm	False	2	False
 	4	顶部资源栏	2	ArrowUITopbar	False	1	False
+	5	大厅tab	2	HallTabUIForm	False	1	False
+	6	大厅主界面	1	HomePageUIForm	False	1	False
+	7	设置界面	1	SettingPageUIForm	False	1	False
+	8	任务界面	1	TaskPageUIForm	False	1	False
 #	对话框(中层)						
-	5	设置	3	ArrowSettingDialog	True	2	True
-	6	语言设置	2	LanguagesDialog	False	2	True
+	9	设置	3	ArrowSettingDialog	True	2	True
+	10	语言设置	2	LanguagesDialog	False	2	True
 #	提示(顶层)						
-	7	吐司提示	1	ArrowToastTips	False	4	False
-	8	奖励弹窗	10	ArrowRewardDialogUIForm	False	2	False
-	12	PrivacyPolicy隐私协议	20	ArrowPrivacyPolicyUIForm	False	2	False
-	13	GuideUIForm	2	ArrowGuideUIForm	False	4	False
-	17	扭蛋奖励界面	12	ArrowCapsuleToysUIForm	False	2	False
-	20	奖励领取界面	13	ArrowRewardUIForm	False	2	False
+	11	吐司提示	1	ArrowToastTips	False	4	False
+	12	奖励弹窗	10	ArrowRewardDialogUIForm	False	2	False
+	13	PrivacyPolicy隐私协议	20	ArrowPrivacyPolicyUIForm	False	2	False
+	14	GuideUIForm	2	ArrowGuideUIForm	False	4	False
+	15	奖励领取界面	13	ArrowRewardUIForm	False	2	False

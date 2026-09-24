@@ -15,7 +15,7 @@ MonoBehaviour:
   DebugMode: 0
   ResourceMode: 1
   DesignResolution: {x: 1080, y: 1920}
-  EnableRemoteTableSync: 1
+  EnableRemoteTableSync: 0
   RemoteTableBaseUrl: https://xpxy.oss-us-west-1.aliyuncs.com/arrowMeadow/android/
   RemoteTableSyncTimeoutSeconds: 20
   EnableRemoteTableEncryption: 1

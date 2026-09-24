@@ -1,16 +1,11 @@
-using Cysharp.Threading.Tasks;
-using UnityEngine.SceneManagement;
 using GameFramework;
 using GameFramework.Event;
 using GameFramework.Fsm;
 using GameFramework.Procedure;
-using UnityEngine;
-using UnityGameFramework.Runtime;
 [Obfuz.ObfuzIgnore(Obfuz.ObfuzScope.TypeName)]
 public class GameStartMainProcedure : ProcedureBase
 {
     int menuUIFormId = -1;
-    private bool _isLoadingGameplay;
 
     IFsm<IProcedureManager> procedure;
     protected override void OnInit(IFsm<IProcedureManager> procedureOwner)
@@ -21,7 +16,7 @@ public class GameStartMainProcedure : ProcedureBase
     {
         base.OnEnter(procedureOwner);
         procedure = procedureOwner;
-        ShowLevel();//加载关卡
+        ShowLevel();
         //var res = await GF.WebRequest.AddWebRequestAsync("https://blog.csdn.net/final5788");
         //Log.Info(Utility.Converter.GetString(res.Bytes));
     }
@@ -44,7 +39,6 @@ public class GameStartMainProcedure : ProcedureBase
     }
     public void ShowLevel()
     {
-        if (_isLoadingGameplay) return;
         if (GF.Base.IsGamePaused)
         {
             GF.Base.ResumeGame();
@@ -53,49 +47,14 @@ public class GameStartMainProcedure : ProcedureBase
         GF.UI.CloseAllLoadedUIForms();
         GF.Entity.HideAllLoadingEntities();
         GF.Entity.HideAllLoadedEntities();
-        LoadGameplayAsync().Forget();
-    }
-
-    private async UniTask LoadGameplayAsync()
-    {
-        _isLoadingGameplay = true;
-        try
-        {
-            Time.timeScale = 1f;
-            GF.BuiltinView.SetLoadingProgress(0.9f);
-            // Keep the launch scene's framework services alive.
-            var operation = SceneManager.LoadSceneAsync("Gameplay", LoadSceneMode.Additive);
-            if (operation == null)
-            {
-                throw new System.InvalidOperationException("Unable to load Gameplay scene.");
-            }
-            await operation;
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Gameplay"));
-            await UniTask.Yield(PlayerLoopTiming.LastPostLateUpdate);
-            GF.BuiltinView.SetLoadingProgress(1f);
-            GF.BuiltinView.HideLoadingProgress();
-        }
-        catch (System.Exception exception)
-        {
-            Log.Error($"Failed to load Gameplay: {exception}");
-        }
-        finally
-        {
-            _isLoadingGameplay = false;
-        }
+        GF.BuiltinView.SetLoadingProgress(1f);
+        GF.BuiltinView.HideLoadingProgress();
+        ToHome();
     }
 
     public void ToHome()
     {
-        // GF.UI.OpenUIForm(UIViews.MahjongGameTransitionUIForm);
-        // // 检查是否需要弹出签到
-        // var playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
-        // playerDm.RefreshNewDay();
-        // if (menuUIFormId == -1)
-        // {
-        //     //异步打开主菜单UI
-        //     menuUIFormId = GF.UI.OpenUIForm(UIViews.MahjongMenuUIForm);
-        // }
+        menuUIFormId = GF.UI.OpenUIForm(UIViews.HallTabUIForm);
     }
     public void StartGame(bool IsEdit = false, int levelId = -1)
     {

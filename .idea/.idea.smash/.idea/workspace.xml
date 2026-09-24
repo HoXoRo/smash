@@ -8,9 +8,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48c1c3b4-2b47-4b58-848e-c5dcf45a4647" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/HomePageUIForm.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/HomePageUIForm.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/SettingPageUIForm.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/SettingPageUIForm.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/TaskPageUIForm.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/TaskPageUIForm.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/ArrowCapsuleToysUIForm.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/ArrowCapsuleToysUIForm.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/DataTables/ArrowBubbleRewardTable.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/DataTables/ArrowComboRewardTable.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/DataTables/ArrowLevelProgress.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/DataTables/ArrowLevelTable.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/DataTables/ArrowNormalRewardTable.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/DataTables/ArrowWinRewardTable.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/DataTables/Core/ArrowUITable.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/DataTables/Core/ArrowUITable.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.bytes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.bytes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.bytes.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/ScriptableAssets/Core/AppConfigs.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/ScriptableAssets/Core/AppConfigs.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Procedures/GameStartMainProcedure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Procedures/GameStartMainProcedure.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Core/UIViews.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Core/UIViews.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/AppSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AppSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +42,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://E:/unityPro/smash/Assets/StompyRobot/SRDebugger/Scripts/Editor/SRInternalEditorUtil.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/StompyRobot/SRDebugger/Scripts/SRDebug.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/StompyRobot/SRDebugger/Scripts/UI/Other/PinnedUIRoot.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.code-philosophy.obfuz@25762369603f/Runtime/ObfuzIgnoreAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/Procedures/GameStartMainProcedure.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/UI/HallPageForm.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -34,92 +52,92 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.008315392050542" />
-      <entry key="MS500" value="1.386316338657926" />
-      <entry key="S2" value="2.1230438144517914" />
-      <entry key="S5" value="3.956716617201726" />
-      <entry key="S10" value="7.03228403558586" />
-      <entry key="S30" value="12.591711728213257" />
-      <entry key="S60" value="14.973187451377573" />
-      <entry key="M2" value="16.395240864553642" />
-      <entry key="M5" value="17.436307835293732" />
-      <entry key="M10" value="18.92630298094832" />
-      <entry key="M15" value="21.303593548162883" />
-      <entry key="M30" value="30.120912954645288" />
-      <entry key="H1" value="45.856304178373264" />
-      <entry key="H2" value="65.6814738155788" />
-      <entry key="H4" value="83.57160705945365" />
-      <entry key="D1" value="106.24914033379737" />
-      <entry key="W1" value="111.14875914795849" />
+      <entry key="MS100" value="1.0001290305225294" />
+      <entry key="MS500" value="1.166777897575729" />
+      <entry key="S2" value="1.6525941218703826" />
+      <entry key="S5" value="2.2213146728473756" />
+      <entry key="S10" value="3.157237078897094" />
+      <entry key="S30" value="5.1493960481414085" />
+      <entry key="S60" value="6.714342153196529" />
+      <entry key="M2" value="9.043991654076777" />
+      <entry key="M5" value="15.820726612682693" />
+      <entry key="M10" value="26.300814290239213" />
+      <entry key="M15" value="36.180763922613494" />
+      <entry key="M30" value="60.05334037663811" />
+      <entry key="H1" value="91.515019019469" />
+      <entry key="H2" value="127.16555749216795" />
+      <entry key="H4" value="159.40885309749893" />
+      <entry key="D1" value="201.88147018622067" />
+      <entry key="W1" value="211.34498455129116" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
+      <entry key="S2" value="2.911928975253727E-202" />
+      <entry key="S5" value="2.430369526916569E-81" />
+      <entry key="S10" value="4.929921087724492E-41" />
+      <entry key="S30" value="3.979700347439825E-14" />
+      <entry key="S60" value="3.651290868478722E-7" />
+      <entry key="M2" value="0.0017487929348348988" />
+      <entry key="M5" value="0.32493249583490275" />
+      <entry key="M10" value="1.8846905939710075" />
+      <entry key="M15" value="3.391143346401991" />
+      <entry key="M30" value="6.105703334320781" />
+      <entry key="H1" value="8.1946750521699" />
+      <entry key="H2" value="9.49410906976715" />
+      <entry key="H4" value="10.219307494395741" />
+      <entry key="D1" value="10.865854230795756" />
+      <entry key="W1" value="10.980735228294815" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9606146552761441" />
-      <entry key="MS500" value="1.373455639948924" />
-      <entry key="S2" value="2.1182176170814646" />
-      <entry key="S5" value="3.9532195468562765" />
-      <entry key="S10" value="7.02923900429148" />
-      <entry key="S30" value="12.58992115022201" />
-      <entry key="S60" value="14.972126666540106" />
-      <entry key="M2" value="16.394661122533474" />
-      <entry key="M5" value="17.436061508137996" />
-      <entry key="M10" value="18.926169634570403" />
-      <entry key="M15" value="21.303493860032226" />
-      <entry key="M30" value="30.120842832695843" />
-      <entry key="H1" value="45.856250347085435" />
-      <entry key="H2" value="65.68143457946728" />
-      <entry key="H4" value="83.57158173504791" />
-      <entry key="D1" value="106.24913488711647" />
-      <entry key="W1" value="111.14875833171263" />
+      <entry key="MS100" value="0.9331509036863344" />
+      <entry key="MS500" value="1.1500318811255141" />
+      <entry key="S2" value="1.645825397814527" />
+      <entry key="S5" value="2.214164434268392" />
+      <entry key="S10" value="3.1494957788757296" />
+      <entry key="S30" value="5.1445425575202295" />
+      <entry key="S60" value="6.7114143803689705" />
+      <entry key="M2" value="9.044054574767381" />
+      <entry key="M5" value="16.143065467602636" />
+      <entry key="M10" value="28.17967164820172" />
+      <entry key="M15" value="39.565056250637475" />
+      <entry key="M30" value="66.15289963955946" />
+      <entry key="H1" value="99.70554557853286" />
+      <entry key="H2" value="136.65724417553076" />
+      <entry key="H4" value="169.6268477181275" />
+      <entry key="D1" value="212.74708968836816" />
+      <entry key="W1" value="222.32568582698997" />
     </decayedShown>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3Jj71GETgQEQzRShRqiCxjHJyQg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "cidr.known.project.marker": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "ml.llm.LLMThirdPartyAiProvidersConfigurable",
-    "unity.profiler.toolWindow.autoShown": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AcpAgentsConfigurable&quot;,
+    &quot;unity.profiler.toolWindow.autoShown&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="附加到 Unity 编辑器.附加到 Unity 编辑器">
     <configuration name="启动 Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Program Files\Unity Editor\6000.0.66f2\Editor\Unity.exe" />
