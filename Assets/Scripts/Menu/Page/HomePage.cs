@@ -43,7 +43,7 @@ namespace Menu.Page
 			_isHandlingPlayClick = false;
 			_playClickLockedUntilRealtime = -1f;
 			_playButtonsPendingRestore = false;
-			int level = SaveService.Data != null ? SaveService.Data.Level : 1;
+			int level = GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId;
 			if (levelTexts != null)
 			{
 				levelTexts.ForEach(delegate(TextMeshProUGUI x)

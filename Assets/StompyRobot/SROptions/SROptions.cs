@@ -79,14 +79,12 @@ public partial class SROptions : INotifyPropertyChanged
 	[Category("Level")]
 	public int LevelIndex
 	{
-		get => SaveService.Data?.Level ?? 1;
+		get => GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId;
 		set
 		{
-			if (SaveService.Data == null)
-			{
-				return;
-			}
-			SaveService.Data.Level = Mathf.Max(1, value);
+			PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
+			playerData.LevelId = Mathf.Max(1, value);
+			playerData.Save();
 			OnPropertyChanged(nameof(LevelIndex));
 		}
 	}

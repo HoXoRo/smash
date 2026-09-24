@@ -45,7 +45,7 @@ namespace Gameplay
 
 		private const float BallHitSpeed = 90f;
 
-		private const float FirstHitBoomPower = 3f;
+		private const float FirstHitBoomPower = 1f;
 
 		private static float _ballRelativeVelocityThresholdSqr;
 

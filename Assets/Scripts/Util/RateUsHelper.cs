@@ -28,7 +28,7 @@ namespace Util
 
 		public static void TryShowRateUs()
 		{
-			int level = SaveService.Data.Level;
+			int level = GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId;
 			if (!ShouldShowRateUs(level))
 			{
 				return;

@@ -15,6 +15,19 @@ public partial class HomePageUIForm : UIFormBase
         varBtnPlay.onClick.AddListener(OnPlayClicked);
     }
 
+    protected override void OnOpen(object userData)
+    {
+        base.OnOpen(userData);
+        int currentLevel = GetCurrentLevel();
+        varLevelTxt.text = $"Level {currentLevel}";
+    }
+
+    static int GetCurrentLevel()
+    {
+        PlayerDataModel playerData = GF.DataModel.GetDataModel<PlayerDataModel>();
+        return Mathf.Max(1, playerData?.LevelId ?? 1);
+    }
+
     void OnPlayClicked()
     {
         GF.Sound.PlayEffect("ui/ui_click.mp3");

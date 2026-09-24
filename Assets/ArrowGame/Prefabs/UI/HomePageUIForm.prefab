@@ -105,12 +105,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73bbc105c4b4c8598f68ab43feb972e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fields: []
+  _fields:
+  - VarName: varLevelTxt
+    Targets:
+    - {fileID: 7140913532446809983}
+    VarType: TMPro.TextMeshProUGUI
+    VarPrefix: 0
+  - VarName: varBtnPlay
+    Targets:
+    - {fileID: 4816604163650394338}
+    VarType: UnityEngine.UI.Button
+    VarPrefix: 0
   m_UIAnimationType: 0
   m_OpenAnimation: {fileID: 0}
   m_CloseAnimation: {fileID: 0}
   m_OpenAnimationName: 
   m_CloseAnimationName: 
+  varLevelTxt: {fileID: 5527993816527891932}
   varBtnPlay: {fileID: 5413251832765325596}
 --- !u!1 &4816604163650394338
 GameObject:
@@ -245,7 +256,7 @@ GameObject:
   - component: {fileID: 5050695627664289075}
   - component: {fileID: 5527993816527891932}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: levelTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

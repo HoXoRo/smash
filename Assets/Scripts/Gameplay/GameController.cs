@@ -566,7 +566,7 @@ namespace Gameplay
 		private void Start()
 		{
 			_analyticsHelper = new GameplayAnalyticsHelper();
-			_levelIndex = SaveService.Data != null ? SaveService.Data.Level : 1;
+			_levelIndex = GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId;
 			_currentStageIndex = 0;
 			LoadLevel(_levelIndex);
 			_currentStage = LoadStage(_currentStageIndex);
@@ -1365,9 +1365,11 @@ namespace Gameplay
 			_analyticsHelper?.LevelWin(_remainingMoves, _currentStageIndex);
 			MenuController.IsAfterWin = true;
 			StreakHelper.OnLevelWon(_levelIndex, _activeStreakCount);
+			PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
+			playerData.LevelId = Mathf.Max(playerData.LevelId, _levelIndex + 1);
+			playerData.Save();
 			if (SaveService.Data != null)
 			{
-				SaveService.Data.Level = _levelIndex + 1;
 				SaveService.Save();
 			}
 			ServiceLocator.Get<LifeHelper>()?.AddLife(1);

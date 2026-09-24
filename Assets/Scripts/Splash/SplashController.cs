@@ -232,7 +232,7 @@ namespace Splash
 
 		private void LoadNextScene()
 		{
-			if (SaveService.Data != null && SaveService.Data.SessionId == 1 && SaveService.Data.Level == 1)
+			if (SaveService.Data != null && SaveService.Data.SessionId == 1 && GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId == 1)
 			{
 				SceneHandler.LoadScene(SceneType.Gameplay, true);
 				return;

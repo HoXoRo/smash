@@ -73,7 +73,7 @@ namespace Popups.PrelevelPopup
 		public void Prepare()
 		{
 			int unlockLevel = PrelevelBoosterHelper.GetUnlockLevelForType(type);
-			int currentLevel = SaveService.Data?.Level ?? 0;
+			int currentLevel = GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId;
 			bool unlocked = currentLevel >= unlockLevel;
 			_isFree = currentLevel == unlockLevel;
 			InventoryItemType itemType = PrelevelBoosterHelper.ToInventoryItemType(type);

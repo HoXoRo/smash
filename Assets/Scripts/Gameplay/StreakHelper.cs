@@ -33,7 +33,7 @@ namespace Gameplay
 
 		public static bool IsUnlocked()
 		{
-			return StreakEnabled && SaveService.Data.Level >= StreakUnlockLevel;
+			return StreakEnabled && GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId >= StreakUnlockLevel;
 		}
 
 		public static void OnLevelWon(int completedLevelIndex, int activeStreakCount)

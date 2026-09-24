@@ -26,7 +26,7 @@ namespace Popups.PrelevelPopup
 
 		public override void Prepare(Dictionary<string, object> openParameters)
 		{
-			int level = SaveService.Data != null ? SaveService.Data.Level : 1;
+			int level = GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId;
 			LevelData levelData = LevelLoader.GetLevel(level);
 			int contentIndex = levelData != null ? Mathf.Max(0, (int)levelData.difficulty) : 0;
 			int currentStreak = StreakHelper.GetStreakCount();
