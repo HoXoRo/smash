@@ -111,7 +111,7 @@ MonoBehaviour:
   m_CloseAnimation: {fileID: 0}
   m_OpenAnimationName: 
   m_CloseAnimationName: 
-  varBtnPlay: {fileID: 0}
+  varBtnPlay: {fileID: 5413251832765325596}
 --- !u!1 &4816604163650394338
 GameObject:
   m_ObjectHideFlags: 0

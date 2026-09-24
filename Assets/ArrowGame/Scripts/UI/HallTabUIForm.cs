@@ -70,6 +70,12 @@ public partial class HallTabUIForm : UIFormBase
         return GF.UI.OpenUIForm(view);
     }
 
+    public void CloseBeforeEnterGameplay()
+    {
+        CloseCurrentPage();
+        GF.UI.CloseUIForm(Id);
+    }
+
     void CloseCurrentPage()
     {
         if (_currentPageId == -1)

@@ -1,6 +1,5 @@
-﻿
+﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 #if ENABLE_OBFUZ
 [Obfuz.ObfuzIgnore(Obfuz.ObfuzScope.TypeName)]
 #endif
@@ -8,9 +7,52 @@ using UnityEngine.SceneManagement;
 
 public partial class HomePageUIForm : UIFormBase
 {
+    const string GameplaySceneName = "Gameplay";
+
     protected override void OnInit(object userData)
     {
         base.OnInit(userData);
+        varBtnPlay.onClick.AddListener(OnPlayClicked);
     }
-    
+
+    void OnPlayClicked()
+    {
+        GF.Sound.PlayEffect("ui/ui_click.mp3");
+        EnterGameplayAsync().Forget();
+    }
+
+    async UniTaskVoid EnterGameplayAsync()
+    {
+        string sceneAssetName = UtilityBuiltin.AssetsPath.GetScenePath(GameplaySceneName);
+        if (!await GF.Scene.LoadSceneAwait(sceneAssetName))
+        {
+            return;
+        }
+
+        CloseHallTabAfterGameplayLoaded();
+    }
+
+    static void CloseHallTabAfterGameplayLoaded()
+    {
+        string hallTabAsset = GF.UI.GetUIFormAssetName(UIViews.HallTabUIForm);
+        if (string.IsNullOrEmpty(hallTabAsset))
+        {
+            return;
+        }
+
+        var hallTabForms = GF.UI.GetUIForms(hallTabAsset);
+        if (hallTabForms == null)
+        {
+            return;
+        }
+
+        foreach (var uiForm in hallTabForms)
+        {
+            if (uiForm.Logic is HallTabUIForm hallTab)
+            {
+                hallTab.CloseBeforeEnterGameplay();
+                break;
+            }
+        }
+    }
 }
