@@ -102,6 +102,11 @@ public class PlayerDataModel : DataModelStorageBase
     [SerializeField] public List<int> CompleteGuideIds = new List<int>();
     [SerializeField] public string Language;
     [SerializeField] public string PlayerName;
+
+    /// <summary>
+    /// 提现账号（邮箱）。持久化存储。
+    /// </summary>
+    public string MakeupAccount;
     private int m_MahjongSkinId;
     private int m_MahjongBgSkinId;
     [SerializeField] public List<int> SkinUnLockedTileIds = new List<int>();
@@ -323,6 +328,7 @@ public class PlayerDataModel : DataModelStorageBase
         m_Pcard = 0f;
         m_Gems = 0;
         m_LevelId = 1;
+        MakeupAccount = string.Empty;
         LastSigninTime = string.Empty;
         SigninIndex = 0;
         m_LastBingoCardRecoverTime = UtilityBuiltin.GetTimeStamp();

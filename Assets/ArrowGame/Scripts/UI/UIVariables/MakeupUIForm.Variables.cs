@@ -13,4 +13,6 @@ public partial class MakeupUIForm
 	[SerializeField] private TextMeshProUGUI varTxtValue = null;
 	[SerializeField] private TextMeshProUGUI varTxtPcard = null;
 	[SerializeField] private TextMeshProUGUI varTxtGem = null;
+	[SerializeField] private Button varBtnInput = null;
+	[SerializeField] private TextMeshProUGUI varTxtAccount = null;
 }

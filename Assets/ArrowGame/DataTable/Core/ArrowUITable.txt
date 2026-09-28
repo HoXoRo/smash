@@ -21,3 +21,5 @@
 	14	GuideUIForm	2	ArrowGuideUIForm	False	4	False
 	15	奖励领取界面	13	ArrowRewardUIForm	False	2	False
 	16	提现界面	15	MakeupUIForm	False	2	False
+	17	提现方式界面	16	MakeupPaymentUIForm	False	2	False
+	18	提现信息界面	16	MakeupInfoUIForm	False	2	False

@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 8339168213847895754}
   - component: {fileID: 7651504457328024216}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BtnCashout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1175,8 +1175,14 @@ MonoBehaviour:
     - {fileID: 3766875814199236581}
     VarType: TMPro.TextMeshProUGUI
     VarPrefix: 0
+  - VarName: varBtnCashout
+    Targets:
+    - {fileID: 3126758039317811974}
+    VarType: UnityEngine.UI.Button
+    VarPrefix: 0
   varTxtReward: {fileID: 2196732991757895732}
   varTxtLv: {fileID: 2790890579446889119}
+  varBtnCashout: {fileID: 7651504457328024216}
 --- !u!114 &880100
 MonoBehaviour:
   m_ObjectHideFlags: 0

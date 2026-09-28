@@ -19,6 +19,8 @@ public partial class MakeupUIForm : UIFormBase
         base.OnInit(userData);
         if (varBtnClose != null)
             varBtnClose.onClick.AddListener(OnClickClose);
+        if (varBtnInput != null)
+            varBtnInput.onClick.AddListener(OnClickInput);
     }
 
     protected override void OnOpen(object userData)
@@ -26,6 +28,7 @@ public partial class MakeupUIForm : UIFormBase
         base.OnOpen(userData);
         RefreshGemText();
         RefreshPcardText();
+        RefreshAccountText();
         RefreshMakeupList();
         ResetMakeupScroll();
     }
@@ -34,6 +37,15 @@ public partial class MakeupUIForm : UIFormBase
     {
         makeupItems.Clear();
         base.OnClose(isShutdown, userData);
+    }
+
+    void OnClickInput()
+    {
+        if (GF.UI.HasUIForm(UIViews.MakeupInfoUIForm) || GF.UI.IsLoadingUIForm(UIViews.MakeupInfoUIForm))
+            return;
+
+        GF.Sound.PlayEffect("ui/ui_click.mp3");
+        GF.UI.OpenUIForm(UIViews.MakeupInfoUIForm);
     }
 
     void RefreshMakeupList()
@@ -106,5 +118,14 @@ public partial class MakeupUIForm : UIFormBase
 
         PlayerDataModel playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
         varTxtPcard.text = CommonHelper.GetDollarString(playerDm.Pcard);
+    }
+
+    public void RefreshAccountText()
+    {
+        if (varTxtAccount == null)
+            return;
+
+        PlayerDataModel playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        varTxtAccount.text = playerDm.MakeupAccount ?? string.Empty;
     }
 }
