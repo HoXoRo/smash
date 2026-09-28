@@ -24,6 +24,7 @@ public partial class ArrowUITopbar : UIFormBase
     public const string P_EnableSettingBtn = "EnableSettingBtn";
     public const string P_OnCloseAction = "P_OnCloseAction";
     public const string P_EnableLv = "P_EnableLv";
+    static bool s_ShowCoin = true;
     
     private Dictionary<PlayerDataType, float> pendingRewards = new Dictionary<PlayerDataType, float>();
     private Dictionary<PlayerDataType, Coroutine> numberRollCoroutines = new Dictionary<PlayerDataType, Coroutine>();
@@ -50,6 +51,7 @@ public partial class ArrowUITopbar : UIFormBase
         playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
         varTxtCoin.text = CommonHelper.FormatLargeNumber(playerDm.Coins.ToString(), 0);
         varTxtGem.text = CommonHelper.GetDollarString(playerDm.Dollars);
+        RefreshPcardText();
         varLvobj.SetActive(Params.Get<VarBoolean>(P_EnableLv, false));
         varLv.text = playerDm.LevelId.ToString();
 
@@ -69,6 +71,7 @@ public partial class ArrowUITopbar : UIFormBase
             m_TxtUpGemRestPos = varTxtUpGem.rectTransform.anchoredPosition;
             varTxtUpGem.gameObject.SetActive(false);
         }
+        ApplyCoinVisible(s_ShowCoin);
         //适配刘海屏
         // float safeArea = Mathf.Max(0, Screen.height - Screen.safeArea.yMax);
         // bool isLiuhai = safeArea != 0;
@@ -132,6 +135,73 @@ public partial class ArrowUITopbar : UIFormBase
         }
 
     }
+    public static void EnsureOpen()
+    {
+        if (GF.UI.HasUIForm(UIViews.ArrowUITopbar) || GF.UI.IsLoadingUIForm(UIViews.ArrowUITopbar))
+        {
+            return;
+        }
+
+        var uiParams = UIParams.Create();
+        uiParams.Set<VarBoolean>(P_EnableBG, true);
+        GF.UI.OpenUIForm(UIViews.ArrowUITopbar, uiParams);
+    }
+
+    public static void SetCoinVisible(bool visible)
+    {
+        s_ShowCoin = visible;
+        string assetName = GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbar);
+        if (string.IsNullOrEmpty(assetName))
+        {
+            return;
+        }
+
+        var forms = GF.UI.GetUIForms(assetName);
+        if (forms == null)
+        {
+            return;
+        }
+
+        foreach (var uiForm in forms)
+        {
+            if (uiForm.Logic is ArrowUITopbar topbar)
+            {
+                topbar.ApplyCoinVisible(visible);
+            }
+        }
+    }
+
+    void ApplyCoinVisible(bool visible)
+    {
+        if (varCoin != null)
+        {
+            varCoin.SetActive(visible);
+        }
+    }
+
+    void OpenMakeupUIForm()
+    {
+        if (GF.UI.HasUIForm(UIViews.MakeupUIForm) || GF.UI.IsLoadingUIForm(UIViews.MakeupUIForm))
+            return;
+
+        GF.UI.OpenUIForm(UIViews.MakeupUIForm);
+    }
+
+    void RefreshPcardText()
+    {
+        if (playerDm == null)
+            playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        RefreshPcardText(playerDm.Pcard);
+    }
+
+    void RefreshPcardText(float value)
+    {
+        if (varTxtPcard == null)
+            return;
+
+        varTxtPcard.text = CommonHelper.GetDollarString(value);
+    }
+
     private void OnUserTypeChange(object sender, GameEventArgs e)
     {
         var args = e as UserTypeChangeEventArgs;
@@ -471,6 +541,9 @@ public partial class ArrowUITopbar : UIFormBase
                     varTxtGem.text = CommonHelper.GetDollarString(args.Value);
                     targetValues[PlayerDataType.Diamond] = args.Value;
                     break;
+                case PlayerDataType.Pcard:
+                    RefreshPcardText(args.Value);
+                    break;
             }
         }
         varLv.text = playerDm.LevelId.ToString();
@@ -494,6 +567,10 @@ public partial class ArrowUITopbar : UIFormBase
         else if (btSelf == varGembutton)
         {
             // B 面美元仅作游戏内货币展示，不再打开提现界面。
+        }
+        else if (btSelf != null && btSelf.name == "Pcardbutton")
+        {
+            OpenMakeupUIForm();
         }
     }
     protected override void OnButtonClick(object sender, string btSelf)

@@ -27,6 +27,8 @@ public partial class HallTabUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        ArrowUITopbar.SetCoinVisible(true);
+        ArrowUITopbar.EnsureOpen();
         SwitchPage(UIViews.HomePageUIForm, varBtnHome);
     }
 

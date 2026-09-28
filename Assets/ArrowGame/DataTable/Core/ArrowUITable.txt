@@ -20,3 +20,4 @@
 	13	PrivacyPolicy隐私协议	20	ArrowPrivacyPolicyUIForm	False	2	False
 	14	GuideUIForm	2	ArrowGuideUIForm	False	4	False
 	15	奖励领取界面	13	ArrowRewardUIForm	False	2	False
+	16	提现界面	15	MakeupUIForm	False	2	False

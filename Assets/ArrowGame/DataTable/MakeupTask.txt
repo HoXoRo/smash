@@ -1,0 +1,10 @@
+﻿#	MakeupTask						
+#	ID		Level	Mon	Reward		
+#	int		int	float	float		
+#		备注	关卡数	美元值	奖励值		
+	1		5	0	0.3		
+	2		8	0	0.4		
+	3		18	0	0.5		
+	4		30	0	10		
+	5		40	0	100		
+	6		50	10000	0		

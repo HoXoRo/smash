@@ -38,7 +38,11 @@ public enum PlayerDataType
     /// <summary>
     /// 道具3
     /// </summary>
-    Prop3
+    Prop3,
+    /// <summary>
+    /// Pcard数量
+    /// </summary>
+    Pcard
 }
 
 [Obfuz.ObfuzIgnore(Obfuz.ObfuzScope.TypeName | Obfuz.ObfuzScope.MethodName)]
@@ -54,6 +58,8 @@ public class PlayerDataModel : DataModelStorageBase
     private float m_Diamond;
 
     private float m_Dollars;
+
+    private float m_Pcard;
 
     private int m_Gems;
 
@@ -138,6 +144,15 @@ public class PlayerDataModel : DataModelStorageBase
     {
         get => m_Dollars;
         set => SetData(PlayerDataType.Diamond, Mathf.Max(0f, value));
+    }
+
+    /// <summary>
+    /// Pcard数量
+    /// </summary>
+    public float Pcard
+    {
+        get => m_Pcard;
+        set => SetData(PlayerDataType.Pcard, Mathf.Max(0f, value));
     }
 
     public int Prop1
@@ -305,6 +320,7 @@ public class PlayerDataModel : DataModelStorageBase
     {
         m_Coins = GF.Config.GetInt("DefaultCoins");
         m_Dollars = GF.Config.GetInt("DefaultDiamonds");
+        m_Pcard = 0f;
         m_Gems = 0;
         m_LevelId = 1;
         LastSigninTime = string.Empty;
@@ -402,6 +418,8 @@ public class PlayerDataModel : DataModelStorageBase
             case PlayerDataType.Coins:
                 // 金币取整
                 return Mathf.Floor(value);
+            case PlayerDataType.Pcard:
+                return value < 0f ? 0f : value;
             default:
                 return math.max(0, value);
         }
@@ -441,6 +459,10 @@ public class PlayerDataModel : DataModelStorageBase
             case PlayerDataType.Prop3:
                 oldValue = m_Prop3;
                 m_Prop3 = (int)formattedValue;
+                break;
+            case PlayerDataType.Pcard:
+                oldValue = m_Pcard;
+                m_Pcard = formattedValue;
                 break;
         }
         if (triggerEvent)

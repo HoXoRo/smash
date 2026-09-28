@@ -43,6 +43,7 @@ public partial class HomePageUIForm : UIFormBase
         }
 
         CloseHallTabAfterGameplayLoaded();
+        ArrowUITopbar.SetCoinVisible(false);
     }
 
     static void CloseHallTabAfterGameplayLoaded()

@@ -16,6 +16,7 @@ MonoBehaviour:
   mDataTables:
   - ArrowGuideTable
   - ArrowLocalizationMoney
+  - MakeupTask
   - TaskReward
   - Core/ArrowLanguagesTable
   - Core/ArrowSoundGroupTable

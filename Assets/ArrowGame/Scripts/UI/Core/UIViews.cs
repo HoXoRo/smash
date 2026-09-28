@@ -18,5 +18,6 @@ public enum UIViews : int
 	ArrowRewardDialogUIForm = 12,
 	ArrowPrivacyPolicyUIForm = 13,
 	ArrowGuideUIForm = 14,
-	ArrowRewardUIForm = 15
+	ArrowRewardUIForm = 15,
+	MakeupUIForm = 16
 }
