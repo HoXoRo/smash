@@ -9,39 +9,10 @@
   <component name="ChangeListManager">
     <list default="true" id="48c1c3b4-2b47-4b58-848e-c5dcf45a4647" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/DataTables/Core/ArrowUITable.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/DataTables/Core/ArrowUITable.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/English.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/English.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/French.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/French.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Japanese.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Japanese.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/PortugueseBrazil.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/PortugueseBrazil.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/PortuguesePortugal.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/PortuguesePortugal.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Russian.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Russian.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Spanish.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Spanish.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.bytes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Language/English.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Language/English.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Language/English.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Language/English.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Language/French.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Language/French.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Language/French.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Language/French.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Language/Japanese.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Language/Japanese.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Language/Japanese.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Language/Japanese.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Language/PortugueseBrazil.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Language/PortugueseBrazil.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Language/PortugueseBrazil.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Language/PortugueseBrazil.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Language/PortuguesePortugal.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Language/PortuguesePortugal.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Language/PortuguesePortugal.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Language/PortuguesePortugal.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Language/Russian.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Language/Russian.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Language/Russian.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Language/Russian.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Language/Spanish.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Language/Spanish.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Language/Spanish.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Language/Spanish.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/ArrowRewardUIForm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/ArrowRewardUIForm.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/Items/MakeupItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/Items/MakeupItem.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/MakeupUIForm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/MakeupUIForm.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/DataModel/PlayerDataModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/DataModel/PlayerDataModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/ComicRelief-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/ComicRelief-Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Core/UIViews.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Core/UIViews.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Item/MakeupItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Item/MakeupItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/UIItemVariables/MakeupItem.Variables.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/UIItemVariables/MakeupItem.Variables.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/UIVariables/MakeupUIForm.Variables.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/UIVariables/MakeupUIForm.Variables.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,9 +28,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/HomePageUIForm.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/Items/MakeupItem.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Item/MakeupRecordItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Item/TaskItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupInfoUIForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupPaymentUIForm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupRecordUIForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupUIForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.code-philosophy.obfuz@25762369603f/Runtime/ObfuzIgnoreAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Prefabs/UI/Items/MakeupItem.prefab" root0="SKIP_HIGHLIGHTING" />
@@ -72,61 +45,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.000000000001447" />
-      <entry key="MS500" value="1.004286453125237" />
-      <entry key="S2" value="1.260105837837791" />
-      <entry key="S5" value="1.7615009663609893" />
-      <entry key="S10" value="2.6012350629237693" />
-      <entry key="S30" value="6.56460083395149" />
-      <entry key="S60" value="12.991040969427544" />
-      <entry key="M2" value="22.127643760715483" />
-      <entry key="M5" value="35.87467834729786" />
-      <entry key="M10" value="46.29230139809819" />
-      <entry key="M15" value="52.906018626495786" />
-      <entry key="M30" value="71.67266778027883" />
-      <entry key="H1" value="115.07857100591897" />
-      <entry key="H2" value="200.58115766791533" />
-      <entry key="H4" value="328.3615284146745" />
-      <entry key="D1" value="636.1776872433483" />
-      <entry key="W1" value="738.4885726238383" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0000000000122602" />
+      <entry key="M2" value="1.0000214961268226" />
+      <entry key="M5" value="1.1411750771506983" />
+      <entry key="M10" value="3.9039810697078634" />
+      <entry key="M15" value="9.352729550346721" />
+      <entry key="M30" value="29.478377304389497" />
+      <entry key="H1" value="73.53962317506006" />
+      <entry key="H2" value="160.25040700363706" />
+      <entry key="H4" value="293.5819143834085" />
+      <entry key="D1" value="625.0618502978843" />
+      <entry key="W1" value="737.4627888596389" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="1.1233569959069764E-266" />
-      <entry key="S60" value="1.4957041944423568E-133" />
-      <entry key="M2" value="5.4664444187572714E-67" />
-      <entry key="M5" value="4.738534179631486E-27" />
-      <entry key="M10" value="9.734818416919303E-14" />
-      <entry key="M15" value="2.666459841530487E-9" />
-      <entry key="M30" value="7.470683905967326E-5" />
-      <entry key="H1" value="0.0163882031921519" />
-      <entry key="H2" value="0.37303051048317776" />
-      <entry key="H4" value="2.1046046197879664" />
-      <entry key="D1" value="9.54898465475925" />
-      <entry key="W1" value="12.438158037342577" />
+      <entry key="MS100" value="1.4944767724409901E-5" />
+      <entry key="MS500" value="0.10836719543933582" />
+      <entry key="S2" value="0.5737523250626623" />
+      <entry key="S5" value="0.8007367912615282" />
+      <entry key="S10" value="0.8948389750460851" />
+      <entry key="S30" value="0.9636403216193784" />
+      <entry key="S60" value="0.9816518331971772" />
+      <entry key="M2" value="0.9907834441476993" />
+      <entry key="M5" value="0.9963031338631261" />
+      <entry key="M10" value="0.9981498554140747" />
+      <entry key="M15" value="0.9987661900467176" />
+      <entry key="M30" value="0.999412588382592" />
+      <entry key="H1" value="1.0100216865320109" />
+      <entry key="H2" value="1.296011398623369" />
+      <entry key="H4" value="2.8752011418731858" />
+      <entry key="D1" value="10.367113890246761" />
+      <entry key="W1" value="13.404036486564651" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9726549474136833" />
-      <entry key="MS500" value="0.998727013103594" />
-      <entry key="S2" value="1.258268575868361" />
-      <entry key="S5" value="1.7603768619879787" />
-      <entry key="S10" value="2.600285181328816" />
-      <entry key="S30" value="6.56367386416119" />
-      <entry key="S60" value="12.990108466295233" />
-      <entry key="M2" value="22.12685046441242" />
-      <entry key="M5" value="35.874162839276664" />
-      <entry key="M10" value="46.29196659335915" />
-      <entry key="M15" value="52.905761676275276" />
-      <entry key="M30" value="71.67256069043391" />
-      <entry key="H1" value="115.094773327573" />
-      <entry key="H2" value="200.95386054491914" />
-      <entry key="H4" value="330.46561402719533" />
-      <entry key="D1" value="645.7263774133224" />
-      <entry key="W1" value="750.926677736467" />
+      <entry key="MS100" value="2.3193678029926935E-5" />
+      <entry key="MS500" value="0.15485752400378727" />
+      <entry key="S2" value="1.0238098570688503" />
+      <entry key="S5" value="1.5261312716819426" />
+      <entry key="S10" value="1.746322524563744" />
+      <entry key="S30" value="1.9114077428426957" />
+      <entry key="S60" value="1.9551788157655987" />
+      <entry key="M2" value="1.977478015025209" />
+      <entry key="M5" value="2.1321235529049223" />
+      <entry key="M10" value="4.899429950930319" />
+      <entry key="M15" value="10.349667711817906" />
+      <entry key="M30" value="30.476823520131166" />
+      <entry key="H1" value="74.54908052078045" />
+      <entry key="H2" value="161.54593466852367" />
+      <entry key="H4" value="296.45654125941496" />
+      <entry key="D1" value="635.4286566755551" />
+      <entry key="W1" value="750.8667699043374" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
