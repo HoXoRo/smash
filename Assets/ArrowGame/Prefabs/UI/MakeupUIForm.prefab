@@ -1194,6 +1194,11 @@ MonoBehaviour:
     - {fileID: 4711071289936419714}
     VarType: TMPro.TextMeshProUGUI
     VarPrefix: 0
+  - VarName: varBtnRecord
+    Targets:
+    - {fileID: 4965886561412555584}
+    VarType: UnityEngine.UI.Button
+    VarPrefix: 0
   m_UIAnimationType: 0
   m_OpenAnimation: {fileID: 0}
   m_CloseAnimation: {fileID: 0}
@@ -1207,6 +1212,7 @@ MonoBehaviour:
   varTxtGem: {fileID: 2558607487935026675}
   varBtnInput: {fileID: 73893731740665920}
   varTxtAccount: {fileID: 6958801103614177820}
+  varBtnRecord: {fileID: 8467489722975131320}
 --- !u!1 &4711071289936419714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,7 +1438,7 @@ GameObject:
   - component: {fileID: 6977139770839219732}
   - component: {fileID: 8467489722975131320}
   m_Layer: 5
-  m_Name: Button
+  m_Name: btnRecord
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

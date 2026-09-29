@@ -21,6 +21,8 @@ public partial class MakeupUIForm : UIFormBase
             varBtnClose.onClick.AddListener(OnClickClose);
         if (varBtnInput != null)
             varBtnInput.onClick.AddListener(OnClickInput);
+        if (varBtnRecord != null)
+            varBtnRecord.onClick.AddListener(OnClickRecord);
     }
 
     protected override void OnOpen(object userData)
@@ -46,6 +48,15 @@ public partial class MakeupUIForm : UIFormBase
 
         GF.Sound.PlayEffect("ui/ui_click.mp3");
         GF.UI.OpenUIForm(UIViews.MakeupInfoUIForm);
+    }
+
+    void OnClickRecord()
+    {
+        if (GF.UI.HasUIForm(UIViews.MakeupRecordUIForm) || GF.UI.IsLoadingUIForm(UIViews.MakeupRecordUIForm))
+            return;
+
+        GF.Sound.PlayEffect("ui/ui_click.mp3");
+        GF.UI.OpenUIForm(UIViews.MakeupRecordUIForm);
     }
 
     void RefreshMakeupList()

@@ -15,4 +15,5 @@ public partial class MakeupUIForm
 	[SerializeField] private TextMeshProUGUI varTxtGem = null;
 	[SerializeField] private Button varBtnInput = null;
 	[SerializeField] private TextMeshProUGUI varTxtAccount = null;
+	[SerializeField] private Button varBtnRecord = null;
 }
