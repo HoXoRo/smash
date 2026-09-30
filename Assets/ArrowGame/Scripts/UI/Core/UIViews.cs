@@ -22,5 +22,6 @@ public enum UIViews : int
 	MakeupUIForm = 16,
 	MakeupPaymentUIForm = 17,
 	MakeupInfoUIForm = 18,
-	MakeupRecordUIForm = 19
+	MakeupRecordUIForm = 19,
+	PlayUIForm = 20
 }

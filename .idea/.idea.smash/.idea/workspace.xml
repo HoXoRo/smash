@@ -9,9 +9,14 @@
   <component name="ChangeListManager">
     <list default="true" id="48c1c3b4-2b47-4b58-848e-c5dcf45a4647" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/MakeupRecordUIForm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/MakeupRecordUIForm.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/MakeupUIForm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/MakeupUIForm.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupRecordUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupRecordUIForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.bytes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/SettingPageUIForm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/SettingPageUIForm.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Core/UIViews.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Core/UIViews.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/HomePageUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/HomePageUIForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/SettingPageUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/SettingPageUIForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/UIVariables/SettingPageUIForm.Variables.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/UIVariables/SettingPageUIForm.Variables.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +38,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupPaymentUIForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupRecordUIForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupUIForm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/PlayUIForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.code-philosophy.obfuz@25762369603f/Runtime/ObfuzIgnoreAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Prefabs/UI/Items/MakeupItem.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/UI/MakeupPaymentUIForm.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/UI/MakeupUIForm.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -44,61 +47,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000000000000442" />
-      <entry key="MS500" value="1.0022282987912283" />
-      <entry key="S2" value="1.3826888824560573" />
-      <entry key="S5" value="2.4402920688252747" />
-      <entry key="S10" value="3.401096764430704" />
-      <entry key="S30" value="5.199519942498944" />
-      <entry key="S60" value="6.737756711537508" />
-      <entry key="M2" value="8.841398254972535" />
-      <entry key="M5" value="11.929254158384392" />
-      <entry key="M10" value="13.668711121578083" />
-      <entry key="M15" value="14.370296644775031" />
-      <entry key="M30" value="15.144603362844574" />
-      <entry key="H1" value="15.563841616952491" />
-      <entry key="H2" value="16.661774525503382" />
-      <entry key="H4" value="37.6898601515168" />
-      <entry key="D1" value="421.22467711697266" />
-      <entry key="W1" value="709.1890805958124" />
+      <entry key="MS100" value="1.000009204044602" />
+      <entry key="MS500" value="1.1197313842420136" />
+      <entry key="S2" value="2.022831676530355" />
+      <entry key="S5" value="3.3583544779271706" />
+      <entry key="S10" value="5.642519026201001" />
+      <entry key="S30" value="12.98582250989992" />
+      <entry key="S60" value="18.910252070236403" />
+      <entry key="M2" value="24.11978054250828" />
+      <entry key="M5" value="31.327982505640822" />
+      <entry key="M10" value="38.48985174086073" />
+      <entry key="M15" value="42.70416636278291" />
+      <entry key="M30" value="48.597305293949375" />
+      <entry key="H1" value="52.41994722636402" />
+      <entry key="H2" value="55.40792935860172" />
+      <entry key="H4" value="76.56957787513143" />
+      <entry key="D1" value="458.85611995821375" />
+      <entry key="W1" value="749.3824412903704" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="9.414439094678567E-272" />
-      <entry key="M2" value="3.0682957964770214E-136" />
-      <entry key="M5" value="6.233886488470824E-55" />
-      <entry key="M10" value="7.895496493869722E-28" />
-      <entry key="M15" value="8.542525755538812E-19" />
-      <entry key="M30" value="9.242853036178984E-10" />
-      <entry key="H1" value="3.071576349199375E-5" />
-      <entry key="H2" value="0.007147005713837626" />
-      <entry key="H4" value="0.21351376869769756" />
-      <entry key="D1" value="6.721261799949085" />
-      <entry key="W1" value="12.599371420559653" />
+      <entry key="S2" value="2.701682318919428E-148" />
+      <entry key="S5" value="9.389743141921624E-60" />
+      <entry key="S10" value="3.064268777689324E-30" />
+      <entry key="S30" value="1.4524759564713232E-10" />
+      <entry key="S60" value="1.2051871043416147E-5" />
+      <entry key="M2" value="0.003471580482059451" />
+      <entry key="M5" value="0.10380323662752775" />
+      <entry key="M10" value="0.32218509684268176" />
+      <entry key="M15" value="0.46997017560489973" />
+      <entry key="M30" value="0.6855437086526646" />
+      <entry key="H1" value="0.8280010944377866" />
+      <entry key="H2" value="0.9164341773082838" />
+      <entry key="H4" value="1.1575624806514357" />
+      <entry key="D1" value="7.6607008056042085" />
+      <entry key="W1" value="13.584080930733194" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9592641193253063" />
-      <entry key="MS500" value="0.9939206979423859" />
-      <entry key="S2" value="1.3796204744369833" />
-      <entry key="S5" value="2.4379359143282797" />
-      <entry key="S10" value="3.3993851182645254" />
-      <entry key="S30" value="5.198619998155499" />
-      <entry key="S60" value="6.737169337244965" />
-      <entry key="M2" value="8.841010433752663" />
-      <entry key="M5" value="11.929043458820972" />
-      <entry key="M10" value="13.668590080578728" />
-      <entry key="M15" value="14.370211728328716" />
-      <entry key="M30" value="15.144558574632065" />
-      <entry key="H1" value="15.563849293166024" />
-      <entry key="H2" value="16.66890718945775" />
-      <entry key="H4" value="37.90332539637377" />
-      <entry key="D1" value="427.945738563153" />
-      <entry key="W1" value="721.7883997618236" />
+      <entry key="MS100" value="0.9526468271536769" />
+      <entry key="MS500" value="1.1090824558252872" />
+      <entry key="S2" value="2.0182435014902653" />
+      <entry key="S5" value="3.355322759231511" />
+      <entry key="S10" value="5.639964072445981" />
+      <entry key="S30" value="12.98381316312016" />
+      <entry key="S60" value="18.908774561056372" />
+      <entry key="M2" value="24.12223677093632" />
+      <entry key="M5" value="31.43065123940193" />
+      <entry key="M10" value="38.810750464429226" />
+      <entry key="M15" value="43.17295824969996" />
+      <entry key="M30" value="49.28202671188705" />
+      <entry key="H1" value="53.24746025034372" />
+      <entry key="H2" value="56.32409496308919" />
+      <entry key="H4" value="77.72696067348187" />
+      <entry key="D1" value="466.5165989317888" />
+      <entry key="W1" value="762.9664667119918" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{

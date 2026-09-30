@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using Cysharp.Threading.Tasks;
 using UnityGameFramework.Runtime;
 #if ENABLE_OBFUZ
 [Obfuz.ObfuzIgnore(Obfuz.ObfuzScope.TypeName)]
@@ -8,16 +8,67 @@ using UnityGameFramework.Runtime;
 
 public partial class SettingPageUIForm : UIFormBase
 {
+    public const string P_FromGameplay = "FromGameplay";
+
+    bool fromGameplay;
+    bool isQuitting;
 
     protected override void OnInit(object userData)
     {
         base.OnInit(userData);
          
-        // varBtnTask.onClick.AddListener(() => OnTabClicked(UIViews.TaskPageUIForm, varBtnTask));
-        // varBtnHome.onClick.AddListener(() => OnTabClicked(UIViews.HomePageUIForm, varBtnHome));
-        // varBtnSettings.onClick.AddListener(() => OnTabClicked(UIViews.SettingPageUIForm, varBtnSettings));
+        varBtnQuit.onClick.AddListener(OnQuitClicked);
+        varBtnContinue.onClick.AddListener(OnClickClose);
+        varBtnClose.onClick.AddListener(OnClickClose);
+    }
 
+    protected override void OnOpen(object userData)
+    {
+        base.OnOpen(userData);
+        fromGameplay = Params.Get<VarBoolean>(P_FromGameplay)?.Value ?? false;
+        isQuitting = false;
+        varBtnQuit.gameObject.SetActive(fromGameplay);
+        varBtnContinue.gameObject.SetActive(fromGameplay);
+        varBtnClose.gameObject.SetActive(fromGameplay);
         InitSettings();
+    }
+
+    void OnQuitClicked()
+    {
+        if (!fromGameplay || isQuitting)
+        {
+            return;
+        }
+
+        GF.Sound.PlayEffect("ui/ui_click.mp3");
+        QuitGameplayAsync().Forget();
+    }
+
+    async UniTaskVoid QuitGameplayAsync()
+    {
+        isQuitting = true;
+        Interactable = false;
+        try
+        {
+            string sceneAssetName = UtilityBuiltin.AssetsPath.GetScenePath("Gameplay");
+            if (!await GF.Scene.UnLoadSceneAwait(sceneAssetName))
+            {
+                isQuitting = false;
+                Interactable = true;
+                return;
+            }
+        }
+        catch (System.Exception exception)
+        {
+            isQuitting = false;
+            Interactable = true;
+            Log.Error(exception.ToString());
+            return;
+        }
+
+        GF.UI.CloseUIForm(Id);
+        GF.UI.CloseUIForms(UIViews.PlayUIForm);
+        GF.UI.OpenUIForm(UIViews.HallTabUIForm);
     }
     
     protected override void OnButtonClick(object sender, string btSelf)

@@ -24,3 +24,4 @@
 	17	提现方式界面	16	MakeupPaymentUIForm	False	2	False
 	18	提现信息界面	16	MakeupInfoUIForm	False	2	False
 	19	提现记录界面	17	MakeupRecordUIForm	False	2	False
+	20	玩法界面	12	PlayUIForm	False	2	False

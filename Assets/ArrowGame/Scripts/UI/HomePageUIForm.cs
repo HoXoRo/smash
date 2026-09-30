@@ -44,6 +44,7 @@ public partial class HomePageUIForm : UIFormBase
 
         CloseHallTabAfterGameplayLoaded();
         ArrowUITopbar.SetCoinVisible(false);
+        GF.UI.OpenUIForm(UIViews.PlayUIForm);
     }
 
     static void CloseHallTabAfterGameplayLoaded()
