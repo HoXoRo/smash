@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Audio;
+using Cysharp.Threading.Tasks;
 using Core;
 using Inventory;
 using Menu;
@@ -17,6 +18,8 @@ namespace Scene
 		private static SceneType _currentScene;
 
 		private static GameObject _loadingCanvas;
+
+		private static bool _isChangingScene;
 
 		public static bool IsInLoading => _loadingCanvas != null && _loadingCanvas.activeSelf;
 
@@ -43,11 +46,12 @@ namespace Scene
 		public static void LoadScene(SceneType nextScene, bool forceDisableLoading = false)
 		{
 			nextScene = ResolveAvailableScene(nextScene);
-			if (IsInLoading)
+			if (IsInLoading || _isChangingScene)
 			{
 				return;
 			}
 			Time.timeScale = 1f;
+			_isChangingScene = true;
 			SceneType currentScene = _currentScene;
 			_currentScene = nextScene;
 			InventoryTrackerHelper.RemoveAllTrackers();
@@ -62,10 +66,37 @@ namespace Scene
 				RoutineRunner.Instance.StartCoroutine(LoadingRoutine(currentScene, nextScene));
 				return;
 			}
-			StopMusicSafely();
-			InvokeOnSceneChange(currentScene, nextScene);
-			SceneManager.LoadScene(nextScene.ToString());
-			PlayMusicForCurrentSceneSafely();
+			RoutineRunner.Instance.StartCoroutine(ChangeSceneWithoutLoading(currentScene, nextScene));
+		}
+
+		private static IEnumerator ChangeSceneWithoutLoading(SceneType currentScene, SceneType nextScene)
+		{
+			try
+			{
+				StopMusicSafely();
+				InvokeOnSceneChange(currentScene, nextScene);
+				yield return LoadSceneContentAsync(nextScene).ToCoroutine();
+				PlayMusicForCurrentSceneSafely();
+			}
+			finally
+			{
+				_isChangingScene = false;
+			}
+		}
+
+		private static async UniTask LoadSceneContentAsync(SceneType nextScene)
+		{
+			string sceneAssetName = UtilityBuiltin.AssetsPath.GetScenePath(nextScene.ToString());
+			if (GF.Scene != null && GF.Scene.SceneIsLoaded(sceneAssetName))
+			{
+				if (await GF.Scene.UnLoadSceneAwait(sceneAssetName))
+				{
+					await GF.Scene.LoadSceneAwait(sceneAssetName);
+				}
+				return;
+			}
+
+			await SceneManager.LoadSceneAsync(nextScene.ToString());
 		}
 
 		public static IEnumerator LoadingRoutine(SceneType currentScene, SceneType nextScene)
@@ -80,12 +111,13 @@ namespace Scene
 			{
 				yield return new WaitForSecondsRealtime(LoadingDelaySeconds);
 				InvokeOnSceneChange(currentScene, nextScene);
-				SceneManager.LoadScene(nextScene.ToString());
+				yield return LoadSceneContentAsync(nextScene).ToCoroutine();
 				yield return new WaitForSecondsRealtime(LoadingDelaySeconds);
 				PlayMusicForCurrentSceneSafely();
 			}
 			finally
 			{
+				_isChangingScene = false;
 				if (_loadingCanvas != null)
 				{
 					_loadingCanvas.SetActive(false);
