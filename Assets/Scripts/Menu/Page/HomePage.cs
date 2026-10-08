@@ -107,8 +107,8 @@ namespace Menu.Page
 			try
 			{
 				bool hasUnlimitedLife = TimedInventoryHelper.HasTime(TimedInventoryItemType.UnlimitedLife);
-				LifeHelper lifeHelper = ServiceLocator.Get<LifeHelper>();
-				if (!hasUnlimitedLife && lifeHelper != null && lifeHelper.GetCurrentLifeCount() < 1)
+				LifeHelper.Refresh();
+				if (!hasUnlimitedLife && LifeHelper.GetCurrentLifeCount() < 1)
 				{
 					ServiceLocator.Get<PopupController>()?.Open(PopupType.MoreLives);
 				}

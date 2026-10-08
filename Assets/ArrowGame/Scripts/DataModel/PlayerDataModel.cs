@@ -52,6 +52,77 @@ public enum PlayerDataType
 /// </summary>
 public class PlayerDataModel : DataModelStorageBase
 {
+    public const int MaxLifeCount = 5;
+    private const int LifeGainInterval = 1800;
+    private int m_Life = MaxLifeCount;
+    public event Action LifeChanged;
+
+    public int LifeCount
+    {
+        get => m_Life;
+        set => m_Life = Mathf.Clamp(value, 0, MaxLifeCount);
+    }
+
+    public int LifeTimerStart { get; set; }
+
+    public void RefreshLife()
+    {
+        int oldCount = LifeCount;
+        int oldStart = LifeTimerStart;
+        int now = (int)DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        if (LifeCount >= MaxLifeCount)
+        {
+            LifeTimerStart = 0;
+        }
+        else if (LifeTimerStart <= 0)
+        {
+            LifeTimerStart = now;
+        }
+        else
+        {
+            int gained = Mathf.Max(0, now - LifeTimerStart) / LifeGainInterval;
+            LifeCount += gained;
+            LifeTimerStart = LifeCount >= MaxLifeCount ? 0 : LifeTimerStart + gained * LifeGainInterval;
+        }
+        if (oldCount != LifeCount || oldStart != LifeTimerStart) Save();
+        LifeChanged?.Invoke();
+    }
+
+    public int GetSecondsUntilNextLife()
+    {
+        if (LifeCount >= MaxLifeCount) return -1;
+        if (LifeTimerStart <= 0) return LifeGainInterval;
+        int elapsed = (int)DateTimeOffset.UtcNow.ToUnixTimeSeconds() - LifeTimerStart;
+        return Mathf.Clamp(LifeGainInterval - elapsed, 0, LifeGainInterval);
+    }
+
+    public void SetLifeCount(int count)
+    {
+        LifeCount = count;
+        if (LifeCount >= MaxLifeCount) LifeTimerStart = 0;
+        else if (LifeTimerStart <= 0) LifeTimerStart = (int)DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        Save();
+        LifeChanged?.Invoke();
+    }
+
+    public void AddLife(int count)
+    {
+        if (count <= 0) return;
+        RefreshLife();
+        SetLifeCount(LifeCount + Mathf.Min(count, MaxLifeCount));
+    }
+
+    public bool TrySpendCoins(int amount)
+    {
+        if (amount < 0 || Coins < amount)
+        {
+            return false;
+        }
+
+        Coins -= amount;
+        Save();
+        return true;
+    }
 
     private float m_Coins;
 
@@ -323,6 +394,8 @@ public class PlayerDataModel : DataModelStorageBase
 
     protected override void OnInitialDataModel()
     {
+        LifeCount = MaxLifeCount;
+        LifeTimerStart = 0;
         m_Coins = GF.Config.GetInt("DefaultCoins");
         m_Dollars = GF.Config.GetInt("DefaultDiamonds");
         m_Pcard = 0f;

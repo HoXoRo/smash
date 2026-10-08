@@ -115,7 +115,7 @@ namespace Inventory.TimedInventory
 			SetEnd(payload.Type, TimeUtil.GetNowSecondsUtc() + newTime);
 			if (payload.Type == TimedInventoryItemType.UnlimitedLife)
 			{
-				ServiceLocator.Get<LifeHelper>()?.FullLife();
+				LifeHelper.FullLife();
 			}
 			TimedInventoryTrackerHelper.TriggerTrackers(payload.Type);
 		}

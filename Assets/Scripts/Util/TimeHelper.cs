@@ -71,6 +71,7 @@ namespace Util
 
 		private void Tick()
 		{
+			Life.LifeHelper.Refresh();
 			OnTick?.Invoke();
 		}
 

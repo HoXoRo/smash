@@ -32,20 +32,12 @@ namespace Life
 
 		public static void TriggerLifeCountTrackers()
 		{
-			LifeHelper lifeHelper = Service.ServiceLocator.Get<LifeHelper>();
-			if (lifeHelper != null)
-			{
-				OnLifeCountChanged?.Invoke(lifeHelper.GetCurrentLifeCount());
-			}
+			OnLifeCountChanged?.Invoke(LifeHelper.GetCurrentLifeCount());
 		}
 
 		public static void TriggerLifeTimerTrackers()
 		{
-			LifeHelper lifeHelper = Service.ServiceLocator.Get<LifeHelper>();
-			if (lifeHelper != null)
-			{
-				OnLifeTimerChanged?.Invoke(lifeHelper.GetSecondsUntilNextLife());
-			}
+			OnLifeTimerChanged?.Invoke(LifeHelper.GetSecondsUntilNextLife());
 		}
 	}
 }

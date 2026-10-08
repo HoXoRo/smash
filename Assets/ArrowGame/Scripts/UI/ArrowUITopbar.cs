@@ -40,6 +40,8 @@ public partial class ArrowUITopbar : UIFormBase
     protected override void OnInit(object userData)
     {
         base.OnInit(userData);
+        if (varBtnLife != null)
+            varBtnLife.onClick.AddListener(OpenAddLife);
         if (varBtnDebug != null)
         {
             varBtnDebug.onClick.AddListener(OpenDebugUIForm);
@@ -59,6 +61,8 @@ public partial class ArrowUITopbar : UIFormBase
        
 
         playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        playerDm.LifeChanged += RefreshLifeDisplay;
+        playerDm.RefreshLife();
         varTxtCoin.text = CommonHelper.FormatLargeNumber(playerDm.Coins.ToString(), 0);
         varTxtGem.text = CommonHelper.GetDollarString(playerDm.Dollars);
         RefreshPcardText();
@@ -93,6 +97,7 @@ public partial class ArrowUITopbar : UIFormBase
     }
     protected override void OnClose(bool isShutdown, object userData)
     {
+        playerDm.LifeChanged -= RefreshLifeDisplay;
         //如果正在动画中，直接累加奖励值
         if ((activeRewardCounts.ContainsKey(PlayerDataType.Diamond) && activeRewardCounts[PlayerDataType.Diamond] > 0) ||
         (isRolling.ContainsKey(PlayerDataType.Diamond) && isRolling[PlayerDataType.Diamond]))
@@ -634,6 +639,20 @@ public partial class ArrowUITopbar : UIFormBase
             }
         }
         varLv.text = playerDm.LevelId.ToString();
+    }
+
+    private void RefreshLifeDisplay()
+    {
+        if (varTxtLife != null) varTxtLife.text = playerDm.LifeCount.ToString();
+        int seconds = playerDm.GetSecondsUntilNextLife();
+        if (varTxtTime != null)
+            varTxtTime.text = seconds < 0 ? "FULL" : $"{seconds / 60:00}:{seconds % 60:00}";
+    }
+
+    private void OpenAddLife()
+    {
+        if (!GF.UI.HasUIForm(UIViews.AddLifeUIForm) && !GF.UI.IsLoadingUIForm(UIViews.AddLifeUIForm))
+            GF.UI.OpenUIForm(UIViews.AddLifeUIForm, UIParams.Create());
     }
 
     private RectTransform GetTargetIcon(PlayerDataType type)

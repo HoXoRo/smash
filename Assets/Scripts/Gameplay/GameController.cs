@@ -844,7 +844,7 @@ namespace Gameplay
 			ServiceLocator.Get<ParticleController>()?.Initialize();
 			if (!TimedInventoryHelper.HasTime(TimedInventoryItemType.UnlimitedLife))
 			{
-				ServiceLocator.Get<LifeHelper>()?.LoseLife();
+				LifeHelper.LoseLife();
 			}
 			List<bool> prelevelBoostersUsed = new List<bool>
 			{
@@ -1358,7 +1358,7 @@ namespace Gameplay
 			{
 				SaveService.Save();
 			}
-			ServiceLocator.Get<LifeHelper>()?.AddLife(1);
+			LifeHelper.AddLife(1);
 			MenuController.CoinToCollect = 0;
 			_pendingWinPopupRoutine = DelayedWorker.CallAfter(0.5f, delegate
 			{

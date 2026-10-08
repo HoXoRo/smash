@@ -236,13 +236,13 @@ public partial class SROptions : INotifyPropertyChanged
 	[Category("Inventory")]
 	public void RemoveLife()
 	{
-		ServiceLocator.Get<LifeHelper>()?.LoseLife();
+		LifeHelper.LoseLife();
 	}
 
 	[Category("Inventory")]
 	public void FullLife()
 	{
-		ServiceLocator.Get<LifeHelper>()?.FullLife();
+		LifeHelper.FullLife();
 	}
 
 	[Category("Inventory")]

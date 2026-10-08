@@ -80,7 +80,7 @@ namespace Popups
 			{
 				return;
 			}
-			ServiceLocator.Get<LifeHelper>()?.FullLife();
+			LifeHelper.FullLife();
 			Close();
 		}
 

@@ -30,3 +30,4 @@
 	23	p卡领取界面	13	PcardGiftUIForm	False	2	False
 	24	测试界面	30	DebugUIForm	False	2	False
 	25	通关界面	13	LevelCompleteUIForm	False	2	False
+	26	补充生命值界面	13	AddLifeUIForm	False	2	False

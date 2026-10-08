@@ -31,3 +31,4 @@
 	EliminationRewardCount	连续消除弹出奖励弹窗次数	25
 	ComboRewardRate	普通奖励倍数	5
 	WinRewardRate	胜利奖励倍数	10
+	lifeCoin	补充1点生命值需要的金币数	900

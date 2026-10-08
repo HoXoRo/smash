@@ -35,4 +35,8 @@ public partial class ArrowUITopbar
 	[SerializeField] private GameObject varGift = null;
 	[SerializeField] private TextMeshProUGUI varTxtGiftCount = null;
 	[SerializeField] private Button varBtnDebug = null;
+	[SerializeField] private Button varBtnLife = null;
+	[SerializeField] private TextMeshProUGUI varTxtLife = null;
+	[SerializeField] private GameObject varLife = null;
+	[SerializeField] private TextMeshProUGUI varTxtTime = null;
 }

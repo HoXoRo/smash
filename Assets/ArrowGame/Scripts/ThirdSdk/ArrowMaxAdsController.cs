@@ -364,6 +364,9 @@ public class ArrowMaxAdsController
     {
         // Rewarded ad is hidden. Pre-load the next ad
         Log.Info("Rewarded ad dismissed");
+        Action<bool> pendingCallback = rewardedCallBack;
+        rewardedCallBack = null;
+        pendingCallback?.Invoke(false);
         rewardedAdInfo = -1;
         LoadRewardedAd();
     }
