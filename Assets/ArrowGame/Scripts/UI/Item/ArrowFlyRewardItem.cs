@@ -79,6 +79,7 @@ public partial class ArrowFlyRewardItem : UIItemBase
         switch (type)
         {
             case PlayerDataType.Diamond:
+            case PlayerDataType.Pcard:
                 return "Common/money_com.png";
             default:
                 return "Common/coin_com.png";

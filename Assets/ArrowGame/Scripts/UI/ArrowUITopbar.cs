@@ -32,7 +32,9 @@ public partial class ArrowUITopbar : UIFormBase
     private Dictionary<PlayerDataType, bool> isRolling = new Dictionary<PlayerDataType, bool>();
     private Dictionary<PlayerDataType, int> activeRewardCounts = new Dictionary<PlayerDataType, int>();  // 每种货币类型的活跃奖励数量
     private Vector2 m_TxtUpGemRestPos;
+    private Vector2 m_TxtUpPcardRestPos;
     private Tween m_TxtUpGemTween;
+    private Tween m_TxtUpPcardTween;
     public PlayerDataModel playerDm;
 
     protected override void OnOpen(object userData)
@@ -43,8 +45,6 @@ public partial class ArrowUITopbar : UIFormBase
         GF.Event.Subscribe(LargeDollarRewardEventArgs.EventId, OnLargeDollarReward);
         GF.Event.Subscribe(TreasureBoxRewardEventArgs.EventId, OnTreasureBoxReward);
         GF.Event.Subscribe(UserTypeChangeEventArgs.EventId, OnUserTypeChange);
-        GF.Event.Subscribe(UserSkinChangeEventArgs.EventId, OnUserSkinChange);
-        GF.Event.Subscribe(BgSkinChangeEventArgs.EventId, OnBgSkinChange);
         varBg.enabled = Params.Get<VarBoolean>(P_EnableBG, true);
        
 
@@ -58,12 +58,12 @@ public partial class ArrowUITopbar : UIFormBase
         // 初始化计数器和目标值
         activeRewardCounts[PlayerDataType.Coins] = 0;
         activeRewardCounts[PlayerDataType.Diamond] = 0;
+        activeRewardCounts[PlayerDataType.Pcard] = 0;
         targetValues[PlayerDataType.Coins] = playerDm.Coins;
         targetValues[PlayerDataType.Diamond] = playerDm.Dollars;
+        targetValues[PlayerDataType.Pcard] = playerDm.Pcard;
         varGem.SetActive(CommonHelper.IsSpec());
 
-        ApplyBgSkinColor(playerDm.IsNightMode);
-        SetSkinButtonSprite(playerDm.UseColorfulArrows);
         if (varGuideSpine != null)
             varGuideSpine.SetActive(false);
         if (varTxtUpGem != null)
@@ -71,6 +71,8 @@ public partial class ArrowUITopbar : UIFormBase
             m_TxtUpGemRestPos = varTxtUpGem.rectTransform.anchoredPosition;
             varTxtUpGem.gameObject.SetActive(false);
         }
+        m_TxtUpPcardRestPos = varTxtUpPcard.rectTransform.anchoredPosition;
+        varTxtUpPcard.gameObject.SetActive(false);
         ApplyCoinVisible(s_ShowCoin);
         //适配刘海屏
         // float safeArea = Mathf.Max(0, Screen.height - Screen.safeArea.yMax);
@@ -92,6 +94,12 @@ public partial class ArrowUITopbar : UIFormBase
             if (pendingRewards.ContainsKey(PlayerDataType.Coins) && pendingRewards[PlayerDataType.Coins] > 0 && playerDm.Coins < targetValues[PlayerDataType.Coins] + pendingRewards[PlayerDataType.Coins])
                 playerDm.SetData(PlayerDataType.Coins, pendingRewards[PlayerDataType.Coins] + playerDm.Coins, false);
         }
+        if ((activeRewardCounts.ContainsKey(PlayerDataType.Pcard) && activeRewardCounts[PlayerDataType.Pcard] > 0) ||
+        (isRolling.ContainsKey(PlayerDataType.Pcard) && isRolling[PlayerDataType.Pcard]))
+        {
+            if (pendingRewards.ContainsKey(PlayerDataType.Pcard) && pendingRewards[PlayerDataType.Pcard] > 0 && playerDm.Pcard < targetValues[PlayerDataType.Pcard] + pendingRewards[PlayerDataType.Pcard])
+                playerDm.SetData(PlayerDataType.Pcard, pendingRewards[PlayerDataType.Pcard] + playerDm.Pcard, false);
+        }
         // 清理所有计数器
         activeRewardCounts.Clear();
         pendingRewards.Clear();
@@ -99,13 +107,12 @@ public partial class ArrowUITopbar : UIFormBase
         targetValues.Clear();
         isRolling.Clear();
         StopGemUpFloatTween();
+        StopPcardUpFloatTween();
         GF.Event.Unsubscribe(PlayerDataChangedEventArgs.EventId, OnPlayerDataChanged);
         GF.Event.Unsubscribe(RewardCollectedEventArgs.EventId, OnRewardCollected);
         GF.Event.Unsubscribe(LargeDollarRewardEventArgs.EventId, OnLargeDollarReward);
         GF.Event.Unsubscribe(TreasureBoxRewardEventArgs.EventId, OnTreasureBoxReward);
         GF.Event.Unsubscribe(UserTypeChangeEventArgs.EventId, OnUserTypeChange);
-        GF.Event.Unsubscribe(UserSkinChangeEventArgs.EventId, OnUserSkinChange);
-        GF.Event.Unsubscribe(BgSkinChangeEventArgs.EventId, OnBgSkinChange);
         base.OnClose(isShutdown, userData);
     }
     protected override void InternalSetVisible(bool visible)
@@ -125,6 +132,12 @@ public partial class ArrowUITopbar : UIFormBase
             {
                 if (pendingRewards.ContainsKey(PlayerDataType.Coins) && pendingRewards[PlayerDataType.Coins] > 0 && playerDm.Coins < targetValues[PlayerDataType.Coins] + pendingRewards[PlayerDataType.Coins])
                     playerDm.SetData(PlayerDataType.Coins, pendingRewards[PlayerDataType.Coins] + playerDm.Coins, false);
+            }
+            if ((activeRewardCounts.ContainsKey(PlayerDataType.Pcard) && activeRewardCounts[PlayerDataType.Pcard] > 0) ||
+            (isRolling.ContainsKey(PlayerDataType.Pcard) && isRolling[PlayerDataType.Pcard]))
+            {
+                if (pendingRewards.ContainsKey(PlayerDataType.Pcard) && pendingRewards[PlayerDataType.Pcard] > 0 && playerDm.Pcard < targetValues[PlayerDataType.Pcard] + pendingRewards[PlayerDataType.Pcard])
+                    playerDm.SetData(PlayerDataType.Pcard, pendingRewards[PlayerDataType.Pcard] + playerDm.Pcard, false);
             }
             // 清理所有计数器
             activeRewardCounts.Clear();
@@ -209,18 +222,7 @@ public partial class ArrowUITopbar : UIFormBase
         varGem.SetActive(CommonHelper.IsSpec());
         // varCoin.SetActive(!CommonHelper.IsSpec());
     }
-
-    private void OnUserSkinChange(object sender, GameEventArgs e)
-    {
-        var args = e as UserSkinChangeEventArgs;
-        if (args == null) return;
-        SetSkinButtonSprite(playerDm.UseColorfulArrows);
-    }
-    private void SetSkinButtonSprite(bool UseColorfulArrows)
-    {
-        if (varSkin_Button != null)
-            varSkin_Button.SetSprite(UseColorfulArrows ? "UI/GameAtlas/btn_sk_1.png" : "UI/GameAtlas/btn_sk_0.png");
-    }
+    
     private void OnRewardCollected(object sender, GameEventArgs e)
     {
         var args = e as RewardCollectedEventArgs;
@@ -231,8 +233,6 @@ public partial class ArrowUITopbar : UIFormBase
         // 根据奖励类型确定货币类型
         PlayerDataType currencyType = args.type;
         float value = args.Value;
-        string currencyName = currencyType == PlayerDataType.Coins ? "金币" : "钻石";
-
         // 获取奖励位置并转换为本地坐标
         Vector3 startPosition = args.WorldPosition;
         //Log.Info($"奖励位置世界坐标: {startPosition},类型: {currencyName},值: {value}");
@@ -313,7 +313,7 @@ public partial class ArrowUITopbar : UIFormBase
 
         // 获取正确的目标位置
         Vector2 targetPosition;
-        RectTransform targetIcon = type == PlayerDataType.Coins ? varIcon_Coin : varIcon_Gem;
+        RectTransform targetIcon = GetTargetIcon(type);
         if (targetIcon == null)
         {
             return;
@@ -336,8 +336,9 @@ public partial class ArrowUITopbar : UIFormBase
 
         // 计算每个货币的出现延迟
         float baseDelay = 0.02f; // 基础延迟时间
-        varCpEff.gameObject.SetActive(type == PlayerDataType.Diamond);
-        if(type == PlayerDataType.Diamond)
+        bool useDollarEffect = type == PlayerDataType.Diamond || type == PlayerDataType.Pcard;
+        varCpEff.gameObject.SetActive(useDollarEffect);
+        if(useDollarEffect)
         {
             varCpEff.transform.localPosition = startPosition;
             varCpEff.Play();
@@ -380,6 +381,12 @@ public partial class ArrowUITopbar : UIFormBase
                                     if (delta > 0f)
                                         PlayGemUpFloatText(delta);
                                 }
+                                else if (type == PlayerDataType.Pcard)
+                                {
+                                    float delta = pendingRewards.ContainsKey(type) ? pendingRewards[type] : 0f;
+                                    if (delta > 0f)
+                                        PlayPcardUpFloatText(delta);
+                                }
                                 UpdateNumberRoll(type);
                             }
                         }
@@ -414,7 +421,7 @@ public partial class ArrowUITopbar : UIFormBase
         }
         if (!targetValues.ContainsKey(type))
         {
-            targetValues[type] = type == PlayerDataType.Coins ? playerDm.Coins : playerDm.Dollars;
+            targetValues[type] = GetCurrentValue(type);
         }
 
         // 检查是否有待处理的奖励
@@ -441,11 +448,11 @@ public partial class ArrowUITopbar : UIFormBase
         else
         {
             // UI未激活时直接更新数值
-            TextMeshProUGUI targetText = type == PlayerDataType.Coins ? varTxtCoin : varTxtGem;
+            TextMeshProUGUI targetText = GetTargetText(type);
             float startValue = targetValues[type];
             float targetValue = startValue + pendingRewards[type];
             if (type != PlayerDataType.Gems)
-                targetText.text = type == PlayerDataType.Diamond ? CommonHelper.GetDollarString(targetValue) : targetValue.ToString();
+                targetText.text = FormatCurrencyValue(type, targetValue);
             playerDm.SetData(type, targetValue, true);
             targetValues[type] = targetValue;
             pendingRewards[type] = 0f;
@@ -455,7 +462,7 @@ public partial class ArrowUITopbar : UIFormBase
 
     private IEnumerator NumberRollCoroutine(PlayerDataType type)
     {
-        TextMeshProUGUI targetText = type == PlayerDataType.Coins ? varTxtCoin : varTxtGem;
+        TextMeshProUGUI targetText = GetTargetText(type);
         if (targetText == null)
         {
             isRolling[type] = false;
@@ -500,7 +507,7 @@ public partial class ArrowUITopbar : UIFormBase
         }
 
         // 确保显示最终值
-        targetText.text = type == PlayerDataType.Diamond ? CommonHelper.GetDollarString(targetValue) : targetValue.ToString();
+        targetText.text = FormatCurrencyValue(type, targetValue);
         targetValues[type] = targetValue;
         numberRollCoroutines.Remove(type);
         
@@ -543,26 +550,70 @@ public partial class ArrowUITopbar : UIFormBase
                     break;
                 case PlayerDataType.Pcard:
                     RefreshPcardText(args.Value);
+                    targetValues[PlayerDataType.Pcard] = args.Value;
                     break;
             }
         }
         varLv.text = playerDm.LevelId.ToString();
     }
+
+    private RectTransform GetTargetIcon(PlayerDataType type)
+    {
+        switch (type)
+        {
+            case PlayerDataType.Coins:
+                return varIcon_Coin;
+            case PlayerDataType.Diamond:
+                return varIcon_Gem;
+            case PlayerDataType.Pcard:
+                return varPcard != null ? varPcard.transform.Find("Icon_Pcard") as RectTransform : null;
+            default:
+                return null;
+        }
+    }
+
+    private TextMeshProUGUI GetTargetText(PlayerDataType type)
+    {
+        switch (type)
+        {
+            case PlayerDataType.Coins:
+                return varTxtCoin;
+            case PlayerDataType.Diamond:
+                return varTxtGem;
+            case PlayerDataType.Pcard:
+                return varTxtPcard;
+            default:
+                return null;
+        }
+    }
+
+    private float GetCurrentValue(PlayerDataType type)
+    {
+        switch (type)
+        {
+            case PlayerDataType.Coins:
+                return playerDm.Coins;
+            case PlayerDataType.Diamond:
+                return playerDm.Dollars;
+            case PlayerDataType.Pcard:
+                return playerDm.Pcard;
+            default:
+                return 0f;
+        }
+    }
+
+    private string FormatCurrencyValue(PlayerDataType type, float value)
+    {
+        return type == PlayerDataType.Diamond || type == PlayerDataType.Pcard
+            ? CommonHelper.GetDollarString(value)
+            : CommonHelper.FormatLargeNumber(value.ToString(), 0);
+    }
     protected override void OnButtonClick(object sender, Button btSelf)
     {
         base.OnButtonClick(sender, btSelf);
-        // if (Params.Get<VarAction>(P_OnCloseAction) != null && GuideManager.Instance.GetCompletedGuideCount() < (CommonHelper.IsSpec() ? 4 : 3)) return;
       if (btSelf == varBtnCoin)
         {
-            // if(AppSettings.Instance.DebugMode)
-            // playerDm.SetData(PlayerDataType.Coins, playerDm.Coins+10000, true);
-
-            // GF.UI.OpenUIForm(UIViews.MakeupDialog);
-
-            // playerDm.LevelId = Math.Max((playerDm.LevelId + 1) % 6, 1);
-            // var saveData = GF.DataModel.GetOrCreate<CabinetGameSaveData>();
-            // saveData.ClearData();
-            // saveData.Save();
+            
         }
         else if (btSelf == varGembutton)
         {
@@ -576,42 +627,8 @@ public partial class ArrowUITopbar : UIFormBase
     protected override void OnButtonClick(object sender, string btSelf)
     {
         base.OnButtonClick(sender, btSelf);
-        if (btSelf == "Skin_Button")
-        {
-            playerDm.UseColorfulArrows = !playerDm.UseColorfulArrows;
-            Log.Info($"切换箭头颜色模式: {playerDm.UseColorfulArrows}");
-        }
-        // if (btSelf == "BgSkin_Button")
-        // {
-        //     playerDm.IsNightMode = !playerDm.IsNightMode;
-        //     ApplyBgSkinColor(playerDm.IsNightMode);
-        //     GF.Event.Fire(this, BgSkinChangeEventArgs.Create(playerDm.IsNightMode));
-        //     Log.Info($"切换背景颜色模式: {(playerDm.IsNightMode ? "夜间" : "日间")}");
-        // }
     }
-
-    /// <summary>
-    /// 应用背景日/夜间颜色到顶部栏 varBg。日间 #EBEBEB，夜间 #232633。
-    /// </summary>
-    private void ApplyBgSkinColor(bool isNightMode)
-    {
-        if (varBgSkin_Button != null)
-            varBgSkin_Button.SetSprite(isNightMode ? "UI/GameAtlas/btn_sm_1.png" : "UI/GameAtlas/btn_sm_0.png");
-        foreach (var buttonBg in varButtonBgArr)
-        {
-            if (buttonBg != null)
-            {
-                buttonBg.color = isNightMode?new Color(255, 255, 255, 0.5f):new Color(255, 255, 255, 1f);
-            }
-        }
-    }
-
-    private void OnBgSkinChange(object sender, GameEventArgs e)
-    {
-        var args = e as BgSkinChangeEventArgs;
-        if (args != null && varBg != null)
-            ApplyBgSkinColor(args.IsNightMode);
-    }
+    
 
     private void PlayGemUpFloatText(float deltaValue)
     {
@@ -652,6 +669,47 @@ public partial class ArrowUITopbar : UIFormBase
         {
             DOTween.Kill(varTxtUpGem.rectTransform);
             DOTween.Kill(varTxtUpGem);
+        }
+    }
+
+    private void PlayPcardUpFloatText(float deltaValue)
+    {
+        if (varTxtUpPcard == null) return;
+
+        StopPcardUpFloatTween();
+
+        varTxtUpPcard.text = $"+{CommonHelper.GetDollarString(deltaValue, deltaValue >= 0.01f)}";
+        RectTransform rect = varTxtUpPcard.rectTransform;
+        rect.anchoredPosition = m_TxtUpPcardRestPos;
+
+        Color textColor = varTxtUpPcard.color;
+        textColor.a = 1f;
+        varTxtUpPcard.color = textColor;
+        varTxtUpPcard.gameObject.SetActive(true);
+
+        m_TxtUpPcardTween = DOTween.Sequence()
+            .SetUpdate(true)
+            .Join(rect.DOAnchorPosY(m_TxtUpPcardRestPos.y + GEM_UP_FLOAT_OFFSET_Y, GEM_UP_FLOAT_DURATION).SetEase(Ease.OutQuad))
+            .Join(varTxtUpPcard.DOFade(0f, GEM_UP_FLOAT_DURATION).SetEase(Ease.InQuad))
+            .OnComplete(() =>
+            {
+                varTxtUpPcard.gameObject.SetActive(false);
+                m_TxtUpPcardTween = null;
+            });
+    }
+
+    private void StopPcardUpFloatTween()
+    {
+        if (m_TxtUpPcardTween != null)
+        {
+            m_TxtUpPcardTween.Kill();
+            m_TxtUpPcardTween = null;
+        }
+
+        if (varTxtUpPcard != null)
+        {
+            DOTween.Kill(varTxtUpPcard.rectTransform);
+            DOTween.Kill(varTxtUpPcard);
         }
     }
 }
