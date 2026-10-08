@@ -303,6 +303,11 @@ public partial class ArrowUITopbar : UIFormBase
         // 根据奖励类型确定货币类型
         PlayerDataType currencyType = args.type;
         float value = args.Value;
+        if (currencyType == PlayerDataType.Coins)
+        {
+            ApplyCoinVisible(true);
+        }
+
         // 获取奖励位置并转换为本地坐标
         Vector3 startPosition = args.WorldPosition;
         //Log.Info($"奖励位置世界坐标: {startPosition},类型: {currencyName},值: {value}");
@@ -592,6 +597,10 @@ public partial class ArrowUITopbar : UIFormBase
         {
             //Log.Info($"[数字滚动] 检测到新奖励，重新启动滚动, 类型:{type}, 新奖励值:{pendingRewards[type]}");
             UpdateNumberRoll(type);
+        }
+        else if (type == PlayerDataType.Coins)
+        {
+            ApplyCoinVisible(s_ShowCoin);
         }
         
         if (type == PlayerDataType.Diamond)

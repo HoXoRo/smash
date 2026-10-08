@@ -26,5 +26,6 @@ public enum UIViews : int
 	PlayUIForm = 20,
 	PcardRewardUIForm = 21,
 	PcardGiftUIForm = 22,
-	DebugUIForm = 23
+	DebugUIForm = 23,
+	LevelCompleteUIForm = 24
 }

@@ -1,6 +1,7 @@
 using ABTesting;
 using Core;
 using DG.Tweening;
+using GameFramework;
 using Gameplay.Collisions;
 using Gameplay.GameplayTutorial;
 using Gameplay.Level;
@@ -25,6 +26,7 @@ using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityGameFramework.Runtime;
 using Util;
 
 namespace Gameplay
@@ -1373,12 +1375,7 @@ namespace Gameplay
 				SaveService.Save();
 			}
 			ServiceLocator.Get<LifeHelper>()?.AddLife(1);
-			int reward = GetCoinRewardForLevel();
-			MenuController.CoinToCollect = reward;
-			if (reward > 0)
-			{
-				InventoryHelper.AddAmount(new InventoryPayload(InventoryItemType.Coin, reward), true, InventoryEarnSource.LevelWin);
-			}
+			MenuController.CoinToCollect = 0;
 			if (topPanelRootTransform != null)
 			{
 				topPanelRootTransform.DOKill();
@@ -1391,7 +1388,13 @@ namespace Gameplay
 				{
 					return;
 				}
-				ServiceLocator.Get<PopupController>()?.Open(PopupType.Win, null);
+
+				UIParams uiParams = UIParams.Create();
+				uiParams.Set<VarInt32>(LevelCompleteUIForm.P_LevelId, _levelIndex);
+				VarAction onNext = ReferencePool.Acquire<VarAction>();
+				onNext.Value = () => SceneHandler.LoadScene(SceneType.Gameplay, false);
+				uiParams.Set<VarAction>(LevelCompleteUIForm.P_OnNext, onNext);
+				GF.UI.OpenUIForm(UIViews.LevelCompleteUIForm, uiParams);
 			});
 		}
 

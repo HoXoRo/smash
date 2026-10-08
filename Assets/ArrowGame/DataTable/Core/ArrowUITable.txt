@@ -28,3 +28,4 @@
 	21	p卡领取界面	13	PcardRewardUIForm	False	2	False
 	22	p卡领取界面	13	PcardGiftUIForm	False	2	False
 	23	测试界面	30	DebugUIForm	False	2	False
+	24	通关界面	13	LevelCompleteUIForm	False	2	False
