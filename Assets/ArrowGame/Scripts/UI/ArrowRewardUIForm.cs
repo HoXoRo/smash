@@ -6,7 +6,9 @@ using UnityEngine;
 using UnityGameFramework.Runtime;
 using DG.Tweening;
 
+#if ENABLE_OBFUZ
 [Obfuz.ObfuzIgnore(Obfuz.ObfuzScope.TypeName)]
+#endif
 [AddComponentMenu("UI/ArrowRewardUIForm")]
 public partial class ArrowRewardUIForm : UIFormBase
 {

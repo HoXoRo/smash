@@ -11,21 +11,22 @@
 	6	大厅主界面	1	HomePageUIForm	False	1	False
 	7	设置界面	1	SettingPageUIForm	False	1	False
 	8	任务界面	1	TaskPageUIForm	False	1	False
+	9	退出确认界面	2	QuitConfirmUIForm	False	1	False
 #	对话框(中层)						
-	9	设置	3	ArrowSettingDialog	True	2	True
-	10	语言设置	2	LanguagesDialog	False	2	True
+	10	设置	3	ArrowSettingDialog	True	2	True
+	11	语言设置	2	LanguagesDialog	False	2	True
 #	提示(顶层)						
-	11	吐司提示	1	ArrowToastTips	False	4	False
-	12	奖励弹窗	10	ArrowRewardDialogUIForm	False	2	False
-	13	PrivacyPolicy隐私协议	20	ArrowPrivacyPolicyUIForm	False	2	False
-	14	GuideUIForm	2	ArrowGuideUIForm	False	4	False
-	15	奖励领取界面	13	ArrowRewardUIForm	False	2	False
-	16	提现界面	15	MakeupUIForm	False	2	False
-	17	提现方式界面	16	MakeupPaymentUIForm	False	2	False
-	18	提现信息界面	16	MakeupInfoUIForm	False	2	False
-	19	提现记录界面	17	MakeupRecordUIForm	False	2	False
-	20	玩法界面	12	PlayUIForm	False	2	False
-	21	p卡领取界面	13	PcardRewardUIForm	False	2	False
-	22	p卡领取界面	13	PcardGiftUIForm	False	2	False
-	23	测试界面	30	DebugUIForm	False	2	False
-	24	通关界面	13	LevelCompleteUIForm	False	2	False
+	12	吐司提示	1	ArrowToastTips	False	4	False
+	13	奖励弹窗	10	ArrowRewardDialogUIForm	False	2	False
+	14	PrivacyPolicy隐私协议	20	ArrowPrivacyPolicyUIForm	False	2	False
+	15	GuideUIForm	2	ArrowGuideUIForm	False	4	False
+	16	奖励领取界面	13	ArrowRewardUIForm	False	2	False
+	17	提现界面	15	MakeupUIForm	False	2	False
+	18	提现方式界面	16	MakeupPaymentUIForm	False	2	False
+	19	提现信息界面	16	MakeupInfoUIForm	False	2	False
+	20	提现记录界面	17	MakeupRecordUIForm	False	2	False
+	21	玩法界面	12	PlayUIForm	False	2	False
+	22	p卡领取界面	13	PcardRewardUIForm	False	2	False
+	23	p卡领取界面	13	PcardGiftUIForm	False	2	False
+	24	测试界面	30	DebugUIForm	False	2	False
+	25	通关界面	13	LevelCompleteUIForm	False	2	False

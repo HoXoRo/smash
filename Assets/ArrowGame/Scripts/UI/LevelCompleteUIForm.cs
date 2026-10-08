@@ -7,7 +7,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
 
+#if ENABLE_OBFUZ
 [Obfuz.ObfuzIgnore(Obfuz.ObfuzScope.TypeName)]
+#endif
 [AddComponentMenu("UI/LevelCompleteUIForm")]
 public partial class LevelCompleteUIForm : UIFormBase
 {
