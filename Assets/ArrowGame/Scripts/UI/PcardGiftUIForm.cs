@@ -39,14 +39,11 @@ public partial class PcardGiftUIForm : UIFormBase
 
     private void OnClaimClicked()
     {
-        if (PcardGiftRewardSession.Count <= 0 ||
-            GF.UI.HasUIForm(UIViews.PcardRewardUIForm) ||
-            GF.UI.IsLoadingUIForm(UIViews.PcardRewardUIForm))
+        if (PcardGiftRewardSession.Count <= 0)
         {
             return;
         }
 
-        GF.Sound.PlayEffect("ui/ui_click.mp3");
         GF.UI.OpenUIForm(UIViews.PcardRewardUIForm);
         GF.UI.Close(UIForm);
     }

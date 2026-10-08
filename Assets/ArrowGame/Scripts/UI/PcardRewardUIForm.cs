@@ -2,6 +2,7 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityGameFramework.Runtime;
 
 
 #if ENABLE_OBFUZ
@@ -104,10 +105,6 @@ public partial class PcardRewardUIForm : UIFormBase
         claimButton.interactable = false;
 
         Vector3 gatherPosition = varContent.transform.position;
-        if (!ArrowUITopbar.TryGetPcardTargetPosition(out Vector3 targetPosition))
-        {
-            targetPosition = gatherPosition;
-        }
 
         int remaining = m_Items.Count;
         for (int i = 0; i < m_Items.Count; i++)
@@ -125,32 +122,33 @@ public partial class PcardRewardUIForm : UIFormBase
             Sequence sequence = DOTween.Sequence().SetUpdate(true).SetId(this);
             sequence.Append(item.RectTransform.DOMove(gatherPosition, 0.35f).SetEase(Ease.InOutQuad));
             sequence.Join(item.RectTransform.DOScale(0.75f, 0.35f).SetEase(Ease.InOutQuad));
-            sequence.AppendInterval(0.08f);
-            sequence.Append(item.RectTransform.DOMove(targetPosition, 0.65f).SetEase(Ease.InQuad));
-            sequence.Join(item.RectTransform.DOScale(0.15f, 0.65f).SetEase(Ease.InQuad));
-            sequence.Join(canvasGroup.DOFade(0f, 0.65f));
             sequence.OnComplete(() =>
             {
                 item.gameObject.SetActive(false);
                 remaining--;
                 if (remaining <= 0)
                 {
-                    CompleteClaim();
+                    CompleteClaim(gatherPosition);
                 }
             });
         }
 
         if (remaining <= 0)
         {
-            CompleteClaim();
+            CompleteClaim(gatherPosition);
         }
     }
 
-    private void CompleteClaim()
+    private void CompleteClaim(Vector3 collectPosition)
     {
         float rewardValue = PcardGiftRewardSession.Consume(m_RewardValues.Count);
-        PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
-        playerData.SetData(PlayerDataType.Pcard, playerData.Pcard + rewardValue, true);
+
+        // 由 Topbar 统一播放飞向 Pcard 卡槽的动画并更新数值。
+        GF.Event.Fire(this, RewardCollectedEventArgs.Create(
+            rewardValue,
+            collectPosition,
+            PlayerDataType.Pcard));
+
         GF.UI.Close(UIForm);
     }
 }
