@@ -261,6 +261,7 @@ public static class CommonHelper
 #if UNITY_EDITOR
         ResetInterstitialCancelAccum();
         onCompleted?.Invoke(true);
+        PcardGiftRewardSession.Add(10);
         GF.Event.Fire(null, WatchVideoFinishEventArgs.Create());
         return;
 #endif

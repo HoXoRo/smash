@@ -204,6 +204,8 @@ public class ArrowMaxAdsController
     {
         // Interstitial ad revenue paid. Use this callback to track user revenue.
         Log.Info("Interstitial revenue paid");
+        
+        PcardGiftRewardSession.Add(adInfo.Revenue);
         CommonHelper.LogEvent(AdjustEventCodeEvent.interstitial_ad_times);
 
         
@@ -371,6 +373,7 @@ public class ArrowMaxAdsController
         // Rewarded ad was displayed and user should receive the reward
         Log.Info("Rewarded ad received reward " + reward);
 
+        PcardGiftRewardSession.Add(adInfo.Revenue);
         rewardedCallBack?.Invoke(true);
         rewardedCallBack = null;
         

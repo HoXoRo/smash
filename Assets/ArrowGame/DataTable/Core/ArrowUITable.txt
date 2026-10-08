@@ -25,3 +25,6 @@
 	18	提现信息界面	16	MakeupInfoUIForm	False	2	False
 	19	提现记录界面	17	MakeupRecordUIForm	False	2	False
 	20	玩法界面	12	PlayUIForm	False	2	False
+	21	p卡领取界面	13	PcardRewardUIForm	False	2	False
+	22	p卡领取界面	13	PcardGiftUIForm	False	2	False
+	23	测试界面	30	DebugUIForm	False	2	False

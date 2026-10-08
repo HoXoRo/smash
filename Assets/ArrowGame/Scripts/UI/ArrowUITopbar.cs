@@ -37,6 +37,15 @@ public partial class ArrowUITopbar : UIFormBase
     private Tween m_TxtUpPcardTween;
     public PlayerDataModel playerDm;
 
+    protected override void OnInit(object userData)
+    {
+        base.OnInit(userData);
+        if (varBtnDebug != null)
+        {
+            varBtnDebug.onClick.AddListener(OpenDebugUIForm);
+        }
+    }
+
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
@@ -45,6 +54,7 @@ public partial class ArrowUITopbar : UIFormBase
         GF.Event.Subscribe(LargeDollarRewardEventArgs.EventId, OnLargeDollarReward);
         GF.Event.Subscribe(TreasureBoxRewardEventArgs.EventId, OnTreasureBoxReward);
         GF.Event.Subscribe(UserTypeChangeEventArgs.EventId, OnUserTypeChange);
+        PcardGiftRewardSession.Changed += OnGiftRewardsChanged;
         varBg.enabled = Params.Get<VarBoolean>(P_EnableBG, true);
        
 
@@ -73,7 +83,9 @@ public partial class ArrowUITopbar : UIFormBase
         }
         m_TxtUpPcardRestPos = varTxtUpPcard.rectTransform.anchoredPosition;
         varTxtUpPcard.gameObject.SetActive(false);
+        RefreshGiftCount();
         ApplyCoinVisible(s_ShowCoin);
+        TryOpenGiftForm();
         //适配刘海屏
         // float safeArea = Mathf.Max(0, Screen.height - Screen.safeArea.yMax);
         // bool isLiuhai = safeArea != 0;
@@ -113,6 +125,7 @@ public partial class ArrowUITopbar : UIFormBase
         GF.Event.Unsubscribe(LargeDollarRewardEventArgs.EventId, OnLargeDollarReward);
         GF.Event.Unsubscribe(TreasureBoxRewardEventArgs.EventId, OnTreasureBoxReward);
         GF.Event.Unsubscribe(UserTypeChangeEventArgs.EventId, OnUserTypeChange);
+        PcardGiftRewardSession.Changed -= OnGiftRewardsChanged;
         base.OnClose(isShutdown, userData);
     }
     protected override void InternalSetVisible(bool visible)
@@ -184,6 +197,37 @@ public partial class ArrowUITopbar : UIFormBase
         }
     }
 
+    public static bool TryGetPcardTargetPosition(out Vector3 position)
+    {
+        position = Vector3.zero;
+        string assetName = GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbar);
+        if (string.IsNullOrEmpty(assetName))
+        {
+            return false;
+        }
+
+        var forms = GF.UI.GetUIForms(assetName);
+        if (forms == null)
+        {
+            return false;
+        }
+
+        foreach (var uiForm in forms)
+        {
+            if (uiForm.Logic is ArrowUITopbar topbar)
+            {
+                RectTransform target = topbar.GetTargetIcon(PlayerDataType.Pcard);
+                if (target != null)
+                {
+                    position = target.position;
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     void ApplyCoinVisible(bool visible)
     {
         if (varCoin != null)
@@ -194,10 +238,13 @@ public partial class ArrowUITopbar : UIFormBase
 
     void OpenMakeupUIForm()
     {
-        if (GF.UI.HasUIForm(UIViews.MakeupUIForm) || GF.UI.IsLoadingUIForm(UIViews.MakeupUIForm))
-            return;
-
         GF.UI.OpenUIForm(UIViews.MakeupUIForm);
+    }
+
+    private void OpenDebugUIForm()
+    {
+        
+        GF.UI.OpenUIForm(UIViews.DebugUIForm);
     }
 
     void RefreshPcardText()
@@ -213,6 +260,29 @@ public partial class ArrowUITopbar : UIFormBase
             return;
 
         varTxtPcard.text = CommonHelper.GetDollarString(value);
+    }
+
+    private void OnGiftRewardsChanged()
+    {
+        RefreshGiftCount();
+    }
+
+    private void RefreshGiftCount()
+    {
+        if (varTxtGiftCount != null)
+        {
+            varTxtGiftCount.text = $"x{PcardGiftRewardSession.Count}";
+        }
+    }
+
+    private void TryOpenGiftForm()
+    {
+        if (PcardGiftRewardSession.Count <= 0)
+        {
+            return;
+        }
+
+        GF.UI.OpenUIForm(UIViews.PcardGiftUIForm);
     }
 
     private void OnUserTypeChange(object sender, GameEventArgs e)
@@ -622,6 +692,10 @@ public partial class ArrowUITopbar : UIFormBase
         else if (btSelf != null && btSelf.name == "Pcardbutton")
         {
             OpenMakeupUIForm();
+        }
+        else if (btSelf != null && btSelf.name == "GiftButton")
+        {
+            TryOpenGiftForm();
         }
     }
     protected override void OnButtonClick(object sender, string btSelf)
