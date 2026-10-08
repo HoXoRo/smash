@@ -1229,6 +1229,7 @@ namespace Gameplay
 
 		public void UpdateRemainingMoves()
 		{
+			PlayUIForm.SetRemainingBallCount(_remainingMoves);
 			if (ballSignController != null)
 			{
 				ballSignController.UpdateRemainingMoves(_remainingMoves);
