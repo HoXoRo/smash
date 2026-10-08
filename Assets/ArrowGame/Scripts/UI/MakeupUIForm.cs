@@ -30,6 +30,7 @@ public partial class MakeupUIForm : UIFormBase
         base.OnOpen(userData);
         RefreshGemText();
         RefreshPcardText();
+        RefreshValueText();
         RefreshAccountText();
         RefreshMakeupList();
         ResetMakeupScroll();
@@ -129,6 +130,16 @@ public partial class MakeupUIForm : UIFormBase
 
         PlayerDataModel playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
         varTxtPcard.text = CommonHelper.GetDollarString(playerDm.Pcard);
+    }
+
+    void RefreshValueText()
+    {
+        if (varTxtValue == null)
+            return;
+
+        PlayerDataModel playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        float value = playerDm.Pcard / 10000f;
+        varTxtValue.text = CommonHelper.GetDollarString(value, false);
     }
 
     public void RefreshAccountText()
