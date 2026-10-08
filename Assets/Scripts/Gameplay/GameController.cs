@@ -8,7 +8,6 @@ using Gameplay.Level;
 using Gameplay.Objects;
 using Gameplay.Obstacle;
 using Gameplay.Particles;
-using Gameplay.UI;
 using Inventory;
 using Inventory.TimedInventory;
 using Level;
@@ -483,15 +482,6 @@ namespace Gameplay
 		private Cannon cannon;
 
 		[SerializeField]
-		private RectTransform topPanelRootTransform;
-
-		[SerializeField]
-		private BallSignController ballSignController;
-
-		[SerializeField]
-		private GameplaySettingsController gameplaySettingsController;
-
-		[SerializeField]
 		private GameObject backgroundPrefab;
 
 		[SerializeField]
@@ -574,8 +564,6 @@ namespace Gameplay
 			_currentStage = LoadStage(_currentStageIndex);
 			_activeStreakCount = StreakHelper.GetStreakCount();
 			StreakHelper.OnGameplayLevelStarted(_activeStreakCount);
-			ballSignController?.Init(_levelData);
-			gameplaySettingsController?.Init(_levelData);
 			List<PrelevelBoosterType> selection = PrelevelBoosterHelper.GetSelection();
 			if (selection != null)
 			{
@@ -1230,10 +1218,6 @@ namespace Gameplay
 		public void UpdateRemainingMoves()
 		{
 			PlayUIForm.SetRemainingBallCount(_remainingMoves);
-			if (ballSignController != null)
-			{
-				ballSignController.UpdateRemainingMoves(_remainingMoves);
-			}
 		}
 
 		private void CheckForClick()
@@ -1291,7 +1275,6 @@ namespace Gameplay
 				stageSignText.text = string.Format("Stage {0}/{1}", _currentStageIndex + 1, _levelData != null ? _levelData.GetStageCount() : 1);
 			}
 			stageSignAnimator?.Play("StageSignOpenAnim");
-			ballSignController?.Fill(_currentStageIndex, 0.7f);
 			yield return new WaitForSeconds(0.7f);
 			Transform previousRoot = previousStage?.RootTransform;
 			if (previousRoot != null)
@@ -1377,11 +1360,6 @@ namespace Gameplay
 			}
 			ServiceLocator.Get<LifeHelper>()?.AddLife(1);
 			MenuController.CoinToCollect = 0;
-			if (topPanelRootTransform != null)
-			{
-				topPanelRootTransform.DOKill();
-				topPanelRootTransform.DOAnchorPosY(500f, 0.4f, false).SetEase(Ease.InBack).SetDelay(0.3f);
-			}
 			_pendingWinPopupRoutine = DelayedWorker.CallAfter(0.5f, delegate
 			{
 				_pendingWinPopupRoutine = null;
@@ -1567,7 +1545,6 @@ namespace Gameplay
 		{
 			StopAllCoroutines();
 			CancelPendingWinPopup();
-			topPanelRootTransform?.DOKill();
 			boosterTint?.DOKill();
 			SceneHandler.OnLoadingDisappear -= OnGameplayExposed;
 		}
