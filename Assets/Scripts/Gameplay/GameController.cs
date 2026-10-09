@@ -557,28 +557,16 @@ namespace Gameplay
 		private void Start()
 		{
 			_analyticsHelper = new GameplayAnalyticsHelper();
-			_levelIndex = GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId;
+			PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
+			_levelIndex = playerData.LevelId;
 			_currentStageIndex = 0;
 			LoadLevel(_levelIndex);
 			_currentStage = LoadStage(_currentStageIndex);
 			_activeStreakCount = StreakHelper.GetStreakCount();
 			StreakHelper.OnGameplayLevelStarted(_activeStreakCount);
-			List<PrelevelBoosterType> selection = PrelevelBoosterHelper.GetSelection();
-			if (selection != null)
-			{
-				for (int i = 0; i < selection.Count; i++)
-				{
-					if (selection[i] != PrelevelBoosterType.Rocket)
-					{
-						continue;
-					}
-					if (_levelIndex != PrelevelBoosterHelper.GetUnlockLevelForType(PrelevelBoosterType.Rocket))
-					{
-						InventoryHelper.TrySpend(new InventoryPayload(InventoryItemType.PrelevelRocket, 1), InventorySpendSource.Prelevel);
-					}
-					_prelevelRocketSelected = true;
-				}
-			}
+			_prelevelRocketSelected = playerData.PendingRocketUse;
+			playerData.PendingRocketUse = false;
+			PlayUIForm.SetRocketUseCount(_prelevelRocketSelected ? 1 : 0);
 			PrelevelBoosterHelper.ClearSelection();
 			AfterLevelSetup();
 			AfterStageSetup();

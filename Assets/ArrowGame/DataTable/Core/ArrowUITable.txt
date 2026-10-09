@@ -32,3 +32,5 @@
 	25	通关界面	13	LevelCompleteUIForm	False	2	False
 	26	补充生命值界面	13	AddLifeUIForm	False	2	False
 	27	补充球界面	13	AddBallsUIForm	False	2	False
+	28	补充道具界面	14	AddPropUIForm	False	2	False
+	29	关卡准备界面	13	PrelevelUIForm	False	2	False

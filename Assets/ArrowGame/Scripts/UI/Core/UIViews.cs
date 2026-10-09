@@ -30,5 +30,7 @@ public enum UIViews : int
 	DebugUIForm = 24,
 	LevelCompleteUIForm = 25,
 	AddLifeUIForm = 26,
-	AddBallsUIForm = 27
+	AddBallsUIForm = 27,
+	AddPropUIForm = 28,
+	PrelevelUIForm = 29
 }

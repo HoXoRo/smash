@@ -270,7 +270,7 @@ namespace Gameplay
 				return;
 			}
 
-			if (transform.position.z > 30f)
+			if (State != BallState.HitGround && transform.position.z > 30f)
 			{
 				DestroyBallInstant();
 				return;
@@ -528,6 +528,7 @@ namespace Gameplay
 		{
 			if (State != BallState.HitGround)
 			{
+				_destroyTimer = 0f;
 				Vector3 hitPoint = collision != null && collision.contactCount > 0 ? collision.GetContact(0).point : transform.position;
 				ServiceLocator.Get<ParticleController>()?.PlayOnPosition(ParticleType.BallGroundHit, hitPoint, Quaternion.identity, rb != null ? rb.linearVelocity : Vector3.zero);
 				VelocityPair pair = GetCurrentVelocityPair();

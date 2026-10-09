@@ -33,3 +33,4 @@
 	WinRewardRate	胜利奖励倍数	10
 	lifeCoin	补充1点生命值需要的金币数	900
 	ballsCoin	补充5个球需要的金币数	900
+	propCoin	补充道具需要的金币数	900

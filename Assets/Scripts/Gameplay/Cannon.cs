@@ -15,6 +15,7 @@ namespace Gameplay
 	{
 		private const float BallSpeed = 180f;
 		private const float BallMass = 1.5f;
+		private const float EmptyTargetDistance = 50f;
 		private const float PreshootDelay = 0.033333335f;
 
 		[SerializeField]
@@ -192,7 +193,18 @@ namespace Gameplay
 			}
 
 			Ray ray = mainCamera.ViewportPointToRay(GetPointerViewportPosition());
-			return TryRayCastToObject(ray, out target) || TryRayCastToPlane(ray, out target);
+			if (TryRayCastToObject(ray, out target))
+			{
+				return true;
+			}
+			if (TryRayCastToPlane(ray, out target) &&
+				TryCalculateBallisticVelocity(spawnTransform.position, target, BallSpeed, out Vector3 planeDirection) &&
+				planeDirection.sqrMagnitude > 0f)
+			{
+				return true;
+			}
+			target = ray.GetPoint(EmptyTargetDistance);
+			return true;
 		}
 
 		private Vector3 GetPointerViewportPosition()

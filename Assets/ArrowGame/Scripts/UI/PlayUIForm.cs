@@ -10,6 +10,13 @@ using UnityGameFramework.Runtime;
 public partial class PlayUIForm : UIFormBase
 {
     private static int s_RemainingBallCount;
+    private static int s_RocketUseCount;
+
+    public static void SetRocketUseCount(int count)
+    {
+        s_RocketUseCount = Mathf.Max(0, count);
+        SetRemainingBallCount(s_RemainingBallCount);
+    }
 
     protected override void OnInit(object userData)
     {

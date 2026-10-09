@@ -244,6 +244,25 @@ public class PlayerDataModel : DataModelStorageBase
         set => SetData(PlayerDataType.Prop1, value);
     }
 
+    public int RocketCount { get; set; }
+
+    [JsonIgnore]
+    public bool PendingRocketUse { get; set; }
+
+    public void AddRocket()
+    {
+        RocketCount = Mathf.Max(0, RocketCount) + 1;
+        Save();
+    }
+
+    public bool TryUseRocket()
+    {
+        if (RocketCount <= 0) return false;
+        RocketCount--;
+        Save();
+        return true;
+    }
+
     public int Prop2
     {
         get => m_Prop2;
@@ -416,6 +435,8 @@ public class PlayerDataModel : DataModelStorageBase
         SigninIndex = 0;
         m_LastBingoCardRecoverTime = UtilityBuiltin.GetTimeStamp();
         m_Prop1 = GF.Config.GetInt("DefaultProp");
+        RocketCount = 0;
+        PendingRocketUse = false;
         m_Prop2 = GF.Config.GetInt("DefaultProp");
         m_Prop3 = GF.Config.GetInt("DefaultProp");
         m_CollectCount = 0;

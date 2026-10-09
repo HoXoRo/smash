@@ -8,6 +8,7 @@ using UnityEngine;
 public partial class HomePageUIForm : UIFormBase
 {
     const string GameplaySceneName = "Gameplay";
+    private static bool isEnteringGameplay;
 
     protected override void OnInit(object userData)
     {
@@ -31,20 +32,53 @@ public partial class HomePageUIForm : UIFormBase
     void OnPlayClicked()
     {
         GF.Sound.PlayEffect("ui/ui_click.mp3");
+        if (isEnteringGameplay) return;
+        if (GetCurrentLevel() > 25)
+        {
+            GF.UI.OpenUIForm(UIViews.PrelevelUIForm);
+            return;
+        }
         EnterGameplayAsync().Forget();
     }
 
     async UniTaskVoid EnterGameplayAsync()
     {
-        string sceneAssetName = UtilityBuiltin.AssetsPath.GetScenePath(GameplaySceneName);
-        if (!await GF.Scene.LoadSceneAwait(sceneAssetName))
-        {
-            return;
-        }
+        await TryEnterGameplayAsync(false);
+    }
 
-        CloseHallTabAfterGameplayLoaded();
-        ArrowUITopbar.SetCoinVisible(false);
-        GF.UI.OpenUIForm(UIViews.PlayUIForm);
+    public static async UniTask<bool> TryEnterGameplayAsync(bool useRocket)
+    {
+        if (isEnteringGameplay) return false;
+        PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        if (useRocket && !playerData.TryUseRocket()) return false;
+        isEnteringGameplay = true;
+        playerData.PendingRocketUse = useRocket;
+        bool loaded = false;
+        try
+        {
+            string sceneAssetName = UtilityBuiltin.AssetsPath.GetScenePath(GameplaySceneName);
+            loaded = await GF.Scene.LoadSceneAwait(sceneAssetName);
+            if (!loaded) return false;
+            GF.UI.CloseUIForms(UIViews.PrelevelUIForm);
+            CloseHallTabAfterGameplayLoaded();
+            ArrowUITopbar.SetCoinVisible(false);
+            GF.UI.OpenUIForm(UIViews.PlayUIForm);
+            return true;
+        }
+        catch (System.Exception exception)
+        {
+            UnityGameFramework.Runtime.Log.Error(exception.ToString());
+            return false;
+        }
+        finally
+        {
+            if (!loaded)
+            {
+                playerData.PendingRocketUse = false;
+                if (useRocket) playerData.AddRocket();
+            }
+            isEnteringGameplay = false;
+        }
     }
 
     static void CloseHallTabAfterGameplayLoaded()
