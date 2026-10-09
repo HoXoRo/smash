@@ -10,6 +10,8 @@ using UnityGameFramework.Runtime;
 
 public partial class TaskPageUIForm : UIFormBase
 {
+    public const string P_FromHallTab = "FromHallTab";
+
     [SerializeField] private TaskItem taskItemPrefab;
     [SerializeField] private ScrollRect taskScrollRect;
 
@@ -17,9 +19,16 @@ public partial class TaskPageUIForm : UIFormBase
 
     public IReadOnlyList<TaskItem> TaskItems => taskItems;
 
+    protected override void OnInit(object userData)
+    {
+        base.OnInit(userData);
+        varBtnClose.onClick.AddListener(OnClickClose);
+    }
+
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        varBtnClose.gameObject.SetActive(!Params.Get<VarBoolean>(P_FromHallTab, false));
         GF.Event.Subscribe(PlayerDataChangedEventArgs.EventId, OnPlayerDataChanged);
         RefreshTaskList();
 

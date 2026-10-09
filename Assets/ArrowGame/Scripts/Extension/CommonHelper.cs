@@ -135,6 +135,17 @@ public static class CommonHelper
         else
         {
             GF.UI.ShowToast("Not enough Coins!");
+            
+            int topFormId = GF.UI.GetTopUIFormId();
+            if (topFormId >= 0 && GF.UI.GetUIForm(topFormId)?.Logic is UIFormBase topForm)
+            {
+                topForm.OpenSubUIForm(UIViews.TaskPageUIForm);
+            }
+            else
+            {
+                GF.UI.OpenUIForm(UIViews.TaskPageUIForm);
+            }
+            
             onCompleted?.Invoke(false);
         }
     }

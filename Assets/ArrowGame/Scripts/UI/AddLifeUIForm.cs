@@ -40,7 +40,7 @@ public partial class AddLifeUIForm : UIFormBase
         varTxtTime.text = seconds < 0 ? "FULL" : $"{seconds / 60:00}:{seconds % 60:00}";
         bool canAdd = playerData.LifeCount < PlayerDataModel.MaxLifeCount && !adPending;
         varBtnAd.interactable = canAdd;
-        varBtnCoin.interactable = canAdd && lifeCoin >= 0 && playerData.Coins >= lifeCoin;
+        varBtnCoin.interactable = canAdd && lifeCoin >= 0;
     }
 
     private void AddLifeByCoin()

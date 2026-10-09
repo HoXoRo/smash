@@ -68,7 +68,13 @@ public partial class HallTabUIForm : UIFormBase
 
     int OpenPage(UIViews view)
     {
-        
+        if (view == UIViews.TaskPageUIForm)
+        {
+            var uiParams = UIParams.Create();
+            uiParams.Set<VarBoolean>(TaskPageUIForm.P_FromHallTab, true);
+            return GF.UI.OpenUIForm(view, uiParams);
+        }
+
         return GF.UI.OpenUIForm(view);
     }
 
