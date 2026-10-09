@@ -65,6 +65,13 @@ public class PlayerDataModel : DataModelStorageBase
 
     public int LifeTimerStart { get; set; }
 
+    public int UnlimitedLifeEnd { get; set; }
+    public int UnlimitedLifeTime { get; set; }
+    public bool UnlimitedLifeStorageMigrated { get; set; }
+
+    [JsonIgnore]
+    public bool HasUnlimitedLife => UnlimitedLifeEnd > DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+
     public void RefreshLife()
     {
         int oldCount = LifeCount;
@@ -396,6 +403,9 @@ public class PlayerDataModel : DataModelStorageBase
     {
         LifeCount = MaxLifeCount;
         LifeTimerStart = 0;
+        UnlimitedLifeEnd = 0;
+        UnlimitedLifeTime = 0;
+        UnlimitedLifeStorageMigrated = false;
         m_Coins = GF.Config.GetInt("DefaultCoins");
         m_Dollars = GF.Config.GetInt("DefaultDiamonds");
         m_Pcard = 0f;

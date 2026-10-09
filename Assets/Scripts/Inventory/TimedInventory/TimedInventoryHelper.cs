@@ -10,6 +10,27 @@ namespace Inventory.TimedInventory
 	{
 		private static TimeHelper _subscribedTimeHelper;
 
+		private static PlayerDataModel PlayerData
+		{
+			get
+			{
+				PlayerDataModel playerData = GF.DataModel != null ? GF.DataModel.GetDataModel<PlayerDataModel>() : null;
+				if (playerData != null && !playerData.UnlimitedLifeStorageMigrated)
+				{
+					int oldTime = SaveService.Data.UnlimitedLifeTime;
+					int oldEnd = SaveService.Data.UnlimitedLifeEnd;
+					if (oldTime > 0 && playerData.UnlimitedLifeEnd <= 0)
+					{
+						playerData.UnlimitedLifeTime = oldTime;
+						playerData.UnlimitedLifeEnd = oldEnd > 0 ? oldEnd : TimeUtil.GetNowSecondsUtc() + oldTime;
+					}
+					playerData.UnlimitedLifeStorageMigrated = true;
+					playerData.Save();
+				}
+				return playerData;
+			}
+		}
+
 		static TimedInventoryHelper()
 		{
 			EnsureSubscribed();
@@ -65,7 +86,7 @@ namespace Inventory.TimedInventory
 		public static int GetTime(TimedInventoryItemType itemType)
 		{
 			EnsureSubscribed();
-			return itemType == TimedInventoryItemType.UnlimitedLife ? SaveService.Data.UnlimitedLifeTime : 0;
+			return itemType == TimedInventoryItemType.UnlimitedLife && PlayerData != null ? PlayerData.UnlimitedLifeTime : 0;
 		}
 
 		public static bool HasTime(TimedInventoryItemType itemType)
@@ -76,14 +97,14 @@ namespace Inventory.TimedInventory
 
 		private static int GetEnd(TimedInventoryItemType itemType)
 		{
-			return itemType == TimedInventoryItemType.UnlimitedLife ? SaveService.Data.UnlimitedLifeEnd : 0;
+			return itemType == TimedInventoryItemType.UnlimitedLife && PlayerData != null ? PlayerData.UnlimitedLifeEnd : 0;
 		}
 
 		private static void SetTime(TimedInventoryItemType itemType, int time)
 		{
 			if (itemType == TimedInventoryItemType.UnlimitedLife)
 			{
-				SaveService.Data.UnlimitedLifeTime = time;
+				if (PlayerData != null) PlayerData.UnlimitedLifeTime = time;
 			}
 		}
 
@@ -91,7 +112,9 @@ namespace Inventory.TimedInventory
 		{
 			if (itemType == TimedInventoryItemType.UnlimitedLife)
 			{
-				SaveService.Data.UnlimitedLifeEnd = end;
+				if (PlayerData == null) return;
+				PlayerData.UnlimitedLifeEnd = end;
+				PlayerData.Save();
 			}
 		}
 
