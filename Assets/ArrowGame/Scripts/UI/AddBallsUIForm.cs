@@ -48,19 +48,22 @@ public partial class AddBallsUIForm : UIFormBase
     private void RefreshButtons()
     {
         varBtnAd.interactable = !isBusy && onRefill != null;
-        varBtnCoin.interactable = !isBusy && onRefill != null && ballsCoin >= 0 && playerData.Coins >= ballsCoin;
+        varBtnCoin.interactable = !isBusy && onRefill != null;
         varBtnClose.interactable = !isBusy;
     }
 
     private void AddBallsByCoin()
     {
         if (isBusy || onRefill == null) return;
-        if (!playerData.TrySpendCoins(ballsCoin))
+        CommonHelper.ConsumeCoins(ballsCoin, success =>
         {
-            RefreshButtons();
-            return;
-        }
-        CompleteRefill();
+            if (!success)
+            {
+                RefreshButtons();
+                return;
+            }
+            CompleteRefill();
+        });
     }
 
     private void AddBallsByAd()
@@ -125,10 +128,6 @@ public partial class AddBallsUIForm : UIFormBase
         GF.UI.CloseUIForm(Id);
         GF.UI.CloseUIForms(UIViews.SettingPageUIForm);
         GF.UI.CloseUIForms(UIViews.PlayUIForm);
-        if (!GF.UI.HasUIForm(UIViews.HallTabUIForm) &&
-            !GF.UI.IsLoadingUIForm(UIViews.HallTabUIForm))
-        {
-            GF.UI.OpenUIForm(UIViews.HallTabUIForm);
-        }
+        GF.UI.OpenUIForm(UIViews.HallTabUIForm);
     }
 }

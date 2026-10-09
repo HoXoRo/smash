@@ -47,9 +47,13 @@ public partial class AddLifeUIForm : UIFormBase
     {
         if (adPending) return;
         playerData.RefreshLife();
-        if (playerData.LifeCount >= PlayerDataModel.MaxLifeCount || !playerData.TrySpendCoins(lifeCoin)) return;
-        playerData.AddLife(1);
-        OnClickClose();
+        if (playerData.LifeCount >= PlayerDataModel.MaxLifeCount) return;
+        CommonHelper.ConsumeCoins(lifeCoin, success =>
+        {
+            if (!success) return;
+            playerData.AddLife(1);
+            OnClickClose();
+        });
     }
 
     private void AddLifeByAd()

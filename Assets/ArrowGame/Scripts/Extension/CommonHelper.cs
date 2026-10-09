@@ -128,10 +128,8 @@ public static class CommonHelper
     {
         if (count < 0) return;
         var playerData = GF.DataModel.GetDataModel<PlayerDataModel>();
-        if (playerData != null && playerData.Coins >= count)
+        if (playerData != null && playerData.TrySpendCoins(count))
         {
-            playerData.Coins -= count;
-            playerData.Save();
             onCompleted?.Invoke(true);
         }
         else
