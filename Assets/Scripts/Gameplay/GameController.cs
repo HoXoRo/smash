@@ -9,7 +9,6 @@ using Gameplay.Objects;
 using Gameplay.Obstacle;
 using Gameplay.Particles;
 using Inventory;
-using Inventory.TimedInventory;
 using Level;
 using Life;
 using LocalSave;
@@ -842,10 +841,7 @@ namespace Gameplay
 			cannon?.InitializeBallPool(5);
 			cannon?.PrewarmBalls();
 			ServiceLocator.Get<ParticleController>()?.Initialize();
-			if (!TimedInventoryHelper.HasTime(TimedInventoryItemType.UnlimitedLife))
-			{
-				LifeHelper.LoseLife();
-			}
+			LifeHelper.LoseLife();
 			List<bool> prelevelBoostersUsed = new List<bool>
 			{
 				_prelevelRocketSelected
