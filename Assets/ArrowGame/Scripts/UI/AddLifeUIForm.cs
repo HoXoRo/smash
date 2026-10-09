@@ -8,7 +8,6 @@ public partial class AddLifeUIForm : UIFormBase
 {
     private PlayerDataModel playerData;
     private bool adPending;
-    private bool isOpen;
     private int lifeCoin;
 
     protected override void OnInit(object userData)
@@ -22,7 +21,6 @@ public partial class AddLifeUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
-        isOpen = true;
         playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
         lifeCoin = GF.Config.GetInt("lifeCoin");
         varTxtCoin.text = lifeCoin.ToString();
@@ -32,7 +30,6 @@ public partial class AddLifeUIForm : UIFormBase
 
     protected override void OnClose(bool isShutdown, object userData)
     {
-        isOpen = false;
         playerData.LifeChanged -= RefreshTime;
         base.OnClose(isShutdown, userData);
     }
@@ -52,6 +49,7 @@ public partial class AddLifeUIForm : UIFormBase
         playerData.RefreshLife();
         if (playerData.LifeCount >= PlayerDataModel.MaxLifeCount || !playerData.TrySpendCoins(lifeCoin)) return;
         playerData.AddLife(1);
+        OnClickClose();
     }
 
     private void AddLifeByAd()
@@ -60,16 +58,18 @@ public partial class AddLifeUIForm : UIFormBase
         playerData.RefreshLife();
         if (playerData.LifeCount >= PlayerDataModel.MaxLifeCount) return;
         adPending = true;
-        RefreshTime();
         PlayerDataModel rewardData = playerData;
         bool completed = false;
-        AdsManager.Instance.ShowAd(success =>
+        CommonHelper.ShowVideoAd("life_refill",success =>
         {
             if (completed) return;
             completed = true;
             adPending = false;
-            if (success) rewardData.AddLife(1);
-            if (this != null && isOpen) RefreshTime();
-        }, "life_refill");
+            if (success)
+            {
+                rewardData.AddLife(1);
+                OnClickClose();
+            }
+        });
     }
 }

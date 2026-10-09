@@ -1428,13 +1428,27 @@ namespace Gameplay
 
 		public void Fail()
 		{
+			if (_gameplayLocked || _currentStage?.LiveObjects == null || _currentStage.LiveObjects.Count == 0)
+			{
+				return;
+			}
 			_gameplayLocked = true;
 			MenuController.IsAfterWin = false;
 			MenuController.CoinToCollect = 0;
-			ServiceLocator.Get<PopupController>()?.Open(PopupType.Ego, new Dictionary<string, object>
+			UIParams uiParams = UIParams.Create(allowEscape: false);
+			VarAction onRefill = ReferencePool.Acquire<VarAction>();
+			onRefill.Value = () =>
 			{
-				["streakCount"] = _activeStreakCount
-			});
+				if (this && isActiveAndEnabled) OnEgoBought(5);
+			};
+			uiParams.Set<VarAction>(AddBallsUIForm.P_OnRefill, onRefill);
+			VarAction onQuit = ReferencePool.Acquire<VarAction>();
+			onQuit.Value = () =>
+			{
+				if (this && isActiveAndEnabled) OnEgoRejected();
+			};
+			uiParams.Set<VarAction>(AddBallsUIForm.P_OnQuit, onQuit);
+			GF.UI.OpenUIForm(UIViews.AddBallsUIForm, uiParams);
 			_analyticsHelper?.LevelEgoShow(GetRemainingObjectCount(), GetRemainingObjectMass(), _currentStageIndex);
 		}
 
