@@ -32,5 +32,6 @@ public enum UIViews : int
 	AddLifeUIForm = 26,
 	AddBallsUIForm = 27,
 	AddPropUIForm = 28,
-	PrelevelUIForm = 29
+	PrelevelUIForm = 29,
+	LoadingUIForm = 30
 }

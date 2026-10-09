@@ -12,6 +12,19 @@ public enum SpecStatusMode
 
 public static class CommonHelper
 {
+    public static int OpenLoading(float duration, Action onClosed = null)
+    {
+        
+        var uiParams = UIParams.Create(allowEscape: false);
+        uiParams.Set<VarSingle>(LoadingUIForm.P_Duration, Mathf.Max(0f, duration));
+        if (onClosed != null)
+        {
+            VarAction callback = GameFramework.ReferencePool.Acquire<VarAction>();
+            callback.Value = onClosed;
+            uiParams.Set<VarAction>(LoadingUIForm.P_OnClosed, callback);
+        }
+        return GF.UI.OpenUIForm(UIViews.LoadingUIForm, uiParams);
+    }
 
     public static bool IsDebug()
     {

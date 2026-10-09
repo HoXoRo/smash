@@ -34,3 +34,4 @@
 	27	补充球界面	13	AddBallsUIForm	False	2	False
 	28	补充道具界面	14	AddPropUIForm	False	2	False
 	29	关卡准备界面	13	PrelevelUIForm	False	2	False
+	30	加载界面	20	LoadingUIForm	False	2	False
