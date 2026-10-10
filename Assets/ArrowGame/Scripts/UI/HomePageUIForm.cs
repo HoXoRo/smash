@@ -33,6 +33,14 @@ public partial class HomePageUIForm : UIFormBase
     {
         GF.Sound.PlayEffect("ui/ui_click.mp3");
         if (isEnteringGameplay) return;
+        if (!LifeHelper.HasLife())
+        {
+            if (!GF.UI.HasUIForm(UIViews.AddLifeUIForm) && !GF.UI.IsLoadingUIForm(UIViews.AddLifeUIForm))
+            {
+                GF.UI.OpenUIForm(UIViews.AddLifeUIForm);
+            }
+            return;
+        }
         if (GetCurrentLevel() > 25)
         {
             GF.UI.OpenUIForm(UIViews.PrelevelUIForm);

@@ -643,6 +643,7 @@ public partial class ArrowUITopbar : UIFormBase
 
     private void RefreshLifeDisplay()
     {
+        if (varBtnLife != null) varBtnLife.interactable = playerDm.LifeCount < PlayerDataModel.MaxLifeCount;
         if (varTxtLife != null) varTxtLife.text = playerDm.LifeCount.ToString();
         int seconds = playerDm.GetSecondsUntilNextLife();
         if (varTxtTime != null)
@@ -651,6 +652,8 @@ public partial class ArrowUITopbar : UIFormBase
 
     private void OpenAddLife()
     {
+        playerDm.RefreshLife();
+        if (playerDm.LifeCount >= PlayerDataModel.MaxLifeCount) return;
         if (!GF.UI.HasUIForm(UIViews.AddLifeUIForm) && !GF.UI.IsLoadingUIForm(UIViews.AddLifeUIForm))
             GF.UI.OpenUIForm(UIViews.AddLifeUIForm, UIParams.Create());
     }
