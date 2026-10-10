@@ -25,7 +25,7 @@ public partial class MakeupItem : UIItemBase
             varTxtLv.text = task.Level.ToString();
 
         float value = task.Mon > 0f ? task.Mon : task.Reward;
-        m_RewardText = CommonHelper.GetDollarString(value);
+        m_RewardText = CommonHelper.GetDollarString(value * task.Rate);
         if (varTxtReward != null)
             varTxtReward.text = m_RewardText;
     }

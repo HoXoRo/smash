@@ -56,6 +56,15 @@ public class MakeupTask : DataRowBase
             private set;
         }
 
+        /// <summary>
+        /// 倍率
+        /// </summary>
+        public float Rate
+        {
+            get;
+            private set;
+        }
+
         public override bool ParseDataRow(string dataRowString, object userData)
         {
             string[] columnStrings = dataRowString.Split(DataTableExtension.DataSplitSeparators);
@@ -71,7 +80,7 @@ public class MakeupTask : DataRowBase
             Level = int.Parse(columnStrings[index++]);
             Mon = float.Parse(columnStrings[index++]);
             Reward = float.Parse(columnStrings[index++]);
-            index++;
+            Rate = float.Parse(columnStrings[index++]);
             index++;
 
             return true;
@@ -87,6 +96,7 @@ public class MakeupTask : DataRowBase
                     Level = binaryReader.Read7BitEncodedInt32();
                     Mon = binaryReader.ReadSingle();
                     Reward = binaryReader.ReadSingle();
+                    Rate = binaryReader.ReadSingle();
                 }
             }
 

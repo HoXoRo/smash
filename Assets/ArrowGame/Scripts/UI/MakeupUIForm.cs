@@ -10,7 +10,6 @@ using UnityGameFramework.Runtime;
 public partial class MakeupUIForm : UIFormBase
 {
     [SerializeField] private MakeupItem makeupItemPrefab;
-    [SerializeField] private ScrollRect makeupScrollRect;
 
     readonly List<MakeupItem> makeupItems = new List<MakeupItem>();
 
@@ -81,7 +80,7 @@ public partial class MakeupUIForm : UIFormBase
 
     void RefreshMakeupItems(int itemCount)
     {
-        if (makeupItemPrefab == null || makeupScrollRect == null || makeupScrollRect.content == null)
+        if (makeupItemPrefab == null || varMakeupScrollRect == null || varMakeupScrollRect.content == null)
             return;
 
         itemCount = Mathf.Max(0, itemCount);
@@ -93,7 +92,7 @@ public partial class MakeupUIForm : UIFormBase
 
         while (makeupItems.Count < itemCount)
         {
-            UIItemObject itemObject = SpawnItem<UIItemObject>(makeupItemPrefab.gameObject, makeupScrollRect.content);
+            UIItemObject itemObject = SpawnItem<UIItemObject>(makeupItemPrefab.gameObject, varMakeupScrollRect.content);
             MakeupItem makeupItem = (MakeupItem)itemObject.itemLogic;
             makeupItem.transform.localScale = Vector3.one;
             makeupItem.transform.localRotation = Quaternion.identity;
@@ -106,12 +105,12 @@ public partial class MakeupUIForm : UIFormBase
 
     void ResetMakeupScroll()
     {
-        if (makeupScrollRect == null || makeupScrollRect.content == null)
+        if (varMakeupScrollRect == null || varMakeupScrollRect.content == null)
             return;
 
-        LayoutRebuilder.ForceRebuildLayoutImmediate(makeupScrollRect.content);
-        makeupScrollRect.StopMovement();
-        makeupScrollRect.verticalNormalizedPosition = 1f;
+        LayoutRebuilder.ForceRebuildLayoutImmediate(varMakeupScrollRect.content);
+        varMakeupScrollRect.StopMovement();
+        varMakeupScrollRect.verticalNormalizedPosition = 1f;
     }
 
     void RefreshGemText()
@@ -134,11 +133,17 @@ public partial class MakeupUIForm : UIFormBase
 
     void RefreshValueText()
     {
+        float makeupRatio = GF.Config.GetFloat("MakeupRatio");
+        if (varTxtBalance != null)
+            varTxtBalance.text = GF.Localization.GetString("MakeupUIForm.txtBalance", makeupRatio);
+
         if (varTxtValue == null)
             return;
 
         PlayerDataModel playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
-        float value = playerDm.Pcard / 10000f;
+        float value = makeupRatio > 0f ? playerDm.Pcard / makeupRatio : 0f;
+        if (makeupRatio <= 0f)
+            Log.Error("MakeupUIForm: MakeupRatio must be greater than zero.");
         varTxtValue.text = CommonHelper.GetDollarString(value, false);
     }
 

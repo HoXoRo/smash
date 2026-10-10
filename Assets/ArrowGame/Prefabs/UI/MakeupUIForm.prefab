@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 880002}
   - component: {fileID: 880003}
   m_Layer: 5
-  m_Name: list
+  m_Name: makeupScrollRect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1199,6 +1199,16 @@ MonoBehaviour:
     - {fileID: 4965886561412555584}
     VarType: UnityEngine.UI.Button
     VarPrefix: 0
+  - VarName: varTxtBalance
+    Targets:
+    - {fileID: 6252608441286491828}
+    VarType: TMPro.TextMeshProUGUI
+    VarPrefix: 0
+  - VarName: varMakeupScrollRect
+    Targets:
+    - {fileID: 880001}
+    VarType: UnityEngine.UI.ScrollRect
+    VarPrefix: 0
   m_UIAnimationType: 0
   m_OpenAnimation: {fileID: 0}
   m_CloseAnimation: {fileID: 0}
@@ -1213,6 +1223,8 @@ MonoBehaviour:
   varBtnInput: {fileID: 73893731740665920}
   varTxtAccount: {fileID: 6958801103614177820}
   varBtnRecord: {fileID: 8467489722975131320}
+  varTxtBalance: {fileID: 7888246478661054908}
+  varMakeupScrollRect: {fileID: 880003}
 --- !u!1 &4711071289936419714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1788,8 +1800,9 @@ GameObject:
   - component: {fileID: 1564134685824854936}
   - component: {fileID: 5952185080207062258}
   - component: {fileID: 7888246478661054908}
+  - component: {fileID: 8562374852988180258}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: txtBalance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1842,7 +1855,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Balance 10000=$1
+  m_text: Balance {0}=$1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19f18ff6818e8614e9b5c75ab698e8d6, type: 2}
   m_sharedMaterial: {fileID: 4259616400917742739, guid: 19f18ff6818e8614e9b5c75ab698e8d6, type: 2}
@@ -1914,6 +1927,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8562374852988180258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252608441286491828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Key: MakeupUIForm.txtBalance
 --- !u!1 &7742149437256925754
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@
 	GameTimeOut	挑战关卡默认初始时长（秒）	300
 	ReviveAddTime	看广告复活增加挑战时间（秒）	30
 	FireWinReward	第一关通关赠送货币数量	30
-	MakeupRatio	提现比例	10
+	MakeupRatio	提现比例	10000
 	NormalReward	普通奖励	100,230
 	EliminationRewardCount	连续消除弹出奖励弹窗次数	25
 	ComboRewardRate	普通奖励倍数	5

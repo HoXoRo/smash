@@ -16,4 +16,6 @@ public partial class MakeupUIForm
 	[SerializeField] private Button varBtnInput = null;
 	[SerializeField] private TextMeshProUGUI varTxtAccount = null;
 	[SerializeField] private Button varBtnRecord = null;
+	[SerializeField] private TextMeshProUGUI varTxtBalance = null;
+	[SerializeField] private ScrollRect varMakeupScrollRect = null;
 }
