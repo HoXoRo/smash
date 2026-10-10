@@ -12,6 +12,13 @@ public enum SpecStatusMode
 
 public static class CommonHelper
 {
+    public static bool CheckNetwork()
+    {
+        if (UtilityEx.CheckNetwork()) return true;
+        GF.UI.ShowToast("Network error");
+        return false;
+    }
+
     public static int OpenLoading(float duration, Action onClosed = null)
     {
         
