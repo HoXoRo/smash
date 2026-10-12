@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using GameFramework.Event;
 using UnityGameFramework.Runtime;
+using System;
 #if ENABLE_OBFUZ
 [Obfuz.ObfuzIgnore(Obfuz.ObfuzScope.TypeName)]
 #endif
@@ -16,6 +17,7 @@ public partial class TaskPageUIForm : UIFormBase
     [SerializeField] private ScrollRect taskScrollRect;
 
     private readonly List<TaskItem> taskItems = new List<TaskItem>();
+    private static bool s_AdRequestInProgress;
 
     public IReadOnlyList<TaskItem> TaskItems => taskItems;
 
@@ -58,12 +60,59 @@ public partial class TaskPageUIForm : UIFormBase
         });
 
         RefreshTaskList(tasks.Length);
-        PlayerDataModel playerData = GF.DataModel.GetDataModel<PlayerDataModel>();
-        int completedLevels = playerData != null ? Mathf.Max(0, playerData.LevelId - 1) : 0;
+        PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        int completedLevels = Mathf.Max(0, playerData.LevelId - 1);
         for (int index = 0; index < taskItems.Count; index++)
         {
-            taskItems[index].SetData(tasks[index], completedLevels);
+            TaskReward task = tasks[index];
+            taskItems[index].SetData(task, completedLevels,
+                task.TaskType == 2 && playerData.IsLevelTaskClaimed(task.Id),
+                playerData.GetTaskAdCooldownEnd(task.Id), OnClaimRequested);
         }
+    }
+
+    private void OnClaimRequested(TaskReward task)
+    {
+        PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        if (task.TaskType == 2)
+        {
+            if (!playerData.TryClaimLevelTask(task.Id, task.Level, task.Reward))
+            {
+                GF.UI.ShowToast("Not enough");
+                return;
+            }
+            RefreshTaskList();
+            return;
+        }
+
+        if (task.TaskType != 1 || s_AdRequestInProgress ||
+            DateTimeOffset.UtcNow.ToUnixTimeSeconds() < playerData.GetTaskAdCooldownEnd(task.Id))
+        {
+            GF.UI.ShowToast("Not enough");
+            return;
+        }
+
+        s_AdRequestInProgress = true;
+        int taskId = task.Id;
+        int reward = task.Reward;
+        if (!playerData.TryClaimTaskAdReward(taskId, reward, DateTimeOffset.UtcNow.ToUnixTimeSeconds()))
+        {
+            GF.UI.ShowToast("Not enough");
+        }
+        else
+        {
+            CommonHelper.ShowVideoAd("task_coin", success =>
+            {
+                s_AdRequestInProgress = false;
+                if (!success)
+                {
+                    return;
+                }
+                if (this != null && gameObject.activeInHierarchy) RefreshTaskList();
+            });
+        }
+
+        
     }
 
     private void OnPlayerDataChanged(object sender, GameEventArgs eventArgs)
@@ -85,6 +134,7 @@ public partial class TaskPageUIForm : UIFormBase
         taskCount = Mathf.Max(0, taskCount);
         for (int index = taskItems.Count - 1; index >= taskCount; index--)
         {
+            taskItems[index].ClearClaimHandler();
             UnspawnItem<UIItemObject>(taskItemPrefab.gameObject, taskItems[index].gameObject);
             taskItems.RemoveAt(index);
         }
@@ -105,6 +155,7 @@ public partial class TaskPageUIForm : UIFormBase
     protected override void OnClose(bool isShutdown, object userData)
     {
         GF.Event.Unsubscribe(PlayerDataChangedEventArgs.EventId, OnPlayerDataChanged);
+        foreach (TaskItem item in taskItems) item.ClearClaimHandler();
         taskItems.Clear();
         base.OnClose(isShutdown, userData);
     }

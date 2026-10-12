@@ -275,7 +275,7 @@ public static class CommonHelper
         return formattedDate;
     }
     // 看广告
-    public static void ShowVideoAd(string adId, Action<bool> onCompleted, int coins = -1)
+    public static void ShowVideoAd(string adId, Action<bool> onCompleted, int coins = -1, bool showFailureToast = true)
     {
         // 从adId中提取ad_position_type，按"_"分割取前半段
         string adPositionType = adId.Contains("_") ? adId.Split('_')[0] : adId;
@@ -304,7 +304,7 @@ public static class CommonHelper
                 }
                 else
                 {
-                    GF.UI.ShowToast("Ad Load failed !!!");
+                    if (showFailureToast) GF.UI.ShowToast("Ad Load failed !!!");
                 }
                 onCompleted?.Invoke(isOk);
             },

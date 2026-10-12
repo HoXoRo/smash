@@ -17,4 +17,5 @@ public partial class TaskItem
 	[SerializeField] private GameObject varAdTxt = null;
 	[SerializeField] private TextMeshProUGUI varInfoTxt = null;
 	[SerializeField] private GameObject varClaimed = null;
+	[SerializeField] private TextMeshProUGUI varTxtAd = null;
 }

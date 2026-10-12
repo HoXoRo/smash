@@ -165,6 +165,9 @@ public class PlayerDataModel : DataModelStorageBase
     /// </summary>
     private int m_CollectMoneyGoodsTimes;
     private List<int> m_PassedTasks;
+    [JsonProperty] private List<int> m_ClaimedLevelTaskIds = new List<int>();
+    [JsonProperty] private Dictionary<int, long> m_TaskAdCooldownEnds = new Dictionary<int, long>();
+    private const int TaskAdCooldownSeconds = 10 * 60;
     /// <summary>
     /// 当日通关数
     /// </summary>
@@ -390,6 +393,36 @@ public class PlayerDataModel : DataModelStorageBase
         }
     }
 
+    public bool IsLevelTaskClaimed(int taskId)
+    {
+        return m_ClaimedLevelTaskIds != null && m_ClaimedLevelTaskIds.Contains(taskId);
+    }
+
+    public long GetTaskAdCooldownEnd(int taskId)
+    {
+        return m_TaskAdCooldownEnds != null && m_TaskAdCooldownEnds.TryGetValue(taskId, out long end) ? end : 0;
+    }
+
+    public bool TryClaimLevelTask(int taskId, int requiredLevels, int reward)
+    {
+        if (reward <= 0 || LevelId - 1 < requiredLevels || IsLevelTaskClaimed(taskId)) return false;
+        if (m_ClaimedLevelTaskIds == null) m_ClaimedLevelTaskIds = new List<int>();
+        m_ClaimedLevelTaskIds.Add(taskId);
+        Coins += reward;
+        Save();
+        return true;
+    }
+
+    public bool TryClaimTaskAdReward(int taskId, int reward, long now)
+    {
+        if (reward <= 0 || now < GetTaskAdCooldownEnd(taskId)) return false;
+        if (m_TaskAdCooldownEnds == null) m_TaskAdCooldownEnds = new Dictionary<int, long>();
+        m_TaskAdCooldownEnds[taskId] = now + TaskAdCooldownSeconds;
+        Coins += reward;
+        Save();
+        return true;
+    }
+
     private int m_UserType = 0;
     private bool m_IsRecognition = false;
     /// <summary>
@@ -442,6 +475,8 @@ public class PlayerDataModel : DataModelStorageBase
         m_CollectCount = 0;
         m_CollectMoneyGoodsTimes = 0;
         m_PassedTasks = new List<int>();
+        m_ClaimedLevelTaskIds = new List<int>();
+        m_TaskAdCooldownEnds = new Dictionary<int, long>();
         m_MatchCountDict = new Dictionary<int, int>();
         m_AchievingCount = 0;
         m_NewDayTime = UtilityBuiltin.GetTimeStamp();

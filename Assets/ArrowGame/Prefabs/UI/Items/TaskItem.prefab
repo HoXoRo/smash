@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 572480969329455225}
   - component: {fileID: 4313999281872542346}
   m_Layer: 5
-  m_Name: txt
+  m_Name: txtAd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1403,6 +1403,11 @@ MonoBehaviour:
     - {fileID: 6814498477451859722}
     VarType: UnityEngine.GameObject
     VarPrefix: 0
+  - VarName: varTxtAd
+    Targets:
+    - {fileID: 1217727533183258217}
+    VarType: TMPro.TextMeshProUGUI
+    VarPrefix: 0
   descriptionText: {fileID: 7358640400721971232}
   rewardText: {fileID: 7430620780990453309}
   progressSlider: {fileID: 1352951137464063891}
@@ -1415,6 +1420,7 @@ MonoBehaviour:
   varAdTxt: {fileID: 1210219591732805921}
   varInfoTxt: {fileID: 7358640400721971232}
   varClaimed: {fileID: 6814498477451859722}
+  varTxtAd: {fileID: 4313999281872542346}
 --- !u!114 &910031
 MonoBehaviour:
   m_ObjectHideFlags: 0
