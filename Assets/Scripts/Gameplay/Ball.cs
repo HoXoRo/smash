@@ -43,9 +43,9 @@ namespace Gameplay
 
 		private float _destroyTimer;
 
-		private const float BallHitSpeed = 90f;
+		private const float BallHitSpeed = 100f;
 
-		private const float FirstHitBoomPower = 1f;
+		private const float FirstHitBoomPower = 0.5f;
 
 		private static float _ballRelativeVelocityThresholdSqr;
 
@@ -260,25 +260,13 @@ namespace Gameplay
 
 		private void CheckForDestroy()
 		{
-			if (_beingDestroyed)
+			if (_beingDestroyed || State != BallState.HitGround)
 			{
-				return;
-			}
-			if (State != BallState.HitGround && HasSignificantRelativeMovement())
-			{
-				_destroyTimer = 0f;
-				return;
-			}
-
-			if (State != BallState.HitGround && transform.position.z > 30f)
-			{
-				DestroyBallInstant();
 				return;
 			}
 
 			_destroyTimer += Time.deltaTime;
-			float destroyDelay = State == BallState.HitGround ? 1.5f : 0.5f;
-			if (_destroyTimer > destroyDelay)
+			if (_destroyTimer > 1.5f)
 			{
 				_beingDestroyed = true;
 				DestroyBall();
@@ -292,9 +280,8 @@ namespace Gameplay
 				DestroyBallInstant();
 				return;
 			}
-			float fadeDuration = State == BallState.HitGround ? 0.75f : 0.5f;
 			KillDestroyFadeTween();
-			_destroyFadeTween = DOVirtual.Float(1f, 0f, fadeDuration, delegate(float t)
+			_destroyFadeTween = DOVirtual.Float(1f, 0f, 0.75f, delegate(float t)
 			{
 				_material.SetFloat(_opacityPropId, _startingOpacity * t);
 				_material.SetFloat(_specularRoughnessPropId, _startingSpecularRoughness * t);
@@ -313,7 +300,7 @@ namespace Gameplay
 
 		private void OnTriggerEnter(Collider other)
 		{
-			if (other != null && other.CompareTag("Object"))
+			if (State != BallState.HitGround && other != null && other.CompareTag("Object"))
 			{
 				OnHitObjectTrigger(other);
 			}
@@ -321,7 +308,7 @@ namespace Gameplay
 
 		private void OnCollisionEnter(Collision collision)
 		{
-			if (collision == null || collision.collider == null)
+			if (State == BallState.HitGround || collision == null || collision.collider == null)
 			{
 				return;
 			}

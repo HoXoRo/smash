@@ -44,6 +44,8 @@ namespace Gameplay.Objects
 
 		private const float Drag = 0f;
 
+		private const float ObjectMassMultiplier = 1.2f;
+
 		public const float DynamicFriction = 0.6f;
 
 		public const float StaticFriction = 0.6f;
@@ -121,7 +123,7 @@ namespace Gameplay.Objects
 		{
 			if (rb != null)
 			{
-				rb.mass = GetMass(objectType, size.GetVolume());
+				rb.mass = GetMass(objectType, size.GetVolume()) * ObjectMassMultiplier;
 			}
 		}
 
@@ -218,7 +220,7 @@ namespace Gameplay.Objects
 
 		static BaseObject()
 		{
-			CanRocketBoomMultiplier = 0.8f;
+			CanRocketBoomMultiplier = 0.1f;
 		}
 	}
 }

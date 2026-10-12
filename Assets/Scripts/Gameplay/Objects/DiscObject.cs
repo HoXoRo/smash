@@ -49,10 +49,7 @@ namespace Gameplay.Objects
 
 		public override void SetObjectMass()
 		{
-			if (rb != null)
-			{
-				rb.mass = GetMass(objectType, size.GetVolume());
-			}
+			base.SetObjectMass();
 		}
 
 		protected override int GetLayer()
