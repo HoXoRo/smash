@@ -24,7 +24,6 @@ public partial class ArrowUITopbar : UIFormBase
     public const string P_EnableSettingBtn = "EnableSettingBtn";
     public const string P_OnCloseAction = "P_OnCloseAction";
     public const string P_EnableLv = "P_EnableLv";
-    static bool s_ShowCoin = true;
     
     private Dictionary<PlayerDataType, float> pendingRewards = new Dictionary<PlayerDataType, float>();
     private Dictionary<PlayerDataType, Coroutine> numberRollCoroutines = new Dictionary<PlayerDataType, Coroutine>();
@@ -40,8 +39,6 @@ public partial class ArrowUITopbar : UIFormBase
     protected override void OnInit(object userData)
     {
         base.OnInit(userData);
-        if (varBtnLife != null)
-            varBtnLife.onClick.AddListener(OpenAddLife);
         if (varBtnDebug != null)
         {
             varBtnDebug.onClick.AddListener(OpenDebugUIForm);
@@ -61,19 +58,14 @@ public partial class ArrowUITopbar : UIFormBase
        
 
         playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
-        playerDm.LifeChanged += RefreshLifeDisplay;
-        playerDm.RefreshLife();
-        varTxtCoin.text = CommonHelper.FormatLargeNumber(playerDm.Coins.ToString(), 0);
         varTxtGem.text = CommonHelper.GetDollarString(playerDm.Dollars);
         RefreshPcardText();
         varLvobj.SetActive(Params.Get<VarBoolean>(P_EnableLv, false));
         varLv.text = playerDm.LevelId.ToString();
 
         // 初始化计数器和目标值
-        activeRewardCounts[PlayerDataType.Coins] = 0;
         activeRewardCounts[PlayerDataType.Diamond] = 0;
         activeRewardCounts[PlayerDataType.Pcard] = 0;
-        targetValues[PlayerDataType.Coins] = playerDm.Coins;
         targetValues[PlayerDataType.Diamond] = playerDm.Dollars;
         targetValues[PlayerDataType.Pcard] = playerDm.Pcard;
         varGem.SetActive(CommonHelper.IsSpec());
@@ -88,7 +80,6 @@ public partial class ArrowUITopbar : UIFormBase
         m_TxtUpPcardRestPos = varTxtUpPcard.rectTransform.anchoredPosition;
         varTxtUpPcard.gameObject.SetActive(false);
         RefreshGiftCount();
-        ApplyCoinVisible(s_ShowCoin);
         TryOpenGiftForm();
         //适配刘海屏
         // float safeArea = Mathf.Max(0, Screen.height - Screen.safeArea.yMax);
@@ -97,19 +88,12 @@ public partial class ArrowUITopbar : UIFormBase
     }
     protected override void OnClose(bool isShutdown, object userData)
     {
-        playerDm.LifeChanged -= RefreshLifeDisplay;
         //如果正在动画中，直接累加奖励值
         if ((activeRewardCounts.ContainsKey(PlayerDataType.Diamond) && activeRewardCounts[PlayerDataType.Diamond] > 0) ||
         (isRolling.ContainsKey(PlayerDataType.Diamond) && isRolling[PlayerDataType.Diamond]))
         {
             if (pendingRewards.ContainsKey(PlayerDataType.Diamond) && pendingRewards[PlayerDataType.Diamond] > 0 && playerDm.Dollars < targetValues[PlayerDataType.Diamond] + pendingRewards[PlayerDataType.Diamond])
                 playerDm.SetData(PlayerDataType.Diamond, pendingRewards[PlayerDataType.Diamond] + playerDm.Dollars, false);
-        }
-        if ((activeRewardCounts.ContainsKey(PlayerDataType.Coins) && activeRewardCounts[PlayerDataType.Coins] > 0) ||
-        (isRolling.ContainsKey(PlayerDataType.Coins) && isRolling[PlayerDataType.Coins]))
-        {
-            if (pendingRewards.ContainsKey(PlayerDataType.Coins) && pendingRewards[PlayerDataType.Coins] > 0 && playerDm.Coins < targetValues[PlayerDataType.Coins] + pendingRewards[PlayerDataType.Coins])
-                playerDm.SetData(PlayerDataType.Coins, pendingRewards[PlayerDataType.Coins] + playerDm.Coins, false);
         }
         if ((activeRewardCounts.ContainsKey(PlayerDataType.Pcard) && activeRewardCounts[PlayerDataType.Pcard] > 0) ||
         (isRolling.ContainsKey(PlayerDataType.Pcard) && isRolling[PlayerDataType.Pcard]))
@@ -145,12 +129,6 @@ public partial class ArrowUITopbar : UIFormBase
                 if (pendingRewards.ContainsKey(PlayerDataType.Diamond) && pendingRewards[PlayerDataType.Diamond] > 0 && playerDm.Dollars < targetValues[PlayerDataType.Diamond] + pendingRewards[PlayerDataType.Diamond])
                     playerDm.SetData(PlayerDataType.Diamond, pendingRewards[PlayerDataType.Diamond] + playerDm.Dollars, false);
             }
-            if ((activeRewardCounts.ContainsKey(PlayerDataType.Coins) && activeRewardCounts[PlayerDataType.Coins] > 0) ||
-            (isRolling.ContainsKey(PlayerDataType.Coins) && isRolling[PlayerDataType.Coins]))
-            {
-                if (pendingRewards.ContainsKey(PlayerDataType.Coins) && pendingRewards[PlayerDataType.Coins] > 0 && playerDm.Coins < targetValues[PlayerDataType.Coins] + pendingRewards[PlayerDataType.Coins])
-                    playerDm.SetData(PlayerDataType.Coins, pendingRewards[PlayerDataType.Coins] + playerDm.Coins, false);
-            }
             if ((activeRewardCounts.ContainsKey(PlayerDataType.Pcard) && activeRewardCounts[PlayerDataType.Pcard] > 0) ||
             (isRolling.ContainsKey(PlayerDataType.Pcard) && isRolling[PlayerDataType.Pcard]))
             {
@@ -168,6 +146,7 @@ public partial class ArrowUITopbar : UIFormBase
     }
     public static void EnsureOpen()
     {
+        ArrowUITopbarSub.EnsureOpen();
         if (GF.UI.HasUIForm(UIViews.ArrowUITopbar) || GF.UI.IsLoadingUIForm(UIViews.ArrowUITopbar))
         {
             return;
@@ -180,26 +159,7 @@ public partial class ArrowUITopbar : UIFormBase
 
     public static void SetCoinVisible(bool visible)
     {
-        s_ShowCoin = visible;
-        string assetName = GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbar);
-        if (string.IsNullOrEmpty(assetName))
-        {
-            return;
-        }
-
-        var forms = GF.UI.GetUIForms(assetName);
-        if (forms == null)
-        {
-            return;
-        }
-
-        foreach (var uiForm in forms)
-        {
-            if (uiForm.Logic is ArrowUITopbar topbar)
-            {
-                topbar.ApplyCoinVisible(visible);
-            }
-        }
+        ArrowUITopbarSub.SetCoinVisible(visible);
     }
 
     public static bool TryGetPcardTargetPosition(out Vector3 position)
@@ -231,14 +191,6 @@ public partial class ArrowUITopbar : UIFormBase
         }
 
         return false;
-    }
-
-    void ApplyCoinVisible(bool visible)
-    {
-        if (varCoin != null)
-        {
-            varCoin.SetActive(visible);
-        }
     }
 
     void OpenMakeupUIForm()
@@ -295,7 +247,6 @@ public partial class ArrowUITopbar : UIFormBase
         var args = e as UserTypeChangeEventArgs;
         if (args == null) return;
         varGem.SetActive(CommonHelper.IsSpec());
-        // varCoin.SetActive(!CommonHelper.IsSpec());
     }
     
     private void OnRewardCollected(object sender, GameEventArgs e)
@@ -308,10 +259,7 @@ public partial class ArrowUITopbar : UIFormBase
         // 根据奖励类型确定货币类型
         PlayerDataType currencyType = args.type;
         float value = args.Value;
-        if (currencyType == PlayerDataType.Coins)
-        {
-            ApplyCoinVisible(true);
-        }
+        if (currencyType == PlayerDataType.Coins) return;
 
         // 获取奖励位置并转换为本地坐标
         Vector3 startPosition = args.WorldPosition;
@@ -377,10 +325,6 @@ public partial class ArrowUITopbar : UIFormBase
 
         // 生成多个飞行货币
         int rewardCount = UnityEngine.Random.Range(minRewardCount, maxRewardCount);
-        if (type == PlayerDataType.Coins && value == 1f)
-        {
-            rewardCount = 1;
-        }
         activeRewardCounts[type] += rewardCount;  // 更新对应类型的计数器
 
         // 防止崩溃：在UI关闭或销毁时不再创建飞行货币
@@ -572,16 +516,7 @@ public partial class ArrowUITopbar : UIFormBase
             float progress = elapsedTime / numberRollDuration;
             float currentValue = Mathf.Lerp(startValue, targetValue, progress);
 
-            if (type == PlayerDataType.Coins)
-            {
-                // Log.Debug($"金币数值滚动 {startValue}，{currentValue}/{targetValue}，{progress}，{elapsedTime}");
-                targetText.text = targetValue.ToString();
-            }
-            else
-            {
-                targetText.text = Math.Round(currentValue, 3).ToString();
-                // Log.Debug($"钻石数值滚动 {startValue}，{currentValue}/{targetValue}，{progress}，{elapsedTime}");
-            }
+            targetText.text = Math.Round(currentValue, 3).ToString();
 
             yield return null;
         }
@@ -603,10 +538,6 @@ public partial class ArrowUITopbar : UIFormBase
             //Log.Info($"[数字滚动] 检测到新奖励，重新启动滚动, 类型:{type}, 新奖励值:{pendingRewards[type]}");
             UpdateNumberRoll(type);
         }
-        else if (type == PlayerDataType.Coins)
-        {
-            ApplyCoinVisible(s_ShowCoin);
-        }
         
         if (type == PlayerDataType.Diamond)
         {
@@ -624,10 +555,6 @@ public partial class ArrowUITopbar : UIFormBase
         {
             switch (args.DataType)
             {
-                case PlayerDataType.Coins:
-                    varTxtCoin.text = CommonHelper.FormatLargeNumber(args.Value.ToString(), 0);
-                    targetValues[PlayerDataType.Coins] = args.Value;
-                    break;
                 case PlayerDataType.Diamond:
                     varTxtGem.text = CommonHelper.GetDollarString(args.Value);
                     targetValues[PlayerDataType.Diamond] = args.Value;
@@ -641,29 +568,10 @@ public partial class ArrowUITopbar : UIFormBase
         varLv.text = playerDm.LevelId.ToString();
     }
 
-    private void RefreshLifeDisplay()
-    {
-        if (varBtnLife != null) varBtnLife.interactable = playerDm.LifeCount < PlayerDataModel.MaxLifeCount;
-        if (varTxtLife != null) varTxtLife.text = playerDm.LifeCount.ToString();
-        int seconds = playerDm.GetSecondsUntilNextLife();
-        if (varTxtTime != null)
-            varTxtTime.text = seconds < 0 ? "FULL" : $"{seconds / 60:00}:{seconds % 60:00}";
-    }
-
-    private void OpenAddLife()
-    {
-        playerDm.RefreshLife();
-        if (playerDm.LifeCount >= PlayerDataModel.MaxLifeCount) return;
-        if (!GF.UI.HasUIForm(UIViews.AddLifeUIForm) && !GF.UI.IsLoadingUIForm(UIViews.AddLifeUIForm))
-            GF.UI.OpenUIForm(UIViews.AddLifeUIForm, UIParams.Create());
-    }
-
     private RectTransform GetTargetIcon(PlayerDataType type)
     {
         switch (type)
         {
-            case PlayerDataType.Coins:
-                return varIcon_Coin;
             case PlayerDataType.Diamond:
                 return varIcon_Gem;
             case PlayerDataType.Pcard:
@@ -677,8 +585,6 @@ public partial class ArrowUITopbar : UIFormBase
     {
         switch (type)
         {
-            case PlayerDataType.Coins:
-                return varTxtCoin;
             case PlayerDataType.Diamond:
                 return varTxtGem;
             case PlayerDataType.Pcard:
@@ -692,8 +598,6 @@ public partial class ArrowUITopbar : UIFormBase
     {
         switch (type)
         {
-            case PlayerDataType.Coins:
-                return playerDm.Coins;
             case PlayerDataType.Diamond:
                 return playerDm.Dollars;
             case PlayerDataType.Pcard:
@@ -712,11 +616,7 @@ public partial class ArrowUITopbar : UIFormBase
     protected override void OnButtonClick(object sender, Button btSelf)
     {
         base.OnButtonClick(sender, btSelf);
-      if (btSelf == varBtnCoin)
-        {
-            
-        }
-        else if (btSelf == varGembutton)
+      if (btSelf == varGembutton)
         {
             // B 面美元仅作游戏内货币展示，不再打开提现界面。
         }

@@ -10,16 +10,12 @@ public partial class ArrowUITopbar
 {
 	[Space(10)]
 	[Header("UI Variables:")]
-	[SerializeField] protected TextMeshProUGUI varTxtCoin = null;
 	[SerializeField] protected TextMeshProUGUI varTxtGem = null;
-	[SerializeField] protected Button varBtnCoin = null;
 	[SerializeField] private Button varBtnMenu = null;
 	[SerializeField] private Image varBg = null;
-	[SerializeField] private RectTransform varIcon_Coin = null;
 	[SerializeField] private RectTransform varIcon_Gem = null;
 	[SerializeField] private Button varGembutton = null;
 	[SerializeField] private GameObject varGem = null;
-	[SerializeField] private GameObject varCoin = null;
 	[SerializeField] private Image varTopdi = null;
 	[SerializeField] private GameObject varLvobj = null;
 	[SerializeField] private TextMeshProUGUI varLv = null;
@@ -35,8 +31,4 @@ public partial class ArrowUITopbar
 	[SerializeField] private GameObject varGift = null;
 	[SerializeField] private TextMeshProUGUI varTxtGiftCount = null;
 	[SerializeField] private Button varBtnDebug = null;
-	[SerializeField] private Button varBtnLife = null;
-	[SerializeField] private TextMeshProUGUI varTxtLife = null;
-	[SerializeField] private GameObject varLife = null;
-	[SerializeField] private TextMeshProUGUI varTxtTime = null;
 }

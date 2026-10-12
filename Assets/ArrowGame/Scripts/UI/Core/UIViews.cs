@@ -33,5 +33,6 @@ public enum UIViews : int
 	AddBallsUIForm = 27,
 	AddPropUIForm = 28,
 	PrelevelUIForm = 29,
-	LoadingUIForm = 30
+	LoadingUIForm = 30,
+	ArrowUITopbarSub = 31
 }
