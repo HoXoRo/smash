@@ -16,6 +16,7 @@ public partial class ArrowUITopbarSub : UIFormBase
     [SerializeField] private float numberRollDuration = 0.5f;
 
     private static bool s_ShowCoin = true;
+    private static bool s_ShowLife;
     private PlayerDataModel playerDm;
     private float pendingCoins;
     private float targetCoins;
@@ -58,6 +59,19 @@ public partial class ArrowUITopbarSub : UIFormBase
         }
     }
 
+    public static void SetLifeVisible(bool visible)
+    {
+        s_ShowLife = visible;
+        string assetName = GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbarSub);
+        if (string.IsNullOrEmpty(assetName)) return;
+        var forms = GF.UI.GetUIForms(assetName);
+        if (forms == null) return;
+        foreach (var form in forms)
+        {
+            if (form.Logic is ArrowUITopbarSub topbar) topbar.RefreshLifeVisibility();
+        }
+    }
+
     protected override void OnInit(object userData)
     {
         base.OnInit(userData);
@@ -78,6 +92,7 @@ public partial class ArrowUITopbarSub : UIFormBase
         GF.Event.Subscribe(RewardCollectedEventArgs.EventId, OnRewardCollected);
         playerDm.RefreshLife();
         RefreshLifeDisplay();
+        RefreshLifeVisibility();
         RefreshCoinVisibility();
     }
 
@@ -203,6 +218,11 @@ public partial class ArrowUITopbarSub : UIFormBase
     private void RefreshCoinVisibility()
     {
         if (varCoin != null) varCoin.SetActive(s_ShowCoin || activeRewards > 0 || rolling || pendingCoins > 0f);
+    }
+
+    private void RefreshLifeVisibility()
+    {
+        if (varBtnLife != null) varBtnLife.transform.parent.gameObject.SetActive(s_ShowLife);
     }
 
     private static string FormatCoins(float value)

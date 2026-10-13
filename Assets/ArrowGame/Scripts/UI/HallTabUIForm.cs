@@ -28,12 +28,14 @@ public partial class HallTabUIForm : UIFormBase
     {
         base.OnOpen(userData);
         ArrowUITopbar.SetCoinVisible(true);
+        ArrowUITopbarSub.SetLifeVisible(true);
         ArrowUITopbar.EnsureOpen();
         SwitchPage(UIViews.HomePageUIForm, varBtnHome);
     }
 
     protected override void OnClose(bool isShutdown, object userData)
     {
+        ArrowUITopbarSub.SetLifeVisible(false);
         if (!isShutdown)
         {
             CloseCurrentPage();
