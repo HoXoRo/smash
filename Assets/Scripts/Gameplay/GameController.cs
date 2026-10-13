@@ -1,4 +1,4 @@
-using ABTesting;
+using RemoteConfig;
 using Core;
 using DG.Tweening;
 using GameFramework;
@@ -1500,7 +1500,7 @@ namespace Gameplay
 
 		public bool ShouldTryShowInterAfterWin()
 		{
-			return ControlledKeyHelper.GetBool(ControlledKeys.InterEnabled);
+			return RemoteConfigService.GetBool("inter_enabled", true);
 		}
 
 		public int GetActiveStreakCount()

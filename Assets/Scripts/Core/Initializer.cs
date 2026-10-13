@@ -1,5 +1,4 @@
 using System.Collections;
-using ABTesting;
 using Haptics;
 using RemoteConfig;
 using Segmentation;
@@ -57,7 +56,6 @@ namespace Core
 			RemoteConfigService.InitializeLocal();
 			SessionHelper.Initialize();
 			SegmentationHelper.EvaluateSegment();
-			ABHelper.EvaluateEligibleABs();
 			CountryHelper.EnsureInstallCountry();
 			HapticManager.Init();
 		}

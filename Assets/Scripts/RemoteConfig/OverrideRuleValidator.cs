@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System;
-using ABTesting;
+using System.Globalization;
 using Segmentation;
 using UnityEngine;
 
@@ -31,17 +31,53 @@ namespace RemoteConfig
 				}
 				foreach (KeyValuePair<string, string> pair in rule.Values)
 				{
-					if (!ControlledKeys.IsKnownKey(pair.Key))
+					if (!IsKnownKey(pair.Key))
 					{
 						Debug.LogWarning("[RemoteConfig] Unknown override value key: " + pair.Key);
 						continue;
 					}
-					if (!ControlledKeys.TryValidateValue(pair.Key, pair.Value, out string error))
+					if (!TryValidateValue(pair.Key, pair.Value, out string error))
 					{
 						Report(string.Format("overrides[{0}].values[{1}]: {2}", i, pair.Key, error), throwOnError);
 					}
 				}
 			}
+		}
+
+		private static bool IsKnownKey(string key)
+		{
+			return key == "inter_enabled" || key == "bundles_enabled" || key == "inter_frequency"
+				|| key == "inter_on_every_try" || key == "rewarded_more_lives_enabled"
+				|| key == "level_collection" || key == "bidfloor_enabled";
+		}
+
+		private static bool TryValidateValue(string key, string value, out string error)
+		{
+			error = null;
+			if (string.IsNullOrWhiteSpace(value))
+			{
+				error = "value is empty";
+				return false;
+			}
+			if (key == "level_collection")
+			{
+				return true;
+			}
+			if (key == "inter_frequency")
+			{
+				if (float.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out _))
+				{
+					return true;
+				}
+				error = "expected float, got '" + value + "'";
+				return false;
+			}
+			if (bool.TryParse(value, out _))
+			{
+				return true;
+			}
+			error = "expected bool, got '" + value + "'";
+			return false;
 		}
 
 		private static void ValidateDimensionList(IReadOnlyList<string> values, string path, bool throwOnError, bool validateSegment = false)

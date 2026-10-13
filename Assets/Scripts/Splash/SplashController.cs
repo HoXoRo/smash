@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using DG.Tweening;
-using Gameplay.Level;
 using Core;
 using LocalSave;
 using RemoteConfig;
@@ -305,8 +304,6 @@ namespace Splash
 		{
 			RemoteConfigService.InitializeLocal();
 			_adInitFinished = true;
-			RoutineRunner.Instance.StartCoroutine(RemoteConfigUpdater.FetchCoroutine());
-			RemoteCollectionUpdater.RequestCollectionUpdateIfNeeded();
 			yield break;
 		}
 

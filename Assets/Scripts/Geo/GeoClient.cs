@@ -8,7 +8,7 @@ namespace Geo
 {
 	public static class GeoClient
 	{
-		private const string GeoServiceBaseUrl = "https://geo-parser-srggdyq22a-uc.a.run.app";
+		private const string GeoServiceBaseUrl = "";
 
 		private const int TimeoutSeconds = 10;
 

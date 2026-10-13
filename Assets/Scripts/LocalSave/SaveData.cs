@@ -1,5 +1,4 @@
 using System;
-using ABTesting;
 using Gameplay.GameplayTutorial;
 using Newtonsoft.Json;
 
@@ -58,9 +57,6 @@ namespace LocalSave
 
 		[JsonIgnore]
 		private readonly SaveItem<float> _pendingSessionActiveDurationSec = new SaveItem<float>(0f, SaveBehaviour.SaveAtFrameEnd);
-
-		[JsonIgnore]
-		private readonly SaveItem<PersistedABEntries> _abEntries = new SaveItem<PersistedABEntries>(PersistedABEntries.GetDefault(), SaveBehaviour.SaveNow);
 
 		[JsonIgnore]
 		private readonly SaveItem<int> _streakCount = new SaveItem<int>(0, SaveBehaviour.SaveAtFrameEnd);
@@ -206,13 +202,6 @@ namespace LocalSave
 		{
 			get => _pendingSessionActiveDurationSec.Value;
 			set => _pendingSessionActiveDurationSec.Value = value;
-		}
-
-		[JsonProperty("ab_entries")]
-		public PersistedABEntries ABEntries
-		{
-			get => _abEntries.Value;
-			set => _abEntries.Value = value;
 		}
 
 		[JsonProperty("streak_count")]

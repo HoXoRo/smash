@@ -14,7 +14,5 @@ namespace RemoteConfig
 		[JsonProperty("overrides")]
 		public List<OverrideRuleDto> Overrides;
 
-		[JsonProperty("experiments")]
-		public List<ExperimentDto> Experiments;
 	}
 }

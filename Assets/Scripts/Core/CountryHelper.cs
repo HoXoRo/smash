@@ -1,4 +1,3 @@
-using ABTesting;
 using Geo;
 using LocalSave;
 using UnityEngine;
@@ -25,7 +24,6 @@ namespace Core
 			string country = response.country.Trim().ToUpperInvariant();
 			SaveService.Data.Country = country;
 			Debug.Log("[Country] Country resolved and set as " + country);
-			ABHelper.EvaluateEligibleABs();
 		}
 
 		private static void OnCountryError(string error)

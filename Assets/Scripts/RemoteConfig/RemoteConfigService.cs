@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
-using ABTesting;
+using LocalSave;
 using Newtonsoft.Json;
 using Segmentation;
 using UnityEngine;
@@ -14,8 +14,6 @@ namespace RemoteConfig
 		private const string CacheFileName = "config.json";
 
 		private static RemoteConfigData _activeConfig;
-
-		private static List<ABDefinition> _experiments;
 
 		private static ConfigSource _activeSource;
 
@@ -33,12 +31,7 @@ namespace RemoteConfig
 		public static void InitializeLocal()
 		{
 			RemoteConfigData bundled = LoadBundled();
-			RemoteConfigData cached = LoadCached();
-			if (cached != null)
-			{
-				Activate(cached, ConfigSource.Cached);
-			}
-			else if (bundled != null)
+			if (bundled != null)
 			{
 				Activate(bundled, ConfigSource.Bundled);
 			}
@@ -47,10 +40,8 @@ namespace RemoteConfig
 				_activeConfig = new RemoteConfigData
 				{
 					Defaults = new Dictionary<string, string>(),
-					Overrides = new List<OverrideRuleDto>(),
-					Experiments = new List<ExperimentDto>()
+					Overrides = new List<OverrideRuleDto>()
 				};
-				_experiments = new List<ABDefinition>();
 			}
 			IsInitialized = true;
 		}
@@ -64,7 +55,6 @@ namespace RemoteConfig
 			}
 			_activeConfig = config;
 			_activeSource = source;
-			_experiments = ExperimentMapper.ToDefinitions(config.Experiments);
 			IsInitialized = true;
 		}
 
@@ -132,13 +122,25 @@ namespace RemoteConfig
 			return result.HasValue ? result.Value : null;
 		}
 
-		public static List<ABDefinition> GetExperiments()
+		public static string GetValue(string key)
 		{
-			if (_activeConfig == null && !IsInitialized)
+			string value = GetOverrideValue(SaveService.Data?.Country, SegmentationHelper.GetSegment(), key);
+			return string.IsNullOrWhiteSpace(value) ? GetDefaultValue(key) : value;
+		}
+
+		public static bool GetBool(string key, bool fallback)
+		{
+			string value = GetValue(key);
+			if (string.IsNullOrWhiteSpace(value))
 			{
-				InitializeLocal();
+				return fallback;
 			}
-			return _experiments ?? new List<ABDefinition>();
+			if (bool.TryParse(value, out bool parsed))
+			{
+				return parsed;
+			}
+			Debug.LogWarning("[RemoteConfig] Invalid bool for " + key + ": '" + value + "'");
+			return fallback;
 		}
 	}
 }

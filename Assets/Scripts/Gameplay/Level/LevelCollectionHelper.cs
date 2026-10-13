@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
-using ABTesting;
+using RemoteConfig;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -29,7 +29,7 @@ namespace Gameplay.Level
 			{
 				return ForcedCollectionName;
 			}
-			string configured = ControlledKeyHelper.GetString(ControlledKeys.LevelCollection);
+			string configured = RemoteConfigService.GetValue("level_collection");
 			return string.IsNullOrEmpty(configured) ? DefaultCollectionName : configured;
 		}
 

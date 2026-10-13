@@ -8,7 +8,7 @@ namespace Gameplay.Level
 	{
 		public static bool LoopActive;
 
-		public static bool ForceLocal;
+		public static bool ForceLocal = true;
 
 		public static LevelData GetLevel(int index)
 		{
