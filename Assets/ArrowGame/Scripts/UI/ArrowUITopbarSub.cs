@@ -31,6 +31,20 @@ public partial class ArrowUITopbarSub : UIFormBase
         GF.UI.OpenUIForm(UIViews.ArrowUITopbarSub);
     }
 
+    public static bool CanAnimateCoins()
+    {
+        string assetName = GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbarSub);
+        if (string.IsNullOrEmpty(assetName)) return false;
+        var forms = GF.UI.GetUIForms(assetName);
+        if (forms == null) return false;
+        foreach (var form in forms)
+        {
+            if (form.Logic is ArrowUITopbarSub topbar && topbar.isActiveAndEnabled &&
+                topbar.gameObject.activeInHierarchy && topbar.playerDm != null) return true;
+        }
+        return false;
+    }
+
     public static void SetCoinVisible(bool visible)
     {
         s_ShowCoin = visible;
@@ -88,11 +102,13 @@ public partial class ArrowUITopbarSub : UIFormBase
         if (rollCoroutine != null) StopCoroutine(rollCoroutine);
         rollCoroutine = null;
         float value = (rolling ? rollTarget : targetCoins) + pendingCoins;
-        if (rolling || pendingCoins > 0f || activeRewards > 0)
+        bool hasPendingRewards = rolling || pendingCoins > 0f || activeRewards > 0;
+        if (hasPendingRewards)
         {
             if (value > playerDm.Coins) playerDm.SetData(PlayerDataType.Coins, value, false);
             targetCoins = playerDm.Coins;
             varTxtCoin.text = FormatCoins(targetCoins);
+            playerDm.Save();
         }
         pendingCoins = 0f;
         activeRewards = 0;
@@ -178,6 +194,7 @@ public partial class ArrowUITopbarSub : UIFormBase
         varTxtCoin.text = FormatCoins(targetCoins);
         rollCoroutine = null;
         playerDm.SetData(PlayerDataType.Coins, targetCoins, true);
+        playerDm.Save();
         rolling = false;
         StartRoll();
         RefreshCoinVisibility();

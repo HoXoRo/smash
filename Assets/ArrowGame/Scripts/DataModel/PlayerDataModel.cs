@@ -142,13 +142,7 @@ public class PlayerDataModel : DataModelStorageBase
     private int m_Gems;
 
     private int m_LevelId;
-
-    private string m_LastSigninTime;
-
-    private int m_SigninIndex;
-
-    private string m_LastBingoCardRecoverTime = "0";  // 使用字符串存储时间戳
-
+    
     private string m_LastBubbleTime = "0";  // 使用字符串存储时间戳
 
     private int m_Prop1;
@@ -166,6 +160,8 @@ public class PlayerDataModel : DataModelStorageBase
     private int m_CollectMoneyGoodsTimes;
     private List<int> m_PassedTasks;
     [JsonProperty] private List<int> m_ClaimedLevelTaskIds = new List<int>();
+    [JsonProperty] private string m_LevelTaskDay;
+    [JsonProperty] private int m_DailyCompletedLevels;
     [JsonProperty] private Dictionary<int, long> m_TaskAdCooldownEnds = new Dictionary<int, long>();
     private const int TaskAdCooldownSeconds = 10 * 60;
     /// <summary>
@@ -179,7 +175,6 @@ public class PlayerDataModel : DataModelStorageBase
     private int m_InterstitialTimes;
     private int m_RewardDialogDoubleTimes;
     [SerializeField] public string m_NewDayTime;
-    [SerializeField] public bool isFreeSpin;
     [SerializeField] public List<int> CompleteGuideIds = new List<int>();
     [SerializeField] public string Language;
     [SerializeField] public string PlayerName;
@@ -190,35 +185,7 @@ public class PlayerDataModel : DataModelStorageBase
     public string MakeupAccount;
     private int m_MahjongSkinId;
     private int m_MahjongBgSkinId;
-    [SerializeField] public List<int> SkinUnLockedTileIds = new List<int>();
-    [SerializeField] public List<int> SkinUnLockedBgIds = new List<int>();
     public Dictionary<int, int> m_LevelStarRecords = new Dictionary<int, int>();
-
-    /// <summary>
-    /// 箭头彩色模式：true=普通箭头随机彩色，false=默认黑色。持久化存储。
-    /// </summary>
-    private bool m_UseColorfulArrows;
-
-    /// <summary>
-    /// 背景日/夜间模式：true=夜间(#232633)，false=日间(#EBEBEB)。持久化存储。
-    /// </summary>
-    private bool m_IsNightMode;
-
-    /// <summary>
-    /// 箭头高级皮肤 ID，0 表示默认皮肤。持久化存储。
-    /// </summary>
-
-    public string LastSigninTime
-    {
-        get => m_LastSigninTime;
-        set => m_LastSigninTime = value;
-    }
-
-    public int SigninIndex
-    {
-        get => m_SigninIndex;
-        set => m_SigninIndex = value;
-    }
 
     public float Coins
     {
@@ -278,35 +245,7 @@ public class PlayerDataModel : DataModelStorageBase
         get => m_Prop3;
         set => SetData(PlayerDataType.Prop3, value);
     }
-
-    /// <summary>
-    /// 箭头彩色模式（持久化）。true=普通箭头随机彩色，false=默认黑色。
-    /// </summary>
-    public bool UseColorfulArrows
-    {
-        get => m_UseColorfulArrows;
-        set
-        {
-            if (m_UseColorfulArrows == value) return;
-            GF.Event.Fire(this, UserSkinChangeEventArgs.Create());
-            m_UseColorfulArrows = value;
-            Save(false);
-        }
-    }
-
-    /// <summary>
-    /// 背景日/夜间模式（持久化）。true=夜间(#232633)，false=日间(#EBEBEB)。
-    /// </summary>
-    public bool IsNightMode
-    {
-        get => m_IsNightMode;
-        set
-        {
-            // if (m_IsNightMode == value) return;
-            m_IsNightMode = value;
-            Save(false);
-        }
-    }
+    
 
     public int CollectCount
     {
@@ -344,6 +283,9 @@ public class PlayerDataModel : DataModelStorageBase
         get => m_LevelId;
         set
         {
+            var diffLevel = value - m_LevelId;
+            RecordDailyLevelCompleted(diffLevel);
+
             SetData(PlayerDataType.LevelId, Mathf.Max(1, value));
         }
     }
@@ -395,7 +337,51 @@ public class PlayerDataModel : DataModelStorageBase
 
     public bool IsLevelTaskClaimed(int taskId)
     {
+        RefreshDailyLevelTasks();
         return m_ClaimedLevelTaskIds != null && m_ClaimedLevelTaskIds.Contains(taskId);
+    }
+
+    [JsonIgnore]
+    public int DailyCompletedLevels
+    {
+        get
+        {
+            RefreshDailyLevelTasks();
+            return m_DailyCompletedLevels;
+        }
+    }
+
+    public void RecordDailyLevelCompleted(int level)
+    {
+        RefreshDailyLevelTasks();
+        m_DailyCompletedLevels += level;
+        if (m_DailyCompletedLevels < 0)
+        {
+            m_DailyCompletedLevels = 0;
+        }
+
+        Save();
+    }
+
+    private void RefreshDailyLevelTasks()
+    {
+        string today = DateTime.UtcNow.ToString("yyyyMMdd");
+        if (m_LevelTaskDay == today) return;
+
+        m_LevelTaskDay = today;
+        m_DailyCompletedLevels = 0;
+        m_ClaimedLevelTaskIds = new List<int>();
+        Save();
+    }
+
+    public void ResetTaskProgress()
+    {
+        m_LevelTaskDay = DateTime.UtcNow.ToString("yyyyMMdd");
+        m_DailyCompletedLevels = 0;
+        m_ClaimedLevelTaskIds = new List<int>();
+        m_TaskAdCooldownEnds = new Dictionary<int, long>();
+        Save();
+        GF.Event.Fire(this, TaskUpdateEventArgs.Create());
     }
 
     public long GetTaskAdCooldownEnd(int taskId)
@@ -403,23 +389,25 @@ public class PlayerDataModel : DataModelStorageBase
         return m_TaskAdCooldownEnds != null && m_TaskAdCooldownEnds.TryGetValue(taskId, out long end) ? end : 0;
     }
 
-    public bool TryClaimLevelTask(int taskId, int requiredLevels, int reward)
+    public bool TryClaimLevelTask(int taskId, int requiredLevels, int reward, bool creditCoins = true)
     {
-        if (reward <= 0 || LevelId - 1 < requiredLevels || IsLevelTaskClaimed(taskId)) return false;
+        if (reward <= 0 || DailyCompletedLevels < requiredLevels || IsLevelTaskClaimed(taskId)) return false;
         if (m_ClaimedLevelTaskIds == null) m_ClaimedLevelTaskIds = new List<int>();
         m_ClaimedLevelTaskIds.Add(taskId);
-        Coins += reward;
+        if (creditCoins) Coins += reward;
         Save();
+        GF.Event.Fire(this, TaskUpdateEventArgs.Create());
         return true;
     }
 
-    public bool TryClaimTaskAdReward(int taskId, int reward, long now)
+    public bool TryClaimTaskAdReward(int taskId, int reward, long now, bool creditCoins = true)
     {
         if (reward <= 0 || now < GetTaskAdCooldownEnd(taskId)) return false;
         if (m_TaskAdCooldownEnds == null) m_TaskAdCooldownEnds = new Dictionary<int, long>();
         m_TaskAdCooldownEnds[taskId] = now + TaskAdCooldownSeconds;
-        Coins += reward;
+        if (creditCoins) Coins += reward;
         Save();
+        GF.Event.Fire(this, TaskUpdateEventArgs.Create());
         return true;
     }
 
@@ -464,9 +452,6 @@ public class PlayerDataModel : DataModelStorageBase
         m_Gems = 0;
         m_LevelId = 1;
         MakeupAccount = string.Empty;
-        LastSigninTime = string.Empty;
-        SigninIndex = 0;
-        m_LastBingoCardRecoverTime = UtilityBuiltin.GetTimeStamp();
         m_Prop1 = GF.Config.GetInt("DefaultProp");
         RocketCount = 0;
         PendingRocketUse = false;
@@ -476,32 +461,21 @@ public class PlayerDataModel : DataModelStorageBase
         m_CollectMoneyGoodsTimes = 0;
         m_PassedTasks = new List<int>();
         m_ClaimedLevelTaskIds = new List<int>();
+        m_LevelTaskDay = DateTime.UtcNow.ToString("yyyyMMdd");
+        m_DailyCompletedLevels = 0;
         m_TaskAdCooldownEnds = new Dictionary<int, long>();
         m_MatchCountDict = new Dictionary<int, int>();
         m_AchievingCount = 0;
         m_NewDayTime = UtilityBuiltin.GetTimeStamp();
         m_InterstitialTimes = 0;
         m_RewardDialogDoubleTimes = 0;
-        isFreeSpin = false;
         m_LevelStarRecords = new Dictionary<int, int>();
         m_MahjongSkinId = 0;
         m_MahjongBgSkinId = 0;
         PlayerName = string.Empty;
-        SkinUnLockedTileIds = new List<int>();
-        SkinUnLockedBgIds = new List<int>();
-        if (SkinUnLockedTileIds.Count == 0)
-        {
-            SkinUnLockedTileIds.Add(0);
-        }
-        if (SkinUnLockedBgIds.Count == 0)
-        {
-            SkinUnLockedBgIds.Add(0);
-        }
         m_UserType = 0;
         m_IsRecognition = false;
         m_RewardArrowEliminateCount = 0;
-        m_UseColorfulArrows = false;
-        m_IsNightMode = false;
     }
 
     public int GetLevelStarRecord(int levelId)
@@ -619,32 +593,7 @@ public class PlayerDataModel : DataModelStorageBase
         // 整数类型直接调用float版本的SetData，会自动进行精度转换
         SetData(tp, (float)value, triggerEvent);
     }
-
-    public bool IsTodaySigned()
-    {
-        string today = DateTime.UtcNow.ToString("yyyyMMdd");
-        if (string.IsNullOrEmpty(m_LastSigninTime)) return false;
-        DateTime last = DateTimeOffset.FromUnixTimeSeconds(long.Parse(m_LastSigninTime)).UtcDateTime;
-        return last.ToString("yyyyMMdd") == today;
-    }
-
-    public void DoSignin()
-    {
-        m_LastSigninTime = UtilityBuiltin.GetTimeStamp();
-        m_SigninIndex++;
-        Save();
-    }
-
-    public void RefreshSignin()
-    {
-        string today = DateTime.UtcNow.ToString("yyyyMMdd");
-        if (string.IsNullOrEmpty(m_LastSigninTime)) return;
-        DateTime last = DateTimeOffset.FromUnixTimeSeconds(long.Parse(m_LastSigninTime)).UtcDateTime;
-        if (last.ToString("yyyyMMdd") != today)
-        {
-
-        }
-    }
+    
     public void RefreshNewDay()
     {
         string today = DateTime.UtcNow.ToString("yyyyMMdd");
@@ -654,7 +603,6 @@ public class PlayerDataModel : DataModelStorageBase
             m_MatchCountDict = new Dictionary<int, int>();
             m_AchievingCount = 0;
             m_NewDayTime = UtilityBuiltin.GetTimeStamp();
-        isFreeSpin = false;
             return;
         }
         DateTime last = DateTimeOffset.FromUnixTimeSeconds(long.Parse(m_NewDayTime)).UtcDateTime;
@@ -664,15 +612,6 @@ public class PlayerDataModel : DataModelStorageBase
             m_MatchCountDict = new Dictionary<int, int>();
             m_AchievingCount = 0;
             m_NewDayTime = UtilityBuiltin.GetTimeStamp();
-        isFreeSpin = false;
-        }
-        if(SkinUnLockedTileIds.Count == 0)
-        {
-            SkinUnLockedTileIds.Add(0);
-        }
-        if(SkinUnLockedBgIds.Count == 0)
-        {
-            SkinUnLockedBgIds.Add(0);
         }
     }
 

@@ -16,6 +16,9 @@ public partial class DebugUIForm : UIFormBase
         varAddDollar.onClick.AddListener(AddDollar);
         varReduceDollor.onClick.AddListener(ReduceDollar);
         varBtnVideo.onClick.AddListener(ShowVideo);
+        varBtnAddLv.onClick.AddListener(AddLevel);
+        varBtnReduceLv.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(ReduceLevel);
+        varBtnResetTask.onClick.AddListener(ResetTasks);
         varBtnClose.onClick.AddListener(OnClickClose);
     }
 
@@ -46,5 +49,26 @@ public partial class DebugUIForm : UIFormBase
     private void ShowVideo()
     {
         CommonHelper.ShowVideoAd("debug_video", null);
+    }
+
+    private void AddLevel()
+    {
+        PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        if (playerData.LevelId >= int.MaxValue) return;
+        playerData.LevelId++;
+        playerData.Save();
+    }
+
+    private void ReduceLevel()
+    {
+        PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        if (playerData.LevelId <= 1) return;
+        playerData.LevelId--;
+        playerData.Save();
+    }
+
+    private void ResetTasks()
+    {
+        GF.DataModel.GetOrCreate<PlayerDataModel>().ResetTaskProgress();
     }
 }

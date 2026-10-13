@@ -534,7 +534,7 @@ GameObject:
   - component: {fileID: 2201906425663127794}
   - component: {fileID: 1352951137464063891}
   m_Layer: 5
-  m_Name: progress
+  m_Name: taskProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -558,8 +558,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -142.99997, y: -83}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: -47, y: -88.4}
+  m_SizeDelta: {x: 450, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1352951137464063891
 MonoBehaviour:
@@ -1145,8 +1145,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 277, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 239.4, y: -21.8}
+  m_SizeDelta: {x: 200, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1741919666355684285
 CanvasRenderer:
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.2967693, g: 0.5377358, b: 0.37908706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1318,6 +1318,8 @@ GameObject:
   - component: {fileID: 2620088626965778423}
   - component: {fileID: 5582454675524367742}
   - component: {fileID: 910031}
+  - component: {fileID: 4147715617248557778}
+  - component: {fileID: 5494721708800385329}
   m_Layer: 5
   m_Name: TaskItem
   m_TagString: Untagged
@@ -1368,11 +1370,6 @@ MonoBehaviour:
     - {fileID: 1878545980810868257}
     VarType: TMPro.TextMeshProUGUI
     VarPrefix: 0
-  - VarName: varProgress
-    Targets:
-    - {fileID: 2245885757397518049}
-    VarType: UnityEngine.UI.Slider
-    VarPrefix: 0
   - VarName: varRewardArea
     Targets:
     - {fileID: 1287550295389743786}
@@ -1408,12 +1405,14 @@ MonoBehaviour:
     - {fileID: 1217727533183258217}
     VarType: TMPro.TextMeshProUGUI
     VarPrefix: 0
+  - VarName: varTaskProgress
+    Targets:
+    - {fileID: 2245885757397518049}
+    VarType: UnityEngine.UI.Slider
+    VarPrefix: 0
   descriptionText: {fileID: 7358640400721971232}
-  rewardText: {fileID: 7430620780990453309}
-  progressSlider: {fileID: 1352951137464063891}
   claimedIndicator: {fileID: 6814498477451859722}
   varRewardTxt: {fileID: 7430620780990453309}
-  varProgress: {fileID: 1352951137464063891}
   varRewardArea: {fileID: 1287550295389743786}
   varBtn_ad: {fileID: 3678850739444081650}
   varBtn_claim: {fileID: 7652340993030226234}
@@ -1421,6 +1420,7 @@ MonoBehaviour:
   varInfoTxt: {fileID: 7358640400721971232}
   varClaimed: {fileID: 6814498477451859722}
   varTxtAd: {fileID: 4313999281872542346}
+  varTaskProgress: {fileID: 1352951137464063891}
 --- !u!114 &910031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1441,6 +1441,44 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!222 &4147715617248557778
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919460191919269524}
+  m_CullTransparentMesh: 1
+--- !u!114 &5494721708800385329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919460191919269524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.24448201, g: 0.6948688, b: 0.7735849, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8390724558162475418
 GameObject:
   m_ObjectHideFlags: 0

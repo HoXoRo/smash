@@ -18,6 +18,8 @@ public partial class TaskPageUIForm : UIFormBase
 
     private readonly List<TaskItem> taskItems = new List<TaskItem>();
     private static bool s_AdRequestInProgress;
+    private DateTime m_VisibleTaskDay;
+    private float m_NextDayCheck;
 
     public IReadOnlyList<TaskItem> TaskItems => taskItems;
 
@@ -32,6 +34,7 @@ public partial class TaskPageUIForm : UIFormBase
         base.OnOpen(userData);
         varBtnClose.gameObject.SetActive(!Params.Get<VarBoolean>(P_FromHallTab, false));
         GF.Event.Subscribe(PlayerDataChangedEventArgs.EventId, OnPlayerDataChanged);
+        GF.Event.Subscribe(TaskUpdateEventArgs.EventId, OnTaskUpdated);
         RefreshTaskList();
 
         if (taskScrollRect != null && taskScrollRect.content != null)
@@ -61,7 +64,8 @@ public partial class TaskPageUIForm : UIFormBase
 
         RefreshTaskList(tasks.Length);
         PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
-        int completedLevels = Mathf.Max(0, playerData.LevelId - 1);
+        int completedLevels = playerData.DailyCompletedLevels;
+        m_VisibleTaskDay = DateTime.UtcNow.Date;
         for (int index = 0; index < taskItems.Count; index++)
         {
             TaskReward task = tasks[index];
@@ -74,18 +78,26 @@ public partial class TaskPageUIForm : UIFormBase
     private void OnClaimRequested(TaskReward task)
     {
         PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        if (s_AdRequestInProgress || GF.UI.HasUIForm(UIViews.CoinRewardUIForm) ||
+            GF.UI.IsLoadingUIForm(UIViews.CoinRewardUIForm)) return;
+        if (task.Reward <= 0)
+        {
+            GF.UI.ShowToast("Not enough");
+            return;
+        }
+
         if (task.TaskType == 2)
         {
-            if (!playerData.TryClaimLevelTask(task.Id, task.Level, task.Reward))
+            if (playerData.DailyCompletedLevels < task.Level || playerData.IsLevelTaskClaimed(task.Id))
             {
                 GF.UI.ShowToast("Not enough");
                 return;
             }
-            RefreshTaskList();
+            OpenCoinReward(task.Id, false);
             return;
         }
 
-        if (task.TaskType != 1 || s_AdRequestInProgress ||
+        if (task.TaskType != 1 ||
             DateTimeOffset.UtcNow.ToUnixTimeSeconds() < playerData.GetTaskAdCooldownEnd(task.Id))
         {
             GF.UI.ShowToast("Not enough");
@@ -94,33 +106,48 @@ public partial class TaskPageUIForm : UIFormBase
 
         s_AdRequestInProgress = true;
         int taskId = task.Id;
-        int reward = task.Reward;
-        if (!playerData.TryClaimTaskAdReward(taskId, reward, DateTimeOffset.UtcNow.ToUnixTimeSeconds()))
+        CommonHelper.ShowVideoAd("task_coin", success =>
         {
-            GF.UI.ShowToast("Not enough");
-        }
-        else
-        {
-            CommonHelper.ShowVideoAd("task_coin", success =>
+            s_AdRequestInProgress = false;
+            if (!success)
             {
-                s_AdRequestInProgress = false;
-                if (!success)
-                {
-                    return;
-                }
-                if (this != null && gameObject.activeInHierarchy) RefreshTaskList();
-            });
-        }
+                GF.UI.ShowToast("Not enough");
+                return;
+            }
+            OpenCoinReward(taskId, true);
+        }, showFailureToast: false);
+    }
 
-        
+    private static void OpenCoinReward(int taskId, bool adCompleted)
+    {
+        if (GF.UI.HasUIForm(UIViews.CoinRewardUIForm) ||
+            GF.UI.IsLoadingUIForm(UIViews.CoinRewardUIForm)) return;
+        UIParams uiParams = UIParams.Create();
+        uiParams.Set<VarInt32>(CoinRewardUIForm.P_TaskId, taskId);
+        uiParams.Set<VarBoolean>(CoinRewardUIForm.P_AdCompleted, adCompleted);
+        GF.UI.OpenUIForm(UIViews.CoinRewardUIForm, uiParams);
     }
 
     private void OnPlayerDataChanged(object sender, GameEventArgs eventArgs)
     {
-        if (eventArgs is PlayerDataChangedEventArgs changed && changed.DataType == PlayerDataType.LevelId)
+        if (eventArgs is PlayerDataChangedEventArgs changed &&
+            (changed.DataType == PlayerDataType.LevelId || changed.DataType == PlayerDataType.Coins))
         {
             RefreshTaskList();
         }
+    }
+
+    private void OnTaskUpdated(object sender, GameEventArgs eventArgs)
+    {
+        RefreshTaskList();
+    }
+
+    protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
+    {
+        base.OnUpdate(elapseSeconds, realElapseSeconds);
+        if (Time.unscaledTime < m_NextDayCheck) return;
+        m_NextDayCheck = Time.unscaledTime + 1f;
+        if (DateTime.UtcNow.Date != m_VisibleTaskDay) RefreshTaskList();
     }
 
     private void RefreshTaskList(int taskCount)
@@ -155,6 +182,7 @@ public partial class TaskPageUIForm : UIFormBase
     protected override void OnClose(bool isShutdown, object userData)
     {
         GF.Event.Unsubscribe(PlayerDataChangedEventArgs.EventId, OnPlayerDataChanged);
+        GF.Event.Unsubscribe(TaskUpdateEventArgs.EventId, OnTaskUpdated);
         foreach (TaskItem item in taskItems) item.ClearClaimHandler();
         taskItems.Clear();
         base.OnClose(isShutdown, userData);

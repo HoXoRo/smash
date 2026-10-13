@@ -8,8 +8,6 @@ using UnityEngine;
 public partial class TaskItem : UIItemBase
 {
     [SerializeField] private TMPro.TextMeshProUGUI descriptionText;
-    [SerializeField] private TMPro.TextMeshProUGUI rewardText;
-    [SerializeField] private UnityEngine.UI.Slider progressSlider;
     [SerializeField] private GameObject claimedIndicator;
 
     private TaskReward task;
@@ -23,7 +21,7 @@ public partial class TaskItem : UIItemBase
     protected override void OnInit()
     {
         base.OnInit();
-        progressSlider.interactable = false;
+        varTaskProgress.interactable = false;
         readyAdText = varTxtAd.text;
         varBtn_ad.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnClaimClicked);
         varBtn_claim.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnClaimClicked);
@@ -43,12 +41,12 @@ public partial class TaskItem : UIItemBase
         }
 
         descriptionText.text = isAdTask ? "Watch an ad" : string.Format(descriptionFormat, task.Level);
-        rewardText.text = task.Reward.ToString();
-        progressSlider.minValue = 0f;
-        progressSlider.maxValue = Mathf.Max(1, task.Level);
-        progressSlider.wholeNumbers = true;
-        progressSlider.SetValueWithoutNotify(Mathf.Clamp(completedLevels, 0, Mathf.Max(0, task.Level)));
-        progressSlider.gameObject.SetActive(!isAdTask);
+        varRewardTxt.text = task.Reward.ToString();
+        varTaskProgress.minValue = 0f;
+        varTaskProgress.maxValue = Mathf.Max(1, task.Level);
+        varTaskProgress.wholeNumbers = true;
+        varTaskProgress.SetValueWithoutNotify(Mathf.Clamp(completedLevels, 0, Mathf.Max(0, task.Level)));
+        varTaskProgress.gameObject.SetActive(!isAdTask);
         claimedIndicator.SetActive(claimed);
         varInfoTxt.gameObject.SetActive(!isAdTask);
         varBtn_claim.SetActive(!isAdTask && !claimed);

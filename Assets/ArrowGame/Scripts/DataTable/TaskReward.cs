@@ -48,6 +48,15 @@ public class TaskReward : DataRowBase
         }
 
         /// <summary>
+        /// 奖励倍数
+        /// </summary>
+        public int RewardMulti
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
         /// 任务类型（1.看广告 2.通关数）
         /// </summary>
         public int TaskType
@@ -70,6 +79,7 @@ public class TaskReward : DataRowBase
             index++;
             Level = int.Parse(columnStrings[index++]);
             Reward = int.Parse(columnStrings[index++]);
+            RewardMulti = int.Parse(columnStrings[index++]);
             TaskType = int.Parse(columnStrings[index++]);
             index++;
             index++;
@@ -86,6 +96,7 @@ public class TaskReward : DataRowBase
                     m_Id = binaryReader.Read7BitEncodedInt32();
                     Level = binaryReader.Read7BitEncodedInt32();
                     Reward = binaryReader.Read7BitEncodedInt32();
+                    RewardMulti = binaryReader.Read7BitEncodedInt32();
                     TaskType = binaryReader.Read7BitEncodedInt32();
                 }
             }

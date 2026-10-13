@@ -10,7 +10,6 @@ public partial class TaskItem
 	[Space(10)]
 	[Header("UI Variables:")]
 	[SerializeField] private TextMeshProUGUI varRewardTxt = null;
-	[SerializeField] private Slider varProgress = null;
 	[SerializeField] private GameObject varRewardArea = null;
 	[SerializeField] private GameObject varBtn_ad = null;
 	[SerializeField] private GameObject varBtn_claim = null;
@@ -18,4 +17,5 @@ public partial class TaskItem
 	[SerializeField] private TextMeshProUGUI varInfoTxt = null;
 	[SerializeField] private GameObject varClaimed = null;
 	[SerializeField] private TextMeshProUGUI varTxtAd = null;
+	[SerializeField] private Slider varTaskProgress = null;
 }

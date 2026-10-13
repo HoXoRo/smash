@@ -14,4 +14,7 @@ public partial class DebugUIForm
 	[SerializeField] private Button varReduceDollor = null;
 	[SerializeField] private Button varBtnClose = null;
 	[SerializeField] private TMP_InputField varInputDollar = null;
+	[SerializeField] private Button varBtnAddLv = null;
+	[SerializeField] private Button varBtnResetTask = null;
+	[SerializeField] private Button varBtnReduceLv = null;
 }
