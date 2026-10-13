@@ -332,7 +332,7 @@ namespace Gameplay
 			}
 			Vector3 hitPoint = collision != null && collision.contactCount > 0 ? collision.GetContact(0).point : transform.position;
 			ServiceLocator.Get<ParticleController>()?.PlayOnPosition(ParticleType.BallObjectFirstHit, hitPoint, Quaternion.identity, rb != null ? rb.linearVelocity : Vector3.zero);
-			ServiceLocator.Get<AudioHelper>()?.PlaySfx(Audio.AudioType.BlockerHit);
+			GF.Sound.PlayEffect("Blocker_Hit.ogg");
 			State = BallState.HitObject;
 		}
 
@@ -446,9 +446,10 @@ namespace Gameplay
 				return;
 			}
 			Audio.AudioType hitAudioType = objectInstance.GetHitAudioType();
-			if (hitAudioType != Audio.AudioType.None)
+			string soundName = hitAudioType.ToSoundName();
+			if (soundName != null)
 			{
-				ServiceLocator.Get<AudioHelper>()?.PlaySfx(hitAudioType);
+				GF.Sound.PlayEffect(soundName);
 			}
 			ServiceLocator.Get<ParticleController>()?.PlayOnPosition(ParticleType.BallObjectFirstHit, ballObjectCollision.Point, Quaternion.identity, rb != null ? rb.linearVelocity : Vector3.zero);
 			ApplyBoomOnFirstHit(ballObjectCollision);

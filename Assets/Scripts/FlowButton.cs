@@ -158,9 +158,10 @@ public class FlowButton : MonoBehaviour, IPointerDownHandler, IEventSystemHandle
 
 	private void PlayAudio()
 	{
-		if (audioTypeOnClick != Audio.AudioType.None)
+		string soundName = audioTypeOnClick.ToSoundName();
+		if (soundName != null && GF.Sound != null)
 		{
-			ServiceLocator.Get<AudioHelper>()?.PlaySfx(audioTypeOnClick);
+			GF.Sound.PlayEffect(soundName);
 		}
 	}
 }

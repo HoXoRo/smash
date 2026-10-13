@@ -30,11 +30,6 @@ namespace Gameplay.Objects
 			return Audio.AudioType.None;
 		}
 
-		public void PlayExplodeAudio()
-		{
-			ServiceLocator.Get<AudioHelper>()?.PlaySfx(Audio.AudioType.TntExplode);
-		}
-
 		public override void DestroyByTnt()
 		{
 			DestroyAndExplode(ParticleType.TntExplode, GetLastVelocity());
@@ -47,7 +42,6 @@ namespace Gameplay.Objects
 
 		private void Explode()
 		{
-			PlayExplodeAudio();
 			if (ContactNode == null)
 			{
 				return;

@@ -114,6 +114,16 @@ MonoBehaviour:
     filterType: 0
     searchPatterns: '*.*'
   - valid: 1
+    name: FlowAudio
+    variant:
+    fileSystem:
+    groups:
+    assetsDirectoryPath: Assets/ArrowGame/Audio
+    loadType: 3
+    packed: 1
+    filterType: 0
+    searchPatterns: '*.ogg'
+  - valid: 1
     name: Font
     variant: 
     fileSystem: 

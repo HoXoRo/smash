@@ -246,7 +246,7 @@ namespace Gameplay
 		{
 			if (_rocketIndexesWithAudio != null && _rocketIndexesWithAudio.Contains(_rocketIndex))
 			{
-				ServiceLocator.Get<AudioHelper>()?.PlaySfx(Audio.AudioType.RocketIntro);
+				GF.Sound.PlayEffect("Rocket_Intro.ogg");
 			}
 			rocketVisual?.SetActive(true);
 			PlayParticles(flyParticles);
@@ -368,7 +368,7 @@ namespace Gameplay
 			{
 				yield break;
 			}
-			ServiceLocator.Get<AudioHelper>()?.PlaySfx(Audio.AudioType.RocketFlight);
+			GF.Sound.PlayEffect("Rocket_Flight.ogg");
 			_quarticSegmentStart = transform.position;
 			float elapsed = 0f;
 			while (!_completed && elapsed < _durationStraight)
@@ -614,7 +614,7 @@ namespace Gameplay
 				_targetObject.DestroyByRocket();
 				if (_rocketIndexesWithAudio != null && _rocketIndexesWithAudio.Contains(_rocketIndex))
 				{
-					ServiceLocator.Get<AudioHelper>()?.PlaySfx(Audio.AudioType.RocketHit);
+					GF.Sound.PlayEffect("Rocket_Hit.ogg");
 				}
 				CameraHelper cameraHelper = ServiceLocator.Get<CameraHelper>();
 				Vector3 particlePosition = cameraHelper != null ? cameraHelper.GetPointFromPointToCamera(transform.position, ExplodeParticleCameraDistance) : transform.position;

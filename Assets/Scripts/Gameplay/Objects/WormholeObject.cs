@@ -67,7 +67,7 @@ namespace Gameplay.Objects
 
 		private void PlayBreakAudio()
 		{
-			ServiceLocator.Get<AudioHelper>()?.PlaySfx(Audio.AudioType.WormholeBreak);
+			GF.Sound.PlayEffect("Portal_Break.ogg");
 		}
 
 		public override BallObjectCollisionResult OnBallHit(BallObjectCollision collision)

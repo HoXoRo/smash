@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Audio;
 using Cysharp.Threading.Tasks;
 using Core;
 using Inventory;
@@ -20,6 +19,8 @@ namespace Scene
 		private static GameObject _loadingCanvas;
 
 		private static bool _isChangingScene;
+
+		private static int _musicSerialId;
 
 		public static bool IsInLoading => _loadingCanvas != null && _loadingCanvas.activeSelf;
 
@@ -41,6 +42,20 @@ namespace Scene
 				}
 			}
 			_currentScene = SceneType.Splash;
+			_musicSerialId = 0;
+			RoutineRunner.Instance.StartCoroutine(PlayInitialMusicWhenReady());
+		}
+
+		private static IEnumerator PlayInitialMusicWhenReady()
+		{
+			while (GF.Sound == null || !GF.Sound.HasSoundGroup(Const.SoundGroup.Music.ToString()))
+			{
+				yield return null;
+			}
+			if (!_isChangingScene)
+			{
+				PlayMusicForCurrentSceneSafely();
+			}
 		}
 
 		public static void LoadScene(SceneType nextScene, bool forceDisableLoading = false)
@@ -145,7 +160,11 @@ namespace Scene
 		{
 			try
 			{
-				ServiceLocator.Get<AudioHelper>()?.StopMusic();
+				if (_musicSerialId > 0 && GF.Sound != null)
+				{
+					GF.Sound.StopSound(_musicSerialId);
+				}
+				_musicSerialId = 0;
 			}
 			catch (Exception exception)
 			{
@@ -157,7 +176,10 @@ namespace Scene
 		{
 			try
 			{
-				ServiceLocator.Get<AudioHelper>()?.PlayMusicForCurrentScene();
+				if (_musicSerialId == 0 && GF.Sound != null && GF.Sound.HasSoundGroup(Const.SoundGroup.Music.ToString()))
+				{
+					_musicSerialId = GF.Sound.PlayBGM(_currentScene == SceneType.Gameplay ? "Gameplay_Music.ogg" : "Homepage_Music.ogg");
+				}
 			}
 			catch (Exception exception)
 			{

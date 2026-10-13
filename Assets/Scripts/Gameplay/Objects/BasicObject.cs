@@ -70,7 +70,11 @@ namespace Gameplay.Objects
 				ObjectType.IceSquare or ObjectType.IceCylinder => Audio.AudioType.IceBreak,
 				_ => Audio.AudioType.None
 			};
-			ServiceLocator.Get<AudioHelper>()?.PlaySfx(audioType);
+			string soundName = audioType.ToSoundName();
+			if (soundName != null)
+			{
+				GF.Sound.PlayEffect(soundName);
+			}
 		}
 
 		public override BallObjectCollisionResult OnBallHit(BallObjectCollision collision)

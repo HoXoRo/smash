@@ -32,4 +32,42 @@ namespace Audio
 		RocketFlight = 27,
 		RocketHit = 28
 	}
+
+	public static class AudioTypeExtensions
+	{
+		public static string ToSoundName(this AudioType type)
+		{
+			return type switch
+			{
+				AudioType.UIClick => "UI_Click.ogg",
+				AudioType.MenuMusic => "Homepage_Music.ogg",
+				AudioType.GameplayMusic => "Gameplay_Music.ogg",
+				AudioType.CannonShoot => "Cannon.ogg",
+				AudioType.CanHit => "Can_Hit.ogg",
+				AudioType.CanBreak => "Can_Break.ogg",
+				AudioType.StoneHit => "Stone Hit.ogg",
+				AudioType.StoneBreak => "Stone_Break.ogg",
+				AudioType.WormholeHit => "Portal_Hit.ogg",
+				AudioType.WormholeBreak => "Portal_Break.ogg",
+				AudioType.BlockerHit => "Blocker_Hit.ogg",
+				AudioType.Win => "Level_Win.ogg",
+				AudioType.Lose => "Level_Fail.ogg",
+				AudioType.CartArrive => "Cart_Arrive.ogg",
+				AudioType.CartDepart => "Cart_Depart.ogg",
+				AudioType.CoinAppear => "Coin_Appear.ogg",
+				AudioType.CoinHit => "Coin_Hit.ogg",
+				AudioType.JarBreak => "Jar_Break.ogg",
+				AudioType.BoxHit => "Box_Hit.ogg",
+				AudioType.BoxBreak => "Box_Break.ogg",
+				AudioType.IceHit => "Ice_Hit.ogg",
+				AudioType.IceBreak => "Ice_Break.ogg",
+				AudioType.BoxCylinderHit => "BoxCylinder_Hit.ogg",
+				AudioType.BoxCylinderBreak => "BoxCylinder_Break.ogg",
+				AudioType.RocketIntro => "Rocket_Intro.ogg",
+				AudioType.RocketFlight => "Rocket_Flight.ogg",
+				AudioType.RocketHit => "Rocket_Hit.ogg",
+				_ => null
+			};
+		}
+	}
 }

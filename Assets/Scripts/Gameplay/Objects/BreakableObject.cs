@@ -114,7 +114,7 @@ namespace Gameplay.Objects
 
 		private void PlayBreakAudio()
 		{
-			ServiceLocator.Get<AudioHelper>()?.PlaySfx(Audio.AudioType.JarBreak);
+			GF.Sound.PlayEffect("Jar_Break.ogg");
 		}
 
 		public override BallObjectCollisionResult OnBallHit(BallObjectCollision collision)

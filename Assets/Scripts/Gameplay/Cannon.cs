@@ -124,7 +124,7 @@ namespace Gameplay
 			DelayedWorker.CallAfter(PreshootDelay, delegate
 			{
 				shootParticle.Play();
-				ServiceLocator.Get<AudioHelper>().PlaySfx(Audio.AudioType.CannonShoot);
+				GF.Sound.PlayEffect("Cannon.ogg");
 				Ball shotBall = GetBallFromPool();
 				shotBall.gameObject.SetActive(true);
 				shotBall.transform.position = spawnTransform.position;

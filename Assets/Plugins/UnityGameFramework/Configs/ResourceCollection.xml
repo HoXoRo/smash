@@ -4,6 +4,7 @@
     <Resources>
       <Resource Name="ArrowLevelCfg" LoadType="3" Packed="True" />
       <Resource Name="cfig" LoadType="3" Packed="True" />
+      <Resource Name="FlowAudio" LoadType="3" Packed="True" />
       <Resource Name="dat1" LoadType="3" Packed="True" />
       <Resource Name="dat10" LoadType="3" Packed="True" />
       <Resource Name="dat2" LoadType="3" Packed="True" />
@@ -407,6 +408,33 @@
       <Asset Guid="fd2e1e22dbc3fae4bb955dbeaa3dc4d6" ResourceName="dat9" />
       <Asset Guid="fd6f9ae5eba339e4f88c00782aadfa70" ResourceName="dat5" />
       <Asset Guid="fe2ff4a2e56964d43bba2a0018804a4e" ResourceName="ArrowLevelCfg" />
+      <Asset Guid="ee81f0d0782f8df40b1da0527caf60a0" ResourceName="FlowAudio" />
+      <Asset Guid="16cb7684e0e193a42b1e55465e89c7b1" ResourceName="FlowAudio" />
+      <Asset Guid="2379003d471b3eb41929db1a47767554" ResourceName="FlowAudio" />
+      <Asset Guid="94868e8025539db4ea39dc610ffed8e3" ResourceName="FlowAudio" />
+      <Asset Guid="457f851fc94417b4984ab55c7992cab8" ResourceName="FlowAudio" />
+      <Asset Guid="63201695a10c6954299e8adcc220f408" ResourceName="FlowAudio" />
+      <Asset Guid="385bba5675a8e2f43aeb62120a817943" ResourceName="FlowAudio" />
+      <Asset Guid="3b8361a39f15e0848a34a7ac101b71fb" ResourceName="FlowAudio" />
+      <Asset Guid="9af758b90179d844bacb34d00b9bb3be" ResourceName="FlowAudio" />
+      <Asset Guid="ca1f2fbe03d742d4fb900df237693de8" ResourceName="FlowAudio" />
+      <Asset Guid="51d749de09e26224ebb4acb97de917fb" ResourceName="FlowAudio" />
+      <Asset Guid="1d05b756b4f79594a99bc744ba25abcb" ResourceName="FlowAudio" />
+      <Asset Guid="f7c11448e66b41645932a0ba1c834dfe" ResourceName="FlowAudio" />
+      <Asset Guid="b957633fa91381047a1a97cd2a46bb04" ResourceName="FlowAudio" />
+      <Asset Guid="bb544ba52dea47b4fa3f1d704159f900" ResourceName="FlowAudio" />
+      <Asset Guid="1034bc264c62fe74cbf3570c8e0a863c" ResourceName="FlowAudio" />
+      <Asset Guid="4e34f2dd8a4629940bb2503fe42b4f21" ResourceName="FlowAudio" />
+      <Asset Guid="159ff7c41ed84194f91ebefb5e64d6b8" ResourceName="FlowAudio" />
+      <Asset Guid="4d40778025a4188429c43131b3e366ac" ResourceName="FlowAudio" />
+      <Asset Guid="212ddb6a574db39458bf03e45c924814" ResourceName="FlowAudio" />
+      <Asset Guid="6994618ddc668134d864fb3baea093dc" ResourceName="FlowAudio" />
+      <Asset Guid="fb3d8ca3d0b7c024eb49c991cc019d68" ResourceName="FlowAudio" />
+      <Asset Guid="0fc1e52d60f72264f9a53be21a5a99fc" ResourceName="FlowAudio" />
+      <Asset Guid="440a04348eba4d84096650a0c874abc4" ResourceName="FlowAudio" />
+      <Asset Guid="04eec7fb43cf9d448ad96ba266d08149" ResourceName="FlowAudio" />
+      <Asset Guid="aec502dba89d2ab4e861b23d331d8d81" ResourceName="FlowAudio" />
+      <Asset Guid="271342278eb54934db62e61dace09dc3" ResourceName="FlowAudio" />
     </Assets>
   </ResourceCollection>
 </UnityGameFramework>
