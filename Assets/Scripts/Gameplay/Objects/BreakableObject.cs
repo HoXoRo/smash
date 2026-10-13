@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Audio;
 using Gameplay.Collisions;
 using Gameplay.Particles;
-using Haptics;
 using Service;
 using UnityEngine;
 
@@ -139,7 +138,6 @@ namespace Gameplay.Objects
 		{
 			Break(BreakSource.Tnt);
 			PlayBreakAudio();
-			HapticManager.PlayObjectBreak(objectType, size.GetVolume());
 		}
 
 		private void Break(BreakSource breakSource)

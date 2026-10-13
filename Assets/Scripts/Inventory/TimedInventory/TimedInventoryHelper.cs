@@ -1,5 +1,4 @@
 using Inventory;
-using Life;
 using LocalSave;
 using Service;
 using Util;

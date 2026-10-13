@@ -5,7 +5,6 @@ using Audio;
 using DG.Tweening;
 using Gameplay.Collisions;
 using Gameplay.Particles;
-using Haptics;
 using Service;
 using UnityEngine;
 
@@ -107,7 +106,6 @@ namespace Gameplay.Objects
 			ServiceLocator.Get<ParticleController>()?.PlayOnPosition(ParticleType.WormholeHitTntExplode, particlePosition, GetLastRotation(), Vector3.zero);
 			DestroyObject();
 			PlayBreakAudio();
-			HapticManager.PlayObjectBreak(objectType, size.GetVolume());
 		}
 
 		private HitType CalculateHitType(Vector3 contactPoint)
@@ -154,7 +152,6 @@ namespace Gameplay.Objects
 			_endBlockerRaised = true;
 			ServiceLocator.Get<GameController>()?.IncreaseEndBlocker();
 			PlayBreakAudio();
-			HapticManager.PlayObjectBreak(objectType, size.GetVolume());
 		}
 
 		private IEnumerator HitDestroyRoutine()

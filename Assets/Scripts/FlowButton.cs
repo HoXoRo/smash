@@ -1,5 +1,4 @@
 using Audio;
-using Haptics;
 using Service;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -28,9 +27,6 @@ public class FlowButton : MonoBehaviour, IPointerDownHandler, IEventSystemHandle
 	private const string DisabledClipName = "Disabled";
 
 	[Header("Click Feedback")]
-	[SerializeField]
-	private HapticType hapticTypeOnClick = HapticType.Selection;
-
 	[SerializeField]
 	private Audio.AudioType audioTypeOnClick = Audio.AudioType.UIClick;
 
@@ -119,7 +115,6 @@ public class FlowButton : MonoBehaviour, IPointerDownHandler, IEventSystemHandle
 		{
 			return;
 		}
-		PlayHaptics();
 		PlayAudio();
 		OnClick.Invoke();
 	}
@@ -159,14 +154,6 @@ public class FlowButton : MonoBehaviour, IPointerDownHandler, IEventSystemHandle
 		}
 		TryAddClip(clip, clipName);
 		return _animationComponent.Play(clipName);
-	}
-
-	private void PlayHaptics()
-	{
-		if (hapticTypeOnClick != HapticType.None)
-		{
-			HapticManager.Play(hapticTypeOnClick);
-		}
 	}
 
 	private void PlayAudio()

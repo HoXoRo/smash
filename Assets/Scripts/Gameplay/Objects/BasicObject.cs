@@ -1,7 +1,6 @@
 using Audio;
 using Gameplay.Collisions;
 using Gameplay.Particles;
-using Haptics;
 using Service;
 using UnityEngine;
 
@@ -101,7 +100,6 @@ namespace Gameplay.Objects
 			}
 			PlayBreakAudio();
 			DestroyObject();
-			HapticManager.PlayObjectBreak(objectType, size.GetVolume());
 		}
 
 		private ParticleType? GetParticleTypeToPlayOnTntExplode()

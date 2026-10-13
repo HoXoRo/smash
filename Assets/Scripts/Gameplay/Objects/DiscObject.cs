@@ -1,7 +1,6 @@
 using Audio;
 using Gameplay.Collisions;
 using Gameplay.Particles;
-using Haptics;
 using Level;
 using Newtonsoft.Json.Linq;
 using Service;
@@ -98,7 +97,6 @@ namespace Gameplay.Objects
 		public override void DestroyByRocket()
 		{
 			DestroyObject();
-			HapticManager.PlayObjectBreak(objectType, size.GetVolume());
 		}
 	}
 }

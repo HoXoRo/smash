@@ -32,9 +32,6 @@ namespace LocalSave
 		private readonly SaveItem<bool> _sfxOn = new SaveItem<bool>(true, SaveBehaviour.Dirty);
 
 		[JsonIgnore]
-		private readonly SaveItem<bool> _hapticOn = new SaveItem<bool>(true, SaveBehaviour.Dirty);
-
-		[JsonIgnore]
 		private readonly SaveItem<TutorialProgressData> _tutorialProgress = new SaveItem<TutorialProgressData>(TutorialProgressData.GetDefault(), SaveBehaviour.SaveAtFrameEnd);
 
 		[JsonIgnore]
@@ -139,13 +136,6 @@ namespace LocalSave
 		{
 			get => _sfxOn.Value;
 			set => _sfxOn.Value = value;
-		}
-
-		[JsonProperty("haptic_on")]
-		public bool HapticOn
-		{
-			get => _hapticOn.Value;
-			set => _hapticOn.Value = value;
 		}
 
 		[JsonProperty("tutorial_progress")]

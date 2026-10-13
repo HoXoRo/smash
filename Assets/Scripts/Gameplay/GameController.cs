@@ -10,7 +10,6 @@ using Gameplay.Obstacle;
 using Gameplay.Particles;
 using Inventory;
 using Level;
-using Life;
 using LocalSave;
 using Menu;
 using Scene;
@@ -1338,7 +1337,6 @@ namespace Gameplay
 				SaveService.Save();
 			}
 			LifeHelper.AddLife(1);
-			MenuController.CoinToCollect = 0;
 			_pendingWinPopupRoutine = DelayedWorker.CallAfter(0.5f, delegate
 			{
 				_pendingWinPopupRoutine = null;
@@ -1417,7 +1415,6 @@ namespace Gameplay
 			}
 			_gameplayLocked = true;
 			MenuController.IsAfterWin = false;
-			MenuController.CoinToCollect = 0;
 			UIParams uiParams = UIParams.Create(allowEscape: false);
 			VarAction onRefill = ReferencePool.Acquire<VarAction>();
 			onRefill.Value = () =>
@@ -1441,7 +1438,6 @@ namespace Gameplay
 			_analyticsHelper?.LevelFail(GetRemainingObjectCount(), GetRemainingObjectMass(), _remainingMoves, FailReason.OutOfMoves, _currentStageIndex);
 			_gameplayLocked = true;
 			MenuController.IsAfterWin = false;
-			MenuController.CoinToCollect = 0;
 		}
 
 		public void AddToLiveBalls(Ball ball)
@@ -1485,7 +1481,6 @@ namespace Gameplay
 			_analyticsHelper?.LevelFail(GetRemainingObjectCount(), GetRemainingObjectMass(), _remainingMoves, FailReason.Quit, _currentStageIndex);
 			_gameplayLocked = true;
 			MenuController.IsAfterWin = false;
-			MenuController.CoinToCollect = 0;
 		}
 
 		public bool IsFinished()

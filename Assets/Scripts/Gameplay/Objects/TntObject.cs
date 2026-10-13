@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Audio;
 using Gameplay.Collisions;
 using Gameplay.Particles;
-using Haptics;
 using Service;
 using UnityEngine;
 
@@ -17,12 +16,12 @@ namespace Gameplay.Objects
 
 		protected override void OnGroundHit(Collision collision)
 		{
-			DestroyAndExplode(ParticleType.TntExplodeGround, GetLastVelocity(), false);
+			DestroyAndExplode(ParticleType.TntExplodeGround, GetLastVelocity());
 		}
 
 		public override BallObjectCollisionResult OnBallHit(BallObjectCollision collision)
 		{
-			DestroyAndExplode(ParticleType.TntExplode, GetLastVelocity(), false);
+			DestroyAndExplode(ParticleType.TntExplode, GetLastVelocity());
 			return BallObjectCollisionResult.None;
 		}
 
@@ -38,12 +37,12 @@ namespace Gameplay.Objects
 
 		public override void DestroyByTnt()
 		{
-			DestroyAndExplode(ParticleType.TntExplode, GetLastVelocity(), false);
+			DestroyAndExplode(ParticleType.TntExplode, GetLastVelocity());
 		}
 
 		public override void DestroyByRocket()
 		{
-			DestroyAndExplode(ParticleType.TntExplode, Vector3.zero, true);
+			DestroyAndExplode(ParticleType.TntExplode, Vector3.zero);
 		}
 
 		private void Explode()
@@ -67,7 +66,7 @@ namespace Gameplay.Objects
 			}
 		}
 
-		private void DestroyAndExplode(ParticleType particleType, Vector3 velocity, bool playHaptic)
+		private void DestroyAndExplode(ParticleType particleType, Vector3 velocity)
 		{
 			if (BeingDestroyed)
 			{
@@ -76,10 +75,6 @@ namespace Gameplay.Objects
 			DestroyObject();
 			ServiceLocator.Get<ParticleController>()?.PlayOnPosition(particleType, transform.position, transform.rotation, velocity);
 			Explode();
-			if (playHaptic)
-			{
-				HapticManager.PlayObjectBreak(objectType, size.GetVolume());
-			}
 		}
 	}
 }

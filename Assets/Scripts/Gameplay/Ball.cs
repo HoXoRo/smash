@@ -5,7 +5,6 @@ using DG.Tweening;
 using Gameplay.Collisions;
 using Gameplay.Objects;
 using Gameplay.Particles;
-using Haptics;
 using Service;
 using UnityEngine;
 using Util;
@@ -334,7 +333,6 @@ namespace Gameplay
 			Vector3 hitPoint = collision != null && collision.contactCount > 0 ? collision.GetContact(0).point : transform.position;
 			ServiceLocator.Get<ParticleController>()?.PlayOnPosition(ParticleType.BallObjectFirstHit, hitPoint, Quaternion.identity, rb != null ? rb.linearVelocity : Vector3.zero);
 			ServiceLocator.Get<AudioHelper>()?.PlaySfx(Audio.AudioType.BlockerHit);
-			HapticManager.PlayCustom();
 			State = BallState.HitObject;
 		}
 
@@ -430,7 +428,6 @@ namespace Gameplay
 			{
 				return;
 			}
-			HapticManager.PlayCustom();
 			VelocityPair pair = GetCurrentVelocityPair();
 			BallObjectCollisionResult result = objectInstance.OnBallHit(ballObjectCollision);
 			if (result == BallObjectCollisionResult.Break)
@@ -492,7 +489,6 @@ namespace Gameplay
 		{
 			State = BallState.HitObject;
 			TouchingTable = collision != null ? collision.collider.GetComponentInParent<Table>() : null;
-			HapticManager.PlayCustom();
 		}
 
 		private void ApplyVelocityPairToRb(VelocityPair pair)
@@ -517,7 +513,6 @@ namespace Gameplay
 				pair.AngularVelocity *= 0.6f;
 				ApplyVelocityPairToRb(pair);
 			}
-			HapticManager.PlayCustom();
 			TouchingTable = null;
 			State = BallState.HitGround;
 		}

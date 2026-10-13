@@ -110344,7 +110344,6 @@ MonoBehaviour:
   idleClip: {fileID: 0}
   selectedClip: {fileID: 0}
   disabledClip: {fileID: 0}
-  hapticTypeOnClick: 0
   audioTypeOnClick: 0
   onClick:
     m_PersistentCalls:
@@ -110935,7 +110934,6 @@ MonoBehaviour:
   idleClip: {fileID: 0}
   selectedClip: {fileID: 0}
   disabledClip: {fileID: 0}
-  hapticTypeOnClick: 0
   audioTypeOnClick: 0
   onClick:
     m_PersistentCalls:
@@ -110956,7 +110954,6 @@ MonoBehaviour:
   idleClip: {fileID: 0}
   selectedClip: {fileID: 0}
   disabledClip: {fileID: 0}
-  hapticTypeOnClick: 0
   audioTypeOnClick: 0
   onClick:
     m_PersistentCalls:
@@ -110977,7 +110974,6 @@ MonoBehaviour:
   idleClip: {fileID: 0}
   selectedClip: {fileID: 0}
   disabledClip: {fileID: 0}
-  hapticTypeOnClick: 0
   audioTypeOnClick: 0
   onClick:
     m_PersistentCalls:
@@ -110998,7 +110994,6 @@ MonoBehaviour:
   idleClip: {fileID: 0}
   selectedClip: {fileID: 0}
   disabledClip: {fileID: 0}
-  hapticTypeOnClick: 0
   audioTypeOnClick: 0
   onClick:
     m_PersistentCalls:
@@ -111907,7 +111902,6 @@ MonoBehaviour:
   idleClip: {fileID: 0}
   selectedClip: {fileID: 0}
   disabledClip: {fileID: 0}
-  hapticTypeOnClick: 0
   audioTypeOnClick: 0
   onClick:
     m_PersistentCalls:
@@ -112447,7 +112441,6 @@ MonoBehaviour:
   idleClip: {fileID: 0}
   selectedClip: {fileID: 0}
   disabledClip: {fileID: 0}
-  hapticTypeOnClick: 0
   audioTypeOnClick: 0
   onClick:
     m_PersistentCalls:
@@ -112528,7 +112521,6 @@ MonoBehaviour:
   idleClip: {fileID: 0}
   selectedClip: {fileID: 0}
   disabledClip: {fileID: 0}
-  hapticTypeOnClick: 0
   audioTypeOnClick: 0
   onClick:
     m_PersistentCalls:

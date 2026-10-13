@@ -1,5 +1,4 @@
 using System.Collections;
-using Haptics;
 using RemoteConfig;
 using Segmentation;
 using Service;
@@ -57,7 +56,6 @@ namespace Core
 			SessionHelper.Initialize();
 			SegmentationHelper.EvaluateSegment();
 			CountryHelper.EnsureInstallCountry();
-			HapticManager.Init();
 		}
 
 		public IEnumerator TryShowAttPopup()

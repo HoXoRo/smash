@@ -5,7 +5,6 @@ using Audio;
 using Core;
 using Gameplay.Objects;
 using Gameplay.UI;
-using Haptics;
 using Service;
 using UnityEngine;
 
@@ -124,7 +123,6 @@ namespace Gameplay
 			animator.Play("CannonRigPreshoot");
 			DelayedWorker.CallAfter(PreshootDelay, delegate
 			{
-				HapticManager.PlayEmphasis(1f, 1f);
 				shootParticle.Play();
 				ServiceLocator.Get<AudioHelper>().PlaySfx(Audio.AudioType.CannonShoot);
 				Ball shotBall = GetBallFromPool();
