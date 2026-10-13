@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityGameFramework.Runtime;
@@ -12,6 +13,21 @@ public enum SpecStatusMode
 
 public static class CommonHelper
 {
+    public static IEnumerator RollNumber(float fromValue, float toValue, float duration, Action<float> onValue)
+    {
+        if (onValue == null) yield break;
+
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            onValue(Mathf.Lerp(fromValue, toValue, Mathf.Clamp01(elapsed / duration)));
+            yield return null;
+        }
+
+        onValue(toValue);
+    }
+
     public static bool CheckNetwork()
     {
         if (UtilityEx.CheckNetwork()) return true;

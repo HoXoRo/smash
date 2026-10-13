@@ -128,15 +128,8 @@ public partial class LevelCompleteUIForm : UIFormBase
     private IEnumerator RollRewardAndContinue(int targetReward)
     {
         int startReward = m_BaseReward;
-        float elapsed = 0f;
-        while (elapsed < RewardRollDuration)
-        {
-            elapsed += Time.unscaledDeltaTime;
-            float progress = Mathf.Clamp01(elapsed / RewardRollDuration);
-            varRewardCount.text = Mathf.RoundToInt(Mathf.Lerp(startReward, targetReward, progress)).ToString();
-            yield return null;
-        }
-
+        yield return CommonHelper.RollNumber(startReward, targetReward, RewardRollDuration,
+            value => varRewardCount.text = Mathf.RoundToInt(value).ToString());
         varRewardCount.text = targetReward.ToString();
         ClaimAndContinue(targetReward);
     }

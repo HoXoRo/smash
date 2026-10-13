@@ -506,20 +506,11 @@ public partial class ArrowUITopbar : UIFormBase
 
         float startValue = targetValues[type];
         float targetValue = startValue + localPendingValue;
-        float elapsedTime = 0f;
 
         //Log.Info($"[数字滚动] 类型:{type}, 起始值:{startValue}, 本次奖励:{localPendingValue}, 目标值:{targetValue}");
 
-        while (elapsedTime < numberRollDuration)
-        {
-            elapsedTime += Time.unscaledDeltaTime;
-            float progress = elapsedTime / numberRollDuration;
-            float currentValue = Mathf.Lerp(startValue, targetValue, progress);
-
-            targetText.text = Math.Round(currentValue, 3).ToString();
-
-            yield return null;
-        }
+        yield return CommonHelper.RollNumber(startValue, targetValue, numberRollDuration,
+            value => targetText.text = Math.Round(value, 3).ToString());
 
         // 确保显示最终值
         targetText.text = FormatCurrencyValue(type, targetValue);

@@ -172,17 +172,8 @@ public partial class ArrowRewardUIForm : UIFormBase
 
         GF.Sound.PlayEffect("arrowPlay/digitalScroll.mp3");
         varRewardCount.gameObject.SetActive(true);
-        float elapsed = 0f;
-        while (elapsed < RewardCountRollDuration)
-        {
-            elapsed += Time.unscaledDeltaTime;
-            float progress = Mathf.Clamp01(elapsed / RewardCountRollDuration);
-            float currentValue = Mathf.Lerp(fromValue, toValue, progress);
-            varRewardCount.text = FormatRewardValue(currentValue);
-            yield return null;
-        }
-
-        varRewardCount.text = FormatRewardValue(toValue);
+        yield return CommonHelper.RollNumber(fromValue, toValue, RewardCountRollDuration,
+            value => varRewardCount.text = FormatRewardValue(value));
     }
 
     void StartBreathEffect(Transform target, ref Tween breathTween)

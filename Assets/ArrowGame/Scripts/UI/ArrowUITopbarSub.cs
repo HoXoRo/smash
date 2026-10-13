@@ -198,13 +198,8 @@ public partial class ArrowUITopbarSub : UIFormBase
 
     private IEnumerator RollCoins()
     {
-        float elapsed = 0f;
-        while (elapsed < numberRollDuration)
-        {
-            elapsed += Time.unscaledDeltaTime;
-            varTxtCoin.text = FormatCoins(Mathf.Lerp(targetCoins, rollTarget, Mathf.Clamp01(elapsed / numberRollDuration)));
-            yield return null;
-        }
+        yield return CommonHelper.RollNumber(targetCoins, rollTarget, numberRollDuration,
+            value => varTxtCoin.text = FormatCoins(value));
         targetCoins = rollTarget;
         varTxtCoin.text = FormatCoins(targetCoins);
         rollCoroutine = null;

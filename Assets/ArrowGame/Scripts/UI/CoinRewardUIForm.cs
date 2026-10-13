@@ -84,15 +84,8 @@ public partial class CoinRewardUIForm : UIFormBase
     private IEnumerator RollRewardAndClaim(int targetReward)
     {
         int startReward = m_Task.Reward;
-        float elapsed = 0f;
-        while (elapsed < RewardRollDuration)
-        {
-            elapsed += Time.unscaledDeltaTime;
-            varRewardCount.text = Mathf.RoundToInt(Mathf.Lerp(
-                startReward, targetReward, Mathf.Clamp01(elapsed / RewardRollDuration))).ToString();
-            yield return null;
-        }
-
+        yield return CommonHelper.RollNumber(startReward, targetReward, RewardRollDuration,
+            value => varRewardCount.text = Mathf.RoundToInt(value).ToString());
         varRewardCount.text = targetReward.ToString();
         ClaimReward(Mathf.Max(1, m_Task.RewardMulti));
     }

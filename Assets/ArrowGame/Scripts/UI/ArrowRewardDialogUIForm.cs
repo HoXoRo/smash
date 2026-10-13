@@ -407,17 +407,8 @@ public partial class ArrowRewardDialogUIForm : UIFormBase
 
         GF.Sound.PlayEffect("arrowPlay/digitalScroll.mp3");
         varRewardCount.gameObject.SetActive(true);
-        float elapsed = 0f;
-        while (elapsed < duration)
-        {
-            elapsed += Time.unscaledDeltaTime;
-            float progress = Mathf.Clamp01(elapsed / duration);
-            float currentValue = Mathf.Lerp(fromValue, toValue, progress);
-            varRewardCount.text = FormatRewardValueText(currentValue, m_RewardType);
-            yield return null;
-        }
-
-        varRewardCount.text = FormatRewardValueText(toValue, m_RewardType);
+        yield return CommonHelper.RollNumber(fromValue, toValue, duration,
+            value => varRewardCount.text = FormatRewardValueText(value, m_RewardType));
     }
 
     private IEnumerator ShowActionButtons()
