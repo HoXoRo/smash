@@ -1,7 +1,5 @@
 using UnityEngine;
 using Inventory.TimedInventory;
-using Popups;
-using Service;
 
 namespace Life
 {
@@ -72,7 +70,10 @@ namespace Life
 
 		private void OnClick()
 		{
-			ServiceLocator.Get<PopupController>()?.Open(PopupType.MoreLives);
+			if (!GF.UI.HasUIForm(UIViews.AddLifeUIForm) && !GF.UI.IsLoadingUIForm(UIViews.AddLifeUIForm))
+			{
+				GF.UI.OpenUIForm(UIViews.AddLifeUIForm);
+			}
 		}
 	}
 }

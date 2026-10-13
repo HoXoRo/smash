@@ -13,7 +13,6 @@ using Level;
 using Life;
 using LocalSave;
 using Menu;
-using Popups;
 using Scene;
 using Service;
 using System;
@@ -1218,7 +1217,7 @@ namespace Gameplay
 			{
 				return;
 			}
-			if (ServiceLocator.Get<PopupController>()?.AreThereOpenPopups() ?? false)
+			if (SRDebug.Instance != null && SRDebug.Instance.IsDebugPanelVisible)
 			{
 				return;
 			}
