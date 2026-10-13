@@ -45,7 +45,6 @@ namespace Inventory
 			return source switch
 			{
 				InventoryEarnSource.LevelWin => "level_win",
-				InventoryEarnSource.Purchase => "purchase",
 				InventoryEarnSource.PrelevelBoosterBuy => "prelevel_booster_buy",
 				_ => "none"
 			};

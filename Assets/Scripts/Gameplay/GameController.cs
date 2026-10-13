@@ -1217,10 +1217,6 @@ namespace Gameplay
 			{
 				return;
 			}
-			if (SRDebug.Instance != null && SRDebug.Instance.IsDebugPanelVisible)
-			{
-				return;
-			}
 			if (ScreenUtils.IsInTopUnsafeArea(Input.mousePosition))
 			{
 				return;

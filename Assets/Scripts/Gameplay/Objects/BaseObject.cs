@@ -1,10 +1,8 @@
 using System;
-using System.ComponentModel;
 using Audio;
 using Gameplay.Collisions;
 using Level;
 using Service;
-using SRDebugger;
 using UnityEngine;
 using Util;
 
@@ -12,8 +10,6 @@ namespace Gameplay.Objects
 {
 	public abstract class BaseObject : MonoBehaviour, IContactNodeOwner
 	{
-		[SROption]
-		[Category("Test")]
 		public static float CanRocketBoomMultiplier;
 
 		public ObjectType objectType;

@@ -28,7 +28,7 @@ namespace Menu.BottomNavigation
 
 		private const float SeparatorWidth = 9f;
 
-		private const int ItemCount = 3;
+		private const int ItemCount = 2;
 
 		public void SetSelection(int index)
 		{
@@ -50,16 +50,12 @@ namespace Menu.BottomNavigation
 				totalWidth = attachedScaler != null ? attachedScaler.referenceResolution.x : 1125f;
 			}
 			float bigWidth = totalWidth * BigWidthRatio;
-			int visibleItemCount = ItemCount - 1;
+			int visibleItemCount = ItemCount;
 			float smallWidth = (totalWidth - bigWidth - SeparatorWidth * (visibleItemCount + 1)) / (visibleItemCount - 1);
 			float cursor = (0f - totalWidth) * 0.5f;
 			int separatorIndex = 0;
 			for (int i = 0; i < ItemCount; i++)
 			{
-				if (i == (int)PageType.Shop)
-				{
-					continue;
-				}
 				PlaceSeparator(separatorIndex++, cursor);
 				cursor += SeparatorWidth;
 				bool selected = i == _selectedIndex;

@@ -7,7 +7,6 @@ using Gameplay.Collisions;
 using Gameplay.Objects;
 using Gameplay.Particles;
 using Service;
-using SRDebugger;
 using UnityEngine;
 
 namespace Gameplay
@@ -26,33 +25,24 @@ namespace Gameplay
 
 		private const string FrontSortingLayerName = "UI";
 
-		[SROption]
 		public static float WaitAfterQuadraticSeconds;
 
 		private const int ArcLengthLutSegments = 64;
 
-		[SROption]
 		public static float peakScale;
 
-		[SROption]
 		public static float quadraticLegDuration;
 
-		[SROption]
 		public static float quarticLegDuration;
 
-		[SROption]
 		public static float quadraticRotateSpeed;
 
-		[SROption]
 		public static float waitRotateSpeedStart;
 
-		[SROption]
 		public static float waitRotateSpeedEnd;
 
-		[SROption]
 		public static float quarticRotateSpeed;
 
-		[SROption]
 		public static bool ShouldRocketsSync;
 
 		[SerializeField]
@@ -70,10 +60,8 @@ namespace Gameplay
 		[SerializeField]
 		private MeshRenderer[] rendererParts;
 
-		[SROption]
 		public static float waitBobOffset;
 
-		[SROption]
 		public static float bobDescentDuration;
 
 		private Func<BaseObject> _targetSelector;

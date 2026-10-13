@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using Audio;
 using DG.Tweening;
 using Gameplay.Collisions;
 using Gameplay.Objects;
 using Gameplay.Particles;
 using Haptics;
-using SRDebugger;
 using Service;
 using UnityEngine;
 using Util;
@@ -27,12 +25,8 @@ namespace Gameplay
 		[NonSerialized]
 		public BallState State;
 
-		[SROption]
-		[Category("Test")]
 		public static float BallRadius;
 
-		[SROption]
-		[Category("Test")]
 		public static float MassMultiplier;
 
 		private Cannon _cannon;

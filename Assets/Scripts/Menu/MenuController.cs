@@ -1,8 +1,6 @@
-using System.ComponentModel;
 using Inventory;
 using Menu.BottomNavigation;
 using Menu.Page;
-using SRDebugger;
 using Service;
 using UI;
 using UnityEngine;
@@ -12,8 +10,6 @@ namespace Menu
 {
 	public class MenuController : ServiceMonoBehaviour
 	{
-		[SROption]
-		[Category("ZDev")]
 		public static bool IsAfterWin;
 
 		public static int CoinToCollect;
@@ -27,7 +23,7 @@ namespace Menu
 		[SerializeField]
 		private CoinCollectTarget coinPanelCollectTarget;
 
-		private PageType _currentPageType;
+		private PageType? _currentPageType;
 
 		private void Start()
 		{
@@ -61,16 +57,12 @@ namespace Menu
 
 		public void SelectPage(PageType type)
 		{
-			if (type == PageType.Shop)
-			{
-				return;
-			}
 			if (_currentPageType == type)
 			{
 				return;
 			}
 			_currentPageType = type;
-			ServiceLocator.Get<BottomNavigationController>()?.SetSelection((int)_currentPageType);
+			ServiceLocator.Get<BottomNavigationController>()?.SetSelection((int)type);
 			if (pages == null)
 			{
 				return;
@@ -81,7 +73,7 @@ namespace Menu
 				{
 					continue;
 				}
-				if (i == (int)_currentPageType)
+				if (i == (int)type)
 				{
 					pages[i].Prepare();
 					pages[i].Show();

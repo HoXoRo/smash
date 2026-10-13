@@ -1,9 +1,7 @@
 using System.Collections.Generic;
-using System.ComponentModel;
 using Gameplay.Objects;
 using LocalSave;
 //using Lofelt.NiceVibrations;
-using SRDebugger;
 using UnityEngine;
 using Util;
 
@@ -12,39 +10,25 @@ namespace Haptics
 	public static class HapticManager
 	{
 		[Range(0f, 1f)]
-		[Category("Haptics")]
-		[SROption]
 		public static float CustomAmplitude;
 
 		[Range(0f, 1f)]
-		[Category("Haptics")]
-		[SROption]
 		public static float CustomFrequency;
 
 		[Range(0f, 1f)]
-		[SROption]
-		[Category("Haptics")]
 		public static float ObjectMinAmplitude;
 
-		[SROption]
 		[Range(0f, 1f)]
-		[Category("Haptics")]
 		public static float ObjectMaxAmplitude;
 
-		[SROption]
 		[Range(0f, 1f)]
-		[Category("Haptics")]
 		public static float ObjectMinFrequency;
 
-		[Category("Haptics")]
 		[Range(0f, 1f)]
-		[SROption]
 		public static float ObjectMaxFrequency;
 
-		[SROption]
 		public static float ThrottleWindowLength;
 
-		[SROption]
 		public static int ThrottleCount;
 
 		private const int EmphasisThrottleKey = 0;
