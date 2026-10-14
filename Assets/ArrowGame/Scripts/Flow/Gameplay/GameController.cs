@@ -528,6 +528,8 @@ namespace Gameplay
 
 		private bool _gameplayLocked;
 
+		private bool _gameplayPointerStarted;
+
 		private int _levelIndex;
 
 		private int _endBlockerCount;
@@ -1241,25 +1243,33 @@ namespace Gameplay
 
 		private void CheckForClick()
 		{
-			if (!Input.GetMouseButton(0) && !Input.GetMouseButtonUp(0))
+			bool pointerHeld = Input.GetMouseButton(0);
+			bool pointerReleased = Input.GetMouseButtonUp(0);
+			if (!pointerHeld && !pointerReleased)
+			{
+				_gameplayPointerStarted = false;
+				return;
+			}
+			if (_gameplayLocked || _remainingMoves < 1
+				|| (ServiceLocator.Get<TutorialManager>()?.AnyActiveTutorial() ?? false)
+				|| UIUtils.IsPointerOverUIElement()
+				|| ScreenUtils.IsInTopUnsafeArea(Input.mousePosition))
+			{
+				_gameplayPointerStarted = false;
+				return;
+			}
+			// A UI click must not become a shot when its popup closes on release.
+			if (Input.GetMouseButtonDown(0))
+			{
+				_gameplayPointerStarted = true;
+			}
+			if (!_gameplayPointerStarted)
 			{
 				return;
 			}
-			if (ServiceLocator.Get<TutorialManager>()?.AnyActiveTutorial() ?? false)
+			if (pointerReleased)
 			{
-				return;
-			}
-			if (UIUtils.IsPointerOverUIElement())
-			{
-				return;
-			}
-			if (ScreenUtils.IsInTopUnsafeArea(Input.mousePosition))
-			{
-				return;
-			}
-			if (_remainingMoves < 1)
-			{
-				return;
+				_gameplayPointerStarted = false;
 			}
 			OnClick();
 		}
@@ -1554,6 +1564,7 @@ namespace Gameplay
 
 		private void CleanupTransientState()
 		{
+			_gameplayPointerStarted = false;
 			StopAllCoroutines();
 			CancelPendingWinPopup();
 			boosterTint?.DOKill();
