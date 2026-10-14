@@ -27,7 +27,6 @@ namespace Scene
 
 		public static event Action OnLoadingDisappear;
 
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 		public static void Init()
 		{
 			_currentScene = SceneType.Splash;

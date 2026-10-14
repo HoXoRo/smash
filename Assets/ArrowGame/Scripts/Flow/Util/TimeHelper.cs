@@ -11,7 +11,6 @@ namespace Util
 
 		private Coroutine _timerRoutine;
 
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 		public static void CreateInstance()
 		{
 			if (ServiceLocator.Get<TimeHelper>() != null || UnityEngine.Object.FindObjectOfType<TimeHelper>() != null)

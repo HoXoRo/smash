@@ -8,8 +8,7 @@ namespace Core
 
 		private bool _hasFocus;
 
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-		private static void Bootstrap()
+		public static void Bootstrap()
 		{
 			if (Object.FindObjectOfType<FocusHelper>() != null)
 			{

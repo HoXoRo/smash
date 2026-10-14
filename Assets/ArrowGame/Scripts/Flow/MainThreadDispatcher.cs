@@ -8,7 +8,6 @@ public class MainThreadDispatcher : MonoBehaviour
 
 	private static MainThreadDispatcher _instance;
 
-	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 	public static void Init()
 	{
 		if (FindObjectOfType<MainThreadDispatcher>() != null)

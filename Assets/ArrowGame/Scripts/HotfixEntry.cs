@@ -2,7 +2,10 @@ using GameFramework;
 using GameFramework.Fsm;
 using GameFramework.Procedure;
 using System;
+using Core;
+using Scene;
 using UnityGameFramework.Runtime;
+using Util;
 /// <summary>
 /// 热更逻辑入口
 /// </summary>
@@ -13,6 +16,10 @@ public class HotfixEntry
     {
         Log.Info<bool>("Hotfix Enable:{0}", enableHotfix);
         AwaitExtension.SubscribeEvent();
+        MainThreadDispatcher.Init();
+        FocusHelper.Bootstrap();
+        TimeHelper.CreateInstance();
+        SceneHandler.Init();
 
 
         GFBuiltin.Fsm.DestroyFsm<IProcedureManager>();
