@@ -6,7 +6,6 @@ using Inventory;
 using Menu;
 using Service;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Scene
 {
@@ -31,16 +30,6 @@ namespace Scene
 		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 		public static void Init()
 		{
-			if (_loadingCanvas == null)
-			{
-				GameObject prefab = Resources.Load<GameObject>("LoadingCanvas");
-				if (prefab != null)
-				{
-					_loadingCanvas = UnityEngine.Object.Instantiate(prefab);
-                    UnityEngine.Object.DontDestroyOnLoad(_loadingCanvas);
-					_loadingCanvas.SetActive(false);
-				}
-			}
 			_currentScene = SceneType.Splash;
 			_musicSerialId = 0;
 			RoutineRunner.Instance.StartCoroutine(PlayInitialMusicWhenReady());
@@ -102,28 +91,24 @@ namespace Scene
 		private static async UniTask LoadSceneContentAsync(SceneType nextScene)
 		{
 			string sceneAssetName = UtilityBuiltin.AssetsPath.GetScenePath(nextScene.ToString());
-			if (GF.Scene != null && GF.Scene.SceneIsLoaded(sceneAssetName))
+			if (GF.Scene.SceneIsLoaded(sceneAssetName))
 			{
-				if (await GF.Scene.UnLoadSceneAwait(sceneAssetName))
-				{
-					await GF.Scene.LoadSceneAwait(sceneAssetName);
-				}
-				return;
+				await GF.Scene.UnLoadSceneAwait(sceneAssetName);
 			}
-
-			await SceneManager.LoadSceneAsync(nextScene.ToString());
+			await GF.Scene.LoadSceneAwait(sceneAssetName);
 		}
 
 		public static IEnumerator LoadingRoutine(SceneType currentScene, SceneType nextScene)
 		{
 			nextScene = ResolveAvailableScene(nextScene);
 			StopMusicSafely();
-			if (_loadingCanvas != null)
-			{
-				_loadingCanvas.SetActive(true);
-			}
 			try
 			{
+				yield return EnsureLoadingCanvasAsync().ToCoroutine();
+				if (_loadingCanvas != null)
+				{
+					_loadingCanvas.SetActive(true);
+				}
 				yield return new WaitForSecondsRealtime(LoadingDelaySeconds);
 				InvokeOnSceneChange(currentScene, nextScene);
 				yield return LoadSceneContentAsync(nextScene).ToCoroutine();
@@ -138,6 +123,22 @@ namespace Scene
 					_loadingCanvas.SetActive(false);
 				}
 				InvokeOnLoadingDisappear();
+			}
+		}
+
+		private static async UniTask EnsureLoadingCanvasAsync()
+		{
+			const string assetName = "Assets/ArrowGame/Prefabs/Flow/LoadingCanvas.prefab";
+			if (_loadingCanvas != null || GF.Resource == null || GF.Resource.HasAsset(assetName) == GameFramework.Resource.HasAssetResult.NotExist)
+			{
+				return;
+			}
+			GameObject prefab = await GF.Resource.LoadAssetAwait<GameObject>(assetName);
+			if (prefab != null && _loadingCanvas == null)
+			{
+				_loadingCanvas = UnityEngine.Object.Instantiate(prefab);
+				UnityEngine.Object.DontDestroyOnLoad(_loadingCanvas);
+				_loadingCanvas.SetActive(false);
 			}
 		}
 

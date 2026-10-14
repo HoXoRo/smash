@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Core;
 using LocalSave;
@@ -302,7 +303,7 @@ namespace Splash
 
 		private IEnumerator RunOperationsRoutineImpl()
 		{
-			RemoteConfigService.InitializeLocal();
+			yield return RemoteConfigService.InitializeLocalAsync().ToCoroutine();
 			_adInitFinished = true;
 			yield break;
 		}

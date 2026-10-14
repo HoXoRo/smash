@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using Cysharp.Threading.Tasks;
 using RemoteConfig;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -33,10 +34,10 @@ namespace Gameplay.Level
 			return string.IsNullOrEmpty(configured) ? DefaultCollectionName : configured;
 		}
 
-		public static string GetCollectionToUse()
+		public static async UniTask<string> GetCollectionToUseAsync()
 		{
 			string configured = GetConfiguredCollection();
-			if (!string.IsNullOrEmpty(ExternalForcedCollectionName) || !string.IsNullOrEmpty(ForcedCollectionName) || HasLocalCollection(configured))
+			if (!string.IsNullOrEmpty(ExternalForcedCollectionName) || !string.IsNullOrEmpty(ForcedCollectionName) || await HasLocalCollectionAsync(configured))
 			{
 				return configured;
 			}
@@ -47,14 +48,14 @@ namespace Gameplay.Level
 			return DefaultCollectionName;
 		}
 
-		public static bool HasLocalCollection(string collection)
+		public static async UniTask<bool> HasLocalCollectionAsync(string collection)
 		{
-			return GetMetaDataForCollection(collection) != null;
+			return await GetMetaDataForCollectionAsync(collection) != null;
 		}
 
-		public static string GetLevelJson(int levelIndex)
+		public static async UniTask<string> GetLevelJsonAsync(int levelIndex)
 		{
-			string collection = GetCollectionToUse();
+			string collection = await GetCollectionToUseAsync();
 			if (!LevelLoader.ForceLocal && !string.IsNullOrEmpty(collection))
 			{
 				string extractedPath = GetExtractedLevelPath(levelIndex, collection);
@@ -63,7 +64,7 @@ namespace Gameplay.Level
 					return File.ReadAllText(extractedPath);
 				}
 			}
-			return LevelBundledAssetReader.ReadText(UtilityBuiltin.AssetsPath.GetLevelJsonPath(collection, levelIndex));
+			return await LevelBundledAssetReader.ReadTextAsync(UtilityBuiltin.AssetsPath.GetLevelJsonPath(collection, levelIndex));
 		}
 
 		public static string GetExtractedCollectionPath(string collection)
@@ -76,12 +77,12 @@ namespace Gameplay.Level
 			return Path.Combine(GetExtractedCollectionPath(collection), string.Format("Level{0}.txt", levelIndex));
 		}
 
-		public static LevelCollectionMetaData GetMetaData()
+		public static async UniTask<LevelCollectionMetaData> GetMetaDataAsync()
 		{
-			return GetMetaDataForCollection(GetCollectionToUse());
+			return await GetMetaDataForCollectionAsync(await GetCollectionToUseAsync());
 		}
 
-		public static LevelCollectionMetaData GetMetaDataForCollection(string collection)
+		public static async UniTask<LevelCollectionMetaData> GetMetaDataForCollectionAsync(string collection)
 		{
 			if (string.IsNullOrEmpty(collection))
 			{
@@ -95,7 +96,7 @@ namespace Gameplay.Level
 					return JsonConvert.DeserializeObject<LevelCollectionMetaData>(File.ReadAllText(extractedPath));
 				}
 			}
-			string metadataJson = LevelBundledAssetReader.ReadText(UtilityBuiltin.AssetsPath.GetLevelMetadataPath(collection));
+			string metadataJson = await LevelBundledAssetReader.ReadTextAsync(UtilityBuiltin.AssetsPath.GetLevelMetadataPath(collection));
 			return !string.IsNullOrEmpty(metadataJson)
 				? JsonConvert.DeserializeObject<LevelCollectionMetaData>(metadataJson)
 				: null;

@@ -427,7 +427,7 @@ namespace Gameplay.Objects
 				Resize();
 				return;
 			}
-			ObjectData objectData = Resources.Load<ObjectData>("ObjectData");
+			ObjectData objectData = ServiceLocator.Get<GameController>()?.LoadedObjectData;
 			float minX = float.MaxValue;
 			float maxX = float.MinValue;
 			float minZ = float.MaxValue;

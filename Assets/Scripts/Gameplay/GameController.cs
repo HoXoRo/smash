@@ -1,4 +1,5 @@
 using RemoteConfig;
+using Cysharp.Threading.Tasks;
 using Core;
 using DG.Tweening;
 using GameFramework;
@@ -549,16 +550,55 @@ namespace Gameplay
 
 		private int _collectionVersion;
 
+		private ParticleData _particleData;
+
+		public ObjectData LoadedObjectData { get; private set; }
+
+		public PhysicsMaterial LoadedPhysicsMaterial { get; private set; }
+
 		[NonSerialized]
 		public float TableEndLineZ;
 
-		private void Start()
+		private async void Start()
 		{
+			_gameplayLocked = true;
+			try
+			{
+				if (GF.Resource == null)
+				{
+					throw new InvalidOperationException("GF resource component is not initialized.");
+				}
+				await RemoteConfigService.InitializeLocalAsync();
+				LoadedObjectData = await GF.Resource.LoadAssetAwait<ObjectData>("Assets/ArrowGame/ScriptableAssets/Flow/ObjectData.asset");
+				_particleData = await GF.Resource.LoadAssetAwait<ParticleData>("Assets/ArrowGame/ScriptableAssets/Flow/ParticleData.asset");
+				LoadedPhysicsMaterial = await GF.Resource.LoadAssetAwait<PhysicsMaterial>("Assets/ArrowGame/Gameplay/PhysicMaterial/PhysicsMat.physicMaterial");
+			}
+			catch (Exception exception)
+			{
+				UnityEngine.Debug.LogException(exception, this);
+				return;
+			}
+			if (this == null)
+			{
+				return;
+			}
 			_analyticsHelper = new GameplayAnalyticsHelper();
 			PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
 			_levelIndex = playerData.LevelId;
 			_currentStageIndex = 0;
-			LoadLevel(_levelIndex);
+			try
+			{
+				await LoadLevelAsync(_levelIndex);
+			}
+			catch (Exception exception)
+			{
+				UnityEngine.Debug.LogException(exception, this);
+				return;
+			}
+			if (this == null)
+			{
+				return;
+			}
 			_currentStage = LoadStage(_currentStageIndex);
 			_activeStreakCount = StreakHelper.GetStreakCount();
 			StreakHelper.OnGameplayLevelStarted(_activeStreakCount);
@@ -826,7 +866,7 @@ namespace Gameplay
 			UpdateRemainingMoves();
 			cannon?.InitializeBallPool(5);
 			cannon?.PrewarmBalls();
-			ServiceLocator.Get<ParticleController>()?.Initialize();
+			ServiceLocator.Get<ParticleController>()?.Initialize(_particleData);
 			LifeHelper.LoseLife();
 			List<bool> prelevelBoostersUsed = new List<bool>
 			{
@@ -901,14 +941,14 @@ namespace Gameplay
 			}
 		}
 
-		public void LoadLevel(int levelIndex)
+		public async UniTask LoadLevelAsync(int levelIndex)
 		{
 			_levelIndex = levelIndex;
-			_levelData = LevelLoader.GetLevel(levelIndex);
+			_levelData = await LevelLoader.GetLevelAsync(levelIndex);
 			_remainingMoves = _levelData != null ? _levelData.moveCount : 0;
 			_currentStageIndex = 0;
-			_collectionName = LevelCollectionHelper.GetCollectionToUse();
-			_collectionVersion = LevelCollectionHelper.GetMetaDataForCollection(_collectionName)?.version ?? 0;
+			_collectionName = await LevelCollectionHelper.GetCollectionToUseAsync();
+			_collectionVersion = (await LevelCollectionHelper.GetMetaDataForCollectionAsync(_collectionName))?.version ?? 0;
 		}
 
 		public LevelStage LoadStage(int stageIndex)
@@ -920,7 +960,7 @@ namespace Gameplay
 				stageRootObject.transform.SetParent(stagesRoot, false);
 			}
 			levelStage.RootTransform = stageRootObject.transform;
-			ObjectData objectData = Resources.Load<ObjectData>("ObjectData");
+			ObjectData objectData = LoadedObjectData;
 			if (_levelData?.stages == null || stageIndex < 0 || stageIndex >= _levelData.stages.Count)
 			{
 				return levelStage;

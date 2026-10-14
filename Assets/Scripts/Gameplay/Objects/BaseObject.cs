@@ -90,7 +90,7 @@ namespace Gameplay.Objects
 				_lastVelocity = rb.linearVelocity;
 			}
 			Collider = GetComponentInChildren<Collider>();
-			PhysicsMaterial material = Resources.Load<PhysicsMaterial>("PhysicsMat");
+			PhysicsMaterial material = ServiceLocator.Get<GameController>()?.LoadedPhysicsMaterial;
 			if (Collider != null && material != null)
 			{
 				Collider.material = material;

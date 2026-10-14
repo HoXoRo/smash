@@ -11,9 +11,9 @@ namespace Gameplay.Particles
 
 		private readonly Dictionary<ParticleType, ParticlePlayer> _cache = new Dictionary<ParticleType, ParticlePlayer>();
 
-		public void Initialize()
+		public void Initialize(ParticleData data)
 		{
-			_data = Resources.Load<ParticleData>("ParticleData");
+			_data = data;
 		}
 
 		private ParticlePlayer Spawn(ParticleType type)

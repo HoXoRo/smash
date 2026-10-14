@@ -89,7 +89,7 @@ namespace Gameplay.GameplayTutorial.GenericItemTutorial
 
 		private GenericItemTutorialType _nextTypeToPlay;
 
-		public override void Play(TutorialManager manager, Action<int, int> onStageComplete)
+		public override async void Play(TutorialManager manager, Action<int, int> onStageComplete)
 		{
 			try
 			{
@@ -97,7 +97,16 @@ namespace Gameplay.GameplayTutorial.GenericItemTutorial
 				GenericItemTutorialType typeToPlay = _nextTypeToPlay;
 				_nextTypeToPlay = GenericItemTutorialType.None;
 
-				GenericItemTutorialData tutorialData = Resources.Load<GenericItemTutorialData>("GenericItemTutorialData");
+				const string tutorialAssetName = "Assets/ArrowGame/ScriptableAssets/Flow/GenericItemTutorialData.asset";
+				GenericItemTutorialData tutorialData = null;
+				if (GF.Resource != null && GF.Resource.HasAsset(tutorialAssetName) != GameFramework.Resource.HasAssetResult.NotExist)
+				{
+					tutorialData = await GF.Resource.LoadAssetAwait<GenericItemTutorialData>(tutorialAssetName);
+				}
+				if (this == null)
+				{
+					return;
+				}
 				GenericItemTutorialDataItem selectedItem = null;
 				if (tutorialData?.items != null)
 				{

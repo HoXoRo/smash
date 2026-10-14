@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using Core;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -316,7 +317,8 @@ namespace Gameplay.Level
 				error = ex;
 			}, timeout);
 
-			LevelCollectionMetaData localMeta = LevelCollectionHelper.GetMetaDataForCollection(collectionName);
+			LevelCollectionMetaData localMeta = null;
+			yield return LevelCollectionHelper.GetMetaDataForCollectionAsync(collectionName).ToCoroutine(result => localMeta = result);
 			if (error != null)
 			{
                 UnityEngine.Debug.LogWarning("[RemoteCollection] Couldn't fetch " + collectionName + "/info.json: " + error.Message);
@@ -377,7 +379,8 @@ namespace Gameplay.Level
 				yield break;
 			}
 
-			LevelCollectionMetaData updatedMeta = LevelCollectionHelper.GetMetaDataForCollection(collectionName);
+			LevelCollectionMetaData updatedMeta = null;
+			yield return LevelCollectionHelper.GetMetaDataForCollectionAsync(collectionName).ToCoroutine(result => updatedMeta = result);
 			int? updatedVersion = updatedMeta != null ? updatedMeta.version : (int?)null;
             UnityEngine.Debug.Log(string.Format("[RemoteCollection] Update successful for {0}, version {1}.", collectionName, updatedVersion));
 		}

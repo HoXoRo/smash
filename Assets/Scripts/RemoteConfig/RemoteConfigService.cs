@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using Cysharp.Threading.Tasks;
 using LocalSave;
 using Newtonsoft.Json;
 using Segmentation;
@@ -9,13 +10,15 @@ namespace RemoteConfig
 {
 	public static class RemoteConfigService
 	{
-		private const string BundledResourcePath = "RemoteConfig/config";
+		private const string BundledAssetName = "Assets/ArrowGame/Config/Flow/config.json";
 
 		private const string CacheFileName = "config.json";
 
 		private static RemoteConfigData _activeConfig;
 
 		private static ConfigSource _activeSource;
+
+		private static bool _bundledLoaded;
 
 		public static bool IsInitialized { get; private set; }
 
@@ -30,20 +33,41 @@ namespace RemoteConfig
 
 		public static void InitializeLocal()
 		{
-			RemoteConfigData bundled = LoadBundled();
-			if (bundled != null)
-			{
-				Activate(bundled, ConfigSource.Bundled);
-			}
-			else
+			if (!IsInitialized)
 			{
 				_activeConfig = new RemoteConfigData
 				{
 					Defaults = new Dictionary<string, string>(),
 					Overrides = new List<OverrideRuleDto>()
 				};
+				IsInitialized = true;
 			}
-			IsInitialized = true;
+		}
+
+		public static async UniTask InitializeLocalAsync()
+		{
+			InitializeLocal();
+			try
+			{
+				if (_bundledLoaded || GF.Resource == null || GF.Resource.HasAsset(BundledAssetName) == GameFramework.Resource.HasAssetResult.NotExist)
+				{
+					return;
+				}
+				TextAsset asset = await GF.Resource.LoadAssetAwait<TextAsset>(BundledAssetName);
+				RemoteConfigData bundled = Deserialize(asset.text);
+				if (bundled != null)
+				{
+					_bundledLoaded = true;
+					if (_activeSource == ConfigSource.Bundled)
+					{
+						Activate(bundled, ConfigSource.Bundled);
+					}
+				}
+			}
+			catch (System.Exception exception)
+			{
+				Debug.LogWarning("[RemoteConfig] Failed to load bundled config: " + exception.Message);
+			}
 		}
 
 		public static void Activate(RemoteConfigData config, ConfigSource source)
@@ -71,17 +95,6 @@ namespace RemoteConfig
 				Directory.CreateDirectory(directory);
 			}
 			File.WriteAllText(cachePath, JsonConvert.SerializeObject(config, Formatting.Indented));
-		}
-
-		public static RemoteConfigData LoadBundled()
-		{
-			TextAsset asset = Resources.Load<TextAsset>("RemoteConfig/config") ?? Resources.Load<TextAsset>("remoteconfig/config");
-			if (asset == null)
-			{
-				Debug.LogError("[RemoteConfig] Bundled config not found at Resources/RemoteConfig/config");
-				return null;
-			}
-			return Deserialize(asset.text);
 		}
 
 		public static RemoteConfigData LoadCached()

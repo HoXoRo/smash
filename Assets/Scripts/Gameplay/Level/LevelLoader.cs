@@ -1,4 +1,5 @@
 using Level;
+using Cysharp.Threading.Tasks;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -10,10 +11,10 @@ namespace Gameplay.Level
 
 		public static bool ForceLocal = true;
 
-		public static LevelData GetLevel(int index)
+		public static async UniTask<LevelData> GetLevelAsync(int index)
 		{
-			int levelNumber = GetLevelNumber(index);
-			string json = LevelCollectionHelper.GetLevelJson(levelNumber);
+			int levelNumber = await GetLevelNumberAsync(index);
+			string json = await LevelCollectionHelper.GetLevelJsonAsync(levelNumber);
 			if (!string.IsNullOrEmpty(json))
 			{
 				return JsonConvert.DeserializeObject<LevelData>(json);
@@ -22,13 +23,13 @@ namespace Gameplay.Level
 			return null;
 		}
 
-		private static int GetLevelNumber(int index)
+		private static async UniTask<int> GetLevelNumberAsync(int index)
 		{
 			if (!LoopActive)
 			{
 				return index;
 			}
-			LevelCollectionMetaData metaData = LevelCollectionHelper.GetMetaData();
+			LevelCollectionMetaData metaData = await LevelCollectionHelper.GetMetaDataAsync();
 			if (metaData == null || metaData.levelCount <= 0 || metaData.loopList == null || metaData.loopList.Count == 0 || index <= metaData.levelCount)
 			{
 				return index;
