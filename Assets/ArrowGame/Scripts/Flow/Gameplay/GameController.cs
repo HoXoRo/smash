@@ -525,7 +525,6 @@ namespace Gameplay
 
 		private int _remainingMoves;
 
-		private float _outOfMovesTime = -1f;
 
 		private bool _gameplayLocked;
 
@@ -1317,7 +1316,6 @@ namespace Gameplay
 				_currentStage.RootTransform.DOScale(Vector3.one, 0.6f).SetEase(stageScaleUpCurve);
 			}
 			_levelStarted = false;
-			_outOfMovesTime = -1f;
 			yield return new WaitForSeconds(0.6f);
 			stageSignAnimator?.Play("StageSignCloseAnim");
 			yield return new WaitForSeconds(0.5f);
@@ -1401,49 +1399,41 @@ namespace Gameplay
 			}
 			if (_remainingMoves >= 1)
 			{
-				_outOfMovesTime = -1f;
 				return;
-			}
-			if (_outOfMovesTime < 0f)
-			{
-				_outOfMovesTime = Time.time;
 			}
 			if (_endBlockerCount > 0)
 			{
 				return;
 			}
-			if (Time.time - _outOfMovesTime >= 15f || AreAllBodiesSettledForFail())
+			if (AreTableObjectsSettledForFail())
 			{
 				Fail();
 			}
 		}
 
-		private bool AreAllBodiesSettledForFail()
+		private bool AreTableObjectsSettledForFail()
 		{
 			if (_currentStage?.LiveObjects == null)
 			{
 				return false;
 			}
+			bool hasTableObjects = false;
 			for (int i = 0; i < _currentStage.LiveObjects.Count; i++)
 			{
 				BaseObject baseObject = _currentStage.LiveObjects[i];
-				if (baseObject != null && baseObject.HasSignificantMovement())
+				// Table contact includes objects supported by other objects in the stack.
+				if (baseObject == null || baseObject.BeingDestroyed || baseObject.TouchingTable == null)
+				{
+					continue;
+				}
+				hasTableObjects = true;
+				if (baseObject.HasSignificantMovement())
 				{
 					return false;
 				}
 			}
-			if (_liveBalls != null)
-			{
-				for (int j = 0; j < _liveBalls.Count; j++)
-				{
-					Ball ball = _liveBalls[j];
-					if (ball != null && ball.HasSignificantMovement())
-					{
-						return false;
-					}
-				}
-			}
-			return true;
+			// An empty table may be awaiting the last falling targets and stage completion.
+			return hasTableObjects;
 		}
 
 		public void Fail()
@@ -1509,7 +1499,6 @@ namespace Gameplay
 		{
 			_gameplayLocked = false;
 			_remainingMoves += moves;
-			_outOfMovesTime = -1f;
 			UpdateRemainingMoves();
 			_analyticsHelper?.OnEgoBought(moves);
 		}
