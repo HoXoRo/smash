@@ -18,7 +18,7 @@ namespace Gameplay.Level
 			DefaultCollectionName
 		};
 
-		public static string ForcedCollectionName => PlayerPrefs.GetString("ForcedCollectionName", string.Empty);
+		public static string ForcedCollectionName => GF.Setting.GetString("ForcedCollectionName", string.Empty);
 
 		public static string GetConfiguredCollection()
 		{
