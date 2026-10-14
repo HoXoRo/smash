@@ -7,6 +7,7 @@ using Gameplay.Objects;
 using Gameplay.UI;
 using Service;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Gameplay
 {
@@ -38,6 +39,7 @@ namespace Gameplay
 		private BoundingPlane _boundingPlane;
 		private int _targetLayerMask;
 		private Queue<Ball> _ballPool;
+		private Transform _ballPoolRoot;
 		private readonly HashSet<Ball> _activeBalls = new HashSet<Ball>();
 
 		public void SetPlaneBounds(List<BaseObject> objects, List<Table> tables)
@@ -48,6 +50,14 @@ namespace Gameplay
 
 		public void InitializeBallPool(int ballPoolSize)
 		{
+			if (_ballPool != null)
+			{
+				return;
+			}
+			// Use an unscaled root in the owning gameplay scene.
+			GameObject poolRoot = new GameObject("CannonBallPool");
+			SceneManager.MoveGameObjectToScene(poolRoot, gameObject.scene);
+			_ballPoolRoot = poolRoot.transform;
 			_ballPool = new Queue<Ball>();
 			_activeBalls.Clear();
 			for (int i = 0; i < ballPoolSize; i++)
@@ -67,7 +77,7 @@ namespace Gameplay
 
 		private Ball CreateBall()
 		{
-			GameObject instance = UnityEngine.Object.Instantiate(ballPrefab);
+			GameObject instance = UnityEngine.Object.Instantiate(ballPrefab, _ballPoolRoot);
 			Ball ball = instance.GetComponent<Ball>();
 			ball.Initialize(this);
 			ball.Recycle();
@@ -123,6 +133,15 @@ namespace Gameplay
 			animator.Play("CannonRigPreshoot");
 			DelayedWorker.CallAfter(PreshootDelay, delegate
 			{
+				// The worker may outlive the gameplay scene.
+				if (this == null || !isActiveAndEnabled || gameController == null)
+				{
+					if (gameController != null)
+					{
+						gameController.DecreaseEndBlocker();
+					}
+					return;
+				}
 				shootParticle.Play();
 				GF.Sound.PlayEffect("Cannon.ogg");
 				Ball shotBall = GetBallFromPool();
@@ -132,8 +151,8 @@ namespace Gameplay
 				_activeBalls.Add(shotBall);
 				shotBall.SetMass(BallMass);
 				shotBall.Shoot(direction, BallSpeed);
-				ServiceLocator.Get<GameController>().AddToLiveBalls(shotBall);
-				ServiceLocator.Get<GameController>().DecreaseEndBlocker();
+				gameController.AddToLiveBalls(shotBall);
+				gameController.DecreaseEndBlocker();
 			});
 			return true;
 		}
@@ -147,6 +166,16 @@ namespace Gameplay
 			ball.Recycle();
 			_ballPool.Enqueue(ball);
 			ServiceLocator.Get<GameController>().RemoveFromLiveBalls(ball);
+		}
+
+		private void OnDestroy()
+		{
+			if (_ballPoolRoot != null)
+			{
+				Destroy(_ballPoolRoot.gameObject);
+			}
+			_ballPool?.Clear();
+			_activeBalls.Clear();
 		}
 
 		private void IgnoreCollisionWithActiveBalls(Ball shotBall)

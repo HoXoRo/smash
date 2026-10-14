@@ -1299,9 +1299,10 @@ namespace Gameplay
 			}
 			yield return new WaitForSeconds(0.3f);
 			previousStage?.Deactivate();
-			for (int i = 0; i < _liveBalls.Count; i++)
+			// Returning a ball removes it from _liveBalls, so traverse backwards.
+			for (int i = _liveBalls.Count - 1; i >= 0; i--)
 			{
-				_liveBalls[i]?.Recycle();
+				cannon.OnBallDestroyed(_liveBalls[i]);
 			}
 			_liveBalls.Clear();
 			if (previousRoot != null)

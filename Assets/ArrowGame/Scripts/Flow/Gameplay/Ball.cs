@@ -542,6 +542,11 @@ namespace Gameplay
 		private void OnDestroy()
 		{
 			KillActiveTweens();
+			if (_material != null)
+			{
+				Destroy(_material);
+				_material = null;
+			}
 		}
 
 		private void KillActiveTweens()
