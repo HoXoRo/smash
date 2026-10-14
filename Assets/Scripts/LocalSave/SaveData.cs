@@ -44,15 +44,6 @@ namespace LocalSave
 		private readonly SaveItem<string> _buildEnvironment = new SaveItem<string>(string.Empty, SaveBehaviour.SaveAtFrameEnd);
 
 		[JsonIgnore]
-		private readonly SaveItem<string> _campaign = new SaveItem<string>(string.Empty, SaveBehaviour.SaveNow);
-
-		[JsonIgnore]
-		private readonly SaveItem<string> _country = new SaveItem<string>(string.Empty, SaveBehaviour.SaveNow);
-
-		[JsonIgnore]
-		private readonly SaveItem<string> _segment = new SaveItem<string>(string.Empty, SaveBehaviour.SaveNow);
-
-		[JsonIgnore]
 		private readonly SaveItem<int> _rateUsLastShownLevel = new SaveItem<int>(0, SaveBehaviour.SaveAtFrameEnd);
 
 		[JsonIgnore]
@@ -146,27 +137,6 @@ namespace LocalSave
 		{
 			get => _buildEnvironment.Value;
 			set => _buildEnvironment.Value = value;
-		}
-
-		[JsonProperty("campaign")]
-		public string Campaign
-		{
-			get => _campaign.Value;
-			set => _campaign.Value = value;
-		}
-
-		[JsonProperty("country")]
-		public string Country
-		{
-			get => _country.Value;
-			set => _country.Value = value;
-		}
-
-		[JsonProperty("segment")]
-		public string Segment
-		{
-			get => _segment.Value;
-			set => _segment.Value = value;
 		}
 
 		[JsonProperty("rate_us_last_shown_level")]

@@ -1,7 +1,5 @@
-using System.Collections.Generic;
 using System.IO;
 using Cysharp.Threading.Tasks;
-using RemoteConfig;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -9,48 +7,16 @@ namespace Gameplay.Level
 {
 	public static class LevelCollectionHelper
 	{
-		public static string ExternalForcedCollectionName;
-
 		public const string DefaultCollectionName = "prod-14";
-
-		public static HashSet<string> IncludedCollectionsForProd = new HashSet<string>
-		{
-			DefaultCollectionName
-		};
-
-		public static string ForcedCollectionName => GF.Setting.GetString("ForcedCollectionName", string.Empty);
 
 		public static string GetConfiguredCollection()
 		{
-			if (!string.IsNullOrEmpty(ExternalForcedCollectionName))
-			{
-				return ExternalForcedCollectionName;
-			}
-			if (!string.IsNullOrEmpty(ForcedCollectionName))
-			{
-				return ForcedCollectionName;
-			}
-			string configured = RemoteConfigService.GetValue("level_collection");
-			return string.IsNullOrEmpty(configured) ? DefaultCollectionName : configured;
-		}
-
-		public static async UniTask<string> GetCollectionToUseAsync()
-		{
-			string configured = GetConfiguredCollection();
-			if (!string.IsNullOrEmpty(ExternalForcedCollectionName) || !string.IsNullOrEmpty(ForcedCollectionName) || await HasLocalCollectionAsync(configured))
-			{
-				return configured;
-			}
-			if (configured != DefaultCollectionName)
-			{
-				Debug.LogWarning("[LevelCollection] Configured collection '" + configured + "' not available locally, falling back to " + DefaultCollectionName);
-			}
 			return DefaultCollectionName;
 		}
 
-		public static async UniTask<bool> HasLocalCollectionAsync(string collection)
+		public static UniTask<string> GetCollectionToUseAsync()
 		{
-			return await GetMetaDataForCollectionAsync(collection) != null;
+			return UniTask.FromResult(DefaultCollectionName);
 		}
 
 		public static async UniTask<string> GetLevelJsonAsync(int levelIndex)

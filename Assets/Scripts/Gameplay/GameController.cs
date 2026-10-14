@@ -1,4 +1,3 @@
-using RemoteConfig;
 using Cysharp.Threading.Tasks;
 using Core;
 using DG.Tweening;
@@ -568,7 +567,6 @@ namespace Gameplay
 				{
 					throw new InvalidOperationException("GF resource component is not initialized.");
 				}
-				await RemoteConfigService.InitializeLocalAsync();
 				LoadedObjectData = await GF.Resource.LoadAssetAwait<ObjectData>("Assets/ArrowGame/ScriptableAssets/Flow/ObjectData.asset");
 				_particleData = await GF.Resource.LoadAssetAwait<ParticleData>("Assets/ArrowGame/ScriptableAssets/Flow/ParticleData.asset");
 				LoadedPhysicsMaterial = await GF.Resource.LoadAssetAwait<PhysicsMaterial>("Assets/ArrowGame/Gameplay/PhysicMaterial/PhysicsMat.physicMaterial");
@@ -1531,11 +1529,6 @@ namespace Gameplay
 		public bool ShouldSkipMenuAfterWin()
 		{
 			return _levelIndex < 19;
-		}
-
-		public bool ShouldTryShowInterAfterWin()
-		{
-			return RemoteConfigService.GetBool("inter_enabled", true);
 		}
 
 		public int GetActiveStreakCount()
