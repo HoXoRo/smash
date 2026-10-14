@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Threading.Tasks;
-using Core;
 using Newtonsoft.Json;
 using UnityEngine;
 using Util;
@@ -150,7 +149,7 @@ namespace RemoteConfig
 
 		private static string BuildUrl(string fileName)
 		{
-			string path = string.Concat(RootFolderName, "/", VersionHelper.GetVersion(), "/", fileName);
+			string path = string.Concat(RootFolderName, "/", Application.version, "/", fileName);
 			return "https://firebasestorage.googleapis.com/v0/b/" + Bucket + "/o/" + Uri.EscapeDataString(path) + "?alt=media";
 		}
 	}

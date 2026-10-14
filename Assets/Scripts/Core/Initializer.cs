@@ -53,9 +53,7 @@ namespace Core
 		public void Initialize()
 		{
 			RemoteConfigService.InitializeLocal();
-			SessionHelper.Initialize();
 			SegmentationHelper.EvaluateSegment();
-			CountryHelper.EnsureInstallCountry();
 		}
 
 		public IEnumerator TryShowAttPopup()

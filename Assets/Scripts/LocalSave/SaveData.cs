@@ -35,25 +35,7 @@ namespace LocalSave
 		private readonly SaveItem<TutorialProgressData> _tutorialProgress = new SaveItem<TutorialProgressData>(TutorialProgressData.GetDefault(), SaveBehaviour.SaveAtFrameEnd);
 
 		[JsonIgnore]
-		private readonly SaveItem<int> _sessionId = new SaveItem<int>(0, SaveBehaviour.SaveAtFrameEnd);
-
-		[JsonIgnore]
 		private readonly SaveItem<int> _tryCount = new SaveItem<int>(0, SaveBehaviour.SaveAtFrameEnd);
-
-		[JsonIgnore]
-		private readonly SaveItem<int> _installDay = new SaveItem<int>(-1, SaveBehaviour.SaveAtFrameEnd);
-
-		[JsonIgnore]
-		private readonly SaveItem<int> _lastLoggedDayId = new SaveItem<int>(-1, SaveBehaviour.SaveAtFrameEnd);
-
-		[JsonIgnore]
-		private readonly SaveItem<int> _pendingSessionId = new SaveItem<int>(0, SaveBehaviour.SaveAtFrameEnd);
-
-		[JsonIgnore]
-		private readonly SaveItem<long> _pendingSessionEndUnixSec = new SaveItem<long>(0L, SaveBehaviour.SaveAtFrameEnd);
-
-		[JsonIgnore]
-		private readonly SaveItem<float> _pendingSessionActiveDurationSec = new SaveItem<float>(0f, SaveBehaviour.SaveAtFrameEnd);
 
 		[JsonIgnore]
 		private readonly SaveItem<int> _streakCount = new SaveItem<int>(0, SaveBehaviour.SaveAtFrameEnd);
@@ -145,53 +127,11 @@ namespace LocalSave
 			set => _tutorialProgress.Value = value;
 		}
 
-		[JsonProperty("session_id")]
-		public int SessionId
-		{
-			get => _sessionId.Value;
-			set => _sessionId.Value = value;
-		}
-
 		[JsonProperty("try_count")]
 		public int TryCount
 		{
 			get => _tryCount.Value;
 			set => _tryCount.Value = value;
-		}
-
-		[JsonProperty("install_day")]
-		public int InstallDay
-		{
-			get => _installDay.Value;
-			set => _installDay.Value = value;
-		}
-
-		[JsonProperty("last_logged_day_id")]
-		public int LastLoggedDayId
-		{
-			get => _lastLoggedDayId.Value;
-			set => _lastLoggedDayId.Value = value;
-		}
-
-		[JsonProperty("pending_session_id")]
-		public int PendingSessionId
-		{
-			get => _pendingSessionId.Value;
-			set => _pendingSessionId.Value = value;
-		}
-
-		[JsonProperty("pending_session_end_unix_sec")]
-		public long PendingSessionEndUnixSec
-		{
-			get => _pendingSessionEndUnixSec.Value;
-			set => _pendingSessionEndUnixSec.Value = value;
-		}
-
-		[JsonProperty("pending_session_active_duration_sec")]
-		public float PendingSessionActiveDurationSec
-		{
-			get => _pendingSessionActiveDurationSec.Value;
-			set => _pendingSessionActiveDurationSec.Value = value;
 		}
 
 		[JsonProperty("streak_count")]
