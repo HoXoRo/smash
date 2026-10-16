@@ -228,6 +228,7 @@ public partial class ArrowUITopbarSub : UIFormBase
     private void RefreshLifeDisplay()
     {
         varBtnLife.interactable = playerDm.LifeCount < PlayerDataModel.MaxLifeCount;
+        varImgAdd.SetActive(playerDm.LifeCount < PlayerDataModel.MaxLifeCount);
         varTxtLife.text = playerDm.LifeCount.ToString();
         int seconds = playerDm.GetSecondsUntilNextLife();
         varTxtTime.text = seconds < 0 ? "FULL" : $"{seconds / 60:00}:{seconds % 60:00}";

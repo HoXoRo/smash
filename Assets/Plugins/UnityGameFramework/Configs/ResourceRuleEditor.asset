@@ -78,8 +78,8 @@ MonoBehaviour:
     variant: 
     fileSystem: 
     groups: 
-    assetsDirectoryPath: Assets/AAAGame/Scene
-    loadType: 0
+    assetsDirectoryPath: Assets/ArrowGame/Scene
+    loadType: 3
     packed: 1
     filterType: 0
     searchPatterns: '*.unity'
@@ -123,6 +123,36 @@ MonoBehaviour:
     packed: 1
     filterType: 0
     searchPatterns: '*.ogg'
+  - valid: 1
+    name: FlowData
+    variant:
+    fileSystem:
+    groups:
+    assetsDirectoryPath: Assets/ArrowGame/ScriptableAssets/Flow
+    loadType: 3
+    packed: 1
+    filterType: 0
+    searchPatterns: '*.asset'
+  - valid: 1
+    name: FlowPhysics
+    variant:
+    fileSystem:
+    groups:
+    assetsDirectoryPath: Assets/ArrowGame/Gameplay/PhysicMaterial
+    loadType: 3
+    packed: 1
+    filterType: 0
+    searchPatterns: '*.physicMaterial'
+  - valid: 1
+    name: FlowLevels
+    variant:
+    fileSystem:
+    groups:
+    assetsDirectoryPath: Assets/ArrowGame/levels/prod-14
+    loadType: 3
+    packed: 1
+    filterType: 0
+    searchPatterns: '*.json'
   - valid: 1
     name: Font
     variant: 
