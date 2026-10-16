@@ -679,6 +679,7 @@ GameObject:
   - component: {fileID: 4544007264731668807}
   - component: {fileID: 7546216416511280092}
   - component: {fileID: 3123522963736153507}
+  - component: {fileID: 8171015245580854497}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -805,6 +806,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8171015245580854497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481560864978730142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Key: SettingPageUIForm.continue
 --- !u!1 &6315936631841890201
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,7 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Key: ArrowSettingDialog.Privacy
+  m_Key: SettingPageUIForm.privacy
 --- !u!1 &6807983641877737532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,6 +1026,7 @@ GameObject:
   - component: {fileID: 3111860154351420465}
   - component: {fileID: 8339977908124108335}
   - component: {fileID: 4597500580945588015}
+  - component: {fileID: 3068434413040927906}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1138,6 +1153,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3068434413040927906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7481830265876321364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Key: SettingPageUIForm.quit
 --- !u!1 &7774177869768697630
 GameObject:
   m_ObjectHideFlags: 0

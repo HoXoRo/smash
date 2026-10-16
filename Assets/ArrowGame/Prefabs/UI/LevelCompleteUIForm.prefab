@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 2787634561481850029}
   - component: {fileID: 6598058943893747773}
   m_Layer: 5
-  m_Name: titletxt
+  m_Name: leveltxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Key: ArrowRewardUIForm.titletxt
+  m_Key: LevelCompleteUIForm.leveltxt
 --- !u!1 &928604847295677242
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,8 +818,9 @@ GameObject:
   - component: {fileID: 4962331774986750419}
   - component: {fileID: 5313316072138977741}
   - component: {fileID: 3040081244239424460}
+  - component: {fileID: 3218913641808238558}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: complete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -944,6 +945,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3218913641808238558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5145348790043724146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Key: LevelCompleteUIForm.complete
 --- !u!1 &5966332183561030923
 GameObject:
   m_ObjectHideFlags: 0

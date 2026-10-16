@@ -148,8 +148,9 @@ GameObject:
   - component: {fileID: 6299240084816834356}
   - component: {fileID: 3464148637455600490}
   - component: {fileID: 8429939959767705886}
+  - component: {fileID: 722531972836290098}
   m_Layer: 5
-  m_Name: Text (TMP)_1
+  m_Name: desc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,6 +275,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &722531972836290098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2611473830959861675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Key: PcardGiftUIForm.desc
 --- !u!1 &4016784945899346359
 GameObject:
   m_ObjectHideFlags: 0

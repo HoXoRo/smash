@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -26,6 +26,7 @@ public partial class CoinRewardUIForm : UIFormBase
 
         varBtnClaim.onClick.AddListener(OnClaimClicked);
         varBtnAd.onClick.AddListener(OnAdClicked);
+        varBtnClose.onClick.AddListener(OnClickClose);
     }
 
     protected override void OnOpen(object userData)

@@ -13,4 +13,5 @@ public partial class CoinRewardUIForm
 	[SerializeField] private Button varBtnAd = null;
 	[SerializeField] private TextMeshProUGUI varRewardCount = null;
 	[SerializeField] private TextMeshProUGUI varTxtMulit = null;
+	[SerializeField] private Button varBtnClose = null;
 }

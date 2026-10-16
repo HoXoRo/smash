@@ -671,6 +671,7 @@ GameObject:
   - component: {fileID: 462954404360284464}
   - component: {fileID: 8709262564502759602}
   - component: {fileID: 5129813963518108193}
+  - component: {fileID: 5920289615476268825}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -797,6 +798,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5920289615476268825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3108624240975767976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Key: MakeupUIForm.record
 --- !u!1 &3271108547613828430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2601,6 +2615,7 @@ GameObject:
   - component: {fileID: 664964169792909772}
   - component: {fileID: 7354817173279851067}
   - component: {fileID: 3693773048559283377}
+  - component: {fileID: 6687440782755142793}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2727,6 +2742,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6687440782755142793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8833391745428782655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Key: MakeupUIForm.input
 --- !u!1 &8994005787650025555
 GameObject:
   m_ObjectHideFlags: 0

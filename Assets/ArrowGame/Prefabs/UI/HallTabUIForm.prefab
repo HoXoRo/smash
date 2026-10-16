@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 6646070346040138128}
   - component: {fileID: 736687917656468050}
   - component: {fileID: 768228107317814776}
+  - component: {fileID: 134221942749678420}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -215,6 +216,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &134221942749678420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855085118075527956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Key: HallTabUIForm.home
 --- !u!1 &2234046238066562836
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +914,7 @@ GameObject:
   - component: {fileID: 7541131272457029778}
   - component: {fileID: 3018324211022191486}
   - component: {fileID: 2113253283548656394}
+  - component: {fileID: 7164601720635270170}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1026,6 +1041,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7164601720635270170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7920118222480555829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Key: HallTabUIForm.setting
 --- !u!1 &8306466593538986447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,6 +1338,7 @@ GameObject:
   - component: {fileID: 7956399554568109048}
   - component: {fileID: 5674119009671715493}
   - component: {fileID: 643215022201345593}
+  - component: {fileID: 2326556732545039624}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1436,3 +1465,16 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2326556732545039624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712335355174512847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Key: HallTabUIForm.task
