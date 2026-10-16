@@ -1,4 +1,4 @@
-﻿//---------------------------------
+//---------------------------------
 //此文件由工具自动生成,请勿手动修改
 //更新自:BF-202608261653
 //---------------------------------
@@ -13,4 +13,5 @@ public partial class LevelCompleteUIForm
 	[SerializeField] private Button varBtnAd = null;
 	[SerializeField] private Button varBtnNext = null;
 	[SerializeField] private TextMeshProUGUI varTxtMulit = null;
+	[SerializeField] private TextMeshProUGUI varLeveltxt = null;
 }

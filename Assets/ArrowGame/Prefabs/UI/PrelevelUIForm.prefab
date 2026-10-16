@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Key: PrelevelUIForm.txtLevel
+  m_Key: level
 --- !u!1 &2130656678790044127
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-﻿using Cysharp.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 #if ENABLE_OBFUZ
 [Obfuz.ObfuzIgnore(Obfuz.ObfuzScope.TypeName)]
@@ -20,7 +20,7 @@ public partial class HomePageUIForm : UIFormBase
     {
         base.OnOpen(userData);
         int currentLevel = GetCurrentLevel();
-        varLevelTxt.text = $"Level {currentLevel}";
+        varLevelTxt.text = GF.Localization.GetString("level", currentLevel);
     }
 
     static int GetCurrentLevel()
@@ -31,7 +31,6 @@ public partial class HomePageUIForm : UIFormBase
 
     void OnPlayClicked()
     {
-        GF.Sound.PlayEffect("ui/ui_click.mp3");
         if (isEnteringGameplay) return;
         if (!LifeHelper.HasLife())
         {

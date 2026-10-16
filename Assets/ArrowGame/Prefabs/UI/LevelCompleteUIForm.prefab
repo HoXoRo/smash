@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Key: LevelCompleteUIForm.leveltxt
+  m_Key: level
 --- !u!1 &928604847295677242
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +453,11 @@ MonoBehaviour:
     - {fileID: 7630501604039046003}
     VarType: TMPro.TextMeshProUGUI
     VarPrefix: 0
+  - VarName: varLeveltxt
+    Targets:
+    - {fileID: 748459141052478352}
+    VarType: TMPro.TextMeshProUGUI
+    VarPrefix: 0
   m_UIAnimationType: 0
   m_OpenAnimation: {fileID: 0}
   m_CloseAnimation: {fileID: 0}
@@ -462,6 +467,7 @@ MonoBehaviour:
   varBtnAd: {fileID: 776268692356615834}
   varBtnNext: {fileID: 8760161025377338718}
   varTxtMulit: {fileID: 4826113087854052971}
+  varLeveltxt: {fileID: 2787634561481850029}
 --- !u!1 &3042572132309340650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,7 +1791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Key: ArrowRewardDialogUIForm.claim
+  m_Key: LevelCompleteUIForm.next
 --- !u!1001 &3758466852299951498
 PrefabInstance:
   m_ObjectHideFlags: 0

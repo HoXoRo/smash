@@ -2,7 +2,6 @@
 using System.Collections;
 using DG.Tweening;
 using GameFramework;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
@@ -37,6 +36,7 @@ public partial class LevelCompleteUIForm : UIFormBase
 
         int fallbackLevel = Mathf.Max(1, GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId - 1);
         int completedLevel = Params.Get<VarInt32>(P_LevelId, fallbackLevel);
+        varLeveltxt.text = GF.Localization.GetString("level", completedLevel);
         m_OnNext = Params.Get<VarAction>(P_OnNext)?.Value;
         m_IsClaiming = false;
 

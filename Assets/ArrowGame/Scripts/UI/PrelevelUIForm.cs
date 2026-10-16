@@ -27,7 +27,7 @@ public partial class PrelevelUIForm : UIFormBase
         playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
         useRocket = false;
         isStarting = false;
-        varTxtLevel.text = $"Level {playerData.LevelId}";
+        varTxtLevel.text = GF.Localization.GetString("level", playerData.LevelId);
         RefreshRocket();
     }
 
