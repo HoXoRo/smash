@@ -183,6 +183,10 @@ public class PlayerDataModel : DataModelStorageBase
     /// 提现账号（邮箱）。持久化存储。
     /// </summary>
     public string MakeupAccount;
+    /// <summary>
+    /// 提现头像索引（0-3），与账号一起保存。
+    /// </summary>
+    public int MakeupAvatarIndex;
     private int m_MahjongSkinId;
     private int m_MahjongBgSkinId;
     public Dictionary<int, int> m_LevelStarRecords = new Dictionary<int, int>();
@@ -452,6 +456,7 @@ public class PlayerDataModel : DataModelStorageBase
         m_Gems = 0;
         m_LevelId = 1;
         MakeupAccount = string.Empty;
+        MakeupAvatarIndex = 0;
         m_Prop1 = GF.Config.GetInt("DefaultProp");
         RocketCount = 0;
         PendingRocketUse = false;

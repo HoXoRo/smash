@@ -9,6 +9,10 @@ public partial class MakeupInfoUIForm : UIFormBase
     const string HintEmailKey = "makeupInfoHint2";
     static readonly Regex EmailRegex = new Regex(@"^[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$", RegexOptions.CultureInvariant);
 
+    [SerializeField] private UnityEngine.UI.Button[] avatarButtons;
+    [SerializeField] private GameObject[] avatarSelections;
+    private int selectedAvatarIndex;
+
     protected override void OnInit(object userData)
     {
         base.OnInit(userData);
@@ -16,18 +20,34 @@ public partial class MakeupInfoUIForm : UIFormBase
             varBtnClose.onClick.AddListener(OnClickClose);
         if (varBtnConfirm != null)
             varBtnConfirm.onClick.AddListener(OnClickConfirm);
+        for (int i = 0; i < avatarButtons.Length; i++)
+        {
+            int index = i;
+            avatarButtons[i].onClick.AddListener(() => OnClickAvatar(index));
+        }
     }
 
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
         HideHint();
+        SelectAvatar(GF.DataModel.GetOrCreate<PlayerDataModel>().MakeupAvatarIndex);
+    }
+
+    void OnClickAvatar(int index)
+    {
+        SelectAvatar(index);
+    }
+
+    void SelectAvatar(int index)
+    {
+        selectedAvatarIndex = Mathf.Clamp(index, 0, avatarButtons.Length - 1);
+        for (int i = 0; i < avatarSelections.Length; i++)
+            avatarSelections[i].SetActive(i == selectedAvatarIndex);
     }
 
     void OnClickConfirm()
     {
-        GF.Sound.PlayEffect("ui/ui_click.mp3");
-
         string account = varInputAcct != null ? varInputAcct.text.Trim() : string.Empty;
         string confirm = varInputAcctConfirm != null ? varInputAcctConfirm.text.Trim() : string.Empty;
         if (string.IsNullOrEmpty(account) || string.IsNullOrEmpty(confirm) || account != confirm)
@@ -44,6 +64,7 @@ public partial class MakeupInfoUIForm : UIFormBase
 
         PlayerDataModel playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
         playerDm.MakeupAccount = account;
+        playerDm.MakeupAvatarIndex = selectedAvatarIndex;
         playerDm.Save();
         RefreshMakeupAccountDisplay();
         HideHint();
