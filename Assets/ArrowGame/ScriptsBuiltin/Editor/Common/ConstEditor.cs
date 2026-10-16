@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 using System.IO;
 using UnityEngine;
 namespace UGF.EditorTools
@@ -57,6 +57,8 @@ namespace UGF.EditorTools
         /// 语言国际化Excel目录
         /// </summary>
         public static string LanguageExcelPath => UtilityBuiltin.AssetsPath.GetCombinePath(Directory.GetParent(Application.dataPath).FullName, "AAAGameData/Languages");
+
+        public static string TranslationWorkbookPath => UtilityBuiltin.AssetsPath.GetCombinePath(Directory.GetParent(Application.dataPath).FullName, "AAAGameData/Translations/Localization.xlsx");
 
         public static string ToolsPath = UtilityBuiltin.AssetsPath.GetCombinePath(Directory.GetParent(Application.dataPath).FullName, "Tools");
         public const string DataTablePath = "Assets/ArrowGame/DataTable";

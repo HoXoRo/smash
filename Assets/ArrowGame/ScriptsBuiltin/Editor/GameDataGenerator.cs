@@ -1,4 +1,4 @@
-﻿using GameFramework;
+using GameFramework;
 using GameFramework.DataTable;
 using GameFramework.Editor.DataTableTools;
 using OfficeOpenXml;
@@ -303,32 +303,28 @@ namespace UGF.EditorTools
             try
             {
                 LocalizationTextScanner.LoadLanguageExcelTexts(excelFile, ref textList);
-                SortedDictionary<string, string> languageDic = new SortedDictionary<string, string>();
-                foreach (var item in textList)
-                {
-                    if (!languageDic.ContainsKey(item.Key))
-                    {
-                        languageDic.Add(item.Key, item.Value);
-                    }
-                }
-                File.WriteAllText(outJsonFile, UtilityBuiltin.Json.ToJson(languageDic), Encoding.UTF8);
-                if (useBytes)
-                {
-                    var bytesFileName = Path.ChangeExtension(outJsonFile, ".bytes");
-                    using var fileStream = new FileStream(bytesFileName, FileMode.Create, FileAccess.Write);
-                    using var binaryWriter = new BinaryWriter(fileStream, Encoding.UTF8);
-                    foreach (var item in languageDic)
-                    {
-                        binaryWriter.Write(item.Key);
-                        binaryWriter.Write(item.Value);
-                    }
-                }
+                WriteLanguageData(textList, outJsonFile, useBytes);
                 return true;
             }
             catch (Exception e)
             {
                 Debug.LogError($"多语言Excel导出json失败:{e.Message}");
                 return false;
+            }
+        }
+        // Shared by legacy Excel export and validated multi-language workbook import.
+        internal static void WriteLanguageData(IEnumerable<LocalizationText> textList, string outJsonFile, bool useBytes)
+        {
+            var languageDic = new SortedDictionary<string, string>(StringComparer.Ordinal);
+            foreach (var item in textList) languageDic.Add(item.Key, item.Value ?? "");
+            File.WriteAllText(outJsonFile, UtilityBuiltin.Json.ToJson(languageDic), Encoding.UTF8);
+            if (!useBytes) return;
+            using var fileStream = new FileStream(Path.ChangeExtension(outJsonFile, ".bytes"), FileMode.Create, FileAccess.Write);
+            using var binaryWriter = new BinaryWriter(fileStream, Encoding.UTF8);
+            foreach (var item in languageDic)
+            {
+                binaryWriter.Write(item.Key);
+                binaryWriter.Write(item.Value);
             }
         }
         static bool ExcelSheet2TxtFile(ExcelWorksheet excelSheet, string outTxtFile)

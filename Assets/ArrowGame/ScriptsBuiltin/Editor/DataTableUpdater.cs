@@ -12,7 +12,8 @@ namespace UGF.EditorTools
     {
         static IList<string> tableFileChangedList;
         static IList<string> configFileChangedList;
-        static IList<string> languageFileChangedList;
+        static System.Collections.Concurrent.ConcurrentQueue<string> languageFileChangedList;
+        static readonly Dictionary<string, string> generatedLanguageHashes = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
         static bool isInitialized = false;
         static AppConfigs appConfigs = null;
@@ -23,7 +24,7 @@ namespace UGF.EditorTools
             InitGlobalCulture();
             tableFileChangedList = new List<string>();
             configFileChangedList = new List<string>();
-            languageFileChangedList = new List<string>();
+            languageFileChangedList = new System.Collections.Concurrent.ConcurrentQueue<string>();
             EditorApplication.update -= OnUpdate;
             EditorApplication.update += OnUpdate;
             var tbWatcher = new FileSystemWatcher(ConstEditor.DataTableExcelPath, "*.xlsx")
@@ -53,12 +54,14 @@ namespace UGF.EditorTools
             var langWatcher = new FileSystemWatcher(ConstEditor.LanguageExcelPath, "*.xlsx")
             {
                 IncludeSubdirectories = true,
-                NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite,
+                NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName,
                 EnableRaisingEvents = true
             };
             var langFileChangedCb = new FileSystemEventHandler(OnLanguageChanged);
             langWatcher.Changed -= langFileChangedCb;
             langWatcher.Changed += langFileChangedCb;
+            langWatcher.Created += langFileChangedCb;
+            langWatcher.Renamed += (sender, args) => OnLanguageChanged(sender, args);
             langWatcher.Deleted -= langFileChangedCb;
             langWatcher.Deleted += langFileChangedCb;
             appConfigs = AppConfigs.GetInstanceEditor();
@@ -106,13 +109,25 @@ namespace UGF.EditorTools
             }
             if (languageFileChangedList.Count > 0)
             {
-                var changedFiles = GetMainExcelFiles(GameDataType.Language, appConfigs.Languages, languageFileChangedList);
-                GameDataGenerator.RefreshAllLanguage(changedFiles);
+                var pending = new List<string>();
+                while (languageFileChangedList.TryDequeue(out var file))
+                {
+                    if (!File.Exists(file)) continue;
+                    try
+                    {
+                        if (generatedLanguageHashes.TryGetValue(Path.GetFullPath(file), out var hash) &&
+                            TranslationWorkbookService.Hash(TranslationWorkbook.ReadBytes(file)) == hash) continue;
+                    }
+                    catch (IOException) { languageFileChangedList.Enqueue(file); break; }
+                    if (!pending.Contains(file)) pending.Add(file);
+                }
+                var changedFiles = GetMainExcelFiles(GameDataType.Language, appConfigs.Languages, pending);
+                if (changedFiles.Count > 0) GameDataGenerator.RefreshAllLanguage(changedFiles);
                 foreach (var item in changedFiles)
                 {
                     GFBuiltin.LogInfo($"-----------------自动刷新Language:{item}-----------------");
                 }
-                languageFileChangedList.Clear();
+
             }
         }
         /// <summary>
@@ -160,12 +175,18 @@ namespace UGF.EditorTools
             }
         }
 
+        internal static void MarkLanguagesGenerated(IEnumerable<string> paths)
+        {
+            foreach (string path in paths)
+                generatedLanguageHashes[Path.GetFullPath(path)] = TranslationWorkbookService.Hash(TranslationWorkbook.ReadBytes(path));
+        }
+
         private static void OnLanguageChanged(object sender, FileSystemEventArgs e)
         {
             var fName = Path.GetFileNameWithoutExtension(e.Name);
             if (!fName.StartsWith("~$"))
             {
-                languageFileChangedList.Add(e.FullPath);
+                languageFileChangedList.Enqueue(e.FullPath);
             }
         }
     }

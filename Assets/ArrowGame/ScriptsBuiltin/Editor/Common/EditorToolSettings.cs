@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 using System.Collections.Generic;
 
 namespace UGF.EditorTools
@@ -27,9 +27,10 @@ namespace UGF.EditorTools
 
         //语言国际化
         public List<int> LanguagesSupport = new List<int>();
-        public string BaiduTransAppId = "";
-        public string BaiduTransSecretKey = "";
-        public int BaiduTransMaxLength = 2000;
+        public GameFramework.Localization.Language TranslationSourceLanguage = GameFramework.Localization.Language.English;
+        public bool TranslationAutoGenerate = true;
+        public string GptTranslationModel = "gpt-4.1-mini";
+        public int GptTranslationMaxLength = 2000;
 
         public bool UIFieldToolUseSerializeMode = false;
     }

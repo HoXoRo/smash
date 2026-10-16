@@ -1,330 +1,234 @@
-using UnityEngine;
-using UnityEditor;
-using GameFramework.Localization;
 using System;
-using UnityEditorInternal;
-using System.Linq;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using GameFramework.Localization;
+using UnityEditor;
+using UnityEngine;
 
 namespace UGF.EditorTools
 {
     [EditorToolMenu("资源/语言国际化扫描工具", null, 3)]
     public class LocalizationTextScannerEditor : EditorToolBase
     {
-        Vector2 scrollViewPos;
         public override string ToolName => "语言国际化工具";
-        public override Vector2Int WinSize => new Vector2Int(600, 800);
-
-        private Language[] languageAllOptions;
-        private bool settingFoldout = true;
-        ReorderableList langScrollView;
-        Vector2 langScrollViewPos;
-        private Texture mainLanguageIcon;
-        private const string langScrollViewTitle = "多语言列表:";
-
-        List<LocalizationText> localizationTexts = new List<LocalizationText>();
-
-        private GUIContent lockedContent;
-        private GUIContent scanBtContent;
-        private GUIContent transBtContent;
-        private GUIContent saveBtContent;
-        private GUIStyle dropDownBtStyle;
-        private GUIContent transAllBtContent;
+        public override Vector2Int WinSize => new Vector2Int(780, 850);
+        private Vector2 textScroll;
+        private Vector2 languageScroll;
+        private bool showSettings = true;
+        private bool showLegacy;
+        private bool sourceIsKey;
+        private bool dirty;
+        private string loadedHash;
+        private string filter = "";
+        private List<LocalizationText> texts = new List<LocalizationText>();
+        private HashSet<string> scannedKeys;
 
         private void OnEnable()
         {
-            transAllBtContent = new GUIContent("强制翻译全部(包括非空白行)");
-            var dropDownToggleButton = EditorGUIUtility.GetBuiltinSkin(EditorSkin.Inspector).FindStyle("DropDownToggleButton");
-            dropDownBtStyle = new GUIStyle(dropDownToggleButton);
-            dropDownBtStyle.normal.textColor = Color.white;
-            dropDownBtStyle.alignment = TextAnchor.MiddleCenter;
-            dropDownBtStyle.hover.textColor = Color.white;
-            dropDownBtStyle.active.textColor = Color.white;
-            scanBtContent = new GUIContent("扫描多语言文本", "从资源/数据表/代码中扫描多语言文本");
-            transBtContent = new GUIContent("一键翻译", "翻译多语言(空白行),并把结果保存到多语言Excel文件");
-            saveBtContent = new GUIContent("保存多语言", "把扫描结果保存到多语言Excel文件, 并导出多语言json");
-            lockedContent = EditorGUIUtility.TrIconContent("LockIcon-On", "勾选锁住,将强制保留此行");
-            languageAllOptions = Enum.GetValues(typeof(GameFramework.Localization.Language)) as Language[];
-            ArrayUtility.RemoveAt(ref languageAllOptions, 0);
-
-            mainLanguageIcon = EditorGUIUtility.TrIconContent("Favorite@2x").image;
-            langScrollView = new ReorderableList(EditorToolSettings.Instance.LanguagesSupport, typeof(int), true, true, true, true);
-            langScrollView.drawHeaderCallback = DrawLanguageScrollViewHeader;
-            langScrollView.onAddCallback = OnLangScrollViewAddBtClick;
-            langScrollView.onRemoveCallback = OnLangScrollViewRemoveBtClick;
-            langScrollView.drawElementCallback = DrawSupportLanguages;
-            langScrollView.multiSelect = true;
-
-            if (localizationTexts == null) localizationTexts = new List<LocalizationText>();
-            else
-                localizationTexts.Clear();
-
-            InitLanguageTextsFromMain();
-        }
-
-
-        private void OnGUI()
-        {
-            EditorGUILayout.BeginVertical();
-            if (EditorToolSettings.Instance.LanguagesSupport == null || EditorToolSettings.Instance.LanguagesSupport.Count < 1)
-            {
-                EditorGUILayout.HelpBox("多语言列表为空, 请在下方设置中添加语言", MessageType.Error);
-            }
-
-            DrawLocalizationTexts();
-            if (settingFoldout = EditorGUILayout.Foldout(settingFoldout, "展开设置项:"))
-            {
-                DrawSettingsPanel();
-            }
-            EditorGUILayout.BeginHorizontal("box");
-            {
-                var btHeight = GUILayout.Height(30);
-                if (GUILayout.Button(scanBtContent, btHeight))
-                {
-                    ScanAllLocalizationText();
-                }
-                if (GUILayout.Button(saveBtContent, btHeight))
-                {
-                    SaveAllLocalizationText();
-                }
-                DrawTranslateButton(btHeight);
-                EditorGUILayout.EndHorizontal();
-            }
-            EditorGUILayout.EndVertical();
-        }
-
-        private void DrawSettingsPanel()
-        {
-            EditorGUILayout.BeginVertical("box");
-            {
-                EditorGUILayout.BeginHorizontal();
-                {
-                    EditorGUILayout.LabelField("百度翻译设置:");
-                    if (EditorGUILayout.LinkButton("获取百度翻译API Key"))
-                    {
-                        Application.OpenURL("https://fanyi-api.baidu.com/product/11");
-                    }
-                    EditorGUILayout.EndHorizontal();
-                }
-
-                EditorGUILayout.BeginVertical(EditorStyles.helpBox);
-                {
-                    EditorGUILayout.Space(4);
-                    var titleWidth = GUILayout.Width(70);
-                    EditorGUILayout.BeginHorizontal();
-                    {
-                        EditorGUILayout.LabelField("APP ID:", titleWidth);
-                        EditorToolSettings.Instance.BaiduTransAppId = EditorGUILayout.TextField(EditorToolSettings.Instance.BaiduTransAppId);
-                        EditorGUILayout.EndHorizontal();
-                    }
-                    EditorGUILayout.BeginHorizontal();
-                    {
-                        EditorGUILayout.LabelField("密钥:", titleWidth);
-                        EditorToolSettings.Instance.BaiduTransSecretKey = EditorGUILayout.PasswordField(EditorToolSettings.Instance.BaiduTransSecretKey);
-                        EditorGUILayout.EndHorizontal();
-                    }
-                    EditorGUILayout.BeginHorizontal();
-                    {
-                        EditorGUILayout.LabelField("字节限长:", titleWidth);
-                        EditorToolSettings.Instance.BaiduTransMaxLength = EditorGUILayout.IntSlider(EditorToolSettings.Instance.BaiduTransMaxLength, LocalizationTextScanner.MinLength, LocalizationTextScanner.MaxLength);
-                        EditorGUILayout.EndHorizontal();
-                    }
-                    EditorGUILayout.Space(4);
-                    EditorGUILayout.EndVertical();
-                }
-                EditorGUILayout.Space(5);
-                langScrollViewPos = EditorGUILayout.BeginScrollView(langScrollViewPos, GUILayout.MaxHeight(200));
-                {
-                    langScrollView.DoLayoutList();
-                    EditorGUILayout.EndScrollView();
-                }
-                EditorGUILayout.EndVertical();
-            }
+            TranslationWorkbookService.Imported += OnImported;
+            Run(LoadSources);
         }
 
         private void OnDisable()
         {
+            TranslationWorkbookService.Imported -= OnImported;
             EditorToolSettings.Save();
         }
-        private void DrawTranslateButton(GUILayoutOption btHeight)
-        {
-            Rect buildRect = GUILayoutUtility.GetRect(transBtContent, dropDownBtStyle,
-                        btHeight);
-            Rect buildRectPopupButton = buildRect;
-            buildRectPopupButton.x += buildRect.width - 35;
-            buildRectPopupButton.width = 35;
 
-            if (EditorGUI.DropdownButton(buildRectPopupButton, GUIContent.none, FocusType.Passive,
-                GUIStyle.none))
-            {
-                GenericMenu menu = new GenericMenu();
-                menu.AddItem(transAllBtContent, false,
-                    () =>
-                    {
-                        TranslateLocalizationTexts(true);
-                    });
-                menu.DropDown(buildRect);
-            }
-            else if (GUI.Button(buildRect, transBtContent, dropDownBtStyle))
-            {
-                if (EditorUtility.DisplayDialog("多语言翻译", "确认开始一键翻译?", "是", "否"))
-                {
-                    TranslateLocalizationTexts(false);
-                }
-            }
-        }
-        private void InitLanguageTextsFromMain()
+        private void OnImported()
         {
-            if (EditorToolSettings.Instance.LanguagesSupport.Count > 0)
-            {
-                var mainLang = (Language)EditorToolSettings.Instance.LanguagesSupport[0];
-                EditorUtility.DisplayProgressBar("加载中...", $"初始化本地化文本列表:{mainLang}", 0.5f);
-                LocalizationTextScanner.LoadLanguageExcelTexts(mainLang, ref localizationTexts);
-                EditorUtility.ClearProgressBar();
-            }
+            if (!dirty) Run(LoadSources);
+            Repaint();
         }
-        /// <summary>
-        /// 展示本地化文本列表
-        /// </summary>
-        private void DrawLocalizationTexts()
+
+        private void LoadSources()
         {
-            EditorGUILayout.BeginVertical("box");
+            texts = TranslationWorkbookService.LoadSources();
+            loadedHash = CurrentHash();
+            scannedKeys = null;
+            dirty = false;
+        }
+
+        private static string CurrentHash() => TranslationWorkbookService.HasWorkbook ?
+            TranslationWorkbookService.Hash(TranslationWorkbook.ReadBytes(ConstEditor.TranslationWorkbookPath)) : null;
+
+        private void CheckVersion()
+        {
+            if (loadedHash != CurrentHash())
+                throw new InvalidOperationException("总表已被其他操作修改。请先重新载入总表，再扫描或导出，以免覆盖最新译文。");
+        }
+
+        private void OnGUI()
+        {
+            var settings = EditorToolSettings.Instance;
+            EditorGUILayout.HelpBox("① 扫描并补齐原文  →  ② 选择目标语言  →  ③ 导出总表交人工翻译  →  ④ 保存后自动生成", MessageType.Info);
+            using (new EditorGUI.DisabledScope(LocalizationTextScanner.IsTranslating))
             {
-                scrollViewPos = EditorGUILayout.BeginScrollView(scrollViewPos);
+                EditorGUI.BeginChangeCheck();
+                using (new EditorGUI.DisabledScope(TranslationWorkbookService.HasWorkbook))
                 {
-                    for (int i = 0; i < localizationTexts.Count; i++)
+                    var source = (Language)EditorGUILayout.EnumPopup("主语言", settings.TranslationSourceLanguage);
+                    if (source != Language.Unspecified && source != settings.TranslationSourceLanguage)
                     {
-                        var lanText = localizationTexts[i];
-                        EditorGUILayout.BeginHorizontal(EditorStyles.helpBox);
-                        {
-                            EditorGUILayout.LabelField(i.ToString(), GUILayout.Width(50));
-                            lanText.Locked = EditorGUILayout.ToggleLeft(lockedContent, lanText.Locked, GUILayout.Width(40));
-                            lanText.Key = EditorGUILayout.TextField(lanText.Key);
-                            GUILayout.Space(5);
-                            lanText.Value = EditorGUILayout.TextField(lanText.Value);
-                            EditorGUILayout.EndHorizontal();
-                        }
+                        settings.TranslationSourceLanguage = source;
+                        Run(LoadSources);
                     }
-                    EditorGUILayout.EndScrollView();
                 }
-                EditorGUILayout.EndVertical();
-            }
-        }
-
-
-        private void OnLangScrollViewRemoveBtClick(ReorderableList list)
-        {
-            for (int i = list.selectedIndices.Count - 1; i >= 0; i--)
-            {
-                RemoveLanguage(list.selectedIndices[i]);
-            }
-        }
-
-        private void DrawSupportLanguages(Rect rect, int index, bool isActive, bool isFocused)
-        {
-            if (index == 0)
-            {
-                var mainLangRect = rect;
-                mainLangRect.x += 5;
-                mainLangRect.width = mainLangRect.height = EditorGUIUtility.singleLineHeight;
-                GUI.DrawTexture(mainLangRect, mainLanguageIcon);
-            }
-            float mainLangIconWidth = EditorGUIUtility.singleLineHeight + 10;
-            rect.x += mainLangIconWidth;
-            rect.width -= mainLangIconWidth;
-            var item = EditorToolSettings.Instance.LanguagesSupport[index];
-
-            EditorGUI.LabelField(rect, ((Language)item).ToString());
-        }
-
-        private void OnLangScrollViewAddBtClick(ReorderableList list)
-        {
-            var unselectLanguagess = languageAllOptions.Where(lan => !EditorToolSettings.Instance.LanguagesSupport.Contains((int)lan));
-            var popLanguages = new GenericMenu();
-            foreach (var item in unselectLanguagess)
-            {
-                int curLang = (int)item;
-                popLanguages.AddItem(new GUIContent(item.ToString()), false, () =>
+                settings.TranslationAutoGenerate = EditorGUILayout.Toggle("总表保存后自动生成", settings.TranslationAutoGenerate);
+                if (EditorGUI.EndChangeCheck()) EditorToolSettings.Save();
+                EditorGUILayout.LabelField("总表位置", "AAAGameData/Translations/Localization.xlsx");
+                using (new EditorGUILayout.HorizontalScope())
                 {
-                    AddLanguage(curLang);
-                });
-            }
-            popLanguages.ShowAsContext();
-        }
-
-        private void DrawLanguageScrollViewHeader(Rect rect)
-        {
-            EditorGUI.LabelField(rect, langScrollViewTitle);
-        }
-
-        /// <summary>
-        /// 翻译
-        /// </summary>
-        private void TranslateLocalizationTexts(bool forceAll)
-        {
-            LocalizationTextScanner.TranslateAllLanguages(forceAll, (msg, total, curIdx) =>
-            {
-                EditorUtility.DisplayProgressBar($"翻译进度:{curIdx}/{total}", msg, curIdx / (float)total);
-            });
-            EditorUtility.ClearProgressBar();
-        }
-        /// <summary>
-        /// 保存Excel并导出json
-        /// </summary>
-        private void SaveAllLocalizationText()
-        {
-            if (localizationTexts.Count < 1)
-            {
-                return;
-            }
-            LocalizationTextScanner.Save2LanguagesExcel(localizationTexts, (str, total, cur) =>
-            {
-                EditorUtility.DisplayProgressBar($"进度({cur}/{total})", $"保存语言Excel: {str}", cur / (float)total);
-            });
-            EditorUtility.ClearProgressBar();
-        }
-
-        /// <summary>
-        /// 扫描全部国际化语言Key
-        /// </summary>
-        void ScanAllLocalizationText()
-        {
-            try
-            {
-                if (EditorToolSettings.Instance.LanguagesSupport != null && EditorToolSettings.Instance.LanguagesSupport.Count > 0)
-                {
-                    var mainLanguage = (Language)EditorToolSettings.Instance.LanguagesSupport[0];
-                    if (mainLanguage != Language.Unspecified)
-                        LocalizationTextScanner.LoadLanguageExcelTexts(mainLanguage, ref localizationTexts);
+                    if (GUILayout.Button("重新载入总表"))
+                    {
+                        if (!dirty || EditorUtility.DisplayDialog("重新载入", "放弃窗口中尚未导出的原文编辑并载入最新总表？", "重新载入", "取消")) Run(LoadSources);
+                    }
+                    using (new EditorGUI.DisabledScope(!TranslationWorkbookService.HasWorkbook))
+                        if (GUILayout.Button("定位总表")) EditorUtility.RevealInFinder(ConstEditor.TranslationWorkbookPath);
+                    if (GUILayout.Button("导入并生成…"))
+                    {
+                        string path = EditorUtility.OpenFilePanel("选择翻译完成的总表", Path.GetDirectoryName(ConstEditor.TranslationWorkbookPath), "xlsx");
+                        if (!string.IsNullOrEmpty(path)) Run(() => TranslationWorkbookService.Import(path));
+                    }
                 }
-                var textList = LocalizationTextScanner.ScanAllLocalizationText((dealFileName, totalCount, dealIdx) =>
+                showSettings = EditorGUILayout.Foldout(showSettings, "目标语言（已导出的语言列会保留，避免误删译文）", true);
+                if (showSettings) DrawLanguages();
+                using (new EditorGUILayout.HorizontalScope())
                 {
-                    EditorUtility.DisplayProgressBar($"扫描进度:({dealIdx}/{totalCount})", dealFileName, dealIdx / (float)totalCount);
-                });
-                LocalizationTextScanner.MergeTexts(textList, ref localizationTexts);
+                    sourceIsKey = EditorGUILayout.ToggleLeft("新增 Key 本身就是原文（仅确认后勾选）", sourceIsKey);
+                    if (GUILayout.Button("扫描文本", GUILayout.Width(110))) Run(Scan);
+                    if (GUILayout.Button("导出 / 更新总表", GUILayout.Width(150))) Run(Export);
+                }
+                EditorGUILayout.LabelField($"文本：{texts.Count} 条  |  缺少原文：{texts.Count(t => string.IsNullOrWhiteSpace(t.Value))} 条{(dirty ? "  |  尚未导出" : "")}");
+                filter = EditorGUILayout.TextField("筛选 Key / 原文", filter);
+                using (new EditorGUILayout.HorizontalScope())
+                {
+                    GUILayout.Label("锁定", GUILayout.Width(40));
+                    GUILayout.Label("Key（只读）", GUILayout.Width(260));
+                    GUILayout.Label(settings.TranslationSourceLanguage + " 原文");
+                }
+                textScroll = EditorGUILayout.BeginScrollView(textScroll);
+                foreach (var text in texts)
+                {
+                    if (!string.IsNullOrEmpty(filter) && text.Key.IndexOf(filter, StringComparison.OrdinalIgnoreCase) < 0 &&
+                        (text.Value ?? "").IndexOf(filter, StringComparison.OrdinalIgnoreCase) < 0) continue;
+                    using (new EditorGUILayout.HorizontalScope())
+                    {
+                        EditorGUI.BeginChangeCheck();
+                        text.Locked = EditorGUILayout.Toggle(text.Locked, GUILayout.Width(40));
+                        EditorGUILayout.SelectableLabel(text.Key, GUILayout.Width(260), GUILayout.Height(20));
+                        text.Value = EditorGUILayout.TextField(text.Value ?? "");
+                        if (EditorGUI.EndChangeCheck()) dirty = true;
+                    }
+                }
+                EditorGUILayout.EndScrollView();
+                EditorGUILayout.HelpBox(TranslationWorkbookService.LastMessage.Length > 1200 ? TranslationWorkbookService.LastMessage.Substring(0, 1200) + "\n完整信息见 Console。" : TranslationWorkbookService.LastMessage,
+                    TranslationWorkbookService.LastFailed ? MessageType.Warning : MessageType.Info);
+                showLegacy = EditorGUILayout.Foldout(showLegacy, "旧版分语言表 / GPT 翻译", true);
+                if (showLegacy) DrawLegacy();
             }
-            catch (Exception exp)
-            {
-                Debug.LogError($"扫描全部本地化本文报错:{exp.Message}");
-            }
+        }
 
-            EditorUtility.ClearProgressBar();
-        }
-        void AddLanguage(int languageEnum)
+        private void DrawLanguages()
         {
-            if (!EditorToolSettings.Instance.LanguagesSupport.Contains(languageEnum))
+            var settings = EditorToolSettings.Instance;
+            languageScroll = EditorGUILayout.BeginScrollView(languageScroll, GUILayout.MaxHeight(135));
+            for (int i = 0; i < settings.LanguagesSupport.Count; i++)
             {
-                EditorToolSettings.Instance.LanguagesSupport.Add(languageEnum);
+                var language = (Language)settings.LanguagesSupport[i];
+                if (language == settings.TranslationSourceLanguage) continue;
+                using (new EditorGUILayout.HorizontalScope())
+                {
+                    EditorGUILayout.LabelField(language.ToString());
+                    if (GUILayout.Button("移除选择", GUILayout.Width(80)))
+                    {
+                        settings.LanguagesSupport.RemoveAt(i--);
+                        EditorToolSettings.Save();
+                    }
+                }
+            }
+            EditorGUILayout.EndScrollView();
+            if (GUILayout.Button("添加目标语言"))
+            {
+                var menu = new GenericMenu();
+                foreach (Language language in Enum.GetValues(typeof(Language)))
+                {
+                    if (language == Language.Unspecified || language == settings.TranslationSourceLanguage || settings.LanguagesSupport.Contains((int)language)) continue;
+                    Language captured = language;
+                    menu.AddItem(new GUIContent(language.ToString()), false, () =>
+                    {
+                        settings.LanguagesSupport.Add((int)captured);
+                        EditorToolSettings.Save();
+                        Repaint();
+                    });
+                }
+                menu.ShowAsContext();
             }
         }
-        void RemoveLanguage(int idx)
+
+        private void Scan()
         {
-            var count = EditorToolSettings.Instance.LanguagesSupport.Count;
-            if (idx >= 0 && idx < count)
+            CheckVersion();
+            var found = LocalizationTextScanner.ScanAllLocalizationText((file, total, index) =>
+                EditorUtility.DisplayProgressBar("扫描文本", file, total == 0 ? 0 : index / (float)total));
+            scannedKeys = new HashSet<string>(found, StringComparer.Ordinal);
+            var existing = new HashSet<string>(texts.Select(t => t.Key), StringComparer.Ordinal);
+            int added = 0;
+            foreach (string key in found)
             {
-                EditorToolSettings.Instance.LanguagesSupport.RemoveAt(idx);
+                if (!existing.Add(key)) continue;
+                texts.Add(new LocalizationText { Key = key, Value = sourceIsKey ? key : "" });
+                added++;
             }
+            dirty = true;
+            TranslationWorkbookService.SetResult($"扫描完成：新增 {added} 条；未扫描到的旧条目将在导出时标为待清理，锁定条目保留。请补齐原文后导出。", false);
+        }
+
+        private void Export()
+        {
+            CheckVersion();
+            TranslationWorkbookService.Export(texts, scannedKeys);
+            loadedHash = CurrentHash();
+            dirty = false;
+        }
+
+        private void DrawLegacy()
+        {
+            EditorGUILayout.HelpBox("此处仅用于迁移前的分语言表流程。已有总表时，请统一在总表维护译文，避免双向覆盖。", MessageType.Info);
+            using (new EditorGUI.DisabledScope(TranslationWorkbookService.HasWorkbook))
+            {
+                var settings = EditorToolSettings.Instance;
+                settings.GptTranslationModel = EditorGUILayout.TextField("GPT 模型", settings.GptTranslationModel);
+                LocalizationTextScanner.TranslationApiKey = EditorGUILayout.PasswordField("API Key", LocalizationTextScanner.TranslationApiKey);
+                settings.GptTranslationMaxLength = EditorGUILayout.IntSlider("每批字符", settings.GptTranslationMaxLength, LocalizationTextScanner.MinLength, LocalizationTextScanner.MaxLength);
+                EditorGUILayout.HelpBox("API Key 仅保存在当前 Unity 会话；留空读取 OPENAI_API_KEY 环境变量。", MessageType.None);
+                using (new EditorGUILayout.HorizontalScope())
+                {
+                    if (GUILayout.Button("保存分语言表")) Run(() =>
+                    {
+                        settings.LanguagesSupport = TranslationWorkbookService.SelectedLanguages().Select(l => (int)l).ToList();
+                        LocalizationTextScanner.Save2LanguagesExcel(texts);
+                    });
+                    if (GUILayout.Button("GPT 补齐空译文")) Translate(false);
+                    if (GUILayout.Button("GPT 强制重译全部")) Translate(true);
+                }
+            }
+        }
+
+        private static void Translate(bool force)
+        {
+            if (!EditorUtility.DisplayDialog("GPT 翻译", force ? "使用 API 强制重译所有已有译文？" : "使用 API 翻译分语言表中的空白项？", "开始", "取消")) return;
+            EditorToolSettings.Instance.LanguagesSupport = TranslationWorkbookService.SelectedLanguages().Select(l => (int)l).ToList();
+            LocalizationTextScanner.TranslateAllLanguages(force, (message, total, index) =>
+                EditorUtility.DisplayProgressBar("GPT 翻译", message, total == 0 ? 0 : index / (float)total));
+        }
+
+        private static void Run(Action action)
+        {
+            try { action(); }
+            catch (Exception exception) { TranslationWorkbookService.SetResult(exception.Message, true); }
+            finally { EditorUtility.ClearProgressBar(); }
         }
     }
 }
-
