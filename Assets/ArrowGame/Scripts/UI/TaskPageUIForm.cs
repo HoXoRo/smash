@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using GameFramework.Event;
@@ -14,7 +14,6 @@ public partial class TaskPageUIForm : UIFormBase
     public const string P_FromHallTab = "FromHallTab";
 
     [SerializeField] private TaskItem taskItemPrefab;
-    [SerializeField] private ScrollRect taskScrollRect;
 
     private readonly List<TaskItem> taskItems = new List<TaskItem>();
     private static bool s_AdRequestInProgress;
@@ -37,11 +36,11 @@ public partial class TaskPageUIForm : UIFormBase
         GF.Event.Subscribe(TaskUpdateEventArgs.EventId, OnTaskUpdated);
         RefreshTaskList();
 
-        if (taskScrollRect != null && taskScrollRect.content != null)
+        if (varTaskScrollView != null && varTaskScrollView.content != null)
         {
-            LayoutRebuilder.ForceRebuildLayoutImmediate(taskScrollRect.content);
-            taskScrollRect.StopMovement();
-            taskScrollRect.verticalNormalizedPosition = 1f;
+            LayoutRebuilder.ForceRebuildLayoutImmediate(varTaskScrollView.content);
+            varTaskScrollView.StopMovement();
+            varTaskScrollView.verticalNormalizedPosition = 1f;
         }
     }
 
@@ -71,7 +70,7 @@ public partial class TaskPageUIForm : UIFormBase
             TaskReward task = tasks[index];
             taskItems[index].SetData(task, completedLevels,
                 task.TaskType == 2 && playerData.IsLevelTaskClaimed(task.Id),
-                playerData.GetTaskAdCooldownEnd(task.Id), OnClaimRequested);
+                playerData.GetTaskAdCooldownEnd(task.Id), OnClaimRequested, OnClickClose);
         }
     }
 
@@ -152,7 +151,7 @@ public partial class TaskPageUIForm : UIFormBase
 
     private void RefreshTaskList(int taskCount)
     {
-        if (taskItemPrefab == null || taskScrollRect == null || taskScrollRect.content == null)
+        if (taskItemPrefab == null || varTaskScrollView == null || varTaskScrollView.content == null)
         {
             Log.Error("TaskPageUIForm: Task item prefab, scroll rect and content must be assigned.");
             return;
@@ -168,7 +167,7 @@ public partial class TaskPageUIForm : UIFormBase
 
         while (taskItems.Count < taskCount)
         {
-            UIItemObject itemObject = SpawnItem<UIItemObject>(taskItemPrefab.gameObject, taskScrollRect.content);
+            UIItemObject itemObject = SpawnItem<UIItemObject>(taskItemPrefab.gameObject, varTaskScrollView.content);
             TaskItem taskItem = (TaskItem)itemObject.itemLogic;
             taskItem.transform.localScale = Vector3.one;
             taskItem.transform.localRotation = Quaternion.identity;

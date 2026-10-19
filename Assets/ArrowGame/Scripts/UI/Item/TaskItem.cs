@@ -7,13 +7,13 @@ using UnityEngine;
 
 public partial class TaskItem : UIItemBase
 {
-    [SerializeField] private TMPro.TextMeshProUGUI descriptionText;
-    [SerializeField] private GameObject claimedIndicator;
 
     private TaskReward task;
     private Action<TaskReward> onClaimRequested;
+    private Action onGoRequested;
     private long adCooldownEnd;
     private string readyAdText;
+    private UnityEngine.UI.Button adButton;
     private float nextAdRefresh;
 
     public int TaskId { get; private set; }
@@ -23,14 +23,17 @@ public partial class TaskItem : UIItemBase
         base.OnInit();
         varTaskProgress.interactable = false;
         readyAdText = varTxtAd.text;
-        varBtn_ad.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnClaimClicked);
+        adButton = varBtn_ad.GetComponent<UnityEngine.UI.Button>();
+        adButton.onClick.AddListener(OnClaimClicked);
         varBtn_claim.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnClaimClicked);
+        varBtn_go.onClick.AddListener(OnGoClicked);
     }
 
-    public void SetData(TaskReward task, int completedLevels, bool claimed, long cooldownEnd, Action<TaskReward> claimHandler)
+    public void SetData(TaskReward task, int completedLevels, bool claimed, long cooldownEnd, Action<TaskReward> claimHandler, Action goHandler)
     {
         this.task = task;
         onClaimRequested = claimHandler;
+        onGoRequested = goHandler;
         adCooldownEnd = cooldownEnd;
         TaskId = task.Id;
         bool isAdTask = task.TaskType == 1;
@@ -40,16 +43,25 @@ public partial class TaskItem : UIItemBase
             descriptionFormat = "Win {0} levels!";
         }
 
-        descriptionText.text = isAdTask ? "Watch an ad" : string.Format(descriptionFormat, task.Level);
+        if (isAdTask)
+        {
+            varInfoTxt.text  = string.Format(descriptionFormat, completedLevels);
+        }
+
         varRewardTxt.text = task.Reward.ToString();
         varTaskProgress.minValue = 0f;
         varTaskProgress.maxValue = Mathf.Max(1, task.Level);
         varTaskProgress.wholeNumbers = true;
-        varTaskProgress.SetValueWithoutNotify(Mathf.Clamp(completedLevels, 0, Mathf.Max(0, task.Level)));
-        varTaskProgress.gameObject.SetActive(!isAdTask);
-        claimedIndicator.SetActive(claimed);
+        int targetProgress = Mathf.Max(0, task.Level);
+        int currentProgress = Mathf.Clamp(completedLevels, 0, targetProgress);
+        varTaskProgress.SetValueWithoutNotify(currentProgress);
+        varTxtTaskProgress.text = $"{currentProgress}/{targetProgress}";
+        varClaimed.SetActive(claimed);
         varInfoTxt.gameObject.SetActive(!isAdTask);
-        varBtn_claim.SetActive(!isAdTask && !claimed);
+        bool isLevelTask = task.TaskType == 2;
+        bool isLevelTaskComplete = completedLevels >= task.Level;
+        varBtn_go.gameObject.SetActive(isLevelTask && !isLevelTaskComplete && !claimed);
+        varBtn_claim.SetActive(isLevelTask && isLevelTaskComplete && !claimed);
         varAdTxt.SetActive(isAdTask);
         varBtn_ad.SetActive(isAdTask);
         RefreshAdCountdown();
@@ -58,7 +70,13 @@ public partial class TaskItem : UIItemBase
     public void ClearClaimHandler()
     {
         onClaimRequested = null;
+        onGoRequested = null;
         task = null;
+    }
+
+    private void OnGoClicked()
+    {
+        if (task != null) onGoRequested?.Invoke();
     }
 
     private void OnClaimClicked()
@@ -77,6 +95,7 @@ public partial class TaskItem : UIItemBase
     {
         if (task == null || task.TaskType != 1) return;
         long remaining = Math.Max(0, adCooldownEnd - DateTimeOffset.UtcNow.ToUnixTimeSeconds());
+        adButton.interactable = remaining == 0;
         varTxtAd.text = remaining > 0 ? $"{remaining / 60:00}:{remaining % 60:00}" : readyAdText;
     }
 }

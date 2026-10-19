@@ -18,4 +18,6 @@ public partial class TaskItem
 	[SerializeField] private GameObject varClaimed = null;
 	[SerializeField] private TextMeshProUGUI varTxtAd = null;
 	[SerializeField] private Slider varTaskProgress = null;
+	[SerializeField] private Button varBtn_go = null;
+	[SerializeField] private TextMeshProUGUI varTxtTaskProgress = null;
 }
