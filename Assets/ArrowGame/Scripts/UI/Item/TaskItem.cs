@@ -22,7 +22,7 @@ public partial class TaskItem : UIItemBase
     {
         base.OnInit();
         varTaskProgress.interactable = false;
-        readyAdText = varTxtAd.text;
+        readyAdText = GF.Localization.GetString("free");
         adButton = varBtn_ad.GetComponent<UnityEngine.UI.Button>();
         adButton.onClick.AddListener(OnClaimClicked);
         varBtn_claim.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnClaimClicked);

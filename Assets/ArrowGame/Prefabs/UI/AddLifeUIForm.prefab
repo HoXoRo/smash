@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 2750540809541713799}
   - component: {fileID: 5477836970799245050}
   m_Layer: 5
-  m_Name: continueTxt
+  m_Name: titleTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087a56c75d247be4f8f7cf82ceb68e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Key: AddBallsUIForm.continueTxt
+  m_Key: AddLifeUIForm.titleTxt
 --- !u!1 &3210668222699132717
 GameObject:
   m_ObjectHideFlags: 0
