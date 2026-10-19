@@ -7,7 +7,6 @@ using UnityEngine;
 
 public partial class HomePageUIForm : UIFormBase
 {
-    const string GameplaySceneName = "Gameplay";
     private static bool isEnteringGameplay;
 
     protected override void OnInit(object userData)
@@ -31,13 +30,10 @@ public partial class HomePageUIForm : UIFormBase
 
     void OnPlayClicked()
     {
-        if (isEnteringGameplay) return;
+        if (isEnteringGameplay || PlayLoadingUIForm.IsLoading) return;
         if (!LifeHelper.HasLife())
         {
-            if (!GF.UI.HasUIForm(UIViews.AddLifeUIForm) && !GF.UI.IsLoadingUIForm(UIViews.AddLifeUIForm))
-            {
-                GF.UI.OpenUIForm(UIViews.AddLifeUIForm);
-            }
+            GF.UI.OpenUIForm(UIViews.AddLifeUIForm);
             return;
         }
         if (GetCurrentLevel() > 25)
@@ -55,7 +51,7 @@ public partial class HomePageUIForm : UIFormBase
 
     public static async UniTask<bool> TryEnterGameplayAsync(bool useRocket)
     {
-        if (isEnteringGameplay) return false;
+        if (isEnteringGameplay || PlayLoadingUIForm.IsLoading) return false;
         PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
         if (useRocket && !playerData.TryUseRocket()) return false;
         isEnteringGameplay = true;
@@ -63,14 +59,8 @@ public partial class HomePageUIForm : UIFormBase
         bool loaded = false;
         try
         {
-            string sceneAssetName = UtilityBuiltin.AssetsPath.GetScenePath(GameplaySceneName);
-            loaded = await GF.Scene.LoadSceneAwait(sceneAssetName);
-            if (!loaded) return false;
-            GF.UI.CloseUIForms(UIViews.PrelevelUIForm);
-            CloseHallTabAfterGameplayLoaded();
-            ArrowUITopbar.SetCoinVisible(false);
-            GF.UI.OpenUIForm(UIViews.PlayUIForm);
-            return true;
+            loaded = await PlayLoadingUIForm.LoadGameplayAsync();
+            return loaded;
         }
         catch (System.Exception exception)
         {
@@ -88,7 +78,7 @@ public partial class HomePageUIForm : UIFormBase
         }
     }
 
-    static void CloseHallTabAfterGameplayLoaded()
+    public static void CloseHallTabAfterGameplayLoaded()
     {
         string hallTabAsset = GF.UI.GetUIFormAssetName(UIViews.HallTabUIForm);
         if (string.IsNullOrEmpty(hallTabAsset))

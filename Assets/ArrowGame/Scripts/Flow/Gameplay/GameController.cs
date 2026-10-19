@@ -526,7 +526,9 @@ namespace Gameplay
 		private int _remainingMoves;
 
 
-		private bool _gameplayLocked;
+		private bool _gameplayLocked = true;
+
+		private bool _initializationStarted;
 
 		private bool _gameplayPointerStarted;
 
@@ -561,44 +563,45 @@ namespace Gameplay
 
 		private async void Start()
 		{
+			// The loading form owns normal entry; retain direct scene play in the editor.
+			if (PlayLoadingUIForm.IsLoading || _initializationStarted) return;
+			try
+			{
+				await PrepareGameplayAsync(this.GetCancellationTokenOnDestroy());
+				ExposeGameplay();
+			}
+			catch (OperationCanceledException) { }
+			catch (Exception exception) { UnityEngine.Debug.LogException(exception, this); }
+		}
+
+		public async UniTask PrepareGameplayAsync(System.Threading.CancellationToken cancellationToken)
+		{
+			_initializationStarted = true;
 			_gameplayLocked = true;
-			try
-			{
-				if (GF.Resource == null)
-				{
-					throw new InvalidOperationException("GF resource component is not initialized.");
-				}
-				LoadedObjectData = await GF.Resource.LoadAssetAwait<ObjectData>("Assets/ArrowGame/ScriptableAssets/Flow/ObjectData.asset");
-				_particleData = await GF.Resource.LoadAssetAwait<ParticleData>("Assets/ArrowGame/ScriptableAssets/Flow/ParticleData.asset");
-				LoadedPhysicsMaterial = await GF.Resource.LoadAssetAwait<PhysicsMaterial>("Assets/ArrowGame/Gameplay/PhysicMaterial/PhysicsMat.physicMaterial");
-			}
-			catch (Exception exception)
-			{
-				UnityEngine.Debug.LogException(exception, this);
-				return;
-			}
-			if (this == null)
-			{
-				return;
-			}
+			cancellationToken.ThrowIfCancellationRequested();
+			LoadedObjectData = await GF.Resource.LoadAssetAwait<ObjectData>("Assets/ArrowGame/ScriptableAssets/Flow/ObjectData.asset").AttachExternalCancellation(cancellationToken);
+			cancellationToken.ThrowIfCancellationRequested();
+			_particleData = await GF.Resource.LoadAssetAwait<ParticleData>("Assets/ArrowGame/ScriptableAssets/Flow/ParticleData.asset").AttachExternalCancellation(cancellationToken);
+			cancellationToken.ThrowIfCancellationRequested();
+			LoadedPhysicsMaterial = await GF.Resource.LoadAssetAwait<PhysicsMaterial>("Assets/ArrowGame/Gameplay/PhysicMaterial/PhysicsMat.physicMaterial").AttachExternalCancellation(cancellationToken);
+			cancellationToken.ThrowIfCancellationRequested();
+			if (LoadedObjectData == null || _particleData == null || LoadedPhysicsMaterial == null)
+				throw new InvalidOperationException("Gameplay resources could not be loaded.");
 			_analyticsHelper = new GameplayAnalyticsHelper();
-			PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
-			_levelIndex = playerData.LevelId;
-			_currentStageIndex = 0;
-			try
-			{
-				await LoadLevelAsync(_levelIndex);
-			}
-			catch (Exception exception)
-			{
-				UnityEngine.Debug.LogException(exception, this);
-				return;
-			}
-			if (this == null)
-			{
-				return;
-			}
+			_levelIndex = GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId;
+			await LoadLevelAsync(_levelIndex, cancellationToken);
+			cancellationToken.ThrowIfCancellationRequested();
 			_currentStage = LoadStage(_currentStageIndex);
+			UpdateRemainingMoves();
+			cannon?.InitializeBallPool(5);
+			cannon?.PrewarmBalls();
+			ServiceLocator.Get<ParticleController>()?.Initialize(_particleData);
+			AfterStageSetup();
+		}
+
+		public void ExposeGameplay()
+		{
+			PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
 			_activeStreakCount = StreakHelper.GetStreakCount();
 			StreakHelper.OnGameplayLevelStarted(_activeStreakCount);
 			_prelevelRocketSelected = playerData.PendingRocketUse;
@@ -606,14 +609,7 @@ namespace Gameplay
 			PlayUIForm.SetRocketUseCount(_prelevelRocketSelected ? 1 : 0);
 			PrelevelBoosterHelper.ClearSelection();
 			AfterLevelSetup();
-			AfterStageSetup();
-			if (!SceneHandler.IsInLoading)
-			{
-				OnGameplayExposed();
-				return;
-			}
-			_gameplayLocked = true;
-			SceneHandler.OnLoadingDisappear += OnGameplayExposed;
+			OnGameplayExposed();
 		}
 
 		private void OnGameplayExposed()
@@ -862,10 +858,6 @@ namespace Gameplay
 
 		private void AfterLevelSetup()
 		{
-			UpdateRemainingMoves();
-			cannon?.InitializeBallPool(5);
-			cannon?.PrewarmBalls();
-			ServiceLocator.Get<ParticleController>()?.Initialize(_particleData);
 			LifeHelper.LoseLife();
 			List<bool> prelevelBoostersUsed = new List<bool>
 			{
@@ -940,14 +932,18 @@ namespace Gameplay
 			}
 		}
 
-		public async UniTask LoadLevelAsync(int levelIndex)
+		public async UniTask LoadLevelAsync(int levelIndex, System.Threading.CancellationToken cancellationToken = default)
 		{
 			_levelIndex = levelIndex;
-			_levelData = await LevelLoader.GetLevelAsync(levelIndex);
+			_levelData = await LevelLoader.GetLevelAsync(levelIndex).AttachExternalCancellation(cancellationToken);
+			cancellationToken.ThrowIfCancellationRequested();
+			if (_levelData?.stages == null || _levelData.stages.Count == 0 || _levelData.stages[0] == null)
+				throw new InvalidOperationException("Level has no playable stages.");
 			_remainingMoves = _levelData != null ? _levelData.moveCount : 0;
 			_currentStageIndex = 0;
-			_collectionName = await LevelCollectionHelper.GetCollectionToUseAsync();
-			_collectionVersion = (await LevelCollectionHelper.GetMetaDataForCollectionAsync(_collectionName))?.version ?? 0;
+			_collectionName = await LevelCollectionHelper.GetCollectionToUseAsync().AttachExternalCancellation(cancellationToken);
+			cancellationToken.ThrowIfCancellationRequested();
+			_collectionVersion = (await LevelCollectionHelper.GetMetaDataForCollectionAsync(_collectionName).AttachExternalCancellation(cancellationToken))?.version ?? 0;
 		}
 
 		public LevelStage LoadStage(int stageIndex)

@@ -21,7 +21,7 @@ namespace Scene
 
 		private static int _musicSerialId;
 
-		public static bool IsInLoading => _loadingCanvas != null && _loadingCanvas.activeSelf;
+		public static bool IsInLoading => PlayLoadingUIForm.IsLoading || (_loadingCanvas != null && _loadingCanvas.activeSelf);
 
 		public static event Action<SceneType, SceneType> OnSceneChange;
 
@@ -49,6 +49,11 @@ namespace Scene
 		public static void LoadScene(SceneType nextScene, bool forceDisableLoading = false)
 		{
 			nextScene = ResolveAvailableScene(nextScene);
+			if (nextScene == SceneType.Gameplay)
+			{
+				HomePageUIForm.TryEnterGameplayAsync(false).Forget();
+				return;
+			}
 			if (IsInLoading || _isChangingScene)
 			{
 				return;
@@ -70,6 +75,24 @@ namespace Scene
 				return;
 			}
 			RoutineRunner.Instance.StartCoroutine(ChangeSceneWithoutLoading(currentScene, nextScene));
+		}
+
+		public static void BeginGameplayLoading()
+		{
+			Time.timeScale = 1f;
+			InventoryTrackerHelper.RemoveAllTrackers();
+			MenuController.IsAfterWin = false;
+			StopMusicSafely();
+			InvokeOnSceneChange(_currentScene, SceneType.Gameplay);
+			_currentScene = SceneType.Gameplay;
+		}
+
+		public static void FinishGameplayLoading(bool success)
+		{
+			Time.timeScale = 1f;
+			StopMusicSafely();
+			_currentScene = success ? SceneType.Gameplay : SceneType.Menu;
+			PlayMusicForCurrentSceneSafely();
 		}
 
 		private static IEnumerator ChangeSceneWithoutLoading(SceneType currentScene, SceneType nextScene)

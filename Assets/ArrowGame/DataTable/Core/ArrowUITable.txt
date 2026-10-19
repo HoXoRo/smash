@@ -37,3 +37,4 @@
 	30	加载界面	20	LoadingUIForm	False	2	False
 	31	Coin and Life bar	3	ArrowUITopbarSub	False	1	False
 	32	金币奖励界面	13	CoinRewardUIForm	False	2	False
+	33	玩法Loading界面	15	PlayLoadingUIForm	False	2	False
