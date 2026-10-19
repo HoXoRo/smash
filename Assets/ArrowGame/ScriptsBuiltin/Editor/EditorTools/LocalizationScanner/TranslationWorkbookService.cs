@@ -192,22 +192,24 @@ namespace UGF.EditorTools
                 catch (Exception exception)
                 {
                     attemptedHash = fingerprint;
-                    SetResult(exception.Message, true);
+                    SetResult(exception.Message, true, warningOnly: true);
                 }
             }
             catch (Exception exception)
             {
                 // A replaced or temporarily locked workbook is retried, without logging on every editor update.
-                if (++retries == 5) SetResult("读取总表失败，将在文件可用后重试：" + exception.Message, true);
+                if (++retries == 5) SetResult("读取总表失败，将在文件可用后重试：" + exception.Message, true, warningOnly: true);
                 changedAt = now;
             }
         }
 
-        public static void SetResult(string message, bool failed)
+        public static void SetResult(string message, bool failed, bool warningOnly = false)
         {
             LastMessage = message;
             LastFailed = failed;
-            if (failed) Debug.LogError(message); else Debug.Log(message);
+            if (failed && warningOnly) Debug.LogWarning(message);
+            else if (failed) Debug.LogError(message);
+            else Debug.Log(message);
         }
 
         private static bool SamePath(string a, string b) => string.Equals(Path.GetFullPath(a), Path.GetFullPath(b), StringComparison.OrdinalIgnoreCase);
