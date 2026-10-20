@@ -28,7 +28,9 @@ public static class GameFlowHelper
             if (!GF.UI.HasUIForm(UIViews.HallTabUIForm) &&
                 await GF.UI.OpenUIFormAwait(UIViews.HallTabUIForm) == null) return false;
 
-            GF.UI.CloseUIForm(sourceUIId);
+            // The source may already have closed with its parent while the hall was loading.
+            if (GF.UI.HasUIForm(sourceUIId) || GF.UI.IsLoadingUIForm(sourceUIId))
+                GF.UI.CloseUIForm(sourceUIId);
             if (PcardGiftRewardSession.Count > 0 &&
                 !GF.UI.HasUIForm(UIViews.PcardGiftUIForm) &&
                 !GF.UI.IsLoadingUIForm(UIViews.PcardGiftUIForm))
