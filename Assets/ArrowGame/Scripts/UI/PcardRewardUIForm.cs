@@ -115,7 +115,6 @@ public partial class PcardRewardUIForm : UIFormBase
         }
 
         m_IsClaiming = true;
-        claimButton.interactable = false;
         var player = GF.DataModel.GetOrCreate<PlayerDataModel>();
         m_AnimateClaim = player.PcardDisplayValue > 0f;
         m_ClaimedValue = PcardGiftRewardSession.Consume(m_RewardValues.Count);
