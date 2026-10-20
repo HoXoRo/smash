@@ -139,6 +139,60 @@ public class PlayerDataModel : DataModelStorageBase
 
     private float m_Pcard;
 
+    // Session-only display state: never serialize it into the real balance.
+    [JsonIgnore] public float PcardDisplayValue { get; private set; }
+    public event Action PcardDisplayChanged;
+    private RequestHandle m_PcardDisplayRequest;
+    private bool m_PcardStartupRequested;
+
+    public void RequestStartupPcardDisplay()
+    {
+        if (m_PcardStartupRequested) return;
+        m_PcardStartupRequested = true;
+        RequestPcardDisplay();
+    }
+
+    public void RequestPcardDisplay()
+    {
+        if (m_PcardDisplayRequest != null && !m_PcardDisplayRequest.IsCompleted) return;
+        m_PcardDisplayRequest = SimulatedRequestHelper.Send(
+            onSuccess: () => SetPcardDisplayValue(Pcard),
+            onFailure: reason => { },
+            showLoading: false);
+    }
+
+    public void SetPcardDisplayValue(float value)
+    {
+        PcardDisplayValue = Mathf.Clamp(value, 0f, Pcard);
+        PcardDisplayChanged?.Invoke();
+    }
+
+    /// <summary>Persist the reward before any request or visual effect.</summary>
+    public void CollectPcard(float value)
+    {
+        SetData(PlayerDataType.Pcard, Pcard + Mathf.Max(0f, value), false);
+        Save();
+        if (PcardDisplayValue == 0f) RequestPcardDisplay();
+    }
+
+    protected override void OnCreate(RefParams userdata)
+    {
+        m_PcardDisplayRequest?.Cancel();
+        m_PcardDisplayRequest = null;
+        m_PcardStartupRequested = false;
+        PcardDisplayValue = 0f;
+        PcardDisplayChanged = null;
+        base.OnCreate(userdata);
+    }
+
+    protected override void OnRelease()
+    {
+        m_PcardDisplayRequest?.Cancel();
+        m_PcardDisplayRequest = null;
+        PcardDisplayChanged = null;
+        base.OnRelease();
+    }
+
     private int m_Gems;
 
     private int m_LevelId;

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,11 +16,17 @@ public partial class PcardRewardUIForm : UIFormBase
     private readonly List<PcardRewardItem> m_Items = new List<PcardRewardItem>();
     private List<float> m_RewardValues;
     private bool m_IsClaiming;
+    private bool m_ClaimCompleted;
+    private bool m_AnimateClaim;
+    private float m_ClaimedValue;
 
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
         m_IsClaiming = false;
+        m_ClaimCompleted = false;
+        m_AnimateClaim = false;
+        m_ClaimedValue = 0f;
         m_RewardValues = PcardGiftRewardSession.GetSnapshot();
         CreateRewardItems();
     }
@@ -28,6 +34,13 @@ public partial class PcardRewardUIForm : UIFormBase
     protected override void OnClose(bool isShutdown, object userData)
     {
         DOTween.Kill(this);
+        // Closing during the gather animation must not lose the saved reward or leave stale display.
+        if (!isShutdown && m_IsClaiming && !m_ClaimCompleted && m_AnimateClaim)
+        {
+            m_ClaimCompleted = true;
+            var player = GF.DataModel.GetOrCreate<PlayerDataModel>();
+            ArrowUITopbar.CompletePcardDisplay(player);
+        }
         m_Items.Clear();
         base.OnClose(isShutdown, userData);
     }
@@ -103,6 +116,16 @@ public partial class PcardRewardUIForm : UIFormBase
 
         m_IsClaiming = true;
         claimButton.interactable = false;
+        var player = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        m_AnimateClaim = player.PcardDisplayValue > 0f;
+        m_ClaimedValue = PcardGiftRewardSession.Consume(m_RewardValues.Count);
+        player.CollectPcard(m_ClaimedValue);
+        if (!m_AnimateClaim)
+        {
+            m_ClaimCompleted = true;
+            GF.UI.Close(UIForm);
+            return;
+        }
 
         Vector3 gatherPosition = varContent.transform.position;
 
@@ -141,14 +164,12 @@ public partial class PcardRewardUIForm : UIFormBase
 
     private void CompleteClaim(Vector3 collectPosition)
     {
-        float rewardValue = PcardGiftRewardSession.Consume(m_RewardValues.Count);
-
-        // 由 Topbar 统一播放飞向 Pcard 卡槽的动画并更新数值。
-        GF.Event.Fire(this, RewardCollectedEventArgs.Create(
-            rewardValue,
-            collectPosition,
-            PlayerDataType.Pcard));
-
+        if (m_ClaimCompleted) return;
+        m_ClaimCompleted = true;
+        var player = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        // The reward is already saved. The topbar only owns its presentation.
+        if (!ArrowUITopbar.TryPlayPcardReward(m_ClaimedValue, collectPosition))
+            ArrowUITopbar.CompletePcardDisplay(player);
         GF.UI.Close(UIForm);
     }
 }

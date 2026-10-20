@@ -35,6 +35,7 @@ public partial class ArrowUITopbar : UIFormBase
     private Tween m_TxtUpGemTween;
     private Tween m_TxtUpPcardTween;
     public PlayerDataModel playerDm;
+    private int pcardAnimationVersion;
 
     protected override void OnInit(object userData)
     {
@@ -58,6 +59,7 @@ public partial class ArrowUITopbar : UIFormBase
        
 
         playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        playerDm.PcardDisplayChanged += OnPcardDisplayChanged;
         varTxtGem.text = CommonHelper.GetDollarString(playerDm.Dollars);
         RefreshPcardText();
         varLvobj.SetActive(Params.Get<VarBoolean>(P_EnableLv, false));
@@ -67,7 +69,7 @@ public partial class ArrowUITopbar : UIFormBase
         activeRewardCounts[PlayerDataType.Diamond] = 0;
         activeRewardCounts[PlayerDataType.Pcard] = 0;
         targetValues[PlayerDataType.Diamond] = playerDm.Dollars;
-        targetValues[PlayerDataType.Pcard] = playerDm.Pcard;
+        targetValues[PlayerDataType.Pcard] = playerDm.PcardDisplayValue;
         varGem.SetActive(CommonHelper.IsSpec());
 
         if (varGuideSpine != null)
@@ -95,12 +97,7 @@ public partial class ArrowUITopbar : UIFormBase
             if (pendingRewards.ContainsKey(PlayerDataType.Diamond) && pendingRewards[PlayerDataType.Diamond] > 0 && playerDm.Dollars < targetValues[PlayerDataType.Diamond] + pendingRewards[PlayerDataType.Diamond])
                 playerDm.SetData(PlayerDataType.Diamond, pendingRewards[PlayerDataType.Diamond] + playerDm.Dollars, false);
         }
-        if ((activeRewardCounts.ContainsKey(PlayerDataType.Pcard) && activeRewardCounts[PlayerDataType.Pcard] > 0) ||
-        (isRolling.ContainsKey(PlayerDataType.Pcard) && isRolling[PlayerDataType.Pcard]))
-        {
-            if (pendingRewards.ContainsKey(PlayerDataType.Pcard) && pendingRewards[PlayerDataType.Pcard] > 0 && playerDm.Pcard < targetValues[PlayerDataType.Pcard] + pendingRewards[PlayerDataType.Pcard])
-                playerDm.SetData(PlayerDataType.Pcard, pendingRewards[PlayerDataType.Pcard] + playerDm.Pcard, false);
-        }
+        FinishPcardAnimation();
         // 清理所有计数器
         activeRewardCounts.Clear();
         pendingRewards.Clear();
@@ -115,6 +112,7 @@ public partial class ArrowUITopbar : UIFormBase
         GF.Event.Unsubscribe(TreasureBoxRewardEventArgs.EventId, OnTreasureBoxReward);
         GF.Event.Unsubscribe(UserTypeChangeEventArgs.EventId, OnUserTypeChange);
         PcardGiftRewardSession.Changed -= OnGiftRewardsChanged;
+        if (playerDm != null) playerDm.PcardDisplayChanged -= OnPcardDisplayChanged;
         base.OnClose(isShutdown, userData);
     }
     protected override void InternalSetVisible(bool visible)
@@ -129,12 +127,7 @@ public partial class ArrowUITopbar : UIFormBase
                 if (pendingRewards.ContainsKey(PlayerDataType.Diamond) && pendingRewards[PlayerDataType.Diamond] > 0 && playerDm.Dollars < targetValues[PlayerDataType.Diamond] + pendingRewards[PlayerDataType.Diamond])
                     playerDm.SetData(PlayerDataType.Diamond, pendingRewards[PlayerDataType.Diamond] + playerDm.Dollars, false);
             }
-            if ((activeRewardCounts.ContainsKey(PlayerDataType.Pcard) && activeRewardCounts[PlayerDataType.Pcard] > 0) ||
-            (isRolling.ContainsKey(PlayerDataType.Pcard) && isRolling[PlayerDataType.Pcard]))
-            {
-                if (pendingRewards.ContainsKey(PlayerDataType.Pcard) && pendingRewards[PlayerDataType.Pcard] > 0 && playerDm.Pcard < targetValues[PlayerDataType.Pcard] + pendingRewards[PlayerDataType.Pcard])
-                    playerDm.SetData(PlayerDataType.Pcard, pendingRewards[PlayerDataType.Pcard] + playerDm.Pcard, false);
-            }
+            FinishPcardAnimation();
             // 清理所有计数器
             activeRewardCounts.Clear();
             pendingRewards.Clear();
@@ -204,11 +197,65 @@ public partial class ArrowUITopbar : UIFormBase
         GF.UI.OpenUIForm(UIViews.DebugUIForm);
     }
 
+    private void OnPcardDisplayChanged()
+    {
+        if (isRolling.TryGetValue(PlayerDataType.Pcard, out bool rolling) && rolling) return;
+        RefreshPcardText();
+        targetValues[PlayerDataType.Pcard] = playerDm.PcardDisplayValue;
+    }
+
+    private void FinishPcardAnimation()
+    {
+        const PlayerDataType type = PlayerDataType.Pcard;
+        bool pending = (pendingRewards.TryGetValue(type, out float amount) && amount > 0f)
+            || (isRolling.TryGetValue(type, out bool rolling) && rolling)
+            || (activeRewardCounts.TryGetValue(type, out int count) && count > 0);
+        pcardAnimationVersion++;
+        if (numberRollCoroutines.TryGetValue(type, out Coroutine routine) && routine != null)
+            StopCoroutine(routine);
+        numberRollCoroutines.Remove(type);
+        pendingRewards.Remove(type);
+        activeRewardCounts.Remove(type);
+        isRolling.Remove(type);
+        StopPcardUpFloatTween();
+        if (pending && playerDm != null && playerDm.PcardDisplayValue > 0f)
+            playerDm.SetPcardDisplayValue(playerDm.Pcard);
+    }
+
+    public static void CompletePcardDisplay(PlayerDataModel player)
+    {
+        var forms = GF.UI.GetUIForms(GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbar));
+        if (forms != null)
+            foreach (var form in forms)
+                if (form.Logic is ArrowUITopbar topbar) topbar.FinishPcardAnimation();
+        if (player.PcardDisplayValue > 0f) player.SetPcardDisplayValue(player.Pcard);
+    }
+
+    public static bool TryPlayPcardReward(float value, Vector3 worldPosition)
+    {
+        var forms = GF.UI.GetUIForms(GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbar));
+        if (forms == null) return false;
+        foreach (var form in forms)
+        {
+            if (!(form.Logic is ArrowUITopbar topbar) || !topbar.Visible || !topbar.gameObject.activeInHierarchy
+                || topbar.flyRewardItemPrefab == null || topbar.flyRewardParent == null
+                || !topbar.flyRewardParent.gameObject.activeInHierarchy
+                || topbar.GetTargetIcon(PlayerDataType.Pcard) == null || topbar.maxRewardCount <= 0)
+                continue;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                topbar.flyRewardParent as RectTransform,
+                RectTransformUtility.WorldToScreenPoint(null, worldPosition), null, out Vector2 localPoint);
+            topbar.AddPendingReward(PlayerDataType.Pcard, value, localPoint);
+            return true;
+        }
+        return false;
+    }
+
     void RefreshPcardText()
     {
         if (playerDm == null)
             playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
-        RefreshPcardText(playerDm.Pcard);
+        RefreshPcardText(playerDm.PcardDisplayValue);
     }
 
     void RefreshPcardText(float value)
@@ -325,6 +372,7 @@ public partial class ArrowUITopbar : UIFormBase
 
         // 生成多个飞行货币
         int rewardCount = UnityEngine.Random.Range(minRewardCount, maxRewardCount);
+        if (type == PlayerDataType.Pcard) rewardCount = Mathf.Max(1, rewardCount);
         activeRewardCounts[type] += rewardCount;  // 更新对应类型的计数器
 
         // 防止崩溃：在UI关闭或销毁时不再创建飞行货币
@@ -368,6 +416,7 @@ public partial class ArrowUITopbar : UIFormBase
             varCpEff.Play();
         }
 
+        int animationVersion = pcardAnimationVersion;
         // 创建飞行货币
         for (int i = 0; i < rewardCount; i++)
         {
@@ -394,6 +443,7 @@ public partial class ArrowUITopbar : UIFormBase
                     targetPosition,
                     () =>
                     {
+                        if (type == PlayerDataType.Pcard && animationVersion != pcardAnimationVersion) return;
                         if (activeRewardCounts.ContainsKey(type))
                         {
                             activeRewardCounts[type]--;
@@ -475,9 +525,11 @@ public partial class ArrowUITopbar : UIFormBase
             TextMeshProUGUI targetText = GetTargetText(type);
             float startValue = targetValues[type];
             float targetValue = startValue + pendingRewards[type];
+            if (type == PlayerDataType.Pcard) targetValue = Mathf.Min(targetValue, playerDm.Pcard);
             if (type != PlayerDataType.Gems)
                 targetText.text = FormatCurrencyValue(type, targetValue);
-            playerDm.SetData(type, targetValue, true);
+            if (type == PlayerDataType.Pcard) playerDm.SetPcardDisplayValue(targetValue);
+            else playerDm.SetData(type, targetValue, true);
             targetValues[type] = targetValue;
             pendingRewards[type] = 0f;
             isRolling[type] = false;
@@ -506,6 +558,7 @@ public partial class ArrowUITopbar : UIFormBase
 
         float startValue = targetValues[type];
         float targetValue = startValue + localPendingValue;
+        if (type == PlayerDataType.Pcard) targetValue = Mathf.Min(targetValue, playerDm.Pcard);
 
         //Log.Info($"[数字滚动] 类型:{type}, 起始值:{startValue}, 本次奖励:{localPendingValue}, 目标值:{targetValue}");
 
@@ -518,7 +571,8 @@ public partial class ArrowUITopbar : UIFormBase
         numberRollCoroutines.Remove(type);
         
         // 【关键修复】先更新玩家数据，再标记滚动结束
-        playerDm.SetData(type, targetValue, true);
+        if (type == PlayerDataType.Pcard) playerDm.SetPcardDisplayValue(targetValue);
+        else playerDm.SetData(type, targetValue, true);
         isRolling[type] = false;  // 标记滚动结束
         
         //Log.Info($"[数字滚动完成] 类型:{type}, 最终值:{targetValue}, 剩余待处理:{pendingRewards[type]}");
@@ -550,10 +604,7 @@ public partial class ArrowUITopbar : UIFormBase
                     varTxtGem.text = CommonHelper.GetDollarString(args.Value);
                     targetValues[PlayerDataType.Diamond] = args.Value;
                     break;
-                case PlayerDataType.Pcard:
-                    RefreshPcardText(args.Value);
-                    targetValues[PlayerDataType.Pcard] = args.Value;
-                    break;
+
             }
         }
         varLv.text = playerDm.LevelId.ToString();
@@ -592,7 +643,7 @@ public partial class ArrowUITopbar : UIFormBase
             case PlayerDataType.Diamond:
                 return playerDm.Dollars;
             case PlayerDataType.Pcard:
-                return playerDm.Pcard;
+                return playerDm.PcardDisplayValue;
             default:
                 return 0f;
         }

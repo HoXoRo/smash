@@ -10,6 +10,7 @@ using UnityGameFramework.Runtime;
 public partial class MakeupUIForm : UIFormBase
 {
     private RequestHandle request;
+    private PlayerDataModel displayPlayer;
     [SerializeField] private MakeupItem makeupItemPrefab;
 
     readonly List<MakeupItem> makeupItems = new List<MakeupItem>();
@@ -28,6 +29,8 @@ public partial class MakeupUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        displayPlayer = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        displayPlayer.PcardDisplayChanged += OnPcardDisplayChanged;
         request?.Cancel();
         if (varMakeupScrollRect != null) varMakeupScrollRect.gameObject.SetActive(false);
         RefreshGemText();
@@ -42,6 +45,8 @@ public partial class MakeupUIForm : UIFormBase
 
     protected override void OnClose(bool isShutdown, object userData)
     {
+        if (displayPlayer != null) displayPlayer.PcardDisplayChanged -= OnPcardDisplayChanged;
+        displayPlayer = null;
         request?.Cancel();
         request = null;
         makeupItems.Clear();
@@ -136,13 +141,19 @@ public partial class MakeupUIForm : UIFormBase
         varTxtGem.text = CommonHelper.GetDollarString(playerDm.Dollars);
     }
 
+    void OnPcardDisplayChanged()
+    {
+        RefreshPcardText();
+        RefreshValueText();
+    }
+
     void RefreshPcardText()
     {
         if (varTxtPcard == null)
             return;
 
         PlayerDataModel playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
-        varTxtPcard.text = CommonHelper.GetDollarString(playerDm.Pcard);
+        varTxtPcard.text = CommonHelper.GetDollarString(playerDm.PcardDisplayValue);
     }
 
     void RefreshValueText()
@@ -155,7 +166,7 @@ public partial class MakeupUIForm : UIFormBase
             return;
 
         PlayerDataModel playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
-        float value = makeupRatio > 0f ? playerDm.Pcard / makeupRatio : 0f;
+        float value = makeupRatio > 0f ? playerDm.PcardDisplayValue / makeupRatio : 0f;
         if (makeupRatio <= 0f)
             Log.Error("MakeupUIForm: MakeupRatio must be greater than zero.");
         varTxtValue.text = CommonHelper.GetDollarString(value, false);

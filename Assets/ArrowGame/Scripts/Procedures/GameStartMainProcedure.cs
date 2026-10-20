@@ -17,6 +17,7 @@ public class GameStartMainProcedure : ProcedureBase
         base.OnEnter(procedureOwner);
         procedure = procedureOwner;
         ShowLevel();
+        GF.DataModel.GetOrCreate<PlayerDataModel>().RequestStartupPcardDisplay();
         //var res = await GF.WebRequest.AddWebRequestAsync("https://blog.csdn.net/final5788");
         //Log.Info(Utility.Converter.GetString(res.Bytes));
     }
