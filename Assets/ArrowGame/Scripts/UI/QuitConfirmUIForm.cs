@@ -1,4 +1,4 @@
-﻿using Cysharp.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
@@ -50,32 +50,10 @@ public partial class QuitConfirmUIForm : UIFormBase
         m_IsQuitting = true;
         Interactable = false;
 
-        try
-        {
-            string sceneAssetName = UtilityBuiltin.AssetsPath.GetScenePath("Gameplay");
-            if (!await GF.Scene.UnLoadSceneAwait(sceneAssetName))
-            {
-                m_IsQuitting = false;
-                Interactable = true;
-                return;
-            }
-        }
-        catch (System.Exception exception)
+        if (!await GameFlowHelper.ReturnToHallAsync(Id))
         {
             m_IsQuitting = false;
             Interactable = true;
-            Log.Error(exception.ToString());
-            return;
-        }
-
-        GF.UI.CloseUIForm(Id);
-        GF.UI.CloseUIForms(UIViews.SettingPageUIForm);
-        GF.UI.CloseUIForms(UIViews.PlayUIForm);
-
-        if (!GF.UI.HasUIForm(UIViews.HallTabUIForm) &&
-            !GF.UI.IsLoadingUIForm(UIViews.HallTabUIForm))
-        {
-            GF.UI.OpenUIForm(UIViews.HallTabUIForm);
         }
     }
 }

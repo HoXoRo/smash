@@ -1388,12 +1388,23 @@ namespace Gameplay
 					return;
 				}
 
-				UIParams uiParams = UIParams.Create();
-				uiParams.Set<VarInt32>(LevelCompleteUIForm.P_LevelId, _levelIndex);
-				VarAction onNext = ReferencePool.Acquire<VarAction>();
-				onNext.Value = () => SceneHandler.LoadScene(SceneType.Gameplay, false);
-				uiParams.Set<VarAction>(LevelCompleteUIForm.P_OnNext, onNext);
-				GF.UI.OpenUIForm(UIViews.LevelCompleteUIForm, uiParams);
+				System.Action showLevelComplete = () =>
+				{
+					if (!this || !isActiveAndEnabled) return;
+					UIParams uiParams = UIParams.Create();
+					uiParams.Set<VarInt32>(LevelCompleteUIForm.P_LevelId, _levelIndex);
+					VarAction onNext = ReferencePool.Acquire<VarAction>();
+					onNext.Value = () => SceneHandler.LoadScene(SceneType.Gameplay, false);
+					uiParams.Set<VarAction>(LevelCompleteUIForm.P_OnNext, onNext);
+					GF.UI.OpenUIForm(UIViews.LevelCompleteUIForm, uiParams);
+				};
+				if (PcardGiftRewardSession.Count > 0)
+				{
+					UIParams giftParams = UIParams.Create();
+					giftParams.CloseCallback = _ => showLevelComplete();
+					if (GF.UI.OpenUIForm(UIViews.PcardGiftUIForm, giftParams) >= 0) return;
+				}
+				showLevelComplete();
 			});
 		}
 

@@ -95,6 +95,15 @@ namespace Scene
 			PlayMusicForCurrentSceneSafely();
 		}
 
+        public static void FinishReturnToHall()
+        {
+            Time.timeScale = 1f;
+            MenuController.IsAfterWin = false;
+            StopMusicSafely();
+            InvokeOnSceneChange(_currentScene, SceneType.Menu);
+            _currentScene = SceneType.Menu;
+            PlayMusicForCurrentSceneSafely();
+        }
 		private static IEnumerator ChangeSceneWithoutLoading(SceneType currentScene, SceneType nextScene)
 		{
 			try

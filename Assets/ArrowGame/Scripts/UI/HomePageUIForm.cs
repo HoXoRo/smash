@@ -51,7 +51,7 @@ public partial class HomePageUIForm : UIFormBase
 
     public static async UniTask<bool> TryEnterGameplayAsync(bool useRocket)
     {
-        if (isEnteringGameplay || PlayLoadingUIForm.IsLoading) return false;
+        if (isEnteringGameplay || PlayLoadingUIForm.IsLoading || GameFlowHelper.IsReturningToHall) return false;
         PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
         if (useRocket && !playerData.TryUseRocket()) return false;
         isEnteringGameplay = true;

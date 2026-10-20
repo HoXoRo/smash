@@ -105,29 +105,25 @@ public partial class AddBallsUIForm : UIFormBase
     {
         isBusy = true;
         RefreshButtons();
-        onQuit?.Invoke();
-        onQuit = null;
+        bool success = false;
         try
         {
-            string sceneAssetName = UtilityBuiltin.AssetsPath.GetScenePath("Gameplay");
-            if (!await GF.Scene.UnLoadSceneAwait(sceneAssetName))
-            {
-                isBusy = false;
-                RefreshButtons();
-                return;
-            }
+            Action quit = onQuit;
+            onQuit = null;
+            quit?.Invoke();
+            success = await GameFlowHelper.ReturnToHallAsync(Id);
         }
         catch (Exception exception)
         {
-            isBusy = false;
-            RefreshButtons();
             Log.Error(exception.ToString());
-            return;
         }
-
-        GF.UI.CloseUIForm(Id);
-        GF.UI.CloseUIForms(UIViews.SettingPageUIForm);
-        GF.UI.CloseUIForms(UIViews.PlayUIForm);
-        GF.UI.OpenUIForm(UIViews.HallTabUIForm);
+        finally
+        {
+            if (!success)
+            {
+                isBusy = false;
+                RefreshButtons();
+            }
+        }
     }
 }

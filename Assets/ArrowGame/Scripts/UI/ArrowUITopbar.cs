@@ -82,7 +82,6 @@ public partial class ArrowUITopbar : UIFormBase
         m_TxtUpPcardRestPos = varTxtUpPcard.rectTransform.anchoredPosition;
         varTxtUpPcard.gameObject.SetActive(false);
         RefreshGiftCount();
-        TryOpenGiftForm();
         //适配刘海屏
         // float safeArea = Mathf.Max(0, Screen.height - Screen.safeArea.yMax);
         // bool isLiuhai = safeArea != 0;
@@ -277,16 +276,6 @@ public partial class ArrowUITopbar : UIFormBase
         {
             varTxtGiftCount.text = $"x{PcardGiftRewardSession.Count}";
         }
-    }
-
-    private void TryOpenGiftForm()
-    {
-        if (PcardGiftRewardSession.Count <= 0)
-        {
-            return;
-        }
-
-        GF.UI.OpenUIForm(UIViews.PcardGiftUIForm);
     }
 
     private void OnUserTypeChange(object sender, GameEventArgs e)
@@ -665,10 +654,6 @@ public partial class ArrowUITopbar : UIFormBase
         else if (btSelf != null && btSelf.name == "Pcardbutton")
         {
             OpenMakeupUIForm();
-        }
-        else if (btSelf != null && btSelf.name == "GiftButton")
-        {
-            TryOpenGiftForm();
         }
     }
     protected override void OnButtonClick(object sender, string btSelf)
