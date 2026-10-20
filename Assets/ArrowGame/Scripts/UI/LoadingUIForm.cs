@@ -11,9 +11,11 @@ public partial class LoadingUIForm : UIFormBase
 {
     public const string P_Duration = "Duration";
     public const string P_OnClosed = "OnClosed";
+    public const string P_ManualClose = "ManualClose";
 
     private float remainingTime;
     private bool isClosing;
+    private bool manualClose;
     private Action onClosed;
 
     protected override void OnOpen(object userData)
@@ -21,6 +23,7 @@ public partial class LoadingUIForm : UIFormBase
         base.OnOpen(userData);
         remainingTime = Mathf.Max(0f, Params.Get<VarSingle>(P_Duration)?.Value ?? 0f);
         onClosed = Params.Get<VarAction>(P_OnClosed)?.Value;
+        manualClose = Params.Get<VarBoolean>(P_ManualClose)?.Value ?? false;
         isClosing = false;
         varLoading.transform.localRotation = Quaternion.identity;
     }
@@ -30,6 +33,7 @@ public partial class LoadingUIForm : UIFormBase
         base.OnUpdate(elapseSeconds, realElapseSeconds);
         if (isClosing) return;
         varLoading.transform.Rotate(0f, 0f, -360f * realElapseSeconds);
+        if (manualClose) return;
         remainingTime -= realElapseSeconds;
         if (remainingTime > 0f) return;
         isClosing = true;

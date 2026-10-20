@@ -5,6 +5,7 @@ using UnityEngine.UI;
 [AddComponentMenu("UI/MakeupRecordUIForm")]
 public partial class MakeupRecordUIForm : UIFormBase
 {
+    private RequestHandle request;
     [SerializeField] private MakeupRecordItem makeupRecordItemPrefab;
 
     MakeupRecordItem m_RecordItem;
@@ -19,14 +20,27 @@ public partial class MakeupRecordUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
-        EnsureRecordItem();
-        ResetRecordScroll();
+        request?.Cancel();
+        if (varList != null) varList.gameObject.SetActive(false);
+        request = SimulatedRequestHelper.Send(
+            onSuccess: ShowContent,
+            onFailure: reason => GF.UI.ShowToast("Network error"),
+            showLoading: true);
     }
 
     protected override void OnClose(bool isShutdown, object userData)
     {
+        request?.Cancel();
+        request = null;
         m_RecordItem = null;
         base.OnClose(isShutdown, userData);
+    }
+
+    void ShowContent()
+    {
+        EnsureRecordItem();
+        if (varList != null) varList.gameObject.SetActive(true);
+        ResetRecordScroll();
     }
 
     void EnsureRecordItem()

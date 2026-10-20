@@ -9,6 +9,7 @@ using UnityGameFramework.Runtime;
 [AddComponentMenu("UI/MakeupUIForm")]
 public partial class MakeupUIForm : UIFormBase
 {
+    private RequestHandle request;
     [SerializeField] private MakeupItem makeupItemPrefab;
 
     readonly List<MakeupItem> makeupItems = new List<MakeupItem>();
@@ -27,18 +28,31 @@ public partial class MakeupUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        request?.Cancel();
+        if (varMakeupScrollRect != null) varMakeupScrollRect.gameObject.SetActive(false);
         RefreshGemText();
         RefreshPcardText();
         RefreshValueText();
         RefreshAccountText();
-        RefreshMakeupList();
-        ResetMakeupScroll();
+        request = SimulatedRequestHelper.Send(
+            onSuccess: ShowContent,
+            onFailure: reason => GF.UI.ShowToast("Network error"),
+            showLoading: true);
     }
 
     protected override void OnClose(bool isShutdown, object userData)
     {
+        request?.Cancel();
+        request = null;
         makeupItems.Clear();
         base.OnClose(isShutdown, userData);
+    }
+
+    void ShowContent()
+    {
+        RefreshMakeupList();
+        if (varMakeupScrollRect != null) varMakeupScrollRect.gameObject.SetActive(true);
+        ResetMakeupScroll();
     }
 
     void OnClickInput()
