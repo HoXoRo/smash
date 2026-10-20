@@ -43,9 +43,9 @@ public partial class TaskItem : UIItemBase
             descriptionFormat = "Win {0} levels!";
         }
 
-        if (isAdTask)
+        if (!isAdTask)
         {
-            varInfoTxt.text  = string.Format(descriptionFormat, completedLevels);
+            varInfoTxt.text  = string.Format(descriptionFormat, task.Level);
         }
 
         varRewardTxt.text = task.Reward.ToString();

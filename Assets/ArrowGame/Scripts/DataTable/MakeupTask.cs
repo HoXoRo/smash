@@ -50,7 +50,7 @@ public class MakeupTask : DataRowBase
         /// <summary>
         /// 奖励值
         /// </summary>
-        public float Reward
+        public float Pcard
         {
             get;
             private set;
@@ -79,7 +79,7 @@ public class MakeupTask : DataRowBase
             index++;
             Level = int.Parse(columnStrings[index++]);
             Mon = float.Parse(columnStrings[index++]);
-            Reward = float.Parse(columnStrings[index++]);
+            Pcard = float.Parse(columnStrings[index++]);
             Rate = float.Parse(columnStrings[index++]);
             index++;
 
@@ -95,7 +95,7 @@ public class MakeupTask : DataRowBase
                     m_Id = binaryReader.Read7BitEncodedInt32();
                     Level = binaryReader.Read7BitEncodedInt32();
                     Mon = binaryReader.ReadSingle();
-                    Reward = binaryReader.ReadSingle();
+                    Pcard = binaryReader.ReadSingle();
                     Rate = binaryReader.ReadSingle();
                 }
             }

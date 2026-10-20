@@ -12,4 +12,5 @@ public partial class MakeupItem
 	[SerializeField] private TextMeshProUGUI varTxtReward = null;
 	[SerializeField] private TextMeshProUGUI varTxtLv = null;
 	[SerializeField] private Button varBtnCashout = null;
+	[SerializeField] private GameObject varImgNo = null;
 }
