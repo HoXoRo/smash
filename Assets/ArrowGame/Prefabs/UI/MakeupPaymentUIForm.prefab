@@ -428,6 +428,16 @@ MonoBehaviour:
     - {fileID: 2113789384436312077}
     VarType: UnityEngine.UI.Button
     VarPrefix: 0
+  - VarName: varBtnCard
+    Targets:
+    - {fileID: 5899960498073581342}
+    VarType: UnityEngine.UI.Button
+    VarPrefix: 0
+  - VarName: varBtnICRC
+    Targets:
+    - {fileID: 3460488424189633456}
+    VarType: UnityEngine.UI.Button
+    VarPrefix: 0
   m_UIAnimationType: 0
   m_OpenAnimation: {fileID: 0}
   m_CloseAnimation: {fileID: 0}
@@ -435,6 +445,8 @@ MonoBehaviour:
   m_CloseAnimationName: 
   varTxtReward: {fileID: 3188705274879000496}
   varBtnClose: {fileID: 1711710612126112412}
+  varBtnCard: {fileID: 4821052075693807417}
+  varBtnICRC: {fileID: 2200355864230838250}
 --- !u!1 &2425047852512879692
 GameObject:
   m_ObjectHideFlags: 0

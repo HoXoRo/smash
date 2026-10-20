@@ -23,18 +23,19 @@
 	16	奖励领取界面	13	ArrowRewardUIForm	False	2	False
 	17	提现界面	15	MakeupUIForm	False	2	False
 	18	提现方式界面	16	MakeupPaymentUIForm	False	2	False
-	19	提现信息界面	16	MakeupInfoUIForm	False	2	False
-	20	提现记录界面	17	MakeupRecordUIForm	False	2	False
-	21	玩法界面	12	PlayUIForm	False	2	False
-	22	p卡领取界面	13	PcardRewardUIForm	False	2	False
-	23	p卡领取界面	13	PcardGiftUIForm	False	2	False
-	24	测试界面	30	DebugUIForm	False	2	False
-	25	通关界面	13	LevelCompleteUIForm	False	2	False
-	26	补充生命值界面	13	AddLifeUIForm	False	2	False
-	27	补充球界面	13	AddBallsUIForm	False	2	False
-	28	补充道具界面	14	AddPropUIForm	False	2	False
-	29	关卡准备界面	13	PrelevelUIForm	False	2	False
-	30	加载界面	20	LoadingUIForm	False	2	False
-	31	Coin and Life bar	3	ArrowUITopbarSub	False	1	False
-	32	金币奖励界面	13	CoinRewardUIForm	False	2	False
-	33	玩法Loading界面	15	PlayLoadingUIForm	False	2	False
+	19	提现方式成功界面	17	MakeupPaymentEndUIForm	False	2	False
+	20	提现信息界面	16	MakeupInfoUIForm	False	2	False
+	21	提现记录界面	17	MakeupRecordUIForm	False	2	False
+	22	玩法界面	12	PlayUIForm	False	2	False
+	23	p卡领取界面	13	PcardRewardUIForm	False	2	False
+	24	p卡领取界面	13	PcardGiftUIForm	False	2	False
+	25	测试界面	30	DebugUIForm	False	2	False
+	26	通关界面	13	LevelCompleteUIForm	False	2	False
+	27	补充生命值界面	13	AddLifeUIForm	False	2	False
+	28	补充球界面	13	AddBallsUIForm	False	2	False
+	29	补充道具界面	14	AddPropUIForm	False	2	False
+	30	关卡准备界面	13	PrelevelUIForm	False	2	False
+	31	加载界面	20	LoadingUIForm	False	2	False
+	32	Coin and Life bar	3	ArrowUITopbarSub	False	1	False
+	33	金币奖励界面	13	CoinRewardUIForm	False	2	False
+	34	玩法Loading界面	15	PlayLoadingUIForm	False	2	False

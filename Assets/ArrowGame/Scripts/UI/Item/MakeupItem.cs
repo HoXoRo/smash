@@ -91,6 +91,7 @@ public partial class MakeupItem : UIItemBase
 
         var uiParams = UIParams.Create();
         uiParams.Set<VarString>(MakeupPaymentUIForm.P_RewardText, m_RewardText);
+        uiParams.Set<VarSingle>(MakeupPaymentUIForm.P_RequiredPcard, m_RequiredAmount * GF.Config.GetFloat("MakeupRatio"));
         GF.UI.OpenUIForm(UIViews.MakeupPaymentUIForm, uiParams);
     }
 }
