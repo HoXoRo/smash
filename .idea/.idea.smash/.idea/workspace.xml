@@ -11,15 +11,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48c1c3b4-2b47-4b58-848e-c5dcf45a4647" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/ComicRelief-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/ComicRelief-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/Japanese SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/Japanese SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Editor/Common/EditorToolSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Editor/Common/EditorToolSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Editor/EditorTools/LocalizationScanner/LocalizationTextScanner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Editor/EditorTools/LocalizationScanner/LocalizationTextScanner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Editor/EditorTools/LocalizationScanner/LocalizationTextScannerEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Editor/EditorTools/LocalizationScanner/LocalizationTextScannerEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/Cannon.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Audio/Cannon.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/Gameplay_Music.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/Gameplay_Music.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/Homepage_Music.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/Homepage_Music.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/auto_erasure.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/auto_erasure.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/clean1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/clean1.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/clean2.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/clean2.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/clean3.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/clean3.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/clean4.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/clean4.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/clean5.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/clean5.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/clean6.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/clean6.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/clean7.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/clean7.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/digitalScroll.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/digitalScroll.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/erasure.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/erasure.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/error.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/error.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/transition.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/arrowPlay/transition.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Audio/bgm/bgm.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Audio/bgm/bgm.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Audio/AudioType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Audio/AudioType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Scene/SceneHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Scene/SceneHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Procedures/GameStartMainProcedure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Procedures/GameStartMainProcedure.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/UnityGameFramework/Configs/ResourceCollection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UnityGameFramework/Configs/ResourceCollection.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/UnityGameFramework/Configs/ResourceRuleEditor.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UnityGameFramework/Configs/ResourceRuleEditor.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorToolSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorToolSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

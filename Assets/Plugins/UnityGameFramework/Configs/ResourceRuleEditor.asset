@@ -122,7 +122,7 @@ MonoBehaviour:
     loadType: 3
     packed: 1
     filterType: 0
-    searchPatterns: '*.ogg'
+    searchPatterns: '*.ogg;*.mp3'
   - valid: 1
     name: FlowData
     variant:

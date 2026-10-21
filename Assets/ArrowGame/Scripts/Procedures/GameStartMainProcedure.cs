@@ -18,8 +18,8 @@ public class GameStartMainProcedure : ProcedureBase
         procedure = procedureOwner;
         ShowLevel();
         GF.DataModel.GetOrCreate<PlayerDataModel>().RequestStartupPcardDisplay();
-        //var res = await GF.WebRequest.AddWebRequestAsync("https://blog.csdn.net/final5788");
-        //Log.Info(Utility.Converter.GetString(res.Bytes));
+        
+        GF.Sound.PlayBGM("bgm/bgm.mp3");
     }
 
     protected override void OnUpdate(IFsm<IProcedureManager> procedureOwner, float elapseSeconds, float realElapseSeconds)

@@ -208,10 +208,10 @@ namespace Scene
 		{
 			try
 			{
-				if (_musicSerialId == 0 && GF.Sound != null && GF.Sound.HasSoundGroup(Const.SoundGroup.Music.ToString()))
+				/*if (_musicSerialId == 0 && GF.Sound != null && GF.Sound.HasSoundGroup(Const.SoundGroup.Music.ToString()))
 				{
-					_musicSerialId = GF.Sound.PlayBGM(_currentScene == SceneType.Gameplay ? "Gameplay_Music.ogg" : "Homepage_Music.ogg");
-				}
+				 	_musicSerialId = GF.Sound.PlayBGM("bgm/bgm.mp3");
+				}*/
 			}
 			catch (Exception exception)
 			{
