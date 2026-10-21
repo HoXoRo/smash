@@ -20,10 +20,10 @@ MonoBehaviour:
   RevealFolder: 1
   UseResourceRule: 0
   AndroidUseKeystore: 0
-  AndroidKeystoreName: keytore\arrowmeadowkey.keystore
-  KeystorePass: arrowmeadow
-  AndroidKeyAliasName: arrowmeadow
-  KeyAliasPass: arrowmeadow
+  AndroidKeystoreName: keytore\smashcashrush.keystore
+  KeystorePass: smashcashrush
+  AndroidKeyAliasName: smashcashrush
+  KeyAliasPass: smashcashrush
   ResourceBuildDir: AB
   AppBuildDir: BuildApp
   EnableObfuz: 1
