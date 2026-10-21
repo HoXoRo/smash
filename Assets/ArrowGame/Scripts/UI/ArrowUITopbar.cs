@@ -55,7 +55,8 @@ public partial class ArrowUITopbar : UIFormBase
         else hiddenByPages.Remove(page);
         if (hidden && blockCoinRewards) rewardsBlockedByPages.Add(page);
         else rewardsBlockedByPages.Remove(page);
-        var forms = GF.UI.GetUIForms(GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbar));
+        string assetName = GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbar);
+        var forms = string.IsNullOrEmpty(assetName) ? null : GF.UI.GetUIForms(assetName);
         if (forms != null)
             foreach (var form in forms)
                 if (form.Logic is ArrowUITopbar topbar) topbar.RefreshPageVisibility();
@@ -257,7 +258,8 @@ public partial class ArrowUITopbar : UIFormBase
 
     public static void CompletePcardDisplay(PlayerDataModel player)
     {
-        var forms = GF.UI.GetUIForms(GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbar));
+        string assetName = GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbar);
+        var forms = string.IsNullOrEmpty(assetName) ? null : GF.UI.GetUIForms(assetName);
         if (forms != null)
             foreach (var form in forms)
                 if (form.Logic is ArrowUITopbar topbar) topbar.FinishPcardAnimation();
@@ -266,7 +268,8 @@ public partial class ArrowUITopbar : UIFormBase
 
     public static bool TryPlayPcardReward(float value, Vector3 worldPosition)
     {
-        var forms = GF.UI.GetUIForms(GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbar));
+        string assetName = GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbar);
+        var forms = string.IsNullOrEmpty(assetName) ? null : GF.UI.GetUIForms(assetName);
         if (forms == null) return false;
         foreach (var form in forms)
         {

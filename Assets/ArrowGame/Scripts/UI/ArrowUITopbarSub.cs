@@ -31,7 +31,8 @@ public partial class ArrowUITopbarSub : UIFormBase
 
     public static void RefreshPageVisibility()
     {
-        var forms = GF.UI.GetUIForms(GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbarSub));
+        string assetName = GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbarSub);
+        var forms = string.IsNullOrEmpty(assetName) ? null : GF.UI.GetUIForms(assetName);
         if (forms == null) return;
         foreach (var form in forms)
         {
