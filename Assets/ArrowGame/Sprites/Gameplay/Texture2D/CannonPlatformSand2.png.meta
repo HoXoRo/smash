@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 61b0d02268ef4dc4c95b26e6fa0aac03
+guid: 74173f00f555c9b43b434a61ff08dac9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -30,7 +30,7 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: 50
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
@@ -39,17 +39,17 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 0
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 1
-  spriteExtrude: 0
-  spriteMeshType: 1
-  alignment: 9
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 73, y: 73, z: 73, w: 73}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -57,8 +57,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
-  flipbookRows: 0
-  flipbookColumns: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -85,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -95,52 +95,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 2
+    textureFormat: 50
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline:
-    - - {x: 78, y: 51.5}
-      - {x: 77, y: 56.5}
-      - {x: 66, y: 74.5}
-      - {x: 42, y: 90.5}
-      - {x: -48, y: 90.5}
-      - {x: -76, y: 63.5}
-      - {x: -78, y: 54.5}
-      - {x: -78, y: -50.5}
-      - {x: -77, y: -53.5}
-      - {x: -74, y: -67.5}
-      - {x: -47, y: -90.5}
-      - {x: 43, y: -90.5}
-      - {x: 55, y: -83.5}
-      - {x: 74, y: -66.5}
-      - {x: 78, y: -54.5}
+    outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6a960066abf14124b2815f162aae3e2d
-    internalID: -1006536447
-    vertices:
-    - {x: 156, y: 168}
-    - {x: 132, y: 0}
-    - {x: 156, y: 21}
-    - {x: 126, y: 181}
-    - {x: 32, y: 0}
-    - {x: 27, y: 181}
-    - {x: 6, y: 18}
-    - {x: 0, y: 158}
-    - {x: 0, y: 27}
-    indices: 080000000700000006000000050000000600000007000000040000000600000005000000030000000400000005000000010000000400000003000000000000000100000003000000020000000100000000000000
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
     edges: []
     weights: []
     secondaryTextures: []
