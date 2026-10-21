@@ -278,12 +278,6 @@ public class GameStartPreloadProcedure : ProcedureBase
                 CommonHelper.UserType = 0;
                 CommonHelper.SetUserType(0, false);
             }
-#if !UNITY_EDITOR
-            if (CommonHelper.UserType == 1)
-            {
-                WebViewManager.Instance.CreateH5();
-            }
-#endif
         }
     }
 
