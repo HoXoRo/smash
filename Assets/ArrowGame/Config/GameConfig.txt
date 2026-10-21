@@ -1,6 +1,6 @@
 ﻿#	默认游戏配置		
 #	Key	备注	Value
-	SpecStatus	用户状态（0：纯A面 1：归因判定 2：强制B面）	1
+	SpecStatus	用户状态（0：纯A面 1：归因判定 2：强制B面）	0
 	DefaultCoins	玩家初始金币数	0
 	DefaultDiamonds	玩家初始金币数	0
 	BubbleFullScreenMove	气泡是否全屏移动（0否1是）	1

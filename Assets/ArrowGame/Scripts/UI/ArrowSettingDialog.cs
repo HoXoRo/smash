@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using DG.Tweening;
 using GameFramework;
 using GameFramework.Event;
@@ -55,7 +55,6 @@ public partial class ArrowSettingDialog : UIFormBase
         }
         InitSettings();
         
-        // CommonHelper.LogEvent(AdjustEventCodeEvent.setting_enter);
 
     }
 
@@ -68,7 +67,6 @@ public partial class ArrowSettingDialog : UIFormBase
         onHomeAction = null;
         onResumeAction = null;
         
-        // CommonHelper.LogEvent(AdjustEventCodeEvent.setting_exit);
 
     }
     private void OnUserTypeChange(object sender, GameEventArgs e)
@@ -104,14 +102,6 @@ public partial class ArrowSettingDialog : UIFormBase
         Log.Info($" setting OnMusicSliderChanged: {GF.Setting.GetMediaMute(Const.SoundGroup.Music)}");
         varMusicController.SetOnOff(!isOn);
         
-        // if (isOn)
-        // {
-        //     CommonHelper.LogEvent(AdjustEventCodeEvent.setting_music_open);
-        // }
-        // else
-        // {
-        //     CommonHelper.LogEvent(AdjustEventCodeEvent.setting_music_close);
-        // }
     }
 
     private void OnSoundFxSliderChanged()
@@ -122,14 +112,6 @@ public partial class ArrowSettingDialog : UIFormBase
         Log.Info($" setting OnSoundFxSliderChanged: {GF.Setting.GetMediaMute(Const.SoundGroup.Sound)}");
         varSFXController.SetOnOff(!isOn);
         
-        // if (isOn)
-        // {
-        //     CommonHelper.LogEvent(AdjustEventCodeEvent.setting_effect_open);
-        // }
-        // else
-        // {
-        //     CommonHelper.LogEvent(AdjustEventCodeEvent.setting_effect_close);
-        // }
     }
 
     private void VibrateChanged()

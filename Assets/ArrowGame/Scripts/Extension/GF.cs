@@ -15,7 +15,6 @@ public class GF : GFBuiltin
     // public static DataCollectManager DataCollectManager { get; private set; }
     public static GuideManager GuideManager { get; private set; }
     
-    public static AdjustManager AdjustManager { get; private set; }
     public static AdsManager AdsManager { get; private set; }
     private bool m_IsFrameworkInitialized = false;
     // public static ITenjinBridge TenjinBridge { get; private set; }
@@ -40,10 +39,8 @@ public class GF : GFBuiltin
         // 第三方sdk
         // DataCollectManager = DataCollectManager.Instance;
         // TenjinConnect();
-        AdjustManager = AdjustManager.Instance;
         AdsManager = AdsManager.Instance;
         
-        // CommonHelper.LogEvent(AdjustEventCodeEvent.background_return);
     }
 
     private void OnGFEventCallback(object sender, GameEventArgs e)
@@ -131,7 +128,6 @@ public class GF : GFBuiltin
         GF.Setting.Save();
         Log.Info("Application Quit:{0}", exit_time);
         
-        // CommonHelper.LogEvent(AdjustEventCodeEvent.background_enter);
 
     }
 

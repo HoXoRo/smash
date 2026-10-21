@@ -51,8 +51,6 @@ public partial class ArrowRewardDialogUIForm : UIFormBase
         if (Params?.RewardParams != null)
         {
             m_RewardParams = Params.RewardParams;
-            // CommonHelper.LogEvent(AdjustEventCodeEvent.reward_enter);
-            CommonHelper.LogEvent(AdjustEventCodeEvent.popu_enter, new Dictionary<string, string>() {{"popu", "normalRewardUI"}});
 
             // FirebaseMseeageManage.Instance.LogEvent(m_RewardParams.rewardSource);
 
@@ -68,7 +66,6 @@ public partial class ArrowRewardDialogUIForm : UIFormBase
 
     private void AutoCollectCoroutine()
     {
-        CommonHelper.LogEvent(AdjustEventCodeEvent.reward_cancel, new Dictionary<string, string>() {{"placement", "normal"}});
         CollectAllRewards();
         TimerManager.Instance.RemoveTimer(m_TimerId);
     }
@@ -112,7 +109,6 @@ public partial class ArrowRewardDialogUIForm : UIFormBase
                 {
                     if (IsFreeDoubleRewardAvailable())
                     {
-                        CommonHelper.LogEvent(AdjustEventCodeEvent.reward_collect, new Dictionary<string, string>() {{"placement", "normal"}});
                         OnDoubleRewardClaimed();
                         CollectAllRewards(rewardRate);
                         GF.UI.Close(this.UIForm);
@@ -124,7 +120,6 @@ public partial class ArrowRewardDialogUIForm : UIFormBase
                         {
                             if (isOK)
                             {
-                                CommonHelper.LogEvent(AdjustEventCodeEvent.reward_collect, new Dictionary<string, string>() {{"placement", "normal"}});
                                 OnDoubleRewardClaimed();
                                 CollectAllRewards(rewardRate);
                                 GF.UI.Close(this.UIForm);
@@ -171,7 +166,6 @@ public partial class ArrowRewardDialogUIForm : UIFormBase
 
     private void ClaimReward(float Rate = 1f)
     {
-        CommonHelper.LogEvent(AdjustEventCodeEvent.reward_cancel, new Dictionary<string, string>() {{"placement", "normal"}});
         CommonHelper.ShowInterstitial(RewardSourceConst.RewardInterstitial);
         CollectAllRewards(Rate);
     }

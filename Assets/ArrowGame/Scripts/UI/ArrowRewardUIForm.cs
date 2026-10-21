@@ -243,7 +243,6 @@ public partial class ArrowRewardUIForm : UIFormBase
             return;
 
         m_IsClaiming = true;
-        // CommonHelper.LogEvent(AdjustEventCodeEvent.bubble_reward_claim);
         CollectReward();
         GF.UI.Close(UIForm);
         m_IsClaiming = false;

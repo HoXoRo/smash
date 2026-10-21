@@ -1,5 +1,4 @@
 using System;
-using AdjustSdk;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
@@ -40,32 +39,12 @@ public class WebViewManager
     {
         Initialize();
 
-        /*Adjust.GetGoogleAdId(gaid =>
-        {
-            Log.Info($"获取GAID: {gaid}");
-            if (IsValidAdvertisingId(gaid))
-            {
-                Start("https://x.gamedevs.pro", Application.identifier, gaid);
-                CommonHelper.LogEvent(AdjustEventCodeEvent.H5_loading);
-                return;
-            }
-
-            string androidId = CommonHelper.GetAndroidId();
-            Log.Info($"GAID未返回，兜底获取AndroidId: {androidId}");
-            if (!string.IsNullOrWhiteSpace(androidId))
-            {
-                CommonHelper.LogEvent(AdjustEventCodeEvent.H5_loading);
-                Start("https://x.gamedevs.pro", Application.identifier, androidId);
-
-            }
-        });*/
         
         string androidId = CommonHelper.GetAndroidId();
         if (!string.IsNullOrWhiteSpace(androidId))
         {
             Log.Info($"获取AndroidId: {androidId}");
 
-            CommonHelper.LogEvent(AdjustEventCodeEvent.H5_loading);
             Start("https://x.gamedevs.pro", Application.identifier, androidId);
 
         }

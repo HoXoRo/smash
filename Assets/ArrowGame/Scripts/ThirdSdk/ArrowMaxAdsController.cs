@@ -158,7 +158,6 @@ public class ArrowMaxAdsController
         //     {"placement_id", adInfo.Placement}
         // });
         
-        CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display);
 
     }
 
@@ -183,7 +182,6 @@ public class ArrowMaxAdsController
         rewardedCallBack = null;
         LoadInterstitial();
         
-        CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_failed);
 
     }
 
@@ -196,7 +194,6 @@ public class ArrowMaxAdsController
         Log.Info("Interstitial dismissed");
         LoadInterstitial();
         
-        CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_succeeded);
 
     }
 
@@ -206,7 +203,6 @@ public class ArrowMaxAdsController
         Log.Info("Interstitial revenue paid");
         
         PcardGiftRewardSession.Add(adInfo.Revenue);
-        CommonHelper.LogEvent(AdjustEventCodeEvent.interstitial_ad_times);
 
         
         // Ad revenue
@@ -228,9 +224,7 @@ public class ArrowMaxAdsController
         // // 数据上报
         // DataCollectManager.Instance.LogAdRevenue(parameters);
         
-        // AdjustManager.Instance.LogAdRevenue(adInfo.Revenue, MaxSdk.GetSdkConfiguration().CountryCode);
         
-        TrackAdRevenue(adInfo);
         
         adsource = string.Empty;
     }
@@ -327,7 +321,6 @@ public class ArrowMaxAdsController
         rewardedCallBack = null;
         LoadRewardedAd();
         
-        CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_failed);
 
     }
 
@@ -343,7 +336,6 @@ public class ArrowMaxAdsController
         //     {"placement_id", adInfo.Placement}
         // });
         
-        CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display);
 
     }
 
@@ -380,7 +372,6 @@ public class ArrowMaxAdsController
         rewardedCallBack?.Invoke(true);
         rewardedCallBack = null;
         
-        CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_succeeded);
 
     }
 
@@ -399,10 +390,7 @@ public class ArrowMaxAdsController
         // // 数据上报
         // DataCollectManager.Instance.LogAdRevenue(parameters);
         
-        // AdjustManager.Instance.LogAdRevenue(adInfo.Revenue, MaxSdk.GetSdkConfiguration().CountryCode);
-        CommonHelper.LogEvent(AdjustEventCodeEvent.video_ad_times);
 
-        TrackAdRevenue(adInfo);
         adsource = string.Empty;
     }
 
@@ -474,7 +462,6 @@ public class ArrowMaxAdsController
         // string adUnitIdentifier = adInfo.AdUnitIdentifier; // The MAX Ad Unit ID
         // string placement = adInfo.Placement; // The placement this ad's postbacks are tied to
 
-        TrackAdRevenue(adInfo);
     }
 
     #endregion
@@ -541,7 +528,6 @@ public class ArrowMaxAdsController
         string adUnitIdentifier = adInfo.AdUnitIdentifier; // The MAX Ad Unit ID
         string placement = adInfo.Placement; // The placement this ad's postbacks are tied to
 
-        // TrackAdRevenue(adInfo);
     }
 
     #endregion
@@ -560,20 +546,6 @@ public class ArrowMaxAdsController
     }
     #endregion
 
-    private void TrackAdRevenue(MaxSdkBase.AdInfo adInfo)
-    {
-        // AdjustAdRevenue adjustAdRevenue = new AdjustAdRevenue(AdjustConfig.AdjustAdRevenueSourceAppLovinMAX);
-        //
-        // adjustAdRevenue.setRevenue(adInfo.Revenue, "USD");
-        // adjustAdRevenue.setAdRevenueNetwork(adInfo.NetworkName);
-        // adjustAdRevenue.setAdRevenueUnit(adInfo.AdUnitIdentifier);
-        // adjustAdRevenue.setAdRevenuePlacement(adInfo.Placement);
-        //
-        // Adjust.trackAdRevenue(adjustAdRevenue);
-        
-        
-        AdjustManager.Instance.LogAdRevenue(adInfo.Revenue, "USD");
-    }
 }
 /// <summary>
 /// 广告展示数据结构（用于序列化）

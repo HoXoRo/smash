@@ -36,7 +36,6 @@ public class GameStartPreloadProcedure : ProcedureBase
         InitAppSettings();
         PreloadAndInitData();
         
-        CommonHelper.LogEvent(AdjustEventCodeEvent.loading_enter);
     }
 
 
@@ -82,17 +81,12 @@ public class GameStartPreloadProcedure : ProcedureBase
             // // procedureOwner.SetData<VarString>(ChangeSceneProcedure.P_SceneName, "Game");
             // // ChangeState<ChangeSceneProcedure>(procedureOwner);
             // ChangeState<GameStartMainProcedure>(procedureOwner);
-            // CommonHelper.LogEvent(AdjustEventCodeEvent.loading_succeeded);
             
-            if (GF.AdjustManager.CheckAttributionCallBack())
-            {
-                preloadAllCompleted = true;
-                GF.LogInfo("预加载完成, 进入游戏场景.");
-                // procedureOwner.SetData<VarString>(ChangeSceneProcedure.P_SceneName, "Game");
-                // ChangeState<ChangeSceneProcedure>(procedureOwner);
-                ChangeState<GameStartMainProcedure>(procedureOwner);
-                CommonHelper.LogEvent(AdjustEventCodeEvent.loading_succeeded);
-            }
+            preloadAllCompleted = true;
+            GF.LogInfo("预加载完成, 进入游戏场景.");
+            // procedureOwner.SetData<VarString>(ChangeSceneProcedure.P_SceneName, "Game");
+            // ChangeState<ChangeSceneProcedure>(procedureOwner);
+            ChangeState<GameStartMainProcedure>(procedureOwner);
         }
     }
     private void InitAppSettings()
@@ -278,7 +272,18 @@ public class GameStartPreloadProcedure : ProcedureBase
         {
             m_HasAppliedSpecStatus = true;
             CommonHelper.ApplySpecStatusUserType();
-            AdjustManager.Instance.GetAttribution();
+            // SDK 已移除：未识别用户使用默认类型，不再等待远程归因。
+            if (CommonHelper.ShouldUseAttribution() && !CommonHelper.IsRecognition())
+            {
+                CommonHelper.UserType = 0;
+                CommonHelper.SetUserType(0, false);
+            }
+#if !UNITY_EDITOR
+            if (CommonHelper.UserType == 1)
+            {
+                WebViewManager.Instance.CreateH5();
+            }
+#endif
         }
     }
 

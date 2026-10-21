@@ -105,7 +105,6 @@ public static class CommonHelper
         int userType = specStatus == (int)SpecStatusMode.ForceB ? 1 : 0;
         UserType = userType;
         SetUserType(userType, false);
-        LogEvent(userType == 1 ? AdjustEventCodeEvent.b_enter : AdjustEventCodeEvent.a_enter);
     }
 
     /// <summary>
@@ -125,17 +124,6 @@ public static class CommonHelper
         return false;
     }
     
-    // 事件上报
-    public static void LogEvent(string eventName, Dictionary<string, string> eventValues = null)
-    {
-        if (string.IsNullOrEmpty(eventName))
-        {
-            return;
-        }
-
-        Log.Info($"log_event: {eventName}");
-        AdjustManager.Instance.LogEvent(eventName, eventValues);
-    }
 
     /// <summary>
     /// debug模式下，切换B测试用户
@@ -217,7 +205,7 @@ public static class CommonHelper
 
     /// <summary>
     /// 设置用户类型。
-    /// markAsRecognized 仅在 Adjust 正常返回归因结果时传 true。
+    /// markAsRecognized 表示用户类型是否已被识别。
     /// </summary>
     public static void SetUserType(int userType, bool markAsRecognized)
     {

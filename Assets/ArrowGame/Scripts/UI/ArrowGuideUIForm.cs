@@ -89,10 +89,6 @@ public partial class ArrowGuideUIForm : UIFormBase
             return;
         }
         
-        if (m_GuideData.GuideId == 2)
-        {
-            CommonHelper.LogEvent(AdjustEventCodeEvent.guide_enter);
-        }
 
         // 设置遮罩镂空
         SetupMaskHollow();
@@ -546,34 +542,6 @@ public partial class ArrowGuideUIForm : UIFormBase
         var playerData = GF.DataModel.GetDataModel<PlayerDataModel>();
         if (playerData == null) return;
         
-        if (guideId == 2)
-        {
-            CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_1);
-        }
-        else if (guideId == 3)
-        {
-            CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_2);
-        }
-        else if (guideId == 5)
-        {
-            CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_3);
-        }
-        else if (guideId == 6)
-        {
-            CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_4);
-        }
-        else if (guideId == 7)
-        {
-            CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_5);
-        }
-        else if (guideId == 1)
-        {
-            CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_6);
-        }
-        else if (guideId == 4)
-        {
-            CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_7);
-        }
 
 
         // 检查是否已经存在
