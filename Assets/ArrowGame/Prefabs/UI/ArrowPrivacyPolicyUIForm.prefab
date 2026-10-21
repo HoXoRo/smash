@@ -273,7 +273,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 13500}
+  m_SizeDelta: {x: 0, y: 5000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4481721895244573634
 CanvasRenderer:
@@ -303,253 +303,59 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '
-
-    This privacy policy applies to the Arrows Meadow app for mobile
-    devices, together with any related services operated by fv (collectively, the
-    "Application"). fv is hereby referred to as the "Service Provider".
-
-
-    Information
-    Collection and Use
-
-    The Application collects information when you download
-    and use it. This information may include information such as
-
-    Privacy Policy
-
-    Your
-    device''s Internet Protocol address
-
-    The pages of the Application that you
-    visit, the time and date of your visit, the time spent on those pages
-
-    The
-    time spent on the Application
-
-    your mobile operating system you use
-
-
-    Cookies
-    and tracking technologies
-
-    The Application or its third-party SDKs may use
-    cookies, SDKs, pixels, and similar technologies to support functionality, analytics,
-    or service delivery. Where required by applicable law, the Service Provider will
-    obtain consent before using non-essential tracking technologies.
-
-
-    Your Rights
-
-    You
-    may request access to, correction of, or deletion of your personal data held
-    by the Service Provider. To exercise these rights, or to withdraw consent where
-    processing is based on consent, contact the Service Provider at dafafafa2026@outlook.com.
-
-
-    Your
-    California privacy rights (CCPA/CPRA)
-
-    If you are a California resident,
-    you have the right to know what personal information is collected, the right
-    to delete personal information, the right to opt out of the sale or sharing of
-    personal information, and the right to non-discrimination for exercising these
-    rights. To exercise your CCPA/CPRA rights, contact the Service Provider at dafafafa2026@outlook.com.
-
-
-
-    The
-    Service Provider may use the information you provide to send important information,
-    required notices, and, where permitted by law, marketing communications.
-
-
-
-    For
-    a better experience while using the Application, the Service Provider may require
-    you to provide certain personally identifiable information. The information the
-    Service Provider requests will be retained and used as described in this privacy
-    policy.
-
-
-
-    Third Party Access
-
-    Only aggregated, anonymized data is periodically
-    transmitted to external services to aid the Service Provider in improving the
-    Application and their service. The Service Provider may share your information
-    with third parties in the ways that are described in this privacy statement.
-
-
-
-    International
-    Data Transfers
-
-    The Service Provider or its third-party service providers
-    may transfer personal data to countries outside your country of residence, including
-    outside the European Economic Area (EEA). Where applicable law requires safeguards
-    for international transfers, the Service Provider will use appropriate mechanisms.
-
-
-    Standard
-    Contractual Clauses (SCCs) approved by the European Commission
-
-    Adequacy
-    decisions or other legally recognized transfer mechanisms
-
-    Your consent,
-    where required and legally permitted
-
-    Data protection laws in other countries
-    may differ from those in your jurisdiction. Where required by law, the Service
-    Provider will apply appropriate safeguards and obtain any consent required for
-    the transfer.
-
-
-    Please note that the Application utilizes third-party services
-    that have their own Privacy Policy about handling data. Below are the links to
-    the Privacy Policy of the third-party service providers used by the Application:
-
-
-    Google
-    Play Services
-
-    AdMob
-
-    AppLovin
-
-    Adjust
-
-
-    The Service Provider
-    may disclose User Provided and Automatically Collected Information:
-
-
-    as
-    required by law, such as to comply with a subpoena, or similar legal process;
-
-    when
-    they believe in good faith that disclosure is necessary to protect their rights,
-    protect your safety or the safety of others, investigate fraud, or respond to
-    a government request;
-
-    with their trusted services providers who work on
-    their behalf, do not have an independent use of the information the Service Provider
-    discloses to them, and have agreed to adhere to the rules set forth in this privacy
-    statement.
-
-
-    Opt-Out Rights
-
-    You can stop further collection of information
-    from your mobile device by uninstalling the Application. Uninstalling will stop
-    the Application from collecting data from your device, but it does not automatically
-    delete information that has already been transmitted to the Service Provider
-    or to third parties.
-
-
-    To request deletion of your personal data, to withdraw
-    consent, or to exercise any of your rights, contact the Service Provider at dafafafa2026@outlook.com.
-
-
-    Data
-    Retention Policy
-
-    The Service Provider retains personal data based on its
-    necessity for the stated purposes:
-
-
-    User Provided Data: Retained for the
-    duration of your use of the Application plus 12 months thereafter, unless longer
-    retention is required by law
-
-    Automatically Collected Data: Retained for
-    up to 24 months from collection, unless longer retention is required for legal
-    compliance
-
-    Aggregated and Anonymized Data: Retained indefinitely as it no
-    longer identifies you
-
-    Data required for legal compliance: Retained as long
-    as required by applicable law
-
-    You may request deletion of your personal
-    data, subject to any legal obligation to retain it. If you want the Service Provider
-    to delete User Provided Data submitted through the Application, please contact
-    them at dafafafa2026@outlook.com. Please note that some User Provided Data may
-    be required for the Application to function properly.
-
-
-    Children
-
-    The
-    Application is not intended for children under 16 years of age, or such higher
-    age as required by applicable law. The Service Provider does not knowingly solicit
-    data from children or market the Application to them.
-
-
-    Where parental or
-    guardian consent is required under applicable law, the Application is not intended
-    for use without that consent. The Service Provider does not knowingly collect
-    personally identifiable information from children under 16 years of age in violation
-    of applicable law. In the event the Service Provider discovers that a child has
-    provided personal information, the Service Provider will immediately delete this
-    from their servers. If you are a parent or guardian and you are aware that your
-    child has provided the Service Provider with personal information, please contact
-    the Service Provider (dafafafa2026@outlook.com) so that they will be able to
-    take the necessary actions.
-
-
-    Security
-
-    The Service Provider is concerned
-    about safeguarding the confidentiality of your information. The Service Provider
-    provides physical, electronic, and procedural safeguards to protect information
-    the Service Provider processes and maintains.
-
-
-    Data Breach Notification
-
-    If
-    a data breach occurs that affects your personal data, the Service Provider will
-    notify you in accordance with applicable legal requirements, including, where
-    required, providing information about the nature of the breach and the steps
-    being taken to address it.
-
-
-    Changes
-
-    The Service Provider may update
-    this Privacy Policy from time to time. The Service Provider will notify you of
-    material changes by posting the updated Privacy Policy with an effective date.
-    Where required by law, the Service Provider will seek your consent to material
-    changes before they take effect.
-
-
-    Previous versions of this Privacy Policy
-    will be maintained and made available upon request by contacting the Service
-    Provider at dafafafa2026@outlook.com.
-
-
-    This privacy policy is effective
-    as of 2026-08-19
-
-
-    Your Consent
-
-    Where processing is based on consent,
-    you provide that consent by affirmatively opting in to the relevant feature or
-    action. You may withdraw consent at any time without affecting processing carried
-    out before withdrawal. Processing based on other lawful bases is carried out
-    as described above.
-
-
-    Contact Us
-
-    If you have any questions regarding
-    privacy while using the Application, or have questions about the practices, please
-    contact the Service Provider via email at dafafafa2026@outlook.com.
-
-'
+  m_text: "Welcome to use the services provided by Smash Cash Rush. Smash Cash Rush
+    respects your privacy and personal information protection very much. This Privacy
+    Policy applies to your access and use of the various services provided by Smash
+    Cash Rush through any means.\n1. How to collect personal information\n   We only
+    collect information necessary to achieve product functionality based on the principles
+    of legality, legitimacy, and necessity. For example, the information you voluntarily
+    provide when choosing to participate in various activities related to the application.
+    The information we request is stored on your device and will not be collected
+    by us or any third party. In addition, we do not collect any facial data and
+    do not store facial data.\n2. How to use personal information\n   This application
+    will not provide, sell, rent, share, or trade your personal information to any
+    unrelated third party unless you have given prior permission, or the third party
+    and this application (including its affiliated companies) provide services to
+    you separately or jointly, and after the service ends, they will be prohibited
+    from accessing all materials, including those they were previously able to access.\n  
+    When using your personal information for purposes not specified in this policy,
+    or when using information collected for specific purposes for other purposes,
+    we will seek your consent in advance.\n   For the personal information you provide
+    when using the product or service, unless you delete it or refuse our collection
+    through relevant settings, you will continue to authorize its use during the
+    use of the product or service. When you cancel your account, we will stop and
+    delete your personal information.\n3. Information storage\n   Unless required
+    by law to delete your personal information or we accept your request to delete
+    information, we will retain your personal information for the purpose of providing
+    services to you. In order to ensure that your personal information is protected
+    in accordance with the law, we will store your information in accordance with
+    relevant national laws and regulations on privacy data protection. When we no
+    longer need to use your personal data or retain it to comply with our legal or
+    regulatory obligations, we will delete the data as required to comply with relevant
+    laws and regulations.\n4. Information protection\n   To help ensure a secure
+    player experience, we are continuously developing and implementing administrative,
+    technical, and physical security measures to protect your data from unauthorized
+    access or loss, misuse, or alteration.\n5. Information Disclosure\n   We may
+    disclose your information within the scope permitted by law, such as to comply
+    with subpoenas or when we believe that the disclosure of information complies
+    with legal requirements; investigating fraudulent behavior, responding to government
+    requests, enforcing or applying our rights; or to protect the rights, property,
+    or safety of us, our users, or others. This includes exchanging information with
+    other companies and organizations to prevent fraud.\n6. Internet environment
+    security\n   Please understand that due to technical restrictions and possible
+    malicious means, in the Internet industry, even if we try our best to strengthen
+    security measures, it is impossible to always ensure 100% security of information.
+    You need to understand that the system and communication network used by the
+    service you are accessing may experience issues due to uncontrollable factors.\n7.
+    Our Policy Regarding Children\n   We do not knowingly collect or solicit personal
+    data from anyone under the age of 16, nor do we knowingly allow such persons
+    to use our Services. If you are under 16, please do not send any information
+    about yourself to us, including your name, address, telephone number, or email
+    address. Individuals under the age of 16 are prohibited from providing any personal
+    data. In the event that we learn we have collected personal data from a child
+    under the age of 16, we will promptly delete that information. If you believe
+    we may have any information from or about a child under the age of 16, please
+    contact us.\nContact Smash Cash Rush\nproductionsheadway@gmail.com"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e98f6fa08230b484686de16d3f7162b4, type: 2}
   m_sharedMaterial: {fileID: -2634909663324395464, guid: e98f6fa08230b484686de16d3f7162b4, type: 2}
