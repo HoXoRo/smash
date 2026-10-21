@@ -46,7 +46,7 @@ public partial class LevelCompleteUIForm : UIFormBase
 
         varRewardCount.text = m_BaseReward.ToString();
         varTxtMulit.text = $"X{m_AdMulti}";
-        varBtnAd.gameObject.SetActive(m_AdMulti > 0);
+        varBtnAd.gameObject.SetActive(false);
         SetButtonsInteractable(true);
     }
 

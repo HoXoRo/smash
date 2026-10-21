@@ -21,6 +21,7 @@ public partial class AddLifeUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        varBtnAd.gameObject.SetActive(false);
         playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
         lifeCoin = GF.Config.GetInt("lifeCoin");
         varTxtCoin.text = lifeCoin.ToString();

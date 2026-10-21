@@ -41,7 +41,7 @@ public partial class CoinRewardUIForm : UIFormBase
         varRewardCount.text = (m_Task?.Reward ?? 0).ToString();
         varTxtMulit.text = $"X{m_Task?.RewardMulti ?? 1}";
         varBtnClaim.interactable = m_Task != null;
-        varBtnAd.gameObject.SetActive(m_Task != null && m_Task.TaskType == 2);
+        varBtnAd.gameObject.SetActive(false);
         varBtnAd.interactable = true;
     }
 

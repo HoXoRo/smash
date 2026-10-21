@@ -29,6 +29,7 @@ public partial class AddBallsUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        varBtnAd.gameObject.SetActive(false);
         isBusy = false;
         onRefill = Params.Get<VarAction>(P_OnRefill)?.Value;
         onQuit = Params.Get<VarAction>(P_OnQuit)?.Value;

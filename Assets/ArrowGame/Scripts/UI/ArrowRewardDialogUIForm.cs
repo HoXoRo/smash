@@ -166,7 +166,6 @@ public partial class ArrowRewardDialogUIForm : UIFormBase
 
     private void ClaimReward(float Rate = 1f)
     {
-        CommonHelper.ShowInterstitial(RewardSourceConst.RewardInterstitial);
         CollectAllRewards(Rate);
     }
 
@@ -414,7 +413,7 @@ public partial class ArrowRewardDialogUIForm : UIFormBase
 
         UpdateBalanceDisplay();
         // ShowScaledButtons(varBalanceBg);
-        ShowScaledButtons(varButton_AdClaim, true);
+        SetElementActive(varButton_AdClaim, false);
         isCanClick = true;
 
         yield return new WaitForSecondsRealtime(BUTTON_NEXT_SHOW_DELAY);

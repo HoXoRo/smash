@@ -25,6 +25,7 @@ public partial class AddPropUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        varBtnAd.gameObject.SetActive(false);
         playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
         propCoin = GF.Config.GetInt("propCoin");
         varTxtCoin.text = propCoin.ToString();

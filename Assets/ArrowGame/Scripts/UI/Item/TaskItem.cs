@@ -62,8 +62,8 @@ public partial class TaskItem : UIItemBase
         bool isLevelTaskComplete = completedLevels >= task.Level;
         varBtn_go.gameObject.SetActive(isLevelTask && !isLevelTaskComplete && !claimed);
         varBtn_claim.SetActive(isLevelTask && isLevelTaskComplete && !claimed);
-        varAdTxt.SetActive(isAdTask);
-        varBtn_ad.SetActive(isAdTask);
+        varAdTxt.SetActive(false);
+        varBtn_ad.SetActive(false);
         RefreshAdCountdown();
     }
 

@@ -15,7 +15,7 @@ public partial class DebugUIForm : UIFormBase
 
         varAddDollar.onClick.AddListener(AddDollar);
         varReduceDollor.onClick.AddListener(ReduceDollar);
-        varBtnVideo.onClick.AddListener(ShowVideo);
+        varBtnVideo.gameObject.SetActive(false);
         varBtnAddLv.onClick.AddListener(AddLevel);
         varBtnReduceLv.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(ReduceLevel);
         varBtnResetTask.onClick.AddListener(ResetTasks);

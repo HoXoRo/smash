@@ -40,6 +40,11 @@ public partial class ArrowSettingDialog : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        foreach (var button in GetComponentsInChildren<UnityEngine.UI.Button>(true))
+        {
+            if (button.name == "ShowVideo" || button.name == "ShowInter" || button.name == "OpenAdDebug")
+                button.gameObject.SetActive(false);
+        }
         GF.Event.Subscribe(LoadDictionarySuccessEventArgs.EventId, OnLanguageReloaded);
         GF.Event.Subscribe(UserTypeChangeEventArgs.EventId, OnUserTypeChange);
         GF.Event.Subscribe(MahJongLanguageChangeEventArgs.EventId, OnLanguageChanged);
@@ -155,7 +160,6 @@ public partial class ArrowSettingDialog : UIFormBase
                 GF.UI.Close(this.UIForm);
                 break;
             case "Button_Resume":
-                CommonHelper.ShowInterstitial("interstitial_resume");
                 onResumeAction?.Invoke();
                 GF.UI.Close(this.UIForm);
                 break;

@@ -174,14 +174,7 @@ public partial class ArrowUITopbar : UIFormBase
     public static void EnsureOpen()
     {
         ArrowUITopbarSub.EnsureOpen();
-        if (GF.UI.HasUIForm(UIViews.ArrowUITopbar) || GF.UI.IsLoadingUIForm(UIViews.ArrowUITopbar))
-        {
-            return;
-        }
-
-        var uiParams = UIParams.Create();
-        uiParams.Set<VarBoolean>(P_EnableBG, true);
-        GF.UI.OpenUIForm(UIViews.ArrowUITopbar, uiParams);
+        // 主顶栏不再打开，保留子顶栏的金币和体力显示。
     }
 
     public static void SetCoinVisible(bool visible)
