@@ -91,6 +91,11 @@ public partial class HallTabUIForm : UIFormBase
         return GF.UI.OpenUIForm(view);
     }
 
+    public void ShowHomePage()
+    {
+        SwitchPage(UIViews.HomePageUIForm, varBtnHome);
+    }
+
     public void CloseBeforeEnterGameplay()
     {
         CloseCurrentPage();

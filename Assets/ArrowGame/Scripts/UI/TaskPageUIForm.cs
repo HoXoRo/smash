@@ -71,7 +71,31 @@ public partial class TaskPageUIForm : UIFormBase
             TaskReward task = tasks[index];
             taskItems[index].SetData(task, completedLevels,
                 task.TaskType == 2 && playerData.IsLevelTaskClaimed(task.Id),
-                playerData.GetTaskAdCooldownEnd(task.Id), OnClaimRequested, OnClickClose);
+                playerData.GetTaskAdCooldownEnd(task.Id), OnClaimRequested, OnGoRequested);
+        }
+    }
+
+    private void OnGoRequested()
+    {
+        string hallTabAsset = GF.UI.GetUIFormAssetName(UIViews.HallTabUIForm);
+        var hallTabForms = string.IsNullOrEmpty(hallTabAsset) ? null : GF.UI.GetUIForms(hallTabAsset);
+        if (hallTabForms != null)
+        {
+            foreach (var uiForm in hallTabForms)
+            {
+                if (uiForm.Logic is HallTabUIForm hallTab)
+                {
+                    if (!Params.Get<VarBoolean>(P_FromHallTab, false)) OnClickClose();
+                    hallTab.ShowHomePage();
+                    return;
+                }
+            }
+        }
+
+        OnClickClose();
+        if (!GF.UI.IsLoadingUIForm(UIViews.HallTabUIForm))
+        {
+            GF.UI.OpenUIForm(UIViews.HallTabUIForm);
         }
     }
 
