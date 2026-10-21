@@ -36,6 +36,39 @@ public partial class ArrowUITopbar : UIFormBase
     private Tween m_TxtUpPcardTween;
     public PlayerDataModel playerDm;
     private int pcardAnimationVersion;
+    private static readonly HashSet<UIFormBase> hiddenByPages = new HashSet<UIFormBase>();
+    private static readonly HashSet<UIFormBase> rewardsBlockedByPages = new HashSet<UIFormBase>();
+    public static bool HiddenByPage => hiddenByPages.Count > 0;
+    public static bool CoinRewardsBlocked => rewardsBlockedByPages.Count > 0;
+
+    public static int GetCoinRewardSortOrder(int defaultOrder)
+    {
+        foreach (var page in hiddenByPages)
+            if (page != null) defaultOrder = Mathf.Max(defaultOrder, page.SortOrder + 1);
+        return defaultOrder;
+    }
+
+    // Track owners so overlapping pages cannot restore each other's hidden HUD.
+    public static void SetPageHidden(UIFormBase page, bool hidden, bool blockCoinRewards = false)
+    {
+        if (hidden) hiddenByPages.Add(page);
+        else hiddenByPages.Remove(page);
+        if (hidden && blockCoinRewards) rewardsBlockedByPages.Add(page);
+        else rewardsBlockedByPages.Remove(page);
+        var forms = GF.UI.GetUIForms(GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbar));
+        if (forms != null)
+            foreach (var form in forms)
+                if (form.Logic is ArrowUITopbar topbar) topbar.RefreshPageVisibility();
+        ArrowUITopbarSub.RefreshPageVisibility();
+    }
+
+    private void RefreshPageVisibility()
+    {
+        varGem.SetActive(!HiddenByPage && CommonHelper.IsSpec());
+        varPcard.SetActive(!HiddenByPage);
+        varGift.SetActive(!HiddenByPage);
+        varBg.enabled = !HiddenByPage && Params.Get<VarBoolean>(P_EnableBG, true);
+    }
 
     protected override void OnInit(object userData)
     {
@@ -82,6 +115,7 @@ public partial class ArrowUITopbar : UIFormBase
         m_TxtUpPcardRestPos = varTxtUpPcard.rectTransform.anchoredPosition;
         varTxtUpPcard.gameObject.SetActive(false);
         RefreshGiftCount();
+        RefreshPageVisibility();
         //适配刘海屏
         // float safeArea = Mathf.Max(0, Screen.height - Screen.safeArea.yMax);
         // bool isLiuhai = safeArea != 0;
@@ -282,7 +316,7 @@ public partial class ArrowUITopbar : UIFormBase
     {
         var args = e as UserTypeChangeEventArgs;
         if (args == null) return;
-        varGem.SetActive(CommonHelper.IsSpec());
+        RefreshPageVisibility();
     }
     
     private void OnRewardCollected(object sender, GameEventArgs e)

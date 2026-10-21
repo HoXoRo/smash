@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using DG.Tweening;
 using GameFramework.Event;
 using TMPro;
 using UnityEngine;
@@ -25,6 +27,20 @@ public partial class ArrowUITopbarSub : UIFormBase
     private int rewardGeneration;
     private bool rolling;
     private Coroutine rollCoroutine;
+    private readonly List<ArrowFlyRewardItem> flyingCoins = new List<ArrowFlyRewardItem>();
+
+    public static void RefreshPageVisibility()
+    {
+        var forms = GF.UI.GetUIForms(GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbarSub));
+        if (forms == null) return;
+        foreach (var form in forms)
+        {
+            if (!(form.Logic is ArrowUITopbarSub topbar)) continue;
+            if (ArrowUITopbar.CoinRewardsBlocked && topbar.playerDm != null) topbar.SettleCoins();
+            topbar.RefreshCoinVisibility();
+            topbar.RefreshLifeVisibility();
+        }
+    }
 
     public static void EnsureOpen()
     {
@@ -34,6 +50,7 @@ public partial class ArrowUITopbarSub : UIFormBase
 
     public static bool CanAnimateCoins()
     {
+        if (ArrowUITopbar.CoinRewardsBlocked) return false;
         string assetName = GF.UI.GetUIFormAssetName(UIViews.ArrowUITopbarSub);
         if (string.IsNullOrEmpty(assetName)) return false;
         var forms = GF.UI.GetUIForms(assetName);
@@ -114,6 +131,13 @@ public partial class ArrowUITopbarSub : UIFormBase
     private void SettleCoins()
     {
         rewardGeneration++;
+        foreach (var item in flyingCoins)
+        {
+            if (item == null) continue;
+            DOTween.Kill(item);
+            UnspawnItem<UIItemObject>(flyRewardItemPrefab, item.gameObject);
+        }
+        flyingCoins.Clear();
         if (rollCoroutine != null) StopCoroutine(rollCoroutine);
         rollCoroutine = null;
         float value = (rolling ? rollTarget : targetCoins) + pendingCoins;
@@ -145,6 +169,12 @@ public partial class ArrowUITopbarSub : UIFormBase
         if (!gameObject.activeInHierarchy) return;
 
         pendingCoins += args.Value;
+        // A queued reward can arrive after settings has opened.
+        if (ArrowUITopbar.CoinRewardsBlocked)
+        {
+            SettleCoins();
+            return;
+        }
         RefreshCoinVisibility();
         if (flyRewardItemPrefab == null || varFlyRewardParent == null || varIcon_Coin == null || !varFlyRewardParent.gameObject.activeInHierarchy)
         {
@@ -171,8 +201,10 @@ public partial class ArrowUITopbarSub : UIFormBase
             Vector2 offset = count > 1 ? Random.insideUnitCircle * 110f : Vector2.zero;
             item.rectTransform.anchoredPosition = start + offset;
             var reward = item;
+            flyingCoins.Add(reward);
             item.InitReward(PlayerDataType.Coins, target, () =>
             {
+                flyingCoins.Remove(reward);
                 if (generation == rewardGeneration && activeRewards > 0)
                 {
                     activeRewards--;
@@ -212,12 +244,17 @@ public partial class ArrowUITopbarSub : UIFormBase
 
     private void RefreshCoinVisibility()
     {
-        if (varCoin != null) varCoin.SetActive(s_ShowCoin || activeRewards > 0 || rolling || pendingCoins > 0f);
+        bool collecting = activeRewards > 0 || rolling || pendingCoins > 0f;
+        int defaultOrder = Params.SortOrder ?? 0;
+        UICanvas.sortingOrder = collecting && !ArrowUITopbar.CoinRewardsBlocked
+            ? ArrowUITopbar.GetCoinRewardSortOrder(defaultOrder) : defaultOrder;
+        if (varCoin != null) varCoin.SetActive(!ArrowUITopbar.CoinRewardsBlocked &&
+            ((s_ShowCoin && !ArrowUITopbar.HiddenByPage) || activeRewards > 0 || rolling || pendingCoins > 0f));
     }
 
     private void RefreshLifeVisibility()
     {
-        if (varBtnLife != null) varBtnLife.transform.parent.gameObject.SetActive(s_ShowLife);
+        if (varBtnLife != null) varBtnLife.transform.parent.gameObject.SetActive(s_ShowLife && !ArrowUITopbar.HiddenByPage);
     }
 
     private static string FormatCoins(float value)

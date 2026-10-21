@@ -31,6 +31,7 @@ public partial class TaskPageUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        ArrowUITopbar.SetPageHidden(this, true);
         varBtnClose.gameObject.SetActive(!Params.Get<VarBoolean>(P_FromHallTab, false));
         GF.Event.Subscribe(PlayerDataChangedEventArgs.EventId, OnPlayerDataChanged);
         GF.Event.Subscribe(TaskUpdateEventArgs.EventId, OnTaskUpdated);
@@ -180,6 +181,7 @@ public partial class TaskPageUIForm : UIFormBase
 
     protected override void OnClose(bool isShutdown, object userData)
     {
+        ArrowUITopbar.SetPageHidden(this, false);
         GF.Event.Unsubscribe(PlayerDataChangedEventArgs.EventId, OnPlayerDataChanged);
         GF.Event.Unsubscribe(TaskUpdateEventArgs.EventId, OnTaskUpdated);
         foreach (TaskItem item in taskItems) item.ClearClaimHandler();
