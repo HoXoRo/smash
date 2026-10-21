@@ -824,7 +824,7 @@ PlayerSettings:
     WebGL: AMPLIFY_SHADER_EDITOR;DOTWEEN;DISABLE_HYBRIDCLR;ENABLE_LOG
     Windows Store Apps: DOTWEEN;ENABLE_LOG
     XboxOne: DOTWEEN
-    iPhone: DOTWEEN;DISABLE_HYBRIDCLR;tenjin_applovin_enabled;ENABLE_LOG
+    iPhone: DOTWEEN;DISABLE_HYBRIDCLR;ENABLE_LOG
     tvOS: DOTWEEN
   additionalCompilerArguments: {}
   platformArchitecture: {}

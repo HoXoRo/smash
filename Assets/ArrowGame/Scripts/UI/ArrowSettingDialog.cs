@@ -162,9 +162,6 @@ public partial class ArrowSettingDialog : UIFormBase
             case "ABChange":
                 CommonHelper.IsConstraintBorA();
                 break;
-            case "OpenAdDebug":
-                AdsManager.Instance.ShowMaxDebugger();
-                break;
             case "ShowVideo":
                 CommonHelper.ShowVideoAd("test_video", b => { });
                 break;

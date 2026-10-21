@@ -278,42 +278,11 @@ public static class CommonHelper
         string formattedDate = dateTime.ToString("yyyy-MM-dd HH:mm:ss");
         return formattedDate;
     }
-    // 看广告
+    // No advertising provider is installed; always complete the request without a reward.
     public static void ShowVideoAd(string adId, Action<bool> onCompleted, int coins = -1, bool showFailureToast = true)
     {
-        // 从adId中提取ad_position_type，按"_"分割取前半段
-        string adPositionType = adId.Contains("_") ? adId.Split('_')[0] : adId;
-
-        // DataCollectManager.Instance.LogEvent("button_click", new Dictionary<string, object> {
-        //     {"ad_type", "reward"},
-        //     {"ad_position", adId},
-        //     {"ad_position_type", adPositionType},
-        //     {"placement_id", string.Empty}
-        // });
-
-#if UNITY_EDITOR
-        ResetInterstitialCancelAccum();
         onCompleted?.Invoke(true);
-        PcardGiftRewardSession.Add(10);
-        GF.Event.Fire(null, WatchVideoFinishEventArgs.Create());
-        return;
-#endif
-        AdsManager.Instance.ShowAd(
-            isOk =>
-            {
-                if (isOk)
-                {
-                    ResetInterstitialCancelAccum();
-                    GF.Event.Fire(null, WatchVideoFinishEventArgs.Create());
-                }
-                else
-                {
-                    if (showFailureToast) GF.UI.ShowToast("Ad Load failed !!!");
-                }
-                onCompleted?.Invoke(isOk);
-            },
-            adId
-        );
+        if (showFailureToast) GF.UI.ShowToast("Ads are unavailable.");
     }
 
     // "button_show"事件上报
@@ -330,65 +299,9 @@ public static class CommonHelper
         // });
     }
 
-    private static long nextShowInterstitialTime;
-    /// <summary> 自上次成功激励/插屏后，连续调用 ShowInterstitial 的次数。 </summary>
-    private static int s_InterstitialCancelAccum;
-
-    static void ResetInterstitialCancelAccum()
-    {
-        s_InterstitialCancelAccum = 0;
-    }
-
     public static void ShowInterstitial(string interstitialId, bool immediately = false)
     {
-#if UNITY_EDITOR
-        return;
-#endif
-        // 每次调用累计一次；达到 InterstitialCancelTime 才进入后续 CD/权重等判断
-        s_InterstitialCancelAccum++;
-        
-        // 判断是不是前几次
-        var playerData = GF.DataModel.GetDataModel<PlayerDataModel>();
-        if (playerData != null)
-        {
-            playerData.InterstitialTimes++;
-            playerData.Save();
-
-            if (playerData.InterstitialTimes <= GF.Config.GetInt("InterstitialPreTimes"))
-            {
-                return;
-            }
-        }
-        
-        int cancelTime = GF.Config != null && GF.Config.HasConfig("InterstitialCancelTime")
-            ? GF.Config.GetInt("InterstitialCancelTime")
-            : 0;
-        if (cancelTime > 0 && s_InterstitialCancelAccum < cancelTime)
-            return;
-
-        if (!immediately && GetNowTime() < nextShowInterstitialTime)
-        {
-            return;
-        }
-
-        bool isShow = UnityEngine.Random.Range(0, 101) < GF.Config.GetInt("InterstitialShowWeight");
-        if (!isShow)
-        {
-            return;
-        }
-
-        // 从interstitialId中提取ad_position_type，按"_"分割取前半段
-        string adPositionType = interstitialId.Contains("_") ? interstitialId.Split('_')[0] : interstitialId;
-
-        // DataCollectManager.Instance.LogEvent("button_click", new Dictionary<string, object> {
-        //     {"ad_type", "interstitial"},
-        //     {"ad_position", interstitialId},
-        //     {"ad_position_type", adPositionType},
-        //     {"placement_id", string.Empty}
-        // });
-        AdsManager.Instance.ShowInter(interstitialId);
-        nextShowInterstitialTime = GetNowTime() + GF.Config.GetInt("InterstitialCD");
-        ResetInterstitialCancelAccum();
+        // Advertising is disabled.
     }
 
     private static string _gaid;

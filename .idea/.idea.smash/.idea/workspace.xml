@@ -11,11 +11,211 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48c1c3b4-2b47-4b58-848e-c5dcf45a4647" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/KingnamypeYuanmoSC SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/KingnamypeYuanmoSC SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scene/SmashLaunch.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scene/SmashLaunch.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UnityGameFramework/Configs/ResourceCollection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UnityGameFramework/Configs/ResourceCollection.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UnityGameFramework/Configs/ResourceEditor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UnityGameFramework/Configs/ResourceEditor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Extension/CommonHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Extension/CommonHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Extension/GF.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Extension/GF.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Hotfix.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Hotfix.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/AdsManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/AdsManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/ArrowMaxAdsController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/ArrowMaxAdsController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/ArrowSettingDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/ArrowSettingDialog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/AppLovin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/AppLovin/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/AppLovin/Editor/Dependencies.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/AppLovin/Editor/Dependencies.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/AppLovin/Plugins.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/AppLovin/Plugins/Android.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/AppLovin/Plugins/Android/applovin-max-unity-plugin.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/AppLovin/Plugins/Android/applovin-max-unity-plugin.aar.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/AppLovin/Plugins/iOS.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/AppLovin/Plugins/iOS/MAUnityAdManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/AppLovin/Plugins/iOS/MAUnityAdManager.h.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/AppLovin/Plugins/iOS/MAUnityAdManager.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/AppLovin/Plugins/iOS/MAUnityAdManager.m.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/AppLovin/Plugins/iOS/MAUnityPlugin.mm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/AppLovin/Plugins/iOS/MAUnityPlugin.mm.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/CHANGELOG.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Facebook.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Facebook/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Facebook/Editor/Dependencies.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Facebook/Editor/Dependencies.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Google.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Google/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Google/Editor/Dependencies.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Google/Editor/Dependencies.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/InMobi.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/InMobi/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/InMobi/Editor/Dependencies.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/InMobi/Editor/Dependencies.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/IronSource.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/IronSource/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/IronSource/Editor/Dependencies.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/IronSource/Editor/Dependencies.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/MediationAdapters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/MediationAdapters.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Mintegral.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Mintegral/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Mintegral/Editor/Dependencies.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Mintegral/Editor/Dependencies.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/UnityAds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/UnityAds/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/UnityAds/Editor/Dependencies.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/UnityAds/Editor/Dependencies.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Vungle.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Vungle/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Vungle/Editor/Dependencies.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Vungle/Editor/Dependencies.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Prefabs/BannerBottom.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Prefabs/BannerBottom.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Prefabs/BannerTop.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Prefabs/BannerTop.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Prefabs/Interstitial.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Prefabs/Interstitial.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Prefabs/Rewarded.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Prefabs/Rewarded.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Resources/AppLovinSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Resources/AppLovinSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Resources/Images.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Resources/Images/error_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Resources/Images/error_icon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Resources/Images/info_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Resources/Images/info_icon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Resources/Images/uninstall_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Resources/Images/uninstall_icon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Resources/Images/warning_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Resources/Images/warning_icon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinAutoUpdater.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinAutoUpdater.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinCommandLine.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinCommandLine.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinEditorCoroutine.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinEditorCoroutine.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinInitialize.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinInitialize.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinIntegrationManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinIntegrationManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinIntegrationManagerUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinIntegrationManagerUtils.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinIntegrationManagerWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinIntegrationManagerWindow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinInternalSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinInternalSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinMenuItems.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinMenuItems.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPackageManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPackageManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPluginMigrationHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPluginMigrationHelper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPostProcessAndroid.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPostProcessAndroid.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPostProcessAndroidGradle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPostProcessAndroidGradle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPostProcessiOS.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPostProcessiOS.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPreProcess.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPreProcess.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPreProcessAndroid.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPreProcessAndroid.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPreProcessiOS.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinPreProcessiOS.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinProcessGradleBuildFile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinProcessGradleBuildFile.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinUpmManifest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/AppLovinUpmManifest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/MaxSdk.IntegrationManager.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/IntegrationManager/Editor/MaxSdk.IntegrationManager.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxCmpService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxCmpService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxEventExecutor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxEventExecutor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxEventSystemChecker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxEventSystemChecker.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxEvents.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxEvents.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdk.Scripts.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdk.Scripts.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdk.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdk.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkAndroid.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkAndroid.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkBase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkCallbacks.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkCallbacks.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkLogger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkLogger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkUnityEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkUnityEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkUtils.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkiOS.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkiOS.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSegmentCollection.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSegmentCollection.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxUserData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxUserData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxUserServiceAndroid.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxUserServiceAndroid.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxUserServiceUnityEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxUserServiceUnityEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxUserServiceiOS.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxUserServiceiOS.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxWebRequest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxWebRequest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/ThirdParty.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/ThirdParty/MiniJSON.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/ThirdParty/MiniJSON.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup10" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup11" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup11" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup12" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup13" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup13" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup14" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup14" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup15" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup15" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup16" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup16" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup17" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup17" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup18" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup18" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup19" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup19" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup2" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup20" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup20" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup21" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup21" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup22" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup22" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup23" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup23" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup24" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup24" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup25" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup25" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup26" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup26" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup27" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup27" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup28" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup28" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup29" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup29" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup3" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup30" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup30" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup31" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup31" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup32" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup32" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup33" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup33" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup4" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup5" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup6" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup7" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup8" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup9" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/settingsTemplate.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/settingsTemplate.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FBAudienceNetwork.podspec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/AndroidResolverDependencies.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AndroidResolverDependencies.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,27 +345,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AcpAgentsConfigurable&quot;,
-    &quot;unity.profiler.toolWindow.autoShown&quot;: &quot;true&quot;,
-    &quot;附加到 Unity 编辑器.附加到 Unity 编辑器.executor&quot;: &quot;Debug&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "white",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "ml.llm.AcpAgentsConfigurable",
+    "unity.profiler.toolWindow.autoShown": "true",
+    "附加到 Unity 编辑器.附加到 Unity 编辑器.executor": "Debug"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="附加到 Unity 编辑器.附加到 Unity 编辑器">
     <configuration name="启动 Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Program Files\Unity Editor\6000.0.66f2\Editor\Unity.exe" />

@@ -15,7 +15,6 @@ public class GF : GFBuiltin
     // public static DataCollectManager DataCollectManager { get; private set; }
     public static GuideManager GuideManager { get; private set; }
     
-    public static AdsManager AdsManager { get; private set; }
     private bool m_IsFrameworkInitialized = false;
     // public static ITenjinBridge TenjinBridge { get; private set; }
     public static string apiKey = "abcd";
@@ -39,7 +38,6 @@ public class GF : GFBuiltin
         // 第三方sdk
         // DataCollectManager = DataCollectManager.Instance;
         // TenjinConnect();
-        AdsManager = AdsManager.Instance;
         
     }
 
@@ -400,14 +398,6 @@ public class GF : GFBuiltin
 //         else
 //         {
 //             Log.Error("===> FirebaseMseeageManage未初始化，无法上报归因数据");
-//         }
-//     }
-//     public static void SendAppLovinImpression(string impressionData)
-//     {
-//         if (TenjinBridge != null)
-//         {
-//             TenjinBridge.AppLovinImpressionFromJSON(apiKey, impressionData);
-//             //Debug.Log($"===> TrackAdRevenue Tenjin AppLovinImpressionFromJSON: {impressionData}");
 //         }
 //     }
 
