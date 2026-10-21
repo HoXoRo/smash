@@ -32,7 +32,7 @@ namespace Gameplay
 
 		public static bool ShouldShowPrelevelTutorial(PrelevelBoosterType type, int level)
 		{
-			return type == PrelevelBoosterType.Rocket && GetUnlockLevelForType(type) <= level && !SaveService.Data.TutorialProgress.tutorialPrelevelBoosterRocketDone;
+			return GameplayTutorial.TutorialManager.TutorialsEnabled && type == PrelevelBoosterType.Rocket && GetUnlockLevelForType(type) <= level && !SaveService.Data.TutorialProgress.tutorialPrelevelBoosterRocketDone;
 		}
 
 		public static void MarkPrelevelTutorialDone(PrelevelBoosterType type)

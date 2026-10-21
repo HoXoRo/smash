@@ -55,7 +55,7 @@ namespace Gameplay
 
 		public static bool ShouldShowPrelevelTutorial(int level)
 		{
-			return level >= StreakUnlockLevel && StreakEnabled && !SaveService.Data.TutorialProgress.tutorialPrelevelStreakDone;
+			return GameplayTutorial.TutorialManager.TutorialsEnabled && level >= StreakUnlockLevel && StreakEnabled && !SaveService.Data.TutorialProgress.tutorialPrelevelStreakDone;
 		}
 
 		public static void MarkPrelevelTutorialDone()

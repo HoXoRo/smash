@@ -8,6 +8,9 @@ namespace Gameplay.GameplayTutorial
 {
 	public class TutorialManager : ServiceMonoBehaviour
 	{
+		// Global switch for gameplay and prelevel tutorials.
+		public static bool TutorialsEnabled => false;
+
 		[SerializeField]
 		private List<TutorialBase> tutorials;
 
@@ -35,7 +38,7 @@ namespace Gameplay.GameplayTutorial
 		public void CheckTutorial()
 		{
 			SyncActiveTutorialState();
-			if (_activeTutorial != null)
+			if (!TutorialsEnabled || _activeTutorial != null)
 			{
 				return;
 			}
@@ -55,7 +58,7 @@ namespace Gameplay.GameplayTutorial
 		public bool CheckStagedLevelTutorial(Action<int, int> onStageComplete)
 		{
 			SyncActiveTutorialState();
-			if (_activeTutorial != null || stagedLevelTutorial == null)
+			if (!TutorialsEnabled || _activeTutorial != null || stagedLevelTutorial == null)
 			{
 				return false;
 			}
