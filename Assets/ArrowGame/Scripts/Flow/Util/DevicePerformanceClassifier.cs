@@ -49,17 +49,28 @@ namespace Util
 			{
 				cachedTier = GetTierInternal();
 				hasCachedTier = true;
-				Debug.Log("[DevicePerformance] Performance tier: " + cachedTier);
+				Debug.Log("[DevicePerformance] Performance tier: " + GetTierLabel(cachedTier));
 			}
 
 			return cachedTier;
 		}
 
+        // Stable diagnostic labels must not depend on enum names renamed by Obfuz.
+        private static string GetTierLabel(DevicePerformanceTier tier)
+        {
+            switch (tier)
+            {
+                case DevicePerformanceTier.Low: return "Low";
+                case DevicePerformanceTier.Mid: return "Mid";
+                case DevicePerformanceTier.High: return "High";
+                default: return ((int)tier).ToString(System.Globalization.CultureInfo.InvariantCulture);
+            }
+        }
 		public static string GetDebugInfo()
 		{
 			DeviceContext deviceContext = GetDeviceContext();
 			StringBuilder stringBuilder = new StringBuilder();
-			stringBuilder.AppendFormat("Tier: {0}\n", GetTier());
+			stringBuilder.AppendFormat("Tier: {0}\n", GetTierLabel(GetTier()));
 			stringBuilder.AppendFormat("RAM: {0} MB\n", SystemInfo.systemMemorySize);
 			stringBuilder.AppendFormat("CPU Cores: {0}\n", SystemInfo.processorCount);
 			stringBuilder.Append("CPU (normalized): ").Append(deviceContext.ProcessorType).Append('\n');

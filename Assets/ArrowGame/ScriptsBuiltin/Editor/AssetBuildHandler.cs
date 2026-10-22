@@ -130,85 +130,90 @@ namespace UGF.EditorTools
             ResourceEditorController resEditor = new ResourceEditorController();
             if (resEditor.Load())
             {
-                var duplicateAssetNames = FindDuplicateAssetNames(resEditor);
-                if (duplicateAssetNames == null) return false;
-                bool resolved = ResolveDuplicateAssets(resEditor, duplicateAssetNames);
-                return resolved;
+                return ResolveDuplicateAssets(resEditor);
             }
-
             return false;
         }
-        private static bool ResolveDuplicateAssets(ResourceEditorController resEditor, HashSet<string> duplicateAssetNames)
-        {
-            if (!resEditor.HasResource(ConstEditor.SharedAssetBundleName, null))
-            {
-                bool addSuccess = resEditor.AddResource(ConstEditor.SharedAssetBundleName, null, null, LoadType.LoadFromMemoryAndQuickDecrypt, false);
 
-                if (!addSuccess)
+        private static bool ResolveDuplicateAssets(ResourceEditorController resEditor)
+        {
+            // Stop traversal at explicitly assigned assets. Their dependencies belong
+            // to their own bundle, not to every bundle which happens to reference them.
+            var resources = resEditor.GetResources();
+            var assigned = new HashSet<string>(resources.SelectMany(r => r.GetAssets()).Select(a => a.Name));
+            var owners = new Dictionary<string, HashSet<string>>();
+            var dependencyCache = new Dictionary<string, string[]>();
+            foreach (var resource in resources)
+            {
+                var visited = new HashSet<string>();
+                var pending = new Stack<string>();
+                foreach (var asset in resource.GetAssets())
+                    foreach (var dependency in GetDirectDependencies(asset.Name, dependencyCache))
+                        pending.Push(dependency);
+                while (pending.Count > 0)
                 {
-                    Debug.LogWarningFormat("ResourceEditor Add Resource:{0} Failed!", ConstEditor.SharedAssetBundleName);
+                    string path = pending.Pop();
+                    if (!visited.Add(path) || assigned.Contains(path) || !CanShareAsset(path)) continue;
+                    if (!owners.TryGetValue(path, out var users))
+                        owners.Add(path, users = new HashSet<string>());
+                    users.Add(resource.FullName);
+                    foreach (var dependency in GetDirectDependencies(path, dependencyCache))
+                        pending.Push(dependency);
+                }
+            }
+
+            int sharedCount = 0;
+            foreach (var pair in owners.OrderBy(p => p.Key, System.StringComparer.Ordinal))
+            {
+                if (pair.Value.Count < 2) continue;
+                // Equal consumer sets share one bundle; unrelated UI and gameplay
+                // dependencies do not accumulate in a single giant shared bundle.
+                string consumers = string.Join("\n", pair.Value.OrderBy(x => x, System.StringComparer.Ordinal));
+                string bundleName;
+                using (var hash = System.Security.Cryptography.SHA256.Create())
+                    bundleName = "AutoShared/" + System.BitConverter.ToString(
+                        hash.ComputeHash(System.Text.Encoding.UTF8.GetBytes(consumers))).Replace("-", "").ToLowerInvariant();
+                if (!resEditor.HasResource(bundleName, null) &&
+                    !resEditor.AddResource(bundleName, null, null, LoadType.LoadFromMemoryAndDecrypt, true))
+                {
+                    Debug.LogError("Could not create shared bundle: " + bundleName);
                     return false;
                 }
+                if (!resEditor.AssignAsset(AssetDatabase.AssetPathToGUID(pair.Key), bundleName, null))
+                {
+                    Debug.LogError("Could not assign shared dependency: " + pair.Key);
+                    return false;
+                }
+                sharedCount++;
             }
-            Debug.LogFormat($"重复依赖资源个数:{duplicateAssetNames.Count}");
-            // if (duplicateAssetNames.Count > 0)
-            // {
-            //     Debug.Log($"-------------添加下列冗余资源到{ConstEditor.SharedAssetBundleName}------------");
-            //     var items = resEditor.GetResource(ConstEditor.SharedAssetBundleName, null).GetAssets();
-            //     foreach (var item in items)
-            //     {
-            //         var aseetName = item.Name;
-            //         if (duplicateAssetNames.Contains(aseetName))
-            //         {
-            //             duplicateAssetNames.Remove(aseetName);
-            //         }
-            //         else
-            //         {
-            //             resEditor.UnassignAsset(AssetDatabase.AssetPathToGUID(aseetName));
-            //         }
-            //     }
-            //     foreach (var assetName in duplicateAssetNames)
-            //     {
-            //         Debug.Log($"解决冗余资源:{assetName}");
-            //         if (!resEditor.AssignAsset(AssetDatabase.AssetPathToGUID(assetName), ConstEditor.SharedAssetBundleName, null))
-            //         {
-            //             Debug.LogWarning($"添加资源:{assetName}到{ConstEditor.SharedAssetBundleName}失败!");
-            //         }
-            //     }
-            //     Debug.Log($"-------------处理冗余资源结束------------");
-            // }
-            resEditor.RemoveUnknownAssets();
+            // SourceAssetRootPath is ArrowGame, but shared shaders may live in plugins.
+            // Remove only missing assets, not valid dependencies outside that editor filter.
+            foreach (var asset in resEditor.GetResources().SelectMany(r => r.GetAssets()).ToArray())
+                if (string.IsNullOrEmpty(AssetDatabase.GUIDToAssetPath(asset.Guid)))
+                    resEditor.UnassignAsset(asset.Guid);
             resEditor.RemoveUnusedResources();
+            Debug.Log($"AB shared dependencies extracted: {sharedCount}");
             return resEditor.Save();
         }
-        private static HashSet<string> FindDuplicateAssetNames(ResourceEditorController resEditor)
+
+        private static string[] GetDirectDependencies(string path, Dictionary<string, string[]> cache)
         {
-            HashSet<string> result = new HashSet<string>();
-            Dictionary<string, int> assetReferenceDic = new Dictionary<string, int>();
-            var srcAssetRoot = resEditor.SourceAssetRootPath;
-            var resources = resEditor.GetResources();
-            for (int i = 0; i < resources.Length; i++)
+            if (!cache.TryGetValue(path, out var dependencies))
             {
-                var resource = resources[i];
-                if (resource.FullName == ConstEditor.SharedAssetBundleName) continue;
-                var assets = resource.GetAssets();
-                foreach(var asset in assets)
-                {
-                    var files = AssetDatabase.GetDependencies(asset.Name, true);
-                    foreach(var file in files)
-                    {
-                        if (!file.StartsWith(srcAssetRoot)) continue;
-                        if(assetReferenceDic.TryGetValue(file, out int resIdx) && (i != resIdx))
-                        {
-                            result.Add(file);
-                            Debug.Log($"资源重复依赖{asset.Name}：{file}");
-                            continue;
-                        }
-                        assetReferenceDic[file] = i;
-                    }
-                }
+                dependencies = AssetDatabase.GetDependencies(path, false).Where(p => p != path).ToArray();
+                cache.Add(path, dependencies);
             }
-            return result;
+            return dependencies;
+        }
+
+        private static bool CanShareAsset(string path)
+        {
+            if (!path.StartsWith("Assets/", System.StringComparison.Ordinal) || AssetDatabase.IsValidFolder(path))
+                return false;
+            string extension = Path.GetExtension(path).ToLowerInvariant();
+            if (extension == ".cs" || extension == ".dll" || extension == ".asmdef" ||
+                extension == ".asmref" || extension == ".unity") return false;
+            return AssetDatabase.GetMainAssetTypeAtPath(path) != null;
         }
 
         /// <summary>

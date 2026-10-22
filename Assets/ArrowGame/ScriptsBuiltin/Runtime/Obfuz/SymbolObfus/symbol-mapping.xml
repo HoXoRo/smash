@@ -636,7 +636,7 @@
       <field signature="int $Obfuz$RVA_Value266" newName="$ik" />
       <field signature="int $Obfuz$RVA_Value267" newName="$Ik" />
       <field signature="int $Obfuz$RVA_Value268" newName="$jk" />
-      <field signature="string $Obfuz$RVA_Value269" newName="$Rx" />
+      <field signature="int $Obfuz$RVA_Value269" newName="$Cz" />
       <field signature="string $Obfuz$RVA_Value270" newName="$sx" />
       <field signature="string $Obfuz$RVA_Value271" newName="$Sx" />
       <field signature="string $Obfuz$RVA_Value272" newName="$tx" />
@@ -645,19 +645,19 @@
       <field signature="string $Obfuz$RVA_Value275" newName="$Ux" />
       <field signature="string $Obfuz$RVA_Value276" newName="$vx" />
       <field signature="string $Obfuz$RVA_Value277" newName="$Vx" />
-      <field signature="int $Obfuz$RVA_Value278" newName="$ok" />
+      <field signature="string $Obfuz$RVA_Value278" newName="$dz" />
       <field signature="int $Obfuz$RVA_Value279" newName="$Ok" />
       <field signature="int $Obfuz$RVA_Value280" newName="$pk" />
       <field signature="int $Obfuz$RVA_Value281" newName="$Pk" />
       <field signature="int $Obfuz$RVA_Value282" newName="$qk" />
       <field signature="int $Obfuz$RVA_Value283" newName="$Qk" />
       <field signature="int $Obfuz$RVA_Value284" newName="$rk" />
-      <field signature="float $Obfuz$RVA_Value285" newName="$wx" />
+      <field signature="int $Obfuz$RVA_Value285" newName="$Dz" />
       <field signature="float $Obfuz$RVA_Value286" newName="$Wx" />
       <field signature="float $Obfuz$RVA_Value287" newName="$xx" />
       <field signature="float $Obfuz$RVA_Value288" newName="$Xx" />
       <field signature="float $Obfuz$RVA_Value289" newName="$yx" />
-      <field signature="int $Obfuz$RVA_Value290" newName="$uk" />
+      <field signature="float $Obfuz$RVA_Value290" newName="$ez" />
       <field signature="int $Obfuz$RVA_Value291" newName="$Uk" />
       <field signature="int $Obfuz$RVA_Value292" newName="$vk" />
       <field signature="int $Obfuz$RVA_Value293" newName="$Vk" />
@@ -945,6 +945,7 @@
       <field signature="int $Obfuz$RVA_Value575" newName="$QY" />
       <field signature="int $Obfuz$RVA_Value576" newName="$rY" />
       <field signature="int $Obfuz$RVA_Value577" newName="$RY" />
+      <field signature="int $Obfuz$RVA_Value578" newName="$Ez" />
     </type>
     <type fullName="$Obfuz$ProxyCall" newFullName="$Xb" status="Renamed">
       <method signature="[Hotfix]AppConfigs $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_4257634(nint, int)" newName="$gJ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_4257634(IntPtr, Int32)" newStackTraceSignature="$Xb:$gJ(IntPtr, Int32)" />
@@ -978,6 +979,7 @@
       <method signature="[Hotfix]Core.RoutineRunner $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_8141011(int)" newName="$cY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_8141011(Int32)" newStackTraceSignature="$Xb:$cY(Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_10462300(int)" newName="$KW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_10462300(Int32)" newStackTraceSignature="$Xb:$KW(Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1&lt;[Hotfix]Gameplay.Level.LevelCollectionMetaData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_11811128(int)" newName="$CY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_11811128(Int32)" newStackTraceSignature="$Xb:$CY(Int32)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1&lt;[Hotfix]Gameplay.Particles.ParticlePlayer&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_14589509(int)" newName="$tU" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_14589509(Int32)" newStackTraceSignature="$Xb:$tU(Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1&lt;[Hotfix]Level.LevelData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_16115009(int)" newName="$dY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_16115009(Int32)" newStackTraceSignature="$Xb:$dY(Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1&lt;bool&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_7918774(int)" newName="$jk" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_7918774(Int32)" newStackTraceSignature="$Xb:$jk(Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1&lt;byte[]&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_14017630(int)" newName="$lW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_14017630(Int32)" newStackTraceSignature="$Xb:$lW(Int32)" />
@@ -988,6 +990,7 @@
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_13510_8988543([UniTask]Cysharp.Threading.Tasks.UniTask, System.Threading.CancellationToken, int)" newName="$fY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_13510_8988543(UniTask, CancellationToken, Int32)" newStackTraceSignature="$Xb:$fY(UniTask, CancellationToken, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_2155_8988543(int, System.Threading.CancellationToken, byte, int)" newName="$FY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2155_8988543(Int32, CancellationToken, Byte, Int32)" newStackTraceSignature="$Xb:$FY(Int32, CancellationToken, Byte, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_8988543(int)" newName="$gY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_8988543(Int32)" newStackTraceSignature="$Xb:$gY(Int32)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_22830_8988543(object, int, [UnityEngine.CoreModule]UnityEngine.Vector3, [UnityEngine.CoreModule]UnityEngine.Quaternion, [UnityEngine.CoreModule]UnityEngine.Vector3, int)" newName="$LY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22830_8988543(Object, Int32, Vector3, Quaternion, Vector3, Int32)" newStackTraceSignature="$Xb:$LY(Object, Int32, Vector3, Quaternion, Vector3, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_25763_8988543(int, int)" newName="$GY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_25763_8988543(Int32, Int32)" newStackTraceSignature="$Xb:$GY(Int32, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_2585_8988543([UniTask]Cysharp.Threading.Tasks.UniTask, object, int)" newName="$Jk" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2585_8988543(UniTask, Object, Int32)" newStackTraceSignature="$Xb:$Jk(UniTask, Object, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_8988543(nint, int)" newName="$mW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_8988543(IntPtr, Int32)" newStackTraceSignature="$Xb:$mW(IntPtr, Int32)" />
@@ -995,23 +998,24 @@
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_38649_8988543(object, int, System.Threading.CancellationToken, byte, int)" newName="$iY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_38649_8988543(Object, Int32, CancellationToken, Byte, Int32)" newStackTraceSignature="$Xb:$iY(Object, Int32, CancellationToken, Byte, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_40410_8988543(int, int, System.Threading.CancellationToken, byte, int)" newName="$kk" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_40410_8988543(Int32, Int32, CancellationToken, Byte, Int32)" newStackTraceSignature="$Xb:$kk(Int32, Int32, CancellationToken, Byte, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_42690_8988543(int, System.Threading.CancellationToken, int)" newName="$IY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_42690_8988543(Int32, CancellationToken, Int32)" newStackTraceSignature="$Xb:$IY(Int32, CancellationToken, Int32)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_45707_8988543(object, int, object, int)" newName="$haA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_45707_8988543(Object, Int32, Object, Int32)" newStackTraceSignature="$Xb:$haA(Object, Int32, Object, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_47737_8988543(object, System.Threading.CancellationToken, int)" newName="$jY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_47737_8988543(Object, CancellationToken, Int32)" newStackTraceSignature="$Xb:$jY(Object, CancellationToken, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_53054_8988543(System.TimeSpan, byte, int, System.Threading.CancellationToken, byte, int)" newName="$Kk" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_53054_8988543(TimeSpan, Byte, Int32, CancellationToken, Byte, Int32)" newStackTraceSignature="$Xb:$Kk(TimeSpan, Byte, Int32, CancellationToken, Byte, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_55685_8988543(object, object, object, byte, float, float, int)" newName="$JY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_55685_8988543(Object, Object, Object, Byte, Single, Single, Int32)" newStackTraceSignature="$Xb:$JY(Object, Object, Object, Byte, Single, Single, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_56632_8988543(object, int, System.Threading.CancellationToken, int)" newName="$kY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_56632_8988543(Object, Int32, CancellationToken, Int32)" newStackTraceSignature="$Xb:$kY(Object, Int32, CancellationToken, Int32)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_61679_8988543(object, object, System.Threading.CancellationToken, int)" newName="$mY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_61679_8988543(Object, Object, CancellationToken, Int32)" newStackTraceSignature="$Xb:$mY(Object, Object, CancellationToken, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_1576731(nint, int)" newName="$nW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_1576731(IntPtr, Int32)" newStackTraceSignature="$Xb:$nW(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]AppConfigs&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_13369844(nint, int)" newName="$lk" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_13369844(IntPtr, Int32)" newStackTraceSignature="$Xb:$lk(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.GameplayTutorial.GenericItemTutorial.GenericItemTutorialData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_10193119(nint, int)" newName="$KY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_10193119(IntPtr, Int32)" newStackTraceSignature="$Xb:$KY(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Level.LevelCollectionMetaData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_8590374(nint, int)" newName="$lY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_8590374(IntPtr, Int32)" newStackTraceSignature="$Xb:$lY(IntPtr, Int32)" />
-      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Objects.ObjectData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_15257786(nint, int)" newName="$LY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_15257786(IntPtr, Int32)" newStackTraceSignature="$Xb:$LY(IntPtr, Int32)" />
-      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Particles.ParticleData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_9442344(nint, int)" newName="$mY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_9442344(IntPtr, Int32)" newStackTraceSignature="$Xb:$mY(IntPtr, Int32)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Particles.ParticlePlayer&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_11368755(nint, int)" newName="$OY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_11368755(IntPtr, Int32)" newStackTraceSignature="$Xb:$OY(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Level.LevelData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_12894255(nint, int)" newName="$MY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_12894255(IntPtr, Int32)" newStackTraceSignature="$Xb:$MY(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;bool&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_4698020(nint, int)" newName="$mk" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_4698020(IntPtr, Int32)" newStackTraceSignature="$Xb:$mk(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;byte[]&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_10796876(nint, int)" newName="$NW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_10796876(IntPtr, Int32)" newStackTraceSignature="$Xb:$NW(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;int&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_14361347(nint, int)" newName="$nY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_14361347(IntPtr, Int32)" newStackTraceSignature="$Xb:$nY(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;string&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_10454754(nint, int)" newName="$NY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_10454754(IntPtr, Int32)" newStackTraceSignature="$Xb:$NY(IntPtr, Int32)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;System.ValueTuple`3&lt;[Hotfix]Gameplay.Objects.ObjectData,[Hotfix]Gameplay.Particles.ParticleData,[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt;&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_2335975(nint, int)" newName="$TY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_2335975(IntPtr, Int32)" newStackTraceSignature="$Xb:$TY(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.CoreModule]UnityEngine.GameObject&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_6306338(nint, int)" newName="$oY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_6306338(IntPtr, Int32)" newStackTraceSignature="$Xb:$oY(IntPtr, Int32)" />
-      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_2694231(nint, int)" newName="$OY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_2694231(IntPtr, Int32)" newStackTraceSignature="$Xb:$OY(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.CoreModule]UnityEngine.TextAsset&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_11472371(nint, int)" newName="$pY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_11472371(IntPtr, Int32)" newStackTraceSignature="$Xb:$pY(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityGameFramework.Runtime]UnityGameFramework.Runtime.UIFormLogic&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_14914329(nint, int)" newName="$hY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_14914329(IntPtr, Int32)" newStackTraceSignature="$Xb:$hY(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]AppConfigs&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_9750759(object, object, int)" newName="$Mk" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_9750759(Object, Object, Int32)" newStackTraceSignature="$Xb:$Mk(Object, Object, Int32)" />
@@ -1022,9 +1026,10 @@
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Level.LevelCollectionMetaData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_4971289(nint, int)" newName="$RY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_4971289(IntPtr, Int32)" newStackTraceSignature="$Xb:$RY(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Level.LevelCollectionMetaData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_37968_4971289([UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Level.LevelCollectionMetaData&gt;, System.Threading.CancellationToken, int)" newName="$sY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_37968_4971289(UniTask`1, CancellationToken, Int32)" newStackTraceSignature="$Xb:$sY(UniTask`1, CancellationToken, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Objects.ObjectData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_11638701(object, object, int)" newName="$tY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_11638701(Object, Object, Int32)" newStackTraceSignature="$Xb:$tY(Object, Object, Int32)" />
-      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Objects.ObjectData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_37316_11638701([UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Objects.ObjectData&gt;, System.Threading.CancellationToken, int)" newName="$TY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_37316_11638701(UniTask`1, CancellationToken, Int32)" newStackTraceSignature="$Xb:$TY(UniTask`1, CancellationToken, Int32)" />
-      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Particles.ParticleData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_16386_5823259([UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Particles.ParticleData&gt;, System.Threading.CancellationToken, int)" newName="$uY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_16386_5823259(UniTask`1, CancellationToken, Int32)" newStackTraceSignature="$Xb:$uY(UniTask`1, CancellationToken, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Particles.ParticleData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_5823259(object, object, int)" newName="$vY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_5823259(Object, Object, Int32)" newStackTraceSignature="$Xb:$vY(Object, Object, Int32)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Particles.ParticlePlayer&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_7749670(object, int)" newName="$PaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_7749670(Object, Int32)" newStackTraceSignature="$Xb:$PaA(Object, Int32)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Particles.ParticlePlayer&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_7749670(nint, int)" newName="$uY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_7749670(IntPtr, Int32)" newStackTraceSignature="$Xb:$uY(IntPtr, Int32)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Particles.ParticlePlayer&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_51425_7749670(object, int, int)" newName="$Ez" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_51425_7749670(Object, Int32, Int32)" newStackTraceSignature="$Xb:$Ez(Object, Int32, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Level.LevelData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_25763_9275170(int, int)" newName="$VY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_25763_9275170(Int32, Int32)" newStackTraceSignature="$Xb:$VY(Int32, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Level.LevelData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_9275170(nint, int)" newName="$wY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_9275170(IntPtr, Int32)" newStackTraceSignature="$Xb:$wY(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Level.LevelData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_58609_9275170([UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Level.LevelData&gt;, System.Threading.CancellationToken, int)" newName="$xY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_58609_9275170(UniTask`1, CancellationToken, Int32)" newStackTraceSignature="$Xb:$xY(UniTask`1, CancellationToken, Int32)" />
@@ -1043,8 +1048,9 @@
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;string&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_6835669(int)" newName="$Bz" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_6835669(Int32)" newStackTraceSignature="$Xb:$Bz(Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;string&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_25763_6835669(int, int)" newName="$Cz" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_25763_6835669(Int32, Int32)" newStackTraceSignature="$Xb:$Cz(Int32, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;string&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_6835669(nint, int)" newName="$Dz" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_6835669(IntPtr, Int32)" newStackTraceSignature="$Xb:$Dz(IntPtr, Int32)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;System.ValueTuple`3&lt;[Hotfix]Gameplay.Objects.ObjectData,[Hotfix]Gameplay.Particles.ParticleData,[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt;&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_44610_15494106([UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Objects.ObjectData&gt;, [UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Particles.ParticleData&gt;, [UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt;, int)" newName="$SZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_44610_15494106(UniTask`1, UniTask`1, UniTask`1, Int32)" newStackTraceSignature="$Xb:$SZ(UniTask`1, UniTask`1, UniTask`1, Int32)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;System.ValueTuple`3&lt;[Hotfix]Gameplay.Objects.ObjectData,[Hotfix]Gameplay.Particles.ParticleData,[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt;&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_56553_15494106([UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;System.ValueTuple`3&lt;[Hotfix]Gameplay.Objects.ObjectData,[Hotfix]Gameplay.Particles.ParticleData,[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt;&gt;, System.Threading.CancellationToken, int)" newName="$WZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_56553_15494106(UniTask`1, CancellationToken, Int32)" newStackTraceSignature="$Xb:$WZ(UniTask`1, CancellationToken, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[UnityEngine.CoreModule]UnityEngine.GameObject&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_2687253(object, object, int)" newName="$ez" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_2687253(Object, Object, Int32)" newStackTraceSignature="$Xb:$ez(Object, Object, Int32)" />
-      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_19161_15852362([UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt;, System.Threading.CancellationToken, int)" newName="$Ez" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_19161_15852362(UniTask`1, CancellationToken, Int32)" newStackTraceSignature="$Xb:$Ez(UniTask`1, CancellationToken, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_15852362(object, object, int)" newName="$xz" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_15852362(Object, Object, Int32)" newStackTraceSignature="$Xb:$xz(Object, Object, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[UnityEngine.CoreModule]UnityEngine.TextAsset&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_7853286(object, object, int)" newName="$Xz" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_7853286(Object, Object, Int32)" newStackTraceSignature="$Xb:$Xz(Object, Object, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[UnityGameFramework.Runtime]UnityGameFramework.Runtime.EntityLogic&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_16057423(object, int)" newName="$Pk" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_16057423(Object, Int32)" newStackTraceSignature="$Xb:$Pk(Object, Int32)" />
@@ -1168,7 +1174,6 @@
       <method signature="[Hotfix]Gameplay.Objects.IContactNodeOwner $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_11162126(object, int)" newName="$rZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_11162126(Object, Int32)" newStackTraceSignature="$Xb:$rZ(Object, Int32)" />
       <method signature="[Hotfix]Gameplay.Objects.ObjectCategory $Obfuz$ProxyCall::@$Obfuz$Dispatch_25763_9045053(int, int)" newName="$RZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_25763_9045053(Int32, Int32)" newStackTraceSignature="$Xb:$RZ(Int32, Int32)" />
       <method signature="[Hotfix]Gameplay.Objects.ObjectData $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_7725129(object, int)" newName="$sZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_7725129(Object, Int32)" newStackTraceSignature="$Xb:$sZ(Object, Int32)" />
-      <method signature="[Hotfix]Gameplay.Objects.ObjectData $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_7725129(nint, int)" newName="$SZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_7725129(IntPtr, Int32)" newStackTraceSignature="$Xb:$SZ(IntPtr, Int32)" />
       <method signature="[Hotfix]Gameplay.Objects.ObjectDataItem $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_6258706(object, object, int)" newName="$tZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_6258706(Object, Object, Int32)" newStackTraceSignature="$Xb:$tZ(Object, Object, Int32)" />
       <method signature="[Hotfix]Gameplay.Objects.Table $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_11378438(object, int)" newName="$TZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_11378438(Object, Int32)" newStackTraceSignature="$Xb:$TZ(Object, Int32)" />
       <method signature="[Hotfix]Gameplay.Objects.Table $Obfuz$ProxyCall::@$Obfuz$Dispatch_12519_11378438(object, byte, int)" newName="$uZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_12519_11378438(Object, Byte, Int32)" newStackTraceSignature="$Xb:$uZ(Object, Byte, Int32)" />
@@ -1176,12 +1181,11 @@
       <method signature="[Hotfix]Gameplay.Obstacle.Blocker $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_4907477(object, int)" newName="$vZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_4907477(Object, Int32)" newStackTraceSignature="$Xb:$vZ(Object, Int32)" />
       <method signature="[Hotfix]Gameplay.Obstacle.BlockerParts $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_1201587(object, int)" newName="$VZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_1201587(Object, Int32)" newStackTraceSignature="$Xb:$VZ(Object, Int32)" />
       <method signature="[Hotfix]Gameplay.Particles.ParticleController $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_2282307(int)" newName="$wZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_2282307(Int32)" newStackTraceSignature="$Xb:$wZ(Int32)" />
-      <method signature="[Hotfix]Gameplay.Particles.ParticleData $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_15091075(nint, int)" newName="$WZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_15091075(IntPtr, Int32)" newStackTraceSignature="$Xb:$WZ(IntPtr, Int32)" />
       <method signature="[Hotfix]Gameplay.Particles.ParticleDataItem $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_13362188(object, object, int)" newName="$xZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_13362188(Object, Object, Int32)" newStackTraceSignature="$Xb:$xZ(Object, Object, Int32)" />
       <method signature="[Hotfix]Gameplay.Particles.ParticleObject[] $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_8831423(object, int)" newName="$XZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_8831423(Object, Int32)" newStackTraceSignature="$Xb:$XZ(Object, Int32)" />
       <method signature="[Hotfix]Gameplay.Particles.ParticleObjectForwarder $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_14337436(object, int)" newName="$yZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_14337436(Object, Int32)" newStackTraceSignature="$Xb:$yZ(Object, Int32)" />
       <method signature="[Hotfix]Gameplay.Particles.ParticlePlayer $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_3690094(object, int)" newName="$YZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_3690094(Object, Int32)" newStackTraceSignature="$Xb:$YZ(Object, Int32)" />
-      <method signature="[Hotfix]Gameplay.Particles.ParticlePlayer $Obfuz$ProxyCall::@$Obfuz$Dispatch_51425_3690094(object, int, int)" newName="$zZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_51425_3690094(Object, Int32, Int32)" newStackTraceSignature="$Xb:$zZ(Object, Int32, Int32)" />
+      <method signature="[Hotfix]Gameplay.Particles.ParticlePlayer $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_3690094(nint, int)" newName="$zZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_3690094(IntPtr, Int32)" newStackTraceSignature="$Xb:$zZ(IntPtr, Int32)" />
       <method signature="[Hotfix]Gameplay.UI.SlidingText $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_718665(object, int)" newName="$ZZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_718665(Object, Int32)" newStackTraceSignature="$Xb:$ZZ(Object, Int32)" />
       <method signature="[Hotfix]Gameplay.UI.SlidingTextController $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_10714373(int)" newName="$aaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_10714373(Int32)" newStackTraceSignature="$Xb:$aaA(Int32)" />
       <method signature="[Hotfix]GFEventArgs $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_9960230(int)" newName="$el" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_9960230(Int32)" newStackTraceSignature="$Xb:$el(Int32)" />
@@ -1433,6 +1437,7 @@
       <method signature="System.Type $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_712727(object, object, int)" newName="$aM" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_712727(Object, Object, Int32)" newStackTraceSignature="$Xb:$aM(Object, Object, Int32)" />
       <method signature="System.Type[] $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_131030(int)" newName="$AM" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_131030(Int32)" newStackTraceSignature="$Xb:$AM(Int32)" />
       <method signature="uint $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_3014968(object, int)" newName="$bM" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_3014968(Object, Int32)" newStackTraceSignature="$Xb:$bM(Object, Int32)" />
+      <method signature="System.ValueTuple`3&lt;[Hotfix]Gameplay.Objects.ObjectData,[Hotfix]Gameplay.Particles.ParticleData,[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_14391839(nint, int)" newName="$baA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_14391839(IntPtr, Int32)" newStackTraceSignature="$Xb:$baA(IntPtr, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_10090_4780505(nint, byte[], int)" newName="$Cx" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_10090_4780505(IntPtr, Byte[], Int32)" newStackTraceSignature="$Xb:$Cx(IntPtr, Byte[], Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_10945_4780505([Hotfix]Inventory.InventoryPayload, int, int)" newName="$ebA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_10945_4780505(InventoryPayload, Int32, Int32)" newStackTraceSignature="$Xb:$ebA(InventoryPayload, Int32, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_4780505$1(object, int)" newName="$CM" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_4780505$1(Object, Int32)" newStackTraceSignature="$Xb:$CM(Object, Int32)" />
@@ -1621,7 +1626,6 @@
       <method signature="[UnityEngine.ParticleSystemModule]UnityEngine.ParticleSystem[] $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_305205(object, int)" newName="$pBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_305205(Object, Int32)" newStackTraceSignature="$Xb:$pBA(Object, Int32)" />
       <method signature="[UnityEngine.ParticleSystemModule]UnityEngine.ParticleSystemRenderer $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_12322319(object, int)" newName="$PBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_12322319(Object, Int32)" newStackTraceSignature="$Xb:$PBA(Object, Int32)" />
       <method signature="[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_5999179(object, int)" newName="$qBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_5999179(Object, Int32)" newStackTraceSignature="$Xb:$qBA(Object, Int32)" />
-      <method signature="[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_5999179(nint, int)" newName="$QBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_5999179(IntPtr, Int32)" newStackTraceSignature="$Xb:$QBA(IntPtr, Int32)" />
       <method signature="[UnityEngine.CoreModule]UnityEngine.Quaternion $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_4455527(object, int)" newName="$rBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_4455527(Object, Int32)" newStackTraceSignature="$Xb:$rBA(Object, Int32)" />
       <method signature="[UnityEngine.CoreModule]UnityEngine.Quaternion $Obfuz$ProxyCall::@$Obfuz$Dispatch_13194_4455527([UnityEngine.CoreModule]UnityEngine.Vector3, [UnityEngine.CoreModule]UnityEngine.Vector3, int)" newName="$RBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_13194_4455527(Vector3, Vector3, Int32)" newStackTraceSignature="$Xb:$RBA(Vector3, Vector3, Int32)" />
       <method signature="[UnityEngine.CoreModule]UnityEngine.Quaternion $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_4455527(int)" newName="$iN" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_4455527(Int32)" newStackTraceSignature="$Xb:$iN(Int32)" />
@@ -1646,6 +1650,7 @@
       <method signature="[UnityEngine.TextRenderingModule]UnityEngine.TextAnchor $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_10779301(object, int)" newName="$oN" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_10779301(Object, Int32)" newStackTraceSignature="$Xb:$oN(Object, Int32)" />
       <method signature="[UnityEngine.CoreModule]UnityEngine.TextAsset $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_3944058(nint, int)" newName="$WBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_3944058(IntPtr, Int32)" newStackTraceSignature="$Xb:$WBA(IntPtr, Int32)" />
       <method signature="[UnityEngine.TextRenderingModule]UnityEngine.TextMesh $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_9562133(object, int)" newName="$ON" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_9562133(Object, Int32)" newStackTraceSignature="$Xb:$ON(Object, Int32)" />
+      <method signature="[UnityEngine.CoreModule]UnityEngine.ThreadPriority $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_1922179(int)" newName="$FaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_1922179(Int32)" newStackTraceSignature="$Xb:$FaA(Int32)" />
       <method signature="[UnityEngine.InputLegacyModule]UnityEngine.Touch $Obfuz$ProxyCall::@$Obfuz$Dispatch_25763_13984506(int, int)" newName="$pN" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_25763_13984506(Int32, Int32)" newStackTraceSignature="$Xb:$pN(Int32, Int32)" />
       <method signature="[UnityEngine.InputLegacyModule]UnityEngine.TouchPhase $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_5889641(nint, int)" newName="$PN" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_5889641(IntPtr, Int32)" newStackTraceSignature="$Xb:$PN(IntPtr, Int32)" />
       <method signature="[UnityEngine.CoreModule]UnityEngine.Transform $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_11509251(object, int)" newName="$qN" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_11509251(Object, Int32)" newStackTraceSignature="$Xb:$qN(Object, Int32)" />
@@ -1766,7 +1771,6 @@
       <method signature="[Hotfix]WatchVideoFinishEventArgs $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_5449606(int)" newName="$MO" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_5449606(Int32)" newStackTraceSignature="$Xb:$MO(Int32)" />
       <method signature="[Hotfix]WebRequestResult $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_8255626(int)" newName="$nO" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_8255626(Int32)" newStackTraceSignature="$Xb:$nO(Int32)" />
       <method signature="[Hotfix]WebRequestResult $Obfuz$ProxyCall::@$Obfuz$Dispatch_9745_8255626(byte[], byte, object, object, int)" newName="$NO" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_9745_8255626(Byte[], Byte, Object, Object, Int32)" newStackTraceSignature="$Xb:$NO(Byte[], Byte, Object, Object, Int32)" />
-      <method signature="[Hotfix]WebViewManager $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_9727138(int)" newName="$cAA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_9727138(Int32)" newStackTraceSignature="$Xb:$cAA(Int32)" />
     </type>
     <type fullName="$Obfuz$RVA$0" newFullName="$Wb" status="Renamed">
       <field signature="[Hotfix]$ObfuzRVA$DataHolder2048 $RVA_Data0" newName="$zh" />
@@ -1806,10 +1810,10 @@
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize32_12 $Obfuz$WatermarkDataHolderField14" newName="$iW" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20 AAF43DE17A34E6B91BE41081ADF6E0415DCD2CAC51442E71F5158CC0476FCB26" newName="$IW" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_7 $Obfuz$WatermarkDataHolderField9" newName="$jW" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=9850 52A5872928749D00D153309C5F1D2A734B62B6CB29972749F61E9B18815B7CC4" newName="$JW" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=9830 57642AD8E6F0E7A866820A0D0D3DF97A2CF873962ADE9D17BFC1AD5FA3043ED8" newName="$Bz" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=16 B1B3D3C4982B746C53DAB2F01202E8F0DA0CEB9CF3D8F94234A436F7ED8D0A4D" newName="$kW" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=12 FE2BC5B610FA2F21F48C2AF9EE607F1E75DDF01DEEEF014C2A3439BC7F3A2661" newName="$KW" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=19899 ECE33B83D3DBFCC38E8776388BF19612816BE8EDA4A519A0EC307C23BCF22576" newName="$lW" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=19839 E43E7FA90DE7C3C2EAC92BB2345DC3B2C91AFBD4C7FED506F6A6EC4C2CEB18BF" newName="$cz" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize20_18 $Obfuz$WatermarkDataHolderField20" newName="$LW" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=24 26168C8195C8F665BA6223C0EDD4405B11D51547F6E20F3712913880AF764E93" newName="$mW" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=24 CD1E7D8370EA36F442606618E956669F8BABE52CE9C1CC82767A0E0FEEF4CAD7" newName="$MW" />
@@ -1860,6 +1864,7 @@
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=12381" newFullName="$ob/$uc" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=12567" newFullName="$ob/$FC" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=16" newFullName="$ob/$yd" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=19839" newFullName="$ob/$gD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=19899" newFullName="$ob/$aD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20" newFullName="$ob/$Yd" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=24" newFullName="$ob/$zd" status="Renamed" />
@@ -1875,6 +1880,7 @@
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=5987" newFullName="$ob/$DA" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=6044" newFullName="$ob/$fC" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=9504" newFullName="$ob/$pb" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=9830" newFullName="$ob/$aD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=9850" newFullName="$ob/$Zd" status="Renamed" />
     <type fullName="AddBallsUIForm" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]PlayerDataModel playerData" newName="$TD" />
@@ -6219,10 +6225,8 @@
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$zp" />
       <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$Zp" />
       <field signature="System.Threading.CancellationToken cancellationToken" newName="$aP" />
-      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Objects.ObjectData&gt; &lt;&gt;u__1" newName="$AP" />
-      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Particles.ParticleData&gt; &lt;&gt;u__2" newName="$kP" />
-      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt; &lt;&gt;u__3" newName="$KP" />
-      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__4" newName="$lP" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;System.ValueTuple`3&lt;[Hotfix]Gameplay.Objects.ObjectData,[Hotfix]Gameplay.Particles.ParticleData,[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt;&gt; &lt;&gt;u__1" newName="$JI" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__2" newName="$KI" />
     </type>
     <type fullName="Gameplay.GameController/&lt;RunPostLoadingGameplayRevealInternal&gt;d__64" newFullName="Gameplay.GameController/$EC" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$LP" />
@@ -7037,12 +7041,45 @@
       <method signature="bool Gameplay.Objects.ObjectCategoryMap/&lt;&gt;c__DisplayClass1_0::&lt;GetCategory&gt;b__0([Hotfix]Gameplay.Objects.ObjectCategoryMap/&lt;&gt;c__DisplayClass1_0, System.Collections.Generic.KeyValuePair`2&lt;[Hotfix]Gameplay.Objects.ObjectCategory,System.Collections.Generic.List`1&lt;[Hotfix]Gameplay.Objects.ObjectType&gt;&gt;)" newName="$Wu" oldStackTraceSignature="Gameplay.Objects.&lt;&gt;c__DisplayClass1_0:&lt;GetCategory&gt;b__0(KeyValuePair`2)" newStackTraceSignature="$H.$rC:$Wu(KeyValuePair`2)" />
     </type>
     <type fullName="Gameplay.Objects.ObjectData" newFullName="" status="NotRenamed">
+      <field signature="System.Collections.Generic.Dictionary`2&lt;string,[UnityEngine.CoreModule]UnityEngine.GameObject&gt; _loaded" newName="$Rx" />
+      <field signature="bool _released" newName="$wx" />
       <method signature="[UnityEngine.CoreModule]UnityEngine.GameObject Gameplay.Objects.ObjectData::Get([Hotfix]Gameplay.Objects.ObjectData, [Hotfix]Gameplay.Objects.ObjectType, [Hotfix]Util.FloatTriplet)" newName="$Xu" oldStackTraceSignature="Gameplay.Objects.ObjectData:Get(ObjectType, FloatTriplet)" newStackTraceSignature="Gameplay.Objects.ObjectData:$Xu($tC, FloatTriplet)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask Gameplay.Objects.ObjectData::LoadForLevelAsync([Hotfix]Gameplay.Objects.ObjectData, [Hotfix]Level.LevelData, System.Threading.CancellationToken)" newName="$QT" oldStackTraceSignature="Gameplay.Objects.ObjectData:LoadForLevelAsync(LevelData, CancellationToken)" newStackTraceSignature="Gameplay.Objects.ObjectData:$QT(LevelData, CancellationToken)" />
+      <method signature="void Gameplay.Objects.ObjectData::@AddPath([System.Core]System.Collections.Generic.HashSet`1&lt;string&gt;, string)" newName="$yu" oldStackTraceSignature="Gameplay.Objects.ObjectData:AddPath(HashSet`1, String)" newStackTraceSignature="Gameplay.Objects.ObjectData:$yu(HashSet`1, String)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask Gameplay.Objects.ObjectData::LoadPrefabAsync([Hotfix]Gameplay.Objects.ObjectData, string, System.Threading.CancellationToken)" newName="$rU" oldStackTraceSignature="Gameplay.Objects.ObjectData:LoadPrefabAsync(String, CancellationToken)" newStackTraceSignature="Gameplay.Objects.ObjectData:$rU(String, CancellationToken)" />
+      <method signature="void Gameplay.Objects.ObjectData::ReleaseLoadedPrefabs([Hotfix]Gameplay.Objects.ObjectData)" newName="$RU" oldStackTraceSignature="Gameplay.Objects.ObjectData:ReleaseLoadedPrefabs()" newStackTraceSignature="Gameplay.Objects.ObjectData:$RU()" />
     </type>
     <type fullName="Gameplay.Objects.ObjectData/&lt;&gt;c__DisplayClass3_0" newFullName="Gameplay.Objects.ObjectData/$RC" status="Renamed">
       <field signature="[Hotfix]Gameplay.Objects.ObjectType type" newName="$Rt" />
       <field signature="[Hotfix]Util.FloatTriplet size" newName="$st" />
       <method signature="bool Gameplay.Objects.ObjectData/&lt;&gt;c__DisplayClass3_0::&lt;Get&gt;b__0([Hotfix]Gameplay.Objects.ObjectData/&lt;&gt;c__DisplayClass3_0, [Hotfix]Gameplay.Objects.ObjectDataItem)" newName="$yu" oldStackTraceSignature="Gameplay.Objects.&lt;&gt;c__DisplayClass3_0:&lt;Get&gt;b__0(ObjectDataItem)" newStackTraceSignature="Gameplay.Objects.$RC:$yu(ObjectDataItem)" />
+    </type>
+    <type fullName="Gameplay.Objects.ObjectData/&lt;&gt;c__DisplayClass7_0" newFullName="Gameplay.Objects.ObjectData/$eC" status="Renamed">
+      <field signature="[Hotfix]Gameplay.Objects.ObjectType type" newName="$tY" />
+      <field signature="[Hotfix]Util.FloatTriplet size" newName="$TY" />
+      <method signature="bool Gameplay.Objects.ObjectData/&lt;&gt;c__DisplayClass7_0::&lt;Get&gt;b__0([Hotfix]Gameplay.Objects.ObjectData/&lt;&gt;c__DisplayClass7_0, [Hotfix]Gameplay.Objects.ObjectDataItem)" newName="$sU" oldStackTraceSignature="Gameplay.Objects.&lt;&gt;c__DisplayClass7_0:&lt;Get&gt;b__0(ObjectDataItem)" newStackTraceSignature="Gameplay.Objects.$eC:$sU(ObjectDataItem)" />
+    </type>
+    <type fullName="Gameplay.Objects.ObjectData/&lt;&gt;c__DisplayClass8_0" newFullName="Gameplay.Objects.ObjectData/$mC" status="Renamed">
+      <field signature="[Hotfix]Level.LevelObjectData obj" newName="$uY" />
+      <method signature="bool Gameplay.Objects.ObjectData/&lt;&gt;c__DisplayClass8_0::&lt;LoadForLevelAsync&gt;b__0([Hotfix]Gameplay.Objects.ObjectData/&lt;&gt;c__DisplayClass8_0, [Hotfix]Gameplay.Objects.ObjectDataItem)" newName="$SU" oldStackTraceSignature="Gameplay.Objects.&lt;&gt;c__DisplayClass8_0:&lt;LoadForLevelAsync&gt;b__0(ObjectDataItem)" newStackTraceSignature="Gameplay.Objects.$mC:$SU(ObjectDataItem)" />
+    </type>
+    <type fullName="Gameplay.Objects.ObjectData/&lt;LoadForLevelAsync&gt;d__8" newFullName="Gameplay.Objects.ObjectData/$RC" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$UY" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$vY" />
+      <field signature="[Hotfix]Level.LevelData level" newName="$VY" />
+      <field signature="[Hotfix]Gameplay.Objects.ObjectData &lt;&gt;4__this" newName="$wY" />
+      <field signature="System.Threading.CancellationToken token" newName="$WY" />
+      <field signature="bool &lt;needsTable&gt;5__2" newName="$xY" />
+      <field signature="bool &lt;needsBlocker&gt;5__3" newName="$XY" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__1" newName="$yY" />
+    </type>
+    <type fullName="Gameplay.Objects.ObjectData/&lt;LoadPrefabAsync&gt;d__10" newFullName="Gameplay.Objects.ObjectData/$Zd" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$YY" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$zY" />
+      <field signature="System.Threading.CancellationToken token" newName="$ZY" />
+      <field signature="string path" newName="$az" />
+      <field signature="[Hotfix]Gameplay.Objects.ObjectData &lt;&gt;4__this" newName="$Az" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.CoreModule]UnityEngine.GameObject&gt; &lt;&gt;u__1" newName="$bz" />
     </type>
     <type fullName="Gameplay.Objects.ObjectMassMaps" newFullName="$H.$sC" status="Renamed">
       <field signature="System.Collections.Generic.Dictionary`2&lt;System.ValueTuple`2&lt;[Hotfix]Gameplay.Objects.ObjectType,int&gt;,float&gt; MassMap" newName="$St" />
@@ -7327,19 +7364,56 @@
     <type fullName="Gameplay.Particles.ParticleController" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]Gameplay.Particles.ParticleData _data" newName="$Er" />
       <field signature="System.Collections.Generic.Dictionary`2&lt;[Hotfix]Gameplay.Particles.ParticleType,[Hotfix]Gameplay.Particles.ParticlePlayer&gt; _cache" newName="$fr" />
+      <field signature="System.Collections.Generic.Dictionary`2&lt;[Hotfix]Gameplay.Particles.ParticleType,[UniTask]Cysharp.Threading.Tasks.UniTaskCompletionSource`1&lt;[Hotfix]Gameplay.Particles.ParticlePlayer&gt;&gt; _loads" newName="$OI" />
+      <field signature="System.Collections.Generic.List`1&lt;[UnityEngine.CoreModule]UnityEngine.GameObject&gt; _loadedAssets" newName="$pI" />
+      <field signature="bool _disposed" newName="$ok" />
+      <field signature="int _pendingLoads" newName="$uk" />
       <method signature="void Gameplay.Particles.ParticleController::Initialize([Hotfix]Gameplay.Particles.ParticleController, [Hotfix]Gameplay.Particles.ParticleData)" newName="$oT" oldStackTraceSignature="Gameplay.Particles.ParticleController:Initialize(ParticleData)" newStackTraceSignature="Gameplay.Particles.ParticleController:$oT(ParticleData)" />
-      <method signature="[Hotfix]Gameplay.Particles.ParticlePlayer Gameplay.Particles.ParticleController::Spawn([Hotfix]Gameplay.Particles.ParticleController, [Hotfix]Gameplay.Particles.ParticleType)" newName="$OT" oldStackTraceSignature="Gameplay.Particles.ParticleController:Spawn(ParticleType)" newStackTraceSignature="Gameplay.Particles.ParticleController:$OT($oC)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Particles.ParticlePlayer&gt; Gameplay.Particles.ParticleController::SpawnAsync([Hotfix]Gameplay.Particles.ParticleController, [Hotfix]Gameplay.Particles.ParticleType)" newName="$rr" oldStackTraceSignature="Gameplay.Particles.ParticleController:SpawnAsync(ParticleType)" newStackTraceSignature="Gameplay.Particles.ParticleController:$rr($oC)" />
       <method signature="void Gameplay.Particles.ParticleController::PlayOnPosition([Hotfix]Gameplay.Particles.ParticleController, [Hotfix]Gameplay.Particles.ParticleType, [UnityEngine.CoreModule]UnityEngine.Vector3, [UnityEngine.CoreModule]UnityEngine.Quaternion, [UnityEngine.CoreModule]UnityEngine.Vector3)" newName="$pT" oldStackTraceSignature="Gameplay.Particles.ParticleController:PlayOnPosition(ParticleType, Vector3, Quaternion, Vector3)" newStackTraceSignature="Gameplay.Particles.ParticleController:$pT($oC, Vector3, Quaternion, Vector3)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask Gameplay.Particles.ParticleController::PlayAsync([Hotfix]Gameplay.Particles.ParticleController, [Hotfix]Gameplay.Particles.ParticleType, [UnityEngine.CoreModule]UnityEngine.Vector3, [UnityEngine.CoreModule]UnityEngine.Quaternion, [UnityEngine.CoreModule]UnityEngine.Vector3)" newName="$Rr" oldStackTraceSignature="Gameplay.Particles.ParticleController:PlayAsync(ParticleType, Vector3, Quaternion, Vector3)" newStackTraceSignature="Gameplay.Particles.ParticleController:$Rr($oC, Vector3, Quaternion, Vector3)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask Gameplay.Particles.ParticleController::CompleteSpawnAsync([Hotfix]Gameplay.Particles.ParticleController, [Hotfix]Gameplay.Particles.ParticleType, [UniTask]Cysharp.Threading.Tasks.UniTaskCompletionSource`1&lt;[Hotfix]Gameplay.Particles.ParticlePlayer&gt;)" newName="$OT" oldStackTraceSignature="Gameplay.Particles.ParticleController:CompleteSpawnAsync(ParticleType, UniTaskCompletionSource`1)" newStackTraceSignature="Gameplay.Particles.ParticleController:$OT($oC, UniTaskCompletionSource`1)" />
       <method signature="bool Gameplay.Particles.ParticleController::IsAnyParticleObjectAlive([Hotfix]Gameplay.Particles.ParticleController)" newName="$PT" oldStackTraceSignature="Gameplay.Particles.ParticleController:IsAnyParticleObjectAlive()" newStackTraceSignature="Gameplay.Particles.ParticleController:$PT()" />
     </type>
     <type fullName="Gameplay.Particles.ParticleController/&lt;&gt;c" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]Gameplay.Particles.ParticleController/&lt;&gt;c &lt;&gt;9" newName="$lr" />
-      <field signature="System.Func`2&lt;System.Collections.Generic.KeyValuePair`2&lt;[Hotfix]Gameplay.Particles.ParticleType,[Hotfix]Gameplay.Particles.ParticlePlayer&gt;,bool&gt; &lt;&gt;9__5_0" newName="$Lr" />
-      <method signature="bool Gameplay.Particles.ParticleController/&lt;&gt;c::&lt;IsAnyParticleObjectAlive&gt;b__5_0([Hotfix]Gameplay.Particles.ParticleController/&lt;&gt;c, System.Collections.Generic.KeyValuePair`2&lt;[Hotfix]Gameplay.Particles.ParticleType,[Hotfix]Gameplay.Particles.ParticlePlayer&gt;)" newName="$qT" oldStackTraceSignature="Gameplay.Particles.&lt;&gt;c:&lt;IsAnyParticleObjectAlive&gt;b__5_0(KeyValuePair`2)" newStackTraceSignature="Gameplay.Particles.&lt;&gt;c:$qT(KeyValuePair`2)" />
+      <field signature="System.Func`2&lt;System.Collections.Generic.KeyValuePair`2&lt;[Hotfix]Gameplay.Particles.ParticleType,[Hotfix]Gameplay.Particles.ParticlePlayer&gt;,bool&gt; &lt;&gt;9__11_0" newName="$AP" />
+      <method signature="bool Gameplay.Particles.ParticleController/&lt;&gt;c::&lt;IsAnyParticleObjectAlive&gt;b__11_0([Hotfix]Gameplay.Particles.ParticleController/&lt;&gt;c, System.Collections.Generic.KeyValuePair`2&lt;[Hotfix]Gameplay.Particles.ParticleType,[Hotfix]Gameplay.Particles.ParticlePlayer&gt;)" newName="$GaA" oldStackTraceSignature="Gameplay.Particles.&lt;&gt;c:&lt;IsAnyParticleObjectAlive&gt;b__11_0(KeyValuePair`2)" newStackTraceSignature="Gameplay.Particles.&lt;&gt;c:$GaA(KeyValuePair`2)" />
     </type>
     <type fullName="Gameplay.Particles.ParticleController/&lt;&gt;c__DisplayClass3_0" newFullName="Gameplay.Particles.ParticleController/$mC" status="Renamed">
       <field signature="[Hotfix]Gameplay.Particles.ParticleType type" newName="$qr" />
       <method signature="bool Gameplay.Particles.ParticleController/&lt;&gt;c__DisplayClass3_0::&lt;Spawn&gt;b__0([Hotfix]Gameplay.Particles.ParticleController/&lt;&gt;c__DisplayClass3_0, [Hotfix]Gameplay.Particles.ParticleDataItem)" newName="$QT" oldStackTraceSignature="Gameplay.Particles.&lt;&gt;c__DisplayClass3_0:&lt;Spawn&gt;b__0(ParticleDataItem)" newStackTraceSignature="Gameplay.Particles.$mC:$QT(ParticleDataItem)" />
+    </type>
+    <type fullName="Gameplay.Particles.ParticleController/&lt;&gt;c__DisplayClass7_0" newFullName="Gameplay.Particles.ParticleController/$bC" status="Renamed">
+      <field signature="[Hotfix]Gameplay.Particles.ParticleType type" newName="$kP" />
+      <method signature="bool Gameplay.Particles.ParticleController/&lt;&gt;c__DisplayClass7_0::&lt;SpawnAsync&gt;b__0([Hotfix]Gameplay.Particles.ParticleController/&lt;&gt;c__DisplayClass7_0, [Hotfix]Gameplay.Particles.ParticleDataItem)" newName="$qT" oldStackTraceSignature="Gameplay.Particles.&lt;&gt;c__DisplayClass7_0:&lt;SpawnAsync&gt;b__0(ParticleDataItem)" newStackTraceSignature="Gameplay.Particles.$bC:$qT(ParticleDataItem)" />
+    </type>
+    <type fullName="Gameplay.Particles.ParticleController/&lt;CompleteSpawnAsync&gt;d__10" newFullName="Gameplay.Particles.ParticleController/$GD" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$fz" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$Fz" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTaskCompletionSource`1&lt;[Hotfix]Gameplay.Particles.ParticlePlayer&gt; source" newName="$gz" />
+      <field signature="[Hotfix]Gameplay.Particles.ParticleController &lt;&gt;4__this" newName="$Gz" />
+      <field signature="[Hotfix]Gameplay.Particles.ParticleType type" newName="$hz" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTaskCompletionSource`1&lt;[Hotfix]Gameplay.Particles.ParticlePlayer&gt; &lt;&gt;7__wrap1" newName="$Hz" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Particles.ParticlePlayer&gt; &lt;&gt;u__1" newName="$iz" />
+    </type>
+    <type fullName="Gameplay.Particles.ParticleController/&lt;PlayAsync&gt;d__9" newFullName="Gameplay.Particles.ParticleController/$CC" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$KP" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$lP" />
+      <field signature="[Hotfix]Gameplay.Particles.ParticleController &lt;&gt;4__this" newName="$Lr" />
+      <field signature="[Hotfix]Gameplay.Particles.ParticleType type" newName="$mr" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Vector3 pos" newName="$qr" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Quaternion rotation" newName="$vr" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Vector3 velocity" newName="$bR" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Particles.ParticlePlayer&gt; &lt;&gt;u__1" newName="$eR" />
+    </type>
+    <type fullName="Gameplay.Particles.ParticleController/&lt;SpawnAsync&gt;d__7" newFullName="Gameplay.Particles.ParticleController/$dC" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$GR" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1&lt;[Hotfix]Gameplay.Particles.ParticlePlayer&gt; &lt;&gt;t__builder" newName="$iR" />
+      <field signature="[Hotfix]Gameplay.Particles.ParticleType type" newName="$Rt" />
+      <field signature="[Hotfix]Gameplay.Particles.ParticleController &lt;&gt;4__this" newName="$st" />
+      <field signature="[Hotfix]Gameplay.Particles.ParticleController/&lt;&gt;c__DisplayClass7_0 &lt;&gt;8__1" newName="$JW" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.CoreModule]UnityEngine.GameObject&gt; &lt;&gt;u__1" newName="$lW" />
     </type>
     <type fullName="Gameplay.Particles.ParticleDelayMap" newFullName="$h.$MC" status="Renamed">
       <method signature="float Gameplay.Particles.ParticleDelayMap::@GetDelay([Hotfix]Gameplay.Particles.ParticleType)" newName="$rT" oldStackTraceSignature="Gameplay.Particles.ParticleDelayMap:GetDelay(ParticleType)" newStackTraceSignature="$h.$MC:$rT($oC)" />
@@ -8743,12 +8817,13 @@
       <field signature="int &lt;loadingId&gt;5__3" newName="$Xg" />
       <field signature="int &lt;playId&gt;5__4" newName="$yg" />
       <field signature="bool &lt;success&gt;5__5" newName="$Yg" />
-      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask &lt;pendingLoad&gt;5__6" newName="$zg" />
-      <field signature="System.Threading.CancellationTokenSource &lt;cancellation&gt;5__7" newName="$Zg" />
-      <field signature="System.IDisposable &lt;timeout&gt;5__8" newName="$aG" />
-      <field signature="double &lt;deadline&gt;5__9" newName="$AG" />
-      <field signature="System.Threading.CancellationToken &lt;token&gt;5__10" newName="$bG" />
-      <field signature="[Hotfix]Gameplay.GameController &lt;controller&gt;5__11" newName="$BG" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.ThreadPriority &lt;previousLoadingPriority&gt;5__6" newName="$zg" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask &lt;pendingLoad&gt;5__7" newName="$Zg" />
+      <field signature="System.Threading.CancellationTokenSource &lt;cancellation&gt;5__8" newName="$aG" />
+      <field signature="System.IDisposable &lt;timeout&gt;5__9" newName="$AG" />
+      <field signature="double &lt;deadline&gt;5__10" newName="$bG" />
+      <field signature="System.Threading.CancellationToken &lt;token&gt;5__11" newName="$BG" />
+      <field signature="[Hotfix]Gameplay.GameController &lt;controller&gt;5__12" newName="$HI" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__1" newName="$cG" />
     </type>
     <type fullName="PlayLoadingUIForm/&lt;PrepareSceneAsync&gt;d__7" newFullName="" status="NotRenamed">
@@ -9101,6 +9176,7 @@
       <method signature="void Scene.SceneHandler::@FinishGameplayLoading(bool)" newName="$Yj" oldStackTraceSignature="Scene.SceneHandler:FinishGameplayLoading(Boolean)" newStackTraceSignature="$c.$mb:$Yj(Boolean)" />
       <method signature="void Scene.SceneHandler::@FinishReturnToHall()" newName="$HJ" oldStackTraceSignature="Scene.SceneHandler:FinishReturnToHall()" newStackTraceSignature="$c.$mb:$HJ()" />
       <method signature="System.Collections.IEnumerator Scene.SceneHandler::@ChangeSceneWithoutLoading([Hotfix]Scene.SceneType, [Hotfix]Scene.SceneType)" newName="$IJ" oldStackTraceSignature="Scene.SceneHandler:ChangeSceneWithoutLoading(SceneType, SceneType)" newStackTraceSignature="$c.$mb:$IJ($rb, $rb)" />
+      <method signature="string Scene.SceneHandler::@GetSceneAssetName([Hotfix]Scene.SceneType)" newName="$SJ" oldStackTraceSignature="Scene.SceneHandler:GetSceneAssetName(SceneType)" newStackTraceSignature="$c.$mb:$SJ($rb)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask Scene.SceneHandler::@LoadSceneContentAsync([Hotfix]Scene.SceneType)" newName="$mJ" oldStackTraceSignature="Scene.SceneHandler:LoadSceneContentAsync(SceneType)" newStackTraceSignature="$c.$mb:$mJ($rb)" />
       <method signature="System.Collections.IEnumerator Scene.SceneHandler::@LoadingRoutine([Hotfix]Scene.SceneType, [Hotfix]Scene.SceneType)" newName="$MJ" oldStackTraceSignature="Scene.SceneHandler:LoadingRoutine(SceneType, SceneType)" newStackTraceSignature="$c.$mb:$MJ($rb, $rb)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask Scene.SceneHandler::@EnsureLoadingCanvasAsync()" newName="$oJ" oldStackTraceSignature="Scene.SceneHandler:EnsureLoadingCanvasAsync()" newStackTraceSignature="$c.$mb:$oJ()" />
@@ -9130,6 +9206,11 @@
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$rI" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.CoreModule]UnityEngine.GameObject&gt; &lt;&gt;u__1" newName="$RI" />
     </type>
+    <type fullName="Scene.SceneHandler/&lt;EnsureLoadingCanvasAsync&gt;d__23" newFullName="$c.$mb/$Ob" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$QI" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$rI" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.CoreModule]UnityEngine.GameObject&gt; &lt;&gt;u__1" newName="$RI" />
+    </type>
     <type fullName="Scene.SceneHandler/&lt;LoadingRoutine&gt;d__21" newFullName="$c.$mb/$Pb" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$kk" />
       <field signature="object &lt;&gt;2__current" newName="$Kk" />
@@ -9143,7 +9224,27 @@
       <method signature="void Scene.SceneHandler/&lt;LoadingRoutine&gt;d__21::System.Collections.IEnumerator.Reset([Hotfix]Scene.SceneHandler/&lt;LoadingRoutine&gt;d__21)" newName="$ZcA" oldStackTraceSignature="Scene.&lt;LoadingRoutine&gt;d__21:System.Collections.IEnumerator.Reset()" newStackTraceSignature="$c.$Pb:$ZcA()" />
       <method signature="object Scene.SceneHandler/&lt;LoadingRoutine&gt;d__21::System.Collections.IEnumerator.get_Current([Hotfix]Scene.SceneHandler/&lt;LoadingRoutine&gt;d__21)" newName="$aCA" oldStackTraceSignature="Scene.&lt;LoadingRoutine&gt;d__21:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="$c.$Pb:$aCA()" />
     </type>
+    <type fullName="Scene.SceneHandler/&lt;LoadingRoutine&gt;d__22" newFullName="$c.$mb/$Pb" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$kk" />
+      <field signature="object &lt;&gt;2__current" newName="$Kk" />
+      <field signature="[Hotfix]Scene.SceneType nextScene" newName="$lk" />
+      <field signature="[Hotfix]Scene.SceneType currentScene" newName="$Lk" />
+      <property signature="object System.Collections.Generic.IEnumerator&lt;System.Object&gt;.Current" newName="$a" />
+      <property signature="object System.Collections.IEnumerator.Current" newName="$A" />
+      <method signature="void Scene.SceneHandler/&lt;LoadingRoutine&gt;d__22::System.IDisposable.Dispose([Hotfix]Scene.SceneHandler/&lt;LoadingRoutine&gt;d__22)" newName="$raA" oldStackTraceSignature="Scene.&lt;LoadingRoutine&gt;d__22:System.IDisposable.Dispose()" newStackTraceSignature="$c.$Pb:$raA()" />
+      <method signature="void Scene.SceneHandler/&lt;LoadingRoutine&gt;d__22::&lt;&gt;m__Finally1([Hotfix]Scene.SceneHandler/&lt;LoadingRoutine&gt;d__22)" newName="$QaA" oldStackTraceSignature="Scene.&lt;LoadingRoutine&gt;d__22:&lt;&gt;m__Finally1()" newStackTraceSignature="$c.$Pb:$QaA()" />
+      <method signature="object Scene.SceneHandler/&lt;LoadingRoutine&gt;d__22::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([Hotfix]Scene.SceneHandler/&lt;LoadingRoutine&gt;d__22)" newName="$RaA" oldStackTraceSignature="Scene.&lt;LoadingRoutine&gt;d__22:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="$c.$Pb:$RaA()" />
+      <method signature="void Scene.SceneHandler/&lt;LoadingRoutine&gt;d__22::System.Collections.IEnumerator.Reset([Hotfix]Scene.SceneHandler/&lt;LoadingRoutine&gt;d__22)" newName="$saA" oldStackTraceSignature="Scene.&lt;LoadingRoutine&gt;d__22:System.Collections.IEnumerator.Reset()" newStackTraceSignature="$c.$Pb:$saA()" />
+      <method signature="object Scene.SceneHandler/&lt;LoadingRoutine&gt;d__22::System.Collections.IEnumerator.get_Current([Hotfix]Scene.SceneHandler/&lt;LoadingRoutine&gt;d__22)" newName="$TaA" oldStackTraceSignature="Scene.&lt;LoadingRoutine&gt;d__22:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="$c.$Pb:$TaA()" />
+    </type>
     <type fullName="Scene.SceneHandler/&lt;LoadSceneContentAsync&gt;d__20" newFullName="$c.$mb/$pb" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$SI" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$tI" />
+      <field signature="[Hotfix]Scene.SceneType nextScene" newName="$TI" />
+      <field signature="string &lt;sceneAssetName&gt;5__2" newName="$uI" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;bool&gt; &lt;&gt;u__1" newName="$Jk" />
+    </type>
+    <type fullName="Scene.SceneHandler/&lt;LoadSceneContentAsync&gt;d__21" newFullName="$c.$mb/$pb" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$SI" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$tI" />
       <field signature="[Hotfix]Scene.SceneType nextScene" newName="$TI" />
@@ -9767,6 +9868,7 @@
       <field signature="bool hasCachedTier" newName="$vG" />
       <field signature="[Hotfix]Util.DevicePerformanceTier cachedTier" newName="$VG" />
       <method signature="[Hotfix]Util.DevicePerformanceTier Util.DevicePerformanceClassifier::@GetTier()" newName="$CI" oldStackTraceSignature="Util.DevicePerformanceClassifier:GetTier()" newStackTraceSignature="$b.$DA:$CI()" />
+      <method signature="string Util.DevicePerformanceClassifier::@GetTierLabel([Hotfix]Util.DevicePerformanceTier)" newName="$qaA" oldStackTraceSignature="Util.DevicePerformanceClassifier:GetTierLabel(DevicePerformanceTier)" newStackTraceSignature="$b.$DA:$qaA($qA)" />
       <method signature="string Util.DevicePerformanceClassifier::@GetDebugInfo()" newName="$dI" oldStackTraceSignature="Util.DevicePerformanceClassifier:GetDebugInfo()" newStackTraceSignature="$b.$DA:$dI()" />
       <method signature="void Util.DevicePerformanceClassifier::@ClearCache()" newName="$DI" oldStackTraceSignature="Util.DevicePerformanceClassifier:ClearCache()" newStackTraceSignature="$b.$DA:$DI()" />
       <method signature="[Hotfix]Util.DevicePerformanceClassifier/DeviceContext Util.DevicePerformanceClassifier::@GetDeviceContext()" newName="$eI" oldStackTraceSignature="Util.DevicePerformanceClassifier:GetDeviceContext()" newStackTraceSignature="$b.$DA:$eI()" />

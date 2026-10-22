@@ -579,24 +579,34 @@ namespace Gameplay
 			_initializationStarted = true;
 			_gameplayLocked = true;
 			cancellationToken.ThrowIfCancellationRequested();
-			LoadedObjectData = await GF.Resource.LoadAssetAwait<ObjectData>("Assets/ArrowGame/ScriptableAssets/Flow/ObjectData.asset").AttachExternalCancellation(cancellationToken);
+			double preparationStarted = Time.realtimeSinceStartupAsDouble;
+			// Queue independent assets together so resource agents can overlap cold loads.
+			var resources = await UniTask.WhenAll(
+				GF.Resource.LoadAssetAwait<ObjectData>("Assets/ArrowGame/ScriptableAssets/Flow/ObjectData.asset"),
+				GF.Resource.LoadAssetAwait<ParticleData>("Assets/ArrowGame/ScriptableAssets/Flow/ParticleData.asset"),
+				GF.Resource.LoadAssetAwait<PhysicsMaterial>("Assets/ArrowGame/Gameplay/PhysicMaterial/PhysicsMat.physicMaterial"))
+				.AttachExternalCancellation(cancellationToken);
 			cancellationToken.ThrowIfCancellationRequested();
-			_particleData = await GF.Resource.LoadAssetAwait<ParticleData>("Assets/ArrowGame/ScriptableAssets/Flow/ParticleData.asset").AttachExternalCancellation(cancellationToken);
-			cancellationToken.ThrowIfCancellationRequested();
-			LoadedPhysicsMaterial = await GF.Resource.LoadAssetAwait<PhysicsMaterial>("Assets/ArrowGame/Gameplay/PhysicMaterial/PhysicsMat.physicMaterial").AttachExternalCancellation(cancellationToken);
-			cancellationToken.ThrowIfCancellationRequested();
+			// Keep loaded prefab ownership local to this scene, never mutate the shared catalog.
+			LoadedObjectData = resources.Item1 != null ? UnityEngine.Object.Instantiate(resources.Item1) : null;
+			_particleData = resources.Item2;
+			LoadedPhysicsMaterial = resources.Item3;
+			Log.Info($"[GameplayLoad] Resources: {Time.realtimeSinceStartupAsDouble - preparationStarted:F3}s");
 			if (LoadedObjectData == null || _particleData == null || LoadedPhysicsMaterial == null)
 				throw new InvalidOperationException("Gameplay resources could not be loaded.");
 			_analyticsHelper = new GameplayAnalyticsHelper();
 			_levelIndex = GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId;
 			await LoadLevelAsync(_levelIndex, cancellationToken);
+			await LoadedObjectData.LoadForLevelAsync(_levelData, cancellationToken);
 			cancellationToken.ThrowIfCancellationRequested();
+			double stageStarted = Time.realtimeSinceStartupAsDouble;
 			_currentStage = LoadStage(_currentStageIndex);
 			UpdateRemainingMoves();
 			cannon?.InitializeBallPool(5);
 			cannon?.PrewarmBalls();
 			ServiceLocator.Get<ParticleController>()?.Initialize(_particleData);
 			AfterStageSetup();
+			Log.Info($"[GameplayLoad] Stage/pools: {Time.realtimeSinceStartupAsDouble - stageStarted:F3}s; preparation total: {Time.realtimeSinceStartupAsDouble - preparationStarted:F3}s");
 		}
 
 		public void ExposeGameplay()
@@ -935,6 +945,7 @@ namespace Gameplay
 		public async UniTask LoadLevelAsync(int levelIndex, System.Threading.CancellationToken cancellationToken = default)
 		{
 			_levelIndex = levelIndex;
+			double levelStarted = Time.realtimeSinceStartupAsDouble;
 			_levelData = await LevelLoader.GetLevelAsync(levelIndex).AttachExternalCancellation(cancellationToken);
 			cancellationToken.ThrowIfCancellationRequested();
 			if (_levelData?.stages == null || _levelData.stages.Count == 0 || _levelData.stages[0] == null)
@@ -944,6 +955,7 @@ namespace Gameplay
 			_collectionName = await LevelCollectionHelper.GetCollectionToUseAsync().AttachExternalCancellation(cancellationToken);
 			cancellationToken.ThrowIfCancellationRequested();
 			_collectionVersion = (await LevelCollectionHelper.GetMetaDataForCollectionAsync(_collectionName).AttachExternalCancellation(cancellationToken))?.version ?? 0;
+			Log.Info($"[GameplayLoad] Level {levelIndex} data: {Time.realtimeSinceStartupAsDouble - levelStarted:F3}s");
 		}
 
 		public LevelStage LoadStage(int stageIndex)
@@ -1565,6 +1577,11 @@ namespace Gameplay
 
 		protected override void OnDestroy()
 		{
+			if (LoadedObjectData != null)
+			{
+				LoadedObjectData.ReleaseLoadedPrefabs();
+				UnityEngine.Object.Destroy(LoadedObjectData);
+			}
 			CleanupTransientState();
 			base.OnDestroy();
 		}

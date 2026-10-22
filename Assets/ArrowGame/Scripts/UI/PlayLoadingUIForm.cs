@@ -24,6 +24,8 @@ public partial class PlayLoadingUIForm : UIFormBase
         int loadingId = -1;
         int playId = -1;
         bool success = false;
+        double loadStarted = Time.realtimeSinceStartupAsDouble;
+        var previousLoadingPriority = Application.backgroundLoadingPriority;
         UniTask pendingLoad = UniTask.CompletedTask;
         var cancellation = new CancellationTokenSource();
         var timeout = cancellation.CancelAfterSlim(TimeSpan.FromSeconds(LoadTimeoutSeconds), DelayType.Realtime);
@@ -31,8 +33,11 @@ public partial class PlayLoadingUIForm : UIFormBase
         CancellationToken token = cancellation.Token;
         try
         {
+            // Give asset integration more frame time while the loading screen is shown.
+            Application.backgroundLoadingPriority = UnityEngine.ThreadPriority.High;
             loadingId = GF.UI.OpenUIForm(UIViews.PlayLoadingUIForm);
             await WaitForFormAsync(loadingId, token);
+            Log.Info($"[GameplayLoad] Loading UI: {Time.realtimeSinceStartupAsDouble - loadStarted:F3}s");
             // Give the loading screen a frame to render before preparing the level.
             await UniTask.Yield(PlayerLoopTiming.LastPostLateUpdate, token);
             GF.UI.CloseUIForms(UIViews.PrelevelUIForm);
@@ -44,8 +49,10 @@ public partial class PlayLoadingUIForm : UIFormBase
             token.ThrowIfCancellationRequested();
             GameController controller = ServiceLocator.Get<GameController>();
             if (controller == null) throw new InvalidOperationException("Gameplay controller is missing.");
+            double playUiStarted = Time.realtimeSinceStartupAsDouble;
             playId = GF.UI.OpenUIForm(UIViews.PlayUIForm);
             await WaitForFormAsync(playId, token);
+            Log.Info($"[GameplayLoad] Play UI: {Time.realtimeSinceStartupAsDouble - playUiStarted:F3}s");
             if (Time.realtimeSinceStartupAsDouble >= deadline) cancellation.Cancel();
             token.ThrowIfCancellationRequested();
             HomePageUIForm.CloseHallTabAfterGameplayLoaded();
@@ -69,6 +76,8 @@ public partial class PlayLoadingUIForm : UIFormBase
         }
         finally
         {
+            Application.backgroundLoadingPriority = previousLoadingPriority;
+            Log.Info($"[GameplayLoad] Total: {Time.realtimeSinceStartupAsDouble - loadStarted:F3}s; success: {success}");
             timeout.Dispose();
             cancellation.Cancel();
             cancellation.Dispose();
@@ -109,8 +118,10 @@ public partial class PlayLoadingUIForm : UIFormBase
                 throw new InvalidOperationException("Could not unload the previous level.");
         }
         token.ThrowIfCancellationRequested();
+        double sceneStarted = Time.realtimeSinceStartupAsDouble;
         if (!await GF.Scene.LoadSceneAwait(sceneAsset))
             throw new InvalidOperationException("Could not load the gameplay scene.");
+        Log.Info($"[GameplayLoad] Scene: {Time.realtimeSinceStartupAsDouble - sceneStarted:F3}s");
         token.ThrowIfCancellationRequested();
         GameController controller = ServiceLocator.Get<GameController>();
         if (controller == null) throw new InvalidOperationException("Gameplay controller is missing.");

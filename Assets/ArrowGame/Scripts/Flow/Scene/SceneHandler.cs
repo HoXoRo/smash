@@ -119,9 +119,21 @@ namespace Scene
 			}
 		}
 
+        // Asset paths must remain stable when Obfuz renames enum members.
+        private static string GetSceneAssetName(SceneType scene)
+        {
+            switch (scene)
+            {
+                case SceneType.None: return "None";
+                case SceneType.Splash: return "Splash";
+                case SceneType.Menu: return "Menu";
+                case SceneType.Gameplay: return "Gameplay";
+                default: return ((int)scene).ToString(System.Globalization.CultureInfo.InvariantCulture);
+            }
+        }
 		private static async UniTask LoadSceneContentAsync(SceneType nextScene)
 		{
-			string sceneAssetName = UtilityBuiltin.AssetsPath.GetScenePath(nextScene.ToString());
+			string sceneAssetName = UtilityBuiltin.AssetsPath.GetScenePath(GetSceneAssetName(nextScene));
 			if (GF.Scene.SceneIsLoaded(sceneAssetName))
 			{
 				await GF.Scene.UnLoadSceneAwait(sceneAssetName);

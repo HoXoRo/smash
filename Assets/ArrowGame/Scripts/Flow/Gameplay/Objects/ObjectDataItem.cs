@@ -12,5 +12,7 @@ namespace Gameplay.Objects
 		public FloatTriplet size;
 
 		public GameObject prefab;
+
+		public string prefabAssetName;
 	}
 }

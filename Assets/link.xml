@@ -1,4 +1,4 @@
-﻿<linker>
+<linker>
 	<!--GENERATE_TAG-->
 	<assembly fullname="Assembly-CSharp" preserve="all" />
 	<assembly fullname="Builtin.Runtime" preserve="all" />
@@ -23,4 +23,8 @@
 		<type fullname="UnityEngine.MeshFilter" preserve="all"/>
 		<type fullname="UnityEngine.TextMesh" preserve="all"/>
 	</assembly>-->
+    <!-- Gameplay is loaded from AB; keep its native skinned renderer in the player. -->
+    <assembly fullname="UnityEngine.CoreModule">
+        <type fullname="UnityEngine.SkinnedMeshRenderer" preserve="all" />
+    </assembly>
 </linker>

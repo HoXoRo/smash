@@ -752,7 +752,7 @@ namespace UGF.EditorTools
         private void BuildHotfix()
         {
             m_Controller.OutputPackedSelected = (AppSettings.Instance.ResourceMode != ResourceMode.Package) && HasPackedResource();
-            AssetBuildHandler.AutoResolveAbDuplicateAssets();
+            if (!AssetBuildHandler.AutoResolveAbDuplicateAssets()) return;
 #if !DISABLE_HYBRIDCLR
             HybridCLRExtensionTool.CompileTargetDll();
 #endif
@@ -774,7 +774,7 @@ namespace UGF.EditorTools
             m_Controller.OutputPackedSelected = (AppSettings.Instance.ResourceMode != ResourceMode.Package) && HasPackedResource();
             if (m_Controller.OutputPackageSelected)
             {
-                AssetBuildHandler.AutoResolveAbDuplicateAssets();
+                if (!AssetBuildHandler.AutoResolveAbDuplicateAssets()) return false;
                 if (m_Controller.BuildResources())
                 {
                     Debug.Log("########## Build Resources Success ###########");
@@ -796,7 +796,7 @@ namespace UGF.EditorTools
 #if !DISABLE_HYBRIDCLR
                     HybridCLRExtensionTool.CompileTargetDll(false);
 #endif
-                    AssetBuildHandler.AutoResolveAbDuplicateAssets();
+                    if (!AssetBuildHandler.AutoResolveAbDuplicateAssets()) return false;
                     buildAppReady = m_Controller.BuildResources();
                 }
                 if (buildAppReady)
@@ -875,6 +875,27 @@ namespace UGF.EditorTools
                 }
             }
             buildOptions.scenes = scenesList.ToArray(typeof(string)) as string[];
+            // Player scenes only contain the launcher. Supply the AB manifest so
+            // Unity's native stripping also sees components in dynamically loaded scenes.
+            string abPlatform = buildOptions.target switch
+            {
+                BuildTarget.Android => "Android",
+                BuildTarget.iOS => "IOS",
+                BuildTarget.StandaloneWindows => "Windows",
+                BuildTarget.StandaloneWindows64 => "Windows64",
+                BuildTarget.StandaloneOSX => "MacOS",
+                BuildTarget.StandaloneLinux64 => "Linux",
+                BuildTarget.WSAPlayer => "WindowsStore",
+                BuildTarget.WebGL => "WebGL",
+                _ => null
+            };
+            if (abPlatform != null)
+            {
+                string manifestPath = Path.Combine(m_Controller.WorkingPath, abPlatform, abPlatform + ".manifest");
+                if (!File.Exists(manifestPath))
+                    throw new BuildFailedException("Build Resources for the current platform before building the player. Missing AB manifest: " + manifestPath);
+                buildOptions.assetBundleManifestPath = manifestPath;
+            }
             DefaultBuildMethods.BuildPlayer(buildOptions);
         }
 

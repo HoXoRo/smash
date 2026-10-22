@@ -9,5 +9,7 @@ namespace Gameplay.Particles
 		public ParticleType type;
 
 		public GameObject prefab;
+
+		public string prefabAssetName;
 	}
 }

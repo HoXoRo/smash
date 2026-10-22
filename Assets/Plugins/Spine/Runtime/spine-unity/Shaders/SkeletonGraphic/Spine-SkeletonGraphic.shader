@@ -62,7 +62,9 @@ Shader "Spine/SkeletonGraphic"
 			Name "Normal"
 
 		CGPROGRAM
-			#pragma shader_feature _ _STRAIGHT_ALPHA_INPUT
+			// Materials using straight alpha can live in a different AssetBundle from this shader.
+			// Keep both variants so transparent RGB is not rendered as opaque blue blocks.
+			#pragma multi_compile _ _STRAIGHT_ALPHA_INPUT
 			#pragma shader_feature _ _CANVAS_GROUP_COMPATIBLE
 			#pragma vertex vert
 			#pragma fragment frag
