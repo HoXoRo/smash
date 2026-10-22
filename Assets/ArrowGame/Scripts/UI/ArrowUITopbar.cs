@@ -351,7 +351,7 @@ public partial class ArrowUITopbar : UIFormBase
         //Log.Info($"转换后本地坐标: {localPoint},类型: {currencyName},值: {value}");
         startPosition = new Vector3(localPoint.x, localPoint.y, 0f);
         // 添加奖励到待处理列表
-        AddPendingReward(currencyType, value, startPosition);
+        AddPendingReward(currencyType, value, startPosition, args.PlayFlyAnimation);
     }
 
     private void OnLargeDollarReward(object sender, GameEventArgs e)
@@ -382,13 +382,21 @@ public partial class ArrowUITopbar : UIFormBase
         AddPendingReward(PlayerDataType.Diamond, args.Value, startPosition);
     }
 
-    private void AddPendingReward(PlayerDataType type, float value, Vector3 startPosition)
+    private void AddPendingReward(PlayerDataType type, float value, Vector3 startPosition, bool playFlyAnimation = true)
     {
         if (!pendingRewards.ContainsKey(type))
         {
             pendingRewards[type] = 0f;
         }
         pendingRewards[type] += value;
+
+        // Round top-ups share the existing flight. If it has landed, only update the balance.
+        if (!playFlyAnimation)
+        {
+            if (!activeRewardCounts.TryGetValue(type, out int activeCount) || activeCount <= 0)
+                UpdateNumberRoll(type);
+            return;
+        }
 
         // 确保该类型的计数器存在
         if (!activeRewardCounts.ContainsKey(type))

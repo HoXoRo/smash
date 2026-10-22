@@ -473,6 +473,20 @@ namespace Gameplay
 			}
 		}
 
+
+		[SerializeField, Min(0.01f), Tooltip("美元奖励首次反馈和后续差额更新间隔（秒），不会清空累计数量。")]
+		private float eliminateRewardQuietTime = 0.5f;
+		[SerializeField, Min(0.01f), Tooltip("连续多久没有射击或打碎后结束本轮累计（秒）。")]
+		private float eliminateRewardRoundIdleTime = 8f;
+		private readonly List<EliminateReward> _eliminateRewardTiers = new List<EliminateReward>();
+		private int _minEliminateRewardCount = int.MaxValue;
+		private int _eliminateCount;
+		private float _lastEliminateActivityTime;
+		private float _eliminateRewardPendingSince;
+		private float _eliminateRewardSample;
+		private float _eliminateRewardAwarded;
+		private bool _eliminateRewardDirty;
+
 		private const int RocketPerPrelevel = 3;
 
 		[SerializeField]
@@ -588,6 +602,7 @@ namespace Gameplay
 			if (LoadedObjectData == null || _particleData == null || LoadedPhysicsMaterial == null)
 				throw new InvalidOperationException("Gameplay resources could not be loaded.");
 			_analyticsHelper = new GameplayAnalyticsHelper();
+			InitializeEliminateRewards();
 			_levelIndex = GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId;
 			await LoadLevelAsync(_levelIndex, cancellationToken);
 			cancellationToken.ThrowIfCancellationRequested();
@@ -880,6 +895,8 @@ namespace Gameplay
 
 		private void Update()
 		{
+			// Merge physics destruction callbacks before checking stage completion.
+			ProcessEliminateRewards();
 			CheckForClick();
 			CheckForComplete();
 			CheckForFail();
@@ -1182,8 +1199,112 @@ namespace Gameplay
 			{
 				return;
 			}
-			_currentStage?.LiveObjects?.Remove(objectToDestroy);
+			if (_currentStage?.LiveObjects?.Remove(objectToDestroy) == true)
+			{
+				RecordElimination();
+			}
 			Destroy(objectToDestroy.gameObject);
+		}
+
+
+		private void InitializeEliminateRewards()
+		{
+			ResetEliminateRewards();
+			_eliminateRewardTiers.Clear();
+			_minEliminateRewardCount = int.MaxValue;
+			var table = GF.DataTable.GetDataTable<EliminateReward>();
+			if (table == null)
+			{
+				Log.Warning("EliminateReward table is not loaded; elimination rewards are disabled.");
+				return;
+			}
+			foreach (var row in table.GetAllDataRows())
+			{
+				if (row.Count == null || row.Count.Length != 2 || row.Count[0] < 2
+					|| row.Count[1] <= row.Count[0] || row.Reward == null || row.Reward.Length != 2
+					|| float.IsNaN(row.Reward[0]) || float.IsInfinity(row.Reward[0])
+					|| float.IsNaN(row.Reward[1]) || float.IsInfinity(row.Reward[1])
+					|| row.Reward[0] <= 0f || row.Reward[1] < row.Reward[0])
+				{
+					Log.Warning("Invalid EliminateReward row: {0}", row.Id);
+					continue;
+				}
+				_eliminateRewardTiers.Add(row);
+				_minEliminateRewardCount = Mathf.Min(_minEliminateRewardCount, row.Count[0]);
+			}
+			_eliminateRewardTiers.Sort((a, b) => a.Count[0].CompareTo(b.Count[0]));
+		}
+
+		private void RecordElimination()
+		{
+			if (_eliminateRewardTiers.Count == 0) return;
+			ProcessEliminateRewards();
+			if (_eliminateCount == 0)
+				_eliminateRewardSample = UnityEngine.Random.value;
+			_eliminateCount++;
+			_lastEliminateActivityTime = Time.time;
+			if (!_eliminateRewardDirty) _eliminateRewardPendingSince = Time.time;
+			_eliminateRewardDirty = true;
+		}
+
+		private void RecordEliminateRewardShot()
+		{
+			ProcessEliminateRewards();
+			if (_eliminateRewardAwarded > 0f)
+			{
+				// Flush any remaining top-up, then let the new shot earn a fresh reward.
+				ProcessEliminateRewards(true);
+			}
+			else if (_eliminateCount > 0)
+			{
+				// Shots below the threshold may still accumulate together.
+				_lastEliminateActivityTime = Time.time;
+			}
+		}
+
+		private void ProcessEliminateRewards(bool force = false)
+		{
+			if (_eliminateCount == 0) return;
+			bool expired = Time.time - _lastEliminateActivityTime >= Mathf.Max(0.01f, eliminateRewardRoundIdleTime);
+			// Feedback cadence does not close the round or discard small counts.
+			if (_eliminateRewardDirty && (force || expired
+				|| Time.time - _eliminateRewardPendingSince >= Mathf.Max(0.01f, eliminateRewardQuietTime)))
+			{
+				_eliminateRewardDirty = false;
+				if (_eliminateCount > 1 && _eliminateCount >= _minEliminateRewardCount)
+				{
+					for (int i = _eliminateRewardTiers.Count - 1; i >= 0; i--)
+					{
+						var tier = _eliminateRewardTiers[i];
+						if (_eliminateCount < tier.Count[0]
+							|| (i < _eliminateRewardTiers.Count - 1 && _eliminateCount >= tier.Count[1])) continue;
+						// Reuse one random percentile for this round; never reroll or reduce its reward.
+						float total = (float)Math.Round(Mathf.Lerp(tier.Reward[0], tier.Reward[1], _eliminateRewardSample),
+							3, MidpointRounding.AwayFromZero);
+						total = Mathf.Max(total, _eliminateRewardAwarded);
+						float delta = (float)Math.Round(total - _eliminateRewardAwarded, 3, MidpointRounding.AwayFromZero);
+						if (delta > 0f)
+						{
+							bool playFlyAnimation = _eliminateRewardAwarded <= 0f;
+							_eliminateRewardAwarded = total;
+							GF.Event.Fire(this, RewardCollectedEventArgs.Create(delta, Vector3.zero,
+								PlayerDataType.Diamond, playFlyAnimation));
+						}
+						break;
+					}
+				}
+			}
+			if (force || expired) ResetEliminateRewards();
+		}
+
+		private void ResetEliminateRewards()
+		{
+			_eliminateCount = 0;
+			_lastEliminateActivityTime = 0f;
+			_eliminateRewardPendingSince = 0f;
+			_eliminateRewardSample = 0f;
+			_eliminateRewardAwarded = 0f;
+			_eliminateRewardDirty = false;
 		}
 
 		private void SetObjectMasses()
@@ -1282,6 +1403,7 @@ namespace Gameplay
 			}
 			if (Input.GetMouseButtonUp(0) && cannon.TryShoot(out Ball _))
 			{
+				RecordEliminateRewardShot();
 				_remainingMoves--;
 				UpdateRemainingMoves();
 			}
@@ -1351,6 +1473,9 @@ namespace Gameplay
 
 		public void CompleteStage()
 		{
+			// All stage objects are gone: settle without waiting for the quiet interval.
+			ProcessEliminateRewards(true);
+			ResetEliminateRewards();
 			_gameplayLocked = true;
 			_currentStageIndex++;
 			if (_currentStageIndex < GetStageCount())
@@ -1480,6 +1605,7 @@ namespace Gameplay
 
 		public void OnEgoRejected()
 		{
+			ProcessEliminateRewards(true);
 			StreakHelper.OnLevelLostOrAbandoned();
 			_analyticsHelper?.LevelFail(GetRemainingObjectCount(), GetRemainingObjectMass(), _remainingMoves, FailReason.OutOfMoves, _currentStageIndex);
 			_gameplayLocked = true;
@@ -1522,6 +1648,7 @@ namespace Gameplay
 
 		public void OnGameQuit()
 		{
+			ProcessEliminateRewards(true);
 			StreakHelper.OnLevelLostOrAbandoned();
 			_analyticsHelper?.LevelFail(GetRemainingObjectCount(), GetRemainingObjectMass(), _remainingMoves, FailReason.Quit, _currentStageIndex);
 			_gameplayLocked = true;
@@ -1571,6 +1698,7 @@ namespace Gameplay
 
 		private void CleanupTransientState()
 		{
+			ResetEliminateRewards();
 			_gameplayPointerStarted = false;
 			StopAllCoroutines();
 			CancelPendingWinPopup();

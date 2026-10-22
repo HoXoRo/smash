@@ -1,0 +1,7 @@
+﻿#	EliminateReward					
+#	ID		Count	Reward		
+#	int		int[]	float[]		
+#		备注	消除数	奖励值		
+	1		5,10	3,3.8		
+	2		10,20	4,10		
+	3		20,30	10,20		

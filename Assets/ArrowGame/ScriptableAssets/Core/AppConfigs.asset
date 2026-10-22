@@ -17,6 +17,7 @@ MonoBehaviour:
   - ArrowGuideTable
   - ArrowLocalizationMoney
   - LevelCompleteReward
+  - EliminateReward
   - MakeupTask
   - TaskReward
   - Core/ArrowLanguagesTable

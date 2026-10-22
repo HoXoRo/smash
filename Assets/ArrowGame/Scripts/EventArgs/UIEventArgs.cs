@@ -1,4 +1,4 @@
-﻿using GameFramework.Event;
+using GameFramework.Event;
 using UnityEngine;
 using GameFramework;
 
@@ -11,13 +11,15 @@ namespace UnityGameFramework.Runtime
         public PlayerDataType type;
         public float Value { get; private set; }
         public Vector3 WorldPosition { get; private set; }
+        public bool PlayFlyAnimation { get; private set; }
 
-        public static RewardCollectedEventArgs Create(float value, Vector3 worldPosition,PlayerDataType type)
+        public static RewardCollectedEventArgs Create(float value, Vector3 worldPosition, PlayerDataType type, bool playFlyAnimation = true)
         {
             var e = ReferencePool.Acquire<RewardCollectedEventArgs>();
             e.Value = value;
             e.WorldPosition = worldPosition;
             e.type = type;
+            e.PlayFlyAnimation = playFlyAnimation;
             return e;
         }
 
@@ -25,6 +27,7 @@ namespace UnityGameFramework.Runtime
         {
             Value = 0f;
             WorldPosition = Vector3.zero;
+            PlayFlyAnimation = true;
         }
     }
 
