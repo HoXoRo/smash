@@ -296,13 +296,6 @@ public static class CommonHelper
         // 从adId中提取ad_position_type，按"_"分割取前半段
         string adPositionType = adId.Contains("_") ? adId.Split('_')[0] : adId;
 
-        // DataCollectManager.Instance.LogEvent("button_click", new Dictionary<string, object> {
-        //     {"ad_type", "reward"},
-        //     {"ad_position", adId},
-        //     {"ad_position_type", adPositionType},
-        //     {"placement_id", string.Empty}
-        // });
-
 #if UNITY_EDITOR
         ResetInterstitialCancelAccum();
         onCompleted?.Invoke(true);
@@ -333,13 +326,6 @@ public static class CommonHelper
     {
         // 从adId中提取ad_position_type，按"_"分割取前半段
         string adPositionType = adId.Contains("_") ? adId.Split('_')[0] : adId;
-
-        // DataCollectManager.Instance.LogEvent("button_show", new Dictionary<string, object> {
-        //     {"ad_type", "reward"},
-        //     {"ad_position", adId},
-        //     {"ad_position_type", adPositionType},
-        //     {"placement_id", string.Empty}
-        // });
     }
 
     private static long nextShowInterstitialTime;
