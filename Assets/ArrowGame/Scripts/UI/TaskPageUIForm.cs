@@ -93,10 +93,6 @@ public partial class TaskPageUIForm : UIFormBase
         }
 
         OnClickClose();
-        if (!GF.UI.IsLoadingUIForm(UIViews.HallTabUIForm))
-        {
-            GF.UI.OpenUIForm(UIViews.HallTabUIForm);
-        }
     }
 
     private void OnClaimRequested(TaskReward task)
