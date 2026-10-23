@@ -9,7 +9,7 @@
 	5	设置界面	2	SettingPageUIForm	False	1	False
 	6	任务界面	2	TaskPageUIForm	False	1	False
 	7	退出确认界面	5	QuitConfirmUIForm	False	1	False
-	8	吐司提示	1	ArrowToastTips	False	1	False
+	8	吐司提示	1	ArrowToastTips	False	4	False
 	9	PrivacyPolicy隐私协议	21	ArrowPrivacyPolicyUIForm	False	1	False
 	10	GuideUIForm	2	ArrowGuideUIForm	False	4	False
 	11	提现界面	1	MakeupUIForm	False	3	False
