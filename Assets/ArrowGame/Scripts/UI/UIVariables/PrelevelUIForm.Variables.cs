@@ -16,4 +16,6 @@ public partial class PrelevelUIForm
 	[SerializeField] private GameObject varLeft = null;
 	[SerializeField] private Button varBtnProp = null;
 	[SerializeField] private Button varBtnPlay = null;
+	[SerializeField] private Button varBtnTryagain = null;
+	[SerializeField] private GameObject varLockedProp = null;
 }

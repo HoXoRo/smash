@@ -9,6 +9,7 @@ using UnityGameFramework.Runtime;
 [AddComponentMenu("UI/PrelevelUIForm")]
 public partial class PrelevelUIForm : UIFormBase
 {
+    public const string P_IsRetry = "IsRetry";
     private PlayerDataModel playerData;
     private bool useRocket;
     private bool isStarting;
@@ -19,6 +20,7 @@ public partial class PrelevelUIForm : UIFormBase
         base.OnInit(userData);
         varBtnProp.onClick.AddListener(ToggleRocket);
         varBtnPlay.onClick.AddListener(Play);
+        varBtnTryagain.onClick.AddListener(Play);
         varBtnClose.onClick.AddListener(OnClickClose);
     }
 
@@ -28,6 +30,9 @@ public partial class PrelevelUIForm : UIFormBase
         playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
         useRocket = false;
         isStarting = false;
+        bool isRetry = Params.Get<VarBoolean>(P_IsRetry)?.Value ?? false;
+        varBtnPlay.gameObject.SetActive(!isRetry);
+        varBtnTryagain.gameObject.SetActive(isRetry);
         varTxtLevel.text = GF.Localization.GetString("level", playerData.LevelId);
         RefreshRocket();
         ShowRocketGuide();
@@ -44,7 +49,7 @@ public partial class PrelevelUIForm : UIFormBase
 
     private void ShowRocketGuide()
     {
-        if (isStarting || playerData.RocketCount <= 0 || GuideManager.Instance.IsGuideCompleted(4)) return;
+        if (playerData.LevelId < 25 || isStarting || playerData.RocketCount <= 0 || GuideManager.Instance.IsGuideCompleted(4)) return;
         if (m_GuideSerialId >= 0 &&
             (GF.UI.HasUIForm(m_GuideSerialId) || GF.UI.IsLoadingUIForm(m_GuideSerialId))) return;
         m_GuideSerialId = GuideManager.Instance.ShowGuide(4, varBtnProp.transform,
@@ -53,17 +58,22 @@ public partial class PrelevelUIForm : UIFormBase
 
     private void RefreshRocket()
     {
+        bool isPropUnlocked = playerData.LevelId >= 25;
+        varLockedProp.SetActive(!isPropUnlocked);
+        varBtnProp.gameObject.SetActive(isPropUnlocked);
+        if (!isPropUnlocked) useRocket = false;
         varTxtCount.text = playerData.RocketCount.ToString();
         varLeft.SetActive(!useRocket);
         varUsed.SetActive(useRocket);
         varBtnProp.interactable = !isStarting;
         varBtnPlay.interactable = !isStarting;
+        varBtnTryagain.interactable = !isStarting;
         varBtnClose.interactable = !isStarting;
     }
 
     private void ToggleRocket()
     {
-        if (isStarting) return;
+        if (isStarting || playerData.LevelId < 25) return;
         if (!useRocket && playerData.RocketCount <= 0)
         {
             OpenAddProp();
@@ -88,6 +98,11 @@ public partial class PrelevelUIForm : UIFormBase
     private void Play()
     {
         if (isStarting) return;
+        if (!LifeHelper.HasLife())
+        {
+            GF.UI.OpenUIForm(UIViews.AddLifeUIForm);
+            return;
+        }
         if (useRocket && playerData.RocketCount <= 0)
         {
             useRocket = false;

@@ -112,6 +112,20 @@ public partial class AddBallsUIForm : UIFormBase
             onQuit = null;
             quit?.Invoke();
             success = await GameFlowHelper.ReturnToHallAsync(Id);
+            if (success)
+            {
+                // Independent of the gift popup opened by ReturnToHallAsync.
+                if (!LifeHelper.HasLife())
+                {
+                    GF.UI.OpenUIForm(UIViews.AddLifeUIForm);
+                }
+                else
+                {
+                    var uiParams = UIParams.Create();
+                    uiParams.Set<VarBoolean>(PrelevelUIForm.P_IsRetry, true);
+                    GF.UI.OpenUIForm(UIViews.PrelevelUIForm, uiParams);
+                }
+            }
         }
         catch (Exception exception)
         {
