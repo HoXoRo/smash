@@ -12,16 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="48c1c3b4-2b47-4b58-848e-c5dcf45a4647" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/DataTables/Core/ArrowUITable.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/DataTables/Core/ArrowUITable.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Translations/Localization.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Translations/Localization.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/DataTable/Core/ArrowUITable.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/KingnamypeYuanmoSC SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/KingnamypeYuanmoSC SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/ArrowGuideUIForm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/ArrowGuideUIForm.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/ArrowToastTips.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/ArrowToastTips.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/ArrowUITopbar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/ArrowUITopbar.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/Items/MakeupItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/Items/MakeupItem.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/LevelCompleteUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/LevelCompleteUIForm.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
