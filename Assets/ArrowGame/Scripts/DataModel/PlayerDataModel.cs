@@ -52,6 +52,9 @@ public enum PlayerDataType
 /// </summary>
 public class PlayerDataModel : DataModelStorageBase
 {
+    // Only a freshly initialized profile skips the hall on startup.
+    [JsonIgnore] public bool IsNewPlayer { get; private set; }
+
     public const int MaxLifeCount = 5;
     private const int LifeGainInterval = 1800;
     private int m_Life = MaxLifeCount;
@@ -177,6 +180,7 @@ public class PlayerDataModel : DataModelStorageBase
 
     protected override void OnCreate(RefParams userdata)
     {
+        IsNewPlayer = false;
         m_PcardDisplayRequest?.Cancel();
         m_PcardDisplayRequest = null;
         m_PcardStartupRequested = false;
@@ -499,6 +503,7 @@ public class PlayerDataModel : DataModelStorageBase
 
     protected override void OnInitialDataModel()
     {
+        IsNewPlayer = true;
         LifeCount = MaxLifeCount;
         LifeTimerStart = 0;
         UnlimitedLifeEnd = 0;

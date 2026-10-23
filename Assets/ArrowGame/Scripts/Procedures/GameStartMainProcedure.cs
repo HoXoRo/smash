@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using GameFramework;
 using GameFramework.Event;
 using GameFramework.Fsm;
@@ -50,7 +51,17 @@ public class GameStartMainProcedure : ProcedureBase
         GF.Entity.HideAllLoadedEntities();
         GF.BuiltinView.SetLoadingProgress(1f);
         GF.BuiltinView.HideLoadingProgress();
-        ToHome();
+        if (GF.DataModel.GetOrCreate<PlayerDataModel>().IsNewPlayer)
+        {
+            ArrowUITopbarSub.SetLifeVisible(false);
+            ArrowUITopbar.SetCoinVisible(false);
+            ArrowUITopbar.EnsureOpen();
+            HomePageUIForm.TryEnterGameplayAsync(false).Forget();
+        }
+        else
+        {
+            ToHome();
+        }
     }
 
     public void ToHome()
