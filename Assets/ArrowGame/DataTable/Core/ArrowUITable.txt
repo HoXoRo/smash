@@ -11,7 +11,7 @@
 	7	退出确认界面	5	QuitConfirmUIForm	False	1	False
 	8	吐司提示	1	ArrowToastTips	False	1	False
 	9	PrivacyPolicy隐私协议	21	ArrowPrivacyPolicyUIForm	False	1	False
-	10	GuideUIForm	2	ArrowGuideUIForm	False	1	False
+	10	GuideUIForm	2	ArrowGuideUIForm	False	4	False
 	11	提现界面	1	MakeupUIForm	False	3	False
 	12	提现方式界面	2	MakeupPaymentUIForm	False	3	False
 	13	提现方式成功界面	3	MakeupPaymentEndUIForm	False	3	False

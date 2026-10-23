@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityGameFramework.Runtime;
@@ -30,17 +30,17 @@ public class GuideManager
     /// <param name="targetTransform">目标Transform</param>
     /// <param name="showFinger">是否显示手指</param>
     /// <param name="onComplete">完成回调</param>
-    public void ShowGuide(int guideId, Transform targetTransform, bool showFinger = true, Action onComplete = null, Vector2 fingerPos = default)
+    public int ShowGuide(int guideId, Transform targetTransform, bool showFinger = true, Action onComplete = null, Vector2 fingerPos = default)
     {
         // 检查是否已经完成过
         if (IsGuideCompleted(guideId))
         {
             Log.Info($"引导 {guideId} 已完成，跳过显示");
             onComplete?.Invoke();
-            return;
+            return -1;
         }
 
-        var guideData = new GuideUIFormData(guideId, showFinger, targetTransform, onComplete);
+        if (targetTransform == null) return -1;
         var uiParams = UIParams.Create();
         uiParams.Set<VarInt32>("GuideId", guideId);
         uiParams.Set<VarBoolean>("ShowFinger", showFinger);
@@ -51,7 +51,7 @@ public class GuideManager
         uiParams.Set<VarAction>("OnComplete", varAction);
         Log.Info($"触发引导 {guideId} ，目标位置：{targetTransform.position}，手指位置：{fingerPos}");
 
-        GF.UI.OpenUIForm(UIViews.ArrowGuideUIForm, uiParams);
+        return GF.UI.OpenUIForm(UIViews.ArrowGuideUIForm, uiParams);
     }
 
     /// <summary>

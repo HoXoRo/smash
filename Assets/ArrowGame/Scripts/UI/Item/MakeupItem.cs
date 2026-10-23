@@ -7,6 +7,8 @@ using UnityGameFramework.Runtime;
 
 public partial class MakeupItem : UIItemBase
 {
+    public Transform CashoutGuideTarget => varBtnCashout != null ? varBtnCashout.transform : null;
+
     string m_RewardText;
     MakeupTask m_Task;
     PlayerDataModel m_Player;

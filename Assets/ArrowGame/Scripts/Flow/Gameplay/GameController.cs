@@ -835,6 +835,15 @@ namespace Gameplay
 			}
 			_levelStarted = true;
 			_gameplayLocked = false;
+			if (_currentStage?.LiveObjects != null)
+			{
+				foreach (BaseObject target in _currentStage.LiveObjects)
+				{
+					if (target == null) continue;
+					PlayUIForm.ShowFirstLevelGuides(target.transform);
+					break;
+				}
+			}
 		}
 
 		private IEnumerator WaitForActiveTutorialsToFinishInternal()

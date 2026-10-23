@@ -244,7 +244,6 @@ RectTransform:
   - {fileID: 1330978924589153483}
   - {fileID: 2682873432208235285}
   - {fileID: 6027263769345610351}
-  - {fileID: 6423174245080977194}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -324,12 +323,7 @@ MonoBehaviour:
   - VarName: varFinger
     Targets:
     - {fileID: 1271787318747843522}
-    VarType: Spine.Unity.SkeletonGraphic
-    VarPrefix: 0
-  - VarName: varFinger_2
-    Targets:
-    - {fileID: 4967384757905371140}
-    VarType: Spine.Unity.SkeletonGraphic
+    VarType: UnityEngine.GameObject
     VarPrefix: 0
   m_UIAnimationType: 0
   m_OpenAnimation: {fileID: 0}
@@ -341,11 +335,10 @@ MonoBehaviour:
   - {fileID: 2115583850688721935}
   - {fileID: 5551307439551062530}
   - {fileID: 2692904163619404702}
-  varFinger: {fileID: 7145570163389947601}
   varClickImage: {fileID: 4835945182742280700}
   varTipsBg: {fileID: 7134149247183961079}
   varTipsTxt: {fileID: 1512505551529926558}
-  varFinger_2: {fileID: 2180232237448442706}
+  varFinger: {fileID: 1271787318747843522}
 --- !u!1 &981500233459750814
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,14 +424,14 @@ GameObject:
   m_Component:
   - component: {fileID: 6027263769345610351}
   - component: {fileID: 4626988184781856546}
-  - component: {fileID: 7145570163389947601}
+  - component: {fileID: 249426449238643657}
   m_Layer: 5
   m_Name: finger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6027263769345610351
 RectTransform:
   m_ObjectHideFlags: 0
@@ -455,9 +448,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 184, y: -587}
-  m_SizeDelta: {x: 166, y: 220}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 251.66077, y: -653.2849}
+  m_SizeDelta: {x: 180, y: 143}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &4626988184781856546
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -466,7 +459,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271787318747843522}
   m_CullTransparentMesh: 1
---- !u!114 &7145570163389947601
+--- !u!114 &249426449238643657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -475,43 +468,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1271787318747843522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d85b887af7e6c3f45a2e2d2920d641bc, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: b66cf7a186d13054989b33a5c90044e4, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  skeletonDataAsset: {fileID: 11400000, guid: bf74ba84c5fcb024e9fca8e08830909f, type: 2}
-  initialSkinName: 
-  initialFlipX: 0
-  initialFlipY: 0
-  startingAnimation: animation
-  startingLoop: 1
-  timeScale: 1
-  freeze: 0
-  updateWhenInvisible: 3
-  unscaledTime: 0
-  allowMultipleCanvasRenderers: 0
-  canvasRenderers: []
-  separatorSlotNames: []
-  enableSeparatorSlots: 0
-  separatorParts: []
-  updateSeparatorPartLocation: 1
-  meshGenerator:
-    settings:
-      useClipping: 1
-      zSpacing: 0
-      pmaVertexColors: 1
-      tintBlack: 0
-      canvasGroupTintBlack: 0
-      calculateTangents: 0
-      addNormals: 0
-      immutableTriangles: 0
+  m_Sprite: {fileID: 21300000, guid: 3d933858639d94437b02e23ef1b6c82b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3716012464765786103
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,8 +707,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Tap To Move
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 19f18ff6818e8614e9b5c75ab698e8d6, type: 2}
-  m_sharedMaterial: {fileID: 4259616400917742739, guid: 19f18ff6818e8614e9b5c75ab698e8d6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e98f6fa08230b484686de16d3f7162b4, type: 2}
+  m_sharedMaterial: {fileID: -2634909663324395464, guid: e98f6fa08230b484686de16d3f7162b4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -875,94 +852,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &4967384757905371140
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6423174245080977194}
-  - component: {fileID: 8195262114801178330}
-  - component: {fileID: 2180232237448442706}
-  m_Layer: 5
-  m_Name: finger_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &6423174245080977194
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4967384757905371140}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 981500233046463486}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -587}
-  m_SizeDelta: {x: 166, y: 220}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8195262114801178330
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4967384757905371140}
-  m_CullTransparentMesh: 1
---- !u!114 &2180232237448442706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4967384757905371140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d85b887af7e6c3f45a2e2d2920d641bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: b66cf7a186d13054989b33a5c90044e4, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  skeletonDataAsset: {fileID: 11400000, guid: 68e15145ed10d6c448142cd4278d1ca1, type: 2}
-  initialSkinName: 
-  initialFlipX: 0
-  initialFlipY: 0
-  startingAnimation: animation
-  startingLoop: 1
-  timeScale: 1
-  freeze: 0
-  updateWhenInvisible: 3
-  unscaledTime: 0
-  allowMultipleCanvasRenderers: 0
-  canvasRenderers: []
-  separatorSlotNames: []
-  enableSeparatorSlots: 0
-  separatorParts: []
-  updateSeparatorPartLocation: 1
-  meshGenerator:
-    settings:
-      useClipping: 1
-      zSpacing: 0
-      pmaVertexColors: 1
-      tintBlack: 0
-      canvasGroupTintBlack: 0
-      calculateTangents: 0
-      addNormals: 0
-      immutableTriangles: 0

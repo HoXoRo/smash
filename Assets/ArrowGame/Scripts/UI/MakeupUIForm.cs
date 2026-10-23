@@ -11,6 +11,7 @@ public partial class MakeupUIForm : UIFormBase
 {
     private RequestHandle request;
     private PlayerDataModel displayPlayer;
+    private int m_GuideSerialId = -1;
     [SerializeField] private MakeupItem makeupItemPrefab;
 
     readonly List<MakeupItem> makeupItems = new List<MakeupItem>();
@@ -45,6 +46,9 @@ public partial class MakeupUIForm : UIFormBase
 
     protected override void OnClose(bool isShutdown, object userData)
     {
+        if (!isShutdown && m_GuideSerialId >= 0 && (GF.UI.HasUIForm(m_GuideSerialId) || GF.UI.IsLoadingUIForm(m_GuideSerialId)))
+            GF.UI.CloseUIForm(m_GuideSerialId);
+        m_GuideSerialId = -1;
         if (displayPlayer != null) displayPlayer.PcardDisplayChanged -= OnPcardDisplayChanged;
         displayPlayer = null;
         request?.Cancel();
@@ -58,6 +62,12 @@ public partial class MakeupUIForm : UIFormBase
         RefreshMakeupList();
         if (varMakeupScrollRect != null) varMakeupScrollRect.gameObject.SetActive(true);
         ResetMakeupScroll();
+        if (!GuideManager.Instance.IsGuideCompleted(3) && makeupItems.Count > 0)
+        {
+            Canvas.ForceUpdateCanvases();
+            int targetIndex = Mathf.Min(1, makeupItems.Count - 1);
+            m_GuideSerialId = GuideManager.Instance.ShowGuide(3, makeupItems[targetIndex].CashoutGuideTarget);
+        }
     }
 
     void OnClickInput()
@@ -65,7 +75,6 @@ public partial class MakeupUIForm : UIFormBase
         if (GF.UI.HasUIForm(UIViews.MakeupInfoUIForm) || GF.UI.IsLoadingUIForm(UIViews.MakeupInfoUIForm))
             return;
 
-        GF.Sound.PlayEffect("ui/ui_click.mp3");
         GF.UI.OpenUIForm(UIViews.MakeupInfoUIForm);
     }
 
@@ -74,7 +83,6 @@ public partial class MakeupUIForm : UIFormBase
         if (GF.UI.HasUIForm(UIViews.MakeupRecordUIForm) || GF.UI.IsLoadingUIForm(UIViews.MakeupRecordUIForm))
             return;
 
-        GF.Sound.PlayEffect("ui/ui_click.mp3");
         GF.UI.OpenUIForm(UIViews.MakeupRecordUIForm);
     }
 

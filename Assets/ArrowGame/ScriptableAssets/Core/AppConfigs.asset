@@ -16,8 +16,8 @@ MonoBehaviour:
   mDataTables:
   - ArrowGuideTable
   - ArrowLocalizationMoney
-  - LevelCompleteReward
   - EliminateReward
+  - LevelCompleteReward
   - MakeupTask
   - TaskReward
   - Core/ArrowLanguagesTable

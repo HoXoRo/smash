@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,10 +17,12 @@ public partial class ArrowGuideUIForm : UIFormBase
     private float m_TargetTopY;       // 目标顶部 Y（用于引导4说明文本）
     private bool m_IsClosing;
     private float m_WeakGuideIgnoreInputUntil;
+    private Sequence m_FingerClickSequence;
+    private Quaternion m_FingerRestRotation;
 
     // 遮罩的边距，用于调整镂空区域的大小
     private const float MASK_PADDING = 10f;
-    private const float FINGER_VERTICAL_OFFSET = 80f; // 手指相对目标向上偏移
+    private const float FINGER_VERTICAL_OFFSET = 110f; // 手指相对目标向上偏移
     private const float WeakGuideInputDelay = 0.1f;
 
 
@@ -67,6 +70,7 @@ public partial class ArrowGuideUIForm : UIFormBase
 
     protected override void OnClose(bool isShutdown, object userData)
     {
+        StopFingerClickAnimation();
         m_GuideData = null;
         m_GuideTable = null;
         // 清理点击事件
@@ -152,10 +156,6 @@ public partial class ArrowGuideUIForm : UIFormBase
             varTipsBg.raycastTarget = false;
         if (varTipsTxt != null)
             varTipsTxt.raycastTarget = false;
-        if (varFinger != null)
-            varFinger.raycastTarget = false;
-        if (varFinger_2 != null)
-            varFinger_2.raycastTarget = false;
     }
 
     /// <summary>
@@ -395,47 +395,45 @@ public partial class ArrowGuideUIForm : UIFormBase
     /// </summary>
     private void SetupGuideFinger()
     {
+        StopFingerClickAnimation();
         bool showFinger = ShouldShowFinger();
-
-        if (m_GuideData.GuideId == 4)
-        {
-            // 引导4：双指缩放，特殊处理
-            SetupPinchGuideFinger(showFinger);
-            return;
-        }
-
+        Log.Info($"是否需要手指引导：{showFinger}");
+        
         if (varFinger == null) return;
 
         // 控制手指显示
         varFinger.gameObject.SetActive(showFinger);
-        if (varFinger_2 != null) varFinger_2.gameObject.SetActive(false);
 
         if (showFinger && m_GuideData.targetTransform != null)
         {
             SetupFingerPosition();
+            StartFingerClickAnimation();
         }
     }
+    
 
-    /// <summary>
-    /// 引导4：双指缩放，隐藏 finger，显示 finger_2（双指动画由 Skeleton 控制）
-    /// </summary>
-    private void SetupPinchGuideFinger(bool showFinger)
+    private void StartFingerClickAnimation()
     {
-        if (varFinger != null) varFinger.gameObject.SetActive(false);
-        if (varFinger_2 == null) return;
+        Transform finger = varFinger.transform;
+        m_FingerRestRotation = finger.localRotation;
+        Quaternion pressedRotation = m_FingerRestRotation * Quaternion.Euler(0f, 0f, -20f);
+        m_FingerClickSequence = DOTween.Sequence();
+        m_FingerClickSequence
+            .Append(finger.DOLocalRotateQuaternion(pressedRotation, 0.18f).SetEase(Ease.OutQuad))
+            .Append(finger.DOLocalRotateQuaternion(m_FingerRestRotation, 0.22f).SetEase(Ease.InOutQuad))
+            .AppendInterval(0.4f)
+            .SetLoops(-1, LoopType.Restart)
+            .SetUpdate(true)
+            .SetLink(varFinger, LinkBehaviour.KillOnDisable);
+    }
 
-        varFinger_2.gameObject.SetActive(showFinger);
-        if (!showFinger) return;
-
-        RectTransform parentRect = varFinger_2.rectTransform.parent as RectTransform;
-        RectTransform guideRect = this.GetComponent<RectTransform>();
-        if (parentRect == null || guideRect == null) return;
-
-        Vector2 localCenter = (parentRect == guideRect)
-            ? m_TargetCenter
-            : (Vector2)parentRect.InverseTransformPoint(guideRect.TransformPoint(m_TargetCenter));
-
-        varFinger_2.rectTransform.anchoredPosition = localCenter + new Vector2(0f, FINGER_VERTICAL_OFFSET);
+    private void StopFingerClickAnimation()
+    {
+        if (m_FingerClickSequence == null) return;
+        m_FingerClickSequence.Kill();
+        m_FingerClickSequence = null;
+        if (varFinger != null)
+            varFinger.transform.localRotation = m_FingerRestRotation;
     }
 
     /// <summary>
@@ -453,13 +451,15 @@ public partial class ArrowGuideUIForm : UIFormBase
         Vector3 targetScreenPos = RectTransformUtility.WorldToScreenPoint(worldCam, m_GuideData.targetTransform.position);
 
         // 转换为 varFinger 父节点的本地坐标，需传入 UI 相机
-        RectTransform parentRect = varFinger.rectTransform.parent as RectTransform;
+        RectTransform fingerRect = varFinger.transform as RectTransform;
+        if (fingerRect == null) return;
+        RectTransform parentRect = fingerRect.parent as RectTransform;
         if (parentRect == null) return;
 
         RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRect, targetScreenPos, uiCam, out Vector2 localPos);
 
         Vector2 fingerOffsetPos = new Vector2(50f, -80f + FINGER_VERTICAL_OFFSET);
-        varFinger.rectTransform.anchoredPosition = localPos + fingerOffsetPos;
+        fingerRect.anchoredPosition = localPos + fingerOffsetPos;
     }
 
     private void SetupTips()
@@ -500,8 +500,10 @@ public partial class ArrowGuideUIForm : UIFormBase
         m_IsClosing = true;
 
         RecordGuideComplete();
-        m_GuideData?.onComplete?.Invoke();
-        GF.UI.Close(this.UIForm);
+        // Close before advancing so the next step cannot overlap or reuse this form mid-close.
+        Action onComplete = m_GuideData?.onComplete;
+        GF.UI.CloseUIForm(this.UIForm);
+        onComplete?.Invoke();
     }
 
     /// <summary>
