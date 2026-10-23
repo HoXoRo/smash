@@ -1,4 +1,4 @@
-﻿//---------------------------------
+//---------------------------------
 //此文件由工具自动生成,请勿手动修改
 //更新自:BF-202608261653
 //---------------------------------
@@ -11,4 +11,5 @@ public partial class MakeupRecordItem
 	[Header("UI Variables:")]
 	[SerializeField] private TextMeshProUGUI varTxtProgress = null;
 	[SerializeField] private Slider varProgress = null;
+	[SerializeField] private TextMeshProUGUI varTxtTime = null;
 }

@@ -34,3 +34,6 @@
 	lifeCoin	补充1点生命值需要的金币数	900
 	ballsCoin	补充5个球需要的金币数	900
 	propCoin	补充道具需要的金币数	900
+	BonusesPoolTotal	奖金池总数	50000
+	BonusesPoolFirst	奖金池初始值	100,200
+	BonusesPoolAdd	奖金池递增值	100,200
