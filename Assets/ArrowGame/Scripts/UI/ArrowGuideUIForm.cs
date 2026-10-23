@@ -22,7 +22,8 @@ public partial class ArrowGuideUIForm : UIFormBase
 
     // 遮罩的边距，用于调整镂空区域的大小
     private const float MASK_PADDING = 10f;
-    private const float FINGER_VERTICAL_OFFSET = 110f; // 手指相对目标向上偏移
+    // Normalized fingertip contact point in finger.png (origin at bottom-left).
+    [SerializeField] private Vector2 m_FingerTipNormalized = new Vector2(0.08f, 0.92f);
     private const float WeakGuideInputDelay = 0.1f;
 
 
@@ -444,11 +445,15 @@ public partial class ArrowGuideUIForm : UIFormBase
         if (varFinger == null || m_GuideData.targetTransform == null) return;
 
         // 世界坐标目标(如箭头)用 Camera.main，UI 目标用 Canvas 相机
-        bool isWorldTarget = m_GuideData.targetTransform.GetComponent<RectTransform>() == null;
+        RectTransform targetRect = m_GuideData.targetTransform as RectTransform;
+        bool isWorldTarget = targetRect == null;
         Camera uiCam = GFBuiltin.RootCanvas != null && GFBuiltin.RootCanvas.renderMode == RenderMode.ScreenSpaceCamera
             ? GFBuiltin.RootCanvas.worldCamera : null;
         Camera worldCam = isWorldTarget ? Camera.main : uiCam;
-        Vector3 targetScreenPos = RectTransformUtility.WorldToScreenPoint(worldCam, m_GuideData.targetTransform.position);
+        Vector3 targetPosition = isWorldTarget
+            ? m_GuideData.targetTransform.position
+            : targetRect.TransformPoint(targetRect.rect.center);
+        Vector3 targetScreenPos = RectTransformUtility.WorldToScreenPoint(worldCam, targetPosition);
 
         // 转换为 varFinger 父节点的本地坐标，需传入 UI 相机
         RectTransform fingerRect = varFinger.transform as RectTransform;
@@ -456,10 +461,22 @@ public partial class ArrowGuideUIForm : UIFormBase
         RectTransform parentRect = fingerRect.parent as RectTransform;
         if (parentRect == null) return;
 
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRect, targetScreenPos, uiCam, out Vector2 localPos);
+        if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRect, targetScreenPos, uiCam, out Vector2 localPos))
+            return;
 
-        Vector2 fingerOffsetPos = new Vector2(50f, -80f + FINGER_VERTICAL_OFFSET);
-        fingerRect.anchoredPosition = localPos + fingerOffsetPos;
+        // Convert the fingertip from the image rect into the parent's local space.
+        // Include the current pivot, dimensions, scale and resting rotation.
+        Rect rect = fingerRect.rect;
+        Vector3 tipLocal = new Vector3(
+            rect.xMin + rect.width * m_FingerTipNormalized.x,
+            rect.yMin + rect.height * m_FingerTipNormalized.y, 0f);
+        Vector3 tipOffset = fingerRect.localRotation * Vector3.Scale(tipLocal, fingerRect.localScale);
+        Vector2 contactPosition = localPos + m_GuideData.fingerPos;
+        // localPos is relative to the parent pivot, not to the child's anchors.
+        fingerRect.localPosition = new Vector3(
+            contactPosition.x - tipOffset.x,
+            contactPosition.y - tipOffset.y,
+            fingerRect.localPosition.z);
     }
 
     private void SetupTips()

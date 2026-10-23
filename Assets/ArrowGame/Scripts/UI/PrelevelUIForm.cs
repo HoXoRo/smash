@@ -12,6 +12,7 @@ public partial class PrelevelUIForm : UIFormBase
     private PlayerDataModel playerData;
     private bool useRocket;
     private bool isStarting;
+    private int m_GuideSerialId = -1;
 
     protected override void OnInit(object userData)
     {
@@ -29,6 +30,25 @@ public partial class PrelevelUIForm : UIFormBase
         isStarting = false;
         varTxtLevel.text = GF.Localization.GetString("level", playerData.LevelId);
         RefreshRocket();
+        ShowRocketGuide();
+    }
+
+    protected override void OnClose(bool isShutdown, object userData)
+    {
+        if (!isShutdown && m_GuideSerialId >= 0 &&
+            (GF.UI.HasUIForm(m_GuideSerialId) || GF.UI.IsLoadingUIForm(m_GuideSerialId)))
+            GF.UI.CloseUIForm(m_GuideSerialId);
+        m_GuideSerialId = -1;
+        base.OnClose(isShutdown, userData);
+    }
+
+    private void ShowRocketGuide()
+    {
+        if (isStarting || playerData.RocketCount <= 0 || GuideManager.Instance.IsGuideCompleted(4)) return;
+        if (m_GuideSerialId >= 0 &&
+            (GF.UI.HasUIForm(m_GuideSerialId) || GF.UI.IsLoadingUIForm(m_GuideSerialId))) return;
+        m_GuideSerialId = GuideManager.Instance.ShowGuide(4, varBtnProp.transform,
+            onComplete: () => m_GuideSerialId = -1);
     }
 
     private void RefreshRocket()
@@ -60,6 +80,7 @@ public partial class PrelevelUIForm : UIFormBase
         {
             useRocket = false;
             RefreshRocket();
+            ShowRocketGuide();
         };
         GF.UI.OpenUIForm(UIViews.AddPropUIForm, uiParams);
     }

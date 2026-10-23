@@ -5,3 +5,4 @@
 	1		2	2	False	True	0,-590	GuidTxt1		
 	2		2	2	False	True	0,-429	GuidTxt2		
 	3		2	1	True	False	0,400			
+	4		2	1	True	False				

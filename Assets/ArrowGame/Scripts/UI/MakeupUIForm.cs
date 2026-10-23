@@ -64,7 +64,6 @@ public partial class MakeupUIForm : UIFormBase
         ResetMakeupScroll();
         if (!GuideManager.Instance.IsGuideCompleted(3) && makeupItems.Count > 0)
         {
-            Canvas.ForceUpdateCanvases();
             int targetIndex = Mathf.Min(1, makeupItems.Count - 1);
             m_GuideSerialId = GuideManager.Instance.ShowGuide(3, makeupItems[targetIndex].CashoutGuideTarget);
         }

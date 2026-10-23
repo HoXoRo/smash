@@ -517,7 +517,7 @@ public class PlayerDataModel : DataModelStorageBase
         MakeupAccount = string.Empty;
         MakeupAvatarIndex = 0;
         m_Prop1 = GF.Config.GetInt("DefaultProp");
-        RocketCount = 0;
+        RocketCount = 3;
         PendingRocketUse = false;
         m_Prop2 = GF.Config.GetInt("DefaultProp");
         m_Prop3 = GF.Config.GetInt("DefaultProp");
