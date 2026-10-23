@@ -13,15 +13,20 @@ namespace Gameplay.Level
 				return null;
 			}
 
+			TextAsset asset = null;
 			try
 			{
-				TextAsset asset = await GF.Resource.LoadAssetAwait<TextAsset>(assetName);
+				asset = await GF.Resource.LoadAssetAwait<TextAsset>(assetName);
 				return asset != null ? asset.text : null;
 			}
 			catch (System.Exception exception)
 			{
 				Debug.LogWarning("[LevelCollection] Failed to load level asset: " + assetName + ". " + exception.Message);
 				return null;
+			}
+			finally
+			{
+				if (asset != null) GF.Resource.UnloadAsset(asset);
 			}
 		}
 	}

@@ -568,6 +568,8 @@ namespace Gameplay
 
 		private ParticleData _particleData;
 
+		private GameplayAssetCache.Lease _gameplayAssets;
+
 		public ObjectData LoadedObjectData { get; private set; }
 
 		public PhysicsMaterial LoadedPhysicsMaterial { get; private set; }
@@ -592,21 +594,22 @@ namespace Gameplay
 		{
 			_initializationStarted = true;
 			_gameplayLocked = true;
+			GameplayAssetCache.CancelBackground();
 			cancellationToken.ThrowIfCancellationRequested();
-			LoadedObjectData = await GF.Resource.LoadAssetAwait<ObjectData>("Assets/ArrowGame/ScriptableAssets/Flow/ObjectData.asset").AttachExternalCancellation(cancellationToken);
-			cancellationToken.ThrowIfCancellationRequested();
-			_particleData = await GF.Resource.LoadAssetAwait<ParticleData>("Assets/ArrowGame/ScriptableAssets/Flow/ParticleData.asset").AttachExternalCancellation(cancellationToken);
-			cancellationToken.ThrowIfCancellationRequested();
-			LoadedPhysicsMaterial = await GF.Resource.LoadAssetAwait<PhysicsMaterial>("Assets/ArrowGame/Gameplay/PhysicMaterial/PhysicsMat.physicMaterial").AttachExternalCancellation(cancellationToken);
-			cancellationToken.ThrowIfCancellationRequested();
-			if (LoadedObjectData == null || _particleData == null || LoadedPhysicsMaterial == null)
-				throw new InvalidOperationException("Gameplay resources could not be loaded.");
 			_analyticsHelper = new GameplayAnalyticsHelper();
 			InitializeEliminateRewards();
 			_levelIndex = GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId;
+			double loadStart = Time.realtimeSinceStartupAsDouble;
 			await LoadLevelAsync(_levelIndex, cancellationToken);
+			double jsonReady = Time.realtimeSinceStartupAsDouble;
 			cancellationToken.ThrowIfCancellationRequested();
+			_gameplayAssets = await GameplayAssetCache.PrepareAsync(_levelData, cancellationToken);
+			LoadedObjectData = _gameplayAssets.Objects;
+			_particleData = _gameplayAssets.Particles;
+			LoadedPhysicsMaterial = _gameplayAssets.Physics;
+			double assetsReady = Time.realtimeSinceStartupAsDouble;
 			_currentStage = LoadStage(_currentStageIndex);
+			UnityEngine.Debug.Log($"[GameplayLoad] Level {_levelIndex}: JSON={(jsonReady - loadStart) * 1000:F0}ms, assets={(assetsReady - jsonReady) * 1000:F0}ms, instantiate={(Time.realtimeSinceStartupAsDouble - assetsReady) * 1000:F0}ms");
 			UpdateRemainingMoves();
 			cannon?.InitializeBallPool(5);
 			cannon?.PrewarmBalls();
@@ -625,6 +628,8 @@ namespace Gameplay
 			PrelevelBoosterHelper.ClearSelection();
 			AfterLevelSetup();
 			OnGameplayExposed();
+			GameplayAssetCache.PreloadNext(_levelIndex + 1, this.GetCancellationTokenOnDestroy(),
+				() => this != null && isActiveAndEnabled && !_gameplayLocked && !_gameplayPointerStarted && _liveBalls.Count == 0);
 		}
 
 		private void OnGameplayExposed()
@@ -1696,11 +1701,15 @@ namespace Gameplay
 
 		protected virtual void OnDisable()
 		{
+			GameplayAssetCache.CancelBackground();
 			CleanupTransientState();
 		}
 
 		protected override void OnDestroy()
 		{
+			GameplayAssetCache.CancelBackground();
+			_gameplayAssets?.Dispose();
+			_gameplayAssets = null;
 			CleanupTransientState();
 			base.OnDestroy();
 		}

@@ -18,7 +18,7 @@ namespace Gameplay.Objects
 
 		private const float BreakSpeedThreshold = 18f;
 
-		private static readonly Dictionary<(ObjectType type, int volume, BreakSource source), ParticleType> JamJarBreakParticles = new Dictionary<(ObjectType type, int volume, BreakSource source), ParticleType>
+		internal static readonly Dictionary<(ObjectType type, int volume, BreakSource source), ParticleType> JamJarBreakParticles = new Dictionary<(ObjectType type, int volume, BreakSource source), ParticleType>
 		{
 			[(ObjectType.JamJarBlue, 1, BreakSource.Ball)] = ParticleType.JamJarBlue1xHit,
 			[(ObjectType.JamJarBlue, 2, BreakSource.Ball)] = ParticleType.JamJarBlue2xHit,

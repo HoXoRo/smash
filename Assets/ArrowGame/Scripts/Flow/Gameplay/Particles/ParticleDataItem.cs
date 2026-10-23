@@ -8,6 +8,8 @@ namespace Gameplay.Particles
 	{
 		public ParticleType type;
 
-		public GameObject prefab;
+		public string prefabPath;
+
+		[NonSerialized] public GameObject prefab;
 	}
 }

@@ -63,7 +63,7 @@ namespace Gameplay.Particles
 				{
 					continue;
 				}
-				GameObject instance = Object.Instantiate(prefab, worldPos, worldRotation);
+				GameObject instance = Object.Instantiate(prefab, worldPos, worldRotation, transform.parent);
 				foreach (ParticleObject particleObject in instance.GetComponentsInChildren<ParticleObject>())
 				{
 					_activeParticleObjects.Add(particleObject);

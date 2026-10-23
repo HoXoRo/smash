@@ -81,6 +81,7 @@ namespace UGF.EditorTools
 
         public void OnPreprocessAllPlatforms(string productName, string companyName, string gameIdentifier, string gameFrameworkVersion, string unityVersion, string applicableGameVersion, int internalResourceVersion, Platform platforms, AssetBundleCompressionType assetBundleCompression, string compressionHelperTypeName, bool additionalCompressionSelected, bool forceRebuildAssetBundleSelected, string buildEventHandlerTypeName, string outputDirectory, BuildAssetBundleOptions buildAssetBundleOptions, string workingPath, bool outputPackageSelected, string outputPackagePath, bool outputFullSelected, string outputFullPath, bool outputPackedSelected, string outputPackedPath, string buildReportPath)
         {
+            ValidateGameplayCatalogPaths();
             RemoveStreamingAssetsBundles();
         }
 
@@ -209,6 +210,39 @@ namespace UGF.EditorTools
                 }
             }
             return result;
+        }
+
+        // Address-only catalogs must stay independent of the object bundles.
+        // Fail before removing the previous StreamingAssets build if an address is invalid.
+        private static void ValidateGameplayCatalogPaths()
+        {
+            var collection = new System.Xml.XmlDocument();
+            collection.Load("Assets/Plugins/UnityGameFramework/Configs/ResourceCollection.xml");
+            var assigned = new HashSet<string>();
+            foreach (System.Xml.XmlNode node in collection.SelectNodes("//Assets/Asset"))
+                assigned.Add(node.Attributes["Guid"].Value);
+            foreach (string name in new[] { "ObjectData", "ParticleData" })
+            {
+                string path = "Assets/ArrowGame/ScriptableAssets/Flow/" + name + ".asset";
+                var asset = AssetDatabase.LoadAssetAtPath<ScriptableObject>(path);
+                if (asset == null) throw new System.InvalidOperationException("Missing gameplay catalog: " + path);
+                if (AssetDatabase.GetDependencies(path, true).Any(x => x.EndsWith(".prefab")))
+                    throw new System.InvalidOperationException("Gameplay catalog still directly references prefabs: " + path);
+                var serialized = new SerializedObject(asset);
+                var property = serialized.GetIterator();
+                int addressCount = 0;
+                while (property.Next(true))
+                {
+                    if (property.propertyType != SerializedPropertyType.String ||
+                        (property.name != "prefabPath" && property.name != "tablePrefabPath" && property.name != "blockerPrefabPath")) continue;
+                    string address = property.stringValue;
+                    if (string.IsNullOrEmpty(address) || AssetDatabase.LoadAssetAtPath<GameObject>(address) == null ||
+                        !assigned.Contains(AssetDatabase.AssetPathToGUID(address)))
+                        throw new System.InvalidOperationException("Invalid or unpacked gameplay address: " + path + " / " + property.propertyPath + " = " + address);
+                    addressCount++;
+                }
+                if (addressCount == 0) throw new System.InvalidOperationException("Empty gameplay catalog: " + path);
+            }
         }
 
         /// <summary>

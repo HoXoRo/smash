@@ -32,7 +32,7 @@ namespace Gameplay.Particles
 				_cache[type] = null;
 				return null;
 			}
-			GameObject instance = Object.Instantiate(item.prefab);
+			GameObject instance = Object.Instantiate(item.prefab, transform);
 			ParticlePlayer player = instance.GetComponent<ParticlePlayer>();
 			_cache[type] = player;
 			return player;

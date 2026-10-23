@@ -10,9 +10,11 @@ namespace Gameplay.Objects
 	{
 		public List<ObjectDataItem> items;
 
-		public GameObject tablePrefab;
+		public string tablePrefabPath;
+		[System.NonSerialized] public GameObject tablePrefab;
 
-		public GameObject blockerPrefab;
+		public string blockerPrefabPath;
+		[System.NonSerialized] public GameObject blockerPrefab;
 
 		public GameObject Get(ObjectType type, FloatTriplet size)
 		{
