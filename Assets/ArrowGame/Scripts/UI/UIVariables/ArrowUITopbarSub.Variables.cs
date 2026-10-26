@@ -17,4 +17,6 @@ public partial class ArrowUITopbarSub
 	[SerializeField] private RectTransform varFlyRewardParent = null;
 	[SerializeField] private RectTransform varIcon_Coin = null;
 	[SerializeField] private GameObject varImgAdd = null;
+	[SerializeField] private Button varBtnCoin = null;
+	[SerializeField] private GameObject varImgAddCoins = null;
 }

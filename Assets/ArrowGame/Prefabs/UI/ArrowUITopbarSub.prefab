@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 1733369230758247978}
   - component: {fileID: 7555596915317943337}
   m_Layer: 0
-  m_Name: Image
+  m_Name: ImgAddCoins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -621,6 +621,16 @@ MonoBehaviour:
     - {fileID: 1198864018671683795}
     VarType: UnityEngine.GameObject
     VarPrefix: 0
+  - VarName: varBtnCoin
+    Targets:
+    - {fileID: 9181028490928794553}
+    VarType: UnityEngine.UI.Button
+    VarPrefix: 0
+  - VarName: varImgAddCoins
+    Targets:
+    - {fileID: 1374831150800750875}
+    VarType: UnityEngine.GameObject
+    VarPrefix: 0
   m_UIAnimationType: 0
   m_OpenAnimation: {fileID: 0}
   m_CloseAnimation: {fileID: 0}
@@ -638,6 +648,8 @@ MonoBehaviour:
   varFlyRewardParent: {fileID: 3037933167113653181}
   varIcon_Coin: {fileID: 4481605874532177959}
   varImgAdd: {fileID: 1198864018671683795}
+  varBtnCoin: {fileID: 172135335626783028}
+  varImgAddCoins: {fileID: 1374831150800750875}
 --- !u!1 &5392095776392064041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1309,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}

@@ -35,6 +35,7 @@ public partial class HallTabUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        ArrowUITopbarSub.SetHallActive(true);
         ArrowUITopbar.SetCoinVisible(true);
         ArrowUITopbarSub.SetLifeVisible(true);
         ArrowUITopbar.EnsureOpen();
@@ -43,6 +44,7 @@ public partial class HallTabUIForm : UIFormBase
 
     protected override void OnClose(bool isShutdown, object userData)
     {
+        ArrowUITopbarSub.SetHallActive(false);
         DOTween.Kill(varBtnTask);
         DOTween.Kill(varBtnHome);
         DOTween.Kill(varBtnSettings);
@@ -89,6 +91,11 @@ public partial class HallTabUIForm : UIFormBase
         }
 
         return GF.UI.OpenUIForm(view);
+    }
+
+    public void ShowTaskPage()
+    {
+        OnTabClicked(UIViews.TaskPageUIForm, varBtnTask);
     }
 
     public void ShowHomePage()

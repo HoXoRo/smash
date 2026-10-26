@@ -19,6 +19,7 @@ public partial class ArrowUITopbarSub : UIFormBase
 
     private static bool s_ShowCoin = true;
     private static bool s_ShowLife;
+    private static bool s_InHall;
     private PlayerDataModel playerDm;
     private float pendingCoins;
     private float targetCoins;
@@ -41,6 +42,12 @@ public partial class ArrowUITopbarSub : UIFormBase
             topbar.RefreshCoinVisibility();
             topbar.RefreshLifeVisibility();
         }
+    }
+
+    public static void SetHallActive(bool active)
+    {
+        s_InHall = active;
+        RefreshPageVisibility();
     }
 
     public static void EnsureOpen()
@@ -94,6 +101,7 @@ public partial class ArrowUITopbarSub : UIFormBase
     {
         base.OnInit(userData);
         varBtnLife.onClick.AddListener(OpenAddLife);
+        if (varBtnCoin != null) varBtnCoin.onClick.AddListener(OpenTasks);
     }
 
     protected override void OnOpen(object userData)
@@ -245,6 +253,9 @@ public partial class ArrowUITopbarSub : UIFormBase
 
     private void RefreshCoinVisibility()
     {
+        bool canOpenTasks = s_InHall && !ArrowUITopbar.HiddenByPage && !ArrowUITopbar.CoinRewardsBlocked;
+        if (varBtnCoin != null) varBtnCoin.interactable = canOpenTasks;
+        if (varImgAddCoins != null) varImgAddCoins.SetActive(canOpenTasks);
         bool collecting = activeRewards > 0 || rolling || pendingCoins > 0f;
         int defaultOrder = Params.SortOrder ?? 0;
         UICanvas.sortingOrder = collecting && !ArrowUITopbar.CoinRewardsBlocked
@@ -270,6 +281,22 @@ public partial class ArrowUITopbarSub : UIFormBase
         varTxtLife.text = playerDm.LifeCount.ToString();
         int seconds = playerDm.GetSecondsUntilNextLife();
         varTxtTime.text = seconds < 0 ? "FULL" : $"{seconds / 60:00}:{seconds % 60:00}";
+    }
+
+    private void OpenTasks()
+    {
+        if (!s_InHall || ArrowUITopbar.HiddenByPage || ArrowUITopbar.CoinRewardsBlocked) return;
+        string assetName = GF.UI.GetUIFormAssetName(UIViews.HallTabUIForm);
+        var forms = string.IsNullOrEmpty(assetName) ? null : GF.UI.GetUIForms(assetName);
+        if (forms == null) return;
+        foreach (var form in forms)
+        {
+            if (form.Logic is HallTabUIForm hallTab)
+            {
+                hallTab.ShowTaskPage();
+                return;
+            }
+        }
     }
 
     private void OpenAddLife()
