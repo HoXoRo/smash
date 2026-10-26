@@ -10,7 +10,7 @@
 	BubbleCooldownAfterClick	点击气泡后的冷却时间（秒）	100
 	BubbleMoveSpeed	气泡移动速度	90
 	CloseBtnShowTime	奖励弹窗关闭按钮出现时间（秒）	2
-	InterstitialCD	插屏冷却时间（秒）	60
+	InterstitialCD	插屏冷却时间（秒）	45
 	InterstitialShowWeight	插屏播放权重	100
 	InterstitialCancelTime	插屏连续取消次数	3
 	RewardDialogFreeDoubleTimes	奖励弹窗前几次翻倍免广告	3
