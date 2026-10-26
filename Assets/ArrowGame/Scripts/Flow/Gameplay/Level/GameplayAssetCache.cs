@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -212,7 +212,7 @@ namespace Gameplay.Level
                 foreach (var key in wantedObjects)
                 {
                     ObjectDataItem item = catalog.items.FirstOrDefault(x => x.type == key.Item1 && x.size == key.Item2);
-                    if (item == null) throw new InvalidOperationException($"No prefab indexed for {key.Item1}, size {key.Item2}.");
+                    if (item == null) throw new InvalidOperationException($"No prefab indexed for object ID {(int)key.Item1}, size {key.Item2}.");
                     GameObject prefab = await lease.Load<GameObject>(item.prefabPath, token, false, background);
                     lease.Objects.items.Add(new ObjectDataItem { type = item.type, size = item.size, prefabPath = item.prefabPath, prefab = prefab });
                     CollectEffects(item.type, Mathf.RoundToInt(item.size.GetVolume()), wantedEffects);
@@ -224,7 +224,7 @@ namespace Gameplay.Level
                 foreach (ParticleType type in wantedEffects)
                 {
                     ParticleDataItem item = effects.items.FirstOrDefault(x => x.type == type);
-                    if (item == null) throw new InvalidOperationException("No particle indexed for " + type);
+                    if (item == null) throw new InvalidOperationException("No particle indexed for particle ID " + (int)type);
                     bool common = type == ParticleType.BallGroundHit || type == ParticleType.ObjectGroundHit || type == ParticleType.BallObjectFirstHit || type == ParticleType.RocketExplode;
                     GameObject prefab = await lease.Load<GameObject>(item.prefabPath, token, common, background);
                     lease.Particles.items.Add(new ParticleDataItem { type = type, prefabPath = item.prefabPath, prefab = prefab });
