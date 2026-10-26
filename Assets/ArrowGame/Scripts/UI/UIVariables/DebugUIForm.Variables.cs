@@ -20,4 +20,5 @@ public partial class DebugUIForm
 	[SerializeField] private TMP_InputField varInputPcard = null;
 	[SerializeField] private Button varAddPcard = null;
 	[SerializeField] private Button varReducePcard = null;
+	[SerializeField] private Button varBtnInter = null;
 }

@@ -17,7 +17,7 @@ public partial class DebugUIForm : UIFormBase
         varReduceDollor.onClick.AddListener(ReduceDollar);
         varAddPcard.onClick.AddListener(AddPcard);
         varReducePcard.onClick.AddListener(ReducePcard);
-        varBtnVideo.onClick.AddListener(ShowVideo);
+        varBtnVideo.onClick.AddListener(ShowInterstitial);
         varBtnAddLv.onClick.AddListener(AddLevel);
         varBtnReduceLv.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(ReduceLevel);
         varBtnResetTask.onClick.AddListener(ResetTasks);
@@ -79,9 +79,9 @@ public partial class DebugUIForm : UIFormBase
         return Mathf.Max(0f, amount);
     }
 
-    private void ShowVideo()
+    private void ShowInterstitial()
     {
-        CommonHelper.ShowVideoAd("debug_video", null);
+        CommonHelper.ShowInterstitial("debug_interstitial");
     }
 
     private void AddLevel()
