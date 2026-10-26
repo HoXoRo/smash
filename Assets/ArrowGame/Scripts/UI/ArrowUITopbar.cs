@@ -299,7 +299,7 @@ public partial class ArrowUITopbar : UIFormBase
         if (varTxtPcard == null)
             return;
 
-        varTxtPcard.text = CommonHelper.GetDollarString(value);
+        varTxtPcard.text = CommonHelper.GetDollarString(value, true, false);
     }
 
     private void OnGiftRewardsChanged()
@@ -685,9 +685,17 @@ public partial class ArrowUITopbar : UIFormBase
 
     private string FormatCurrencyValue(PlayerDataType type, float value)
     {
-        return type == PlayerDataType.Diamond || type == PlayerDataType.Pcard
-            ? CommonHelper.GetDollarString(value)
-            : CommonHelper.FormatLargeNumber(value.ToString(), 0);
+        if (type == PlayerDataType.Diamond)
+        {
+            return CommonHelper.GetDollarString(value);
+        }
+        
+        if (type == PlayerDataType.Pcard)
+        {
+            return CommonHelper.GetDollarString(value, true, false);
+        }
+
+        return CommonHelper.FormatLargeNumber(value.ToString(), 0);
     }
     protected override void OnButtonClick(object sender, Button btSelf)
     {
@@ -755,7 +763,7 @@ public partial class ArrowUITopbar : UIFormBase
 
         StopPcardUpFloatTween();
 
-        varTxtUpPcard.text = $"+{CommonHelper.GetDollarString(deltaValue, deltaValue >= 0.01f)}";
+        varTxtUpPcard.text = $"+{CommonHelper.GetDollarString(deltaValue, true, false)}";
         RectTransform rect = varTxtUpPcard.rectTransform;
         rect.anchoredPosition = m_TxtUpPcardRestPos;
 
