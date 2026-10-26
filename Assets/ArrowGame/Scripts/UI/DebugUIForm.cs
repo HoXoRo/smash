@@ -15,6 +15,8 @@ public partial class DebugUIForm : UIFormBase
 
         varAddDollar.onClick.AddListener(AddDollar);
         varReduceDollor.onClick.AddListener(ReduceDollar);
+        varAddPcard.onClick.AddListener(AddPcard);
+        varReducePcard.onClick.AddListener(ReducePcard);
         varBtnVideo.onClick.AddListener(ShowVideo);
         varBtnAddLv.onClick.AddListener(AddLevel);
         varBtnReduceLv.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(ReduceLevel);
@@ -39,6 +41,37 @@ public partial class DebugUIForm : UIFormBase
     private float GetInputDollar()
     {
         if (varInputDollar == null || !float.TryParse(varInputDollar.text, out float amount))
+        {
+            return 0f;
+        }
+
+        return Mathf.Max(0f, amount);
+    }
+
+    private void AddPcard()
+    {
+        ChangePcard(GetInputPcard());
+    }
+
+    private void ReducePcard()
+    {
+        ChangePcard(-GetInputPcard());
+    }
+
+    private void ChangePcard(float amount)
+    {
+        if (amount == 0f) return;
+
+        PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        ArrowUITopbar.CompletePcardDisplay(playerData);
+        playerData.Pcard = Mathf.Max(0f, playerData.Pcard + amount);
+        playerData.SetPcardDisplayValue(playerData.Pcard);
+    }
+
+    private float GetInputPcard()
+    {
+        if (varInputPcard == null || !float.TryParse(varInputPcard.text, out float amount)
+            || float.IsNaN(amount) || float.IsInfinity(amount))
         {
             return 0f;
         }
