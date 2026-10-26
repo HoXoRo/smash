@@ -14,9 +14,9 @@ public class ArrowMaxAdsController
     private const string AppOpenAdUnitId = "d7b399fc94af3a0e";
     private const string MRecAdUnitId = "ENTER_IOS_MREC_AD_UNIT_ID_HERE";
 #else // UNITY_ANDROID
-    private const string InterstitialAdUnitId = "f2c0a5c7643edc94";
-    private const string RewardedAdUnitId = "a7f1d4a4183b8688";
-    private const string BannerAdUnitId = "21dc286c1479038d";
+    private const string InterstitialAdUnitId = "6dd137d8416c55f1";
+    private const string RewardedAdUnitId = "585a48a657d0925d";
+    private const string BannerAdUnitId = "62f8ca4040a3b050";
     private const string AppOpenAdUnitId = "f069c8cd35607d2b";
     private const string MRecAdUnitId = "ENTER_ANDROID_MREC_AD_UNIT_ID_HERE";
 #endif

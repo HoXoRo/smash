@@ -10,12 +10,7 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c1c3b4-2b47-4b58-848e-c5dcf45a4647" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/ArrowUITopbar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/ArrowUITopbar.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/DebugUIForm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/DebugUIForm.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/DebugUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/DebugUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/UIVariables/DebugUIForm.Variables.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/UIVariables/DebugUIForm.Variables.cs" afterDir="false" />
-    </list>
+    <list default="true" id="48c1c3b4-2b47-4b58-848e-c5dcf45a4647" name="更改" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -10,7 +10,11 @@ public class AdsManager
     private bool isRegistered = false;
     private static AdsManager m_Instance;
     
+    private GoogleMobileAdsController _googleMobileAdsController;
     private ArrowMaxAdsController  _maxAdsController;
+    private RewardedAdController _rewardedAdController;
+    private InterstitialAdController _interstitialAdController;
+    private BannerViewController _bannerViewController;
     
     public static AdsManager Instance
     {
@@ -29,14 +33,25 @@ public class AdsManager
     }
     public void ShowAd(Action<bool> reward, string adId = "")
     {
-        _maxAdsController.ShowRewardedAd(reward, adId);
+        if (!_rewardedAdController.ShowAd(reward))
+        {
+            _maxAdsController.ShowRewardedAd(reward, adId);
+        }
     }
 
     public void ShowInter(string adId = "")
     {
-        _maxAdsController.ShowInterstitial(adId);
+        if (!_interstitialAdController.ShowAd())
+        {
+            _maxAdsController.ShowInterstitial(adId);
+        }
     }
-    
+
+    public void ShowBanner()
+    {
+        _bannerViewController.ShowAd();
+    }
+
     public void ShowH5()
     {
 
@@ -45,6 +60,10 @@ public class AdsManager
     private void Init()
     {
         _maxAdsController = new ArrowMaxAdsController();
+        _googleMobileAdsController = new GoogleMobileAdsController();
+        _rewardedAdController = new RewardedAdController();
+        _interstitialAdController = new InterstitialAdController();
+        _bannerViewController = new BannerViewController();
     }
 
     public void ShowMaxDebugger()
