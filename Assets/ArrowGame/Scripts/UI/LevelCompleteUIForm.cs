@@ -35,6 +35,8 @@ public partial class LevelCompleteUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        GF.UI.CloseUIForms(UIViews.QuitConfirmUIForm);
+        GF.UI.CloseUIForms(UIViews.SettingPageUIForm);
 
         int fallbackLevel = Mathf.Max(1, GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId - 1);
         int completedLevel = Params.Get<VarInt32>(P_LevelId, fallbackLevel);

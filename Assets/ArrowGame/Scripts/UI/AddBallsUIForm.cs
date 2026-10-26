@@ -29,6 +29,8 @@ public partial class AddBallsUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        GF.UI.CloseUIForms(UIViews.QuitConfirmUIForm);
+        GF.UI.CloseUIForms(UIViews.SettingPageUIForm);
         isBusy = false;
         onRefill = Params.Get<VarAction>(P_OnRefill)?.Value;
         onQuit = Params.Get<VarAction>(P_OnQuit)?.Value;
