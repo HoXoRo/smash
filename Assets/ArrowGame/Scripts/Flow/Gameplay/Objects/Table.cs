@@ -16,6 +16,8 @@ namespace Gameplay.Objects
 
 		public MeshRenderer[] meshRenderers;
 
+		public float SurfaceHeight => boxCollider != null ? boxCollider.bounds.max.y : transform.position.y;
+
 		[SerializeField]
 		private Transform[] partTransforms;
 

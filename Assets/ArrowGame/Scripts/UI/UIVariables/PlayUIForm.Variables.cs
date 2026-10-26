@@ -11,4 +11,5 @@ public partial class PlayUIForm
 	[Header("UI Variables:")]
 	[SerializeField] private Button varBtnSetting = null;
 	[SerializeField] private TextMeshProUGUI varTxtCount = null;
+	[SerializeField] private GameObject varTxtHint = null;
 }

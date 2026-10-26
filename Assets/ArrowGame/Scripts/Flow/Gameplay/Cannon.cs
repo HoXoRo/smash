@@ -37,6 +37,7 @@ namespace Gameplay
 		private ParticleSystem shootParticle;
 
 		private BoundingPlane _boundingPlane;
+		private List<Table> _tables;
 		private int _targetLayerMask;
 		private Queue<Ball> _ballPool;
 		private Transform _ballPoolRoot;
@@ -45,6 +46,7 @@ namespace Gameplay
 		public void SetPlaneBounds(List<BaseObject> objects, List<Table> tables)
 		{
 			_boundingPlane = new BoundingPlane(objects, tables);
+			_tables = tables;
 			_targetLayerMask = LayerMask.GetMask("BreakableCollider", "ObjectCollider");
 		}
 
@@ -116,6 +118,12 @@ namespace Gameplay
 			{
 				float viewportY = GetPointerViewportPosition().y;
 				ServiceLocator.Get<SlidingTextController>()?.Play(viewportY, SlidingTextContentType.TapOnTable);
+				return false;
+			}
+
+			if (IsTargetBelowTables(target))
+			{
+				PlayUIForm.ShowBelowTableHint();
 				return false;
 			}
 
@@ -234,7 +242,19 @@ namespace Gameplay
 			return true;
 		}
 
-		private Vector3 GetPointerViewportPosition()
+		private bool IsTargetBelowTables(Vector3 target)
+        {
+            if (_tables == null) return false;
+            float lowestSurface = float.PositiveInfinity;
+            foreach (Table table in _tables)
+            {
+                if (table != null)
+                    lowestSurface = Mathf.Min(lowestSurface, table.SurfaceHeight);
+            }
+            return !float.IsPositiveInfinity(lowestSurface) && target.y < lowestSurface;
+        }
+
+        private Vector3 GetPointerViewportPosition()
 		{
 			if (Screen.width <= 0 || Screen.height <= 0)
 			{
