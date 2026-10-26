@@ -345,9 +345,6 @@ public class PlayerDataModel : DataModelStorageBase
         get => m_LevelId;
         set
         {
-            var diffLevel = value - m_LevelId;
-            RecordDailyLevelCompleted(diffLevel);
-
             SetData(PlayerDataType.LevelId, Mathf.Max(1, value));
         }
     }

@@ -1512,7 +1512,13 @@ namespace Gameplay
 			MenuController.IsAfterWin = true;
 			StreakHelper.OnLevelWon(_levelIndex, _activeStreakCount);
 			PlayerDataModel playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
-			playerData.LevelId = Mathf.Max(playerData.LevelId, _levelIndex + 1);
+			int previousLevel = playerData.LevelId;
+			playerData.LevelId = Mathf.Max(previousLevel, _levelIndex + 1);
+			// Count progress only on a win, never while restoring LevelId from a save.
+			if (playerData.LevelId > previousLevel)
+			{
+				playerData.RecordDailyLevelCompleted(playerData.LevelId - previousLevel);
+			}
 			playerData.Save();
 			if (SaveService.Data != null)
 			{
