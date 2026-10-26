@@ -18,4 +18,5 @@ public partial class MakeupUIForm
 	[SerializeField] private Button varBtnRecord = null;
 	[SerializeField] private TextMeshProUGUI varTxtBalance = null;
 	[SerializeField] private ScrollRect varMakeupScrollRect = null;
+	[SerializeField] private GameObject varImgInputed = null;
 }

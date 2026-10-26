@@ -181,10 +181,13 @@ public partial class MakeupUIForm : UIFormBase
 
     public void RefreshAccountText()
     {
-        if (varTxtAccount == null)
-            return;
-
         PlayerDataModel playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
-        varTxtAccount.text = playerDm.MakeupAccount ?? string.Empty;
+        bool hasAccount = !string.IsNullOrWhiteSpace(playerDm.MakeupAccount);
+        if (varTxtAccount != null)
+            varTxtAccount.text = playerDm.MakeupAccount ?? string.Empty;
+        if (varBtnInput != null)
+            varBtnInput.gameObject.SetActive(!hasAccount);
+        if (varImgInputed != null)
+            varImgInputed.SetActive(hasAccount);
     }
 }
