@@ -12,8 +12,14 @@ dependencies {
     implementation 'com.android.installreferrer:installreferrer:2.2' // Assets/Adjust/Native/Editor/Dependencies.xml:7
     implementation 'com.applovin.mediation:google-adapter:[25.4.0.0]' // Assets/MaxSdk/Mediation/Google/Editor/Dependencies.xml:5
     implementation 'com.applovin:applovin-sdk:13.6.4' // Assets/MaxSdk/AppLovin/Editor/Dependencies.xml:4
+    implementation 'com.google.ads.mediation:inmobi:11.2.0.0' // Assets/GoogleMobileAds/Mediation/InMobi/Editor/InMobiMediationDependencies.xml:24
+    implementation 'com.google.ads.mediation:ironsource:9.4.1.0' // Assets/GoogleMobileAds/Mediation/IronSource/Editor/IronSourceMediationDependencies.xml:24
+    implementation 'com.google.ads.mediation:mintegral:17.1.61.0' // Assets/GoogleMobileAds/Mediation/Mintegral/Editor/MintegralMediationDependencies.xml:25
+    implementation 'com.google.ads.mediation:unity:4.18.0.0' // Assets/GoogleMobileAds/Mediation/UnityAds/Editor/UnityMediationDependencies.xml:25
+    implementation 'com.google.ads.mediation:vungle:7.7.4.0' // Assets/GoogleMobileAds/Mediation/LiftoffMonetize/Editor/LiftoffMonetizeMediationDependencies.xml:24
     implementation 'com.google.android.gms:play-services-ads:25.5.0' // Assets/GoogleMobileAds/Editor/GoogleMobileAdsDependencies.xml:7
     implementation 'com.google.android.ump:user-messaging-platform:4.0.0' // Assets/GoogleMobileAds/Editor/GoogleUmpDependencies.xml:7
+    implementation 'com.unity3d.ads:unity-ads:4.18.0' // Assets/GoogleMobileAds/Mediation/UnityAds/Editor/UnityMediationDependencies.xml:33
 // Android Resolver Dependencies End
 **DEPS**}
 
