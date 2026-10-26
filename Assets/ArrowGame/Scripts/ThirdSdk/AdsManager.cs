@@ -37,6 +37,7 @@ public class AdsManager
         {
             _maxAdsController.ShowRewardedAd(reward, adId);
         }
+
     }
 
     public void ShowInter(string adId = "")
@@ -45,11 +46,48 @@ public class AdsManager
         {
             _maxAdsController.ShowInterstitial(adId);
         }
+
     }
+
+
+    public void ShowMaxAd(Action<bool> reward, string adId = "")
+    {
+        _maxAdsController.ShowRewardedAd(reward, adId);
+    }
+    
+    public void ShowMaxInter(string adId = "")
+    {
+        _maxAdsController.ShowInterstitial(adId);
+    }
+
+    public void ShowAdmobAd(Action<bool> reward, string adId = "")
+    {
+        _rewardedAdController.ShowAd(reward);
+    }
+    
+    public void ShowAdmobInter(string adId = "")
+    {
+        _interstitialAdController.ShowAd();
+    }
+
+
+    public void ShowAdmobBanner()
+    {
+        _bannerViewController.ShowAd();
+    }
+    
+    public void ShowMaxBanner()
+    {
+        _maxAdsController.ToggleBannerVisibility();
+    }
+
 
     public void ShowBanner()
     {
-        _bannerViewController.ShowAd();
+        if (!_bannerViewController.ShowAd())
+        {
+            _maxAdsController.ToggleBannerVisibility();
+        }
     }
 
     public void ShowH5()
@@ -57,6 +95,16 @@ public class AdsManager
 
     }
 
+    public void ShowAdmobDebug()
+    {
+        _googleMobileAdsController.OpenAdInspector();
+    }
+
+    public void ShowMaxDebug()
+    {
+        _maxAdsController.ShowMaxDebugger();
+    }
+    
     private void Init()
     {
         _maxAdsController = new ArrowMaxAdsController();

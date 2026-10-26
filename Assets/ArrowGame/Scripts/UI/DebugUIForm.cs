@@ -17,7 +17,19 @@ public partial class DebugUIForm : UIFormBase
         varReduceDollor.onClick.AddListener(ReduceDollar);
         varAddPcard.onClick.AddListener(AddPcard);
         varReducePcard.onClick.AddListener(ReducePcard);
-        varBtnVideo.onClick.AddListener(ShowInterstitial);
+        varBtnVideo.onClick.AddListener(() => AdsManager.Instance.ShowAd(
+            success => LogVideoResult("Auto", success), "debug_rewarded"));
+        varBtnInter.onClick.AddListener(ShowInterstitial);
+        varBtnOpenMax.onClick.AddListener(() => AdsManager.Instance.ShowMaxDebug());
+        varBtnOpenAdmob.onClick.AddListener(() => AdsManager.Instance.ShowAdmobDebug());
+        varBtnInter_max.onClick.AddListener(() => AdsManager.Instance.ShowMaxInter("debug_max_interstitial"));
+        varBtnInter_admob.onClick.AddListener(() => AdsManager.Instance.ShowAdmobInter("debug_admob_interstitial"));
+        varBtnBanner_max.onClick.AddListener(() => AdsManager.Instance.ShowMaxBanner());
+        varBtnBanner_admob.onClick.AddListener(() => AdsManager.Instance.ShowAdmobBanner());
+        varBtnVideo_max.onClick.AddListener(() => AdsManager.Instance.ShowMaxAd(
+            success => LogVideoResult("MAX", success), "debug_max_rewarded"));
+        varBtnVideo_admob.onClick.AddListener(() => AdsManager.Instance.ShowAdmobAd(
+            success => LogVideoResult("AdMob", success), "debug_admob_rewarded"));
         varBtnAddLv.onClick.AddListener(AddLevel);
         varBtnReduceLv.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(ReduceLevel);
         varBtnResetTask.onClick.AddListener(ResetTasks);
@@ -79,9 +91,14 @@ public partial class DebugUIForm : UIFormBase
         return Mathf.Max(0f, amount);
     }
 
+    private static void LogVideoResult(string provider, bool success)
+    {
+        Debug.Log($"[DebugUIForm] {provider} rewarded ad completed: {success}");
+    }
+
     private void ShowInterstitial()
     {
-        CommonHelper.ShowInterstitial("debug_interstitial");
+        AdsManager.Instance.ShowInter("debug_interstitial");
     }
 
     private void AddLevel()

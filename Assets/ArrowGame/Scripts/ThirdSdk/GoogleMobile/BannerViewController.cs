@@ -72,13 +72,15 @@ public class BannerViewController
     /// <summary>
     /// Shows the ad.
     /// </summary>
-    public void ShowAd()
+    public bool ShowAd()
     {
         if (_bannerView != null)
         {
             Debug.Log("Showing banner view.");
             _bannerView.Show();
+            return true;
         }
+        return false;
     }
 
     /// <summary>

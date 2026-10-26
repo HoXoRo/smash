@@ -57,7 +57,7 @@ public class ArrowMaxAdsController
             // MaxSdk.SetVerboseLogging(true);
             InitializeInterstitialAds();
             InitializeRewardedAds();
-            // InitializeBannerAds();
+            InitializeBannerAds();
             // InitializeMRecAds();
         };
 
@@ -426,7 +426,7 @@ public class ArrowMaxAdsController
         MaxSdk.SetBannerBackgroundColor(BannerAdUnitId, Color.black);
     }
 
-    private void ToggleBannerVisibility()
+    public void ToggleBannerVisibility()
     {
         if (!isBannerShowing)
         {

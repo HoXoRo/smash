@@ -21,4 +21,12 @@ public partial class DebugUIForm
 	[SerializeField] private Button varAddPcard = null;
 	[SerializeField] private Button varReducePcard = null;
 	[SerializeField] private Button varBtnInter = null;
+	[SerializeField] private Button varBtnOpenMax = null;
+	[SerializeField] private Button varBtnOpenAdmob = null;
+	[SerializeField] private Button varBtnInter_max = null;
+	[SerializeField] private Button varBtnBanner_max = null;
+	[SerializeField] private Button varBtnBanner_admob = null;
+	[SerializeField] private Button varBtnInter_admob = null;
+	[SerializeField] private Button varBtnVideo_max = null;
+	[SerializeField] private Button varBtnVideo_admob = null;
 }
