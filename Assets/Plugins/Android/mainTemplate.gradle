@@ -36,6 +36,7 @@ dependencies {
 
 // Android Resolver Exclusions Start
 android {
+    ndkVersion "**NDKVERSION**"
   packaging {
       exclude ('/lib/armeabi/*' + '*')
       exclude ('/lib/mips/*' + '*')

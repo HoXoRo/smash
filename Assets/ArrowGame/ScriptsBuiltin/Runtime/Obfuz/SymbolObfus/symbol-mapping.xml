@@ -432,16 +432,16 @@
       <field signature="int $Obfuz$RVA_Value54" newName="$UN" />
       <field signature="int $Obfuz$RVA_Value55" newName="$kp" />
       <field signature="int $Obfuz$RVA_Value56" newName="$lp" />
-      <field signature="int $Obfuz$RVA_Value57" newName="$Lp" />
+      <field signature="string $Obfuz$RVA_Value57" newName="$hy" />
       <field signature="int $Obfuz$RVA_Value58" newName="$Cy" />
-      <field signature="string $Obfuz$RVA_Value59" newName="$dy" />
-      <field signature="string $Obfuz$RVA_Value60" newName="$Dy" />
-      <field signature="string $Obfuz$RVA_Value61" newName="$Rp" />
-      <field signature="float $Obfuz$RVA_Value62" newName="$ey" />
-      <field signature="int $Obfuz$RVA_Value63" newName="$Ey" />
-      <field signature="int $Obfuz$RVA_Value64" newName="$fy" />
-      <field signature="int $Obfuz$RVA_Value65" newName="$Fy" />
-      <field signature="int $Obfuz$RVA_Value66" newName="$gy" />
+      <field signature="int $Obfuz$RVA_Value59" newName="$Hy" />
+      <field signature="int $Obfuz$RVA_Value60" newName="$iy" />
+      <field signature="int $Obfuz$RVA_Value61" newName="$Iy" />
+      <field signature="int $Obfuz$RVA_Value62" newName="$jy" />
+      <field signature="string $Obfuz$RVA_Value63" newName="$Jy" />
+      <field signature="string $Obfuz$RVA_Value64" newName="$Ky" />
+      <field signature="string $Obfuz$RVA_Value65" newName="$my" />
+      <field signature="float $Obfuz$RVA_Value66" newName="$My" />
       <field signature="int $Obfuz$RVA_Value67" newName="$Gy" />
       <field signature="int $Obfuz$RVA_Value68" newName="$nP" />
       <field signature="int $Obfuz$RVA_Value69" newName="$NP" />
@@ -452,70 +452,70 @@
       <field signature="int $Obfuz$RVA_Value74" newName="$iQ" />
       <field signature="int $Obfuz$RVA_Value75" newName="$IQ" />
       <field signature="int $Obfuz$RVA_Value76" newName="$jQ" />
-      <field signature="float $Obfuz$RVA_Value77" newName="$hy" />
-      <field signature="float $Obfuz$RVA_Value78" newName="$Hy" />
-      <field signature="float $Obfuz$RVA_Value79" newName="$iy" />
-      <field signature="float $Obfuz$RVA_Value80" newName="$hQ" />
-      <field signature="int $Obfuz$RVA_Value81" newName="$Iy" />
-      <field signature="int $Obfuz$RVA_Value82" newName="$jy" />
-      <field signature="int $Obfuz$RVA_Value83" newName="$Jy" />
+      <field signature="int $Obfuz$RVA_Value77" newName="$ny" />
+      <field signature="int $Obfuz$RVA_Value78" newName="$oy" />
+      <field signature="int $Obfuz$RVA_Value79" newName="$Qy" />
+      <field signature="int $Obfuz$RVA_Value80" newName="$ry" />
+      <field signature="float $Obfuz$RVA_Value81" newName="$Ry" />
+      <field signature="float $Obfuz$RVA_Value82" newName="$sy" />
+      <field signature="float $Obfuz$RVA_Value83" newName="$Sy" />
       <field signature="float $Obfuz$RVA_Value84" newName="$ky" />
       <field signature="float $Obfuz$RVA_Value85" newName="$mQ" />
-      <field signature="int $Obfuz$RVA_Value86" newName="$Ky" />
+      <field signature="float $Obfuz$RVA_Value86" newName="$ty" />
       <field signature="int $Obfuz$RVA_Value87" newName="$ly" />
       <field signature="int $Obfuz$RVA_Value88" newName="$MQ" />
       <field signature="int $Obfuz$RVA_Value89" newName="$oQ" />
-      <field signature="int $Obfuz$RVA_Value90" newName="$OQ" />
+      <field signature="long $Obfuz$RVA_Value90" newName="$Ty" />
       <field signature="int $Obfuz$RVA_Value91" newName="$Ly" />
-      <field signature="float $Obfuz$RVA_Value92" newName="$my" />
-      <field signature="float $Obfuz$RVA_Value93" newName="$My" />
-      <field signature="float $Obfuz$RVA_Value94" newName="$ny" />
+      <field signature="int $Obfuz$RVA_Value92" newName="$Uy" />
+      <field signature="int $Obfuz$RVA_Value93" newName="$vy" />
+      <field signature="int $Obfuz$RVA_Value94" newName="$Vy" />
       <field signature="int $Obfuz$RVA_Value95" newName="$Ny" />
-      <field signature="string $Obfuz$RVA_Value96" newName="$RQ" />
-      <field signature="string $Obfuz$RVA_Value97" newName="$oy" />
-      <field signature="int $Obfuz$RVA_Value98" newName="$SQ" />
+      <field signature="float $Obfuz$RVA_Value96" newName="$Wy" />
+      <field signature="float $Obfuz$RVA_Value97" newName="$xy" />
+      <field signature="float $Obfuz$RVA_Value98" newName="$Xy" />
       <field signature="int $Obfuz$RVA_Value99" newName="$tQ" />
-      <field signature="int $Obfuz$RVA_Value100" newName="$uQ" />
-      <field signature="int $Obfuz$RVA_Value101" newName="$TQ" />
+      <field signature="string $Obfuz$RVA_Value100" newName="$yy" />
+      <field signature="string $Obfuz$RVA_Value101" newName="$Yy" />
       <field signature="int $Obfuz$RVA_Value102" newName="$Oy" />
       <field signature="int $Obfuz$RVA_Value103" newName="$vQ" />
       <field signature="int $Obfuz$RVA_Value104" newName="$py" />
       <field signature="int $Obfuz$RVA_Value105" newName="$xQ" />
       <field signature="int $Obfuz$RVA_Value106" newName="$Py" />
       <field signature="int $Obfuz$RVA_Value107" newName="$qy" />
-      <field signature="float $Obfuz$RVA_Value108" newName="$Qy" />
-      <field signature="float $Obfuz$RVA_Value109" newName="$WQ" />
-      <field signature="float $Obfuz$RVA_Value110" newName="$ry" />
-      <field signature="string $Obfuz$RVA_Value111" newName="$Ry" />
-      <field signature="string $Obfuz$RVA_Value112" newName="$sy" />
-      <field signature="string $Obfuz$RVA_Value113" newName="$Sy" />
-      <field signature="string $Obfuz$RVA_Value114" newName="$ty" />
-      <field signature="int $Obfuz$RVA_Value115" newName="$Ty" />
+      <field signature="int $Obfuz$RVA_Value108" newName="$zy" />
+      <field signature="int $Obfuz$RVA_Value109" newName="$Zy" />
+      <field signature="int $Obfuz$RVA_Value110" newName="$aY" />
+      <field signature="int $Obfuz$RVA_Value111" newName="$AY" />
+      <field signature="int $Obfuz$RVA_Value112" newName="$bY" />
+      <field signature="int $Obfuz$RVA_Value113" newName="$CY" />
+      <field signature="float $Obfuz$RVA_Value114" newName="$dY" />
+      <field signature="float $Obfuz$RVA_Value115" newName="$DY" />
       <field signature="float $Obfuz$RVA_Value116" newName="$uy" />
-      <field signature="int $Obfuz$RVA_Value117" newName="$Ar" />
-      <field signature="int $Obfuz$RVA_Value118" newName="$Uy" />
-      <field signature="float $Obfuz$RVA_Value119" newName="$vy" />
-      <field signature="float $Obfuz$RVA_Value120" newName="$Vy" />
+      <field signature="string $Obfuz$RVA_Value117" newName="$eY" />
+      <field signature="string $Obfuz$RVA_Value118" newName="$EY" />
+      <field signature="string $Obfuz$RVA_Value119" newName="$haA" />
+      <field signature="string $Obfuz$RVA_Value120" newName="$HaA" />
       <field signature="int $Obfuz$RVA_Value121" newName="$wy" />
-      <field signature="string $Obfuz$RVA_Value122" newName="$Wy" />
+      <field signature="float $Obfuz$RVA_Value122" newName="$iaA" />
       <field signature="int $Obfuz$RVA_Value123" newName="$Ir" />
       <field signature="int $Obfuz$RVA_Value124" newName="$Fr" />
-      <field signature="int $Obfuz$RVA_Value125" newName="$kr" />
-      <field signature="int $Obfuz$RVA_Value126" newName="$jr" />
+      <field signature="float $Obfuz$RVA_Value125" newName="$IaA" />
+      <field signature="float $Obfuz$RVA_Value126" newName="$jaA" />
       <field signature="int $Obfuz$RVA_Value127" newName="$gr" />
-      <field signature="int $Obfuz$RVA_Value128" newName="$hr" />
+      <field signature="string $Obfuz$RVA_Value128" newName="$JaA" />
       <field signature="int $Obfuz$RVA_Value129" newName="$Jr" />
       <field signature="int $Obfuz$RVA_Value130" newName="$Hr" />
       <field signature="int $Obfuz$RVA_Value131" newName="$ir" />
       <field signature="int $Obfuz$RVA_Value132" newName="$Sr" />
-      <field signature="float $Obfuz$RVA_Value133" newName="$xy" />
-      <field signature="string $Obfuz$RVA_Value134" newName="$Xy" />
+      <field signature="int $Obfuz$RVA_Value133" newName="$kaA" />
+      <field signature="int $Obfuz$RVA_Value134" newName="$KaA" />
       <field signature="int $Obfuz$RVA_Value135" newName="$UI" />
       <field signature="int $Obfuz$RVA_Value136" newName="$vI" />
       <field signature="int $Obfuz$RVA_Value137" newName="$VI" />
       <field signature="int $Obfuz$RVA_Value138" newName="$wI" />
-      <field signature="int $Obfuz$RVA_Value139" newName="$WI" />
-      <field signature="int $Obfuz$RVA_Value140" newName="$xI" />
+      <field signature="float $Obfuz$RVA_Value139" newName="$laA" />
+      <field signature="string $Obfuz$RVA_Value140" newName="$LaA" />
       <field signature="int $Obfuz$RVA_Value141" newName="$XI" />
       <field signature="int $Obfuz$RVA_Value142" newName="$yI" />
       <field signature="int $Obfuz$RVA_Value143" newName="$YI" />
@@ -647,35 +647,35 @@
       <field signature="int $Obfuz$RVA_Value269" newName="$Jk" />
       <field signature="int $Obfuz$RVA_Value270" newName="$kk" />
       <field signature="int $Obfuz$RVA_Value271" newName="$Kk" />
-      <field signature="string $Obfuz$RVA_Value272" newName="$yy" />
-      <field signature="string $Obfuz$RVA_Value273" newName="$Yy" />
-      <field signature="string $Obfuz$RVA_Value274" newName="$zy" />
-      <field signature="string $Obfuz$RVA_Value275" newName="$Zy" />
-      <field signature="string $Obfuz$RVA_Value276" newName="$aY" />
-      <field signature="string $Obfuz$RVA_Value277" newName="$AY" />
-      <field signature="string $Obfuz$RVA_Value278" newName="$bY" />
+      <field signature="int $Obfuz$RVA_Value272" newName="$maA" />
+      <field signature="int $Obfuz$RVA_Value273" newName="$MaA" />
+      <field signature="int $Obfuz$RVA_Value274" newName="$naA" />
+      <field signature="int $Obfuz$RVA_Value275" newName="$NaA" />
+      <field signature="int $Obfuz$RVA_Value276" newName="$oaA" />
+      <field signature="int $Obfuz$RVA_Value277" newName="$OaA" />
+      <field signature="int $Obfuz$RVA_Value278" newName="$paA" />
       <field signature="string $Obfuz$RVA_Value279" newName="$BY" />
       <field signature="string $Obfuz$RVA_Value280" newName="$cY" />
-      <field signature="int $Obfuz$RVA_Value281" newName="$Pk" />
-      <field signature="int $Obfuz$RVA_Value282" newName="$qk" />
-      <field signature="int $Obfuz$RVA_Value283" newName="$Qk" />
-      <field signature="int $Obfuz$RVA_Value284" newName="$rk" />
-      <field signature="int $Obfuz$RVA_Value285" newName="$Rk" />
-      <field signature="int $Obfuz$RVA_Value286" newName="$sk" />
-      <field signature="int $Obfuz$RVA_Value287" newName="$Sk" />
+      <field signature="string $Obfuz$RVA_Value281" newName="$PaA" />
+      <field signature="string $Obfuz$RVA_Value282" newName="$qaA" />
+      <field signature="string $Obfuz$RVA_Value283" newName="$QaA" />
+      <field signature="string $Obfuz$RVA_Value284" newName="$raA" />
+      <field signature="string $Obfuz$RVA_Value285" newName="$RaA" />
+      <field signature="string $Obfuz$RVA_Value286" newName="$saA" />
+      <field signature="string $Obfuz$RVA_Value287" newName="$SaA" />
       <field signature="int $Obfuz$RVA_Value288" newName="$tk" />
-      <field signature="float $Obfuz$RVA_Value289" newName="$CY" />
-      <field signature="float $Obfuz$RVA_Value290" newName="$dY" />
-      <field signature="float $Obfuz$RVA_Value291" newName="$DY" />
-      <field signature="float $Obfuz$RVA_Value292" newName="$eY" />
-      <field signature="float $Obfuz$RVA_Value293" newName="$EY" />
+      <field signature="int $Obfuz$RVA_Value289" newName="$taA" />
+      <field signature="int $Obfuz$RVA_Value290" newName="$TaA" />
+      <field signature="int $Obfuz$RVA_Value291" newName="$uaA" />
+      <field signature="int $Obfuz$RVA_Value292" newName="$UaA" />
+      <field signature="int $Obfuz$RVA_Value293" newName="$vaA" />
       <field signature="int $Obfuz$RVA_Value294" newName="$wk" />
       <field signature="int $Obfuz$RVA_Value295" newName="$Wk" />
-      <field signature="int $Obfuz$RVA_Value296" newName="$xk" />
-      <field signature="int $Obfuz$RVA_Value297" newName="$Xk" />
-      <field signature="int $Obfuz$RVA_Value298" newName="$yk" />
-      <field signature="int $Obfuz$RVA_Value299" newName="$Yk" />
-      <field signature="int $Obfuz$RVA_Value300" newName="$zk" />
+      <field signature="float $Obfuz$RVA_Value296" newName="$VaA" />
+      <field signature="float $Obfuz$RVA_Value297" newName="$waA" />
+      <field signature="float $Obfuz$RVA_Value298" newName="$WaA" />
+      <field signature="float $Obfuz$RVA_Value299" newName="$xaA" />
+      <field signature="float $Obfuz$RVA_Value300" newName="$XaA" />
       <field signature="int $Obfuz$RVA_Value301" newName="$Zk" />
       <field signature="int $Obfuz$RVA_Value302" newName="$aK" />
       <field signature="int $Obfuz$RVA_Value303" newName="$AK" />
@@ -955,6 +955,13 @@
       <field signature="int $Obfuz$RVA_Value577" newName="$yZ" />
       <field signature="int $Obfuz$RVA_Value578" newName="$YZ" />
       <field signature="int $Obfuz$RVA_Value579" newName="$zZ" />
+      <field signature="int $Obfuz$RVA_Value580" newName="$yaA" />
+      <field signature="int $Obfuz$RVA_Value581" newName="$YaA" />
+      <field signature="int $Obfuz$RVA_Value582" newName="$zaA" />
+      <field signature="int $Obfuz$RVA_Value583" newName="$ZaA" />
+      <field signature="int $Obfuz$RVA_Value584" newName="$aAA" />
+      <field signature="int $Obfuz$RVA_Value585" newName="$AAA" />
+      <field signature="int $Obfuz$RVA_Value586" newName="$bAA" />
     </type>
     <type fullName="$Obfuz$ProxyCall" newFullName="$Xb" status="Renamed">
       <method signature="[Hotfix]AdjustManager $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_6400162(int)" newName="$YaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_6400162(Int32)" newStackTraceSignature="$Xb:$YaA(Int32)" />
@@ -1215,6 +1222,9 @@
       <method signature="[Hotfix]GFEventArgs $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_9960230(int)" newName="$el" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_9960230(Int32)" newStackTraceSignature="$Xb:$el(Int32)" />
       <method signature="[Hotfix]GFEventArgs $Obfuz$ProxyCall::@$Obfuz$Dispatch_31765_9960230(int, object, int)" newName="$El" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_31765_9960230(Int32, Object, Int32)" newStackTraceSignature="$Xb:$El(Int32, Object, Int32)" />
       <method signature="[Hotfix]GFEventType $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_6721379(object, int)" newName="$fl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_6721379(Object, Int32)" newStackTraceSignature="$Xb:$fl(Object, Int32)" />
+      <method signature="[GoogleMobileAds.Core]GoogleMobileAds.Api.AdapterState $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_14421919(object, int)" newName="$ZFA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_14421919(Object, Int32)" newStackTraceSignature="$Xb:$ZFA(Object, Int32)" />
+      <method signature="[GoogleMobileAds]GoogleMobileAds.Api.ResponseInfo $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_11885318(object, int)" newName="$agA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_11885318(Object, Int32)" newStackTraceSignature="$Xb:$agA(Object, Int32)" />
+      <method signature="[GoogleMobileAds.Ump]GoogleMobileAds.Ump.Api.ConsentStatus $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_15279057(int)" newName="$AgA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_15279057(Int32)" newStackTraceSignature="$Xb:$AgA(Int32)" />
       <method signature="[Hotfix]GuideManager $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_11113619(int)" newName="$Fl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_11113619(Int32)" newStackTraceSignature="$Xb:$Fl(Int32)" />
       <method signature="[Hotfix]InitOnStart $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_16359773(object, int)" newName="$gl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_16359773(Object, Int32)" newStackTraceSignature="$Xb:$gl(Object, Int32)" />
       <method signature="[Hotfix]Inventory.InventoryItemType $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_1887473(nint, int)" newName="$TbA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_1887473(IntPtr, Int32)" newStackTraceSignature="$Xb:$TbA(IntPtr, Int32)" />
@@ -1271,6 +1281,7 @@
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_20540_12616511(object, object, byte, byte, float, int, int)" newName="$Vl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_20540_12616511(Object, Object, Byte, Byte, Single, Int32, Int32)" newStackTraceSignature="$Xb:$Vl(Object, Object, Byte, Byte, Single, Int32, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_21268_12616511(nint, [Hotfix]Util.FloatTriplet, int)" newName="$EBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_21268_12616511(IntPtr, FloatTriplet, Int32)" newStackTraceSignature="$Xb:$EBA(IntPtr, FloatTriplet, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_21414_12616511(object, int, byte, int)" newName="$wl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_21414_12616511(Object, Int32, Byte, Int32)" newStackTraceSignature="$Xb:$wl(Object, Int32, Byte, Int32)" />
+      <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_21745_12616511(object, [UnityEngine.CoreModule]UnityEngine.Vector3, int)" newName="$bgA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_21745_12616511(Object, Vector3, Int32)" newStackTraceSignature="$Xb:$bgA(Object, Vector3, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_2221_12616511(nint, [Hotfix]Util.IntTriplet, int)" newName="$fBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2221_12616511(IntPtr, IntTriplet, Int32)" newStackTraceSignature="$Xb:$fBA(IntPtr, IntTriplet, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_12616511(int)" newName="$Wl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_12616511(Int32)" newStackTraceSignature="$Xb:$Wl(Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_24926_12616511(object, object, byte[], object, int)" newName="$vW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_24926_12616511(Object, Object, Byte[], Object, Int32)" newStackTraceSignature="$Xb:$vW(Object, Object, Byte[], Object, Int32)" />
@@ -1312,6 +1323,7 @@
       <method signature="byte[] $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_130600(object, object, int)" newName="$XW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_130600(Object, Object, Int32)" newStackTraceSignature="$Xb:$XW(Object, Object, Int32)" />
       <method signature="byte[] $Obfuz$ProxyCall::@$Obfuz$Dispatch_41487_130600(int, object, object, int)" newName="$yW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_41487_130600(Int32, Object, Object, Int32)" newStackTraceSignature="$Xb:$yW(Int32, Object, Object, Int32)" />
       <method signature="System.Collections.Generic.Dictionary`2&lt;string,[GameFramework]GameFramework.Variable&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_14744223(int)" newName="$hL" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_14744223(Int32)" newStackTraceSignature="$Xb:$hL(Int32)" />
+      <method signature="System.Collections.Generic.Dictionary`2&lt;string,[GoogleMobileAds.Core]GoogleMobileAds.Api.AdapterStatus&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_11184915(object, int)" newName="$BgA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_11184915(Object, Int32)" newStackTraceSignature="$Xb:$BgA(Object, Int32)" />
       <method signature="System.Collections.Generic.Dictionary`2&lt;string,[Hotfix]RemoteTableManifestEntry&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_891760(object, int)" newName="$YW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_891760(Object, Int32)" newStackTraceSignature="$Xb:$YW(Object, Int32)" />
       <method signature="[System.Core]System.Collections.Generic.HashSet`1&lt;[Hotfix]Gameplay.Collisions.ContactNode&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_8954958(object, int)" newName="$LBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_8954958(Object, Int32)" newStackTraceSignature="$Xb:$LBA(Object, Int32)" />
       <method signature="System.Collections.Generic.IEnumerable`1&lt;[Hotfix]Gameplay.Collisions.ContactNode&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_9088757(object, int)" newName="$mBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_9088757(Object, Int32)" newStackTraceSignature="$Xb:$mBA(Object, Int32)" />
@@ -1368,6 +1380,7 @@
       <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_17613_12091355(string[], int)" newName="$ecA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_17613_12091355(String[], Int32)" newStackTraceSignature="$Xb:$ecA(String[], Int32)" />
       <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_18982_12091355(object, object, object, int, object, [UnityEngine.CoreModule]UnityEngine.Vector3, int)" newName="$RL" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_18982_12091355(Object, Object, Object, Int32, Object, Vector3, Int32)" newStackTraceSignature="$Xb:$RL(Object, Object, Object, Int32, Object, Vector3, Int32)" />
       <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_21712_12091355(object, object, object, object, int)" newName="$sL" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_21712_12091355(Object, Object, Object, Object, Int32)" newStackTraceSignature="$Xb:$sL(Object, Object, Object, Object, Int32)" />
+      <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_22283_12091355(nuint, int, int, int)" newName="$cgA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22283_12091355(UIntPtr, Int32, Int32, Int32)" newStackTraceSignature="$Xb:$cgA(UIntPtr, Int32, Int32, Int32)" />
       <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_12091355(int)" newName="$SL" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_12091355(Int32)" newStackTraceSignature="$Xb:$SL(Int32)" />
       <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_24926_12091355(object, object, byte[], object, int)" newName="$tL" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_24926_12091355(Object, Object, Byte[], Object, Int32)" newStackTraceSignature="$Xb:$tL(Object, Object, Byte[], Object, Int32)" />
       <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_25763_12091355(int, int)" newName="$TL" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_25763_12091355(Int32, Int32)" newStackTraceSignature="$Xb:$TL(Int32, Int32)" />
@@ -1382,6 +1395,7 @@
       <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_48552_12091355(object, object, object, int, byte, object, int)" newName="$yL" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_48552_12091355(Object, Object, Object, Int32, Byte, Object, Int32)" newStackTraceSignature="$Xb:$yL(Object, Object, Object, Int32, Byte, Object, Int32)" />
       <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_51053_12091355(int, int, int, int)" newName="$YL" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_51053_12091355(Int32, Int32, Int32, Int32)" newStackTraceSignature="$Xb:$YL(Int32, Int32, Int32, Int32)" />
       <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_51425_12091355(object, int, int)" newName="$zL" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_51425_12091355(Object, Int32, Int32)" newStackTraceSignature="$Xb:$zL(Object, Int32, Int32)" />
+      <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_55969_12091355(System.DateTime, int, int, int, int, int, int)" newName="$CgA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_55969_12091355(DateTime, Int32, Int32, Int32, Int32, Int32, Int32)" newStackTraceSignature="$Xb:$CgA(DateTime, Int32, Int32, Int32, Int32, Int32, Int32)" />
       <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_57958_12091355(object, int, object, byte, object, [UnityEngine.CoreModule]UnityEngine.Vector2, int)" newName="$EcA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_57958_12091355(Object, Int32, Object, Byte, Object, Vector2, Int32)" newStackTraceSignature="$Xb:$EcA(Object, Int32, Object, Byte, Object, Vector2, Int32)" />
       <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_58749_12091355(object, object, object, byte, object, int)" newName="$ZL" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_58749_12091355(Object, Object, Object, Byte, Object, Int32)" newStackTraceSignature="$Xb:$ZL(Object, Object, Object, Byte, Object, Int32)" />
       <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_59003_12091355(float, int)" newName="$am" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_59003_12091355(Single, Int32)" newStackTraceSignature="$Xb:$am(Single, Int32)" />
@@ -1538,6 +1552,7 @@
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_36325_4780505(object, object, object, int, int)" newName="$XM" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36325_4780505(Object, Object, Object, Int32, Int32)" newStackTraceSignature="$Xb:$XM(Object, Object, Object, Int32, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_36440_4780505(int, int, object, int)" newName="$Mu" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36440_4780505(Int32, Int32, Object, Int32)" newStackTraceSignature="$Xb:$Mu(Int32, Int32, Object, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_4780505$1(object, object, int)" newName="$yM" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_4780505$1(Object, Object, Int32)" newStackTraceSignature="$Xb:$yM(Object, Object, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_4780505$2(object, object, int)" newName="$dgA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_4780505$2(Object, Object, Int32)" newStackTraceSignature="$Xb:$dgA(Object, Object, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_4780505(object, object, int)" newName="$YM" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_4780505(Object, Object, Int32)" newStackTraceSignature="$Xb:$YM(Object, Object, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_36940_4780505(object, [UnityEngine.CoreModule]UnityEngine.Vector3[], int)" newName="$zM" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36940_4780505(Object, Vector3[], Int32)" newStackTraceSignature="$Xb:$zM(Object, Vector3[], Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_37584_4780505(object, int, object, object, int, float, object, int, int)" newName="$bCA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_37584_4780505(Object, Int32, Object, Object, Int32, Single, Object, Int32, Int32)" newStackTraceSignature="$Xb:$bCA(Object, Int32, Object, Object, Int32, Single, Object, Int32, Int32)" />
@@ -1575,6 +1590,7 @@
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_57908_4780505(object, object, int, byte, int)" newName="$ICA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_57908_4780505(Object, Object, Int32, Byte, Int32)" newStackTraceSignature="$Xb:$ICA(Object, Object, Int32, Byte, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_58749_4780505(object, object, object, byte, object, int)" newName="$Kn" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_58749_4780505(Object, Object, Object, Byte, Object, Int32)" newStackTraceSignature="$Xb:$Kn(Object, Object, Object, Byte, Object, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_59003_4780505(float, int)" newName="$ln" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_59003_4780505(Single, Int32)" newStackTraceSignature="$Xb:$ln(Single, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_59828_4780505(object, nuint, nuint, int)" newName="$DgA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_59828_4780505(Object, UIntPtr, UIntPtr, Int32)" newStackTraceSignature="$Xb:$DgA(Object, UIntPtr, UIntPtr, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_60320_4780505(object, int, int, int)" newName="$Ou" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_60320_4780505(Object, Int32, Int32, Int32)" newStackTraceSignature="$Xb:$Ou(Object, Int32, Int32, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_60431_4780505(nint, byte, int)" newName="$Ln" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_60431_4780505(IntPtr, Byte, Int32)" newStackTraceSignature="$Xb:$Ln(IntPtr, Byte, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_60669_4780505(object, float, float, float, float, float, int)" newName="$mn" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_60669_4780505(Object, Single, Single, Single, Single, Single, Int32)" newStackTraceSignature="$Xb:$mn(Object, Single, Single, Single, Single, Single, Int32)" />
@@ -1842,11 +1858,13 @@
       <field signature="byte[] $RVA_Value4" newName="$daA" />
       <field signature="[Hotfix]$ObfuzRVA$DataHolder2048 $RVA_Data5" newName="$DaA" />
       <field signature="byte[] $RVA_Value5" newName="$eaA" />
+      <field signature="[Hotfix]$ObfuzRVA$DataHolder2048 $RVA_Data6" newName="$BAA" />
+      <field signature="byte[] $RVA_Value6" newName="$cAA" />
     </type>
     <type fullName="$ObfuzRVA$DataHolder2048" newFullName="$wb" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;" newFullName="$ob" status="Renamed">
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize40_10 $Obfuz$WatermarkDataHolderField12" newName="$lX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=16 B1B3D3C4982B746C53DAB2F01202E8F0DA0CEB9CF3D8F94234A436F7ED8D0A4D" newName="$LX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=24 CD1E7D8370EA36F442606618E956669F8BABE52CE9C1CC82767A0E0FEEF4CAD7" newName="$TX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_16 $Obfuz$WatermarkDataHolderField18" newName="$mX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_11 $Obfuz$WatermarkDataHolderField13" newName="$MX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize40_6 $Obfuz$WatermarkDataHolderField8" newName="$nX" />
@@ -1857,15 +1875,15 @@
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize44_15 $Obfuz$WatermarkDataHolderField17" newName="$PX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize40_14 $Obfuz$WatermarkDataHolderField16" newName="$qX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize32_12 $Obfuz$WatermarkDataHolderField14" newName="$QX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20 AAF43DE17A34E6B91BE41081ADF6E0415DCD2CAC51442E71F5158CC0476FCB26" newName="$rX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=16 B1B3D3C4982B746C53DAB2F01202E8F0DA0CEB9CF3D8F94234A436F7ED8D0A4D" newName="$LX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_7 $Obfuz$WatermarkDataHolderField9" newName="$RX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=24 26168C8195C8F665BA6223C0EDD4405B11D51547F6E20F3712913880AF764E93" newName="$sX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10105 B13A9956C70FC5552EA23D64B949BA6A8EF588233141C61453C95E06F3EF0489" newName="$SX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=12 FE2BC5B610FA2F21F48C2AF9EE607F1E75DDF01DEEEF014C2A3439BC7F3A2661" newName="$tX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=24 CD1E7D8370EA36F442606618E956669F8BABE52CE9C1CC82767A0E0FEEF4CAD7" newName="$TX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize20_18 $Obfuz$WatermarkDataHolderField20" newName="$uX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20298 1B17D42523251BA2F10B79E1639063302E78C9EDDC3533EB4C70835BBC548260" newName="$UX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20 AAF43DE17A34E6B91BE41081ADF6E0415DCD2CAC51442E71F5158CC0476FCB26" newName="$rX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20 CB129D7FC803D1A168D2797E2A9838A4BB0F390690311932C09E99C7D1CAD357" newName="$vX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=12 FE2BC5B610FA2F21F48C2AF9EE607F1E75DDF01DEEEF014C2A3439BC7F3A2661" newName="$tX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10245 F1854D85596995AE8DF94E0E1E69A4D9F218C333F9F1454750EEBD718D404D25" newName="$Fy" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize20_18 $Obfuz$WatermarkDataHolderField20" newName="$uX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=24 26168C8195C8F665BA6223C0EDD4405B11D51547F6E20F3712913880AF764E93" newName="$sX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20623 D3BD7580BCDAB7470B48352F4AE95ADAA940657963DAA9401511F9DAAAF0B0F9" newName="$gy" />
       <method signature="uint &lt;PrivateImplementationDetails&gt;::@ComputeStringHash(string)" newName="$FJ" oldStackTraceSignature="&lt;PrivateImplementationDetails&gt;:ComputeStringHash(String)" newStackTraceSignature="$ob:$FJ(String)" />
     </type>
     <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize20_14" newFullName="$ob/$Vb" status="Renamed" />
@@ -1905,6 +1923,7 @@
     <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize44_15" newFullName="$ob/$lD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10105" newFullName="$ob/$GD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10195" newFullName="$ob/$jc" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10245" newFullName="$ob/$GD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10552" newFullName="$ob/$sc" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10710" newFullName="$ob/$Jc" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=11256" newFullName="$ob/$Qc" status="Renamed" />
@@ -1916,6 +1935,7 @@
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=16" newFullName="$ob/$fD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20" newFullName="$ob/$FD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20298" newFullName="$ob/$hD" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20623" newFullName="$ob/$hD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=24" newFullName="$ob/$gD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=28" newFullName="$ob/$Tc" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=4361" newFullName="$ob/$d" status="Renamed" />
@@ -2016,12 +2036,25 @@
     <type fullName="AdsManager" newFullName="$Q" status="Renamed">
       <field signature="bool isRegistered" newName="$Pe" />
       <field signature="[Hotfix]AdsManager m_Instance" newName="$qe" />
+      <field signature="[Hotfix]GoogleMobileAdsController _googleMobileAdsController" newName="$Tf" />
       <field signature="[Hotfix]ArrowMaxAdsController _maxAdsController" newName="$QI" />
+      <field signature="[Hotfix]RewardedAdController _rewardedAdController" newName="$uf" />
+      <field signature="[Hotfix]InterstitialAdController _interstitialAdController" newName="$Uf" />
+      <field signature="[Hotfix]BannerViewController _bannerViewController" newName="$vf" />
       <property signature="[Hotfix]AdsManager Instance" newName="$a" />
       <method signature="[Hotfix]AdsManager AdsManager::@get_Instance()" newName="$of" oldStackTraceSignature="AdsManager:get_Instance()" newStackTraceSignature="$Q:$of()" />
       <method signature="void AdsManager::ShowAd([Hotfix]AdsManager, System.Action`1&lt;bool&gt;, string)" newName="$Vf" oldStackTraceSignature="AdsManager:ShowAd(Action`1, String)" newStackTraceSignature="$Q:$Vf(Action`1, String)" />
       <method signature="void AdsManager::ShowInter([Hotfix]AdsManager, string)" newName="$wf" oldStackTraceSignature="AdsManager:ShowInter(String)" newStackTraceSignature="$Q:$wf(String)" />
+      <method signature="void AdsManager::ShowMaxAd([Hotfix]AdsManager, System.Action`1&lt;bool&gt;, string)" newName="$Ui" oldStackTraceSignature="AdsManager:ShowMaxAd(Action`1, String)" newStackTraceSignature="$Q:$Ui(Action`1, String)" />
+      <method signature="void AdsManager::ShowMaxInter([Hotfix]AdsManager, string)" newName="$kgA" oldStackTraceSignature="AdsManager:ShowMaxInter(String)" newStackTraceSignature="$Q:$kgA(String)" />
+      <method signature="void AdsManager::ShowAdmobAd([Hotfix]AdsManager, System.Action`1&lt;bool&gt;, string)" newName="$KgA" oldStackTraceSignature="AdsManager:ShowAdmobAd(Action`1, String)" newStackTraceSignature="$Q:$KgA(Action`1, String)" />
+      <method signature="void AdsManager::ShowAdmobInter([Hotfix]AdsManager, string)" newName="$lgA" oldStackTraceSignature="AdsManager:ShowAdmobInter(String)" newStackTraceSignature="$Q:$lgA(String)" />
+      <method signature="void AdsManager::ShowAdmobBanner([Hotfix]AdsManager)" newName="$LgA" oldStackTraceSignature="AdsManager:ShowAdmobBanner()" newStackTraceSignature="$Q:$LgA()" />
+      <method signature="void AdsManager::ShowMaxBanner([Hotfix]AdsManager)" newName="$mgA" oldStackTraceSignature="AdsManager:ShowMaxBanner()" newStackTraceSignature="$Q:$mgA()" />
+      <method signature="void AdsManager::ShowBanner([Hotfix]AdsManager)" newName="$nG" oldStackTraceSignature="AdsManager:ShowBanner()" newStackTraceSignature="$Q:$nG()" />
       <method signature="void AdsManager::ShowH5([Hotfix]AdsManager)" newName="$Wf" oldStackTraceSignature="AdsManager:ShowH5()" newStackTraceSignature="$Q:$Wf()" />
+      <method signature="void AdsManager::ShowAdmobDebug([Hotfix]AdsManager)" newName="$MgA" oldStackTraceSignature="AdsManager:ShowAdmobDebug()" newStackTraceSignature="$Q:$MgA()" />
+      <method signature="void AdsManager::ShowMaxDebug([Hotfix]AdsManager)" newName="$ngA" oldStackTraceSignature="AdsManager:ShowMaxDebug()" newStackTraceSignature="$Q:$ngA()" />
       <method signature="void AdsManager::Init([Hotfix]AdsManager)" newName="$Mg" oldStackTraceSignature="AdsManager:Init()" newStackTraceSignature="$Q:$Mg()" />
       <method signature="void AdsManager::ShowMaxDebugger([Hotfix]AdsManager)" newName="$IV" oldStackTraceSignature="AdsManager:ShowMaxDebugger()" newStackTraceSignature="$Q:$IV()" />
     </type>
@@ -4980,6 +5013,7 @@
     <type fullName="ArrowUITopbarSub" newFullName="" status="NotRenamed">
       <field signature="bool s_ShowCoin" newName="$NE" />
       <field signature="bool s_ShowLife" newName="$OE" />
+      <field signature="bool s_InHall" newName="$Qk" />
       <field signature="[Hotfix]PlayerDataModel playerDm" newName="$Mf" />
       <field signature="float pendingCoins" newName="$nf" />
       <field signature="float targetCoins" newName="$Nf" />
@@ -4990,6 +5024,7 @@
       <field signature="[UnityEngine.CoreModule]UnityEngine.Coroutine rollCoroutine" newName="$qf" />
       <field signature="System.Collections.Generic.List`1&lt;[Hotfix]ArrowFlyRewardItem&gt; flyingCoins" newName="$Sf" />
       <method signature="void ArrowUITopbarSub::@RefreshPageVisibility()" newName="$Yg" oldStackTraceSignature="ArrowUITopbarSub:RefreshPageVisibility()" newStackTraceSignature="ArrowUITopbarSub:$Yg()" />
+      <method signature="void ArrowUITopbarSub::@SetHallActive(bool)" newName="$WEA" oldStackTraceSignature="ArrowUITopbarSub:SetHallActive(Boolean)" newStackTraceSignature="ArrowUITopbarSub:$WEA(Boolean)" />
       <method signature="void ArrowUITopbarSub::@EnsureOpen()" newName="$zg" oldStackTraceSignature="ArrowUITopbarSub:EnsureOpen()" newStackTraceSignature="ArrowUITopbarSub:$zg()" />
       <method signature="bool ArrowUITopbarSub::@CanAnimateCoins()" newName="$Zg" oldStackTraceSignature="ArrowUITopbarSub:CanAnimateCoins()" newStackTraceSignature="ArrowUITopbarSub:$Zg()" />
       <method signature="void ArrowUITopbarSub::@SetCoinVisible(bool)" newName="$aG" oldStackTraceSignature="ArrowUITopbarSub:SetCoinVisible(Boolean)" newStackTraceSignature="ArrowUITopbarSub:$aG(Boolean)" />
@@ -5003,8 +5038,9 @@
       <method signature="void ArrowUITopbarSub::RefreshLifeVisibility([Hotfix]ArrowUITopbarSub)" newName="$lG" oldStackTraceSignature="ArrowUITopbarSub:RefreshLifeVisibility()" newStackTraceSignature="ArrowUITopbarSub:$lG()" />
       <method signature="string ArrowUITopbarSub::@FormatCoins(float)" newName="$LG" oldStackTraceSignature="ArrowUITopbarSub:FormatCoins(Single)" newStackTraceSignature="ArrowUITopbarSub:$LG(Single)" />
       <method signature="void ArrowUITopbarSub::RefreshLifeDisplay([Hotfix]ArrowUITopbarSub)" newName="$mG" oldStackTraceSignature="ArrowUITopbarSub:RefreshLifeDisplay()" newStackTraceSignature="ArrowUITopbarSub:$mG()" />
+      <method signature="void ArrowUITopbarSub::OpenTasks([Hotfix]ArrowUITopbarSub)" newName="$xEA" oldStackTraceSignature="ArrowUITopbarSub:OpenTasks()" newStackTraceSignature="ArrowUITopbarSub:$xEA()" />
       <method signature="void ArrowUITopbarSub::OpenAddLife([Hotfix]ArrowUITopbarSub)" newName="$MG" oldStackTraceSignature="ArrowUITopbarSub:OpenAddLife()" newStackTraceSignature="ArrowUITopbarSub:$MG()" />
-      <method signature="void ArrowUITopbarSub::&lt;RollCoins&gt;b__28_0([Hotfix]ArrowUITopbarSub, float)" newName="$nG" oldStackTraceSignature="ArrowUITopbarSub:&lt;RollCoins&gt;b__28_0(Single)" newStackTraceSignature="ArrowUITopbarSub:$nG(Single)" />
+      <method signature="void ArrowUITopbarSub::&lt;RollCoins&gt;b__30_0([Hotfix]ArrowUITopbarSub, float)" newName="$OFA" oldStackTraceSignature="ArrowUITopbarSub:&lt;RollCoins&gt;b__30_0(Single)" newStackTraceSignature="ArrowUITopbarSub:$OFA(Single)" />
     </type>
     <type fullName="ArrowUITopbarSub/&lt;&gt;c__DisplayClass26_0" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]ArrowUITopbarSub &lt;&gt;4__this" newName="$tf" />
@@ -5014,6 +5050,15 @@
       <field signature="[Hotfix]ArrowFlyRewardItem reward" newName="$uf" />
       <field signature="[Hotfix]ArrowUITopbarSub/&lt;&gt;c__DisplayClass26_0 CS$&lt;&gt;8__locals1" newName="$Uf" />
       <method signature="void ArrowUITopbarSub/&lt;&gt;c__DisplayClass26_1::&lt;OnRewardCollected&gt;b__0([Hotfix]ArrowUITopbarSub/&lt;&gt;c__DisplayClass26_1)" newName="$NG" oldStackTraceSignature="&lt;&gt;c__DisplayClass26_1:&lt;OnRewardCollected&gt;b__0()" newStackTraceSignature="&lt;&gt;c__DisplayClass26_1:$NG()" />
+    </type>
+    <type fullName="ArrowUITopbarSub/&lt;&gt;c__DisplayClass28_0" newFullName="" status="NotRenamed">
+      <field signature="[Hotfix]ArrowUITopbarSub &lt;&gt;4__this" newName="$rk" />
+      <field signature="int generation" newName="$Rk" />
+    </type>
+    <type fullName="ArrowUITopbarSub/&lt;&gt;c__DisplayClass28_1" newFullName="" status="NotRenamed">
+      <field signature="[Hotfix]ArrowFlyRewardItem reward" newName="$sk" />
+      <field signature="[Hotfix]ArrowUITopbarSub/&lt;&gt;c__DisplayClass28_0 CS$&lt;&gt;8__locals1" newName="$Sk" />
+      <method signature="void ArrowUITopbarSub/&lt;&gt;c__DisplayClass28_1::&lt;OnRewardCollected&gt;b__0([Hotfix]ArrowUITopbarSub/&lt;&gt;c__DisplayClass28_1)" newName="$pFA" oldStackTraceSignature="&lt;&gt;c__DisplayClass28_1:&lt;OnRewardCollected&gt;b__0()" newStackTraceSignature="&lt;&gt;c__DisplayClass28_1:$pFA()" />
     </type>
     <type fullName="ArrowUITopbarSub/&lt;RollCoins&gt;d__28" newFullName="" status="NotRenamed">
       <field signature="int &lt;&gt;1__state" newName="$vf" />
@@ -5025,6 +5070,17 @@
       <method signature="object ArrowUITopbarSub/&lt;RollCoins&gt;d__28::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([Hotfix]ArrowUITopbarSub/&lt;RollCoins&gt;d__28)" newName="$fDA" oldStackTraceSignature="&lt;RollCoins&gt;d__28:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="&lt;RollCoins&gt;d__28:$fDA()" />
       <method signature="void ArrowUITopbarSub/&lt;RollCoins&gt;d__28::System.Collections.IEnumerator.Reset([Hotfix]ArrowUITopbarSub/&lt;RollCoins&gt;d__28)" newName="$FDA" oldStackTraceSignature="&lt;RollCoins&gt;d__28:System.Collections.IEnumerator.Reset()" newStackTraceSignature="&lt;RollCoins&gt;d__28:$FDA()" />
       <method signature="object ArrowUITopbarSub/&lt;RollCoins&gt;d__28::System.Collections.IEnumerator.get_Current([Hotfix]ArrowUITopbarSub/&lt;RollCoins&gt;d__28)" newName="$gDA" oldStackTraceSignature="&lt;RollCoins&gt;d__28:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="&lt;RollCoins&gt;d__28:$gDA()" />
+    </type>
+    <type fullName="ArrowUITopbarSub/&lt;RollCoins&gt;d__30" newFullName="" status="NotRenamed">
+      <field signature="int &lt;&gt;1__state" newName="$xk" />
+      <field signature="object &lt;&gt;2__current" newName="$Xk" />
+      <field signature="[Hotfix]ArrowUITopbarSub &lt;&gt;4__this" newName="$yk" />
+      <property signature="object System.Collections.Generic.IEnumerator&lt;System.Object&gt;.Current" newName="$a" />
+      <property signature="object System.Collections.IEnumerator.Current" newName="$A" />
+      <method signature="void ArrowUITopbarSub/&lt;RollCoins&gt;d__30::System.IDisposable.Dispose([Hotfix]ArrowUITopbarSub/&lt;RollCoins&gt;d__30)" newName="$egA" oldStackTraceSignature="&lt;RollCoins&gt;d__30:System.IDisposable.Dispose()" newStackTraceSignature="&lt;RollCoins&gt;d__30:$egA()" />
+      <method signature="object ArrowUITopbarSub/&lt;RollCoins&gt;d__30::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([Hotfix]ArrowUITopbarSub/&lt;RollCoins&gt;d__30)" newName="$EgA" oldStackTraceSignature="&lt;RollCoins&gt;d__30:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="&lt;RollCoins&gt;d__30:$EgA()" />
+      <method signature="void ArrowUITopbarSub/&lt;RollCoins&gt;d__30::System.Collections.IEnumerator.Reset([Hotfix]ArrowUITopbarSub/&lt;RollCoins&gt;d__30)" newName="$fgA" oldStackTraceSignature="&lt;RollCoins&gt;d__30:System.Collections.IEnumerator.Reset()" newStackTraceSignature="&lt;RollCoins&gt;d__30:$fgA()" />
+      <method signature="object ArrowUITopbarSub/&lt;RollCoins&gt;d__30::System.Collections.IEnumerator.get_Current([Hotfix]ArrowUITopbarSub/&lt;RollCoins&gt;d__30)" newName="$FgA" oldStackTraceSignature="&lt;RollCoins&gt;d__30:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="&lt;RollCoins&gt;d__30:$FgA()" />
     </type>
     <type fullName="ArrowWinRewardTable" newFullName="" status="NotRenamed">
       <field signature="int m_Id" newName="$mD" />
@@ -5161,6 +5217,36 @@
       <method signature="void AwaitParams`1::set_Source([Hotfix]AwaitParams`1&lt;!0&gt;, [UniTask]Cysharp.Threading.Tasks.UniTaskCompletionSource`1&lt;!0&gt;)" newName="$tb" oldStackTraceSignature="AwaitParams`1:set_Source(UniTaskCompletionSource`1)" newStackTraceSignature="$S`1:$tb(UniTaskCompletionSource`1)" />
       <method signature="[Hotfix]AwaitParams`1&lt;!0&gt; AwaitParams`1::@Create(object, [UniTask]Cysharp.Threading.Tasks.UniTaskCompletionSource`1&lt;!0&gt;)" newName="$Tb" oldStackTraceSignature="AwaitParams`1:Create(Object, UniTaskCompletionSource`1)" newStackTraceSignature="$S`1:$Tb(Object, UniTaskCompletionSource`1)" />
     </type>
+    <type fullName="BannerViewController" newFullName="$tc" status="Renamed">
+      <field signature="[UnityEngine.CoreModule]UnityEngine.GameObject AdLoadedStatus" newName="$Vf" />
+      <field signature="[GoogleMobileAds]GoogleMobileAds.Api.BannerView _bannerView" newName="$wf" />
+      <method signature="void BannerViewController::CreateBannerView([Hotfix]BannerViewController)" newName="$NG" oldStackTraceSignature="BannerViewController:CreateBannerView()" newStackTraceSignature="$tc:$NG()" />
+      <method signature="void BannerViewController::LoadAd([Hotfix]BannerViewController)" newName="$SG" oldStackTraceSignature="BannerViewController:LoadAd()" newStackTraceSignature="$tc:$SG()" />
+      <method signature="bool BannerViewController::ShowAd([Hotfix]BannerViewController)" newName="$NgA" oldStackTraceSignature="BannerViewController:ShowAd()" newStackTraceSignature="$tc:$NgA()" />
+      <method signature="void BannerViewController::HideAd([Hotfix]BannerViewController)" newName="$rr" oldStackTraceSignature="BannerViewController:HideAd()" newStackTraceSignature="$tc:$rr()" />
+      <method signature="void BannerViewController::DestroyAd([Hotfix]BannerViewController)" newName="$Rr" oldStackTraceSignature="BannerViewController:DestroyAd()" newStackTraceSignature="$tc:$Rr()" />
+      <method signature="void BannerViewController::LogResponseInfo([Hotfix]BannerViewController)" newName="$us" oldStackTraceSignature="BannerViewController:LogResponseInfo()" newStackTraceSignature="$tc:$us()" />
+      <method signature="void BannerViewController::ListenToAdEvents([Hotfix]BannerViewController)" newName="$EDA" oldStackTraceSignature="BannerViewController:ListenToAdEvents()" newStackTraceSignature="$tc:$EDA()" />
+      <method signature="void BannerViewController::&lt;ListenToAdEvents&gt;b__10_0([Hotfix]BannerViewController)" newName="$fDA" oldStackTraceSignature="BannerViewController:&lt;ListenToAdEvents&gt;b__10_0()" newStackTraceSignature="$tc:$fDA()" />
+      <method signature="void BannerViewController::&lt;ListenToAdEvents&gt;b__10_7([Hotfix]BannerViewController)" newName="$FDA" oldStackTraceSignature="BannerViewController:&lt;ListenToAdEvents&gt;b__10_7()" newStackTraceSignature="$tc:$FDA()" />
+    </type>
+    <type fullName="BannerViewController/&lt;&gt;c" newFullName="" status="NotRenamed">
+      <field signature="[Hotfix]BannerViewController/&lt;&gt;c &lt;&gt;9" newName="$uG" />
+      <field signature="System.Action`1&lt;[GoogleMobileAds]GoogleMobileAds.Api.LoadAdError&gt; &lt;&gt;9__10_1" newName="$UG" />
+      <field signature="System.Action &lt;&gt;9__10_8" newName="$vG" />
+      <field signature="System.Action`1&lt;[GoogleMobileAds.Core]GoogleMobileAds.Api.AdValue&gt; &lt;&gt;9__10_2" newName="$VG" />
+      <field signature="System.Action &lt;&gt;9__10_3" newName="$WI" />
+      <field signature="System.Action &lt;&gt;9__10_4" newName="$xI" />
+      <field signature="System.Action &lt;&gt;9__10_5" newName="$Pk" />
+      <field signature="System.Action &lt;&gt;9__10_6" newName="$qk" />
+      <method signature="void BannerViewController/&lt;&gt;c::&lt;ListenToAdEvents&gt;b__10_1([Hotfix]BannerViewController/&lt;&gt;c, [GoogleMobileAds]GoogleMobileAds.Api.LoadAdError)" newName="$gDA" oldStackTraceSignature="&lt;&gt;c:&lt;ListenToAdEvents&gt;b__10_1(LoadAdError)" newStackTraceSignature="&lt;&gt;c:$gDA(LoadAdError)" />
+      <method signature="void BannerViewController/&lt;&gt;c::&lt;ListenToAdEvents&gt;b__10_2([Hotfix]BannerViewController/&lt;&gt;c, [GoogleMobileAds.Core]GoogleMobileAds.Api.AdValue)" newName="$ZDA" oldStackTraceSignature="&lt;&gt;c:&lt;ListenToAdEvents&gt;b__10_2(AdValue)" newStackTraceSignature="&lt;&gt;c:$ZDA(AdValue)" />
+      <method signature="void BannerViewController/&lt;&gt;c::&lt;ListenToAdEvents&gt;b__10_8([Hotfix]BannerViewController/&lt;&gt;c)" newName="$aeA" oldStackTraceSignature="&lt;&gt;c:&lt;ListenToAdEvents&gt;b__10_8()" newStackTraceSignature="&lt;&gt;c:$aeA()" />
+      <method signature="void BannerViewController/&lt;&gt;c::&lt;ListenToAdEvents&gt;b__10_3([Hotfix]BannerViewController/&lt;&gt;c)" newName="$AeA" oldStackTraceSignature="&lt;&gt;c:&lt;ListenToAdEvents&gt;b__10_3()" newStackTraceSignature="&lt;&gt;c:$AeA()" />
+      <method signature="void BannerViewController/&lt;&gt;c::&lt;ListenToAdEvents&gt;b__10_4([Hotfix]BannerViewController/&lt;&gt;c)" newName="$beA" oldStackTraceSignature="&lt;&gt;c:&lt;ListenToAdEvents&gt;b__10_4()" newStackTraceSignature="&lt;&gt;c:$beA()" />
+      <method signature="void BannerViewController/&lt;&gt;c::&lt;ListenToAdEvents&gt;b__10_5([Hotfix]BannerViewController/&lt;&gt;c)" newName="$VEA" oldStackTraceSignature="&lt;&gt;c:&lt;ListenToAdEvents&gt;b__10_5()" newStackTraceSignature="&lt;&gt;c:$VEA()" />
+      <method signature="void BannerViewController/&lt;&gt;c::&lt;ListenToAdEvents&gt;b__10_6([Hotfix]BannerViewController/&lt;&gt;c)" newName="$wEA" oldStackTraceSignature="&lt;&gt;c:&lt;ListenToAdEvents&gt;b__10_6()" newStackTraceSignature="&lt;&gt;c:$wEA()" />
+    </type>
     <type fullName="BgSkinChangeEventArgs" newFullName="$I" status="Renamed">
       <field signature="int EventId" newName="$cB" />
       <field signature="bool &lt;IsNightMode&gt;k__BackingField" newName="$CB" />
@@ -5169,6 +5255,11 @@
       <method signature="bool BgSkinChangeEventArgs::get_IsNightMode([Hotfix]BgSkinChangeEventArgs)" newName="$IA" oldStackTraceSignature="BgSkinChangeEventArgs:get_IsNightMode()" newStackTraceSignature="$I:$IA()" />
       <method signature="void BgSkinChangeEventArgs::set_IsNightMode([Hotfix]BgSkinChangeEventArgs, bool)" newName="$jA" oldStackTraceSignature="BgSkinChangeEventArgs:set_IsNightMode(Boolean)" newStackTraceSignature="$I:$jA(Boolean)" />
       <method signature="[Hotfix]BgSkinChangeEventArgs BgSkinChangeEventArgs::@Create(bool)" newName="$JA" oldStackTraceSignature="BgSkinChangeEventArgs:Create(Boolean)" newStackTraceSignature="$I:$JA(Boolean)" />
+    </type>
+    <type fullName="BonusesPoolCalculator" newFullName="$Tc" status="Renamed">
+      <method signature="void BonusesPoolCalculator::@ParseRange(string, int&amp;, int&amp;)" newName="$tFA" oldStackTraceSignature="BonusesPoolCalculator:ParseRange(String, Int32&amp;, Int32&amp;)" newStackTraceSignature="$Tc:$tFA(String, Int32&amp;, Int32&amp;)" />
+      <method signature="int BonusesPoolCalculator::@Calculate(System.DateTime, int, int, int, int, int)" newName="$TFA" oldStackTraceSignature="BonusesPoolCalculator:Calculate(DateTime, Int32, Int32, Int32, Int32, Int32)" newStackTraceSignature="$Tc:$TFA(DateTime, Int32, Int32, Int32, Int32, Int32)" />
+      <method signature="int BonusesPoolCalculator::@NextAmount(uint&amp;, int, int)" newName="$uFA" oldStackTraceSignature="BonusesPoolCalculator:NextAmount(UInt32&amp;, Int32, Int32)" newStackTraceSignature="$Tc:$uFA(UInt32&amp;, Int32, Int32)" />
     </type>
     <type fullName="CoinRewardUIForm" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]TaskReward m_Task" newName="$Xf" />
@@ -5476,10 +5567,42 @@
       <method signature="void DebugUIForm::AddDollar([Hotfix]DebugUIForm)" newName="$rG" oldStackTraceSignature="DebugUIForm:AddDollar()" newStackTraceSignature="DebugUIForm:$rG()" />
       <method signature="void DebugUIForm::ReduceDollar([Hotfix]DebugUIForm)" newName="$RG" oldStackTraceSignature="DebugUIForm:ReduceDollar()" newStackTraceSignature="DebugUIForm:$RG()" />
       <method signature="float DebugUIForm::GetInputDollar([Hotfix]DebugUIForm)" newName="$sG" oldStackTraceSignature="DebugUIForm:GetInputDollar()" newStackTraceSignature="DebugUIForm:$sG()" />
-      <method signature="void DebugUIForm::ShowVideo([Hotfix]DebugUIForm)" newName="$SG" oldStackTraceSignature="DebugUIForm:ShowVideo()" newStackTraceSignature="DebugUIForm:$SG()" />
+      <method signature="void DebugUIForm::AddPcard([Hotfix]DebugUIForm)" newName="$PFA" oldStackTraceSignature="DebugUIForm:AddPcard()" newStackTraceSignature="DebugUIForm:$PFA()" />
+      <method signature="void DebugUIForm::ReducePcard([Hotfix]DebugUIForm)" newName="$qFA" oldStackTraceSignature="DebugUIForm:ReducePcard()" newStackTraceSignature="DebugUIForm:$qFA()" />
+      <method signature="void DebugUIForm::ChangePcard([Hotfix]DebugUIForm, float)" newName="$QFA" oldStackTraceSignature="DebugUIForm:ChangePcard(Single)" newStackTraceSignature="DebugUIForm:$QFA(Single)" />
+      <method signature="float DebugUIForm::GetInputPcard([Hotfix]DebugUIForm)" newName="$rFA" oldStackTraceSignature="DebugUIForm:GetInputPcard()" newStackTraceSignature="DebugUIForm:$rFA()" />
+      <method signature="void DebugUIForm::@LogVideoResult(string, bool)" newName="$ogA" oldStackTraceSignature="DebugUIForm:LogVideoResult(String, Boolean)" newStackTraceSignature="DebugUIForm:$ogA(String, Boolean)" />
+      <method signature="void DebugUIForm::ShowInterstitial([Hotfix]DebugUIForm)" newName="$RFA" oldStackTraceSignature="DebugUIForm:ShowInterstitial()" newStackTraceSignature="DebugUIForm:$RFA()" />
       <method signature="void DebugUIForm::AddLevel([Hotfix]DebugUIForm)" newName="$tG" oldStackTraceSignature="DebugUIForm:AddLevel()" newStackTraceSignature="DebugUIForm:$tG()" />
       <method signature="void DebugUIForm::ReduceLevel([Hotfix]DebugUIForm)" newName="$TG" oldStackTraceSignature="DebugUIForm:ReduceLevel()" newStackTraceSignature="DebugUIForm:$TG()" />
       <method signature="void DebugUIForm::ResetTasks([Hotfix]DebugUIForm)" newName="$uG" oldStackTraceSignature="DebugUIForm:ResetTasks()" newStackTraceSignature="DebugUIForm:$uG()" />
+    </type>
+    <type fullName="DebugUIForm/&lt;&gt;c" newFullName="" status="NotRenamed">
+      <field signature="[Hotfix]DebugUIForm/&lt;&gt;c &lt;&gt;9" newName="$CAA" />
+      <field signature="System.Action`1&lt;bool&gt; &lt;&gt;9__0_9" newName="$dAA" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_0" newName="$DAA" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_1" newName="$eAA" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_2" newName="$EAA" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_3" newName="$fAA" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_4" newName="$FAA" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_5" newName="$gAA" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_6" newName="$GAA" />
+      <field signature="System.Action`1&lt;bool&gt; &lt;&gt;9__0_10" newName="$hAA" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_7" newName="$HAA" />
+      <field signature="System.Action`1&lt;bool&gt; &lt;&gt;9__0_11" newName="$iAA" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_8" newName="$IAA" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_0([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$OgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_0()" newStackTraceSignature="&lt;&gt;c:$OgA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_9([Hotfix]DebugUIForm/&lt;&gt;c, bool)" newName="$pgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_9(Boolean)" newStackTraceSignature="&lt;&gt;c:$pgA(Boolean)" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_1([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$PgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_1()" newStackTraceSignature="&lt;&gt;c:$PgA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_2([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$qgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_2()" newStackTraceSignature="&lt;&gt;c:$qgA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_3([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$QgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_3()" newStackTraceSignature="&lt;&gt;c:$QgA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_4([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$rgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_4()" newStackTraceSignature="&lt;&gt;c:$rgA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_5([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$RgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_5()" newStackTraceSignature="&lt;&gt;c:$RgA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_6([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$sgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_6()" newStackTraceSignature="&lt;&gt;c:$sgA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_7([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$SgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_7()" newStackTraceSignature="&lt;&gt;c:$SgA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_10([Hotfix]DebugUIForm/&lt;&gt;c, bool)" newName="$tgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_10(Boolean)" newStackTraceSignature="&lt;&gt;c:$tgA(Boolean)" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_8([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$TgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_8()" newStackTraceSignature="&lt;&gt;c:$TgA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_11([Hotfix]DebugUIForm/&lt;&gt;c, bool)" newName="$ugA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_11(Boolean)" newStackTraceSignature="&lt;&gt;c:$ugA(Boolean)" />
     </type>
     <type fullName="DOTweenExtension" newFullName="$X" status="Renamed">
       <method signature="[DOTween]DG.Tweening.Core.TweenerCore`3&lt;[UnityEngine.CoreModule]UnityEngine.Vector3,[DOTween]DG.Tweening.Plugins.Core.PathCore.Path,[DOTween]DG.Tweening.Plugins.Options.PathOptions&gt; DOTweenExtension::@DOPath([UnityEngine.Physics2DModule]UnityEngine.Rigidbody2D, [UnityEngine.CoreModule]UnityEngine.Vector3[], float, [DOTween]DG.Tweening.PathType, [DOTween]DG.Tweening.PathMode, int, System.Nullable`1&lt;[UnityEngine.CoreModule]UnityEngine.Color&gt;)" newName="$Yc" oldStackTraceSignature="DOTweenExtension:DOPath(Rigidbody2D, Vector3[], Single, PathType, PathMode, Int32, Nullable`1)" newStackTraceSignature="$X:$Yc(Rigidbody2D, Vector3[], Single, PathType, PathMode, Int32, Nullable`1)" />
@@ -5870,6 +5993,7 @@
     </type>
     <type fullName="Gameplay.Cannon" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]Gameplay.BoundingPlane _boundingPlane" newName="$so" />
+      <field signature="System.Collections.Generic.List`1&lt;[Hotfix]Gameplay.Objects.Table&gt; _tables" newName="$kr" />
       <field signature="int _targetLayerMask" newName="$to" />
       <field signature="System.Collections.Generic.Queue`1&lt;[Hotfix]Gameplay.Ball&gt; _ballPool" newName="$Uo" />
       <field signature="[UnityEngine.CoreModule]UnityEngine.Transform _ballPoolRoot" newName="$vo" />
@@ -5885,6 +6009,7 @@
       <method signature="void Gameplay.Cannon::OnBallDestroyed([Hotfix]Gameplay.Cannon, [Hotfix]Gameplay.Ball)" newName="$Qs" oldStackTraceSignature="Gameplay.Cannon:OnBallDestroyed(Ball)" newStackTraceSignature="Gameplay.Cannon:$Qs(Ball)" />
       <method signature="void Gameplay.Cannon::IgnoreCollisionWithActiveBalls([Hotfix]Gameplay.Cannon, [Hotfix]Gameplay.Ball)" newName="$rs" oldStackTraceSignature="Gameplay.Cannon:IgnoreCollisionWithActiveBalls(Ball)" newStackTraceSignature="Gameplay.Cannon:$rs(Ball)" />
       <method signature="bool Gameplay.Cannon::TryGetTarget([Hotfix]Gameplay.Cannon, [UnityEngine.CoreModule]UnityEngine.Vector3&amp;)" newName="$Rs" oldStackTraceSignature="Gameplay.Cannon:TryGetTarget(Vector3&amp;)" newStackTraceSignature="Gameplay.Cannon:$Rs(Vector3&amp;)" />
+      <method signature="bool Gameplay.Cannon::IsTargetBelowTables([Hotfix]Gameplay.Cannon, [UnityEngine.CoreModule]UnityEngine.Vector3)" newName="$yFA" oldStackTraceSignature="Gameplay.Cannon:IsTargetBelowTables(Vector3)" newStackTraceSignature="Gameplay.Cannon:$yFA(Vector3)" />
       <method signature="[UnityEngine.CoreModule]UnityEngine.Vector3 Gameplay.Cannon::GetPointerViewportPosition([Hotfix]Gameplay.Cannon)" newName="$ss" oldStackTraceSignature="Gameplay.Cannon:GetPointerViewportPosition()" newStackTraceSignature="Gameplay.Cannon:$ss()" />
       <method signature="bool Gameplay.Cannon::TryRayCastToObject([Hotfix]Gameplay.Cannon, [UnityEngine.CoreModule]UnityEngine.Ray, [UnityEngine.CoreModule]UnityEngine.Vector3&amp;)" newName="$Ss" oldStackTraceSignature="Gameplay.Cannon:TryRayCastToObject(Ray, Vector3&amp;)" newStackTraceSignature="Gameplay.Cannon:$Ss(Ray, Vector3&amp;)" />
       <method signature="bool Gameplay.Cannon::TryRayCastToPlane([Hotfix]Gameplay.Cannon, [UnityEngine.CoreModule]UnityEngine.Ray, [UnityEngine.CoreModule]UnityEngine.Vector3&amp;)" newName="$ts" oldStackTraceSignature="Gameplay.Cannon:TryRayCastToPlane(Ray, Vector3&amp;)" newStackTraceSignature="Gameplay.Cannon:$ts(Ray, Vector3&amp;)" />
@@ -5895,6 +6020,12 @@
       <field signature="[Hotfix]Gameplay.GameController gameController" newName="$xo" />
       <field signature="[UnityEngine.CoreModule]UnityEngine.Vector3 direction" newName="$Yo" />
       <method signature="void Gameplay.Cannon/&lt;&gt;c__DisplayClass22_0::&lt;TryShoot&gt;b__0([Hotfix]Gameplay.Cannon/&lt;&gt;c__DisplayClass22_0)" newName="$us" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass22_0:&lt;TryShoot&gt;b__0()" newStackTraceSignature="Gameplay.$tc:$us()" />
+    </type>
+    <type fullName="Gameplay.Cannon/&lt;&gt;c__DisplayClass23_0" newFullName="Gameplay.Cannon/$wC" status="Renamed">
+      <field signature="[Hotfix]Gameplay.Cannon &lt;&gt;4__this" newName="$cu" />
+      <field signature="[Hotfix]Gameplay.GameController gameController" newName="$Cu" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Vector3 direction" newName="$du" />
+      <method signature="void Gameplay.Cannon/&lt;&gt;c__DisplayClass23_0::&lt;TryShoot&gt;b__0([Hotfix]Gameplay.Cannon/&lt;&gt;c__DisplayClass23_0)" newName="$YFA" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass23_0:&lt;TryShoot&gt;b__0()" newStackTraceSignature="Gameplay.$wC:$YFA()" />
     </type>
     <type fullName="Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__20" newFullName="Gameplay.Cannon/$Tc" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$zo" />
@@ -5907,6 +6038,18 @@
       <method signature="object Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__20::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([Hotfix]Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__20)" newName="$aeA" oldStackTraceSignature="Gameplay.&lt;PrewarmBallsRoutine&gt;d__20:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="Gameplay.$Tc:$aeA()" />
       <method signature="void Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__20::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__20)" newName="$AeA" oldStackTraceSignature="Gameplay.&lt;PrewarmBallsRoutine&gt;d__20:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.$Tc:$AeA()" />
       <method signature="object Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__20::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__20)" newName="$beA" oldStackTraceSignature="Gameplay.&lt;PrewarmBallsRoutine&gt;d__20:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.$Tc:$beA()" />
+    </type>
+    <type fullName="Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__21" newFullName="Gameplay.Cannon/$zC" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$Du" />
+      <field signature="object &lt;&gt;2__current" newName="$eu" />
+      <field signature="[Hotfix]Gameplay.Cannon &lt;&gt;4__this" newName="$Eu" />
+      <field signature="[Hotfix]Gameplay.Ball &lt;ball&gt;5__2" newName="$fu" />
+      <property signature="object System.Collections.Generic.IEnumerator&lt;System.Object&gt;.Current" newName="$a" />
+      <property signature="object System.Collections.IEnumerator.Current" newName="$A" />
+      <method signature="void Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__21::System.IDisposable.Dispose([Hotfix]Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__21)" newName="$ggA" oldStackTraceSignature="Gameplay.&lt;PrewarmBallsRoutine&gt;d__21:System.IDisposable.Dispose()" newStackTraceSignature="Gameplay.$zC:$ggA()" />
+      <method signature="object Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__21::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([Hotfix]Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__21)" newName="$GgA" oldStackTraceSignature="Gameplay.&lt;PrewarmBallsRoutine&gt;d__21:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="Gameplay.$zC:$GgA()" />
+      <method signature="void Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__21::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__21)" newName="$hgA" oldStackTraceSignature="Gameplay.&lt;PrewarmBallsRoutine&gt;d__21:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.$zC:$hgA()" />
+      <method signature="object Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__21::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.Cannon/&lt;PrewarmBallsRoutine&gt;d__21)" newName="$HgA" oldStackTraceSignature="Gameplay.&lt;PrewarmBallsRoutine&gt;d__21:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.$zC:$HgA()" />
     </type>
     <type fullName="Gameplay.Collisions.BallObjectCollision" newFullName="$j.$yd" status="Renamed">
       <field signature="[UnityEngine.PhysicsModule]UnityEngine.Collider BallCollider" newName="$YW" />
@@ -7293,6 +7436,8 @@
       <field signature="[System.Core]System.Collections.Generic.HashSet`1&lt;[Hotfix]Gameplay.Collisions.ContactNode&gt; _cluster" newName="$Au" />
       <field signature="System.Collections.Generic.Queue`1&lt;[Hotfix]Gameplay.Collisions.ContactNode&gt; _queue" newName="$bu" />
       <field signature="float timer" newName="$Bu" />
+      <property signature="float SurfaceHeight" newName="$a" />
+      <method signature="float Gameplay.Objects.Table::get_SurfaceHeight([Hotfix]Gameplay.Objects.Table)" newName="$zFA" oldStackTraceSignature="Gameplay.Objects.Table:get_SurfaceHeight()" newStackTraceSignature="Gameplay.Objects.Table:$zFA()" />
       <method signature="bool Gameplay.Objects.Table::DoesMove([Hotfix]Gameplay.Objects.Table)" newName="$PU" oldStackTraceSignature="Gameplay.Objects.Table:DoesMove()" newStackTraceSignature="Gameplay.Objects.Table:$PU()" />
       <method signature="void Gameplay.Objects.Table::SetDimensions([Hotfix]Gameplay.Objects.Table, float, float, float)" newName="$qU" oldStackTraceSignature="Gameplay.Objects.Table:SetDimensions(Single, Single, Single)" newStackTraceSignature="Gameplay.Objects.Table:$qU(Single, Single, Single)" />
       <method signature="void Gameplay.Objects.Table::ChangeHorizontalVelocity([Hotfix]Gameplay.Objects.Table, float)" newName="$QU" oldStackTraceSignature="Gameplay.Objects.Table:ChangeHorizontalVelocity(Single)" newStackTraceSignature="Gameplay.Objects.Table:$QU(Single)" />
@@ -7329,6 +7474,22 @@
       <method signature="object Gameplay.Objects.Table/&lt;MovementRoutine&gt;d__42::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([Hotfix]Gameplay.Objects.Table/&lt;MovementRoutine&gt;d__42)" newName="$wEA" oldStackTraceSignature="Gameplay.Objects.&lt;MovementRoutine&gt;d__42:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="Gameplay.Objects.$wC:$wEA()" />
       <method signature="void Gameplay.Objects.Table/&lt;MovementRoutine&gt;d__42::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.Objects.Table/&lt;MovementRoutine&gt;d__42)" newName="$WEA" oldStackTraceSignature="Gameplay.Objects.&lt;MovementRoutine&gt;d__42:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.Objects.$wC:$WEA()" />
       <method signature="object Gameplay.Objects.Table/&lt;MovementRoutine&gt;d__42::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.Objects.Table/&lt;MovementRoutine&gt;d__42)" newName="$xEA" oldStackTraceSignature="Gameplay.Objects.&lt;MovementRoutine&gt;d__42:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.Objects.$wC:$xEA()" />
+    </type>
+    <type fullName="Gameplay.Objects.Table/&lt;MovementRoutine&gt;d__44" newFullName="Gameplay.Objects.Table/$Ad" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$Fu" />
+      <field signature="object &lt;&gt;2__current" newName="$SX" />
+      <field signature="[Hotfix]Gameplay.Objects.Table &lt;&gt;4__this" newName="$UX" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.WaitForFixedUpdate &lt;waitNextFixedUpdate&gt;5__2" newName="$dy" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Vector3 &lt;basePos&gt;5__3" newName="$Dy" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Vector3 &lt;posOffset&gt;5__4" newName="$ey" />
+      <field signature="float &lt;horizontalSpeed&gt;5__5" newName="$Ey" />
+      <field signature="float &lt;verticalSpeed&gt;5__6" newName="$fy" />
+      <property signature="object System.Collections.Generic.IEnumerator&lt;System.Object&gt;.Current" newName="$a" />
+      <property signature="object System.Collections.IEnumerator.Current" newName="$A" />
+      <method signature="void Gameplay.Objects.Table/&lt;MovementRoutine&gt;d__44::System.IDisposable.Dispose([Hotfix]Gameplay.Objects.Table/&lt;MovementRoutine&gt;d__44)" newName="$igA" oldStackTraceSignature="Gameplay.Objects.&lt;MovementRoutine&gt;d__44:System.IDisposable.Dispose()" newStackTraceSignature="Gameplay.Objects.$Ad:$igA()" />
+      <method signature="object Gameplay.Objects.Table/&lt;MovementRoutine&gt;d__44::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([Hotfix]Gameplay.Objects.Table/&lt;MovementRoutine&gt;d__44)" newName="$IgA" oldStackTraceSignature="Gameplay.Objects.&lt;MovementRoutine&gt;d__44:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="Gameplay.Objects.$Ad:$IgA()" />
+      <method signature="void Gameplay.Objects.Table/&lt;MovementRoutine&gt;d__44::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.Objects.Table/&lt;MovementRoutine&gt;d__44)" newName="$jgA" oldStackTraceSignature="Gameplay.Objects.&lt;MovementRoutine&gt;d__44:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.Objects.$Ad:$jgA()" />
+      <method signature="object Gameplay.Objects.Table/&lt;MovementRoutine&gt;d__44::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.Objects.Table/&lt;MovementRoutine&gt;d__44)" newName="$JgA" oldStackTraceSignature="Gameplay.Objects.&lt;MovementRoutine&gt;d__44:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.Objects.$Ad:$JgA()" />
     </type>
     <type fullName="Gameplay.Objects.TntObject" newFullName="" status="NotRenamed">
       <method signature="int Gameplay.Objects.TntObject::GetLayer([Hotfix]Gameplay.Objects.TntObject)" newName="$REA" oldStackTraceSignature="Gameplay.Objects.TntObject:GetLayer()" newStackTraceSignature="Gameplay.Objects.TntObject:$REA()" />
@@ -8080,6 +8241,7 @@
       <method signature="void HallTabUIForm::SwitchPage([Hotfix]HallTabUIForm, [Hotfix]UIViews, [UnityEngine.UI]UnityEngine.UI.Button)" newName="$vG" oldStackTraceSignature="HallTabUIForm:SwitchPage(UIViews, Button)" newStackTraceSignature="HallTabUIForm:$vG(UIViews, Button)" />
       <method signature="bool HallTabUIForm::@IsPageAlive(int)" newName="$VG" oldStackTraceSignature="HallTabUIForm:IsPageAlive(Int32)" newStackTraceSignature="HallTabUIForm:$VG(Int32)" />
       <method signature="int HallTabUIForm::OpenPage([Hotfix]HallTabUIForm, [Hotfix]UIViews)" newName="$wG" oldStackTraceSignature="HallTabUIForm:OpenPage(UIViews)" newStackTraceSignature="HallTabUIForm:$wG(UIViews)" />
+      <method signature="void HallTabUIForm::ShowTaskPage([Hotfix]HallTabUIForm)" newName="$sFA" oldStackTraceSignature="HallTabUIForm:ShowTaskPage()" newStackTraceSignature="HallTabUIForm:$sFA()" />
       <method signature="void HallTabUIForm::ShowHomePage([Hotfix]HallTabUIForm)" newName="$WG" oldStackTraceSignature="HallTabUIForm:ShowHomePage()" newStackTraceSignature="HallTabUIForm:$WG()" />
       <method signature="void HallTabUIForm::CloseBeforeEnterGameplay([Hotfix]HallTabUIForm)" newName="$xG" oldStackTraceSignature="HallTabUIForm:CloseBeforeEnterGameplay()" newStackTraceSignature="HallTabUIForm:$xG()" />
       <method signature="void HallTabUIForm::CloseCurrentPage([Hotfix]HallTabUIForm)" newName="$XG" oldStackTraceSignature="HallTabUIForm:CloseCurrentPage()" newStackTraceSignature="HallTabUIForm:$XG()" />
@@ -8640,6 +8802,16 @@
       <field signature="[Hotfix]MakeupPaymentUIForm &lt;&gt;4__this" newName="$Ng" />
       <method signature="void MakeupPaymentUIForm/&lt;&gt;c__DisplayClass10_0::&lt;StartPayment&gt;b__0([Hotfix]MakeupPaymentUIForm/&lt;&gt;c__DisplayClass10_0)" newName="$yH" oldStackTraceSignature="&lt;&gt;c__DisplayClass10_0:&lt;StartPayment&gt;b__0()" newStackTraceSignature="&lt;&gt;c__DisplayClass10_0:$yH()" />
     </type>
+    <type fullName="MakeupRecordItem" newFullName="" status="NotRenamed">
+      <field signature="int total" newName="$Yk" />
+      <field signature="int firstMin" newName="$zk" />
+      <field signature="int firstMax" newName="$wo" />
+      <field signature="int addMin" newName="$xo" />
+      <field signature="int addMax" newName="$Yo" />
+      <field signature="long displayedSecond" newName="$zo" />
+      <field signature="long displayedHour" newName="$AO" />
+      <method signature="void MakeupRecordItem::RefreshDisplay([Hotfix]MakeupRecordItem)" newName="$SFA" oldStackTraceSignature="MakeupRecordItem:RefreshDisplay()" newStackTraceSignature="MakeupRecordItem:$SFA()" />
+    </type>
     <type fullName="MakeupRecordUIForm" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]RequestHandle request" newName="$og" />
       <field signature="[Hotfix]MakeupRecordItem m_RecordItem" newName="$Og" />
@@ -8869,6 +9041,7 @@
       <method signature="[Hotfix]PlayerDataChangedEventArgs PlayerDataChangedEventArgs::@Create([Hotfix]PlayerDataType, float, float)" newName="$Ab" oldStackTraceSignature="PlayerDataChangedEventArgs:Create(PlayerDataType, Single, Single)" newStackTraceSignature="$n:$Ab($E, Single, Single)" />
     </type>
     <type fullName="PlayerDataModel" newFullName="" status="NotRenamed">
+      <field signature="bool &lt;IsNewPlayer&gt;k__BackingField" newName="$db" />
       <field signature="int m_Life" newName="$EA" />
       <field signature="System.Action LifeChanged" newName="$fA" />
       <field signature="int &lt;LifeTimerStart&gt;k__BackingField" newName="$gA" />
@@ -8913,7 +9086,7 @@
     </type>
     <type fullName="PlayerDataModel/&lt;&gt;c" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]PlayerDataModel/&lt;&gt;c &lt;&gt;9" newName="$Cb" />
-      <field signature="System.Action`1&lt;[Hotfix]RequestFailure&gt; &lt;&gt;9__46_1" newName="$db" />
+      <field signature="System.Action`1&lt;[Hotfix]RequestFailure&gt; &lt;&gt;9__50_1" newName="$tf" />
     </type>
     <type fullName="PlayerDataModel/&lt;&gt;c__DisplayClass131_0" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]MakeupData makeupData" newName="$qA" />
@@ -8994,6 +9167,13 @@
       <field signature="int s_RemainingBallCount" newName="$rG" />
       <field signature="int s_RocketUseCount" newName="$RG" />
       <field signature="int m_GuideSerialId" newName="$sG" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.RectTransform m_HintRect" newName="$bO" />
+      <field signature="[UnityEngine.UIModule]UnityEngine.CanvasGroup m_HintCanvasGroup" newName="$Lp" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Vector2 m_HintRestPosition" newName="$Rp" />
+      <field signature="[DOTween]DG.Tweening.Sequence m_HintTween" newName="$hQ" />
+      <method signature="void PlayUIForm::@ShowBelowTableHint()" newName="$UFA" oldStackTraceSignature="PlayUIForm:ShowBelowTableHint()" newStackTraceSignature="PlayUIForm:$UFA()" />
+      <method signature="void PlayUIForm::PlayBelowTableHint([Hotfix]PlayUIForm)" newName="$vFA" oldStackTraceSignature="PlayUIForm:PlayBelowTableHint()" newStackTraceSignature="PlayUIForm:$vFA()" />
+      <method signature="void PlayUIForm::ResetHint([Hotfix]PlayUIForm)" newName="$VFA" oldStackTraceSignature="PlayUIForm:ResetHint()" newStackTraceSignature="PlayUIForm:$VFA()" />
       <method signature="void PlayUIForm::@ShowFirstLevelGuides([UnityEngine.CoreModule]UnityEngine.Transform)" newName="$Oi" oldStackTraceSignature="PlayUIForm:ShowFirstLevelGuides(Transform)" newStackTraceSignature="PlayUIForm:$Oi(Transform)" />
       <method signature="void PlayUIForm::ShowFirstLevelGuide([Hotfix]PlayUIForm, [UnityEngine.CoreModule]UnityEngine.Transform)" newName="$pi" oldStackTraceSignature="PlayUIForm:ShowFirstLevelGuide(Transform)" newStackTraceSignature="PlayUIForm:$pi(Transform)" />
       <method signature="void PlayUIForm::ShowBallCountGuide([Hotfix]PlayUIForm)" newName="$Pi" oldStackTraceSignature="PlayUIForm:ShowBallCountGuide()" newStackTraceSignature="PlayUIForm:$Pi()" />
@@ -9001,17 +9181,27 @@
       <method signature="void PlayUIForm::@SetRemainingBallCount(int)" newName="$Qi" oldStackTraceSignature="PlayUIForm:SetRemainingBallCount(Int32)" newStackTraceSignature="PlayUIForm:$Qi(Int32)" />
       <method signature="void PlayUIForm::RefreshRemainingBallCount([Hotfix]PlayUIForm)" newName="$ri" oldStackTraceSignature="PlayUIForm:RefreshRemainingBallCount()" newStackTraceSignature="PlayUIForm:$ri()" />
       <method signature="void PlayUIForm::OnSettingClicked([Hotfix]PlayUIForm)" newName="$Ri" oldStackTraceSignature="PlayUIForm:OnSettingClicked()" newStackTraceSignature="PlayUIForm:$Ri()" />
+      <method signature="void PlayUIForm::&lt;PlayBelowTableHint&gt;b__8_0([Hotfix]PlayUIForm)" newName="$wFA" oldStackTraceSignature="PlayUIForm:&lt;PlayBelowTableHint&gt;b__8_0()" newStackTraceSignature="PlayUIForm:$wFA()" />
     </type>
     <type fullName="PrelevelUIForm" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]PlayerDataModel playerData" newName="$SG" />
       <field signature="bool useRocket" newName="$tG" />
       <field signature="bool isStarting" newName="$TG" />
+      <field signature="int m_GuideSerialId" newName="$OQ" />
+      <method signature="void PrelevelUIForm::ShowRocketGuide([Hotfix]PrelevelUIForm)" newName="$WFA" oldStackTraceSignature="PrelevelUIForm:ShowRocketGuide()" newStackTraceSignature="PrelevelUIForm:$WFA()" />
       <method signature="void PrelevelUIForm::RefreshRocket([Hotfix]PrelevelUIForm)" newName="$si" oldStackTraceSignature="PrelevelUIForm:RefreshRocket()" newStackTraceSignature="PrelevelUIForm:$si()" />
       <method signature="void PrelevelUIForm::ToggleRocket([Hotfix]PrelevelUIForm)" newName="$Si" oldStackTraceSignature="PrelevelUIForm:ToggleRocket()" newStackTraceSignature="PrelevelUIForm:$Si()" />
       <method signature="void PrelevelUIForm::OpenAddProp([Hotfix]PrelevelUIForm)" newName="$ti" oldStackTraceSignature="PrelevelUIForm:OpenAddProp()" newStackTraceSignature="PrelevelUIForm:$ti()" />
       <method signature="void PrelevelUIForm::Play([Hotfix]PrelevelUIForm)" newName="$Ti" oldStackTraceSignature="PrelevelUIForm:Play()" newStackTraceSignature="PrelevelUIForm:$Ti()" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTaskVoid PrelevelUIForm::StartGameplayAsync([Hotfix]PrelevelUIForm)" newName="$ui" oldStackTraceSignature="PrelevelUIForm:StartGameplayAsync()" newStackTraceSignature="PrelevelUIForm:$ui()" />
-      <method signature="void PrelevelUIForm::&lt;OpenAddProp&gt;b__7_0([Hotfix]PrelevelUIForm, [UnityGameFramework.Runtime]UnityGameFramework.Runtime.UIFormLogic)" newName="$Ui" oldStackTraceSignature="PrelevelUIForm:&lt;OpenAddProp&gt;b__7_0(UIFormLogic)" newStackTraceSignature="PrelevelUIForm:$Ui(UIFormLogic)" />
+      <method signature="void PrelevelUIForm::&lt;ShowRocketGuide&gt;b__8_0([Hotfix]PrelevelUIForm)" newName="$xFA" oldStackTraceSignature="PrelevelUIForm:&lt;ShowRocketGuide&gt;b__8_0()" newStackTraceSignature="PrelevelUIForm:$xFA()" />
+      <method signature="void PrelevelUIForm::&lt;OpenAddProp&gt;b__11_0([Hotfix]PrelevelUIForm, [UnityGameFramework.Runtime]UnityGameFramework.Runtime.UIFormLogic)" newName="$XFA" oldStackTraceSignature="PrelevelUIForm:&lt;OpenAddProp&gt;b__11_0(UIFormLogic)" newStackTraceSignature="PrelevelUIForm:$XFA(UIFormLogic)" />
+    </type>
+    <type fullName="PrelevelUIForm/&lt;StartGameplayAsync&gt;d__13" newFullName="" status="NotRenamed">
+      <field signature="int &lt;&gt;1__state" newName="$RQ" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder &lt;&gt;t__builder" newName="$TQ" />
+      <field signature="[Hotfix]PrelevelUIForm &lt;&gt;4__this" newName="$WQ" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;bool&gt; &lt;&gt;u__1" newName="$jr" />
     </type>
     <type fullName="PrelevelUIForm/&lt;StartGameplayAsync&gt;d__9" newFullName="" status="NotRenamed">
       <field signature="int &lt;&gt;1__state" newName="$uG" />
