@@ -279,6 +279,7 @@ public static class CommonHelper
     
     public static void ShowBannerAd()
     {
+        HideBannerAd();
         AdsManager.Instance.ShowBanner();
     }
 

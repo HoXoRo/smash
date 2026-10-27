@@ -29,4 +29,5 @@ public partial class DebugUIForm
 	[SerializeField] private Button varBtnInter_admob = null;
 	[SerializeField] private Button varBtnVideo_max = null;
 	[SerializeField] private Button varBtnVideo_admob = null;
+	[SerializeField] private Button varBtnBanner_hide = null;
 }
