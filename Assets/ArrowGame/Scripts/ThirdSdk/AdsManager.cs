@@ -55,6 +55,7 @@ public class AdsManager
     {
         if (!_bannerViewController.ShowAd())
         {
+            if (isMaxBanner) return;
             isMaxBanner = true;
             _maxAdsController.ToggleBannerVisibility();
         }
@@ -65,6 +66,7 @@ public class AdsManager
         _bannerViewController.HideAd();
         if (isMaxBanner)
         {
+            isMaxBanner = false;
             _maxAdsController.ToggleBannerVisibility();
         }
     }

@@ -26,6 +26,7 @@ public partial class DebugUIForm : UIFormBase
         varBtnInter_admob.onClick.AddListener(() => AdsManager.Instance.ShowAdmobInter("debug_admob_interstitial"));
         varBtnBanner_max.onClick.AddListener(() => AdsManager.Instance.ShowMaxBanner());
         varBtnBanner_admob.onClick.AddListener(() => AdsManager.Instance.ShowAdmobBanner());
+        varBtnBanner_hide.onClick.AddListener(CommonHelper.HideBannerAd);
         varBtnVideo_max.onClick.AddListener(() => AdsManager.Instance.ShowMaxAd(
             success => LogVideoResult("MAX", success), "debug_max_rewarded"));
         varBtnVideo_admob.onClick.AddListener(() => AdsManager.Instance.ShowAdmobAd(
