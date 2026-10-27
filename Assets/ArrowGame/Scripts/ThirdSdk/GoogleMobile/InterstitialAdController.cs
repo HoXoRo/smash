@@ -151,7 +151,9 @@ public class InterstitialAdController
             Log.Info(String.Format("Interstitial ad paid {0} {1}.",
                 adValue.Value,
                 adValue.CurrencyCode));
-            AdjustManager.Instance.LogAdRevenue(adValue.Value / 1000000f, adValue.CurrencyCode);
+            var revenue = adValue.Value / 1000000f;
+            PcardGiftRewardSession.Add(revenue);
+            AdjustManager.Instance.LogAdRevenue(revenue, adValue.CurrencyCode);
         };
         // Raised when an impression is recorded for an ad.
         ad.OnAdImpressionRecorded += () =>

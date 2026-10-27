@@ -12,19 +12,12 @@
   <component name="ChangeListManager">
     <list default="true" id="48c1c3b4-2b47-4b58-848e-c5dcf45a4647" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/KingnamypeYuanmoSC SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/KingnamypeYuanmoSC SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Runtime/Obfuz/SymbolObfus/symbol-mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Runtime/Obfuz/SymbolObfus/symbol-mapping.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Banners/BANNER.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Banners/BANNER.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Interstitials/768x1024.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Interstitials/768x1024.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Rewarded/768x1024.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Rewarded/768x1024.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/GoogleMobileAdsPlugin.androidlib/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/GoogleMobileAdsPlugin.androidlib/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/GameFrameworkVersion.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/GameFrameworkVersion.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/cfig.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/cfig.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat3.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat3.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/Configs/GameConfig.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Configs/GameConfig.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Config/GameConfig.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Config/GameConfig.bytes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Config/GameConfig.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Config/GameConfig.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/BannerViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/BannerViewController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/InterstitialAdController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/InterstitialAdController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/RewardedAdController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/RewardedAdController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,61 +81,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.2797257389137225E-31" />
-      <entry key="MS500" value="1.507058700137521E-6" />
-      <entry key="S2" value="0.07964750202840723" />
-      <entry key="S5" value="0.7025007078085963" />
-      <entry key="S10" value="1.4516738793452388" />
-      <entry key="S30" value="2.3820897505219008" />
-      <entry key="S60" value="3.381375095255319" />
-      <entry key="M2" value="8.491622107922225" />
-      <entry key="M5" value="26.292327553095276" />
-      <entry key="M10" value="42.54884725875866" />
-      <entry key="M15" value="50.59133637230833" />
-      <entry key="M30" value="60.55969105296578" />
-      <entry key="H1" value="66.43044637610548" />
-      <entry key="H2" value="69.6221784732902" />
-      <entry key="H4" value="71.28714923996513" />
-      <entry key="D1" value="81.84994301964139" />
-      <entry key="W1" value="971.9510054815366" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="2.462888595949036E-162" />
+      <entry key="S2" value="3.982698146266606E-41" />
+      <entry key="S5" value="9.51684854989768E-17" />
+      <entry key="S10" value="2.1713806747625137E-8" />
+      <entry key="S30" value="0.010700541627245765" />
+      <entry key="S60" value="0.29136783790133575" />
+      <entry key="M2" value="1.52527707827081" />
+      <entry key="M5" value="4.121901997950183" />
+      <entry key="M10" value="5.742198497941075" />
+      <entry key="M15" value="6.4132575857491965" />
+      <entry key="M30" value="7.162796695236235" />
+      <entry key="H1" value="7.5725349711038925" />
+      <entry key="H2" value="8.22656747189774" />
+      <entry key="H4" value="13.587082515968792" />
+      <entry key="D1" value="61.699928827821424" />
+      <entry key="W1" value="923.1981719939764" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0000000000858138" />
-      <entry key="MS500" value="1.0096986522775477" />
-      <entry key="S2" value="1.3138179978206608" />
-      <entry key="S5" value="1.629029681911547" />
-      <entry key="S10" value="1.7931186574418818" />
-      <entry key="S30" value="1.9656738682129777" />
-      <entry key="S60" value="2.395099022552274" />
-      <entry key="M2" value="3.6550773103548777" />
-      <entry key="M5" value="7.657467300914659" />
-      <entry key="M10" value="12.553722121073392" />
-      <entry key="M15" value="15.44393007500943" />
-      <entry key="M30" value="19.431569175288825" />
-      <entry key="H1" value="21.980105209625883" />
-      <entry key="H2" value="23.425520290395333" />
-      <entry key="H4" value="24.195899244259156" />
-      <entry key="D1" value="27.778877868296355" />
-      <entry key="W1" value="71.54792820998165" />
+      <entry key="MS100" value="1.0000000034279661" />
+      <entry key="MS500" value="1.0202827055396406" />
+      <entry key="S2" value="1.454523494881461" />
+      <entry key="S5" value="2.3507910270932326" />
+      <entry key="S10" value="3.385204068404091" />
+      <entry key="S30" value="4.828379238671046" />
+      <entry key="S60" value="5.40957276440363" />
+      <entry key="M2" value="5.88463151857818" />
+      <entry key="M5" value="6.406525587946532" />
+      <entry key="M10" value="6.668077290078782" />
+      <entry key="M15" value="6.769832076025414" />
+      <entry key="M30" value="6.880171161627476" />
+      <entry key="H1" value="6.939735529155103" />
+      <entry key="H2" value="7.1187025496878125" />
+      <entry key="H4" value="8.918068894968762" />
+      <entry key="D1" value="25.2287504374387" />
+      <entry key="W1" value="74.37002150380901" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="3.2664246943020297E-4" />
-      <entry key="MS500" value="0.20083912002069315" />
-      <entry key="S2" value="0.8100509376099951" />
-      <entry key="S5" value="1.8803361297088763" />
-      <entry key="S10" value="2.9454417981510677" />
-      <entry key="S30" value="4.223661743129172" />
-      <entry key="S60" value="5.700556967711407" />
-      <entry key="M2" value="12.086134683764216" />
-      <entry key="M5" value="33.89917770464216" />
-      <entry key="M10" value="55.064011274879185" />
-      <entry key="M15" value="66.00480904881563" />
-      <entry key="M30" value="79.97291805236888" />
-      <entry key="H1" value="88.40042211575448" />
-      <entry key="H2" value="93.04236731162447" />
-      <entry key="H4" value="95.48031234233484" />
-      <entry key="D1" value="109.62827990350456" />
-      <entry key="W1" value="1043.4986996540983" />
+      <entry key="MS100" value="1.615038522931356E-6" />
+      <entry key="MS500" value="0.07099976063126516" />
+      <entry key="S2" value="0.7684701271814885" />
+      <entry key="S5" value="1.8779068827856513" />
+      <entry key="S10" value="3.0524020863625294" />
+      <entry key="S30" value="4.68411992712423" />
+      <entry key="S60" value="5.614267662759153" />
+      <entry key="M2" value="7.362265604798877" />
+      <entry key="M5" value="10.507191727740393" />
+      <entry key="M10" value="12.399073337419289" />
+      <entry key="M15" value="13.17546637722474" />
+      <entry key="M30" value="14.039071264778082" />
+      <entry key="H1" value="14.510299027012579" />
+      <entry key="H2" value="15.344244549318537" />
+      <entry key="H4" value="22.50443554228006" />
+      <entry key="D1" value="86.92824113661396" />
+      <entry key="W1" value="997.5679612516893" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{

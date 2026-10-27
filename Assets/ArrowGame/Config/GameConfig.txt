@@ -12,7 +12,7 @@
 	CloseBtnShowTime	奖励弹窗关闭按钮出现时间（秒）	2
 	InterstitialCD	插屏冷却时间（秒）	45
 	InterstitialShowWeight	插屏播放权重	100
-	InterstitialCancelTime	插屏连续取消次数	3
+	InterstitialCancelTime	插屏连续取消次数	0
 	RewardDialogFreeDoubleTimes	奖励弹窗前几次翻倍免广告	3
 	InterstitialPreTimes	前几次不播插屏	3
 	BidWaitTime	广告竞价等待时间（秒）	2

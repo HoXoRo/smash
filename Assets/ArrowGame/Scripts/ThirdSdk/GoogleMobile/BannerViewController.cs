@@ -2,6 +2,7 @@
 using UnityEngine;
 using GoogleMobileAds.Api;
 using GoogleMobileAds.Common;
+using UnityGameFramework.Runtime;
 
 
 public class BannerViewController
@@ -136,7 +137,7 @@ public class BannerViewController
         // Raised when an ad is loaded into the banner view.
         _bannerView.OnBannerAdLoaded += () =>
         {
-            Debug.Log("Banner view loaded an ad with response : "
+            Log.Info("Banner view loaded an ad with response : "
                 + _bannerView.GetResponseInfo());
 
             MobileAdsEventExecutor.ExecuteInUpdate(() =>
@@ -155,7 +156,7 @@ public class BannerViewController
         {
             // This log is executed off the Unity main thread.
             // Write all time-sensitive code before ExecuteInUpdate().
-            Debug.Log(String.Format("Banner view paid {0} {1}.",
+            Log.Info(String.Format("Banner view paid {0} {1}.",
                 adValue.Value,
                 adValue.CurrencyCode));
             AdjustManager.Instance.LogAdRevenue(adValue.Value / 1000000f, adValue.CurrencyCode);
@@ -165,29 +166,29 @@ public class BannerViewController
                 // This callback may be delayed on Android until the user
                 // returns to the app. Place all code that interacts with
                 // Unity UI and GameObjects inside this callback.
-                Debug.Log("Banner view paid callback " +
+               Log.Info("Banner view paid callback " +
                     "invoked inside ExecuteInUpdate.");
             });
         };
         // Raised when an impression is recorded for an ad.
         _bannerView.OnAdImpressionRecorded += () =>
         {
-            Debug.Log("Banner view recorded an impression.");
+            Log.Info("Banner view recorded an impression.");
         };
         // Raised when a click is recorded for an ad.
         _bannerView.OnAdClicked += () =>
         {
-            Debug.Log("Banner view was clicked.");
+            Log.Info("Banner view was clicked.");
         };
         // Raised when an ad opened full screen content.
         _bannerView.OnAdFullScreenContentOpened += () =>
         {
-            Debug.Log("Banner view full screen content opened.");
+            Log.Info("Banner view full screen content opened.");
         };
         // Raised when the ad closed full screen content.
         _bannerView.OnAdFullScreenContentClosed += () =>
         {
-            Debug.Log("Banner view full screen content closed.");
+            Log.Info("Banner view full screen content closed.");
         };
     }
 }
