@@ -51,6 +51,7 @@ public class GameStartMainProcedure : ProcedureBase
         GF.Entity.HideAllLoadedEntities();
         GF.BuiltinView.SetLoadingProgress(1f);
         GF.BuiltinView.HideLoadingProgress();
+        CommonHelper.ShowBannerAd();
         if (GF.DataModel.GetOrCreate<PlayerDataModel>().IsNewPlayer)
         {
             ArrowUITopbarSub.SetLifeVisible(false);

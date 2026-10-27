@@ -30,6 +30,7 @@ public partial class MakeupUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.HideBannerAd();
         displayPlayer = GF.DataModel.GetOrCreate<PlayerDataModel>();
         displayPlayer.PcardDisplayChanged += OnPcardDisplayChanged;
         request?.Cancel();
@@ -55,6 +56,7 @@ public partial class MakeupUIForm : UIFormBase
         request = null;
         makeupItems.Clear();
         base.OnClose(isShutdown, userData);
+        if (!isShutdown) CommonHelper.ShowBannerAd();
     }
 
     void ShowContent()

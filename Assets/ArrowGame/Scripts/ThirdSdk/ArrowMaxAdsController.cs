@@ -420,7 +420,7 @@ public class ArrowMaxAdsController
 
         // Banners are automatically sized to 320x50 on phones and 728x90 on tablets.
         // You may use the utility method `MaxSdkUtils.isTablet()` to help with view sizing adjustments.
-        MaxSdk.CreateBanner(BannerAdUnitId, new MaxSdkBase.AdViewConfiguration(MaxSdkBase.AdViewPosition.TopCenter));
+        MaxSdk.CreateBanner(BannerAdUnitId, new MaxSdkBase.AdViewConfiguration(MaxSdkBase.AdViewPosition.BottomCenter));
 
         // Set background or background color for banners to be fully functional.
         MaxSdk.SetBannerBackgroundColor(BannerAdUnitId, Color.black);

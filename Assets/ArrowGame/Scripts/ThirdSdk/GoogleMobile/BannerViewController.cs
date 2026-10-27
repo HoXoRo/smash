@@ -43,7 +43,7 @@ public class BannerViewController
         }
 
         // Create a 320x50 banner at top of the screen.
-        _bannerView = new BannerView(_adUnitId, AdSize.Banner, AdPosition.Top);
+        _bannerView = new BannerView(_adUnitId, AdSize.Banner, AdPosition.Bottom);
 
         // Listen to events the banner may raise.
         ListenToAdEvents();
