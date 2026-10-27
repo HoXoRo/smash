@@ -1,5 +1,7 @@
 namespace Util
 {
+	// Preserve enum names used by performance logs and debug information.
+	[Obfuz.ObfuzIgnore(Obfuz.ObfuzScope.Field)]
 	public enum DevicePerformanceTier
 	{
 		Low = 0,

@@ -1,5 +1,7 @@
 namespace Scene
 {
+	// Scene asset paths depend on these enum names via ToString().
+	[Obfuz.ObfuzIgnore(Obfuz.ObfuzScope.Field)]
 	public enum SceneType
 	{
 		None = 0,

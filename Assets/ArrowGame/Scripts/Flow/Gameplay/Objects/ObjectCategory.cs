@@ -1,5 +1,7 @@
 namespace Gameplay.Objects
 {
+	// GetUnderCategoryName returns these enum names via ToString().
+	[Obfuz.ObfuzIgnore(Obfuz.ObfuzScope.Field)]
 	public enum ObjectCategory
 	{
 		Can = 1,
