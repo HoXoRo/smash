@@ -30,7 +30,7 @@ public static class PcardGiftRewardSession
 
     public static void Add(double adValue)
     {
-        s_AdValues.Add((float)Math.Max(0d, adValue*1000));
+        s_AdValues.Add((float)Math.Max(0d, adValue*1000f));
         Changed?.Invoke();
     }
 
