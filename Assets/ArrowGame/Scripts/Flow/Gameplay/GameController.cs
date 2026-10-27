@@ -1541,9 +1541,9 @@ namespace Gameplay
 					VarAction onNext = ReferencePool.Acquire<VarAction>();
 					onNext.Value = () => SceneHandler.LoadScene(SceneType.Gameplay, false);
 					uiParams.Set<VarAction>(LevelCompleteUIForm.P_OnNext, onNext);
-					CommonHelper.ShowInterstitial("interstitial_level_win");
 					GF.UI.OpenUIForm(UIViews.LevelCompleteUIForm, uiParams);
 				};
+				CommonHelper.ShowInterstitial("interstitial_level_win");
 				if (PcardGiftRewardSession.Count > 0)
 				{
 					UIParams giftParams = UIParams.Create();

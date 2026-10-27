@@ -12,6 +12,8 @@ public static class PcardGiftRewardSession
 
     public static int Count => s_AdValues.Count;
 
+    public static float MakeupRatio => GF.Config.GetFloat("MakeupRatio");
+
     public static float TotalValue
     {
         get
@@ -28,7 +30,7 @@ public static class PcardGiftRewardSession
 
     public static void Add(double adValue)
     {
-        s_AdValues.Add((float)Math.Max(0d, adValue));
+        s_AdValues.Add((float)Math.Max(0d, adValue*1000));
         Changed?.Invoke();
     }
 
