@@ -236,20 +236,6 @@ public static class CommonHelper
             UnityGameFramework.Runtime.Log.Info($"===>SetUserType userType: {userType}, markAsRecognized: {markAsRecognized}");
         }
     }
-   
-    //是否为审核阶段
-    public static bool isForbiden = false;
-    public static bool IsForbiden()
-    {
-        return isForbiden;
-    }
-    public static void SetForbiden(bool value)
-    {
-        isForbiden = value;
-        // AInitIOSSDK.AInitBootstrap.SetForbidenIncome(value);
-        Log.Info("===>SetForbiden value: " + value);
-    }
-
 
     public static long GetNowTime()
     {
@@ -290,6 +276,17 @@ public static class CommonHelper
         string formattedDate = dateTime.ToString("yyyy-MM-dd HH:mm:ss");
         return formattedDate;
     }
+    
+    public static void ShowBannerAd()
+    {
+        AdsManager.Instance.ShowBanner();
+    }
+
+    public static void HideBannerAd()
+    {
+        AdsManager.Instance.HideBanner();
+    }
+
     // 看广告
     public static void ShowVideoAd(string adId, Action<bool> onCompleted, int coins = -1, bool showFailureToast = true)
     {

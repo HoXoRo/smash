@@ -50,6 +50,26 @@ public class AdsManager
     }
 
 
+    private bool isMaxBanner = false;
+    public void ShowBanner()
+    {
+        if (!_bannerViewController.ShowAd())
+        {
+            isMaxBanner = true;
+            _maxAdsController.ToggleBannerVisibility();
+        }
+    }
+    
+    public void HideBanner()
+    {
+        _bannerViewController.HideAd();
+        if (isMaxBanner)
+        {
+            _maxAdsController.ToggleBannerVisibility();
+        }
+    }
+
+
     public void ShowMaxAd(Action<bool> reward, string adId = "")
     {
         _maxAdsController.ShowRewardedAd(reward, adId);
@@ -79,15 +99,6 @@ public class AdsManager
     public void ShowMaxBanner()
     {
         _maxAdsController.ToggleBannerVisibility();
-    }
-
-
-    public void ShowBanner()
-    {
-        if (!_bannerViewController.ShowAd())
-        {
-            _maxAdsController.ToggleBannerVisibility();
-        }
     }
 
     public void ShowH5()
