@@ -719,7 +719,6 @@
       <Asset Guid="5367eb924346ecd4abc7956aa7bfc06b" ResourceName="levelcfg" />
       <Asset Guid="5372b6f54d77c674685451c9058d7a51" ResourceName="dat9" />
       <Asset Guid="5373756448d7aea4880d1cd577e4d8ce" ResourceName="obj_jamjar" />
-      <Asset Guid="5385181ad34405947841762172fff7f5" ResourceName="dat10" />
       <Asset Guid="5390b3351f8346947a1660cf81fd0199" ResourceName="dat10" />
       <Asset Guid="53e0e374fa285a748b43802166358951" ResourceName="levelcfg" />
       <Asset Guid="540e5612898ca4848807ceffece6b3bb" ResourceName="obj_box" />
@@ -1462,7 +1461,6 @@
       <Asset Guid="b2d281945b693c444beff5c6b0c3fb95" ResourceName="dat10" />
       <Asset Guid="b2d2b861709810b4185478ed10507ecc" ResourceName="obj_can" />
       <Asset Guid="b2d3c33badd60c54d8cd0274b9c22714" ResourceName="obj_jamjar" />
-      <Asset Guid="b2e3d4c5a6b7988090123456789abcde" ResourceName="dat10" />
       <Asset Guid="b2f0f5cbc4c43c84bbc82951fadc988d" ResourceName="levelcfg" />
       <Asset Guid="b32a542f3c84d1e46acb6d94c45dc33d" ResourceName="obj_ice" />
       <Asset Guid="b37d1cac2d3bdbd4aaf97727131effaa" ResourceName="obj_stone" />
@@ -1576,7 +1574,6 @@
       <Asset Guid="c158ec65a76071142ab8c1416c199f3b" ResourceName="obj_jamjar" />
       <Asset Guid="c178e797c9fe89e41981dffbb90eaf30" ResourceName="obj_box" />
       <Asset Guid="c17e1c2a13f24f14f94451a558d1ed44" ResourceName="obj_ice" />
-      <Asset Guid="c19a15f6b221b794d8ae278ec559cb6f" ResourceName="dat10" />
       <Asset Guid="c1a7aca40ae7ecc4c9481a0a3bab90c7" ResourceName="levelcfg" />
       <Asset Guid="c1b8751810ce3a34981355f1f7ebcd21" ResourceName="dat9" />
       <Asset Guid="c1cd2e30599afb24d96472cc3e0f29b2" ResourceName="levelcfg" />
@@ -1856,7 +1853,6 @@
       <Asset Guid="e3c87a54bceb2034eb0495a11d2d4551" ResourceName="obj_jamjar" />
       <Asset Guid="e416fc87bf691ee4596fc896026d971f" ResourceName="levelcfg" />
       <Asset Guid="e426b10925488d948a9923de754ded23" ResourceName="obj_jamjar" />
-      <Asset Guid="e45754fbbb778214a9213bae467bc963" ResourceName="dat10" />
       <Asset Guid="e4d479fa08150ed4db028a04fa6e358c" ResourceName="levelcfg" />
       <Asset Guid="e4e0f82a59a0b554980bed02d616057d" ResourceName="dat9" />
       <Asset Guid="e4f013f53cf6eab43aa0bba6bab79087" ResourceName="obj_can" />

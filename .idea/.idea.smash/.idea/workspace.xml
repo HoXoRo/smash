@@ -11,10 +11,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48c1c3b4-2b47-4b58-848e-c5dcf45a4647" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Procedures/GameStartMainProcedure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Procedures/GameStartMainProcedure.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/ArrowMaxAdsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/ArrowMaxAdsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/BannerViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/BannerViewController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupUIForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Gameplay/Mesh/CannonBody.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Gameplay/Mesh/CannonBody.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scene/SmashLaunch.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scene/SmashLaunch.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Gameplay/Objects/ObjectCategory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Gameplay/Objects/ObjectCategory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Scene/SceneType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Scene/SceneType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Util/DevicePerformanceTier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Util/DevicePerformanceTier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Runtime/Obfuz/SymbolObfus/symbol-mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Runtime/Obfuz/SymbolObfus/symbol-mapping.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UnityGameFramework/Configs/ResourceCollection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UnityGameFramework/Configs/ResourceCollection.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/GameFrameworkVersion.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/GameFrameworkVersion.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat3.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat3.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +46,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/HomePageUIForm.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/Items/MakeupItem.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/ScriptableAssets/Core/AppConfigs.asset" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/Other.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/AddLifeUIForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Item/MakeupRecordItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Item/TaskItem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -45,32 +55,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupUIForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/PcardRewardUIForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/PlayUIForm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.code-philosophy.obfuz@25762369603f/Editor/Pipeline.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.code-philosophy.obfuz@25762369603f/Runtime/ObfuzIgnoreAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@cec3688a7c38/Runtime/UGUI/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Immediate Window" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Prefabs/UI/ArrowUITopbar.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/ScriptableAssets/Core/AppConfigs.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/DataModel/PlayerDataModel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/Extension/CommonHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/UI/AddBallsUIForm.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/UI/AddLifeUIForm.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/UI/ArrowUITopbar.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/UI/HallTabUIForm.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/UI/HomePageUIForm.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/UI/LevelCompleteUIForm.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/UI/MakeupUIForm.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/UI/PlayUIForm.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/UI/PrelevelUIForm.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/ArrowGame/Scripts/UI/SettingPageUIForm.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/Scripts/Gameplay/GameController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/Scripts/Inventory/TimedInventory/TimedInventoryHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/Scripts/Life/LifeHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/Scripts/Life/LifeTrackerHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/Scripts/Menu/Page/HomePage.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/Scripts/Popups/MoreLivesPopup.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/Scripts/Popups/PrelevelPopup/PrelevelPopup.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/Scripts/Util/TimeHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/unityPro/smash/Assets/StompyRobot/SROptions/SROptions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -78,61 +65,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="9.271732870148624E-309" />
-      <entry key="S2" value="2.0940995511937028E-77" />
-      <entry key="S5" value="5.651879282612957E-31" />
-      <entry key="S10" value="2.172685041836343E-15" />
-      <entry key="S30" value="6.622166168570861E-5" />
-      <entry key="S60" value="0.03275659482462853" />
-      <entry key="M2" value="0.8755921050793947" />
-      <entry key="M5" value="7.325413293107134" />
-      <entry key="M10" value="15.959412490589319" />
-      <entry key="M15" value="21.043056276602417" />
-      <entry key="M30" value="28.07643175445171" />
-      <entry key="H1" value="32.60209804114009" />
-      <entry key="H2" value="35.57661116991338" />
-      <entry key="H4" value="41.94674448461385" />
-      <entry key="D1" value="90.97876594424298" />
-      <entry key="W1" value="951.9572373218634" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000008985367017" />
+      <entry key="S2" value="1.035803102344443" />
+      <entry key="S5" value="1.5849050039662786" />
+      <entry key="S10" value="3.252659122152412" />
+      <entry key="S30" value="8.421605519761188" />
+      <entry key="S60" value="12.566387916055039" />
+      <entry key="M2" value="16.238748894694005" />
+      <entry key="M5" value="19.703540251886036" />
+      <entry key="M10" value="23.679212473290725" />
+      <entry key="M15" value="28.006315706093893" />
+      <entry key="M30" value="37.76153994203174" />
+      <entry key="H1" value="46.84698881614476" />
+      <entry key="H2" value="53.476621579682785" />
+      <entry key="H4" value="61.85026088731818" />
+      <entry key="D1" value="112.84536546705462" />
+      <entry key="W1" value="973.2772383204489" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000096737051738" />
-      <entry key="S5" value="1.0098681817331703" />
-      <entry key="S10" value="1.099338722224373" />
-      <entry key="S30" value="1.4631804260502022" />
-      <entry key="S60" value="1.6983152664463952" />
-      <entry key="M2" value="2.228298209624766" />
-      <entry key="M5" value="5.183905482385013" />
-      <entry key="M10" value="9.249260097546227" />
-      <entry key="M15" value="11.702797258848566" />
-      <entry key="M30" value="15.133342923466525" />
-      <entry key="H1" value="17.35102084627565" />
-      <entry key="H2" value="18.749436653088846" />
-      <entry key="H4" value="21.121338712874728" />
-      <entry key="D1" value="37.943283051181325" />
-      <entry key="W1" value="87.26420555101022" />
+      <entry key="MS100" value="5.741668261810827E-63" />
+      <entry key="MS500" value="3.5629327021642054E-13" />
+      <entry key="S2" value="7.756520738833379E-4" />
+      <entry key="S5" value="0.06920310614389474" />
+      <entry key="S10" value="0.45623764002595946" />
+      <entry key="S30" value="2.308213876649064" />
+      <entry key="S60" value="3.84181234154366" />
+      <entry key="M2" value="5.138748581903265" />
+      <entry key="M5" value="6.732502585436511" />
+      <entry key="M10" value="9.259581517754516" />
+      <entry key="M15" value="11.850588485654969" />
+      <entry key="M30" value="17.38687671940169" />
+      <entry key="H1" value="22.37746550009884" />
+      <entry key="H2" value="25.896392294205285" />
+      <entry key="H4" value="29.475275778480942" />
+      <entry key="D1" value="47.45436326503056" />
+      <entry key="W1" value="97.10708450553452" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.0037212421798591307" />
-      <entry key="MS500" value="0.32669131347329333" />
-      <entry key="S2" value="0.75602691918242" />
-      <entry key="S5" value="0.9017253331932985" />
-      <entry key="S10" value="1.032595157449078" />
-      <entry key="S30" value="1.4247363552467067" />
-      <entry key="S60" value="1.7064001060884075" />
-      <entry key="M2" value="3.084304644901361" />
-      <entry key="M5" value="12.485122068032771" />
-      <entry key="M10" value="25.18607528948937" />
-      <entry key="M15" value="32.72674345460159" />
-      <entry key="M30" value="43.197465977659434" />
-      <entry key="H1" value="49.94609195967051" />
-      <entry key="H2" value="54.32225765647006" />
-      <entry key="H4" value="63.06593095213397" />
-      <entry key="D1" value="128.9213635236634" />
-      <entry key="W1" value="1039.2211748848224" />
+      <entry key="MS100" value="0.0029809750175010907" />
+      <entry key="MS500" value="0.31251557759041265" />
+      <entry key="S2" value="0.7583815065500025" />
+      <entry key="S5" value="1.3845527121275008" />
+      <entry key="S10" value="3.41095392738875" />
+      <entry key="S30" value="10.491256462285046" />
+      <entry key="S60" value="16.235272545576432" />
+      <entry key="M2" value="21.26728395429158" />
+      <entry key="M5" value="26.382144122876674" />
+      <entry key="M10" value="32.90581416128299" />
+      <entry key="M15" value="39.830851448948" />
+      <entry key="M30" value="55.1310392380558" />
+      <entry key="H1" value="69.21380703847313" />
+      <entry key="H2" value="79.3669974569045" />
+      <entry key="H4" value="91.3221543611751" />
+      <entry key="D1" value="160.2988196739908" />
+      <entry key="W1" value="1070.3840221335367" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{

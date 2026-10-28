@@ -2041,17 +2041,19 @@
       <field signature="[Hotfix]RewardedAdController _rewardedAdController" newName="$uf" />
       <field signature="[Hotfix]InterstitialAdController _interstitialAdController" newName="$Uf" />
       <field signature="[Hotfix]BannerViewController _bannerViewController" newName="$vf" />
+      <field signature="bool isMaxBanner" newName="$Uc" />
       <property signature="[Hotfix]AdsManager Instance" newName="$a" />
       <method signature="[Hotfix]AdsManager AdsManager::@get_Instance()" newName="$of" oldStackTraceSignature="AdsManager:get_Instance()" newStackTraceSignature="$Q:$of()" />
       <method signature="void AdsManager::ShowAd([Hotfix]AdsManager, System.Action`1&lt;bool&gt;, string)" newName="$Vf" oldStackTraceSignature="AdsManager:ShowAd(Action`1, String)" newStackTraceSignature="$Q:$Vf(Action`1, String)" />
       <method signature="void AdsManager::ShowInter([Hotfix]AdsManager, string)" newName="$wf" oldStackTraceSignature="AdsManager:ShowInter(String)" newStackTraceSignature="$Q:$wf(String)" />
+      <method signature="void AdsManager::ShowBanner([Hotfix]AdsManager)" newName="$nG" oldStackTraceSignature="AdsManager:ShowBanner()" newStackTraceSignature="$Q:$nG()" />
+      <method signature="void AdsManager::HideBanner([Hotfix]AdsManager)" newName="$UgA" oldStackTraceSignature="AdsManager:HideBanner()" newStackTraceSignature="$Q:$UgA()" />
       <method signature="void AdsManager::ShowMaxAd([Hotfix]AdsManager, System.Action`1&lt;bool&gt;, string)" newName="$Ui" oldStackTraceSignature="AdsManager:ShowMaxAd(Action`1, String)" newStackTraceSignature="$Q:$Ui(Action`1, String)" />
       <method signature="void AdsManager::ShowMaxInter([Hotfix]AdsManager, string)" newName="$kgA" oldStackTraceSignature="AdsManager:ShowMaxInter(String)" newStackTraceSignature="$Q:$kgA(String)" />
       <method signature="void AdsManager::ShowAdmobAd([Hotfix]AdsManager, System.Action`1&lt;bool&gt;, string)" newName="$KgA" oldStackTraceSignature="AdsManager:ShowAdmobAd(Action`1, String)" newStackTraceSignature="$Q:$KgA(Action`1, String)" />
       <method signature="void AdsManager::ShowAdmobInter([Hotfix]AdsManager, string)" newName="$lgA" oldStackTraceSignature="AdsManager:ShowAdmobInter(String)" newStackTraceSignature="$Q:$lgA(String)" />
       <method signature="void AdsManager::ShowAdmobBanner([Hotfix]AdsManager)" newName="$LgA" oldStackTraceSignature="AdsManager:ShowAdmobBanner()" newStackTraceSignature="$Q:$LgA()" />
       <method signature="void AdsManager::ShowMaxBanner([Hotfix]AdsManager)" newName="$mgA" oldStackTraceSignature="AdsManager:ShowMaxBanner()" newStackTraceSignature="$Q:$mgA()" />
-      <method signature="void AdsManager::ShowBanner([Hotfix]AdsManager)" newName="$nG" oldStackTraceSignature="AdsManager:ShowBanner()" newStackTraceSignature="$Q:$nG()" />
       <method signature="void AdsManager::ShowH5([Hotfix]AdsManager)" newName="$Wf" oldStackTraceSignature="AdsManager:ShowH5()" newStackTraceSignature="$Q:$Wf()" />
       <method signature="void AdsManager::ShowAdmobDebug([Hotfix]AdsManager)" newName="$MgA" oldStackTraceSignature="AdsManager:ShowAdmobDebug()" newStackTraceSignature="$Q:$MgA()" />
       <method signature="void AdsManager::ShowMaxDebug([Hotfix]AdsManager)" newName="$ngA" oldStackTraceSignature="AdsManager:ShowMaxDebug()" newStackTraceSignature="$Q:$ngA()" />
@@ -5301,7 +5303,6 @@
       <field signature="int UserType" newName="$tc" />
       <field signature="bool isConstraintBorA" newName="$Tc" />
       <field signature="bool RecognitionTimeOut" newName="$uc" />
-      <field signature="bool isForbiden" newName="$Uc" />
       <field signature="long nextShowInterstitialTime" newName="$vc" />
       <field signature="int s_InterstitialCancelAccum" newName="$eh" />
       <field signature="string _gaid" newName="$Vc" />
@@ -5324,13 +5325,13 @@
       <method signature="string CommonHelper::@GetUserAdNetwork()" newName="$EB" oldStackTraceSignature="CommonHelper:GetUserAdNetwork()" newStackTraceSignature="$u:$EB()" />
       <method signature="void CommonHelper::@SetUserAdNetwork(string)" newName="$fB" oldStackTraceSignature="CommonHelper:SetUserAdNetwork(String)" newStackTraceSignature="$u:$fB(String)" />
       <method signature="void CommonHelper::@SetUserType(int, bool)" newName="$LU" oldStackTraceSignature="CommonHelper:SetUserType(Int32, Boolean)" newStackTraceSignature="$u:$LU(Int32, Boolean)" />
-      <method signature="bool CommonHelper::@IsForbiden()" newName="$hB" oldStackTraceSignature="CommonHelper:IsForbiden()" newStackTraceSignature="$u:$hB()" />
-      <method signature="void CommonHelper::@SetForbiden(bool)" newName="$HB" oldStackTraceSignature="CommonHelper:SetForbiden(Boolean)" newStackTraceSignature="$u:$HB(Boolean)" />
       <method signature="long CommonHelper::@GetNowTime()" newName="$iB" oldStackTraceSignature="CommonHelper:GetNowTime()" newStackTraceSignature="$u:$iB()" />
       <method signature="int CommonHelper::@RandomInt(System.Collections.Generic.IList`1&lt;int&gt;)" newName="$IB" oldStackTraceSignature="CommonHelper:RandomInt(IList`1)" newStackTraceSignature="$u:$IB(IList`1)" />
       <method signature="int CommonHelper::@RandomPickInList(System.Collections.Generic.IList`1&lt;int&gt;)" newName="$qB" oldStackTraceSignature="CommonHelper:RandomPickInList(IList`1)" newStackTraceSignature="$u:$qB(IList`1)" />
       <method signature="int CommonHelper::@RandomPickInList(int[])" newName="$QB" oldStackTraceSignature="CommonHelper:RandomPickInList(Int32[])" newStackTraceSignature="$u:$QB(Int32[])" />
       <method signature="string CommonHelper::@GetNowTimeString(long)" newName="$jB" oldStackTraceSignature="CommonHelper:GetNowTimeString(Int64)" newStackTraceSignature="$u:$jB(Int64)" />
+      <method signature="void CommonHelper::@ShowBannerAd()" newName="$hA" oldStackTraceSignature="CommonHelper:ShowBannerAd()" newStackTraceSignature="$u:$hA()" />
+      <method signature="void CommonHelper::@HideBannerAd()" newName="$HA" oldStackTraceSignature="CommonHelper:HideBannerAd()" newStackTraceSignature="$u:$HA()" />
       <method signature="void CommonHelper::@ShowVideoAd(string, System.Action`1&lt;bool&gt;, int, bool)" newName="$GA" oldStackTraceSignature="CommonHelper:ShowVideoAd(String, Action`1, Int32, Boolean)" newStackTraceSignature="$u:$GA(String, Action`1, Int32, Boolean)" />
       <method signature="void CommonHelper::@LogAdButtonShowEvent(string)" newName="$kB" oldStackTraceSignature="CommonHelper:LogAdButtonShowEvent(String)" newStackTraceSignature="$u:$kB(String)" />
       <method signature="void CommonHelper::@ResetInterstitialCancelAccum()" newName="$sm" oldStackTraceSignature="CommonHelper:ResetInterstitialCancelAccum()" newStackTraceSignature="$u:$sm()" />
@@ -5347,16 +5348,17 @@
     </type>
     <type fullName="CommonHelper/&lt;&gt;c" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]CommonHelper/&lt;&gt;c &lt;&gt;9" newName="$xc" />
-      <field signature="System.Predicate`1&lt;[Hotfix]ArrowLanguagesTable&gt; &lt;&gt;9__42_0" newName="$HB" />
-      <field signature="System.Predicate`1&lt;[Hotfix]ArrowLanguagesTable&gt; &lt;&gt;9__42_1" newName="$iB" />
-      <field signature="System.Predicate`1&lt;[Hotfix]ArrowLocalizationMoney&gt; &lt;&gt;9__42_2" newName="$IB" />
-      <method signature="bool CommonHelper/&lt;&gt;c::&lt;GetDollarString&gt;b__42_0([Hotfix]CommonHelper/&lt;&gt;c, [Hotfix]ArrowLanguagesTable)" newName="$hA" oldStackTraceSignature="&lt;&gt;c:&lt;GetDollarString&gt;b__42_0(ArrowLanguagesTable)" newStackTraceSignature="&lt;&gt;c:$hA(ArrowLanguagesTable)" />
-      <method signature="bool CommonHelper/&lt;&gt;c::&lt;GetDollarString&gt;b__42_1([Hotfix]CommonHelper/&lt;&gt;c, [Hotfix]ArrowLanguagesTable)" newName="$HA" oldStackTraceSignature="&lt;&gt;c:&lt;GetDollarString&gt;b__42_1(ArrowLanguagesTable)" newStackTraceSignature="&lt;&gt;c:$HA(ArrowLanguagesTable)" />
-      <method signature="bool CommonHelper/&lt;&gt;c::&lt;GetDollarString&gt;b__42_2([Hotfix]CommonHelper/&lt;&gt;c, [Hotfix]ArrowLocalizationMoney)" newName="$iA" oldStackTraceSignature="&lt;&gt;c:&lt;GetDollarString&gt;b__42_2(ArrowLocalizationMoney)" newStackTraceSignature="&lt;&gt;c:$iA(ArrowLocalizationMoney)" />
+      <field signature="System.Predicate`1&lt;[Hotfix]ArrowLanguagesTable&gt; &lt;&gt;9__41_0" newName="$HB" />
+      <field signature="System.Predicate`1&lt;[Hotfix]ArrowLanguagesTable&gt; &lt;&gt;9__41_1" newName="$iB" />
+      <field signature="System.Predicate`1&lt;[Hotfix]ArrowLocalizationMoney&gt; &lt;&gt;9__41_2" newName="$IB" />
+      <method signature="bool CommonHelper/&lt;&gt;c::&lt;GetDollarString&gt;b__41_0([Hotfix]CommonHelper/&lt;&gt;c, [Hotfix]ArrowLanguagesTable)" newName="$iA" oldStackTraceSignature="&lt;&gt;c:&lt;GetDollarString&gt;b__41_0(ArrowLanguagesTable)" newStackTraceSignature="&lt;&gt;c:$iA(ArrowLanguagesTable)" />
+      <method signature="bool CommonHelper/&lt;&gt;c::&lt;GetDollarString&gt;b__41_1([Hotfix]CommonHelper/&lt;&gt;c, [Hotfix]ArrowLanguagesTable)" newName="$nA" oldStackTraceSignature="&lt;&gt;c:&lt;GetDollarString&gt;b__41_1(ArrowLanguagesTable)" newStackTraceSignature="&lt;&gt;c:$nA(ArrowLanguagesTable)" />
+      <method signature="bool CommonHelper/&lt;&gt;c::&lt;GetDollarString&gt;b__41_2([Hotfix]CommonHelper/&lt;&gt;c, [Hotfix]ArrowLocalizationMoney)" newName="$NA" oldStackTraceSignature="&lt;&gt;c:&lt;GetDollarString&gt;b__41_2(ArrowLocalizationMoney)" newStackTraceSignature="&lt;&gt;c:$NA(ArrowLocalizationMoney)" />
     </type>
     <type fullName="CommonHelper/&lt;&gt;c__DisplayClass26_0" newFullName="$u/$U" status="Renamed">
-      <field signature="string url" newName="$zc" />
-      <method signature="void CommonHelper/&lt;&gt;c__DisplayClass26_0::&lt;OpenWebview&gt;b__0([Hotfix]CommonHelper/&lt;&gt;c__DisplayClass26_0, string)" newName="$QB" oldStackTraceSignature="&lt;&gt;c__DisplayClass26_0:&lt;OpenWebview&gt;b__0(String)" newStackTraceSignature="$U:$QB(String)" />
+      <field signature="bool showFailureToast" newName="$jB" />
+      <field signature="System.Action`1&lt;bool&gt; onCompleted" newName="$JB" />
+      <method signature="void CommonHelper/&lt;&gt;c__DisplayClass26_0::&lt;ShowVideoAd&gt;b__0([Hotfix]CommonHelper/&lt;&gt;c__DisplayClass26_0, bool)" newName="$hB" oldStackTraceSignature="&lt;&gt;c__DisplayClass26_0:&lt;ShowVideoAd&gt;b__0(Boolean)" newStackTraceSignature="$U:$hB(Boolean)" />
     </type>
     <type fullName="CommonHelper/&lt;&gt;c__DisplayClass27_0" newFullName="$u/$d" status="Renamed">
       <field signature="bool showFailureToast" newName="$jB" />
@@ -5370,6 +5372,10 @@
     <type fullName="CommonHelper/&lt;&gt;c__DisplayClass29_0" newFullName="$u/$rb" status="Renamed">
       <field signature="System.Action`1&lt;bool&gt; onCompleted" newName="$sh" />
       <method signature="void CommonHelper/&lt;&gt;c__DisplayClass29_0::&lt;ShowVideoAd&gt;b__0([Hotfix]CommonHelper/&lt;&gt;c__DisplayClass29_0, bool)" newName="$SU" oldStackTraceSignature="&lt;&gt;c__DisplayClass29_0:&lt;ShowVideoAd&gt;b__0(Boolean)" newStackTraceSignature="$rb:$SU(Boolean)" />
+    </type>
+    <type fullName="CommonHelper/&lt;&gt;c__DisplayClass38_0" newFullName="$u/$d" status="Renamed">
+      <field signature="string url" newName="$kB" />
+      <method signature="void CommonHelper/&lt;&gt;c__DisplayClass38_0::&lt;OpenWebview&gt;b__0([Hotfix]CommonHelper/&lt;&gt;c__DisplayClass38_0, string)" newName="$HB" oldStackTraceSignature="&lt;&gt;c__DisplayClass38_0:&lt;OpenWebview&gt;b__0(String)" newStackTraceSignature="$d:$HB(String)" />
     </type>
     <type fullName="CommonHelper/&lt;&gt;c__DisplayClass39_0" newFullName="$u/$G" status="Renamed">
       <field signature="string url" newName="$kB" />
@@ -7369,16 +7375,7 @@
       <method signature="void Gameplay.Objects.IContactNodeOwner::set_TouchingTable([Hotfix]Gameplay.Objects.IContactNodeOwner, [Hotfix]Gameplay.Objects.Table)" newName="$YDA" oldStackTraceSignature="Gameplay.Objects.IContactNodeOwner:set_TouchingTable(Table)" newStackTraceSignature="$H.$RC:$YDA(Table)" />
       <method signature="[UnityEngine.CoreModule]UnityEngine.Vector3 Gameplay.Objects.IContactNodeOwner::ApplyRocketHitBoomMultiplier([Hotfix]Gameplay.Objects.IContactNodeOwner, [UnityEngine.CoreModule]UnityEngine.Vector3)" newName="$zDA" oldStackTraceSignature="Gameplay.Objects.IContactNodeOwner:ApplyRocketHitBoomMultiplier(Vector3)" newStackTraceSignature="$H.$RC:$zDA(Vector3)" />
     </type>
-    <type fullName="Gameplay.Objects.ObjectCategory" newFullName="$H.$sC" status="Renamed">
-      <field signature="[Hotfix]Gameplay.Objects.ObjectCategory Can" newName="$HT" />
-      <field signature="[Hotfix]Gameplay.Objects.ObjectCategory JamJar" newName="$iT" />
-      <field signature="[Hotfix]Gameplay.Objects.ObjectCategory Stone" newName="$IT" />
-      <field signature="[Hotfix]Gameplay.Objects.ObjectCategory Wormhole" newName="$jT" />
-      <field signature="[Hotfix]Gameplay.Objects.ObjectCategory Box" newName="$JT" />
-      <field signature="[Hotfix]Gameplay.Objects.ObjectCategory Tnt" newName="$kT" />
-      <field signature="[Hotfix]Gameplay.Objects.ObjectCategory Ice" newName="$KT" />
-      <field signature="[Hotfix]Gameplay.Objects.ObjectCategory Disc" newName="$lT" />
-    </type>
+    <type fullName="Gameplay.Objects.ObjectCategory" newFullName="$H.$sC" status="Renamed" />
     <type fullName="Gameplay.Objects.ObjectCategoryMap" newFullName="$H.$SC" status="Renamed">
       <field signature="System.Collections.Generic.Dictionary`2&lt;[Hotfix]Gameplay.Objects.ObjectCategory,System.Collections.Generic.List`1&lt;[Hotfix]Gameplay.Objects.ObjectType&gt;&gt; Map" newName="$LT" />
       <method signature="[Hotfix]Gameplay.Objects.ObjectCategory Gameplay.Objects.ObjectCategoryMap::@GetCategory([Hotfix]Gameplay.Objects.ObjectType)" newName="$mU" oldStackTraceSignature="Gameplay.Objects.ObjectCategoryMap:GetCategory(ObjectType)" newStackTraceSignature="$H.$SC:$mU($vC)" />
@@ -8976,11 +8973,13 @@
       <field signature="System.Collections.Generic.List`1&lt;float&gt; s_AdValues" newName="$VD" />
       <field signature="System.Action Changed" newName="$wD" />
       <property signature="int Count" newName="$a" />
+      <property signature="float MakeupRatio" newName="$B" />
       <property signature="float TotalValue" newName="$A" />
       <event signature="System.Action Changed" newName="$b" />
       <method signature="void PcardGiftRewardSession::@add_Changed(System.Action)" newName="$LE" oldStackTraceSignature="PcardGiftRewardSession:add_Changed(Action)" newStackTraceSignature="$bA:$LE(Action)" />
       <method signature="void PcardGiftRewardSession::@remove_Changed(System.Action)" newName="$mE" oldStackTraceSignature="PcardGiftRewardSession:remove_Changed(Action)" newStackTraceSignature="$bA:$mE(Action)" />
       <method signature="int PcardGiftRewardSession::@get_Count()" newName="$ME" oldStackTraceSignature="PcardGiftRewardSession:get_Count()" newStackTraceSignature="$bA:$ME()" />
+      <method signature="float PcardGiftRewardSession::@get_MakeupRatio()" newName="$vgA" oldStackTraceSignature="PcardGiftRewardSession:get_MakeupRatio()" newStackTraceSignature="$bA:$vgA()" />
       <method signature="float PcardGiftRewardSession::@get_TotalValue()" newName="$nE" oldStackTraceSignature="PcardGiftRewardSession:get_TotalValue()" newStackTraceSignature="$bA:$nE()" />
       <method signature="void PcardGiftRewardSession::@Add(double)" newName="$NE" oldStackTraceSignature="PcardGiftRewardSession:Add(Double)" newStackTraceSignature="$bA:$NE(Double)" />
       <method signature="System.Collections.Generic.List`1&lt;float&gt; PcardGiftRewardSession::@GetSnapshot()" newName="$oE" oldStackTraceSignature="PcardGiftRewardSession:GetSnapshot()" newStackTraceSignature="$bA:$oE()" />
@@ -9576,12 +9575,7 @@
       <method signature="void Scene.SceneHandler/&lt;PlayInitialMusicWhenReady&gt;d__14::System.Collections.IEnumerator.Reset([Hotfix]Scene.SceneHandler/&lt;PlayInitialMusicWhenReady&gt;d__14)" newName="$RDA" oldStackTraceSignature="Scene.&lt;PlayInitialMusicWhenReady&gt;d__14:System.Collections.IEnumerator.Reset()" newStackTraceSignature="$c.$Sb:$RDA()" />
       <method signature="object Scene.SceneHandler/&lt;PlayInitialMusicWhenReady&gt;d__14::System.Collections.IEnumerator.get_Current([Hotfix]Scene.SceneHandler/&lt;PlayInitialMusicWhenReady&gt;d__14)" newName="$sDA" oldStackTraceSignature="Scene.&lt;PlayInitialMusicWhenReady&gt;d__14:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="$c.$Sb:$sDA()" />
     </type>
-    <type fullName="Scene.SceneType" newFullName="$c.$Ub" status="Renamed">
-      <field signature="[Hotfix]Scene.SceneType None" newName="$rM" />
-      <field signature="[Hotfix]Scene.SceneType Splash" newName="$RM" />
-      <field signature="[Hotfix]Scene.SceneType Menu" newName="$sM" />
-      <field signature="[Hotfix]Scene.SceneType Gameplay" newName="$SM" />
-    </type>
+    <type fullName="Scene.SceneType" newFullName="$c.$Ub" status="Renamed" />
     <type fullName="ScratchCardCoatEraser" newFullName="" status="NotRenamed">
       <field signature="int MaskTexId" newName="$AO" />
       <field signature="[UnityEngine.CoreModule]UnityEngine.Shader s_FallbackScratchShader" newName="$FN" />
@@ -10210,11 +10204,7 @@
       <field signature="string OperatingSystem" newName="$jh" />
       <field signature="string DeviceFingerprint" newName="$Jh" />
     </type>
-    <type fullName="Util.DevicePerformanceTier" newFullName="$b.$TA" status="Renamed">
-      <field signature="[Hotfix]Util.DevicePerformanceTier Low" newName="$kh" />
-      <field signature="[Hotfix]Util.DevicePerformanceTier Mid" newName="$Kh" />
-      <field signature="[Hotfix]Util.DevicePerformanceTier High" newName="$lh" />
-    </type>
+    <type fullName="Util.DevicePerformanceTier" newFullName="$b.$TA" status="Renamed" />
     <type fullName="Util.DownloadHelper" newFullName="$b.$uA" status="Renamed">
       <field signature="[System.Net.Http]System.Net.Http.HttpClient Client" newName="$Lh" />
       <field signature="System.TimeSpan DefaultTimeout" newName="$mh" />

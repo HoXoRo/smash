@@ -73,7 +73,7 @@ Mesh:
     e31: 0
     e32: 0
     e33: 1
-  m_BoneNameHashes: f080eb)f382d6f0c15b59d37
+  m_BoneNameHashes: f080eb9f382d6f0c15b59d37
   m_RootBoneNameHash: 2683011312
   m_BonesAABB:
   - m_Min: {x: -0.00014214686, y: 0.00020276278, z: -0.00013404203}
