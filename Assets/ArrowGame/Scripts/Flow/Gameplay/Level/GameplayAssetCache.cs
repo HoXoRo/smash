@@ -7,6 +7,7 @@ using Gameplay.Objects;
 using Gameplay.Particles;
 using Level;
 using UnityEngine;
+using UnityGameFramework.Runtime;
 using Object = UnityEngine.Object;
 
 namespace Gameplay.Level
@@ -98,10 +99,14 @@ namespace Gameplay.Level
 
         private static async UniTask LoadEntry<T>(Entry entry) where T : Object
         {
+            double started = Time.realtimeSinceStartupAsDouble;
+            bool success = false;
+            Log.Info($"[GameplayLoad] Asset begin: {entry.Path}");
             try
             {
                 entry.Asset = await GF.Resource.LoadAssetAwait<T>(entry.Path);
                 if (entry.Asset == null) throw new InvalidOperationException("Missing gameplay asset: " + entry.Path);
+                success = true;
                 // CompletionSource supports simultaneous waiters, including a cancelled
                 // preloader whose underlying Unity request is still running.
                 entry.Completion.TrySetResult(entry.Asset);
@@ -112,6 +117,7 @@ namespace Gameplay.Level
             }
             finally
             {
+                Log.Info($"[GameplayLoad] Asset end: {(Time.realtimeSinceStartupAsDouble - started) * 1000:F0}ms, success={success}, path={entry.Path}");
                 entry.Finished = true;
                 ReleaseUnused(entry);
             }
@@ -179,7 +185,7 @@ namespace Gameplay.Level
                 prepared = null;
             }
             catch (OperationCanceledException) { }
-            catch (Exception exception) { Debug.LogWarning("[GameplayAssets] Next-level preload skipped: " + exception.Message); }
+            catch (Exception exception) { Log.Warning("[GameplayAssets] Next-level preload skipped: " + exception.Message); }
             finally
             {
                 prepared?.Dispose();
@@ -209,27 +215,44 @@ namespace Gameplay.Level
                     foreach (LevelObjectData item in stage.objects)
                         if (item != null) wantedObjects.Add((item.type, item.size));
                 }
+                var loads = new List<Func<UniTask>>();
                 foreach (var key in wantedObjects)
                 {
                     ObjectDataItem item = catalog.items.FirstOrDefault(x => x.type == key.Item1 && x.size == key.Item2);
                     if (item == null) throw new InvalidOperationException($"No prefab indexed for object ID {(int)key.Item1}, size {key.Item2}.");
-                    GameObject prefab = await lease.Load<GameObject>(item.prefabPath, token, false, background);
-                    lease.Objects.items.Add(new ObjectDataItem { type = item.type, size = item.size, prefabPath = item.prefabPath, prefab = prefab });
+                    loads.Add(async () =>
+                    {
+                        GameObject prefab = await lease.Load<GameObject>(item.prefabPath, token, false, background);
+                        lease.Objects.items.Add(new ObjectDataItem { type = item.type, size = item.size, prefabPath = item.prefabPath, prefab = prefab });
+                    });
                     CollectEffects(item.type, Mathf.RoundToInt(item.size.GetVolume()), wantedEffects);
                 }
                 if (level.stages.Any(s => s?.tables != null && s.tables.Count > 0))
-                    lease.Objects.tablePrefab = await lease.Load<GameObject>(catalog.tablePrefabPath, token, true, background);
+                    loads.Add(async () =>
+                    {
+                        lease.Objects.tablePrefab = await lease.Load<GameObject>(catalog.tablePrefabPath, token, true, background);
+                    });
                 if (level.stages.Any(s => s?.blockers != null && s.blockers.Count > 0))
-                    lease.Objects.blockerPrefab = await lease.Load<GameObject>(catalog.blockerPrefabPath, token, true, background);
+                    loads.Add(async () =>
+                    {
+                        lease.Objects.blockerPrefab = await lease.Load<GameObject>(catalog.blockerPrefabPath, token, true, background);
+                    });
                 foreach (ParticleType type in wantedEffects)
                 {
                     ParticleDataItem item = effects.items.FirstOrDefault(x => x.type == type);
                     if (item == null) throw new InvalidOperationException("No particle indexed for particle ID " + (int)type);
                     bool common = type == ParticleType.BallGroundHit || type == ParticleType.ObjectGroundHit || type == ParticleType.BallObjectFirstHit || type == ParticleType.RocketExplode;
-                    GameObject prefab = await lease.Load<GameObject>(item.prefabPath, token, common, background);
-                    lease.Particles.items.Add(new ParticleDataItem { type = type, prefabPath = item.prefabPath, prefab = prefab });
+                    loads.Add(async () =>
+                    {
+                        GameObject prefab = await lease.Load<GameObject>(item.prefabPath, token, common, background);
+                        lease.Particles.items.Add(new ParticleDataItem { type = type, prefabPath = item.prefabPath, prefab = prefab });
+                    });
                 }
-                Debug.Log($"[GameplayAssets] {(background ? "Preloaded" : "Prepared")} {wantedObjects.Count} object variants, {wantedEffects.Count} effects; cached assets: {cache.Count}.");
+                // Foreground fills the scene's three UGF load agents. Background
+                // keeps its original one-at-a-time idle checks and frame yielding.
+                await RunLoadsAsync(loads, background ? 1 : 3, token);
+                Log.Info($"[GameplayAssets] Load queue complete: requests={loads.Count}, concurrency={(background ? 1 : 3)}.");
+                Log.Info($"[GameplayAssets] {(background ? "Preloaded" : "Prepared")} {wantedObjects.Count} object variants, {wantedEffects.Count} effects; cached assets: {cache.Count}.");
                 return lease;
             }
             catch
@@ -237,6 +260,37 @@ namespace Gameplay.Level
                 lease.Dispose();
                 throw;
             }
+        }
+
+        private static async UniTask RunLoadsAsync(List<Func<UniTask>> loads, int concurrency, CancellationToken token)
+        {
+            // Workers resume on Unity's main thread; do not use Task.Run here.
+            int nextLoad = 0;
+            Exception failure = null;
+            async UniTask Worker()
+            {
+                try
+                {
+                    while (failure == null && nextLoad < loads.Count)
+                    {
+                        token.ThrowIfCancellationRequested();
+                        Func<UniTask> load = loads[nextLoad++];
+                        await load();
+                    }
+                }
+                catch (Exception exception)
+                {
+                    if (failure == null) failure = exception;
+                }
+            }
+
+            var workers = new UniTask[Math.Min(concurrency, loads.Count)];
+            for (int i = 0; i < workers.Length; i++) workers[i] = Worker();
+            // Drain all workers before PrepareCore can dispose the lease. WhenAll
+            // alone fails early and could leave another worker writing into it.
+            await UniTask.WhenAll(workers);
+            if (failure != null) System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(failure).Throw();
+            token.ThrowIfCancellationRequested();
         }
 
         internal static void CollectEffects(ObjectType type, int volume, HashSet<ParticleType> effects)

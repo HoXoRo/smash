@@ -580,7 +580,7 @@ namespace Gameplay
 		private async void Start()
 		{
 			// The loading form owns normal entry; retain direct scene play in the editor.
-			if (PlayLoadingUIForm.IsLoading || _initializationStarted) return;
+			if (PlayLoadingUIForm.IsLoading || PlayLoadingUIForm.IsPreparingStartup || _initializationStarted) return;
 			try
 			{
 				await PrepareGameplayAsync(this.GetCancellationTokenOnDestroy());
@@ -600,21 +600,26 @@ namespace Gameplay
 			InitializeEliminateRewards();
 			_levelIndex = GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId;
 			double loadStart = Time.realtimeSinceStartupAsDouble;
+			Log.Info($"[GameplayLoad] Level {_levelIndex}: begin JSON");
 			await LoadLevelAsync(_levelIndex, cancellationToken);
 			double jsonReady = Time.realtimeSinceStartupAsDouble;
+			Log.Info($"[GameplayLoad] JSON ready: {(jsonReady - loadStart) * 1000:F0}ms; begin assets");
 			cancellationToken.ThrowIfCancellationRequested();
 			_gameplayAssets = await GameplayAssetCache.PrepareAsync(_levelData, cancellationToken);
 			LoadedObjectData = _gameplayAssets.Objects;
 			_particleData = _gameplayAssets.Particles;
 			LoadedPhysicsMaterial = _gameplayAssets.Physics;
 			double assetsReady = Time.realtimeSinceStartupAsDouble;
+			Log.Info($"[GameplayLoad] Assets ready: {(assetsReady - jsonReady) * 1000:F0}ms; begin instantiate");
 			_currentStage = LoadStage(_currentStageIndex);
-			UnityEngine.Debug.Log($"[GameplayLoad] Level {_levelIndex}: JSON={(jsonReady - loadStart) * 1000:F0}ms, assets={(assetsReady - jsonReady) * 1000:F0}ms, instantiate={(Time.realtimeSinceStartupAsDouble - assetsReady) * 1000:F0}ms");
+			double instantiated = Time.realtimeSinceStartupAsDouble;
+			Log.Info($"[GameplayLoad] Level {_levelIndex}: JSON={(jsonReady - loadStart) * 1000:F0}ms, assets={(assetsReady - jsonReady) * 1000:F0}ms, instantiate={(Time.realtimeSinceStartupAsDouble - assetsReady) * 1000:F0}ms");
 			UpdateRemainingMoves();
 			cannon?.InitializeBallPool(5);
 			cannon?.PrewarmBalls();
 			ServiceLocator.Get<ParticleController>()?.Initialize(_particleData);
 			AfterStageSetup();
+			Log.Info($"[GameplayLoad] Level {_levelIndex} ready: instantiate={(instantiated - assetsReady) * 1000:F0}ms, poolsAndStageSetup={(Time.realtimeSinceStartupAsDouble - instantiated) * 1000:F0}ms, total={(Time.realtimeSinceStartupAsDouble - loadStart) * 1000:F0}ms");
 		}
 
 		public void ExposeGameplay()

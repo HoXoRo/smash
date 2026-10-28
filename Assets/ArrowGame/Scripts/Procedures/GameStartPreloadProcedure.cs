@@ -1,5 +1,6 @@
-﻿
+
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 using GameFramework.Event;
 using GameFramework.Procedure;
 using UnityGameFramework.Runtime;
@@ -21,6 +22,8 @@ public class GameStartPreloadProcedure : ProcedureBase
     private float m_RemoteSyncFraction;
     private bool m_HasInitGameFrameworkSettings;
     private bool m_HasAppliedSpecStatus;
+    private bool m_StartupPreparationStarted;
+    private bool m_StartupPreparationFinished;
     protected override void OnEnter(IFsm<IProcedureManager> procedureOwner)
     {
         base.OnEnter(procedureOwner);
@@ -69,8 +72,20 @@ public class GameStartPreloadProcedure : ProcedureBase
         //     }
         //     return;
         // }
+        // Prepare the saved current level while the startup screen is still
+        // visible, overlapping progress smoothing and attribution waiting.
+        if (loadedProgress >= totalProgress && !m_StartupPreparationStarted)
+        {
+            m_StartupPreparationStarted = true;
+            if (!m_HasInitGameFrameworkSettings)
+            {
+                m_HasInitGameFrameworkSettings = true;
+                InitGameFrameworkSettings();
+            }
+            PrepareStartupGameplayAsync().Forget();
+        }
         //预加载完成 切换场景
-        if (loadedProgress >= totalProgress && smoothProgress >= 0.99f)
+        if (loadedProgress >= totalProgress && smoothProgress >= 0.99f && m_StartupPreparationFinished)
         {
             if (!m_HasInitGameFrameworkSettings)
             {
@@ -95,6 +110,13 @@ public class GameStartPreloadProcedure : ProcedureBase
             }
         }
     }
+    private async UniTask PrepareStartupGameplayAsync()
+    {
+        try { await PlayLoadingUIForm.PrepareStartupGameplayAsync(); }
+        catch (Exception exception) { UnityEngine.Debug.LogException(exception); }
+        finally { m_StartupPreparationFinished = true; }
+    }
+
     private void InitAppSettings()
     {
         //if (string.IsNullOrWhiteSpace(GF.Setting.GetABTestGroup()))
@@ -172,6 +194,8 @@ public class GameStartPreloadProcedure : ProcedureBase
         preloadAllCompleted = false;
         m_HasInitGameFrameworkSettings = false;
         m_HasAppliedSpecStatus = false;
+        m_StartupPreparationStarted = false;
+        m_StartupPreparationFinished = false;
         smoothProgress = 0;
         totalProgress = 0;
         loadedProgress = 0;
