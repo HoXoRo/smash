@@ -18,6 +18,7 @@ public partial class PcardGiftUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(PcardGiftUIForm));
         m_IsClaiming = false;
         PcardGiftRewardSession.Changed += RefreshCount;
         RefreshCount();

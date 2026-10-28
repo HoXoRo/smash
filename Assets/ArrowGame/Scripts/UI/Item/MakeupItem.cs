@@ -79,6 +79,8 @@ public partial class MakeupItem : UIItemBase
             GF.UI.ShowToast(GF.Localization.GetString("cashoutHint", m_Task.Level, m_RewardText));
             return;
         }
+        
+        CommonHelper.LogEvent(AdjustEventCodeEvent.cashout);
 
         if (GF.UI.HasUIForm(UIViews.MakeupInfoUIForm) || GF.UI.IsLoadingUIForm(UIViews.MakeupInfoUIForm)
             || GF.UI.HasUIForm(UIViews.MakeupPaymentUIForm) || GF.UI.IsLoadingUIForm(UIViews.MakeupPaymentUIForm))

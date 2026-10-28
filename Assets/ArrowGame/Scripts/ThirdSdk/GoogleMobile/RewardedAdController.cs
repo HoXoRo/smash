@@ -98,21 +98,22 @@ public class RewardedAdController
     /// <summary>
     /// Shows the ad.
     /// </summary>
-    public bool ShowAd(Action<bool> _callBcak)
+    public bool ShowAd(Action<bool> _callBcak, string placement = "", bool allowFallback = false)
     {
         callBcak = _callBcak;
         if (_rewardedAd != null && _rewardedAd.CanShowAd())
         {
             Log.Info("admob Showing rewarded ad.");
+            CommonHelper.LogRewardAdPlacement(placement);
+            CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display);
             _rewardedAd.Show((Reward reward) =>
             {
                 Log.Info(String.Format("Rewarded ad granted a reward: {0} {1}",
                                         reward.Amount,
                                         reward.Type));
-                _callBcak?.Invoke(true);
-                _callBcak = null;
-                
-                CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_succeeded);
+                Action<bool> completed = callBcak;
+                callBcak = null;
+                completed?.Invoke(true);
             });
             
             return true;
@@ -120,10 +121,13 @@ public class RewardedAdController
         else
         {
             Log.Error("Rewarded ad is not ready yet.");
-            _callBcak?.Invoke(false);
-            _callBcak = null;
-            
-            CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_failed);
+            callBcak = null;
+            // The manager can still show MAX; do not finish the request or count a failure yet.
+            if (!allowFallback)
+            {
+                CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_failed);
+                _callBcak?.Invoke(false);
+            }
             return false;
         }
 
@@ -186,12 +190,15 @@ public class RewardedAdController
         ad.OnAdFullScreenContentOpened += () =>
         {
             Log.Info("Rewarded ad full screen content opened.");
-            CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display);
+            CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_succeeded);
         };
         // Raised when the ad closed full screen content.
         ad.OnAdFullScreenContentClosed += () =>
         {
             Log.Info("Rewarded ad full screen content closed.");
+            Action<bool> pending = callBcak;
+            callBcak = null;
+            pending?.Invoke(false);
             LoadAd();
         };
         // Raised when the ad failed to open full screen content.
@@ -200,6 +207,9 @@ public class RewardedAdController
             Log.Error("Rewarded ad failed to open full screen content with error : "
                 + error);
             CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_failed);
+            Action<bool> pending = callBcak;
+            callBcak = null;
+            pending?.Invoke(false);
         };
     }
 }

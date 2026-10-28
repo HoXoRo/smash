@@ -32,6 +32,7 @@ public partial class CoinRewardUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(CoinRewardUIForm));
         m_RequestVersion++;
         m_IsClaiming = false;
         int taskId = Params.Get<VarInt32>(P_TaskId)?.Value ?? 0;
@@ -66,7 +67,7 @@ public partial class CoinRewardUIForm : UIFormBase
         varBtnClaim.interactable = false;
         varBtnAd.interactable = false;
         int requestVersion = m_RequestVersion;
-        CommonHelper.ShowVideoAd("task_coin_double", success =>
+        CommonHelper.ShowVideoAd("task2", success =>
         {
             if (this == null || requestVersion != m_RequestVersion) return;
             if (success)

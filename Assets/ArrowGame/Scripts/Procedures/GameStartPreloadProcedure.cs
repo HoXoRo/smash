@@ -39,7 +39,7 @@ public class GameStartPreloadProcedure : ProcedureBase
         InitAppSettings();
         PreloadAndInitData();
         
-        CommonHelper.LogEvent(AdjustEventCodeEvent.loading_enter);
+        CommonHelper.LogEvent(AdjustEventCodeEvent.install);
     }
 
 
@@ -106,7 +106,7 @@ public class GameStartPreloadProcedure : ProcedureBase
                 // procedureOwner.SetData<VarString>(ChangeSceneProcedure.P_SceneName, "Game");
                 // ChangeState<ChangeSceneProcedure>(procedureOwner);
                 ChangeState<GameStartMainProcedure>(procedureOwner);
-                CommonHelper.LogEvent(AdjustEventCodeEvent.loading_succeeded);
+
             }
         }
     }

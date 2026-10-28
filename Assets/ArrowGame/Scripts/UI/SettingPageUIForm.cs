@@ -24,6 +24,7 @@ public partial class SettingPageUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(SettingPageUIForm));
         ArrowUITopbar.SetPageHidden(this, true, blockCoinRewards: true);
         fromGameplay = Params.Get<VarBoolean>(P_FromGameplay)?.Value ?? false;
         varBtnQuit.gameObject.SetActive(fromGameplay);

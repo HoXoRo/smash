@@ -547,6 +547,7 @@ namespace Gameplay
 		private bool _gameplayPointerStarted;
 
 		private int _levelIndex;
+		private bool _levelResultReported;
 
 		private int _endBlockerCount;
 
@@ -971,6 +972,7 @@ namespace Gameplay
 		public async UniTask LoadLevelAsync(int levelIndex, System.Threading.CancellationToken cancellationToken = default)
 		{
 			_levelIndex = levelIndex;
+			_levelResultReported = false;
 			_levelData = await LevelLoader.GetLevelAsync(levelIndex).AttachExternalCancellation(cancellationToken);
 			cancellationToken.ThrowIfCancellationRequested();
 			if (_levelData?.stages == null || _levelData.stages.Count == 0 || _levelData.stages[0] == null)
@@ -1509,8 +1511,23 @@ namespace Gameplay
 			WinLevel();
 		}
 
+        // A refill continues the same attempt; report failure only when it is abandoned.
+        private void LogLevelResult(bool success)
+        {
+            if (_levelResultReported) return;
+            _levelResultReported = true;
+            CommonHelper.LogEvent(AdjustEventCodeEvent.level, new Dictionary<string, string>
+            {
+                { "level_id", _levelIndex.ToString(System.Globalization.CultureInfo.InvariantCulture) },
+                { "status", success ? "1" : "0" },
+                { "pcard", GF.DataModel.GetOrCreate<PlayerDataModel>().Pcard.ToString(System.Globalization.CultureInfo.InvariantCulture) },
+                { "prop", _prelevelRocketSelected ? "1" : "0" }
+            });
+        }
+
 		private void WinLevel()
 		{
+			LogLevelResult(true);
 			_gameplayLocked = true;
 			CancelPendingWinPopup();
 			_analyticsHelper?.LevelWin(_remainingMoves, _currentStageIndex);
@@ -1632,6 +1649,7 @@ namespace Gameplay
 		public void OnEgoRejected()
 		{
 			ProcessEliminateRewards(true);
+			LogLevelResult(false);
 			StreakHelper.OnLevelLostOrAbandoned();
 			_analyticsHelper?.LevelFail(GetRemainingObjectCount(), GetRemainingObjectMass(), _remainingMoves, FailReason.OutOfMoves, _currentStageIndex);
 			_gameplayLocked = true;
@@ -1675,6 +1693,7 @@ namespace Gameplay
 		public void OnGameQuit()
 		{
 			ProcessEliminateRewards(true);
+			LogLevelResult(false);
 			StreakHelper.OnLevelLostOrAbandoned();
 			_analyticsHelper?.LevelFail(GetRemainingObjectCount(), GetRemainingObjectMass(), _remainingMoves, FailReason.Quit, _currentStageIndex);
 			_gameplayLocked = true;

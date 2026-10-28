@@ -52,7 +52,7 @@ public partial class ArrowRewardDialogUIForm : UIFormBase
         {
             m_RewardParams = Params.RewardParams;
             // CommonHelper.LogEvent(AdjustEventCodeEvent.reward_enter);
-            CommonHelper.LogEvent(AdjustEventCodeEvent.popu_enter, new Dictionary<string, string>() {{"popu", "normalRewardUI"}});
+
 
             // FirebaseMseeageManage.Instance.LogEvent(m_RewardParams.rewardSource);
 

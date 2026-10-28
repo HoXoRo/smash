@@ -29,6 +29,7 @@ public partial class AddBallsUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(AddBallsUIForm));
         GF.UI.CloseUIForms(UIViews.QuitConfirmUIForm);
         GF.UI.CloseUIForms(UIViews.SettingPageUIForm);
         isBusy = false;
@@ -74,7 +75,7 @@ public partial class AddBallsUIForm : UIFormBase
         isBusy = true;
         RefreshButtons();
         bool completed = false;
-        CommonHelper.ShowVideoAd("balls_refill", success =>
+        CommonHelper.ShowVideoAd("addBalls", success =>
         {
             if (completed) return;
             completed = true;

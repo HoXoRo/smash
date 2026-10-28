@@ -565,38 +565,14 @@ public partial class ArrowGuideUIForm : UIFormBase
         var playerData = GF.DataModel.GetDataModel<PlayerDataModel>();
         if (playerData == null) return;
         
-        if (guideId == 2)
-        {
-            CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_1);
-        }
-        else if (guideId == 3)
-        {
-            CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_2);
-        }
-        else if (guideId == 5)
-        {
-            CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_3);
-        }
-        else if (guideId == 6)
-        {
-            CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_4);
-        }
-        else if (guideId == 7)
-        {
-            CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_5);
-        }
-        else if (guideId == 1)
-        {
-            CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_6);
-        }
-        else if (guideId == 4)
-        {
-            CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_7);
-        }
-
-
-        // 检查是否已经存在
         if (IsGuideCompleted(guideId)) return;
+        switch (guideId)
+        {
+            case 1: CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_1); break;
+            case 2: CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_2); break;
+            case 3: CommonHelper.LogEvent(AdjustEventCodeEvent.guide_step_3); break;
+        }
+
         playerData.CompleteGuideIds.Add(guideId);
         playerData.Save();
     }

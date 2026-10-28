@@ -9,7 +9,7 @@ public class AdjustManager
     private bool isAttributionCallBack = false;
     private bool m_HasRequestedAttribution = false;
 
-    private const string appToken = "akcoyxhe9g5c";
+    private const string appToken = "b13or6gqtukg";
 
     public static AdjustManager Instance
     {
@@ -95,7 +95,6 @@ public class AdjustManager
             CommonHelper.SetUserType(0, false);
             CommonHelper.LogEvent(AdjustEventCodeEvent.a_enter);
             MarkAttributionComplete();
-            CommonHelper.LogEvent(AdjustEventCodeEvent.attribution_timeout);
             GF.Timer.RemoveTimer("GetAttributionTimeOut");
         });
         Adjust.GetAttribution(attribution =>
@@ -113,14 +112,12 @@ public class AdjustManager
                 CommonHelper.UserType = 1;
                 CommonHelper.SetUserType(1, true);
                 CommonHelper.LogEvent(AdjustEventCodeEvent.b_enter);
-                CommonHelper.LogEvent(AdjustEventCodeEvent.b_enter_attribution);
             }
             else
             {
                 CommonHelper.UserType = 0;
                 CommonHelper.SetUserType(0, true);
                 CommonHelper.LogEvent(AdjustEventCodeEvent.a_enter);
-                CommonHelper.LogEvent(AdjustEventCodeEvent.a_enter_attribution);
             }
             MarkAttributionComplete();
             GF.Timer.RemoveTimer("GetAttributionTimeOut");
@@ -130,6 +127,7 @@ public class AdjustManager
 
     private void MarkAttributionComplete()
     {
+        CommonHelper.LogEvent(CommonHelper.UserType == 1 ? AdjustEventCodeEvent.b_enter : AdjustEventCodeEvent.a_enter);
         isAttributionCallBack = true;
 #if !UNITY_EDITOR
         Log.Info($"判断是否开启h5");

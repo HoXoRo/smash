@@ -27,6 +27,7 @@ public partial class PrelevelUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(PrelevelUIForm));
         playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
         useRocket = false;
         isStarting = false;

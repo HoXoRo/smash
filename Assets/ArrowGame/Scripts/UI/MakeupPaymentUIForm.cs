@@ -26,6 +26,7 @@ public partial class MakeupPaymentUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(MakeupPaymentUIForm));
         request?.Cancel();
         request = null;
         SetRequesting(false);

@@ -21,6 +21,7 @@ public partial class AddLifeUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(AddLifeUIForm));
         playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
         lifeCoin = GF.Config.GetInt("lifeCoin");
         varTxtCoin.text = lifeCoin.ToString();
@@ -64,7 +65,7 @@ public partial class AddLifeUIForm : UIFormBase
         adPending = true;
         PlayerDataModel rewardData = playerData;
         bool completed = false;
-        CommonHelper.ShowVideoAd("life_refill",success =>
+        CommonHelper.ShowVideoAd("addLife",success =>
         {
             if (completed) return;
             completed = true;

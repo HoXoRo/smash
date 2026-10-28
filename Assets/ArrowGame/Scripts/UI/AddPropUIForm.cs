@@ -25,6 +25,7 @@ public partial class AddPropUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(AddPropUIForm));
         playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
         propCoin = GF.Config.GetInt("propCoin");
         varTxtCoin.text = propCoin.ToString();
@@ -62,7 +63,7 @@ public partial class AddPropUIForm : UIFormBase
         int requestVersion = openVersion;
         bool completed = false;
         PlayerDataModel rewardData = playerData;
-        CommonHelper.ShowVideoAd("rocket_refill", success =>
+        CommonHelper.ShowVideoAd("addProp", success =>
         {
             if (completed) return;
             completed = true;

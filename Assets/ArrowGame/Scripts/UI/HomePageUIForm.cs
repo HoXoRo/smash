@@ -18,6 +18,7 @@ public partial class HomePageUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogStartupLoadingComplete();
         int currentLevel = GetCurrentLevel();
         varLevelTxt.text = GF.Localization.GetString("level", currentLevel);
     }

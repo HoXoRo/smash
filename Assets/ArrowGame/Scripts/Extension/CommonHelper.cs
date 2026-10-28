@@ -125,6 +125,36 @@ public static class CommonHelper
         return false;
     }
     
+    private static bool s_StartupLoadingReported;
+
+    public static void LogStartupLoadingComplete()
+    {
+        if (s_StartupLoadingReported) return;
+        s_StartupLoadingReported = true;
+        // Includes builtin loading and hotfix loading before CommonHelper is initialized.
+        LogEvent(AdjustEventCodeEvent.loading, new Dictionary<string, string>
+        {
+            { "time", Time.realtimeSinceStartup.ToString("F3", System.Globalization.CultureInfo.InvariantCulture) }
+        });
+    }
+
+    public static void LogPopup(string view)
+    {
+        LogEvent(AdjustEventCodeEvent.popu_enter, new Dictionary<string, string> { { "view", view } });
+    }
+
+    public static void LogRewardAdPlacement(string placement)
+    {
+        switch (placement)
+        {
+            case "addBalls": case "addLife": case "addProp":
+            case "winCoins": case "task1": case "task2":
+                LogEvent(AdjustEventCodeEvent.ad_reward,
+                    new Dictionary<string, string> { { "placement", placement } });
+                break;
+        }
+    }
+
     // 事件上报
     public static void LogEvent(string eventName, Dictionary<string, string> eventValues = null)
     {

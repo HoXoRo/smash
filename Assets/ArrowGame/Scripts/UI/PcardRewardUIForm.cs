@@ -23,6 +23,7 @@ public partial class PcardRewardUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(PcardRewardUIForm));
         m_IsClaiming = false;
         m_ClaimCompleted = false;
         m_AnimateClaim = false;

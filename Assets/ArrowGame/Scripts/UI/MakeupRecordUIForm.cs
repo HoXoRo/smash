@@ -20,6 +20,7 @@ public partial class MakeupRecordUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(MakeupRecordUIForm));
         request?.Cancel();
         if (varList != null) varList.gameObject.SetActive(false);
         request = SimulatedRequestHelper.Send(

@@ -30,6 +30,7 @@ public partial class MakeupInfoUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(MakeupInfoUIForm));
         HideHint();
         SelectAvatar(GF.DataModel.GetOrCreate<PlayerDataModel>().MakeupAvatarIndex);
     }
@@ -66,6 +67,7 @@ public partial class MakeupInfoUIForm : UIFormBase
         playerDm.MakeupAccount = account;
         playerDm.MakeupAvatarIndex = selectedAvatarIndex;
         playerDm.Save();
+        CommonHelper.LogEvent(AdjustEventCodeEvent.makeupinfo_confirm);
         RefreshMakeupAccountDisplay();
         HideHint();
         GF.UI.Close(this.UIForm);

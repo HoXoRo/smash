@@ -33,7 +33,7 @@ public class AdsManager
     }
     public void ShowAd(Action<bool> reward, string adId = "")
     {
-        if (!_rewardedAdController.ShowAd(reward))
+        if (!_rewardedAdController.ShowAd(reward, adId, allowFallback: true))
         {
             _maxAdsController.ShowRewardedAd(reward, adId);
         }
@@ -84,7 +84,7 @@ public class AdsManager
 
     public void ShowAdmobAd(Action<bool> reward, string adId = "")
     {
-        _rewardedAdController.ShowAd(reward);
+        _rewardedAdController.ShowAd(reward, adId);
     }
     
     public void ShowAdmobInter(string adId = "")

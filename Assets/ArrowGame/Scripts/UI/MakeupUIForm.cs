@@ -30,6 +30,7 @@ public partial class MakeupUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(MakeupUIForm));
         CommonHelper.HideBannerAd();
         displayPlayer = GF.DataModel.GetOrCreate<PlayerDataModel>();
         displayPlayer.PcardDisplayChanged += OnPcardDisplayChanged;

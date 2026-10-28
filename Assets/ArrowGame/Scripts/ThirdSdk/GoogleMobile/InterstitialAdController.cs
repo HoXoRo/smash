@@ -101,7 +101,7 @@ public class InterstitialAdController
         if (_interstitialAd != null && _interstitialAd.CanShowAd())
         {
             Log.Info("admob Showing interstitial ad.");
-            CommonHelper.LogEvent(AdjustEventCodeEvent.interstitial_ad_times);
+            CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display);
             _interstitialAd.Show();
             return true;
         }
@@ -169,6 +169,8 @@ public class InterstitialAdController
         ad.OnAdFullScreenContentOpened += () =>
         {
             Log.Info("Interstitial ad full screen content opened.");
+            CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_succeeded);
+            CommonHelper.LogEvent(AdjustEventCodeEvent.interstitial_ad_times);
         };
         // Raised when the ad closed full screen content.
         ad.OnAdFullScreenContentClosed += () =>
@@ -179,6 +181,7 @@ public class InterstitialAdController
         // Raised when the ad failed to open full screen content.
         ad.OnAdFullScreenContentFailed += (AdError error) =>
         {
+            CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_failed);
             Log.Error("Interstitial ad failed to open full screen content with error : "
                 + error);
         };

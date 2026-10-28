@@ -31,6 +31,7 @@ public partial class TaskPageUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(TaskPageUIForm));
         ArrowUITopbar.SetPageHidden(this, true);
         varBtnClose.gameObject.SetActive(!Params.Get<VarBoolean>(P_FromHallTab, false));
         GF.Event.Subscribe(PlayerDataChangedEventArgs.EventId, OnPlayerDataChanged);
@@ -126,7 +127,7 @@ public partial class TaskPageUIForm : UIFormBase
 
         s_AdRequestInProgress = true;
         int taskId = task.Id;
-        CommonHelper.ShowVideoAd("task_coin", success =>
+        CommonHelper.ShowVideoAd("task1", success =>
         {
             s_AdRequestInProgress = false;
             if (!success)

@@ -32,6 +32,7 @@ public partial class QuitConfirmUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(QuitConfirmUIForm));
         m_IsQuitting = false;
     }
 

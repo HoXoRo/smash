@@ -108,6 +108,7 @@ public class ArrowMaxAdsController
         if (MaxSdk.IsInterstitialReady(InterstitialAdUnitId))
         {
             Log.Info("max Interstitial Showing...");
+            CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display);
             MaxSdk.ShowInterstitial(InterstitialAdUnitId);
         }
         else
@@ -158,7 +159,8 @@ public class ArrowMaxAdsController
         //     {"placement_id", adInfo.Placement}
         // });
         
-        CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display);
+        CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_succeeded);
+        CommonHelper.LogEvent(AdjustEventCodeEvent.interstitial_ad_times);
 
     }
 
@@ -196,7 +198,7 @@ public class ArrowMaxAdsController
         Log.Info("Interstitial dismissed");
         LoadInterstitial();
         
-        CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_succeeded);
+
 
     }
 
@@ -206,7 +208,7 @@ public class ArrowMaxAdsController
         Log.Info("Interstitial revenue paid");
         
         PcardGiftRewardSession.Add(adInfo.Revenue);
-        CommonHelper.LogEvent(AdjustEventCodeEvent.interstitial_ad_times);
+
 
         
         // Ad revenue
@@ -270,6 +272,8 @@ public class ArrowMaxAdsController
         Log.Info("请求播放max激励视频广告");
         if (MaxSdk.IsRewardedAdReady(RewardedAdUnitId))
         {
+            CommonHelper.LogRewardAdPlacement(adsource);
+            CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display);
             if (MaxSdk.IsInterstitialReady(InterstitialAdUnitId) && rewardedAdInfo != -1 && interstitialAdInfo != -1 && interstitialAdInfo > rewardedAdInfo)
             {
                 Log.Info($"插屏比激励视频收益高，优先展示插屏，插屏收益：{interstitialAdInfo}，激励视频收益：{rewardedAdInfo}");
@@ -282,6 +286,7 @@ public class ArrowMaxAdsController
         else
         {
             Log.Info("Rewarded Ad not ready");
+            CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_failed);
             rewardedCallBack?.Invoke(false);
             rewardedCallBack = null;
         }
@@ -343,7 +348,7 @@ public class ArrowMaxAdsController
         //     {"placement_id", adInfo.Placement}
         // });
         
-        CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display);
+        CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_succeeded);
 
     }
 
@@ -380,7 +385,7 @@ public class ArrowMaxAdsController
         rewardedCallBack?.Invoke(true);
         rewardedCallBack = null;
         
-        CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_succeeded);
+
 
     }
 

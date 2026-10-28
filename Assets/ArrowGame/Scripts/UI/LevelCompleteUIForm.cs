@@ -35,6 +35,7 @@ public partial class LevelCompleteUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(LevelCompleteUIForm));
         GF.UI.CloseUIForms(UIViews.QuitConfirmUIForm);
         GF.UI.CloseUIForms(UIViews.SettingPageUIForm);
 
@@ -117,7 +118,7 @@ public partial class LevelCompleteUIForm : UIFormBase
 
         m_IsClaiming = true;
         SetButtonsInteractable(false);
-        CommonHelper.ShowVideoAd("level_complete_reward", success =>
+        CommonHelper.ShowVideoAd("winCoins", success =>
         {
             if (success)
             {
