@@ -21,6 +21,8 @@ namespace UGF.EditorTools
         private bool dirty;
         private string loadedHash;
         private string filter = "";
+        private string manualKey = "";
+        private string manualSource = "";
         private List<LocalizationText> texts = new List<LocalizationText>();
         private HashSet<string> scannedKeys;
         // Keep removed rows until export so an in-window unlock overrides the saved lock.
@@ -126,6 +128,7 @@ namespace UGF.EditorTools
                     }
                 }
                 EditorGUILayout.EndScrollView();
+                DrawManualEntry();
                 EditorGUILayout.HelpBox(TranslationWorkbookService.LastMessage.Length > 1200 ? TranslationWorkbookService.LastMessage.Substring(0, 1200) + "\n完整信息见 Console。" : TranslationWorkbookService.LastMessage,
                     TranslationWorkbookService.LastFailed ? MessageType.Warning : MessageType.Info);
                 showLegacy = EditorGUILayout.Foldout(showLegacy, "旧版分语言表 / GPT 翻译", true);
@@ -133,6 +136,43 @@ namespace UGF.EditorTools
             }
         }
 
+        private void DrawManualEntry()
+        {
+            using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
+            {
+                EditorGUILayout.LabelField("手动添加 Key（默认锁定，扫描时保留）");
+                using (new EditorGUILayout.HorizontalScope())
+                {
+                    GUILayout.Label("Key", GUILayout.Width(40));
+                    manualKey = EditorGUILayout.TextField(manualKey, GUILayout.Width(260));
+                    GUILayout.Label(EditorToolSettings.Instance.TranslationSourceLanguage + " 原文", GUILayout.Width(100));
+                    manualSource = EditorGUILayout.TextField(manualSource);
+                }
+                using (new EditorGUI.DisabledScope(string.IsNullOrWhiteSpace(manualKey)))
+                    if (GUILayout.Button("手动添加 Key")) Run(AddManualEntry);
+            }
+        }
+
+        private void AddManualEntry()
+        {
+            CheckVersion();
+            string key = manualKey.Trim();
+            if (string.IsNullOrWhiteSpace(key))
+                throw new InvalidOperationException("请输入 Key。");
+            if (texts.Any(t => string.Equals(t.Key, key, StringComparison.Ordinal)))
+                throw new InvalidOperationException($"Key 已存在：{key}，请在列表中编辑原文。");
+
+            // Re-adding a scanned-out row must cancel its pending removal before export.
+            removedTexts.RemoveAll(t => string.Equals(t.Key, key, StringComparison.Ordinal));
+            texts.Add(new LocalizationText { Key = key, Value = manualSource, Locked = true });
+            dirty = true;
+            filter = "";
+            textScroll = new Vector2(0, float.MaxValue);
+            manualKey = "";
+            manualSource = "";
+            GUI.FocusControl(null);
+            TranslationWorkbookService.SetResult($"已手动添加并锁定：{key}。请补齐原文并点击“导出 / 更新总表”保存。", false);
+        }
         private void DrawLanguages()
         {
             var settings = EditorToolSettings.Instance;
