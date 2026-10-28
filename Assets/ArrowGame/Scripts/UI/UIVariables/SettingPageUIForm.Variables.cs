@@ -14,4 +14,5 @@ public partial class SettingPageUIForm
 	[SerializeField] private Button varBtnQuit = null;
 	[SerializeField] private Button varBtnContinue = null;
 	[SerializeField] private Button varBtnClose = null;
+	[SerializeField] private Button varBtnDebug = null;
 }

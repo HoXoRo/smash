@@ -18,6 +18,7 @@ public partial class SettingPageUIForm : UIFormBase
         varBtnQuit.onClick.AddListener(OnQuitClicked);
         varBtnContinue.onClick.AddListener(OnClickClose);
         varBtnClose.onClick.AddListener(OnClickClose);
+        varBtnDebug.onClick.AddListener(() => GF.UI.OpenUIForm(UIViews.DebugUIForm));
     }
 
     protected override void OnOpen(object userData)

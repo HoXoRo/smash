@@ -74,10 +74,6 @@ public partial class ArrowUITopbar : UIFormBase
     protected override void OnInit(object userData)
     {
         base.OnInit(userData);
-        if (varBtnDebug != null)
-        {
-            varBtnDebug.onClick.AddListener(OpenDebugUIForm);
-        }
     }
 
     protected override void OnOpen(object userData)
