@@ -509,7 +509,7 @@ public partial class ArrowUITopbar : UIFormBase
 
     private void UpdateNumberRoll(PlayerDataType type)
     {
-        GF.Sound.PlayEffect("coinCollect.ogg");
+        GF.Sound.PlayEffect("Coin_Appear.ogg");
 
         // 如果正在滚动，不做任何处理，等待当前协程自然结束后会检查是否有新奖励
         if (isRolling.ContainsKey(type) && isRolling[type])

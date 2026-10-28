@@ -44,6 +44,8 @@ public partial class CoinRewardUIForm : UIFormBase
         varBtnClaim.interactable = m_Task != null;
         varBtnAd.gameObject.SetActive(m_Task != null && m_Task.TaskType == 2);
         varBtnAd.interactable = true;
+        
+        GF.Sound.PlayEffect("Coin_reward.mp3");
     }
 
     protected override void OnClose(bool isShutdown, object userData)

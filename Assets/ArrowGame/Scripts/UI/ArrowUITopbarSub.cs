@@ -229,7 +229,7 @@ public partial class ArrowUITopbarSub : UIFormBase
     private void StartRoll()
     {
         if (rolling || activeRewards > 0 || pendingCoins <= 0f) return;
-        GF.Sound.PlayEffect("coinCollect.ogg");
+        GF.Sound.PlayEffect("Coin_Appear.ogg");
         float amount = pendingCoins;
         pendingCoins = 0f;
         rollTarget = targetCoins + amount;

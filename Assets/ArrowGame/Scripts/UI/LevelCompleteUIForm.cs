@@ -54,6 +54,8 @@ public partial class LevelCompleteUIForm : UIFormBase
         varTxtMulit.text = $"X{m_AdMulti}";
         varBtnAd.gameObject.SetActive(m_AdMulti > 0);
         SetButtonsInteractable(true);
+        
+        GF.Sound.PlayEffect("Level_Win.ogg");
     }
 
     protected override void OnClose(bool isShutdown, object userData)

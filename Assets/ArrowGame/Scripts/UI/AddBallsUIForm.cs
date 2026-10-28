@@ -39,6 +39,8 @@ public partial class AddBallsUIForm : UIFormBase
         ballsCoin = GF.Config.GetInt("ballsCoin");
         varTxtCoin.text = ballsCoin.ToString();
         RefreshButtons();
+        
+        GF.Sound.PlayEffect("Level_Fail.ogg");
     }
 
     protected override void OnClose(bool isShutdown, object userData)
