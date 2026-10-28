@@ -23,4 +23,9 @@
 		<type fullname="UnityEngine.MeshFilter" preserve="all"/>
 		<type fullname="UnityEngine.TextMesh" preserve="all"/>
 	</assembly>-->
+	<!-- Gameplay is loaded from AssetBundles, so its skinned renderer is absent
+	     from the launch scene used to determine native engine stripping. -->
+	<assembly fullname="UnityEngine.CoreModule">
+		<type fullname="UnityEngine.SkinnedMeshRenderer" preserve="all" />
+	</assembly>
 </linker>
