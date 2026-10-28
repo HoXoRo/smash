@@ -310,6 +310,17 @@ public static class CommonHelper
     public static void ShowBannerAd()
     {
         HideBannerAd();
+        
+        // 判断是不是前三关
+        var playerData = GF.DataModel.GetDataModel<PlayerDataModel>();
+        if (playerData != null)
+        {
+            if (playerData.LevelId < 4)
+            {
+                return;
+            }
+        }
+
         AdsManager.Instance.ShowBanner();
     }
 
