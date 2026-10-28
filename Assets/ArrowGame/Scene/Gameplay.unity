@@ -47,7 +47,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1061}
   - component: {fileID: 1128}
-  - component: {fileID: 1138}
   - component: {fileID: 3206}
   - component: {fileID: 3207}
   m_Layer: 0
@@ -4159,14 +4158,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 0.1, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!81 &1138
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15}
-  m_Enabled: 1
 --- !u!95 &1139
 Animator:
   serializedVersion: 7
