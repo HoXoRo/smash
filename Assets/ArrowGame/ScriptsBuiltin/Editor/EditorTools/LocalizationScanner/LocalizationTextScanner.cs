@@ -238,7 +238,7 @@ namespace UGF.EditorTools
                 allSuccess &= success;
             }
 
-            if (!allSuccess) throw new InvalidOperationException("代码文本扫描失败，已停止合并，旧文本不会被标记待清理。");
+            if (!allSuccess) throw new InvalidOperationException("代码文本扫描失败，已停止合并，旧文本不会被清理。");
 
             if (File.Exists(outputFile))
             {

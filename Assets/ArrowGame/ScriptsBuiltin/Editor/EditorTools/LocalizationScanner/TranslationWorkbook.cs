@@ -112,7 +112,7 @@ namespace UGF.EditorTools
                 for (int row = 4; row <= (meta.Dimension?.End.Row ?? 3); row++)
                     if (!string.IsNullOrEmpty(meta.Cells[row, 1].Text)) expectedKeys.Add(meta.Cells[row, 1].Text);
                 if (!keys.SetEquals(expectedKeys)) throw new InvalidDataException("总表 Key 被修改、添加或删除；请通过工具重新扫描、导出，勿修改隐藏的 Key 列。");
-                if (table.Rows.Count == 0) throw new InvalidDataException("总表没有任何文本。");
+                // An empty table is valid after a successful scan removes all unlocked keys.
                 return table;
             }
         }
@@ -183,7 +183,7 @@ namespace UGF.EditorTools
                     "不要修改隐藏的 Key、_Source、_Metadata；不要删除行或修改语言表头。",
                     "原文变更后会要求复核译文；确认该行所有语言后，将状态改为已复核。",
                     "空译文保留已有译文；没有旧译文时会阻止生成，不会自动填充英文。",
-                    "待清理行仍保留已有内容，不会因一次扫描遗漏而丢失译文。锁定填 1 可保留手动条目。",
+                    "重新扫描并导出时，未扫描到的非锁定条目及其译文会自动清理。锁定填 1 可保留手动条目。",
                     "占位符（如 {0}）、富文本标签、换行及前后空格必须正确保留；不要填公式。",
                     "保存项目中 AAAGameData/Translations/Localization.xlsx 后，Unity 打开且自动生成启用时会处理。",
                     "也可以在工具中点击导入并生成，选择翻译后的文件。单语言表为生成结果，请统一维护本总表。"
@@ -245,7 +245,7 @@ namespace UGF.EditorTools
             }
             var byKey = table.Rows.ToDictionary(r => r.Key, StringComparer.Ordinal);
             // Migration must also preserve entries found only in an old target-language workbook.
-            foreach (var oldRows in legacy.Values)
+            foreach (var oldRows in previous == null ? legacy.Values.AsEnumerable() : Enumerable.Empty<List<LocalizationText>>())
             {
                 foreach (var oldRow in oldRows)
                 {
@@ -273,12 +273,13 @@ namespace UGF.EditorTools
                 }
                 row.Locked = source.Locked;
             }
+            if (scannedKeys != null)
+                table.Rows.RemoveAll(row => !row.Locked && !scannedKeys.Contains(row.Key));
             foreach (var row in table.Rows)
             {
                 if (scannedKeys != null)
                 {
-                    if (!scannedKeys.Contains(row.Key) && !row.Locked && row.Status != Review) row.Status = Retired;
-                    else if (row.Status == Retired && !string.IsNullOrWhiteSpace(row.Source)) row.Status = row.Source == row.OriginalSource ? Normal : Review;
+                    if (row.Status == Retired && !string.IsNullOrWhiteSpace(row.Source)) row.Status = row.Source == row.OriginalSource ? Normal : Review;
                 }
                 foreach (var language in table.Languages)
                 {

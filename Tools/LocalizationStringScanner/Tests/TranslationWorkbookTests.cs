@@ -69,12 +69,30 @@ internal static class TranslationWorkbookTests
             var old = Sample(); old.Rows[1].Locked = false; string rev = old.Revision;
             var merged = TranslationWorkbook.Merge(new List<LocalizationText> { new LocalizationText { Key="ui.start", Value="Go now", Locked=true }, new LocalizationText { Key="ui.new", Value="New" } }, Language.English, new[] { Language.French }, old, Empty(), new HashSet<string>{ "ui.start", "ui.new" });
             Check(merged.Rows[0].Values[Language.Japanese] == "さあ、行こう" && merged.Rows[0].Status == TranslationWorkbook.Review, "merge keeps translations and flags changed source");
-            Check(merged.Rows.Count == 3 && merged.Rows[1].Status == TranslationWorkbook.Retired, "unscanned rows retained");
+            Check(merged.Rows.Count == 2 && merged.Rows.All(r => r.Key != "ui.level"), "unscanned unlocked rows removed");
             Check(merged.Languages.Contains(Language.French) && merged.Languages.Contains(Language.Japanese), "language added without deleting old columns");
             Check(merged.Revision != rev, "new export revision");
             var orphanLegacy = new Dictionary<Language, List<LocalizationText>> { [Language.Japanese] = new List<LocalizationText> { new LocalizationText { Key = "legacy.only", Value = "保留", Locked = true } } };
             var migration = TranslationWorkbook.Merge(new List<LocalizationText> { new LocalizationText { Key = "ui.start", Value = "Start" } }, Language.English, new[] { Language.Japanese }, null, orphanLegacy, new HashSet<string> { "ui.start" });
             Check(migration.Rows.Any(r => r.Key == "legacy.only" && r.Status == TranslationWorkbook.Retired && r.Values[Language.Japanese] == "保留"), "target-only legacy rows retained during migration");
+            foreach (string status in new[] { TranslationWorkbook.Normal, TranslationWorkbook.Review, TranslationWorkbook.Reviewed, TranslationWorkbook.Retired })
+            {
+                var cleanup = Sample();
+                cleanup.Rows[1].Locked = false;
+                cleanup.Rows[1].Status = status;
+                cleanup = TranslationWorkbook.Merge(new List<LocalizationText>(), Language.English, new[] { Language.Japanese }, cleanup, Empty(), new HashSet<string>());
+                Check(cleanup.Rows.Count == 1 && cleanup.Rows[0].Key == "ui.start" && cleanup.Rows[0].Values[Language.Japanese] == "さあ、行こう", "empty scan removes unlocked " + status + " and preserves locked translation");
+                Check(TranslationWorkbook.Read(TranslationWorkbook.Write(cleanup)).Rows.Count == 1, "cleaned workbook round trip " + status);
+            }
+            var unscanned = Sample(); unscanned.Rows[1].Locked = false;
+            Check(TranslationWorkbook.Merge(new List<LocalizationText>(), Language.English, new[] { Language.Japanese }, unscanned, Empty(), null).Rows.Count == 2, "no scan preserves unlocked rows");
+            var unlocked = TranslationWorkbook.Merge(new List<LocalizationText> { new LocalizationText { Key = "ui.start", Value = "Let's go", Locked = false } }, Language.English, new[] { Language.Japanese }, Sample(), Empty(), new HashSet<string>());
+            Check(unlocked.Rows.Count == 1 && unlocked.Rows[0].Key == "ui.level", "current unlock takes effect before cleanup");
+            var emptyTable = Sample(); emptyTable.Rows.ForEach(r => r.Locked = false);
+            emptyTable = TranslationWorkbook.Merge(new List<LocalizationText>(), Language.English, new[] { Language.Japanese }, emptyTable, Empty(), new HashSet<string>());
+            Check(TranslationWorkbook.Read(TranslationWorkbook.Write(emptyTable)).Rows.Count == 0, "all rows can be cleaned and exported");
+            var repeated = TranslationWorkbook.Merge(new List<LocalizationText>(), Language.English, new[] { Language.Japanese }, emptyTable, orphanLegacy, null);
+            Check(repeated.Rows.Count == 0, "legacy rows cannot return after cleanup");
             string legacy = Path.Combine(temp, "Japanese.xlsx"); File.WriteAllBytes(legacy, TranslationWorkbook.WriteLegacy(validated[Language.Japanese]));
             var loaded = TranslationWorkbook.ReadLegacy(legacy);
             Check(loaded.Count == 2 && loaded[0].Locked && loaded[0].Value == "さあ、行こう", "legacy Excel remains compatible");

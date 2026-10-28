@@ -58,7 +58,7 @@ namespace UGF.EditorTools
 
         public static void Export(List<LocalizationText> sources, HashSet<string> scannedKeys)
         {
-            if (sources.Count == 0) throw new InvalidDataException("没有可导出的文本，请先扫描。");
+            if (sources.Count == 0 && scannedKeys == null) throw new InvalidDataException("没有可导出的文本，请先扫描。");
             var previous = HasWorkbook ? TranslationWorkbook.Read(TranslationWorkbook.ReadBytes(ConstEditor.TranslationWorkbookPath)) : null;
             var languages = SelectedLanguages();
             var allLanguages = languages.Concat(previous?.Languages ?? new List<Language>()).Distinct().ToArray();

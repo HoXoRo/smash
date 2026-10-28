@@ -23,6 +23,8 @@ namespace UGF.EditorTools
         private string filter = "";
         private List<LocalizationText> texts = new List<LocalizationText>();
         private HashSet<string> scannedKeys;
+        // Keep removed rows until export so an in-window unlock overrides the saved lock.
+        private readonly List<LocalizationText> removedTexts = new List<LocalizationText>();
 
         private void OnEnable()
         {
@@ -47,6 +49,7 @@ namespace UGF.EditorTools
             texts = TranslationWorkbookService.LoadSources();
             loadedHash = CurrentHash();
             scannedKeys = null;
+            removedTexts.Clear();
             dirty = false;
         }
 
@@ -173,6 +176,10 @@ namespace UGF.EditorTools
             var found = LocalizationTextScanner.ScanAllLocalizationText((file, total, index) =>
                 EditorUtility.DisplayProgressBar("扫描文本", file, total == 0 ? 0 : index / (float)total));
             scannedKeys = new HashSet<string>(found, StringComparer.Ordinal);
+            removedTexts.RemoveAll(t => scannedKeys.Contains(t.Key));
+            var removed = texts.Where(t => !t.Locked && !scannedKeys.Contains(t.Key)).ToList();
+            removedTexts.AddRange(removed);
+            texts.RemoveAll(t => !t.Locked && !scannedKeys.Contains(t.Key));
             var existing = new HashSet<string>(texts.Select(t => t.Key), StringComparer.Ordinal);
             int added = 0;
             foreach (string key in found)
@@ -182,13 +189,15 @@ namespace UGF.EditorTools
                 added++;
             }
             dirty = true;
-            TranslationWorkbookService.SetResult($"扫描完成：新增 {added} 条；未扫描到的旧条目将在导出时标为待清理，锁定条目保留。请补齐原文后导出。", false);
+            TranslationWorkbookService.SetResult($"扫描完成：新增 {added} 条，已从列表清理 {removed.Count} 条未使用的非锁定条目，锁定条目保留。导出后同步更新总表及译文。", false);
         }
 
         private void Export()
         {
             CheckVersion();
-            TranslationWorkbookService.Export(texts, scannedKeys);
+            TranslationWorkbookService.Export(texts.Concat(removedTexts).ToList(), scannedKeys);
+            removedTexts.Clear();
+            if (scannedKeys != null) texts.RemoveAll(t => !t.Locked && !scannedKeys.Contains(t.Key));
             loadedHash = CurrentHash();
             dirty = false;
         }
