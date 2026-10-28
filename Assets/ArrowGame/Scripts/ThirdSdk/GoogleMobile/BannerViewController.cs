@@ -159,7 +159,7 @@ public class BannerViewController
             Log.Info(String.Format("Banner view paid {0} {1}.",
                 adValue.Value,
                 adValue.CurrencyCode));
-            AdjustManager.Instance.LogAdRevenue(adValue.Value / 1000000f, adValue.CurrencyCode);
+            AdjustManager.Instance.LogAdRevenue(adValue.Value / 1000000f, adValue.CurrencyCode, "admob_sdk");
 
             MobileAdsEventExecutor.ExecuteInUpdate(() =>
             {

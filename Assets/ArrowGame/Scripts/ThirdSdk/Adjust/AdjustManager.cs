@@ -52,9 +52,9 @@ public class AdjustManager
         Adjust.TrackEvent(adjustEvent);
     }
 
-    public void LogAdRevenue(double amount, string currency)
+    public void LogAdRevenue(double amount, string currency, string source)
     {
-        AdjustAdRevenue adjustAdRevenue = new AdjustAdRevenue("admob_sdk");
+        AdjustAdRevenue adjustAdRevenue = new AdjustAdRevenue(source);
         adjustAdRevenue.SetRevenue(amount, currency);
         Log.Info("广告价值上报：value: " + amount + " currency: " + currency);
         Adjust.TrackAdRevenue(adjustAdRevenue);

@@ -153,7 +153,7 @@ public class InterstitialAdController
                 adValue.CurrencyCode));
             var revenue = adValue.Value / 1000000f;
             PcardGiftRewardSession.Add(revenue);
-            AdjustManager.Instance.LogAdRevenue(revenue, adValue.CurrencyCode);
+            AdjustManager.Instance.LogAdRevenue(revenue, adValue.CurrencyCode, "admob_sdk");
         };
         // Raised when an impression is recorded for an ad.
         ad.OnAdImpressionRecorded += () =>

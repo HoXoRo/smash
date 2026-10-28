@@ -577,7 +577,7 @@ public class ArrowMaxAdsController
         // Adjust.trackAdRevenue(adjustAdRevenue);
         
         
-        AdjustManager.Instance.LogAdRevenue(adInfo.Revenue, "USD");
+        AdjustManager.Instance.LogAdRevenue(adInfo.Revenue, "USD", "max_sdk");
     }
 }
 /// <summary>
