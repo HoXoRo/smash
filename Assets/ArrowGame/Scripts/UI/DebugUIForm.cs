@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using GameFramework.Event;
+using UnityGameFramework.Runtime;
 
 #if ENABLE_OBFUZ
 [Obfuz.ObfuzIgnore(Obfuz.ObfuzScope.TypeName)]
@@ -8,10 +10,16 @@ using TMPro;
 
 public partial class DebugUIForm : UIFormBase
 {
+    private ArrowLanguageListBank m_LanguageListBank;
 
     protected override void OnInit(object userData)
     {
         base.OnInit(userData);
+
+        m_LanguageListBank = varLanguageScroll.GetComponent<ArrowLanguageListBank>();
+        varLanguageScroll.dataSource = new LanguageDataSource(m_LanguageListBank);
+        varLanguageScroll.prefabSource = varLanguageScroll.GetComponent<InitOnStart>();
+        varLanguageName.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(ShowLanguageList);
 
         varAddDollar.onClick.AddListener(AddDollar);
         varReduceDollor.onClick.AddListener(ReduceDollar);
@@ -35,6 +43,51 @@ public partial class DebugUIForm : UIFormBase
         varBtnReduceLv.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(ReduceLevel);
         varBtnResetTask.onClick.AddListener(ResetTasks);
         varBtnClose.onClick.AddListener(OnClickClose);
+    }
+
+    protected override void OnOpen(object userData)
+    {
+        base.OnOpen(userData);
+        GF.Event.Subscribe(MahJongLanguageChangeEventArgs.EventId, OnLanguageChanged);
+        GF.Event.Subscribe(LoadDictionarySuccessEventArgs.EventId, OnLanguageReloaded);
+        varLanguageScroll.gameObject.SetActive(false);
+        RefreshLanguage();
+    }
+
+    protected override void OnClose(bool isShutdown, object userData)
+    {
+        GF.Event.Unsubscribe(MahJongLanguageChangeEventArgs.EventId, OnLanguageChanged);
+        GF.Event.Unsubscribe(LoadDictionarySuccessEventArgs.EventId, OnLanguageReloaded);
+        base.OnClose(isShutdown, userData);
+    }
+
+    private void ShowLanguageList()
+    {
+        m_LanguageListBank.Refresh();
+        varLanguageScroll.totalCount = m_LanguageListBank.GetListLength();
+        varLanguageScroll.RefillCells();
+        varLanguageScroll.gameObject.SetActive(true);
+    }
+
+    private void RefreshLanguage()
+    {
+        var language = GF.Setting.GetLanguage();
+        var languageTable = GF.DataTable.GetDataTable<ArrowLanguagesTable>();
+        var languageRow = languageTable.GetDataRow(row => row.LanguageKey == language.ToString());
+        varLanguageName.text = languageRow.LanguageDisplay;
+    }
+
+    private void OnLanguageChanged(object sender, GameEventArgs e)
+    {
+        RefreshLanguage();
+        varLanguageScroll.gameObject.SetActive(false);
+        GF.Localization.RemoveAllRawStrings();
+        GF.Localization.LoadLanguage(GF.Localization.Language.ToString(), this);
+    }
+
+    private void OnLanguageReloaded(object sender, GameEventArgs e)
+    {
+        GF.UI.UpdateLocalizationTexts();
     }
 
     private void AddDollar()

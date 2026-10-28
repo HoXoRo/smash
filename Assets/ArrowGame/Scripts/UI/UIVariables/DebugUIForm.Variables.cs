@@ -30,4 +30,6 @@ public partial class DebugUIForm
 	[SerializeField] private Button varBtnVideo_max = null;
 	[SerializeField] private Button varBtnVideo_admob = null;
 	[SerializeField] private Button varBtnBanner_hide = null;
+	[SerializeField] private TextMeshProUGUI varLanguageName = null;
+	[SerializeField] private LoopVerticalScrollRect varLanguageScroll = null;
 }

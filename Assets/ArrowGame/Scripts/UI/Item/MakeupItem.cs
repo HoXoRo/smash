@@ -32,8 +32,7 @@ public partial class MakeupItem : UIItemBase
             return;
         }
 
-        if (varTxtLv != null)
-            varTxtLv.text = task.Level.ToString();
+        varTxtLv.text =  GF.Localization.GetString("level", task.Level.ToString());
 
         float value = task.Mon > 0f ? task.Mon : task.Pcard;
         m_RequiredAmount = value * task.Rate;
