@@ -39,7 +39,7 @@ namespace Audio
 		{
 			return type switch
 			{
-				AudioType.UIClick => "UI_Click.ogg",
+				AudioType.UIClick => "ui/ui_click.mp3",
 				AudioType.MenuMusic => "bgm/bgm.mp3",
 				AudioType.GameplayMusic => "bgm/bgm.mp3",
 				AudioType.CannonShoot => "Cannon.ogg",

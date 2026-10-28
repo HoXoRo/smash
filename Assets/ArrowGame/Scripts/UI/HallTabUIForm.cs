@@ -58,7 +58,6 @@ public partial class HallTabUIForm : UIFormBase
 
     void OnTabClicked(UIViews page, Button button)
     {
-        GF.Sound.PlayEffect("ui/ui_click.mp3");
         SwitchPage(page, button);
     }
 

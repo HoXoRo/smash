@@ -189,7 +189,7 @@ public partial class ArrowBubbleRewardItem : UIItemBase, IPointerClickHandler
     {
         if (varBgButton != null)
         {
-            varBgButton.onClick.RemoveAllListeners();
+            varBgButton.onClick.RemoveListener(OnBubbleClick);
             varBgButton.onClick.AddListener(OnBubbleClick);
         }
 

@@ -9,7 +9,7 @@ public partial class ArrowLanguageItem : UIItemBase
     protected override void OnInit()
     {
         base.OnInit();
-        varLanguageBtn.onClick.RemoveAllListeners();
+        varLanguageBtn.onClick.RemoveListener(OnClick);
         varLanguageBtn.onClick.AddListener(OnClick);
     }
     private string m_LanguageKey;

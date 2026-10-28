@@ -69,6 +69,7 @@ public class UIFormBase : UIFormLogic, ISerializeFieldTool
             m_UIAnimation = GetComponent<Animation>();
         }
         InitLocalization();
+        UIButtonSound.AttachToButtons(gameObject);
     }
     protected override void OnOpen(object userData)
     {
@@ -372,19 +373,16 @@ public class UIFormBase : UIFormLogic, ISerializeFieldTool
     [Obfuz.ObfuzIgnore]
     public virtual void OnClickClose()
     {
-        GF.Sound.PlayEffect("ui/ui_click.mp3");
         GF.UI.Close(this.UIForm);
     }
     [Obfuz.ObfuzIgnore]
     public void ClickUIButton(string bt_tag)
     {
-        GF.Sound.PlayEffect("ui/ui_click.mp3");
         OnButtonClick(this, bt_tag);
     }
     [Obfuz.ObfuzIgnore]
     public void ClickUIButton(Button btSelf)
     {
-        GF.Sound.PlayEffect("ui/ui_click.mp3");
         OnButtonClick(this, btSelf);
     }
     protected virtual void OnButtonClick(object sender, string btId)

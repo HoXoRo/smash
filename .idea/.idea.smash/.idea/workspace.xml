@@ -12,35 +12,12 @@
   <component name="ChangeListManager">
     <list default="true" id="48c1c3b4-2b47-4b58-848e-c5dcf45a4647" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Extension/CommonHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Extension/CommonHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Gameplay/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Gameplay/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Procedures/GameStartPreloadProcedure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Procedures/GameStartPreloadProcedure.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/Adjust/AdjustEventCodeEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/Adjust/AdjustEventCodeEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/Adjust/AdjustManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/Adjust/AdjustManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/AdsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/AdsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/ArrowMaxAdsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/ArrowMaxAdsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/InterstitialAdController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/InterstitialAdController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/RewardedAdController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/RewardedAdController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/AddBallsUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/AddBallsUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/AddLifeUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/AddLifeUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/AddPropUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/AddPropUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/ArrowGuideUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/ArrowGuideUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/ArrowRewardDialogUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/ArrowRewardDialogUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/CoinRewardUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/CoinRewardUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/HomePageUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/HomePageUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Item/MakeupItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Item/MakeupItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/LevelCompleteUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/LevelCompleteUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupInfoUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupInfoUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupPaymentEndUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupPaymentEndUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupPaymentUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupPaymentUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupRecordUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupRecordUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/PcardGiftUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/PcardGiftUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/PcardRewardUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/PcardRewardUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/PrelevelUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/PrelevelUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/QuitConfirmUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/QuitConfirmUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/SettingPageUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/SettingPageUIForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/TaskPageUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/TaskPageUIForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/ArrowUITopbar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/ArrowUITopbar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Core/UIFormBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Core/UIFormBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Core/UIItemBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Core/UIItemBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/HallTabUIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/HallTabUIForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Item/ArrowBubbleRewardItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Item/ArrowBubbleRewardItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Item/ArrowLanguageItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Item/ArrowLanguageItem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,61 +57,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="5.807572482469363E-126" />
-      <entry key="S60" value="1.0435429636410325E-62" />
-      <entry key="M2" value="4.679532870839487E-31" />
-      <entry key="M5" value="4.76874653632832E-12" />
-      <entry key="M10" value="1.1649230582108042E-5" />
-      <entry key="M15" value="0.0017453236419913978" />
-      <entry key="M30" value="0.29809843262515984" />
-      <entry key="H1" value="4.162331625879676" />
-      <entry key="H2" value="15.940115413453782" />
-      <entry key="H4" value="33.76799581408287" />
-      <entry key="D1" value="102.01820682196869" />
-      <entry key="W1" value="959.3532714080187" />
+      <entry key="MS100" value="5.706272147569737E-48" />
+      <entry key="MS500" value="3.558528890752149E-10" />
+      <entry key="S2" value="0.004343277959081546" />
+      <entry key="S5" value="0.11354723673333394" />
+      <entry key="S10" value="0.34703131753668565" />
+      <entry key="S30" value="1.5581981850118132" />
+      <entry key="S60" value="3.4600326405067556" />
+      <entry key="M2" value="5.496353060057736" />
+      <entry key="M5" value="7.36627212996312" />
+      <entry key="M10" value="8.138484467951244" />
+      <entry key="M15" value="8.415240732881381" />
+      <entry key="M30" value="8.711575076176743" />
+      <entry key="H1" value="9.584719715208625" />
+      <entry key="H2" value="15.622600861574966" />
+      <entry key="H4" value="30.85158735764954" />
+      <entry key="D1" value="103.90087556195164" />
+      <entry key="W1" value="958.5011497106225" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0010539338247113" />
-      <entry key="MS500" value="1.2538415252173574" />
-      <entry key="S2" value="1.7098114568738687" />
-      <entry key="S5" value="1.8821211445512662" />
-      <entry key="S10" value="2.076695392943281" />
-      <entry key="S30" value="2.814197784732076" />
-      <entry key="S60" value="3.395190078489574" />
-      <entry key="M2" value="4.085919462707072" />
-      <entry key="M5" value="4.965464051121415" />
-      <entry key="M10" value="5.420231004723224" />
-      <entry key="M15" value="5.5987187733076755" />
-      <entry key="M30" value="5.943679360147795" />
-      <entry key="H1" value="8.059113229582266" />
-      <entry key="H2" value="14.261347124399997" />
-      <entry key="H4" value="23.15729545024622" />
-      <entry key="D1" value="50.7048501489598" />
-      <entry key="W1" value="103.68858554532648" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000000000000007" />
+      <entry key="S5" value="1.0000008273493644" />
+      <entry key="S10" value="1.000909587469365" />
+      <entry key="S30" value="1.0968905652627154" />
+      <entry key="S60" value="1.3112724935851472" />
+      <entry key="M2" value="1.5579179989793723" />
+      <entry key="M5" value="1.7918230710245533" />
+      <entry key="M10" value="1.8900086550041129" />
+      <entry key="M15" value="1.930585938110643" />
+      <entry key="M30" value="2.1471477318102226" />
+      <entry key="H1" value="3.4037254437161133" />
+      <entry key="H2" value="7.982954433849836" />
+      <entry key="H4" value="17.006383202402795" />
+      <entry key="D1" value="49.169738887612354" />
+      <entry key="W1" value="104.62373268531883" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.001236137841468622" />
-      <entry key="MS500" value="0.29635724192858354" />
-      <entry key="S2" value="1.145815933627943" />
-      <entry key="S5" value="1.5966134127734064" />
-      <entry key="S10" value="1.9082107955181997" />
-      <entry key="S30" value="2.730026814736601" />
-      <entry key="S60" value="3.3422896400583246" />
-      <entry key="M2" value="4.053138585259094" />
-      <entry key="M5" value="4.9491497364916555" />
-      <entry key="M10" value="5.411259085907435" />
-      <entry key="M15" value="5.594258217498592" />
-      <entry key="M30" value="6.238416375458791" />
-      <entry key="H1" value="12.218827898750737" />
-      <entry key="H2" value="30.198789791053223" />
-      <entry key="H4" value="56.92298164410811" />
-      <entry key="D1" value="152.72215255975573" />
-      <entry key="W1" value="1063.0415485925184" />
+      <entry key="MS100" value="1.0508586081281766E-6" />
+      <entry key="MS500" value="0.06372485553495144" />
+      <entry key="S2" value="0.5067496738942538" />
+      <entry key="S5" value="0.8726112142055343" />
+      <entry key="S10" value="1.218849094940518" />
+      <entry key="S30" value="2.606780944021276" />
+      <entry key="S60" value="4.743352712698396" />
+      <entry key="M2" value="7.038202435871053" />
+      <entry key="M5" value="9.15088427794186" />
+      <entry key="M10" value="10.024723998181777" />
+      <entry key="M15" value="10.343268897595209" />
+      <entry key="M30" value="10.857321789678132" />
+      <entry key="H1" value="12.987329739903634" />
+      <entry key="H2" value="23.604104203761434" />
+      <entry key="H4" value="47.85630906221122" />
+      <entry key="D1" value="153.06974564318847" />
+      <entry key="W1" value="1063.1245732810125" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{

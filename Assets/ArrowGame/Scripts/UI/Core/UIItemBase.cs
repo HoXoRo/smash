@@ -16,6 +16,7 @@ public class UIItemBase : MonoBehaviour, ISerializeFieldTool
     protected virtual void OnInit()
     {
         InitLocalization();
+        UIButtonSound.AttachToButtons(gameObject);
     }
     /// <summary>
     /// 更新界面中静态文本的多语言文字
