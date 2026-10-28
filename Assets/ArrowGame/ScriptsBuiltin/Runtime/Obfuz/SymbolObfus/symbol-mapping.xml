@@ -1010,6 +1010,7 @@
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_8988543(int)" newName="$CaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_8988543(Int32)" newStackTraceSignature="$Xb:$CaA(Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_25763_8988543(int, int)" newName="$daA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_25763_8988543(Int32, Int32)" newStackTraceSignature="$Xb:$daA(Int32, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_2585_8988543([UniTask]Cysharp.Threading.Tasks.UniTask, object, int)" newName="$Jk" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2585_8988543(UniTask, Object, Int32)" newStackTraceSignature="$Xb:$Jk(UniTask, Object, Int32)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_29301_8988543(object, System.Threading.CancellationToken, object, object, int)" newName="$WgA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_29301_8988543(Object, CancellationToken, Object, Object, Int32)" newStackTraceSignature="$Xb:$WgA(Object, CancellationToken, Object, Object, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_8988543(nint, int)" newName="$mW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_8988543(IntPtr, Int32)" newStackTraceSignature="$Xb:$mW(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_31765_8988543(int, object, int)" newName="$MW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_31765_8988543(Int32, Object, Int32)" newStackTraceSignature="$Xb:$MW(Int32, Object, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_38649_8988543(object, int, System.Threading.CancellationToken, byte, int)" newName="$DaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_38649_8988543(Object, Int32, CancellationToken, Byte, Int32)" newStackTraceSignature="$Xb:$DaA(Object, Int32, CancellationToken, Byte, Int32)" />
@@ -1018,6 +1019,7 @@
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_47365_8988543(int, int, System.Threading.CancellationToken, int)" newName="$EaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_47365_8988543(Int32, Int32, CancellationToken, Int32)" newStackTraceSignature="$Xb:$EaA(Int32, Int32, CancellationToken, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_47737_8988543(object, System.Threading.CancellationToken, int)" newName="$gaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_47737_8988543(Object, CancellationToken, Int32)" newStackTraceSignature="$Xb:$gaA(Object, CancellationToken, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_53054_8988543(System.TimeSpan, byte, int, System.Threading.CancellationToken, byte, int)" newName="$Kk" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_53054_8988543(TimeSpan, Byte, Int32, CancellationToken, Byte, Int32)" newStackTraceSignature="$Xb:$Kk(TimeSpan, Byte, Int32, CancellationToken, Byte, Int32)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_53170_8988543([UniTask]Cysharp.Threading.Tasks.UniTask[], int)" newName="$aGA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_53170_8988543(UniTask[], Int32)" newStackTraceSignature="$Xb:$aGA(UniTask[], Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_55685_8988543(object, object, object, byte, float, float, int)" newName="$HaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_55685_8988543(Object, Object, Object, Byte, Single, Single, Int32)" newStackTraceSignature="$Xb:$HaA(Object, Object, Object, Byte, Single, Single, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_56632_8988543(object, int, System.Threading.CancellationToken, int)" newName="$iaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_56632_8988543(Object, Int32, CancellationToken, Int32)" newStackTraceSignature="$Xb:$iaA(Object, Int32, CancellationToken, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_1576731(nint, int)" newName="$nW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_1576731(IntPtr, Int32)" newStackTraceSignature="$Xb:$nW(IntPtr, Int32)" />
@@ -1860,6 +1862,10 @@
       <field signature="byte[] $RVA_Value5" newName="$eaA" />
       <field signature="[Hotfix]$ObfuzRVA$DataHolder2048 $RVA_Data6" newName="$BAA" />
       <field signature="byte[] $RVA_Value6" newName="$cAA" />
+    </type>
+    <type fullName="$Obfuz$RVA$2" newFullName="$RD" status="Renamed">
+      <field signature="[Hotfix]$ObfuzRVA$DataHolder2048 $RVA_Data0" newName="$lbA" />
+      <field signature="byte[] $RVA_Value0" newName="$LbA" />
     </type>
     <type fullName="$ObfuzRVA$DataHolder2048" newFullName="$wb" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;" newFullName="$ob" status="Renamed">
@@ -6978,30 +6984,93 @@
       <method signature="void Gameplay.Level.GameplayAssetCache::@PreloadNext(int, System.Threading.CancellationToken, System.Func`1&lt;bool&gt;)" newName="$Lv" oldStackTraceSignature="Gameplay.Level.GameplayAssetCache:PreloadNext(Int32, CancellationToken, Func`1)" newStackTraceSignature="$i.$XC:$Lv(Int32, CancellationToken, Func`1)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask Gameplay.Level.GameplayAssetCache::@Preload(int, int, System.Threading.CancellationToken)" newName="$mv" oldStackTraceSignature="Gameplay.Level.GameplayAssetCache:Preload(Int32, Int32, CancellationToken)" newStackTraceSignature="$i.$XC:$mv(Int32, Int32, CancellationToken)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;[Hotfix]Gameplay.Level.GameplayAssetCache/Lease&gt; Gameplay.Level.GameplayAssetCache::@PrepareCore([Hotfix]Level.LevelData, System.Threading.CancellationToken, bool)" newName="$Mv" oldStackTraceSignature="Gameplay.Level.GameplayAssetCache:PrepareCore(LevelData, CancellationToken, Boolean)" newStackTraceSignature="$i.$XC:$Mv(LevelData, CancellationToken, Boolean)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask Gameplay.Level.GameplayAssetCache::@RunLoadsAsync(System.Collections.Generic.List`1&lt;System.Func`1&lt;[UniTask]Cysharp.Threading.Tasks.UniTask&gt;&gt;, int, System.Threading.CancellationToken)" newName="$xv" oldStackTraceSignature="Gameplay.Level.GameplayAssetCache:RunLoadsAsync(List`1, Int32, CancellationToken)" newStackTraceSignature="$i.$XC:$xv(List`1, Int32, CancellationToken)" />
       <method signature="void Gameplay.Level.GameplayAssetCache::@CollectEffects([Hotfix]Gameplay.Objects.ObjectType, int, [System.Core]System.Collections.Generic.HashSet`1&lt;[Hotfix]Gameplay.Particles.ParticleType&gt;)" newName="$ov" oldStackTraceSignature="Gameplay.Level.GameplayAssetCache:CollectEffects(ObjectType, Int32, HashSet`1)" newStackTraceSignature="$i.$XC:$ov($vC, Int32, HashSet`1)" />
     </type>
     <type fullName="Gameplay.Level.GameplayAssetCache/&lt;&gt;c" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c &lt;&gt;9" newName="$Yu" />
       <field signature="System.Func`1&lt;bool&gt; &lt;&gt;9__17_0" newName="$zu" />
       <field signature="System.Func`2&lt;[Hotfix]Level.LevelStageData,bool&gt; &lt;&gt;9__18_0" newName="$Zu" />
-      <field signature="System.Func`2&lt;[Hotfix]Level.LevelStageData,bool&gt; &lt;&gt;9__18_1" newName="$aU" />
+      <field signature="System.Func`2&lt;[Hotfix]Level.LevelStageData,bool&gt; &lt;&gt;9__18_2" newName="$IT" />
       <method signature="bool Gameplay.Level.GameplayAssetCache/&lt;&gt;c::&lt;Preload&gt;b__17_0([Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c)" newName="$vv" oldStackTraceSignature="Gameplay.Level.&lt;&gt;c:&lt;Preload&gt;b__17_0()" newStackTraceSignature="$i.&lt;&gt;c:$vv()" />
       <method signature="bool Gameplay.Level.GameplayAssetCache/&lt;&gt;c::&lt;PrepareCore&gt;b__18_0([Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c, [Hotfix]Level.LevelStageData)" newName="$wv" oldStackTraceSignature="Gameplay.Level.&lt;&gt;c:&lt;PrepareCore&gt;b__18_0(LevelStageData)" newStackTraceSignature="$i.&lt;&gt;c:$wv(LevelStageData)" />
-      <method signature="bool Gameplay.Level.GameplayAssetCache/&lt;&gt;c::&lt;PrepareCore&gt;b__18_1([Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c, [Hotfix]Level.LevelStageData)" newName="$xv" oldStackTraceSignature="Gameplay.Level.&lt;&gt;c:&lt;PrepareCore&gt;b__18_1(LevelStageData)" newStackTraceSignature="$i.&lt;&gt;c:$xv(LevelStageData)" />
+      <method signature="bool Gameplay.Level.GameplayAssetCache/&lt;&gt;c::&lt;PrepareCore&gt;b__18_2([Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c, [Hotfix]Level.LevelStageData)" newName="$Xv" oldStackTraceSignature="Gameplay.Level.&lt;&gt;c:&lt;PrepareCore&gt;b__18_2(LevelStageData)" newStackTraceSignature="$i.&lt;&gt;c:$Xv(LevelStageData)" />
     </type>
     <type fullName="Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_0" newFullName="$i.$XC/$ZC" status="Renamed">
-      <field signature="System.ValueTuple`2&lt;[Hotfix]Gameplay.Objects.ObjectType,[Hotfix]Util.FloatTriplet&gt; key" newName="$AU" />
-      <method signature="bool Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_0::&lt;PrepareCore&gt;b__2([Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_0, [Hotfix]Gameplay.Objects.ObjectDataItem)" newName="$Xv" oldStackTraceSignature="Gameplay.Level.&lt;&gt;c__DisplayClass18_0:&lt;PrepareCore&gt;b__2(ObjectDataItem)" newStackTraceSignature="$i.$ZC:$Xv(ObjectDataItem)" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Lease lease" newName="$jT" />
+      <field signature="System.Threading.CancellationToken token" newName="$JT" />
+      <field signature="bool background" newName="$kT" />
+      <field signature="[Hotfix]Gameplay.Objects.ObjectData catalog" newName="$KT" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_0::&lt;PrepareCore&gt;b__1([Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_0)" newName="$Zv" oldStackTraceSignature="Gameplay.Level.&lt;&gt;c__DisplayClass18_0:&lt;PrepareCore&gt;b__1()" newStackTraceSignature="$i.$ZC:$Zv()" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_0::&lt;PrepareCore&gt;b__3([Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_0)" newName="$xgA" oldStackTraceSignature="Gameplay.Level.&lt;&gt;c__DisplayClass18_0:&lt;PrepareCore&gt;b__3()" newStackTraceSignature="$i.$ZC:$xgA()" />
+    </type>
+    <type fullName="Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_0/&lt;&lt;PrepareCore&gt;b__1&gt;d" newFullName="$i.$XC/$ZC/$G" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$lT" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$aU" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_0 &lt;&gt;4__this" newName="$AU" />
+      <field signature="[Hotfix]Gameplay.Objects.ObjectData &lt;&gt;7__wrap1" newName="$bU" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.CoreModule]UnityEngine.GameObject&gt; &lt;&gt;u__1" newName="$dU" />
+    </type>
+    <type fullName="Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_0/&lt;&lt;PrepareCore&gt;b__3&gt;d" newFullName="$i.$XC/$ZC/$nD" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$pU" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$PU" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_0 &lt;&gt;4__this" newName="$qU" />
+      <field signature="[Hotfix]Gameplay.Objects.ObjectData &lt;&gt;7__wrap1" newName="$QU" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.CoreModule]UnityEngine.GameObject&gt; &lt;&gt;u__1" newName="$rU" />
     </type>
     <type fullName="Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_1" newFullName="$i.$XC/$ad" status="Renamed">
-      <field signature="[Hotfix]Gameplay.Particles.ParticleType type" newName="$bU" />
-      <method signature="bool Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_1::&lt;PrepareCore&gt;b__3([Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_1, [Hotfix]Gameplay.Particles.ParticleDataItem)" newName="$Zv" oldStackTraceSignature="Gameplay.Level.&lt;&gt;c__DisplayClass18_1:&lt;PrepareCore&gt;b__3(ParticleDataItem)" newStackTraceSignature="$i.$ad:$Zv(ParticleDataItem)" />
+      <field signature="System.ValueTuple`2&lt;[Hotfix]Gameplay.Objects.ObjectType,[Hotfix]Util.FloatTriplet&gt; key" newName="$RU" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_0 CS$&lt;&gt;8__locals1" newName="$tU" />
+      <method signature="bool Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_1::&lt;PrepareCore&gt;b__4([Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_1, [Hotfix]Gameplay.Objects.ObjectDataItem)" newName="$XgA" oldStackTraceSignature="Gameplay.Level.&lt;&gt;c__DisplayClass18_1:&lt;PrepareCore&gt;b__4(ObjectDataItem)" newStackTraceSignature="$i.$ad:$XgA(ObjectDataItem)" />
+    </type>
+    <type fullName="Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_2" newFullName="$i.$XC/$ND" status="Renamed">
+      <field signature="[Hotfix]Gameplay.Objects.ObjectDataItem item" newName="$uU" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_1 CS$&lt;&gt;8__locals2" newName="$UU" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_2::&lt;PrepareCore&gt;b__5([Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_2)" newName="$ygA" oldStackTraceSignature="Gameplay.Level.&lt;&gt;c__DisplayClass18_2:&lt;PrepareCore&gt;b__5()" newStackTraceSignature="$i.$ND:$ygA()" />
+    </type>
+    <type fullName="Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_2/&lt;&lt;PrepareCore&gt;b__5&gt;d" newFullName="$i.$XC/$ND/$oD" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$vU" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$VU" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_2 &lt;&gt;4__this" newName="$wU" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.CoreModule]UnityEngine.GameObject&gt; &lt;&gt;u__1" newName="$WU" />
+    </type>
+    <type fullName="Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_3" newFullName="$i.$XC/$OD" status="Renamed">
+      <field signature="[Hotfix]Gameplay.Particles.ParticleType type" newName="$jAA" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_0 CS$&lt;&gt;8__locals3" newName="$JAA" />
+      <method signature="bool Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_3::&lt;PrepareCore&gt;b__6([Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_3, [Hotfix]Gameplay.Particles.ParticleDataItem)" newName="$YgA" oldStackTraceSignature="Gameplay.Level.&lt;&gt;c__DisplayClass18_3:&lt;PrepareCore&gt;b__6(ParticleDataItem)" newStackTraceSignature="$i.$OD:$YgA(ParticleDataItem)" />
+    </type>
+    <type fullName="Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_4" newFullName="$i.$XC/$pD" status="Renamed">
+      <field signature="[Hotfix]Gameplay.Particles.ParticleDataItem item" newName="$kAA" />
+      <field signature="bool common" newName="$KAA" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_3 CS$&lt;&gt;8__locals4" newName="$lAA" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_4::&lt;PrepareCore&gt;b__7([Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_4)" newName="$zgA" oldStackTraceSignature="Gameplay.Level.&lt;&gt;c__DisplayClass18_4:&lt;PrepareCore&gt;b__7()" newStackTraceSignature="$i.$pD:$zgA()" />
+    </type>
+    <type fullName="Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_4/&lt;&lt;PrepareCore&gt;b__7&gt;d" newFullName="$i.$XC/$pD/$PD" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$LAA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$mAA" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_4 &lt;&gt;4__this" newName="$MAA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.CoreModule]UnityEngine.GameObject&gt; &lt;&gt;u__1" newName="$nAA" />
+    </type>
+    <type fullName="Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass19_0" newFullName="$i.$XC/$qD" status="Renamed">
+      <field signature="System.Threading.CancellationToken token" newName="$NAA" />
+      <field signature="System.Collections.Generic.List`1&lt;System.Func`1&lt;[UniTask]Cysharp.Threading.Tasks.UniTask&gt;&gt; loads" newName="$oAA" />
+      <field signature="int nextLoad" newName="$OAA" />
+      <field signature="System.Exception failure" newName="$pAA" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass19_0::&lt;RunLoadsAsync&gt;g__Worker|0([Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass19_0)" newName="$ZgA" oldStackTraceSignature="Gameplay.Level.&lt;&gt;c__DisplayClass19_0:&lt;RunLoadsAsync&gt;g__Worker|0()" newStackTraceSignature="$i.$qD:$ZgA()" />
+    </type>
+    <type fullName="Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass19_0/&lt;&lt;RunLoadsAsync&gt;g__Worker|0&gt;d" newFullName="$i.$XC/$qD/$QD" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$PAA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$qAA" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass19_0 &lt;&gt;4__this" newName="$QAA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__1" newName="$rAA" />
     </type>
     <type fullName="Gameplay.Level.GameplayAssetCache/&lt;LoadEntry&gt;d__12`1" newFullName="$i.$XC/$Ad`1" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$BU" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$cU" />
       <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Entry entry" newName="$CU" />
-      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Entry &lt;&gt;7__wrap1" newName="$dU" />
+      <field signature="double &lt;started&gt;5__2" newName="$SM" />
+      <field signature="bool &lt;success&gt;5__3" newName="$HT" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Entry &lt;&gt;7__wrap3" newName="$iT" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;!0&gt; &lt;&gt;u__1" newName="$DU" />
     </type>
     <type fullName="Gameplay.Level.GameplayAssetCache/&lt;Preload&gt;d__17" newFullName="$i.$XC/$bd" status="Renamed">
@@ -7030,23 +7099,26 @@
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1&lt;[Hotfix]Gameplay.Level.GameplayAssetCache/Lease&gt; &lt;&gt;t__builder" newName="$nU" />
       <field signature="System.Threading.CancellationToken token" newName="$NU" />
       <field signature="bool background" newName="$oU" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_0 &lt;&gt;8__1" newName="$RAA" />
       <field signature="[Hotfix]Level.LevelData level" newName="$OU" />
-      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_1 &lt;&gt;8__1" newName="$pU" />
-      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Lease &lt;lease&gt;5__2" newName="$PU" />
-      <field signature="[Hotfix]Gameplay.Objects.ObjectData &lt;catalog&gt;5__3" newName="$qU" />
-      <field signature="[Hotfix]Gameplay.Particles.ParticleData &lt;effects&gt;5__4" newName="$QU" />
-      <field signature="[System.Core]System.Collections.Generic.HashSet`1&lt;[Hotfix]Gameplay.Particles.ParticleType&gt; &lt;wantedEffects&gt;5__5" newName="$rU" />
-      <field signature="[System.Core]System.Collections.Generic.HashSet`1&lt;System.ValueTuple`2&lt;[Hotfix]Gameplay.Objects.ObjectType,[Hotfix]Util.FloatTriplet&gt;&gt; &lt;wantedObjects&gt;5__6" newName="$RU" />
+      <field signature="[Hotfix]Gameplay.Particles.ParticleData &lt;effects&gt;5__2" newName="$sAA" />
+      <field signature="[System.Core]System.Collections.Generic.HashSet`1&lt;[Hotfix]Gameplay.Particles.ParticleType&gt; &lt;wantedEffects&gt;5__3" newName="$SAA" />
+      <field signature="[System.Core]System.Collections.Generic.HashSet`1&lt;System.ValueTuple`2&lt;[Hotfix]Gameplay.Objects.ObjectType,[Hotfix]Util.FloatTriplet&gt;&gt; &lt;wantedObjects&gt;5__4" newName="$tAA" />
+      <field signature="System.Collections.Generic.List`1&lt;System.Func`1&lt;[UniTask]Cysharp.Threading.Tasks.UniTask&gt;&gt; &lt;loads&gt;5__5" newName="$TAA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Objects.ObjectData&gt; &lt;&gt;u__1" newName="$sU" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Particles.ParticleData&gt; &lt;&gt;u__2" newName="$SU" />
-      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Lease &lt;&gt;7__wrap6" newName="$tU" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Lease &lt;&gt;7__wrap5" newName="$uAA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt; &lt;&gt;u__3" newName="$TU" />
-      <field signature="[System.Core]System.Collections.Generic.HashSet`1/Enumerator&lt;System.ValueTuple`2&lt;[Hotfix]Gameplay.Objects.ObjectType,[Hotfix]Util.FloatTriplet&gt;&gt; &lt;&gt;7__wrap7" newName="$uU" />
-      <field signature="[Hotfix]Gameplay.Objects.ObjectDataItem &lt;item&gt;5__9" newName="$UU" />
-      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.CoreModule]UnityEngine.GameObject&gt; &lt;&gt;u__4" newName="$vU" />
-      <field signature="[Hotfix]Gameplay.Objects.ObjectData &lt;&gt;7__wrap9" newName="$VU" />
-      <field signature="[System.Core]System.Collections.Generic.HashSet`1/Enumerator&lt;[Hotfix]Gameplay.Particles.ParticleType&gt; &lt;&gt;7__wrap10" newName="$wU" />
-      <field signature="[Hotfix]Gameplay.Particles.ParticleDataItem &lt;item&gt;5__12" newName="$WU" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__4" newName="$UAA" />
+    </type>
+    <type fullName="Gameplay.Level.GameplayAssetCache/&lt;RunLoadsAsync&gt;d__19" newFullName="$i.$XC/$rD" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$vAA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$VAA" />
+      <field signature="System.Threading.CancellationToken token" newName="$wAA" />
+      <field signature="System.Collections.Generic.List`1&lt;System.Func`1&lt;[UniTask]Cysharp.Threading.Tasks.UniTask&gt;&gt; loads" newName="$WAA" />
+      <field signature="int concurrency" newName="$xAA" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass19_0 &lt;&gt;8__1" newName="$XAA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__1" newName="$yAA" />
     </type>
     <type fullName="Gameplay.Level.GameplayAssetCache/Entry" newFullName="$i.$XC/$yC" status="Renamed">
       <field signature="string Path" newName="$Nu" />
@@ -7995,6 +8067,9 @@
       <field signature="float m_RemoteSyncFraction" newName="$QD" />
       <field signature="bool m_HasInitGameFrameworkSettings" newName="$Yh" />
       <field signature="bool m_HasAppliedSpecStatus" newName="$OH" />
+      <field signature="bool m_StartupPreparationStarted" newName="$aG" />
+      <field signature="bool m_StartupPreparationFinished" newName="$AG" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask GameStartPreloadProcedure::PrepareStartupGameplayAsync([Hotfix]GameStartPreloadProcedure)" newName="$oi" oldStackTraceSignature="GameStartPreloadProcedure:PrepareStartupGameplayAsync()" newStackTraceSignature="GameStartPreloadProcedure:$oi()" />
       <method signature="void GameStartPreloadProcedure::InitAppSettings([Hotfix]GameStartPreloadProcedure)" newName="$pe" oldStackTraceSignature="GameStartPreloadProcedure:InitAppSettings()" newStackTraceSignature="GameStartPreloadProcedure:$pe()" />
       <method signature="void GameStartPreloadProcedure::InitGameFrameworkSettings([Hotfix]GameStartPreloadProcedure)" newName="$Pe" oldStackTraceSignature="GameStartPreloadProcedure:InitGameFrameworkSettings()" newStackTraceSignature="GameStartPreloadProcedure:$Pe()" />
       <method signature="void GameStartPreloadProcedure::PreloadAndInitData([Hotfix]GameStartPreloadProcedure)" newName="$qe" oldStackTraceSignature="GameStartPreloadProcedure:PreloadAndInitData()" newStackTraceSignature="GameStartPreloadProcedure:$qe()" />
@@ -8009,7 +8084,7 @@
       <method signature="void GameStartPreloadProcedure::OnLoadDicFailure([Hotfix]GameStartPreloadProcedure, object, [GameFramework]GameFramework.Event.GameEventArgs)" newName="$Ue" oldStackTraceSignature="GameStartPreloadProcedure:OnLoadDicFailure(Object, GameEventArgs)" newStackTraceSignature="GameStartPreloadProcedure:$Ue(Object, GameEventArgs)" />
       <method signature="void GameStartPreloadProcedure::OnLoadDataTableFailure([Hotfix]GameStartPreloadProcedure, object, [GameFramework]GameFramework.Event.GameEventArgs)" newName="$ve" oldStackTraceSignature="GameStartPreloadProcedure:OnLoadDataTableFailure(Object, GameEventArgs)" newStackTraceSignature="GameStartPreloadProcedure:$ve(Object, GameEventArgs)" />
       <method signature="void GameStartPreloadProcedure::OnLoadConfigFailure([Hotfix]GameStartPreloadProcedure, object, [GameFramework]GameFramework.Event.GameEventArgs)" newName="$Ve" oldStackTraceSignature="GameStartPreloadProcedure:OnLoadConfigFailure(Object, GameEventArgs)" newStackTraceSignature="GameStartPreloadProcedure:$Ve(Object, GameEventArgs)" />
-      <method signature="void GameStartPreloadProcedure::&lt;OnLoadGFExtensionSuccess&gt;b__19_0([Hotfix]GameStartPreloadProcedure, float)" newName="$Ov" oldStackTraceSignature="GameStartPreloadProcedure:&lt;OnLoadGFExtensionSuccess&gt;b__19_0(Single)" newStackTraceSignature="GameStartPreloadProcedure:$Ov(Single)" />
+      <method signature="void GameStartPreloadProcedure::&lt;OnLoadGFExtensionSuccess&gt;b__22_0([Hotfix]GameStartPreloadProcedure, float)" newName="$Ov" oldStackTraceSignature="GameStartPreloadProcedure:&lt;OnLoadGFExtensionSuccess&gt;b__22_0(Single)" newStackTraceSignature="GameStartPreloadProcedure:$Ov(Single)" />
     </type>
     <type fullName="GameStartPreloadProcedure/&lt;&gt;c__DisplayClass14_0" newFullName="" status="NotRenamed">
       <field signature="string languageName" newName="$qD" />
@@ -8117,6 +8192,18 @@
       <field signature="System.Runtime.CompilerServices.AsyncVoidMethodBuilder &lt;&gt;t__builder" newName="$ui" />
       <field signature="[Hotfix]GameStartPreloadProcedure &lt;&gt;4__this" newName="$Zi" />
       <field signature="System.Runtime.CompilerServices.TaskAwaiter`1&lt;[Hotfix]AppConfigs&gt; &lt;&gt;u__1" newName="$BI" />
+    </type>
+    <type fullName="GameStartPreloadProcedure/&lt;PreloadAndInitData&gt;d__18" newFullName="" status="NotRenamed">
+      <field signature="int &lt;&gt;1__state" newName="$bG" />
+      <field signature="System.Runtime.CompilerServices.AsyncVoidMethodBuilder &lt;&gt;t__builder" newName="$BG" />
+      <field signature="[Hotfix]GameStartPreloadProcedure &lt;&gt;4__this" newName="$cG" />
+      <field signature="System.Runtime.CompilerServices.TaskAwaiter`1&lt;[Hotfix]AppConfigs&gt; &lt;&gt;u__1" newName="$CG" />
+    </type>
+    <type fullName="GameStartPreloadProcedure/&lt;PrepareStartupGameplayAsync&gt;d__15" newFullName="" status="NotRenamed">
+      <field signature="int &lt;&gt;1__state" newName="$dG" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$DG" />
+      <field signature="[Hotfix]GameStartPreloadProcedure &lt;&gt;4__this" newName="$eG" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__1" newName="$EG" />
     </type>
     <type fullName="GF" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]GameFramework.DataModelComponent &lt;DataModel&gt;k__BackingField" newName="$uC" />
@@ -9109,18 +9196,53 @@
     </type>
     <type fullName="PlayLoadingUIForm" newFullName="" status="NotRenamed">
       <field signature="bool &lt;IsLoading&gt;k__BackingField" newName="$Zg" />
+      <field signature="bool &lt;IsPreparingStartup&gt;k__BackingField" newName="$fG" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Lease startupAssets" newName="$FG" />
+      <field signature="System.Collections.Generic.List`1&lt;[UnityEngine.CoreModule]UnityEngine.GameObject&gt; startupActiveRoots" newName="$gG" />
+      <field signature="int startupLevel" newName="$GG" />
       <property signature="bool IsLoading" newName="$a" />
+      <property signature="bool IsPreparingStartup" newName="$A" />
       <method signature="bool PlayLoadingUIForm::@get_IsLoading()" newName="$Ki" oldStackTraceSignature="PlayLoadingUIForm:get_IsLoading()" newStackTraceSignature="PlayLoadingUIForm:$Ki()" />
       <method signature="void PlayLoadingUIForm::@set_IsLoading(bool)" newName="$li" oldStackTraceSignature="PlayLoadingUIForm:set_IsLoading(Boolean)" newStackTraceSignature="PlayLoadingUIForm:$li(Boolean)" />
+      <method signature="bool PlayLoadingUIForm::@get_IsPreparingStartup()" newName="$pv" oldStackTraceSignature="PlayLoadingUIForm:get_IsPreparingStartup()" newStackTraceSignature="PlayLoadingUIForm:$pv()" />
+      <method signature="void PlayLoadingUIForm::@set_IsPreparingStartup(bool)" newName="$VgA" oldStackTraceSignature="PlayLoadingUIForm:set_IsPreparingStartup(Boolean)" newStackTraceSignature="PlayLoadingUIForm:$VgA(Boolean)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask PlayLoadingUIForm::@PrepareStartupGameplayAsync()" newName="$wgA" oldStackTraceSignature="PlayLoadingUIForm:PrepareStartupGameplayAsync()" newStackTraceSignature="PlayLoadingUIForm:$wgA()" />
+      <method signature="void PlayLoadingUIForm::@ReleaseStartupAssets()" newName="$AGA" oldStackTraceSignature="PlayLoadingUIForm:ReleaseStartupAssets()" newStackTraceSignature="PlayLoadingUIForm:$AGA()" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;bool&gt; PlayLoadingUIForm::@LoadGameplayAsync()" newName="$Li" oldStackTraceSignature="PlayLoadingUIForm:LoadGameplayAsync()" newStackTraceSignature="PlayLoadingUIForm:$Li()" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask PlayLoadingUIForm::@WaitForFormAsync(int, System.Threading.CancellationToken)" newName="$mi" oldStackTraceSignature="PlayLoadingUIForm:WaitForFormAsync(Int32, CancellationToken)" newStackTraceSignature="PlayLoadingUIForm:$mi(Int32, CancellationToken)" />
-      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask PlayLoadingUIForm::@PrepareSceneAsync(string, System.Threading.CancellationToken)" newName="$Mi" oldStackTraceSignature="PlayLoadingUIForm:PrepareSceneAsync(String, CancellationToken)" newStackTraceSignature="PlayLoadingUIForm:$Mi(String, CancellationToken)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask PlayLoadingUIForm::@PrepareSceneAsync(string, System.Threading.CancellationToken, System.Action`1&lt;string&gt;, System.Action)" newName="$Mi" oldStackTraceSignature="PlayLoadingUIForm:PrepareSceneAsync(String, CancellationToken, Action`1, Action)" newStackTraceSignature="PlayLoadingUIForm:$Mi(String, CancellationToken, Action`1, Action)" />
       <method signature="void PlayLoadingUIForm::@HideGameplayScene()" newName="$ni" oldStackTraceSignature="PlayLoadingUIForm:HideGameplayScene()" newStackTraceSignature="PlayLoadingUIForm:$ni()" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTaskVoid PlayLoadingUIForm::@CleanupSceneAsync([UniTask]Cysharp.Threading.Tasks.UniTask, string)" newName="$Ni" oldStackTraceSignature="PlayLoadingUIForm:CleanupSceneAsync(UniTask, String)" newStackTraceSignature="PlayLoadingUIForm:$Ni(UniTask, String)" />
+    </type>
+    <type fullName="PlayLoadingUIForm/&lt;&gt;c__DisplayClass14_0" newFullName="" status="NotRenamed">
+      <field signature="string stage" newName="$hG" />
+      <field signature="double stageStarted" newName="$HG" />
+      <field signature="double loadStarted" newName="$iG" />
+      <method signature="void PlayLoadingUIForm/&lt;&gt;c__DisplayClass14_0::&lt;LoadGameplayAsync&gt;g__BeginStage|0([Hotfix]PlayLoadingUIForm/&lt;&gt;c__DisplayClass14_0, string)" newName="$bGA" oldStackTraceSignature="&lt;&gt;c__DisplayClass14_0:&lt;LoadGameplayAsync&gt;g__BeginStage|0(String)" newStackTraceSignature="&lt;&gt;c__DisplayClass14_0:$bGA(String)" />
+      <method signature="void PlayLoadingUIForm/&lt;&gt;c__DisplayClass14_0::&lt;LoadGameplayAsync&gt;g__EndStage|1([Hotfix]PlayLoadingUIForm/&lt;&gt;c__DisplayClass14_0)" newName="$BGA" oldStackTraceSignature="&lt;&gt;c__DisplayClass14_0:&lt;LoadGameplayAsync&gt;g__EndStage|1()" newStackTraceSignature="&lt;&gt;c__DisplayClass14_0:$BGA()" />
+    </type>
+    <type fullName="PlayLoadingUIForm/&lt;&gt;c__DisplayClass15_0" newFullName="" status="NotRenamed">
+      <field signature="int serialId" newName="$IG" />
+      <method signature="bool PlayLoadingUIForm/&lt;&gt;c__DisplayClass15_0::&lt;WaitForFormAsync&gt;b__0([Hotfix]PlayLoadingUIForm/&lt;&gt;c__DisplayClass15_0)" newName="$cGA" oldStackTraceSignature="&lt;&gt;c__DisplayClass15_0:&lt;WaitForFormAsync&gt;b__0()" newStackTraceSignature="&lt;&gt;c__DisplayClass15_0:$cGA()" />
+    </type>
+    <type fullName="PlayLoadingUIForm/&lt;&gt;c__DisplayClass5_0" newFullName="" status="NotRenamed">
+      <field signature="string stage" newName="$kh" />
+      <field signature="double stageStarted" newName="$Kh" />
+      <field signature="double loadStarted" newName="$lh" />
+      <method signature="void PlayLoadingUIForm/&lt;&gt;c__DisplayClass5_0::&lt;LoadGameplayAsync&gt;g__BeginStage|0([Hotfix]PlayLoadingUIForm/&lt;&gt;c__DisplayClass5_0, string)" newName="$VgA" oldStackTraceSignature="&lt;&gt;c__DisplayClass5_0:&lt;LoadGameplayAsync&gt;g__BeginStage|0(String)" newStackTraceSignature="&lt;&gt;c__DisplayClass5_0:$VgA(String)" />
+      <method signature="void PlayLoadingUIForm/&lt;&gt;c__DisplayClass5_0::&lt;LoadGameplayAsync&gt;g__EndStage|1([Hotfix]PlayLoadingUIForm/&lt;&gt;c__DisplayClass5_0)" newName="$wgA" oldStackTraceSignature="&lt;&gt;c__DisplayClass5_0:&lt;LoadGameplayAsync&gt;g__EndStage|1()" newStackTraceSignature="&lt;&gt;c__DisplayClass5_0:$wgA()" />
     </type>
     <type fullName="PlayLoadingUIForm/&lt;&gt;c__DisplayClass6_0" newFullName="" status="NotRenamed">
       <field signature="int serialId" newName="$aG" />
       <method signature="bool PlayLoadingUIForm/&lt;&gt;c__DisplayClass6_0::&lt;WaitForFormAsync&gt;b__0([Hotfix]PlayLoadingUIForm/&lt;&gt;c__DisplayClass6_0)" newName="$oi" oldStackTraceSignature="&lt;&gt;c__DisplayClass6_0:&lt;WaitForFormAsync&gt;b__0()" newStackTraceSignature="&lt;&gt;c__DisplayClass6_0:$oi()" />
+    </type>
+    <type fullName="PlayLoadingUIForm/&lt;CleanupSceneAsync&gt;d__18" newFullName="" status="NotRenamed">
+      <field signature="int &lt;&gt;1__state" newName="$jG" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder &lt;&gt;t__builder" newName="$JG" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask pendingLoad" newName="$kG" />
+      <field signature="string sceneAsset" newName="$KG" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__1" newName="$lG" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;bool&gt; &lt;&gt;u__2" newName="$LG" />
     </type>
     <type fullName="PlayLoadingUIForm/&lt;CleanupSceneAsync&gt;d__9" newFullName="" status="NotRenamed">
       <field signature="int &lt;&gt;1__state" newName="$AG" />
@@ -9130,9 +9252,26 @@
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__1" newName="$CG" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;bool&gt; &lt;&gt;u__2" newName="$dG" />
     </type>
+    <type fullName="PlayLoadingUIForm/&lt;LoadGameplayAsync&gt;d__14" newFullName="" status="NotRenamed">
+      <field signature="int &lt;&gt;1__state" newName="$mG" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1&lt;bool&gt; &lt;&gt;t__builder" newName="$MG" />
+      <field signature="[Hotfix]PlayLoadingUIForm/&lt;&gt;c__DisplayClass14_0 &lt;&gt;8__1" newName="$nG" />
+      <field signature="string &lt;sceneAsset&gt;5__2" newName="$NG" />
+      <field signature="int &lt;loadingId&gt;5__3" newName="$oG" />
+      <field signature="int &lt;playId&gt;5__4" newName="$OG" />
+      <field signature="bool &lt;success&gt;5__5" newName="$pG" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask &lt;pendingLoad&gt;5__6" newName="$qG" />
+      <field signature="System.Threading.CancellationTokenSource &lt;cancellation&gt;5__7" newName="$QG" />
+      <field signature="System.IDisposable &lt;timeout&gt;5__8" newName="$kh" />
+      <field signature="double &lt;deadline&gt;5__9" newName="$Kh" />
+      <field signature="System.Threading.CancellationToken &lt;token&gt;5__10" newName="$lh" />
+      <field signature="[Hotfix]Gameplay.GameController &lt;controller&gt;5__11" newName="$Ti" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__1" newName="$ui" />
+    </type>
     <type fullName="PlayLoadingUIForm/&lt;LoadGameplayAsync&gt;d__5" newFullName="" status="NotRenamed">
       <field signature="int &lt;&gt;1__state" newName="$DG" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1&lt;bool&gt; &lt;&gt;t__builder" newName="$eG" />
+      <field signature="[Hotfix]PlayLoadingUIForm/&lt;&gt;c__DisplayClass5_0 &lt;&gt;8__1" newName="$rM" />
       <field signature="string &lt;sceneAsset&gt;5__2" newName="$EG" />
       <field signature="int &lt;loadingId&gt;5__3" newName="$fG" />
       <field signature="int &lt;playId&gt;5__4" newName="$FG" />
@@ -9145,14 +9284,52 @@
       <field signature="[Hotfix]Gameplay.GameController &lt;controller&gt;5__11" newName="$jG" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__1" newName="$JG" />
     </type>
+    <type fullName="PlayLoadingUIForm/&lt;PrepareSceneAsync&gt;d__16" newFullName="" status="NotRenamed">
+      <field signature="int &lt;&gt;1__state" newName="$Zi" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$BI" />
+      <field signature="string sceneAsset" newName="$rM" />
+      <field signature="System.Action`1&lt;string&gt; beginStage" newName="$RM" />
+      <field signature="System.Action endStage" newName="$sM" />
+      <field signature="System.Threading.CancellationToken token" newName="$YAA" />
+      <field signature="bool &lt;reuseStartup&gt;5__2" newName="$zAA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;bool&gt; &lt;&gt;u__1" newName="$ZAA" />
+      <field signature="System.Threading.CancellationTokenSource &lt;linked&gt;5__3" newName="$abA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__2" newName="$AbA" />
+    </type>
     <type fullName="PlayLoadingUIForm/&lt;PrepareSceneAsync&gt;d__7" newFullName="" status="NotRenamed">
       <field signature="int &lt;&gt;1__state" newName="$kG" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$KG" />
       <field signature="string sceneAsset" newName="$lG" />
+      <field signature="System.Action`1&lt;string&gt; beginStage" newName="$RM" />
+      <field signature="System.Action endStage" newName="$sM" />
       <field signature="System.Threading.CancellationToken token" newName="$LG" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;bool&gt; &lt;&gt;u__1" newName="$mG" />
       <field signature="System.Threading.CancellationTokenSource &lt;linked&gt;5__2" newName="$MG" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__2" newName="$nG" />
+    </type>
+    <type fullName="PlayLoadingUIForm/&lt;PrepareStartupGameplayAsync&gt;d__12" newFullName="" status="NotRenamed">
+      <field signature="int &lt;&gt;1__state" newName="$bbA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$BbA" />
+      <field signature="string &lt;sceneAsset&gt;5__2" newName="$cbA" />
+      <field signature="double &lt;started&gt;5__3" newName="$CbA" />
+      <field signature="int &lt;level&gt;5__4" newName="$dbA" />
+      <field signature="System.Threading.CancellationTokenSource &lt;cancellation&gt;5__5" newName="$DbA" />
+      <field signature="System.IDisposable &lt;timeout&gt;5__6" newName="$ebA" />
+      <field signature="System.Threading.CancellationToken &lt;token&gt;5__7" newName="$EbA" />
+      <field signature="bool &lt;prepared&gt;5__8" newName="$fbA" />
+      <field signature="object &lt;&gt;7__wrap8" newName="$FbA" />
+      <field signature="int &lt;&gt;7__wrap9" newName="$gbA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;bool&gt; &lt;&gt;u__1" newName="$GbA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Level.LevelData&gt; &lt;&gt;u__2" newName="$hbA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Level.GameplayAssetCache/Lease&gt; &lt;&gt;u__3" newName="$HbA" />
+    </type>
+    <type fullName="PlayLoadingUIForm/&lt;WaitForFormAsync&gt;d__15" newFullName="" status="NotRenamed">
+      <field signature="int &lt;&gt;1__state" newName="$ibA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$IbA" />
+      <field signature="int serialId" newName="$jbA" />
+      <field signature="System.Threading.CancellationToken token" newName="$JbA" />
+      <field signature="[Hotfix]PlayLoadingUIForm/&lt;&gt;c__DisplayClass15_0 &lt;&gt;8__1" newName="$kbA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__1" newName="$KbA" />
     </type>
     <type fullName="PlayLoadingUIForm/&lt;WaitForFormAsync&gt;d__6" newFullName="" status="NotRenamed">
       <field signature="int &lt;&gt;1__state" newName="$NG" />
