@@ -37,3 +37,4 @@ Assets/Firebase/Plugins/x86_64/FirebaseCppApp-12_10_0.bundle
 /.utmp
 /.utmp/RelWithDebInfo
 /.utmp
+/outputs
