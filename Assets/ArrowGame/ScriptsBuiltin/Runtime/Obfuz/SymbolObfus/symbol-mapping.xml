@@ -1004,6 +1004,8 @@
       <method signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1&lt;int&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_804885(int)" newName="$ZZ" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_804885(Int32)" newStackTraceSignature="$Xb:$ZZ(Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1&lt;string&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_13675508(int)" newName="$aaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_13675508(Int32)" newStackTraceSignature="$Xb:$aaA(Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_7259852(int)" newName="$AaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_7259852(Int32)" newStackTraceSignature="$Xb:$AaA(Int32)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.SwitchToMainThreadAwaitable $Obfuz$ProxyCall::@$Obfuz$Dispatch_22075_11448108(System.Threading.CancellationToken, int)" newName="$ugA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22075_11448108(CancellationToken, Int32)" newStackTraceSignature="$Xb:$ugA(CancellationToken, Int32)" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.SwitchToMainThreadAwaitable/Awaiter $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_1576731$2(nint, int)" newName="$CGA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_1576731$2(IntPtr, Int32)" newStackTraceSignature="$Xb:$CGA(IntPtr, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_8988543(object, int)" newName="$LW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_8988543(Object, Int32)" newStackTraceSignature="$Xb:$LW(Object, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_13510_8988543([UniTask]Cysharp.Threading.Tasks.UniTask, System.Threading.CancellationToken, int)" newName="$BaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_13510_8988543(UniTask, CancellationToken, Int32)" newStackTraceSignature="$Xb:$BaA(UniTask, CancellationToken, Int32)" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask $Obfuz$ProxyCall::@$Obfuz$Dispatch_2155_8988543(int, System.Threading.CancellationToken, byte, int)" newName="$caA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2155_8988543(Int32, CancellationToken, Byte, Int32)" newStackTraceSignature="$Xb:$caA(Int32, CancellationToken, Byte, Int32)" />
@@ -1143,6 +1145,7 @@
       <method signature="[Hotfix]EntityParams $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_10212885(object, int)" newName="$MK" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_10212885(Object, Int32)" newStackTraceSignature="$Xb:$MK(Object, Int32)" />
       <method signature="[Hotfix]EntityParams $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_10212885(int)" newName="$nK" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_10212885(Int32)" newStackTraceSignature="$Xb:$nK(Int32)" />
       <method signature="[Hotfix]EntityParams $Obfuz$ProxyCall::@$Obfuz$Dispatch_34129_10212885(System.Nullable`1&lt;[UnityEngine.CoreModule]UnityEngine.Vector3&gt;, System.Nullable`1&lt;[UnityEngine.CoreModule]UnityEngine.Vector3&gt;, System.Nullable`1&lt;[UnityEngine.CoreModule]UnityEngine.Vector3&gt;, int)" newName="$NK" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_34129_10212885(Nullable`1, Nullable`1, Nullable`1, Int32)" newStackTraceSignature="$Xb:$NK(Nullable`1, Nullable`1, Nullable`1, Int32)" />
+      <method signature="[Hotfix]FlowButton $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_1715272(object, int)" newName="$dGA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_1715272(Object, Int32)" newStackTraceSignature="$Xb:$dGA(Object, Int32)" />
       <method signature="[Hotfix]GameFramework.DataModelBase $Obfuz$ProxyCall::@$Obfuz$Dispatch_16665_9898682(object, object, int, object, int)" newName="$oK" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_16665_9898682(Object, Object, Int32, Object, Int32)" newStackTraceSignature="$Xb:$oK(Object, Object, Int32, Object, Int32)" />
       <method signature="[Hotfix]GameFramework.DataModelBase $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_9898682(object, object, int)" newName="$OK" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_9898682(Object, Object, Int32)" newStackTraceSignature="$Xb:$OK(Object, Object, Int32)" />
       <method signature="[Hotfix]GameFramework.DataModelBase $Obfuz$ProxyCall::@$Obfuz$Dispatch_51171_9898682(object, [Hotfix]TypeIdPair, int)" newName="$pK" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_51171_9898682(Object, TypeIdPair, Int32)" newStackTraceSignature="$Xb:$pK(Object, $w, Int32)" />
@@ -1316,6 +1319,7 @@
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_59828_12616511(object, nuint, nuint, int)" newName="$EL" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_59828_12616511(Object, UIntPtr, UIntPtr, Int32)" newStackTraceSignature="$Xb:$EL(Object, UIntPtr, UIntPtr, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_61360_12616511(object, float, float, int)" newName="$JBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_61360_12616511(Object, Single, Single, Int32)" newStackTraceSignature="$Xb:$JBA(Object, Single, Single, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_61619_12616511([UnityEngine.CoreModule]UnityEngine.Vector3, int)" newName="$kBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_61619_12616511(Vector3, Int32)" newStackTraceSignature="$Xb:$kBA(Vector3, Int32)" />
+      <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_62955_12616511(object, object, object, byte, int)" newName="$DGA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_62955_12616511(Object, Object, Object, Byte, Int32)" newStackTraceSignature="$Xb:$DGA(Object, Object, Object, Byte, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_6317_12616511(object, [UnityEngine.CoreModule]UnityEngine.Vector2, object, nuint, int)" newName="$FL" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_6317_12616511(Object, Vector2, Object, UIntPtr, Int32)" newStackTraceSignature="$Xb:$FL(Object, Vector2, Object, UIntPtr, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_64342_12616511(object, [UnityEngine.CoreModule]UnityEngine.Ray, nuint, int)" newName="$KBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_64342_12616511(Object, Ray, UIntPtr, Int32)" newStackTraceSignature="$Xb:$KBA(Object, Ray, UIntPtr, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_65367_12616511(object, object, int, int)" newName="$gL" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_65367_12616511(Object, Object, Int32, Int32)" newStackTraceSignature="$Xb:$gL(Object, Object, Int32, Int32)" />
@@ -1607,6 +1611,7 @@
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_64071_4780505(object, [UnityEngine.CoreModule]UnityEngine.Vector3, [UnityEngine.CoreModule]UnityEngine.Quaternion, [UnityEngine.CoreModule]UnityEngine.Vector3, int)" newName="$kCA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_64071_4780505(Object, Vector3, Quaternion, Vector3, Int32)" newStackTraceSignature="$Xb:$kCA(Object, Vector3, Quaternion, Vector3, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_65257_4780505(object, byte, object, int)" newName="$pn" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_65257_4780505(Object, Byte, Object, Int32)" newStackTraceSignature="$Xb:$pn(Object, Byte, Object, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_65367_4780505(object, object, int, int)" newName="$Pn" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_65367_4780505(Object, Object, Int32, Int32)" newStackTraceSignature="$Xb:$Pn(Object, Object, Int32, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_7096_4780505(object, double, object, object, int)" newName="$eGA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_7096_4780505(Object, Double, Object, Object, Int32)" newStackTraceSignature="$Xb:$eGA(Object, Double, Object, Object, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_7398_4780505(object, int, int, object, int)" newName="$KCA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_7398_4780505(Object, Int32, Int32, Object, Int32)" newStackTraceSignature="$Xb:$KCA(Object, Int32, Int32, Object, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_7472_4780505(int, byte, int)" newName="$ZY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_7472_4780505(Int32, Byte, Int32)" newStackTraceSignature="$Xb:$ZY(Int32, Byte, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_8739_4780505(object, float, float, float, int)" newName="$lCA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_8739_4780505(Object, Single, Single, Single, Int32)" newStackTraceSignature="$Xb:$lCA(Object, Single, Single, Single, Int32)" />
@@ -1622,6 +1627,7 @@
       <method signature="[Unity.TextMeshPro]TMPro.TMP_Text $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_16357659(object, int)" newName="$NCA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_16357659(Object, Int32)" newStackTraceSignature="$Xb:$NCA(Object, Int32)" />
       <method signature="[Unity.TextMeshPro]TMPro.TMP_TextInfo $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_9498485(object, int)" newName="$oCA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_9498485(Object, Int32)" newStackTraceSignature="$Xb:$oCA(Object, Int32)" />
       <method signature="[Hotfix]TypeIdPair[] $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_2461556(object, int)" newName="$tn" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_2461556(Object, Int32)" newStackTraceSignature="$Xb:$tn(Object, Int32)" />
+      <method signature="[Hotfix]UIButtonSound $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_5366035(object, int)" newName="$EGA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_5366035(Object, Int32)" newStackTraceSignature="$Xb:$EGA(Object, Int32)" />
       <method signature="[Hotfix]UIFormBase $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_2733893(nint, int)" newName="$OCA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_2733893(IntPtr, Int32)" newStackTraceSignature="$Xb:$OCA(IntPtr, Int32)" />
       <method signature="[Hotfix]UIItemBase $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_8608896(object, int)" newName="$Tn" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_8608896(Object, Int32)" newStackTraceSignature="$Xb:$Tn(Object, Int32)" />
       <method signature="[Hotfix]UIItemObject $Obfuz$ProxyCall::@$Obfuz$Dispatch_62543_16123158(object, object, object, float, int, float, int)" newName="$un" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_62543_16123158(Object, Object, Object, Single, Int32, Single, Int32)" newStackTraceSignature="$Xb:$un(Object, Object, Object, Single, Int32, Single, Int32)" />
@@ -1870,7 +1876,7 @@
     <type fullName="$ObfuzRVA$DataHolder2048" newFullName="$wb" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;" newFullName="$ob" status="Renamed">
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize40_10 $Obfuz$WatermarkDataHolderField12" newName="$lX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=24 CD1E7D8370EA36F442606618E956669F8BABE52CE9C1CC82767A0E0FEEF4CAD7" newName="$TX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=16 B1B3D3C4982B746C53DAB2F01202E8F0DA0CEB9CF3D8F94234A436F7ED8D0A4D" newName="$LX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_16 $Obfuz$WatermarkDataHolderField18" newName="$mX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_11 $Obfuz$WatermarkDataHolderField13" newName="$MX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize40_6 $Obfuz$WatermarkDataHolderField8" newName="$nX" />
@@ -1881,15 +1887,15 @@
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize44_15 $Obfuz$WatermarkDataHolderField17" newName="$PX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize40_14 $Obfuz$WatermarkDataHolderField16" newName="$qX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize32_12 $Obfuz$WatermarkDataHolderField14" newName="$QX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=16 B1B3D3C4982B746C53DAB2F01202E8F0DA0CEB9CF3D8F94234A436F7ED8D0A4D" newName="$LX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10292 991B271530DDF3FB1C4F558C699A6594D1460A101D48E4E99CB2DF1E66F2BDFF" newName="$kBA" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_7 $Obfuz$WatermarkDataHolderField9" newName="$RX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20681 693260A4A80916413F093608895BBF34E239C3011B12AD3CAB6121D356940859" newName="$KBA" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20 AAF43DE17A34E6B91BE41081ADF6E0415DCD2CAC51442E71F5158CC0476FCB26" newName="$rX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20 CB129D7FC803D1A168D2797E2A9838A4BB0F390690311932C09E99C7D1CAD357" newName="$vX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=12 FE2BC5B610FA2F21F48C2AF9EE607F1E75DDF01DEEEF014C2A3439BC7F3A2661" newName="$tX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10245 F1854D85596995AE8DF94E0E1E69A4D9F218C333F9F1454750EEBD718D404D25" newName="$Fy" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=24 CD1E7D8370EA36F442606618E956669F8BABE52CE9C1CC82767A0E0FEEF4CAD7" newName="$TX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize20_18 $Obfuz$WatermarkDataHolderField20" newName="$uX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=24 26168C8195C8F665BA6223C0EDD4405B11D51547F6E20F3712913880AF764E93" newName="$sX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20623 D3BD7580BCDAB7470B48352F4AE95ADAA940657963DAA9401511F9DAAAF0B0F9" newName="$gy" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20 CB129D7FC803D1A168D2797E2A9838A4BB0F390690311932C09E99C7D1CAD357" newName="$vX" />
       <method signature="uint &lt;PrivateImplementationDetails&gt;::@ComputeStringHash(string)" newName="$FJ" oldStackTraceSignature="&lt;PrivateImplementationDetails&gt;:ComputeStringHash(String)" newStackTraceSignature="$ob:$FJ(String)" />
     </type>
     <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize20_14" newFullName="$ob/$Vb" status="Renamed" />
@@ -1930,6 +1936,7 @@
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10105" newFullName="$ob/$GD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10195" newFullName="$ob/$jc" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10245" newFullName="$ob/$GD" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10292" newFullName="$ob/$VD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10552" newFullName="$ob/$sc" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10710" newFullName="$ob/$Jc" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=11256" newFullName="$ob/$Qc" status="Renamed" />
@@ -1942,6 +1949,7 @@
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20" newFullName="$ob/$FD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20298" newFullName="$ob/$hD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20623" newFullName="$ob/$hD" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20681" newFullName="$ob/$wD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=24" newFullName="$ob/$gD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=28" newFullName="$ob/$Tc" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=4361" newFullName="$ob/$d" status="Renamed" />
@@ -2023,7 +2031,7 @@
       <method signature="[Hotfix]AdjustManager AdjustManager::@get_Instance()" newName="$Pv" oldStackTraceSignature="AdjustManager:get_Instance()" newStackTraceSignature="$tb:$Pv()" />
       <method signature="void AdjustManager::InitSdk([Hotfix]AdjustManager)" newName="$qv" oldStackTraceSignature="AdjustManager:InitSdk()" newStackTraceSignature="$tb:$qv()" />
       <method signature="void AdjustManager::LogEvent([Hotfix]AdjustManager, string, System.Collections.Generic.Dictionary`2&lt;string,string&gt;)" newName="$Qv" oldStackTraceSignature="AdjustManager:LogEvent(String, Dictionary`2)" newStackTraceSignature="$tb:$Qv(String, Dictionary`2)" />
-      <method signature="void AdjustManager::LogAdRevenue([Hotfix]AdjustManager, double, string)" newName="$Rv" oldStackTraceSignature="AdjustManager:LogAdRevenue(Double, String)" newStackTraceSignature="$tb:$Rv(Double, String)" />
+      <method signature="void AdjustManager::LogAdRevenue([Hotfix]AdjustManager, double, string, string)" newName="$at" oldStackTraceSignature="AdjustManager:LogAdRevenue(Double, String, String)" newStackTraceSignature="$tb:$at(Double, String, String)" />
       <method signature="void AdjustManager::GetAttribution([Hotfix]AdjustManager)" newName="$sv" oldStackTraceSignature="AdjustManager:GetAttribution()" newStackTraceSignature="$tb:$sv()" />
       <method signature="void AdjustManager::MarkAttributionComplete([Hotfix]AdjustManager)" newName="$Sv" oldStackTraceSignature="AdjustManager:MarkAttributionComplete()" newStackTraceSignature="$tb:$Sv()" />
       <method signature="bool AdjustManager::CheckAttributionCallBack([Hotfix]AdjustManager)" newName="$tv" oldStackTraceSignature="AdjustManager:CheckAttributionCallBack()" newStackTraceSignature="$tb:$tv()" />
@@ -2051,7 +2059,7 @@
       <property signature="[Hotfix]AdsManager Instance" newName="$a" />
       <method signature="[Hotfix]AdsManager AdsManager::@get_Instance()" newName="$of" oldStackTraceSignature="AdsManager:get_Instance()" newStackTraceSignature="$Q:$of()" />
       <method signature="void AdsManager::ShowAd([Hotfix]AdsManager, System.Action`1&lt;bool&gt;, string)" newName="$Vf" oldStackTraceSignature="AdsManager:ShowAd(Action`1, String)" newStackTraceSignature="$Q:$Vf(Action`1, String)" />
-      <method signature="void AdsManager::ShowInter([Hotfix]AdsManager, string)" newName="$wf" oldStackTraceSignature="AdsManager:ShowInter(String)" newStackTraceSignature="$Q:$wf(String)" />
+      <method signature="void AdsManager::ShowInter([Hotfix]AdsManager, string, System.Action)" newName="$At" oldStackTraceSignature="AdsManager:ShowInter(String, Action)" newStackTraceSignature="$Q:$At(String, Action)" />
       <method signature="void AdsManager::ShowBanner([Hotfix]AdsManager)" newName="$nG" oldStackTraceSignature="AdsManager:ShowBanner()" newStackTraceSignature="$Q:$nG()" />
       <method signature="void AdsManager::HideBanner([Hotfix]AdsManager)" newName="$UgA" oldStackTraceSignature="AdsManager:HideBanner()" newStackTraceSignature="$Q:$UgA()" />
       <method signature="void AdsManager::ShowMaxAd([Hotfix]AdsManager, System.Action`1&lt;bool&gt;, string)" newName="$Ui" oldStackTraceSignature="AdsManager:ShowMaxAd(Action`1, String)" newStackTraceSignature="$Q:$Ui(Action`1, String)" />
@@ -2545,6 +2553,7 @@
       <method signature="object ArrowMakeupUIForm/&lt;ShowMakeupGuideSequenceCoroutine&gt;d__49::System.Collections.IEnumerator.get_Current([Hotfix]ArrowMakeupUIForm/&lt;ShowMakeupGuideSequenceCoroutine&gt;d__49)" newName="$uZ" oldStackTraceSignature="&lt;ShowMakeupGuideSequenceCoroutine&gt;d__49:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="&lt;ShowMakeupGuideSequenceCoroutine&gt;d__49:$uZ()" />
     </type>
     <type fullName="ArrowMaxAdsController" newFullName="$Tb" status="Renamed">
+      <field signature="System.Collections.Generic.Dictionary`2&lt;string,[Hotfix]InterstitialCompletion&gt; interstitialCompletions" newName="$pP" />
       <field signature="bool isBannerShowing" newName="$rI" />
       <field signature="bool isMRecShowing" newName="$RI" />
       <field signature="int interstitialRetryAttempt" newName="$tI" />
@@ -2558,13 +2567,14 @@
       <method signature="void ArrowMaxAdsController::ShowMaxDebugger([Hotfix]ArrowMaxAdsController)" newName="$kV" oldStackTraceSignature="ArrowMaxAdsController:ShowMaxDebugger()" newStackTraceSignature="$Tb:$kV()" />
       <method signature="void ArrowMaxAdsController::InitializeInterstitialAds([Hotfix]ArrowMaxAdsController)" newName="$KV" oldStackTraceSignature="ArrowMaxAdsController:InitializeInterstitialAds()" newStackTraceSignature="$Tb:$KV()" />
       <method signature="void ArrowMaxAdsController::LoadInterstitial([Hotfix]ArrowMaxAdsController)" newName="$lV" oldStackTraceSignature="ArrowMaxAdsController:LoadInterstitial()" newStackTraceSignature="$Tb:$lV()" />
-      <method signature="void ArrowMaxAdsController::ShowInterstitial([Hotfix]ArrowMaxAdsController, string)" newName="$LV" oldStackTraceSignature="ArrowMaxAdsController:ShowInterstitial(String)" newStackTraceSignature="$Tb:$LV(String)" />
+      <method signature="void ArrowMaxAdsController::ShowInterstitial([Hotfix]ArrowMaxAdsController, string, System.Action)" newName="$Ht" oldStackTraceSignature="ArrowMaxAdsController:ShowInterstitial(String, Action)" newStackTraceSignature="$Tb:$Ht(String, Action)" />
       <method signature="void ArrowMaxAdsController::OnInterstitialLoadedEvent([Hotfix]ArrowMaxAdsController, string, [MaxSdk.Scripts]MaxSdkBase/AdInfo)" newName="$mV" oldStackTraceSignature="ArrowMaxAdsController:OnInterstitialLoadedEvent(String, AdInfo)" newStackTraceSignature="$Tb:$mV(String, AdInfo)" />
       <method signature="void ArrowMaxAdsController::OnInterstitialFailedEvent([Hotfix]ArrowMaxAdsController, string, [MaxSdk.Scripts]MaxSdkBase/ErrorInfo)" newName="$MV" oldStackTraceSignature="ArrowMaxAdsController:OnInterstitialFailedEvent(String, ErrorInfo)" newStackTraceSignature="$Tb:$MV(String, ErrorInfo)" />
       <method signature="void ArrowMaxAdsController::OnInterstitialDisplayedEvent([Hotfix]ArrowMaxAdsController, string, [MaxSdk.Scripts]MaxSdkBase/AdInfo)" newName="$nV" oldStackTraceSignature="ArrowMaxAdsController:OnInterstitialDisplayedEvent(String, AdInfo)" newStackTraceSignature="$Tb:$nV(String, AdInfo)" />
       <method signature="void ArrowMaxAdsController::OnInterstitialClickedEvent([Hotfix]ArrowMaxAdsController, string, [MaxSdk.Scripts]MaxSdkBase/AdInfo)" newName="$NV" oldStackTraceSignature="ArrowMaxAdsController:OnInterstitialClickedEvent(String, AdInfo)" newStackTraceSignature="$Tb:$NV(String, AdInfo)" />
       <method signature="void ArrowMaxAdsController::InterstitialFailedToDisplayEvent([Hotfix]ArrowMaxAdsController, string, [MaxSdk.Scripts]MaxSdkBase/ErrorInfo, [MaxSdk.Scripts]MaxSdkBase/AdInfo)" newName="$oV" oldStackTraceSignature="ArrowMaxAdsController:InterstitialFailedToDisplayEvent(String, ErrorInfo, AdInfo)" newStackTraceSignature="$Tb:$oV(String, ErrorInfo, AdInfo)" />
       <method signature="void ArrowMaxAdsController::OnInterstitialDismissedEvent([Hotfix]ArrowMaxAdsController, string, [MaxSdk.Scripts]MaxSdkBase/AdInfo)" newName="$OV" oldStackTraceSignature="ArrowMaxAdsController:OnInterstitialDismissedEvent(String, AdInfo)" newStackTraceSignature="$Tb:$OV(String, AdInfo)" />
+      <method signature="void ArrowMaxAdsController::CompleteInterstitial([Hotfix]ArrowMaxAdsController, [MaxSdk.Scripts]MaxSdkBase/AdInfo)" newName="$it" oldStackTraceSignature="ArrowMaxAdsController:CompleteInterstitial(AdInfo)" newStackTraceSignature="$Tb:$it(AdInfo)" />
       <method signature="void ArrowMaxAdsController::OnInterstitialRevenuePaidEvent([Hotfix]ArrowMaxAdsController, string, [MaxSdk.Scripts]MaxSdkBase/AdInfo)" newName="$pV" oldStackTraceSignature="ArrowMaxAdsController:OnInterstitialRevenuePaidEvent(String, AdInfo)" newStackTraceSignature="$Tb:$pV(String, AdInfo)" />
       <method signature="void ArrowMaxAdsController::InitializeRewardedAds([Hotfix]ArrowMaxAdsController)" newName="$PV" oldStackTraceSignature="ArrowMaxAdsController:InitializeRewardedAds()" newStackTraceSignature="$Tb:$PV()" />
       <method signature="void ArrowMaxAdsController::LoadRewardedAd([Hotfix]ArrowMaxAdsController)" newName="$qV" oldStackTraceSignature="ArrowMaxAdsController:LoadRewardedAd()" newStackTraceSignature="$Tb:$qV()" />
@@ -2591,9 +2601,25 @@
       <method signature="void ArrowMaxAdsController::OnMRecAdRevenuePaidEvent([Hotfix]ArrowMaxAdsController, string, [MaxSdk.Scripts]MaxSdkBase/AdInfo)" newName="$Rx" oldStackTraceSignature="ArrowMaxAdsController:OnMRecAdRevenuePaidEvent(String, AdInfo)" newStackTraceSignature="$Tb:$Rx(String, AdInfo)" />
       <method signature="void ArrowMaxAdsController::ShowAdIfReady([Hotfix]ArrowMaxAdsController)" newName="$sx" oldStackTraceSignature="ArrowMaxAdsController:ShowAdIfReady()" newStackTraceSignature="$Tb:$sx()" />
       <method signature="void ArrowMaxAdsController::TrackAdRevenue([Hotfix]ArrowMaxAdsController, [MaxSdk.Scripts]MaxSdkBase/AdInfo)" newName="$Sx" oldStackTraceSignature="ArrowMaxAdsController:TrackAdRevenue(AdInfo)" newStackTraceSignature="$Tb:$Sx(AdInfo)" />
-      <method signature="void ArrowMaxAdsController::&lt;InitializeSDK&gt;b__13_0([Hotfix]ArrowMaxAdsController, [MaxSdk.Scripts]MaxSdkBase/SdkConfiguration)" newName="$tx" oldStackTraceSignature="ArrowMaxAdsController:&lt;InitializeSDK&gt;b__13_0(SdkConfiguration)" newStackTraceSignature="$Tb:$tx(SdkConfiguration)" />
-      <method signature="void ArrowMaxAdsController::&lt;OnInterstitialFailedEvent&gt;b__20_0([Hotfix]ArrowMaxAdsController)" newName="$Tx" oldStackTraceSignature="ArrowMaxAdsController:&lt;OnInterstitialFailedEvent&gt;b__20_0()" newStackTraceSignature="$Tb:$Tx()" />
-      <method signature="void ArrowMaxAdsController::&lt;OnRewardedAdFailedEvent&gt;b__31_0([Hotfix]ArrowMaxAdsController)" newName="$ux" oldStackTraceSignature="ArrowMaxAdsController:&lt;OnRewardedAdFailedEvent&gt;b__31_0()" newStackTraceSignature="$Tb:$ux()" />
+      <method signature="void ArrowMaxAdsController::&lt;InitializeSDK&gt;b__14_0([Hotfix]ArrowMaxAdsController, [MaxSdk.Scripts]MaxSdkBase/SdkConfiguration)" newName="$It" oldStackTraceSignature="ArrowMaxAdsController:&lt;InitializeSDK&gt;b__14_0(SdkConfiguration)" newStackTraceSignature="$Tb:$It(SdkConfiguration)" />
+      <method signature="void ArrowMaxAdsController::&lt;OnInterstitialFailedEvent&gt;b__21_0([Hotfix]ArrowMaxAdsController)" newName="$jt" oldStackTraceSignature="ArrowMaxAdsController:&lt;OnInterstitialFailedEvent&gt;b__21_0()" newStackTraceSignature="$Tb:$jt()" />
+      <method signature="void ArrowMaxAdsController::&lt;OnRewardedAdFailedEvent&gt;b__33_0([Hotfix]ArrowMaxAdsController)" newName="$Jt" oldStackTraceSignature="ArrowMaxAdsController:&lt;OnRewardedAdFailedEvent&gt;b__33_0()" newStackTraceSignature="$Tb:$Jt()" />
+    </type>
+    <type fullName="ArrowMaxAdsController/&lt;CompleteInterstitial&gt;d__26" newFullName="$Tb/$cC" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$PP" />
+      <field signature="System.Runtime.CompilerServices.AsyncVoidMethodBuilder &lt;&gt;t__builder" newName="$qP" />
+      <field signature="[MaxSdk.Scripts]MaxSdkBase/AdInfo adInfo" newName="$QP" />
+      <field signature="[Hotfix]ArrowMaxAdsController &lt;&gt;4__this" newName="$rP" />
+      <field signature="string &lt;placement&gt;5__2" newName="$RP" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.SwitchToMainThreadAwaitable/Awaiter &lt;&gt;u__1" newName="$sP" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__2" newName="$SP" />
+    </type>
+    <type fullName="ArrowMaxAdsController/&lt;OnInterstitialRevenuePaidEvent&gt;d__27" newFullName="$Tb/$DC" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$tP" />
+      <field signature="System.Runtime.CompilerServices.AsyncVoidMethodBuilder &lt;&gt;t__builder" newName="$TP" />
+      <field signature="[MaxSdk.Scripts]MaxSdkBase/AdInfo adInfo" newName="$uP" />
+      <field signature="[Hotfix]ArrowMaxAdsController &lt;&gt;4__this" newName="$UP" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.SwitchToMainThreadAwaitable/Awaiter &lt;&gt;u__1" newName="$vP" />
     </type>
     <type fullName="ArrowMaze.ArrowAdvancedSkinDatabase" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]ArrowMaze.ArrowAdvancedSkinDatabase mInstance" newName="$qG" />
@@ -5308,6 +5334,7 @@
     <type fullName="CommonHelper" newFullName="$u" status="Renamed">
       <field signature="int UserType" newName="$tc" />
       <field signature="bool isConstraintBorA" newName="$Tc" />
+      <field signature="bool s_StartupLoadingReported" newName="$HB" />
       <field signature="bool RecognitionTimeOut" newName="$uc" />
       <field signature="long nextShowInterstitialTime" newName="$vc" />
       <field signature="int s_InterstitialCancelAccum" newName="$eh" />
@@ -5324,6 +5351,9 @@
       <method signature="bool CommonHelper::@IsForceUserTypeMode()" newName="$IU" oldStackTraceSignature="CommonHelper:IsForceUserTypeMode()" newStackTraceSignature="$u:$IU()" />
       <method signature="void CommonHelper::@ApplySpecStatusUserType()" newName="$jU" oldStackTraceSignature="CommonHelper:ApplySpecStatusUserType()" newStackTraceSignature="$u:$jU()" />
       <method signature="bool CommonHelper::@IsSpec()" newName="$nB" oldStackTraceSignature="CommonHelper:IsSpec()" newStackTraceSignature="$u:$nB()" />
+      <method signature="void CommonHelper::@LogStartupLoadingComplete()" newName="$iA" oldStackTraceSignature="CommonHelper:LogStartupLoadingComplete()" newStackTraceSignature="$u:$iA()" />
+      <method signature="void CommonHelper::@LogPopup(string)" newName="$nA" oldStackTraceSignature="CommonHelper:LogPopup(String)" newStackTraceSignature="$u:$nA(String)" />
+      <method signature="void CommonHelper::@LogRewardAdPlacement(string)" newName="$NA" oldStackTraceSignature="CommonHelper:LogRewardAdPlacement(String)" newStackTraceSignature="$u:$NA(String)" />
       <method signature="void CommonHelper::@LogEvent(string, System.Collections.Generic.Dictionary`2&lt;string,string&gt;)" newName="$JU" oldStackTraceSignature="CommonHelper:LogEvent(String, Dictionary`2)" newStackTraceSignature="$u:$JU(String, Dictionary`2)" />
       <method signature="void CommonHelper::@IsConstraintBorA()" newName="$DB" oldStackTraceSignature="CommonHelper:IsConstraintBorA()" newStackTraceSignature="$u:$DB()" />
       <method signature="void CommonHelper::@ConsumeCoins(int, System.Action`1&lt;bool&gt;)" newName="$PB" oldStackTraceSignature="CommonHelper:ConsumeCoins(Int32, Action`1)" newStackTraceSignature="$u:$PB(Int32, Action`1)" />
@@ -5341,7 +5371,7 @@
       <method signature="void CommonHelper::@ShowVideoAd(string, System.Action`1&lt;bool&gt;, int, bool)" newName="$GA" oldStackTraceSignature="CommonHelper:ShowVideoAd(String, Action`1, Int32, Boolean)" newStackTraceSignature="$u:$GA(String, Action`1, Int32, Boolean)" />
       <method signature="void CommonHelper::@LogAdButtonShowEvent(string)" newName="$kB" oldStackTraceSignature="CommonHelper:LogAdButtonShowEvent(String)" newStackTraceSignature="$u:$kB(String)" />
       <method signature="void CommonHelper::@ResetInterstitialCancelAccum()" newName="$sm" oldStackTraceSignature="CommonHelper:ResetInterstitialCancelAccum()" newStackTraceSignature="$u:$sm()" />
-      <method signature="void CommonHelper::@ShowInterstitial(string, bool)" newName="$KB" oldStackTraceSignature="CommonHelper:ShowInterstitial(String, Boolean)" newStackTraceSignature="$u:$KB(String, Boolean)" />
+      <method signature="void CommonHelper::@ShowInterstitial(string, bool, System.Action)" newName="$hB" oldStackTraceSignature="CommonHelper:ShowInterstitial(String, Boolean, Action)" newStackTraceSignature="$u:$hB(String, Boolean, Action)" />
       <method signature="string CommonHelper::@GetAndroidId()" newName="$xn" oldStackTraceSignature="CommonHelper:GetAndroidId()" newStackTraceSignature="$u:$xn()" />
       <method signature="void CommonHelper::@GetGAID(System.Action`1&lt;string&gt;)" newName="$lB" oldStackTraceSignature="CommonHelper:GetGAID(Action`1)" newStackTraceSignature="$u:$lB(Action`1)" />
       <method signature="string CommonHelper::@GetGAID()" newName="$LB" oldStackTraceSignature="CommonHelper:GetGAID()" newStackTraceSignature="$u:$LB()" />
@@ -5354,12 +5384,12 @@
     </type>
     <type fullName="CommonHelper/&lt;&gt;c" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]CommonHelper/&lt;&gt;c &lt;&gt;9" newName="$xc" />
-      <field signature="System.Predicate`1&lt;[Hotfix]ArrowLanguagesTable&gt; &lt;&gt;9__41_0" newName="$HB" />
-      <field signature="System.Predicate`1&lt;[Hotfix]ArrowLanguagesTable&gt; &lt;&gt;9__41_1" newName="$iB" />
-      <field signature="System.Predicate`1&lt;[Hotfix]ArrowLocalizationMoney&gt; &lt;&gt;9__41_2" newName="$IB" />
-      <method signature="bool CommonHelper/&lt;&gt;c::&lt;GetDollarString&gt;b__41_0([Hotfix]CommonHelper/&lt;&gt;c, [Hotfix]ArrowLanguagesTable)" newName="$iA" oldStackTraceSignature="&lt;&gt;c:&lt;GetDollarString&gt;b__41_0(ArrowLanguagesTable)" newStackTraceSignature="&lt;&gt;c:$iA(ArrowLanguagesTable)" />
-      <method signature="bool CommonHelper/&lt;&gt;c::&lt;GetDollarString&gt;b__41_1([Hotfix]CommonHelper/&lt;&gt;c, [Hotfix]ArrowLanguagesTable)" newName="$nA" oldStackTraceSignature="&lt;&gt;c:&lt;GetDollarString&gt;b__41_1(ArrowLanguagesTable)" newStackTraceSignature="&lt;&gt;c:$nA(ArrowLanguagesTable)" />
-      <method signature="bool CommonHelper/&lt;&gt;c::&lt;GetDollarString&gt;b__41_2([Hotfix]CommonHelper/&lt;&gt;c, [Hotfix]ArrowLocalizationMoney)" newName="$NA" oldStackTraceSignature="&lt;&gt;c:&lt;GetDollarString&gt;b__41_2(ArrowLocalizationMoney)" newStackTraceSignature="&lt;&gt;c:$NA(ArrowLocalizationMoney)" />
+      <field signature="System.Predicate`1&lt;[Hotfix]ArrowLanguagesTable&gt; &lt;&gt;9__45_0" newName="$iB" />
+      <field signature="System.Predicate`1&lt;[Hotfix]ArrowLanguagesTable&gt; &lt;&gt;9__45_1" newName="$IB" />
+      <field signature="System.Predicate`1&lt;[Hotfix]ArrowLocalizationMoney&gt; &lt;&gt;9__45_2" newName="$jB" />
+      <method signature="bool CommonHelper/&lt;&gt;c::&lt;GetDollarString&gt;b__45_0([Hotfix]CommonHelper/&lt;&gt;c, [Hotfix]ArrowLanguagesTable)" newName="$HB" oldStackTraceSignature="&lt;&gt;c:&lt;GetDollarString&gt;b__45_0(ArrowLanguagesTable)" newStackTraceSignature="&lt;&gt;c:$HB(ArrowLanguagesTable)" />
+      <method signature="bool CommonHelper/&lt;&gt;c::&lt;GetDollarString&gt;b__45_1([Hotfix]CommonHelper/&lt;&gt;c, [Hotfix]ArrowLanguagesTable)" newName="$KB" oldStackTraceSignature="&lt;&gt;c:&lt;GetDollarString&gt;b__45_1(ArrowLanguagesTable)" newStackTraceSignature="&lt;&gt;c:$KB(ArrowLanguagesTable)" />
+      <method signature="bool CommonHelper/&lt;&gt;c::&lt;GetDollarString&gt;b__45_2([Hotfix]CommonHelper/&lt;&gt;c, [Hotfix]ArrowLocalizationMoney)" newName="$wf" oldStackTraceSignature="&lt;&gt;c:&lt;GetDollarString&gt;b__45_2(ArrowLocalizationMoney)" newStackTraceSignature="&lt;&gt;c:$wf(ArrowLocalizationMoney)" />
     </type>
     <type fullName="CommonHelper/&lt;&gt;c__DisplayClass26_0" newFullName="$u/$U" status="Renamed">
       <field signature="bool showFailureToast" newName="$jB" />
@@ -5379,6 +5409,11 @@
       <field signature="System.Action`1&lt;bool&gt; onCompleted" newName="$sh" />
       <method signature="void CommonHelper/&lt;&gt;c__DisplayClass29_0::&lt;ShowVideoAd&gt;b__0([Hotfix]CommonHelper/&lt;&gt;c__DisplayClass29_0, bool)" newName="$SU" oldStackTraceSignature="&lt;&gt;c__DisplayClass29_0:&lt;ShowVideoAd&gt;b__0(Boolean)" newStackTraceSignature="$rb:$SU(Boolean)" />
     </type>
+    <type fullName="CommonHelper/&lt;&gt;c__DisplayClass30_0" newFullName="$u/$d" status="Renamed">
+      <field signature="bool showFailureToast" newName="$JB" />
+      <field signature="System.Action`1&lt;bool&gt; onCompleted" newName="$kB" />
+      <method signature="void CommonHelper/&lt;&gt;c__DisplayClass30_0::&lt;ShowVideoAd&gt;b__0([Hotfix]CommonHelper/&lt;&gt;c__DisplayClass30_0, bool)" newName="$zS" oldStackTraceSignature="&lt;&gt;c__DisplayClass30_0:&lt;ShowVideoAd&gt;b__0(Boolean)" newStackTraceSignature="$d:$zS(Boolean)" />
+    </type>
     <type fullName="CommonHelper/&lt;&gt;c__DisplayClass38_0" newFullName="$u/$d" status="Renamed">
       <field signature="string url" newName="$kB" />
       <method signature="void CommonHelper/&lt;&gt;c__DisplayClass38_0::&lt;OpenWebview&gt;b__0([Hotfix]CommonHelper/&lt;&gt;c__DisplayClass38_0, string)" newName="$HB" oldStackTraceSignature="&lt;&gt;c__DisplayClass38_0:&lt;OpenWebview&gt;b__0(String)" newStackTraceSignature="$d:$HB(String)" />
@@ -5386,6 +5421,10 @@
     <type fullName="CommonHelper/&lt;&gt;c__DisplayClass39_0" newFullName="$u/$G" status="Renamed">
       <field signature="string url" newName="$kB" />
       <method signature="void CommonHelper/&lt;&gt;c__DisplayClass39_0::&lt;OpenWebview&gt;b__0([Hotfix]CommonHelper/&lt;&gt;c__DisplayClass39_0, string)" newName="$NA" oldStackTraceSignature="&lt;&gt;c__DisplayClass39_0:&lt;OpenWebview&gt;b__0(String)" newStackTraceSignature="$G:$NA(String)" />
+    </type>
+    <type fullName="CommonHelper/&lt;&gt;c__DisplayClass42_0" newFullName="$u/$zc" status="Renamed">
+      <field signature="string url" newName="$AP" />
+      <method signature="void CommonHelper/&lt;&gt;c__DisplayClass42_0::&lt;OpenWebview&gt;b__0([Hotfix]CommonHelper/&lt;&gt;c__DisplayClass42_0, string)" newName="$ZS" oldStackTraceSignature="&lt;&gt;c__DisplayClass42_0:&lt;OpenWebview&gt;b__0(String)" newStackTraceSignature="$zc:$ZS(String)" />
     </type>
     <type fullName="CommonHelper/&lt;&gt;c__DisplayClass43_0" newFullName="$u/$e" status="Renamed">
       <field signature="string url" newName="$Ie" />
@@ -5576,6 +5615,11 @@
       <method signature="bool DataTableExtension/&lt;&gt;c__DisplayClass47_0::&lt;TryParseEnum&gt;b__0([Hotfix]DataTableExtension/&lt;&gt;c__DisplayClass47_0, System.Type)" newName="$yc" oldStackTraceSignature="&lt;&gt;c__DisplayClass47_0:&lt;TryParseEnum&gt;b__0(Type)" newStackTraceSignature="$x:$yc(Type)" />
     </type>
     <type fullName="DebugUIForm" newFullName="" status="NotRenamed">
+      <field signature="[Hotfix]ArrowLanguageListBank m_LanguageListBank" newName="$Hq" />
+      <method signature="void DebugUIForm::ShowLanguageList([Hotfix]DebugUIForm)" newName="$WeA" oldStackTraceSignature="DebugUIForm:ShowLanguageList()" newStackTraceSignature="DebugUIForm:$WeA()" />
+      <method signature="void DebugUIForm::RefreshLanguage([Hotfix]DebugUIForm)" newName="$xeA" oldStackTraceSignature="DebugUIForm:RefreshLanguage()" newStackTraceSignature="DebugUIForm:$xeA()" />
+      <method signature="void DebugUIForm::OnLanguageChanged([Hotfix]DebugUIForm, object, [GameFramework]GameFramework.Event.GameEventArgs)" newName="$XeA" oldStackTraceSignature="DebugUIForm:OnLanguageChanged(Object, GameEventArgs)" newStackTraceSignature="DebugUIForm:$XeA(Object, GameEventArgs)" />
+      <method signature="void DebugUIForm::OnLanguageReloaded([Hotfix]DebugUIForm, object, [GameFramework]GameFramework.Event.GameEventArgs)" newName="$yeA" oldStackTraceSignature="DebugUIForm:OnLanguageReloaded(Object, GameEventArgs)" newStackTraceSignature="DebugUIForm:$yeA(Object, GameEventArgs)" />
       <method signature="void DebugUIForm::AddDollar([Hotfix]DebugUIForm)" newName="$rG" oldStackTraceSignature="DebugUIForm:AddDollar()" newStackTraceSignature="DebugUIForm:$rG()" />
       <method signature="void DebugUIForm::ReduceDollar([Hotfix]DebugUIForm)" newName="$RG" oldStackTraceSignature="DebugUIForm:ReduceDollar()" newStackTraceSignature="DebugUIForm:$RG()" />
       <method signature="float DebugUIForm::GetInputDollar([Hotfix]DebugUIForm)" newName="$sG" oldStackTraceSignature="DebugUIForm:GetInputDollar()" newStackTraceSignature="DebugUIForm:$sG()" />
@@ -5591,30 +5635,34 @@
     </type>
     <type fullName="DebugUIForm/&lt;&gt;c" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]DebugUIForm/&lt;&gt;c &lt;&gt;9" newName="$CAA" />
-      <field signature="System.Action`1&lt;bool&gt; &lt;&gt;9__0_9" newName="$dAA" />
-      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_0" newName="$DAA" />
-      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_1" newName="$eAA" />
-      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_2" newName="$EAA" />
-      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_3" newName="$fAA" />
-      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_4" newName="$FAA" />
-      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_5" newName="$gAA" />
-      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_6" newName="$GAA" />
-      <field signature="System.Action`1&lt;bool&gt; &lt;&gt;9__0_10" newName="$hAA" />
-      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_7" newName="$HAA" />
-      <field signature="System.Action`1&lt;bool&gt; &lt;&gt;9__0_11" newName="$iAA" />
-      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__0_8" newName="$IAA" />
-      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_0([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$OgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_0()" newStackTraceSignature="&lt;&gt;c:$OgA()" />
-      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_9([Hotfix]DebugUIForm/&lt;&gt;c, bool)" newName="$pgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_9(Boolean)" newStackTraceSignature="&lt;&gt;c:$pgA(Boolean)" />
-      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_1([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$PgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_1()" newStackTraceSignature="&lt;&gt;c:$PgA()" />
-      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_2([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$qgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_2()" newStackTraceSignature="&lt;&gt;c:$qgA()" />
-      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_3([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$QgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_3()" newStackTraceSignature="&lt;&gt;c:$QgA()" />
-      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_4([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$rgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_4()" newStackTraceSignature="&lt;&gt;c:$rgA()" />
-      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_5([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$RgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_5()" newStackTraceSignature="&lt;&gt;c:$RgA()" />
-      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_6([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$sgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_6()" newStackTraceSignature="&lt;&gt;c:$sgA()" />
-      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_7([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$SgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_7()" newStackTraceSignature="&lt;&gt;c:$SgA()" />
-      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_10([Hotfix]DebugUIForm/&lt;&gt;c, bool)" newName="$tgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_10(Boolean)" newStackTraceSignature="&lt;&gt;c:$tgA(Boolean)" />
-      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_8([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$TgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_8()" newStackTraceSignature="&lt;&gt;c:$TgA()" />
-      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__0_11([Hotfix]DebugUIForm/&lt;&gt;c, bool)" newName="$ugA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__0_11(Boolean)" newStackTraceSignature="&lt;&gt;c:$ugA(Boolean)" />
+      <field signature="System.Action`1&lt;bool&gt; &lt;&gt;9__1_9" newName="$iq" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__1_0" newName="$Iq" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__1_1" newName="$jq" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__1_2" newName="$Jq" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__1_3" newName="$kq" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__1_4" newName="$Kq" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__1_5" newName="$lq" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__1_6" newName="$Lq" />
+      <field signature="System.Action`1&lt;bool&gt; &lt;&gt;9__1_10" newName="$mq" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__1_7" newName="$Mq" />
+      <field signature="System.Action`1&lt;bool&gt; &lt;&gt;9__1_11" newName="$nq" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__1_8" newName="$Nq" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__1_0([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$YeA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__1_0()" newStackTraceSignature="&lt;&gt;c:$YeA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__1_9([Hotfix]DebugUIForm/&lt;&gt;c, bool)" newName="$zeA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__1_9(Boolean)" newStackTraceSignature="&lt;&gt;c:$zeA(Boolean)" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__1_1([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$ZeA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__1_1()" newStackTraceSignature="&lt;&gt;c:$ZeA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__1_2([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$aEA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__1_2()" newStackTraceSignature="&lt;&gt;c:$aEA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__1_3([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$AEA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__1_3()" newStackTraceSignature="&lt;&gt;c:$AEA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__1_4([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$bEA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__1_4()" newStackTraceSignature="&lt;&gt;c:$bEA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__1_5([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$BEA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__1_5()" newStackTraceSignature="&lt;&gt;c:$BEA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__1_6([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$cEA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__1_6()" newStackTraceSignature="&lt;&gt;c:$cEA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__1_7([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$CEA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__1_7()" newStackTraceSignature="&lt;&gt;c:$CEA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__1_10([Hotfix]DebugUIForm/&lt;&gt;c, bool)" newName="$dEA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__1_10(Boolean)" newStackTraceSignature="&lt;&gt;c:$dEA(Boolean)" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__1_8([Hotfix]DebugUIForm/&lt;&gt;c)" newName="$DEA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__1_8()" newStackTraceSignature="&lt;&gt;c:$DEA()" />
+      <method signature="void DebugUIForm/&lt;&gt;c::&lt;OnInit&gt;b__1_11([Hotfix]DebugUIForm/&lt;&gt;c, bool)" newName="$eEA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__1_11(Boolean)" newStackTraceSignature="&lt;&gt;c:$eEA(Boolean)" />
+    </type>
+    <type fullName="DebugUIForm/&lt;&gt;c__DisplayClass5_0" newFullName="" status="NotRenamed">
+      <field signature="[GameFramework]GameFramework.Localization.Language language" newName="$oq" />
+      <method signature="bool DebugUIForm/&lt;&gt;c__DisplayClass5_0::&lt;RefreshLanguage&gt;b__0([Hotfix]DebugUIForm/&lt;&gt;c__DisplayClass5_0, [Hotfix]ArrowLanguagesTable)" newName="$EEA" oldStackTraceSignature="&lt;&gt;c__DisplayClass5_0:&lt;RefreshLanguage&gt;b__0(ArrowLanguagesTable)" newStackTraceSignature="&lt;&gt;c__DisplayClass5_0:$EEA(ArrowLanguagesTable)" />
     </type>
     <type fullName="DOTweenExtension" newFullName="$X" status="Renamed">
       <method signature="[DOTween]DG.Tweening.Core.TweenerCore`3&lt;[UnityEngine.CoreModule]UnityEngine.Vector3,[DOTween]DG.Tweening.Plugins.Core.PathCore.Path,[DOTween]DG.Tweening.Plugins.Options.PathOptions&gt; DOTweenExtension::@DOPath([UnityEngine.Physics2DModule]UnityEngine.Rigidbody2D, [UnityEngine.CoreModule]UnityEngine.Vector3[], float, [DOTween]DG.Tweening.PathType, [DOTween]DG.Tweening.PathMode, int, System.Nullable`1&lt;[UnityEngine.CoreModule]UnityEngine.Color&gt;)" newName="$Yc" oldStackTraceSignature="DOTweenExtension:DOPath(Rigidbody2D, Vector3[], Single, PathType, PathMode, Int32, Nullable`1)" newStackTraceSignature="$X:$Yc(Rigidbody2D, Vector3[], Single, PathType, PathMode, Int32, Nullable`1)" />
@@ -6163,6 +6211,7 @@
       <field signature="bool _initializationStarted" newName="$JO" />
       <field signature="bool _gameplayPointerStarted" newName="$kO" />
       <field signature="int _levelIndex" newName="$KO" />
+      <field signature="bool _levelResultReported" newName="$Pq" />
       <field signature="int _endBlockerCount" newName="$lO" />
       <field signature="int _externalEndBlocker" newName="$LO" />
       <field signature="bool _levelStarted" newName="$OO" />
@@ -6222,6 +6271,7 @@
       <method signature="System.Collections.IEnumerator Gameplay.GameController::TransitToNextStage([Hotfix]Gameplay.GameController, System.Action)" newName="$pS" oldStackTraceSignature="Gameplay.GameController:TransitToNextStage(Action)" newStackTraceSignature="Gameplay.GameController:$pS(Action)" />
       <method signature="void Gameplay.GameController::CheckForComplete([Hotfix]Gameplay.GameController)" newName="$PS" oldStackTraceSignature="Gameplay.GameController:CheckForComplete()" newStackTraceSignature="Gameplay.GameController:$PS()" />
       <method signature="void Gameplay.GameController::CompleteStage([Hotfix]Gameplay.GameController)" newName="$qS" oldStackTraceSignature="Gameplay.GameController:CompleteStage()" newStackTraceSignature="Gameplay.GameController:$qS()" />
+      <method signature="void Gameplay.GameController::LogLevelResult([Hotfix]Gameplay.GameController, bool)" newName="$FEA" oldStackTraceSignature="Gameplay.GameController:LogLevelResult(Boolean)" newStackTraceSignature="Gameplay.GameController:$FEA(Boolean)" />
       <method signature="void Gameplay.GameController::WinLevel([Hotfix]Gameplay.GameController)" newName="$QS" oldStackTraceSignature="Gameplay.GameController:WinLevel()" newStackTraceSignature="Gameplay.GameController:$QS()" />
       <method signature="void Gameplay.GameController::CheckForFail([Hotfix]Gameplay.GameController)" newName="$rS" oldStackTraceSignature="Gameplay.GameController:CheckForFail()" newStackTraceSignature="Gameplay.GameController:$rS()" />
       <method signature="bool Gameplay.GameController::AreTableObjectsSettledForFail([Hotfix]Gameplay.GameController)" newName="$RS" oldStackTraceSignature="Gameplay.GameController:AreTableObjectsSettledForFail()" newStackTraceSignature="Gameplay.GameController:$RS()" />
@@ -6239,12 +6289,12 @@
       <method signature="int Gameplay.GameController::GetCoinRewardForLevel([Hotfix]Gameplay.GameController)" newName="$XS" oldStackTraceSignature="Gameplay.GameController:GetCoinRewardForLevel()" newStackTraceSignature="Gameplay.GameController:$XS()" />
       <method signature="void Gameplay.GameController::CleanupTransientState([Hotfix]Gameplay.GameController)" newName="$yS" oldStackTraceSignature="Gameplay.GameController:CleanupTransientState()" newStackTraceSignature="Gameplay.GameController:$yS()" />
       <method signature="void Gameplay.GameController::CancelPendingWinPopup([Hotfix]Gameplay.GameController)" newName="$YS" oldStackTraceSignature="Gameplay.GameController:CancelPendingWinPopup()" newStackTraceSignature="Gameplay.GameController:$YS()" />
-      <method signature="bool Gameplay.GameController::&lt;ExposeGameplay&gt;b__66_0([Hotfix]Gameplay.GameController)" newName="$zS" oldStackTraceSignature="Gameplay.GameController:&lt;ExposeGameplay&gt;b__66_0()" newStackTraceSignature="Gameplay.GameController:$zS()" />
-      <method signature="void Gameplay.GameController::&lt;CompleteStage&gt;b__106_0([Hotfix]Gameplay.GameController)" newName="$ZS" oldStackTraceSignature="Gameplay.GameController:&lt;CompleteStage&gt;b__106_0()" newStackTraceSignature="Gameplay.GameController:$ZS()" />
-      <method signature="void Gameplay.GameController::&lt;WinLevel&gt;b__107_0([Hotfix]Gameplay.GameController)" newName="$at" oldStackTraceSignature="Gameplay.GameController:&lt;WinLevel&gt;b__107_0()" newStackTraceSignature="Gameplay.GameController:$at()" />
-      <method signature="void Gameplay.GameController::&lt;WinLevel&gt;b__107_1([Hotfix]Gameplay.GameController)" newName="$At" oldStackTraceSignature="Gameplay.GameController:&lt;WinLevel&gt;b__107_1()" newStackTraceSignature="Gameplay.GameController:$At()" />
-      <method signature="void Gameplay.GameController::&lt;Fail&gt;b__110_0([Hotfix]Gameplay.GameController)" newName="$bt" oldStackTraceSignature="Gameplay.GameController:&lt;Fail&gt;b__110_0()" newStackTraceSignature="Gameplay.GameController:$bt()" />
-      <method signature="void Gameplay.GameController::&lt;Fail&gt;b__110_1([Hotfix]Gameplay.GameController)" newName="$Bt" oldStackTraceSignature="Gameplay.GameController:&lt;Fail&gt;b__110_1()" newStackTraceSignature="Gameplay.GameController:$Bt()" />
+      <method signature="bool Gameplay.GameController::&lt;ExposeGameplay&gt;b__67_0([Hotfix]Gameplay.GameController)" newName="$gEA" oldStackTraceSignature="Gameplay.GameController:&lt;ExposeGameplay&gt;b__67_0()" newStackTraceSignature="Gameplay.GameController:$gEA()" />
+      <method signature="void Gameplay.GameController::&lt;CompleteStage&gt;b__107_0([Hotfix]Gameplay.GameController)" newName="$GEA" oldStackTraceSignature="Gameplay.GameController:&lt;CompleteStage&gt;b__107_0()" newStackTraceSignature="Gameplay.GameController:$GEA()" />
+      <method signature="void Gameplay.GameController::&lt;WinLevel&gt;b__109_0([Hotfix]Gameplay.GameController)" newName="$hEA" oldStackTraceSignature="Gameplay.GameController:&lt;WinLevel&gt;b__109_0()" newStackTraceSignature="Gameplay.GameController:$hEA()" />
+      <method signature="void Gameplay.GameController::&lt;WinLevel&gt;b__109_1([Hotfix]Gameplay.GameController)" newName="$HEA" oldStackTraceSignature="Gameplay.GameController:&lt;WinLevel&gt;b__109_1()" newStackTraceSignature="Gameplay.GameController:$HEA()" />
+      <method signature="void Gameplay.GameController::&lt;Fail&gt;b__112_0([Hotfix]Gameplay.GameController)" newName="$iEA" oldStackTraceSignature="Gameplay.GameController:&lt;Fail&gt;b__112_0()" newStackTraceSignature="Gameplay.GameController:$iEA()" />
+      <method signature="void Gameplay.GameController::&lt;Fail&gt;b__112_1([Hotfix]Gameplay.GameController)" newName="$IEA" oldStackTraceSignature="Gameplay.GameController:&lt;Fail&gt;b__112_1()" newStackTraceSignature="Gameplay.GameController:$IEA()" />
     </type>
     <type fullName="Gameplay.GameController/_003C_003Ec__DisplayClass40_0" newFullName="Gameplay.GameController/$Uc" status="Renamed">
       <field signature="bool step1Complete" newName="$bp" />
@@ -6363,16 +6413,20 @@
     </type>
     <type fullName="Gameplay.GameController/&lt;&gt;c" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]Gameplay.GameController/&lt;&gt;c &lt;&gt;9" newName="$aP" />
-      <field signature="System.Comparison`1&lt;[Hotfix]EliminateReward&gt; &lt;&gt;9__94_0" newName="$AP" />
-      <field signature="System.Action`1&lt;[Hotfix]Gameplay.Objects.BaseObject&gt; &lt;&gt;9__99_0" newName="$kP" />
-      <field signature="System.Action &lt;&gt;9__107_2" newName="$KP" />
-      <method signature="int Gameplay.GameController/&lt;&gt;c::&lt;InitializeEliminateRewards&gt;b__94_0([Hotfix]Gameplay.GameController/&lt;&gt;c, [Hotfix]EliminateReward, [Hotfix]EliminateReward)" newName="$Ht" oldStackTraceSignature="Gameplay.&lt;&gt;c:&lt;InitializeEliminateRewards&gt;b__94_0(EliminateReward, EliminateReward)" newStackTraceSignature="Gameplay.&lt;&gt;c:$Ht(EliminateReward, EliminateReward)" />
-      <method signature="void Gameplay.GameController/&lt;&gt;c::&lt;SetObjectMasses&gt;b__99_0([Hotfix]Gameplay.GameController/&lt;&gt;c, [Hotfix]Gameplay.Objects.BaseObject)" newName="$it" oldStackTraceSignature="Gameplay.&lt;&gt;c:&lt;SetObjectMasses&gt;b__99_0(BaseObject)" newStackTraceSignature="Gameplay.&lt;&gt;c:$it(BaseObject)" />
-      <method signature="void Gameplay.GameController/&lt;&gt;c::&lt;WinLevel&gt;b__107_2([Hotfix]Gameplay.GameController/&lt;&gt;c)" newName="$It" oldStackTraceSignature="Gameplay.&lt;&gt;c:&lt;WinLevel&gt;b__107_2()" newStackTraceSignature="Gameplay.&lt;&gt;c:$It()" />
+      <field signature="System.Comparison`1&lt;[Hotfix]EliminateReward&gt; &lt;&gt;9__95_0" newName="$qq" />
+      <field signature="System.Action`1&lt;[Hotfix]Gameplay.Objects.BaseObject&gt; &lt;&gt;9__100_0" newName="$Qq" />
+      <field signature="System.Action &lt;&gt;9__109_2" newName="$SQ" />
+      <method signature="int Gameplay.GameController/&lt;&gt;c::&lt;InitializeEliminateRewards&gt;b__95_0([Hotfix]Gameplay.GameController/&lt;&gt;c, [Hotfix]EliminateReward, [Hotfix]EliminateReward)" newName="$OgA" oldStackTraceSignature="Gameplay.&lt;&gt;c:&lt;InitializeEliminateRewards&gt;b__95_0(EliminateReward, EliminateReward)" newStackTraceSignature="Gameplay.&lt;&gt;c:$OgA(EliminateReward, EliminateReward)" />
+      <method signature="void Gameplay.GameController/&lt;&gt;c::&lt;SetObjectMasses&gt;b__100_0([Hotfix]Gameplay.GameController/&lt;&gt;c, [Hotfix]Gameplay.Objects.BaseObject)" newName="$pgA" oldStackTraceSignature="Gameplay.&lt;&gt;c:&lt;SetObjectMasses&gt;b__100_0(BaseObject)" newStackTraceSignature="Gameplay.&lt;&gt;c:$pgA(BaseObject)" />
+      <method signature="void Gameplay.GameController/&lt;&gt;c::&lt;WinLevel&gt;b__109_2([Hotfix]Gameplay.GameController/&lt;&gt;c)" newName="$PgA" oldStackTraceSignature="Gameplay.&lt;&gt;c:&lt;WinLevel&gt;b__109_2()" newStackTraceSignature="Gameplay.&lt;&gt;c:$PgA()" />
     </type>
     <type fullName="Gameplay.GameController/&lt;&gt;c__DisplayClass107_0" newFullName="Gameplay.GameController/$zc" status="Renamed">
       <field signature="System.Action showLevelComplete" newName="$lP" />
       <method signature="void Gameplay.GameController/&lt;&gt;c__DisplayClass107_0::&lt;WinLevel&gt;b__3([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass107_0, [UnityGameFramework.Runtime]UnityGameFramework.Runtime.UIFormLogic)" newName="$jt" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass107_0:&lt;WinLevel&gt;b__3(UIFormLogic)" newStackTraceSignature="Gameplay.$zc:$jt(UIFormLogic)" />
+    </type>
+    <type fullName="Gameplay.GameController/&lt;&gt;c__DisplayClass109_0" newFullName="Gameplay.GameController/$GC" status="Renamed">
+      <field signature="System.Action showLevelComplete" newName="$uQ" />
+      <method signature="void Gameplay.GameController/&lt;&gt;c__DisplayClass109_0::&lt;WinLevel&gt;b__3([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass109_0, [UnityGameFramework.Runtime]UnityGameFramework.Runtime.UIFormLogic)" newName="$qgA" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass109_0:&lt;WinLevel&gt;b__3(UIFormLogic)" newStackTraceSignature="Gameplay.$GC:$qgA(UIFormLogic)" />
     </type>
     <type fullName="Gameplay.GameController/&lt;&gt;c__DisplayClass71_0" newFullName="Gameplay.GameController/$Zc" status="Renamed">
       <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$LP" />
@@ -6384,14 +6438,28 @@
       <method signature="[Hotfix]Gameplay.Objects.BaseObject Gameplay.GameController/&lt;&gt;c__DisplayClass71_0::&lt;PlayOpeningRocketRoutine&gt;b__0([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass71_0)" newName="$kt" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass71_0:&lt;PlayOpeningRocketRoutine&gt;b__0()" newStackTraceSignature="Gameplay.$Zc:$kt()" />
       <method signature="bool Gameplay.GameController/&lt;&gt;c__DisplayClass71_0::&lt;PlayOpeningRocketRoutine&gt;b__1([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass71_0)" newName="$Kt" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass71_0:&lt;PlayOpeningRocketRoutine&gt;b__1()" newStackTraceSignature="Gameplay.$Zc:$Kt()" />
     </type>
+    <type fullName="Gameplay.GameController/&lt;&gt;c__DisplayClass72_0" newFullName="Gameplay.GameController/$hC" status="Renamed">
+      <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$dAA" />
+      <field signature="bool sharedPoolInitialized" newName="$DAA" />
+      <field signature="int rocketCount" newName="$eAA" />
+      <field signature="System.Collections.Generic.List`1&lt;[Hotfix]Gameplay.Objects.BaseObject&gt; sharedPool" newName="$EAA" />
+      <field signature="System.Collections.Generic.List`1&lt;[Hotfix]Gameplay.OpeningRocket&gt; activeRockets" newName="$fAA" />
+      <method signature="void Gameplay.GameController/&lt;&gt;c__DisplayClass72_0::&lt;PlayOpeningRocketRoutine&gt;b__2([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass72_0)" newName="$rgA" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass72_0:&lt;PlayOpeningRocketRoutine&gt;b__2()" newStackTraceSignature="Gameplay.$hC:$rgA()" />
+      <method signature="[Hotfix]Gameplay.Objects.BaseObject Gameplay.GameController/&lt;&gt;c__DisplayClass72_0::&lt;PlayOpeningRocketRoutine&gt;b__0([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass72_0)" newName="$RgA" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass72_0:&lt;PlayOpeningRocketRoutine&gt;b__0()" newStackTraceSignature="Gameplay.$hC:$RgA()" />
+      <method signature="bool Gameplay.GameController/&lt;&gt;c__DisplayClass72_0::&lt;PlayOpeningRocketRoutine&gt;b__1([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass72_0)" newName="$sgA" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass72_0:&lt;PlayOpeningRocketRoutine&gt;b__1()" newStackTraceSignature="Gameplay.$hC:$sgA()" />
+    </type>
     <type fullName="Gameplay.GameController/&lt;&gt;c__DisplayClass76_0" newFullName="Gameplay.GameController/$aC" status="Renamed">
       <field signature="[Hotfix]Gameplay.GameplayTutorial.TutorialManager tutorialManager" newName="$PP" />
       <method signature="bool Gameplay.GameController/&lt;&gt;c__DisplayClass76_0::&lt;WaitForActiveTutorialsToFinishInternal&gt;b__0([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass76_0)" newName="$lt" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass76_0:&lt;WaitForActiveTutorialsToFinishInternal&gt;b__0()" newStackTraceSignature="Gameplay.$aC:$lt()" />
     </type>
     <type fullName="Gameplay.GameController/&lt;&gt;c__DisplayClass77_0" newFullName="Gameplay.GameController/$BC" status="Renamed">
-      <field signature="bool step1Complete" newName="$qP" />
-      <method signature="void Gameplay.GameController/&lt;&gt;c__DisplayClass77_0::&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;b__0([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass77_0, int, int)" newName="$Lt" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass77_0:&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;b__0(Int32, Int32)" newStackTraceSignature="Gameplay.$BC:$Lt(Int32, Int32)" />
-      <method signature="bool Gameplay.GameController/&lt;&gt;c__DisplayClass77_0::&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;b__1([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass77_0)" newName="$mt" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass77_0:&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;b__1()" newStackTraceSignature="Gameplay.$BC:$mt()" />
+      <field signature="[Hotfix]Gameplay.GameplayTutorial.TutorialManager tutorialManager" newName="$FAA" />
+      <method signature="bool Gameplay.GameController/&lt;&gt;c__DisplayClass77_0::&lt;WaitForActiveTutorialsToFinishInternal&gt;b__0([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass77_0)" newName="$SgA" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass77_0:&lt;WaitForActiveTutorialsToFinishInternal&gt;b__0()" newStackTraceSignature="Gameplay.$BC:$SgA()" />
+    </type>
+    <type fullName="Gameplay.GameController/&lt;&gt;c__DisplayClass78_0" newFullName="Gameplay.GameController/$HC" status="Renamed">
+      <field signature="bool step1Complete" newName="$gAA" />
+      <method signature="void Gameplay.GameController/&lt;&gt;c__DisplayClass78_0::&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;b__0([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass78_0, int, int)" newName="$tgA" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass78_0:&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;b__0(Int32, Int32)" newStackTraceSignature="Gameplay.$HC:$tgA(Int32, Int32)" />
+      <method signature="bool Gameplay.GameController/&lt;&gt;c__DisplayClass78_0::&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;b__1([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass78_0)" newName="$TgA" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass78_0:&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;b__1()" newStackTraceSignature="Gameplay.$HC:$TgA()" />
     </type>
     <type fullName="Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__73" newFullName="Gameplay.GameController/$cC" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$QP" />
@@ -6403,6 +6471,17 @@
       <method signature="object Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__73::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([Hotfix]Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__73)" newName="$UeA" oldStackTraceSignature="Gameplay.&lt;FinishStageTransitionAfterRocket&gt;d__73:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="Gameplay.$cC:$UeA()" />
       <method signature="void Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__73::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__73)" newName="$veA" oldStackTraceSignature="Gameplay.&lt;FinishStageTransitionAfterRocket&gt;d__73:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.$cC:$veA()" />
       <method signature="object Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__73::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__73)" newName="$VeA" oldStackTraceSignature="Gameplay.&lt;FinishStageTransitionAfterRocket&gt;d__73:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.$cC:$VeA()" />
+    </type>
+    <type fullName="Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__74" newFullName="Gameplay.GameController/$iC" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$GAA" />
+      <field signature="object &lt;&gt;2__current" newName="$hAA" />
+      <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$HAA" />
+      <property signature="object System.Collections.Generic.IEnumerator&lt;System.Object&gt;.Current" newName="$a" />
+      <property signature="object System.Collections.IEnumerator.Current" newName="$A" />
+      <method signature="void Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__74::System.IDisposable.Dispose([Hotfix]Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__74)" newName="$fGA" oldStackTraceSignature="Gameplay.&lt;FinishStageTransitionAfterRocket&gt;d__74:System.IDisposable.Dispose()" newStackTraceSignature="Gameplay.$iC:$fGA()" />
+      <method signature="object Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__74::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([Hotfix]Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__74)" newName="$FGA" oldStackTraceSignature="Gameplay.&lt;FinishStageTransitionAfterRocket&gt;d__74:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="Gameplay.$iC:$FGA()" />
+      <method signature="void Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__74::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__74)" newName="$gGA" oldStackTraceSignature="Gameplay.&lt;FinishStageTransitionAfterRocket&gt;d__74:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.$iC:$gGA()" />
+      <method signature="object Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__74::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.GameController/&lt;FinishStageTransitionAfterRocket&gt;d__74)" newName="$GGA" oldStackTraceSignature="Gameplay.&lt;FinishStageTransitionAfterRocket&gt;d__74:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.$iC:$GGA()" />
     </type>
     <type fullName="Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__88" newFullName="Gameplay.GameController/$DC" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$sP" />
@@ -6423,6 +6502,25 @@
       <method signature="System.Collections.Generic.IEnumerator`1&lt;[Hotfix]Gameplay.Objects.IContactNodeOwner&gt; Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__88::System.Collections.Generic.IEnumerable&lt;Gameplay.Objects.IContactNodeOwner&gt;.GetEnumerator([Hotfix]Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__88)" newName="$yeA" oldStackTraceSignature="Gameplay.&lt;GetOwnersTouchingTable&gt;d__88:System.Collections.Generic.IEnumerable&lt;Gameplay.Objects.IContactNodeOwner&gt;.GetEnumerator()" newStackTraceSignature="Gameplay.$DC:$yeA()" />
       <method signature="System.Collections.IEnumerator Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__88::System.Collections.IEnumerable.GetEnumerator([Hotfix]Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__88)" newName="$YeA" oldStackTraceSignature="Gameplay.&lt;GetOwnersTouchingTable&gt;d__88:System.Collections.IEnumerable.GetEnumerator()" newStackTraceSignature="Gameplay.$DC:$YeA()" />
     </type>
+    <type fullName="Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__89" newFullName="Gameplay.GameController/$GD" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$iAA" />
+      <field signature="[Hotfix]Gameplay.Objects.IContactNodeOwner &lt;&gt;2__current" newName="$IAA" />
+      <field signature="int &lt;&gt;l__initialThreadId" newName="$mbA" />
+      <field signature="[Hotfix]Gameplay.Objects.Table table" newName="$MbA" />
+      <field signature="[Hotfix]Gameplay.Objects.Table &lt;&gt;3__table" newName="$nbA" />
+      <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$NbA" />
+      <field signature="[System.Core]System.Collections.Generic.HashSet`1&lt;[Hotfix]Gameplay.Collisions.ContactNode&gt; &lt;cluster&gt;5__2" newName="$obA" />
+      <field signature="System.Collections.Generic.List`1&lt;[Hotfix]Gameplay.Objects.BaseObject&gt; &lt;liveObjects&gt;5__3" newName="$ObA" />
+      <field signature="int &lt;i&gt;5__4" newName="$pbA" />
+      <property signature="[Hotfix]Gameplay.Objects.IContactNodeOwner System.Collections.Generic.IEnumerator&lt;Gameplay.Objects.IContactNodeOwner&gt;.Current" newName="$a" />
+      <property signature="object System.Collections.IEnumerator.Current" newName="$A" />
+      <method signature="void Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__89::System.IDisposable.Dispose([Hotfix]Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__89)" newName="$hGA" oldStackTraceSignature="Gameplay.&lt;GetOwnersTouchingTable&gt;d__89:System.IDisposable.Dispose()" newStackTraceSignature="Gameplay.$GD:$hGA()" />
+      <method signature="[Hotfix]Gameplay.Objects.IContactNodeOwner Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__89::System.Collections.Generic.IEnumerator&lt;Gameplay.Objects.IContactNodeOwner&gt;.get_Current([Hotfix]Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__89)" newName="$HGA" oldStackTraceSignature="Gameplay.&lt;GetOwnersTouchingTable&gt;d__89:System.Collections.Generic.IEnumerator&lt;Gameplay.Objects.IContactNodeOwner&gt;.get_Current()" newStackTraceSignature="Gameplay.$GD:$HGA()" />
+      <method signature="void Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__89::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__89)" newName="$iGA" oldStackTraceSignature="Gameplay.&lt;GetOwnersTouchingTable&gt;d__89:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.$GD:$iGA()" />
+      <method signature="object Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__89::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__89)" newName="$IGA" oldStackTraceSignature="Gameplay.&lt;GetOwnersTouchingTable&gt;d__89:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.$GD:$IGA()" />
+      <method signature="System.Collections.Generic.IEnumerator`1&lt;[Hotfix]Gameplay.Objects.IContactNodeOwner&gt; Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__89::System.Collections.Generic.IEnumerable&lt;Gameplay.Objects.IContactNodeOwner&gt;.GetEnumerator([Hotfix]Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__89)" newName="$jGA" oldStackTraceSignature="Gameplay.&lt;GetOwnersTouchingTable&gt;d__89:System.Collections.Generic.IEnumerable&lt;Gameplay.Objects.IContactNodeOwner&gt;.GetEnumerator()" newStackTraceSignature="Gameplay.$GD:$jGA()" />
+      <method signature="System.Collections.IEnumerator Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__89::System.Collections.IEnumerable.GetEnumerator([Hotfix]Gameplay.GameController/&lt;GetOwnersTouchingTable&gt;d__89)" newName="$JGA" oldStackTraceSignature="Gameplay.&lt;GetOwnersTouchingTable&gt;d__89:System.Collections.IEnumerable.GetEnumerator()" newStackTraceSignature="Gameplay.$GD:$JGA()" />
+    </type>
     <type fullName="Gameplay.GameController/&lt;LoadLevelAsync&gt;d__82" newFullName="Gameplay.GameController/$EC" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$WP" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$xP" />
@@ -6432,6 +6530,16 @@
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Level.LevelData&gt; &lt;&gt;u__1" newName="$zP" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;string&gt; &lt;&gt;u__2" newName="$ZP" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Level.LevelCollectionMetaData&gt; &lt;&gt;u__3" newName="$aq" />
+    </type>
+    <type fullName="Gameplay.GameController/&lt;LoadLevelAsync&gt;d__83" newFullName="Gameplay.GameController/$hD" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$PbA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$qbA" />
+      <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$QbA" />
+      <field signature="int levelIndex" newName="$rbA" />
+      <field signature="System.Threading.CancellationToken cancellationToken" newName="$RbA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Level.LevelData&gt; &lt;&gt;u__1" newName="$sbA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;string&gt; &lt;&gt;u__2" newName="$SbA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Level.LevelCollectionMetaData&gt; &lt;&gt;u__3" newName="$tbA" />
     </type>
     <type fullName="Gameplay.GameController/&lt;PlayOpeningRocketRoutine&gt;d__71" newFullName="Gameplay.GameController/$fC" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$Aq" />
@@ -6447,6 +6555,20 @@
       <method signature="void Gameplay.GameController/&lt;PlayOpeningRocketRoutine&gt;d__71::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.GameController/&lt;PlayOpeningRocketRoutine&gt;d__71)" newName="$aEA" oldStackTraceSignature="Gameplay.&lt;PlayOpeningRocketRoutine&gt;d__71:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.$fC:$aEA()" />
       <method signature="object Gameplay.GameController/&lt;PlayOpeningRocketRoutine&gt;d__71::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.GameController/&lt;PlayOpeningRocketRoutine&gt;d__71)" newName="$AEA" oldStackTraceSignature="Gameplay.&lt;PlayOpeningRocketRoutine&gt;d__71:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.$fC:$AEA()" />
     </type>
+    <type fullName="Gameplay.GameController/&lt;PlayOpeningRocketRoutine&gt;d__72" newFullName="Gameplay.GameController/$sD" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$TbA" />
+      <field signature="object &lt;&gt;2__current" newName="$ubA" />
+      <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$UbA" />
+      <field signature="[Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass72_0 &lt;&gt;8__1" newName="$vbA" />
+      <field signature="System.Func`1&lt;[Hotfix]Gameplay.Objects.BaseObject&gt; &lt;targetSelector&gt;5__2" newName="$VbA" />
+      <field signature="int &lt;i&gt;5__3" newName="$wbA" />
+      <property signature="object System.Collections.Generic.IEnumerator&lt;System.Object&gt;.Current" newName="$a" />
+      <property signature="object System.Collections.IEnumerator.Current" newName="$A" />
+      <method signature="void Gameplay.GameController/&lt;PlayOpeningRocketRoutine&gt;d__72::System.IDisposable.Dispose([Hotfix]Gameplay.GameController/&lt;PlayOpeningRocketRoutine&gt;d__72)" newName="$kGA" oldStackTraceSignature="Gameplay.&lt;PlayOpeningRocketRoutine&gt;d__72:System.IDisposable.Dispose()" newStackTraceSignature="Gameplay.$sD:$kGA()" />
+      <method signature="object Gameplay.GameController/&lt;PlayOpeningRocketRoutine&gt;d__72::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([Hotfix]Gameplay.GameController/&lt;PlayOpeningRocketRoutine&gt;d__72)" newName="$KGA" oldStackTraceSignature="Gameplay.&lt;PlayOpeningRocketRoutine&gt;d__72:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="Gameplay.$sD:$KGA()" />
+      <method signature="void Gameplay.GameController/&lt;PlayOpeningRocketRoutine&gt;d__72::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.GameController/&lt;PlayOpeningRocketRoutine&gt;d__72)" newName="$lGA" oldStackTraceSignature="Gameplay.&lt;PlayOpeningRocketRoutine&gt;d__72:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.$sD:$lGA()" />
+      <method signature="object Gameplay.GameController/&lt;PlayOpeningRocketRoutine&gt;d__72::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.GameController/&lt;PlayOpeningRocketRoutine&gt;d__72)" newName="$LGA" oldStackTraceSignature="Gameplay.&lt;PlayOpeningRocketRoutine&gt;d__72:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.$sD:$LGA()" />
+    </type>
     <type fullName="Gameplay.GameController/&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__77" newFullName="Gameplay.GameController/$FC" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$Dq" />
       <field signature="object &lt;&gt;2__current" newName="$eq" />
@@ -6459,6 +6581,18 @@
       <method signature="void Gameplay.GameController/&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__77::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.GameController/&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__77)" newName="$cEA" oldStackTraceSignature="Gameplay.&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__77:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.$FC:$cEA()" />
       <method signature="object Gameplay.GameController/&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__77::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.GameController/&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__77)" newName="$CEA" oldStackTraceSignature="Gameplay.&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__77:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.$FC:$CEA()" />
     </type>
+    <type fullName="Gameplay.GameController/&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__78" newFullName="Gameplay.GameController/$SD" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$WbA" />
+      <field signature="object &lt;&gt;2__current" newName="$xbA" />
+      <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$XbA" />
+      <field signature="[Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass78_0 &lt;&gt;8__1" newName="$ybA" />
+      <property signature="object System.Collections.Generic.IEnumerator&lt;System.Object&gt;.Current" newName="$a" />
+      <property signature="object System.Collections.IEnumerator.Current" newName="$A" />
+      <method signature="void Gameplay.GameController/&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__78::System.IDisposable.Dispose([Hotfix]Gameplay.GameController/&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__78)" newName="$mGA" oldStackTraceSignature="Gameplay.&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__78:System.IDisposable.Dispose()" newStackTraceSignature="Gameplay.$SD:$mGA()" />
+      <method signature="object Gameplay.GameController/&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__78::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([Hotfix]Gameplay.GameController/&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__78)" newName="$MGA" oldStackTraceSignature="Gameplay.&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__78:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="Gameplay.$SD:$MGA()" />
+      <method signature="void Gameplay.GameController/&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__78::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.GameController/&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__78)" newName="$nGA" oldStackTraceSignature="Gameplay.&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__78:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.$SD:$nGA()" />
+      <method signature="object Gameplay.GameController/&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__78::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.GameController/&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__78)" newName="$NGA" oldStackTraceSignature="Gameplay.&lt;PlayStagedLevelStartAnimationRoutineInternal&gt;d__78:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.$SD:$NGA()" />
+    </type>
     <type fullName="Gameplay.GameController/&lt;PrepareGameplayAsync&gt;d__65" newFullName="Gameplay.GameController/$gC" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$Fq" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$gq" />
@@ -6468,6 +6602,16 @@
       <field signature="double &lt;jsonReady&gt;5__3" newName="$iq" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__1" newName="$Iq" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Level.GameplayAssetCache/Lease&gt; &lt;&gt;u__2" newName="$jq" />
+    </type>
+    <type fullName="Gameplay.GameController/&lt;PrepareGameplayAsync&gt;d__66" newFullName="Gameplay.GameController/$tD" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$YbA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$zbA" />
+      <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$ZbA" />
+      <field signature="System.Threading.CancellationToken cancellationToken" newName="$aBA" />
+      <field signature="double &lt;loadStart&gt;5__2" newName="$ABA" />
+      <field signature="double &lt;jsonReady&gt;5__3" newName="$bBA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__1" newName="$BBA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Level.GameplayAssetCache/Lease&gt; &lt;&gt;u__2" newName="$cBA" />
     </type>
     <type fullName="Gameplay.GameController/&lt;RunPostLoadingGameplayRevealInternal&gt;d__75" newFullName="Gameplay.GameController/$GC" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$Jq" />
@@ -6480,11 +6624,28 @@
       <method signature="void Gameplay.GameController/&lt;RunPostLoadingGameplayRevealInternal&gt;d__75::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.GameController/&lt;RunPostLoadingGameplayRevealInternal&gt;d__75)" newName="$eEA" oldStackTraceSignature="Gameplay.&lt;RunPostLoadingGameplayRevealInternal&gt;d__75:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.$GC:$eEA()" />
       <method signature="object Gameplay.GameController/&lt;RunPostLoadingGameplayRevealInternal&gt;d__75::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.GameController/&lt;RunPostLoadingGameplayRevealInternal&gt;d__75)" newName="$EEA" oldStackTraceSignature="Gameplay.&lt;RunPostLoadingGameplayRevealInternal&gt;d__75:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.$GC:$EEA()" />
     </type>
+    <type fullName="Gameplay.GameController/&lt;RunPostLoadingGameplayRevealInternal&gt;d__76" newFullName="Gameplay.GameController/$TD" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$CBA" />
+      <field signature="object &lt;&gt;2__current" newName="$dBA" />
+      <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$DBA" />
+      <property signature="object System.Collections.Generic.IEnumerator&lt;System.Object&gt;.Current" newName="$a" />
+      <property signature="object System.Collections.IEnumerator.Current" newName="$A" />
+      <method signature="void Gameplay.GameController/&lt;RunPostLoadingGameplayRevealInternal&gt;d__76::System.IDisposable.Dispose([Hotfix]Gameplay.GameController/&lt;RunPostLoadingGameplayRevealInternal&gt;d__76)" newName="$oGA" oldStackTraceSignature="Gameplay.&lt;RunPostLoadingGameplayRevealInternal&gt;d__76:System.IDisposable.Dispose()" newStackTraceSignature="Gameplay.$TD:$oGA()" />
+      <method signature="object Gameplay.GameController/&lt;RunPostLoadingGameplayRevealInternal&gt;d__76::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([Hotfix]Gameplay.GameController/&lt;RunPostLoadingGameplayRevealInternal&gt;d__76)" newName="$OGA" oldStackTraceSignature="Gameplay.&lt;RunPostLoadingGameplayRevealInternal&gt;d__76:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="Gameplay.$TD:$OGA()" />
+      <method signature="void Gameplay.GameController/&lt;RunPostLoadingGameplayRevealInternal&gt;d__76::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.GameController/&lt;RunPostLoadingGameplayRevealInternal&gt;d__76)" newName="$pGA" oldStackTraceSignature="Gameplay.&lt;RunPostLoadingGameplayRevealInternal&gt;d__76:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.$TD:$pGA()" />
+      <method signature="object Gameplay.GameController/&lt;RunPostLoadingGameplayRevealInternal&gt;d__76::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.GameController/&lt;RunPostLoadingGameplayRevealInternal&gt;d__76)" newName="$PGA" oldStackTraceSignature="Gameplay.&lt;RunPostLoadingGameplayRevealInternal&gt;d__76:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.$TD:$PGA()" />
+    </type>
     <type fullName="Gameplay.GameController/&lt;Start&gt;d__64" newFullName="Gameplay.GameController/$hC" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$lq" />
       <field signature="System.Runtime.CompilerServices.AsyncVoidMethodBuilder &lt;&gt;t__builder" newName="$Lq" />
       <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$mq" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__1" newName="$Mq" />
+    </type>
+    <type fullName="Gameplay.GameController/&lt;Start&gt;d__65" newFullName="Gameplay.GameController/$uD" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$eBA" />
+      <field signature="System.Runtime.CompilerServices.AsyncVoidMethodBuilder &lt;&gt;t__builder" newName="$EBA" />
+      <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$fBA" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__1" newName="$FBA" />
     </type>
     <type fullName="Gameplay.GameController/&lt;TransitToNextStage&gt;d__104" newFullName="Gameplay.GameController/$HC" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$nq" />
@@ -6500,6 +6661,20 @@
       <method signature="void Gameplay.GameController/&lt;TransitToNextStage&gt;d__104::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.GameController/&lt;TransitToNextStage&gt;d__104)" newName="$gEA" oldStackTraceSignature="Gameplay.&lt;TransitToNextStage&gt;d__104:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.$HC:$gEA()" />
       <method signature="object Gameplay.GameController/&lt;TransitToNextStage&gt;d__104::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.GameController/&lt;TransitToNextStage&gt;d__104)" newName="$GEA" oldStackTraceSignature="Gameplay.&lt;TransitToNextStage&gt;d__104:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.$HC:$GEA()" />
     </type>
+    <type fullName="Gameplay.GameController/&lt;TransitToNextStage&gt;d__105" newFullName="Gameplay.GameController/$UD" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$gBA" />
+      <field signature="object &lt;&gt;2__current" newName="$GBA" />
+      <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$hBA" />
+      <field signature="System.Action onComplete" newName="$HBA" />
+      <field signature="[Hotfix]Gameplay.LevelStage &lt;previousStage&gt;5__2" newName="$iBA" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Transform &lt;previousRoot&gt;5__3" newName="$IBA" />
+      <property signature="object System.Collections.Generic.IEnumerator&lt;System.Object&gt;.Current" newName="$a" />
+      <property signature="object System.Collections.IEnumerator.Current" newName="$A" />
+      <method signature="void Gameplay.GameController/&lt;TransitToNextStage&gt;d__105::System.IDisposable.Dispose([Hotfix]Gameplay.GameController/&lt;TransitToNextStage&gt;d__105)" newName="$qGA" oldStackTraceSignature="Gameplay.&lt;TransitToNextStage&gt;d__105:System.IDisposable.Dispose()" newStackTraceSignature="Gameplay.$UD:$qGA()" />
+      <method signature="object Gameplay.GameController/&lt;TransitToNextStage&gt;d__105::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([Hotfix]Gameplay.GameController/&lt;TransitToNextStage&gt;d__105)" newName="$QGA" oldStackTraceSignature="Gameplay.&lt;TransitToNextStage&gt;d__105:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="Gameplay.$UD:$QGA()" />
+      <method signature="void Gameplay.GameController/&lt;TransitToNextStage&gt;d__105::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.GameController/&lt;TransitToNextStage&gt;d__105)" newName="$rGA" oldStackTraceSignature="Gameplay.&lt;TransitToNextStage&gt;d__105:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.$UD:$rGA()" />
+      <method signature="object Gameplay.GameController/&lt;TransitToNextStage&gt;d__105::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.GameController/&lt;TransitToNextStage&gt;d__105)" newName="$RGA" oldStackTraceSignature="Gameplay.&lt;TransitToNextStage&gt;d__105:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.$UD:$RGA()" />
+    </type>
     <type fullName="Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__76" newFullName="Gameplay.GameController/$iC" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$qq" />
       <field signature="object &lt;&gt;2__current" newName="$Qq" />
@@ -6509,6 +6684,16 @@
       <method signature="object Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__76::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([Hotfix]Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__76)" newName="$HEA" oldStackTraceSignature="Gameplay.&lt;WaitForActiveTutorialsToFinishInternal&gt;d__76:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="Gameplay.$iC:$HEA()" />
       <method signature="void Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__76::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__76)" newName="$iEA" oldStackTraceSignature="Gameplay.&lt;WaitForActiveTutorialsToFinishInternal&gt;d__76:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.$iC:$iEA()" />
       <method signature="object Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__76::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__76)" newName="$IEA" oldStackTraceSignature="Gameplay.&lt;WaitForActiveTutorialsToFinishInternal&gt;d__76:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.$iC:$IEA()" />
+    </type>
+    <type fullName="Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__77" newFullName="Gameplay.GameController/$vD" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$jBA" />
+      <field signature="object &lt;&gt;2__current" newName="$JBA" />
+      <property signature="object System.Collections.Generic.IEnumerator&lt;System.Object&gt;.Current" newName="$a" />
+      <property signature="object System.Collections.IEnumerator.Current" newName="$A" />
+      <method signature="void Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__77::System.IDisposable.Dispose([Hotfix]Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__77)" newName="$sGA" oldStackTraceSignature="Gameplay.&lt;WaitForActiveTutorialsToFinishInternal&gt;d__77:System.IDisposable.Dispose()" newStackTraceSignature="Gameplay.$vD:$sGA()" />
+      <method signature="object Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__77::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([Hotfix]Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__77)" newName="$SGA" oldStackTraceSignature="Gameplay.&lt;WaitForActiveTutorialsToFinishInternal&gt;d__77:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="Gameplay.$vD:$SGA()" />
+      <method signature="void Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__77::System.Collections.IEnumerator.Reset([Hotfix]Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__77)" newName="$tGA" oldStackTraceSignature="Gameplay.&lt;WaitForActiveTutorialsToFinishInternal&gt;d__77:System.Collections.IEnumerator.Reset()" newStackTraceSignature="Gameplay.$vD:$tGA()" />
+      <method signature="object Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__77::System.Collections.IEnumerator.get_Current([Hotfix]Gameplay.GameController/&lt;WaitForActiveTutorialsToFinishInternal&gt;d__77)" newName="$TGA" oldStackTraceSignature="Gameplay.&lt;WaitForActiveTutorialsToFinishInternal&gt;d__77:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="Gameplay.$vD:$TGA()" />
     </type>
     <type fullName="Gameplay.GameplayAnalyticsHelper" newFullName="$g.$IC" status="Renamed">
       <field signature="int _levelIndex" newName="$rq" />
@@ -8361,29 +8546,69 @@
     </type>
     <type fullName="InterstitialAdController" newFullName="$bC" status="Renamed">
       <field signature="[GoogleMobileAds]GoogleMobileAds.Api.InterstitialAd _interstitialAd" newName="$aO" />
+      <field signature="[Hotfix]InterstitialCompletion pendingCompletion" newName="$VP" />
       <field signature="int interstitialRetryAttempt" newName="$pp" />
       <method signature="void InterstitialAdController::LoadAd([Hotfix]InterstitialAdController)" newName="$baA" oldStackTraceSignature="InterstitialAdController:LoadAd()" newStackTraceSignature="$bC:$baA()" />
-      <method signature="bool InterstitialAdController::ShowAd([Hotfix]InterstitialAdController)" newName="$BaA" oldStackTraceSignature="InterstitialAdController:ShowAd()" newStackTraceSignature="$bC:$BaA()" />
+      <method signature="bool InterstitialAdController::ShowAd([Hotfix]InterstitialAdController, System.Action)" newName="$kt" oldStackTraceSignature="InterstitialAdController:ShowAd(Action)" newStackTraceSignature="$bC:$kt(Action)" />
       <method signature="void InterstitialAdController::DestroyAd([Hotfix]InterstitialAdController)" newName="$caA" oldStackTraceSignature="InterstitialAdController:DestroyAd()" newStackTraceSignature="$bC:$caA()" />
       <method signature="void InterstitialAdController::LogResponseInfo([Hotfix]InterstitialAdController)" newName="$CaA" oldStackTraceSignature="InterstitialAdController:LogResponseInfo()" newStackTraceSignature="$bC:$CaA()" />
       <method signature="void InterstitialAdController::RegisterEventHandlers([Hotfix]InterstitialAdController, [GoogleMobileAds]GoogleMobileAds.Api.InterstitialAd)" newName="$daA" oldStackTraceSignature="InterstitialAdController:RegisterEventHandlers(InterstitialAd)" newStackTraceSignature="$bC:$daA(InterstitialAd)" />
-      <method signature="void InterstitialAdController::&lt;LoadAd&gt;b__4_0([Hotfix]InterstitialAdController, [GoogleMobileAds]GoogleMobileAds.Api.InterstitialAd, [GoogleMobileAds]GoogleMobileAds.Api.LoadAdError)" newName="$DaA" oldStackTraceSignature="InterstitialAdController:&lt;LoadAd&gt;b__4_0(InterstitialAd, LoadAdError)" newStackTraceSignature="$bC:$DaA(InterstitialAd, LoadAdError)" />
-      <method signature="void InterstitialAdController::&lt;LoadAd&gt;b__4_1([Hotfix]InterstitialAdController)" newName="$eaA" oldStackTraceSignature="InterstitialAdController:&lt;LoadAd&gt;b__4_1()" newStackTraceSignature="$bC:$eaA()" />
-      <method signature="void InterstitialAdController::&lt;LoadAd&gt;b__4_2([Hotfix]InterstitialAdController)" newName="$EaA" oldStackTraceSignature="InterstitialAdController:&lt;LoadAd&gt;b__4_2()" newStackTraceSignature="$bC:$EaA()" />
-      <method signature="void InterstitialAdController::&lt;RegisterEventHandlers&gt;b__8_4([Hotfix]InterstitialAdController)" newName="$faA" oldStackTraceSignature="InterstitialAdController:&lt;RegisterEventHandlers&gt;b__8_4()" newStackTraceSignature="$bC:$faA()" />
+      <method signature="void InterstitialAdController::&lt;LoadAd&gt;b__5_0([Hotfix]InterstitialAdController, [GoogleMobileAds]GoogleMobileAds.Api.InterstitialAd, [GoogleMobileAds]GoogleMobileAds.Api.LoadAdError)" newName="$Kt" oldStackTraceSignature="InterstitialAdController:&lt;LoadAd&gt;b__5_0(InterstitialAd, LoadAdError)" newStackTraceSignature="$bC:$Kt(InterstitialAd, LoadAdError)" />
+      <method signature="void InterstitialAdController::&lt;LoadAd&gt;b__5_1([Hotfix]InterstitialAdController)" newName="$lt" oldStackTraceSignature="InterstitialAdController:&lt;LoadAd&gt;b__5_1()" newStackTraceSignature="$bC:$lt()" />
+      <method signature="void InterstitialAdController::&lt;LoadAd&gt;b__5_2([Hotfix]InterstitialAdController)" newName="$Lt" oldStackTraceSignature="InterstitialAdController:&lt;LoadAd&gt;b__5_2()" newStackTraceSignature="$bC:$Lt()" />
     </type>
     <type fullName="InterstitialAdController/&lt;&gt;c" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]InterstitialAdController/&lt;&gt;c &lt;&gt;9" newName="$aQ" />
-      <field signature="System.Action`1&lt;[GoogleMobileAds.Core]GoogleMobileAds.Api.AdValue&gt; &lt;&gt;9__8_0" newName="$dQ" />
-      <field signature="System.Action &lt;&gt;9__8_1" newName="$rQ" />
-      <field signature="System.Action &lt;&gt;9__8_2" newName="$SQ" />
-      <field signature="System.Action &lt;&gt;9__8_3" newName="$tQ" />
-      <field signature="System.Action`1&lt;[GoogleMobileAds]GoogleMobileAds.Api.AdError&gt; &lt;&gt;9__8_5" newName="$uQ" />
-      <method signature="void InterstitialAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__8_0([Hotfix]InterstitialAdController/&lt;&gt;c, [GoogleMobileAds.Core]GoogleMobileAds.Api.AdValue)" newName="$FaA" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__8_0(AdValue)" newStackTraceSignature="&lt;&gt;c:$FaA(AdValue)" />
-      <method signature="void InterstitialAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__8_1([Hotfix]InterstitialAdController/&lt;&gt;c)" newName="$gaA" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__8_1()" newStackTraceSignature="&lt;&gt;c:$gaA()" />
-      <method signature="void InterstitialAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__8_2([Hotfix]InterstitialAdController/&lt;&gt;c)" newName="$GaA" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__8_2()" newStackTraceSignature="&lt;&gt;c:$GaA()" />
-      <method signature="void InterstitialAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__8_3([Hotfix]InterstitialAdController/&lt;&gt;c)" newName="$haA" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__8_3()" newStackTraceSignature="&lt;&gt;c:$haA()" />
-      <method signature="void InterstitialAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__8_5([Hotfix]InterstitialAdController/&lt;&gt;c, [GoogleMobileAds]GoogleMobileAds.Api.AdError)" newName="$HaA" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__8_5(AdError)" newStackTraceSignature="&lt;&gt;c:$HaA(AdError)" />
+      <field signature="System.Action &lt;&gt;9__9_1" newName="$wP" />
+      <field signature="System.Action &lt;&gt;9__9_2" newName="$WP" />
+      <field signature="System.Action &lt;&gt;9__9_3" newName="$xP" />
+      <method signature="void InterstitialAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__9_1([Hotfix]InterstitialAdController/&lt;&gt;c)" newName="$mt" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__9_1()" newStackTraceSignature="&lt;&gt;c:$mt()" />
+      <method signature="void InterstitialAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__9_2([Hotfix]InterstitialAdController/&lt;&gt;c)" newName="$Rv" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__9_2()" newStackTraceSignature="&lt;&gt;c:$Rv()" />
+      <method signature="void InterstitialAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__9_3([Hotfix]InterstitialAdController/&lt;&gt;c)" newName="$LV" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__9_3()" newStackTraceSignature="&lt;&gt;c:$LV()" />
+    </type>
+    <type fullName="InterstitialAdController/&lt;&gt;c__DisplayClass9_0" newFullName="$bC/$EC" status="Renamed">
+      <field signature="[Hotfix]InterstitialCompletion completion" newName="$XP" />
+      <field signature="[GoogleMobileAds]GoogleMobileAds.Api.InterstitialAd ad" newName="$yP" />
+      <field signature="[Hotfix]InterstitialAdController &lt;&gt;4__this" newName="$YP" />
+      <method signature="void InterstitialAdController/&lt;&gt;c__DisplayClass9_0::&lt;RegisterEventHandlers&gt;b__0([Hotfix]InterstitialAdController/&lt;&gt;c__DisplayClass9_0, [GoogleMobileAds.Core]GoogleMobileAds.Api.AdValue)" newName="$tx" oldStackTraceSignature="&lt;&gt;c__DisplayClass9_0:&lt;RegisterEventHandlers&gt;b__0(AdValue)" newStackTraceSignature="$EC:$tx(AdValue)" />
+      <method signature="void InterstitialAdController/&lt;&gt;c__DisplayClass9_0::&lt;RegisterEventHandlers&gt;b__4([Hotfix]InterstitialAdController/&lt;&gt;c__DisplayClass9_0)" newName="$Tx" oldStackTraceSignature="&lt;&gt;c__DisplayClass9_0:&lt;RegisterEventHandlers&gt;b__4()" newStackTraceSignature="$EC:$Tx()" />
+      <method signature="void InterstitialAdController/&lt;&gt;c__DisplayClass9_0::&lt;RegisterEventHandlers&gt;b__5([Hotfix]InterstitialAdController/&lt;&gt;c__DisplayClass9_0, [GoogleMobileAds]GoogleMobileAds.Api.AdError)" newName="$ux" oldStackTraceSignature="&lt;&gt;c__DisplayClass9_0:&lt;RegisterEventHandlers&gt;b__5(AdError)" newStackTraceSignature="$EC:$ux(AdError)" />
+    </type>
+    <type fullName="InterstitialAdController/&lt;&gt;c__DisplayClass9_0/&lt;&lt;RegisterEventHandlers&gt;b__0&gt;d" newFullName="$bC/$EC/$fC" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$zP" />
+      <field signature="System.Runtime.CompilerServices.AsyncVoidMethodBuilder &lt;&gt;t__builder" newName="$ZP" />
+      <field signature="[Hotfix]InterstitialAdController/&lt;&gt;c__DisplayClass9_0 &lt;&gt;4__this" newName="$aq" />
+      <field signature="[GoogleMobileAds.Core]GoogleMobileAds.Api.AdValue adValue" newName="$Aq" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.SwitchToMainThreadAwaitable/Awaiter &lt;&gt;u__1" newName="$bq" />
+    </type>
+    <type fullName="InterstitialAdController/&lt;&gt;c__DisplayClass9_0/&lt;&lt;RegisterEventHandlers&gt;b__4&gt;d" newFullName="$bC/$EC/$FC" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$Bq" />
+      <field signature="System.Runtime.CompilerServices.AsyncVoidMethodBuilder &lt;&gt;t__builder" newName="$cq" />
+      <field signature="[Hotfix]InterstitialAdController/&lt;&gt;c__DisplayClass9_0 &lt;&gt;4__this" newName="$Cq" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.SwitchToMainThreadAwaitable/Awaiter &lt;&gt;u__1" newName="$dq" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__2" newName="$Dq" />
+    </type>
+    <type fullName="InterstitialAdController/&lt;&gt;c__DisplayClass9_0/&lt;&lt;RegisterEventHandlers&gt;b__5&gt;d" newFullName="$bC/$EC/$gC" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$eq" />
+      <field signature="System.Runtime.CompilerServices.AsyncVoidMethodBuilder &lt;&gt;t__builder" newName="$Eq" />
+      <field signature="[Hotfix]InterstitialAdController/&lt;&gt;c__DisplayClass9_0 &lt;&gt;4__this" newName="$fq" />
+      <field signature="[GoogleMobileAds]GoogleMobileAds.Api.AdError error" newName="$Fq" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.SwitchToMainThreadAwaitable/Awaiter &lt;&gt;u__1" newName="$gq" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__2" newName="$Gq" />
+    </type>
+    <type fullName="InterstitialCompletion" newFullName="$Zc" status="Renamed">
+      <field signature="System.Action callback" newName="$kP" />
+      <field signature="bool finishing" newName="$KP" />
+      <field signature="string Placement" newName="$lP" />
+      <property signature="bool IsFinishing" newName="$a" />
+      <method signature="bool InterstitialCompletion::get_IsFinishing([Hotfix]InterstitialCompletion)" newName="$bt" oldStackTraceSignature="InterstitialCompletion:get_IsFinishing()" newStackTraceSignature="$Zc:$bt()" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask InterstitialCompletion::Finish([Hotfix]InterstitialCompletion)" newName="$Bt" oldStackTraceSignature="InterstitialCompletion:Finish()" newStackTraceSignature="$Zc:$Bt()" />
+    </type>
+    <type fullName="InterstitialCompletion/&lt;Finish&gt;d__6" newFullName="$Zc/$aC" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$LP" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$mP" />
+      <field signature="[Hotfix]InterstitialCompletion &lt;&gt;4__this" newName="$MP" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.SwitchToMainThreadAwaitable/Awaiter &lt;&gt;u__1" newName="$OP" />
     </type>
     <type fullName="Inventory.InventoryAnalyticsHelper" newFullName="$f.$ic" status="Renamed">
       <method signature="void Inventory.InventoryAnalyticsHelper::@SendEarnEvent([Hotfix]Inventory.InventoryPayload, [Hotfix]Inventory.InventoryEarnSource)" newName="$wn" oldStackTraceSignature="Inventory.InventoryAnalyticsHelper:SendEarnEvent(InventoryPayload, InventoryEarnSource)" newStackTraceSignature="$f.$ic:$wn(InventoryPayload, $Ic)" />
@@ -9644,14 +9869,16 @@
       <field signature="System.Action`1&lt;bool&gt; callBcak" newName="$ZQ" />
       <field signature="int rewardedRetryAttempt" newName="$Ar" />
       <method signature="void RewardedAdController::LoadAd([Hotfix]RewardedAdController)" newName="$iaA" oldStackTraceSignature="RewardedAdController:LoadAd()" newStackTraceSignature="$BC:$iaA()" />
-      <method signature="bool RewardedAdController::ShowAd([Hotfix]RewardedAdController, System.Action`1&lt;bool&gt;)" newName="$IaA" oldStackTraceSignature="RewardedAdController:ShowAd(Action`1)" newStackTraceSignature="$BC:$IaA(Action`1)" />
+      <method signature="bool RewardedAdController::ShowAd([Hotfix]RewardedAdController, System.Action`1&lt;bool&gt;, string, bool)" newName="$ueA" oldStackTraceSignature="RewardedAdController:ShowAd(Action`1, String, Boolean)" newStackTraceSignature="$BC:$ueA(Action`1, String, Boolean)" />
       <method signature="void RewardedAdController::DestroyAd([Hotfix]RewardedAdController)" newName="$jaA" oldStackTraceSignature="RewardedAdController:DestroyAd()" newStackTraceSignature="$BC:$jaA()" />
       <method signature="void RewardedAdController::LogResponseInfo([Hotfix]RewardedAdController)" newName="$JaA" oldStackTraceSignature="RewardedAdController:LogResponseInfo()" newStackTraceSignature="$BC:$JaA()" />
       <method signature="void RewardedAdController::RegisterEventHandlers([Hotfix]RewardedAdController, [GoogleMobileAds]GoogleMobileAds.Api.RewardedAd)" newName="$kaA" oldStackTraceSignature="RewardedAdController:RegisterEventHandlers(RewardedAd)" newStackTraceSignature="$BC:$kaA(RewardedAd)" />
       <method signature="void RewardedAdController::&lt;LoadAd&gt;b__5_0([Hotfix]RewardedAdController, [GoogleMobileAds]GoogleMobileAds.Api.RewardedAd, [GoogleMobileAds]GoogleMobileAds.Api.LoadAdError)" newName="$KaA" oldStackTraceSignature="RewardedAdController:&lt;LoadAd&gt;b__5_0(RewardedAd, LoadAdError)" newStackTraceSignature="$BC:$KaA(RewardedAd, LoadAdError)" />
       <method signature="void RewardedAdController::&lt;LoadAd&gt;b__5_1([Hotfix]RewardedAdController)" newName="$laA" oldStackTraceSignature="RewardedAdController:&lt;LoadAd&gt;b__5_1()" newStackTraceSignature="$BC:$laA()" />
       <method signature="void RewardedAdController::&lt;LoadAd&gt;b__5_2([Hotfix]RewardedAdController)" newName="$LaA" oldStackTraceSignature="RewardedAdController:&lt;LoadAd&gt;b__5_2()" newStackTraceSignature="$BC:$LaA()" />
+      <method signature="void RewardedAdController::&lt;ShowAd&gt;b__6_0([Hotfix]RewardedAdController, [GoogleMobileAds.Core]GoogleMobileAds.Api.Reward)" newName="$UeA" oldStackTraceSignature="RewardedAdController:&lt;ShowAd&gt;b__6_0(Reward)" newStackTraceSignature="$BC:$UeA(Reward)" />
       <method signature="void RewardedAdController::&lt;RegisterEventHandlers&gt;b__9_4([Hotfix]RewardedAdController)" newName="$maA" oldStackTraceSignature="RewardedAdController:&lt;RegisterEventHandlers&gt;b__9_4()" newStackTraceSignature="$BC:$maA()" />
+      <method signature="void RewardedAdController::&lt;RegisterEventHandlers&gt;b__9_5([Hotfix]RewardedAdController, [GoogleMobileAds]GoogleMobileAds.Api.AdError)" newName="$veA" oldStackTraceSignature="RewardedAdController:&lt;RegisterEventHandlers&gt;b__9_5(AdError)" newStackTraceSignature="$BC:$veA(AdError)" />
     </type>
     <type fullName="RewardedAdController/&lt;&gt;c" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]RewardedAdController/&lt;&gt;c &lt;&gt;9" newName="$Br" />
@@ -9659,12 +9886,10 @@
       <field signature="System.Action &lt;&gt;9__9_1" newName="$Dr" />
       <field signature="System.Action &lt;&gt;9__9_2" newName="$Gr" />
       <field signature="System.Action &lt;&gt;9__9_3" newName="$hr" />
-      <field signature="System.Action`1&lt;[GoogleMobileAds]GoogleMobileAds.Api.AdError&gt; &lt;&gt;9__9_5" newName="$Kr" />
       <method signature="void RewardedAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__9_0([Hotfix]RewardedAdController/&lt;&gt;c, [GoogleMobileAds.Core]GoogleMobileAds.Api.AdValue)" newName="$MaA" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__9_0(AdValue)" newStackTraceSignature="&lt;&gt;c:$MaA(AdValue)" />
       <method signature="void RewardedAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__9_1([Hotfix]RewardedAdController/&lt;&gt;c)" newName="$naA" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__9_1()" newStackTraceSignature="&lt;&gt;c:$naA()" />
       <method signature="void RewardedAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__9_2([Hotfix]RewardedAdController/&lt;&gt;c)" newName="$NaA" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__9_2()" newStackTraceSignature="&lt;&gt;c:$NaA()" />
       <method signature="void RewardedAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__9_3([Hotfix]RewardedAdController/&lt;&gt;c)" newName="$oaA" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__9_3()" newStackTraceSignature="&lt;&gt;c:$oaA()" />
-      <method signature="void RewardedAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__9_5([Hotfix]RewardedAdController/&lt;&gt;c, [GoogleMobileAds]GoogleMobileAds.Api.AdError)" newName="$OaA" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__9_5(AdError)" newStackTraceSignature="&lt;&gt;c:$OaA(AdError)" />
     </type>
     <type fullName="RewardedAdController/&lt;&gt;c__DisplayClass6_0" newFullName="$BC/$cC" status="Renamed">
       <field signature="System.Action`1&lt;bool&gt; _callBcak" newName="$lr" />
@@ -9872,6 +10097,11 @@
       <method signature="void SettingPageUIForm::OnSoundFxSliderChanged([Hotfix]SettingPageUIForm)" newName="$yi" oldStackTraceSignature="SettingPageUIForm:OnSoundFxSliderChanged()" newStackTraceSignature="SettingPageUIForm:$yi()" />
       <method signature="void SettingPageUIForm::VibrateChanged([Hotfix]SettingPageUIForm)" newName="$Yi" oldStackTraceSignature="SettingPageUIForm:VibrateChanged()" newStackTraceSignature="SettingPageUIForm:$Yi()" />
     </type>
+    <type fullName="SettingPageUIForm/&lt;&gt;c" newFullName="" status="NotRenamed">
+      <field signature="[Hotfix]SettingPageUIForm/&lt;&gt;c &lt;&gt;9" newName="$Oq" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__2_0" newName="$pq" />
+      <method signature="void SettingPageUIForm/&lt;&gt;c::&lt;OnInit&gt;b__2_0([Hotfix]SettingPageUIForm/&lt;&gt;c)" newName="$fEA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__2_0()" newStackTraceSignature="&lt;&gt;c:$fEA()" />
+    </type>
     <type fullName="SimulatedRequestHelper" newFullName="$L" status="Renamed">
       <field signature="int loadingUsers" newName="$td" />
       <field signature="int loadingId" newName="$Td" />
@@ -10069,6 +10299,11 @@
       <method signature="int TypeIdPair::get_Id([Hotfix]TypeIdPair&amp;)" newName="$zB" oldStackTraceSignature="TypeIdPair:get_Id()" newStackTraceSignature="$w:$zB()" />
       <method signature="bool TypeIdPair::@op_Equality([Hotfix]TypeIdPair, [Hotfix]TypeIdPair)" newName="$ZB" oldStackTraceSignature="TypeIdPair:op_Equality(TypeIdPair, TypeIdPair)" newStackTraceSignature="$w:$ZB($w, $w)" />
       <method signature="bool TypeIdPair::@op_Inequality([Hotfix]TypeIdPair, [Hotfix]TypeIdPair)" newName="$ac" oldStackTraceSignature="TypeIdPair:op_Inequality(TypeIdPair, TypeIdPair)" newStackTraceSignature="$w:$ac($w, $w)" />
+    </type>
+    <type fullName="UIButtonSound" newFullName="" status="NotRenamed">
+      <field signature="[UnityEngine.UI]UnityEngine.UI.Button button" newName="$hq" />
+      <method signature="void UIButtonSound::PlayClickSound([Hotfix]UIButtonSound)" newName="$VeA" oldStackTraceSignature="UIButtonSound:PlayClickSound()" newStackTraceSignature="UIButtonSound:$VeA()" />
+      <method signature="void UIButtonSound::@AttachToButtons([UnityEngine.CoreModule]UnityEngine.GameObject)" newName="$weA" oldStackTraceSignature="UIButtonSound:AttachToButtons(GameObject)" newStackTraceSignature="UIButtonSound:$weA(GameObject)" />
     </type>
     <type fullName="UIExtension" newFullName="$iA" status="Renamed">
       <method signature="void UIExtension::@SetSprite([UnityEngine.UI]UnityEngine.UI.Image, string, bool, float)" newName="$md" oldStackTraceSignature="UIExtension:SetSprite(Image, String, Boolean, Single)" newStackTraceSignature="$iA:$md(Image, String, Boolean, Single)" />

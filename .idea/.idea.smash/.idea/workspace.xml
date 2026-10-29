@@ -11,8 +11,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48c1c3b4-2b47-4b58-848e-c5dcf45a4647" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup52" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup52.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/KingnamypeYuanmoSC SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/KingnamypeYuanmoSC SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Extension/CommonHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Extension/CommonHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Gameplay/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Gameplay/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/AdsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/AdsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/ArrowMaxAdsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/ArrowMaxAdsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/InterstitialAdController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/InterstitialAdController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Runtime/Obfuz/SymbolObfus/symbol-mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Runtime/Obfuz/SymbolObfus/symbol-mapping.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UnityGameFramework/Configs/ResourceCollection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UnityGameFramework/Configs/ResourceCollection.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/GameFrameworkVersion.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/GameFrameworkVersion.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/booster_rocket.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/booster_rocket.dat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/cfig.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/cfig.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat5.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat5.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat9.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat9.dat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/gameplay_core.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/gameplay_core.dat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/gameplay_shared.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/gameplay_shared.dat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/obj_box.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/obj_box.dat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/obj_can.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/obj_can.dat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/obj_ice.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/obj_ice.dat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/obj_jamjar.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/obj_jamjar.dat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/obj_stone.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/obj_stone.dat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/obj_tnt.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/obj_tnt.dat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/obj_wormhole.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/obj_wormhole.dat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ExternalDependencyManagerResolverSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ExternalDependencyManagerResolverSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +64,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/HomePageUIForm.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/Items/MakeupItem.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/ScriptableAssets/Core/AppConfigs.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/InterstitialAdController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/AddLifeUIForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Item/MakeupRecordItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Item/TaskItem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -52,61 +84,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="2.1611953806641633E-58" />
-      <entry key="MS500" value="2.9304802994329265E-12" />
-      <entry key="S2" value="0.0013083905801955027" />
-      <entry key="S5" value="0.07083924596260978" />
-      <entry key="S10" value="0.28917710059494284" />
-      <entry key="S30" value="0.9312772489809885" />
-      <entry key="S60" value="1.3389821414004155" />
-      <entry key="M2" value="1.6284005828329944" />
-      <entry key="M5" value="1.844872272248232" />
-      <entry key="M10" value="2.091945653155981" />
-      <entry key="M15" value="2.588555346942859" />
-      <entry key="M30" value="4.468633611354776" />
-      <entry key="H1" value="7.324022825392171" />
-      <entry key="H2" value="13.739339084849082" />
-      <entry key="H4" value="28.722031834455994" />
-      <entry key="D1" value="103.85404234910145" />
-      <entry key="W1" value="957.4586389872418" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0000000193256564" />
+      <entry key="S10" value="1.0001510407252394" />
+      <entry key="S30" value="1.0749990417294053" />
+      <entry key="S60" value="1.3799821058086505" />
+      <entry key="M2" value="1.8674719276116725" />
+      <entry key="M5" value="2.434048949628937" />
+      <entry key="M10" value="2.8443750296300547" />
+      <entry key="M15" value="3.3800715475098366" />
+      <entry key="M30" value="5.284903310793022" />
+      <entry key="H1" value="8.171876930536097" />
+      <entry key="H2" value="14.595882783156027" />
+      <entry key="H4" value="29.571690962596566" />
+      <entry key="D1" value="104.7632428926532" />
+      <entry key="W1" value="958.3390077448762" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0000000004436067" />
-      <entry key="MS500" value="1.0134712202814855" />
-      <entry key="S2" value="1.3730529698497458" />
-      <entry key="S5" value="2.0291898678414144" />
-      <entry key="S10" value="2.6750486056004767" />
-      <entry key="S30" value="3.4446485282236337" />
-      <entry key="S60" value="3.7046995890427565" />
-      <entry key="M2" value="3.84763581678924" />
-      <entry key="M5" value="3.938240383197915" />
-      <entry key="M10" value="3.995507183363638" />
-      <entry key="M15" value="4.092122090786164" />
-      <entry key="M30" value="4.5090143385910455" />
-      <entry key="H1" value="5.668962341154186" />
-      <entry key="H2" value="9.596116672630012" />
-      <entry key="H4" value="18.24082674287943" />
-      <entry key="D1" value="51.73714576216297" />
-      <entry key="W1" value="108.18276296127242" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="2.314273518920206E-66" />
+      <entry key="S2" value="5.337502706026535E-17" />
+      <entry key="S5" value="5.535833400705967E-7" />
+      <entry key="S10" value="0.0013972105004493856" />
+      <entry key="S30" value="0.27740969619311767" />
+      <entry key="S60" value="1.0513355687930257" />
+      <entry key="M2" value="2.0496897961870753" />
+      <entry key="M5" value="3.0612577194999067" />
+      <entry key="M10" value="3.5226601936747057" />
+      <entry key="M15" value="3.7625401244440186" />
+      <entry key="M30" value="4.323623762473656" />
+      <entry key="H1" value="5.5511979145729375" />
+      <entry key="H2" value="9.495920920857017" />
+      <entry key="H4" value="18.1453480590674" />
+      <entry key="D1" value="51.69191204176913" />
+      <entry key="W1" value="108.1692458882537" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="3.068880332892891E-4" />
-      <entry key="MS500" value="0.20307647066734333" />
-      <entry key="S2" value="0.9545260878685787" />
-      <entry key="S5" value="1.8357826547131828" />
-      <entry key="S10" value="2.7805297051919338" />
-      <entry key="S30" value="4.290178750331178" />
-      <entry key="S60" value="4.995863348405353" />
-      <entry key="M2" value="5.4506436766495" />
-      <entry key="M5" value="5.772557997745666" />
-      <entry key="M10" value="6.0820520633761666" />
-      <entry key="M15" value="6.676945850217229" />
-      <entry key="M30" value="8.975508613753954" />
-      <entry key="H1" value="12.991533602864871" />
-      <entry key="H2" value="23.333985834498904" />
-      <entry key="H4" value="46.96124082993663" />
-      <entry key="D1" value="155.59030686623723" />
-      <entry key="W1" value="1065.6410887430418" />
+      <entry key="MS100" value="0.10013373469870276" />
+      <entry key="MS500" value="0.6311260160560578" />
+      <entry key="S2" value="0.8913104958969712" />
+      <entry key="S5" value="0.9550186132468466" />
+      <entry key="S10" value="0.9787025859292425" />
+      <entry key="S30" value="1.3378617443209904" />
+      <entry key="S60" value="2.4139195000755636" />
+      <entry key="M2" value="3.9017187930233317" />
+      <entry key="M5" value="5.486335574849868" />
+      <entry key="M10" value="6.361890134993736" />
+      <entry key="M15" value="7.138924967131004" />
+      <entry key="M30" value="9.606347858070976" />
+      <entry key="H1" value="13.72158951401622" />
+      <entry key="H2" value="24.090317167636016" />
+      <entry key="H4" value="47.715413761338986" />
+      <entry key="D1" value="156.45427179638787" />
+      <entry key="W1" value="1066.5079400862942" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
