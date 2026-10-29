@@ -37,6 +37,8 @@ MonoBehaviour:
   - PortuguesePortugal
   - Russian
   - Spanish
+  - Turkish
+  - Thai
   mProcedures:
   - GameStartMainProcedure
   - GameStartPreloadProcedure

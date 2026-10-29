@@ -4954,6 +4954,11 @@
       <method signature="void ArrowUITopbar::&lt;PlayGemUpFloatText&gt;b__62_0([Hotfix]ArrowUITopbar)" newName="$Wg" oldStackTraceSignature="ArrowUITopbar:&lt;PlayGemUpFloatText&gt;b__62_0()" newStackTraceSignature="ArrowUITopbar:$Wg()" />
       <method signature="void ArrowUITopbar::&lt;PlayPcardUpFloatText&gt;b__64_0([Hotfix]ArrowUITopbar)" newName="$xg" oldStackTraceSignature="ArrowUITopbar:&lt;PlayPcardUpFloatText&gt;b__64_0()" newStackTraceSignature="ArrowUITopbar:$xg()" />
     </type>
+    <type fullName="ArrowUITopbar/&lt;&gt;c" newFullName="" status="NotRenamed">
+      <field signature="[Hotfix]ArrowUITopbar/&lt;&gt;c &lt;&gt;9" newName="$SQ" />
+      <field signature="[UnityEngine.CoreModule]UnityEngine.Events.UnityAction &lt;&gt;9__31_0" newName="$Fy" />
+      <method signature="void ArrowUITopbar/&lt;&gt;c::&lt;OnInit&gt;b__31_0([Hotfix]ArrowUITopbar/&lt;&gt;c)" newName="$PgA" oldStackTraceSignature="&lt;&gt;c:&lt;OnInit&gt;b__31_0()" newStackTraceSignature="&lt;&gt;c:$PgA()" />
+    </type>
     <type fullName="ArrowUITopbar/&lt;&gt;c__DisplayClass27_0" newFullName="" status="NotRenamed">
       <field signature="[Hotfix]ArrowUITopbar &lt;&gt;4__this" newName="$IE" />
       <field signature="[Hotfix]PlayerDataType type" newName="$jE" />
@@ -6415,10 +6420,10 @@
       <field signature="[Hotfix]Gameplay.GameController/&lt;&gt;c &lt;&gt;9" newName="$aP" />
       <field signature="System.Comparison`1&lt;[Hotfix]EliminateReward&gt; &lt;&gt;9__95_0" newName="$qq" />
       <field signature="System.Action`1&lt;[Hotfix]Gameplay.Objects.BaseObject&gt; &lt;&gt;9__100_0" newName="$Qq" />
-      <field signature="System.Action &lt;&gt;9__109_2" newName="$SQ" />
+      <field signature="System.Action &lt;&gt;9__109_3" newName="$gy" />
       <method signature="int Gameplay.GameController/&lt;&gt;c::&lt;InitializeEliminateRewards&gt;b__95_0([Hotfix]Gameplay.GameController/&lt;&gt;c, [Hotfix]EliminateReward, [Hotfix]EliminateReward)" newName="$OgA" oldStackTraceSignature="Gameplay.&lt;&gt;c:&lt;InitializeEliminateRewards&gt;b__95_0(EliminateReward, EliminateReward)" newStackTraceSignature="Gameplay.&lt;&gt;c:$OgA(EliminateReward, EliminateReward)" />
       <method signature="void Gameplay.GameController/&lt;&gt;c::&lt;SetObjectMasses&gt;b__100_0([Hotfix]Gameplay.GameController/&lt;&gt;c, [Hotfix]Gameplay.Objects.BaseObject)" newName="$pgA" oldStackTraceSignature="Gameplay.&lt;&gt;c:&lt;SetObjectMasses&gt;b__100_0(BaseObject)" newStackTraceSignature="Gameplay.&lt;&gt;c:$pgA(BaseObject)" />
-      <method signature="void Gameplay.GameController/&lt;&gt;c::&lt;WinLevel&gt;b__109_2([Hotfix]Gameplay.GameController/&lt;&gt;c)" newName="$PgA" oldStackTraceSignature="Gameplay.&lt;&gt;c:&lt;WinLevel&gt;b__109_2()" newStackTraceSignature="Gameplay.&lt;&gt;c:$PgA()" />
+      <method signature="void Gameplay.GameController/&lt;&gt;c::&lt;WinLevel&gt;b__109_3([Hotfix]Gameplay.GameController/&lt;&gt;c)" newName="$qgA" oldStackTraceSignature="Gameplay.&lt;&gt;c:&lt;WinLevel&gt;b__109_3()" newStackTraceSignature="Gameplay.&lt;&gt;c:$qgA()" />
     </type>
     <type fullName="Gameplay.GameController/&lt;&gt;c__DisplayClass107_0" newFullName="Gameplay.GameController/$zc" status="Renamed">
       <field signature="System.Action showLevelComplete" newName="$lP" />
@@ -6426,7 +6431,10 @@
     </type>
     <type fullName="Gameplay.GameController/&lt;&gt;c__DisplayClass109_0" newFullName="Gameplay.GameController/$GC" status="Renamed">
       <field signature="System.Action showLevelComplete" newName="$uQ" />
-      <method signature="void Gameplay.GameController/&lt;&gt;c__DisplayClass109_0::&lt;WinLevel&gt;b__3([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass109_0, [UnityGameFramework.Runtime]UnityGameFramework.Runtime.UIFormLogic)" newName="$qgA" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass109_0:&lt;WinLevel&gt;b__3(UIFormLogic)" newStackTraceSignature="Gameplay.$GC:$qgA(UIFormLogic)" />
+      <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$lBA" />
+      <field signature="[GameFramework]GameFramework.GameFrameworkAction`1&lt;[UnityGameFramework.Runtime]UnityGameFramework.Runtime.UIFormLogic&gt; &lt;&gt;9__4" newName="$LBA" />
+      <method signature="void Gameplay.GameController/&lt;&gt;c__DisplayClass109_0::&lt;WinLevel&gt;b__2([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass109_0)" newName="$QgA" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass109_0:&lt;WinLevel&gt;b__2()" newStackTraceSignature="Gameplay.$GC:$QgA()" />
+      <method signature="void Gameplay.GameController/&lt;&gt;c__DisplayClass109_0::&lt;WinLevel&gt;b__4([Hotfix]Gameplay.GameController/&lt;&gt;c__DisplayClass109_0, [UnityGameFramework.Runtime]UnityGameFramework.Runtime.UIFormLogic)" newName="$uGA" oldStackTraceSignature="Gameplay.&lt;&gt;c__DisplayClass109_0:&lt;WinLevel&gt;b__4(UIFormLogic)" newStackTraceSignature="Gameplay.$GC:$uGA(UIFormLogic)" />
     </type>
     <type fullName="Gameplay.GameController/&lt;&gt;c__DisplayClass71_0" newFullName="Gameplay.GameController/$Zc" status="Renamed">
       <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$LP" />

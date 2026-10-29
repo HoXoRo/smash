@@ -40,7 +40,7 @@ namespace Gameplay.Objects
 
 		private const float Drag = 0f;
 
-		private const float ObjectMassMultiplier = 2.3f;
+		private const float ObjectMassMultiplier = 2.5f;
 
 		public const float DynamicFriction = 0.6f;
 

@@ -9,3 +9,8 @@
 	6		Japanese	Japanese	Japanese	
 	7		Spanish	Spanish	Spanish	
 	8		PortuguesePortugal	PortuguesePortugal	PortuguesePortugal	
+	9		Indonesian	Indonesian	Indonesian	
+	10		Filipino	Filipino	Filipino	
+	11		Turkish	Turkish	Turkish	
+	12		Thai	Thai	Thai	
+	13		Hindi	Hindi	Hindi	

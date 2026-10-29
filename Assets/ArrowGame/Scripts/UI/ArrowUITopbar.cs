@@ -74,6 +74,7 @@ public partial class ArrowUITopbar : UIFormBase
     protected override void OnInit(object userData)
     {
         base.OnInit(userData);
+        varBtnGift.onClick.AddListener(() => GF.UI.ShowToast(GF.Localization.GetString("giftHint")));
     }
 
     protected override void OnOpen(object userData)
