@@ -23,6 +23,7 @@ public class InterstitialAdController
 #endif
 
     private InterstitialAd _interstitialAd;
+    private InterstitialCompletion pendingCompletion;
     
     private int interstitialRetryAttempt;
 
@@ -96,12 +97,13 @@ public class InterstitialAdController
     /// <summary>
     /// Shows the ad.
     /// </summary>
-    public bool ShowAd()
+    public bool ShowAd(Action onCompleted = null)
     {
         if (_interstitialAd != null && _interstitialAd.CanShowAd())
         {
             Log.Info("admob Showing interstitial ad.");
             CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display);
+            pendingCompletion = new InterstitialCompletion(onCompleted);
             _interstitialAd.Show();
             return true;
         }
@@ -145,9 +147,12 @@ public class InterstitialAdController
 
     private void RegisterEventHandlers(InterstitialAd ad)
     {
+        InterstitialCompletion completion = null;
         // Raised when the ad is estimated to have earned money.
-        ad.OnAdPaid += (AdValue adValue) =>
+        ad.OnAdPaid += async (AdValue adValue) =>
         {
+            await Cysharp.Threading.Tasks.UniTask.SwitchToMainThread();
+            if (completion == null && ad == _interstitialAd) completion = pendingCompletion;
             Log.Info(String.Format("Interstitial ad paid {0} {1}.",
                 adValue.Value,
                 adValue.CurrencyCode));
@@ -173,14 +178,20 @@ public class InterstitialAdController
             CommonHelper.LogEvent(AdjustEventCodeEvent.interstitial_ad_times);
         };
         // Raised when the ad closed full screen content.
-        ad.OnAdFullScreenContentClosed += () =>
+        ad.OnAdFullScreenContentClosed += async () =>
         {
+            await Cysharp.Threading.Tasks.UniTask.SwitchToMainThread();
+            if (completion == null && ad == _interstitialAd) completion = pendingCompletion;
+            if (completion != null) await completion.Finish();
             Log.Info("Interstitial ad full screen content closed.");
             LoadAd();
         };
         // Raised when the ad failed to open full screen content.
-        ad.OnAdFullScreenContentFailed += (AdError error) =>
+        ad.OnAdFullScreenContentFailed += async (AdError error) =>
         {
+            await Cysharp.Threading.Tasks.UniTask.SwitchToMainThread();
+            if (completion == null && ad == _interstitialAd) completion = pendingCompletion;
+            if (completion != null) await completion.Finish();
             CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_failed);
             Log.Error("Interstitial ad failed to open full screen content with error : "
                 + error);

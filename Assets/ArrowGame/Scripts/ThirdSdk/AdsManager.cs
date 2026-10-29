@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 // using AHTIYCt9QWESDK;
@@ -40,11 +40,11 @@ public class AdsManager
 
     }
 
-    public void ShowInter(string adId = "")
+    public void ShowInter(string adId = "", Action onCompleted = null)
     {
-        if (!_interstitialAdController.ShowAd())
+        if (!_interstitialAdController.ShowAd(onCompleted))
         {
-            _maxAdsController.ShowInterstitial(adId);
+            _maxAdsController.ShowInterstitial(adId, onCompleted);
         }
 
     }
@@ -130,5 +130,23 @@ public class AdsManager
     public void ShowMaxDebugger()
     {
         _maxAdsController.ShowMaxDebugger();
+    }
+}
+internal sealed class InterstitialCompletion
+{
+    private Action callback;
+    private bool finishing;
+    public bool IsFinishing => finishing;
+    // A unique placement associates MAX close/failure events with this presentation.
+    public readonly string Placement = "gift_" + Guid.NewGuid().ToString("N");
+    public InterstitialCompletion(Action callback) { this.callback = callback; }
+    public async Cysharp.Threading.Tasks.UniTask Finish()
+    {
+        await Cysharp.Threading.Tasks.UniTask.SwitchToMainThread();
+        if (finishing) return;
+        finishing = true;
+        var completed = callback;
+        callback = null;
+        completed?.Invoke();
     }
 }

@@ -1565,14 +1565,17 @@ namespace Gameplay
 					uiParams.Set<VarAction>(LevelCompleteUIForm.P_OnNext, onNext);
 					GF.UI.OpenUIForm(UIViews.LevelCompleteUIForm, uiParams);
 				};
-				CommonHelper.ShowInterstitial("interstitial_level_win");
-				if (PcardGiftRewardSession.Count > 0)
+				CommonHelper.ShowInterstitial("interstitial_level_win", onCompleted: () =>
 				{
-					UIParams giftParams = UIParams.Create();
-					giftParams.CloseCallback = _ => showLevelComplete();
-					if (GF.UI.OpenUIForm(UIViews.PcardGiftUIForm, giftParams) >= 0) return;
-				}
-				showLevelComplete();
+					if (!this || !isActiveAndEnabled) return;
+					if (PcardGiftRewardSession.Count > 0)
+					{
+						UIParams giftParams = UIParams.Create();
+						giftParams.CloseCallback = _ => showLevelComplete();
+						if (GF.UI.OpenUIForm(UIViews.PcardGiftUIForm, giftParams) >= 0) return;
+					}
+					showLevelComplete();
+				});
 			});
 		}
 

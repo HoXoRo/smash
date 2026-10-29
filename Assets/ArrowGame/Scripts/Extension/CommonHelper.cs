@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -376,9 +376,11 @@ public static class CommonHelper
         s_InterstitialCancelAccum = 0;
     }
 
-    public static void ShowInterstitial(string interstitialId, bool immediately = false)
+    /// <summary>完成回调在跳过、失败或关闭后执行，不等待收入入账。</summary>
+    public static void ShowInterstitial(string interstitialId, bool immediately = false, Action onCompleted = null)
     {
 #if UNITY_EDITOR
+        onCompleted?.Invoke();
         return;
 #endif
         // 每次调用累计一次；达到 InterstitialCancelTime 才进入后续 CD/权重等判断
@@ -393,6 +395,7 @@ public static class CommonHelper
 
             if (playerData.InterstitialTimes <= GF.Config.GetInt("InterstitialPreTimes"))
             {
+                onCompleted?.Invoke();
                 return;
             }
         }
@@ -401,16 +404,21 @@ public static class CommonHelper
             ? GF.Config.GetInt("InterstitialCancelTime")
             : 0;
         if (cancelTime > 0 && s_InterstitialCancelAccum < cancelTime)
+        {
+            onCompleted?.Invoke();
             return;
+        }
 
         if (!immediately && GetNowTime() < nextShowInterstitialTime)
         {
+            onCompleted?.Invoke();
             return;
         }
 
         bool isShow = UnityEngine.Random.Range(0, 101) < GF.Config.GetInt("InterstitialShowWeight");
         if (!isShow)
         {
+            onCompleted?.Invoke();
             return;
         }
 
@@ -423,7 +431,7 @@ public static class CommonHelper
         //     {"ad_position_type", adPositionType},
         //     {"placement_id", string.Empty}
         // });
-        AdsManager.Instance.ShowInter(interstitialId);
+        AdsManager.Instance.ShowInter(interstitialId, onCompleted);
         nextShowInterstitialTime = GetNowTime() + GF.Config.GetInt("InterstitialCD");
         ResetInterstitialCancelAccum();
     }

@@ -20,6 +20,7 @@ public class ArrowMaxAdsController
     private const string AppOpenAdUnitId = "f069c8cd35607d2b";
     private const string MRecAdUnitId = "ENTER_ANDROID_MREC_AD_UNIT_ID_HERE";
 #endif
+    private readonly Dictionary<string, InterstitialCompletion> interstitialCompletions = new Dictionary<string, InterstitialCompletion>();
     private bool isBannerShowing;
     private bool isMRecShowing;
 
@@ -102,19 +103,27 @@ public class ArrowMaxAdsController
         MaxSdk.LoadInterstitial(InterstitialAdUnitId);
     }
 
-    public void ShowInterstitial(string adsource)
+    public void ShowInterstitial(string adsource, Action onCompleted = null)
     {
         this.adsource = adsource;
         if (MaxSdk.IsInterstitialReady(InterstitialAdUnitId))
         {
             Log.Info("max Interstitial Showing...");
             CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display);
-            MaxSdk.ShowInterstitial(InterstitialAdUnitId);
+            if (onCompleted == null)
+                MaxSdk.ShowInterstitial(InterstitialAdUnitId);
+            else
+            {
+                var completion = new InterstitialCompletion(onCompleted);
+                interstitialCompletions.Add(completion.Placement, completion);
+                MaxSdk.ShowInterstitial(InterstitialAdUnitId, completion.Placement);
+            }
         }
         else
         {
             LoadInterstitial();
             Log.Info("Interstitial Ad not ready...");
+            onCompleted?.Invoke();
         }
     }
 
@@ -181,6 +190,7 @@ public class ArrowMaxAdsController
     {
         // Interstitial ad failed to display. We recommend loading the next ad
         Log.Info("Interstitial failed to display with error code: " + errorInfo.Code);
+        CompleteInterstitial(adInfo);
         rewardedCallBack?.Invoke(false);
         rewardedCallBack = null;
         LoadInterstitial();
@@ -196,41 +206,29 @@ public class ArrowMaxAdsController
         rewardedCallBack?.Invoke(true);
         rewardedCallBack = null;
         Log.Info("Interstitial dismissed");
+        CompleteInterstitial(adInfo);
         LoadInterstitial();
         
 
 
     }
 
-    private void OnInterstitialRevenuePaidEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
+    private async void CompleteInterstitial(MaxSdkBase.AdInfo adInfo)
     {
+        await Cysharp.Threading.Tasks.UniTask.SwitchToMainThread();
+        string placement = adInfo.Placement ?? string.Empty;
+        if (!interstitialCompletions.TryGetValue(placement, out var completion) || completion.IsFinishing) return;
+        try { await completion.Finish(); }
+        finally { interstitialCompletions.Remove(placement); }
+    }
+
+    private async void OnInterstitialRevenuePaidEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
+    {
+        await Cysharp.Threading.Tasks.UniTask.SwitchToMainThread();
         // Interstitial ad revenue paid. Use this callback to track user revenue.
         Log.Info("Interstitial revenue paid");
         
         PcardGiftRewardSession.Add(adInfo.Revenue);
-
-
-        
-        // Ad revenue
-        // double revenue = adInfo.Revenue;
-
-        // Miscellaneous data
-        // string countryCode = MaxSdk.GetSdkConfiguration().CountryCode; // "US" for the United States, etc - Note: Do not confuse this with currency code which is "USD"!
-        // string networkName = adInfo.NetworkName; // Display name of the network that showed the ad (e.g. "AdColony")
-        // string adUnitIdentifier = adInfo.AdUnitIdentifier; // The MAX Ad Unit ID
-        // string placement = adInfo.Placement; // The placement this ad's postbacks are tied to
-        //
-        // Dictionary<string, object> parameters = new Dictionary<string, object>();
-        // parameters["countrycode"] = MaxSdk.GetSdkConfiguration().CountryCode;
-        // parameters["revenue"] = adInfo.Revenue;
-        // parameters["networkname"] = adInfo.NetworkName;
-        // parameters["adunitid"] = adInfo.AdUnitIdentifier;
-        // parameters["adformat"] = adInfo.AdFormat;
-        // parameters["adsource"] = adsource;
-        // // 数据上报
-        // DataCollectManager.Instance.LogAdRevenue(parameters);
-        
-        // AdjustManager.Instance.LogAdRevenue(adInfo.Revenue, MaxSdk.GetSdkConfiguration().CountryCode);
         
         TrackAdRevenue(adInfo);
         
