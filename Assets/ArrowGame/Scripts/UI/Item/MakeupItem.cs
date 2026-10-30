@@ -26,6 +26,10 @@ public partial class MakeupItem : UIItemBase
     {
         m_Task = task;
         m_Player = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        if (varImgMoney != null)
+            varImgMoney.SetActive(task != null && task.Mon > 0f);
+        if (varImgPcard != null)
+            varImgPcard.SetActive(task != null && task.Pcard > 0f);
         if (task == null)
         {
             RefreshCashoutState();
