@@ -11,37 +11,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48c1c3b4-2b47-4b58-848e-c5dcf45a4647" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup52" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle.backup52.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/English.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/English.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Filipino.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Filipino.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/French.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/French.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Hindi.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Hindi.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Indonesian.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Indonesian.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Japanese.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Japanese.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/PortugueseBrazil.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/PortugueseBrazil.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/PortuguesePortugal.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/PortuguesePortugal.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Russian.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Russian.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Spanish.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Spanish.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Thai.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Thai.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Turkish.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Turkish.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/Japanese SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/Japanese SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/KingnamypeYuanmoSC SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/KingnamypeYuanmoSC SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Extension/CommonHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Extension/CommonHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Gameplay/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/Flow/Gameplay/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/AdsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/AdsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/ArrowMaxAdsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/ArrowMaxAdsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/InterstitialAdController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/InterstitialAdController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/Thai SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/Thai SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/Items/MakeupItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/Items/MakeupItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/SettingPageUIForm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/SettingPageUIForm.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scene/SmashLaunch.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scene/SmashLaunch.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/ScriptableAssets/Core/AppConfigs.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/ScriptableAssets/Core/AppConfigs.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/BannerViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/BannerViewController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Runtime/Obfuz/SymbolObfus/symbol-mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Runtime/Obfuz/SymbolObfus/symbol-mapping.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UnityGameFramework/Configs/ResourceCollection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UnityGameFramework/Configs/ResourceCollection.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/Common/Common_Atlas.spriteatlasv2" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/Common/Common_Atlas.spriteatlasv2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/Common/Common_Atlas.spriteatlasv2.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/Common/Common_Atlas.spriteatlasv2.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/UI/LoginAtlas/LoginAtlas_Atlas.spriteatlasv2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/UI/LoginAtlas/LoginAtlas_Atlas.spriteatlasv2.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/UI/SettingAtlas/SettingAtlas_Atlas.spriteatlasv2" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/UI/SettingAtlas/SettingAtlas_Atlas.spriteatlasv2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Banners/BANNER.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Banners/BANNER.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Interstitials/768x1024.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Interstitials/768x1024.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Rewarded/768x1024.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Rewarded/768x1024.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunInfo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunInfo.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunSettings.json.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/GameFrameworkVersion.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/GameFrameworkVersion.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/booster_rocket.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/booster_rocket.dat.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/cfig.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/cfig.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat5.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat5.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat9.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat9.dat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/gameplay_core.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/gameplay_core.dat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/gameplay_shared.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/gameplay_shared.dat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/obj_box.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/obj_box.dat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/obj_can.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/obj_can.dat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/obj_ice.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/obj_ice.dat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/obj_jamjar.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/obj_jamjar.dat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/obj_stone.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/obj_stone.dat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/obj_tnt.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/obj_tnt.dat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/obj_wormhole.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/obj_wormhole.dat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ExternalDependencyManagerResolverSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ExternalDependencyManagerResolverSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat7.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat7.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
@@ -84,61 +93,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0000000193256564" />
-      <entry key="S10" value="1.0001510407252394" />
-      <entry key="S30" value="1.0749990417294053" />
-      <entry key="S60" value="1.3799821058086505" />
-      <entry key="M2" value="1.8674719276116725" />
-      <entry key="M5" value="2.434048949628937" />
-      <entry key="M10" value="2.8443750296300547" />
-      <entry key="M15" value="3.3800715475098366" />
-      <entry key="M30" value="5.284903310793022" />
-      <entry key="H1" value="8.171876930536097" />
-      <entry key="H2" value="14.595882783156027" />
-      <entry key="H4" value="29.571690962596566" />
-      <entry key="D1" value="104.7632428926532" />
-      <entry key="W1" value="958.3390077448762" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="2.587634091756378E-254" />
+      <entry key="S30" value="5.928096787730266E-85" />
+      <entry key="S60" value="1.4956744953660168E-42" />
+      <entry key="M2" value="2.4294525711344942E-21" />
+      <entry key="M5" value="1.3025081245312822E-8" />
+      <entry key="M10" value="2.3030238337474871E-4" />
+      <entry key="M15" value="0.006328445686391147" />
+      <entry key="M30" value="0.23141800791397973" />
+      <entry key="H1" value="1.9179634584930385" />
+      <entry key="H2" value="7.020764291454613" />
+      <entry key="H4" value="19.02350682582132" />
+      <entry key="D1" value="102.45414872404582" />
+      <entry key="W1" value="949.302735627194" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="2.314273518920206E-66" />
-      <entry key="S2" value="5.337502706026535E-17" />
-      <entry key="S5" value="5.535833400705967E-7" />
-      <entry key="S10" value="0.0013972105004493856" />
-      <entry key="S30" value="0.27740969619311767" />
-      <entry key="S60" value="1.0513355687930257" />
-      <entry key="M2" value="2.0496897961870753" />
-      <entry key="M5" value="3.0612577194999067" />
-      <entry key="M10" value="3.5226601936747057" />
-      <entry key="M15" value="3.7625401244440186" />
-      <entry key="M30" value="4.323623762473656" />
-      <entry key="H1" value="5.5511979145729375" />
-      <entry key="H2" value="9.495920920857017" />
-      <entry key="H4" value="18.1453480590674" />
-      <entry key="D1" value="51.69191204176913" />
-      <entry key="W1" value="108.1692458882537" />
+      <entry key="MS100" value="1.0052262795108833" />
+      <entry key="MS500" value="1.3496540206846153" />
+      <entry key="S2" value="1.7689704156351342" />
+      <entry key="S5" value="1.9002514979094545" />
+      <entry key="S10" value="1.9488158398284963" />
+      <entry key="S30" value="1.9826389515130178" />
+      <entry key="S60" value="1.9912814693683212" />
+      <entry key="M2" value="1.9956311914400438" />
+      <entry key="M5" value="1.99825019046229" />
+      <entry key="M10" value="1.9992948661730554" />
+      <entry key="M15" value="2.0039054408922277" />
+      <entry key="M30" value="2.129163046805729" />
+      <entry key="H1" value="2.8326883855276375" />
+      <entry key="H2" value="4.916160676345431" />
+      <entry key="H4" value="10.80878136699507" />
+      <entry key="D1" value="49.56309846038554" />
+      <entry key="W1" value="112.958989212677" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.10013373469870276" />
-      <entry key="MS500" value="0.6311260160560578" />
-      <entry key="S2" value="0.8913104958969712" />
-      <entry key="S5" value="0.9550186132468466" />
-      <entry key="S10" value="0.9787025859292425" />
-      <entry key="S30" value="1.3378617443209904" />
-      <entry key="S60" value="2.4139195000755636" />
-      <entry key="M2" value="3.9017187930233317" />
-      <entry key="M5" value="5.486335574849868" />
-      <entry key="M10" value="6.361890134993736" />
-      <entry key="M15" value="7.138924967131004" />
-      <entry key="M30" value="9.606347858070976" />
-      <entry key="H1" value="13.72158951401622" />
-      <entry key="H2" value="24.090317167636016" />
-      <entry key="H4" value="47.715413761338986" />
-      <entry key="D1" value="156.45427179638787" />
-      <entry key="W1" value="1066.5079400862942" />
+      <entry key="MS100" value="0.007812501667114108" />
+      <entry key="MS500" value="0.3964838276124689" />
+      <entry key="S2" value="1.1485814851465226" />
+      <entry key="S5" value="1.5750007679513731" />
+      <entry key="S10" value="1.7696334769997344" />
+      <entry key="S30" value="1.9188022451589424" />
+      <entry key="S60" value="1.9588200267671478" />
+      <entry key="M2" value="1.9792623865963106" />
+      <entry key="M5" value="1.9916692411181982" />
+      <entry key="M10" value="1.9962287954230171" />
+      <entry key="M15" value="2.008029836176278" />
+      <entry key="M30" value="2.35937774157912" />
+      <entry key="H1" value="4.749657185140981" />
+      <entry key="H2" value="11.935833418335996" />
+      <entry key="H4" value="29.83104912797214" />
+      <entry key="D1" value="152.01633120689053" />
+      <entry key="W1" value="1062.261389934803" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{

@@ -34,7 +34,7 @@ public class BannerViewController
     /// </summary>
     public void CreateBannerView()
     {
-        Debug.Log("Creating banner view.");
+        Log.Info("Creating banner view.");
 
         // If we already have a banner, destroy the old one.
         if(_bannerView != null)
@@ -50,7 +50,7 @@ public class BannerViewController
         // Listen to events the banner may raise.
         ListenToAdEvents();
 
-        Debug.Log("Banner view created.");
+        Log.Info("Banner view created.");
     }
 
     /// <summary>
@@ -68,7 +68,7 @@ public class BannerViewController
         var adRequest = new AdRequest();
 
         // Send the request to load the ad.
-        Debug.Log("Loading banner ad.");
+        Log.Info("Loading banner ad.");
         _bannerView.LoadAd(adRequest);
     }
 
@@ -79,7 +79,7 @@ public class BannerViewController
     {
         if (_bannerView != null)
         {
-            Debug.Log("Showing banner view.");
+            Log.Info("Showing banner view.");
             _bannerView.Show();
             return true;
         }
@@ -93,7 +93,7 @@ public class BannerViewController
     {
         if (_bannerView != null)
         {
-            Debug.Log("Hiding banner view.");
+            Log.Info("Hiding banner view.");
             _bannerView.Hide();
         }
     }
@@ -107,7 +107,7 @@ public class BannerViewController
     {
         if (_bannerView != null)
         {
-            Debug.Log("Destroying banner view.");
+            Log.Info("Destroying banner view.");
             _bannerView.Destroy();
             _bannerView = null;
         }

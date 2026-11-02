@@ -51,9 +51,6 @@
       <field signature="int $Obfuz$RVA_Value47" newName="$Rm" />
       <field signature="int $Obfuz$RVA_Value48" newName="$sm" />
       <field signature="int $Obfuz$RVA_Value49" newName="$Sm" />
-      <field signature="int $Obfuz$RVA_Value50" newName="$FaA" />
-      <field signature="int $Obfuz$RVA_Value51" newName="$gaA" />
-      <field signature="int $Obfuz$RVA_Value52" newName="$GaA" />
     </type>
     <type fullName="$Obfuz$ProxyCall" newFullName="$sB" status="Renamed">
       <method signature="[Builtin.Runtime]AppSettings $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_10354594(object, int)" newName="$mP" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_10354594(Object, Int32)" newStackTraceSignature="$sB:$mP(Object, Int32)" />
@@ -94,7 +91,6 @@
       <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_65367_11558398(object, object, int, int)" newName="$WdA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_65367_11558398(Object, Object, Int32, Int32)" newStackTraceSignature="$sB:$WdA(Object, Object, Int32, Int32)" />
       <method signature="System.Type $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_712727(object, int)" newName="$Dq" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_712727(Object, Int32)" newStackTraceSignature="$sB:$Dq(Object, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_4780505(object, int)" newName="$eq" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_4780505(Object, Int32)" newStackTraceSignature="$sB:$eq(Object, Int32)" />
-      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_12199_4780505(object, int, long, int)" newName="$xdA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_12199_4780505(Object, Int32, Int64, Int32)" newStackTraceSignature="$sB:$xdA(Object, Int32, Int64, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_12519_4780505(object, byte, int)" newName="$Eq" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_12519_4780505(Object, Byte, Int32)" newStackTraceSignature="$sB:$Eq(Object, Byte, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_17482_4780505(object, object, object, object, object, object, object, int)" newName="$fq" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_17482_4780505(Object, Object, Object, Object, Object, Object, Object, Int32)" newStackTraceSignature="$sB:$fq(Object, Object, Object, Object, Object, Object, Object, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_19129_4780505(object, float, int)" newName="$Fq" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_19129_4780505(Object, Single, Int32)" newStackTraceSignature="$sB:$Fq(Object, Single, Int32)" />
@@ -105,12 +101,10 @@
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_32318_4780505(object, object, float, float, int)" newName="$iq" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_32318_4780505(Object, Object, Single, Single, Int32)" newStackTraceSignature="$sB:$iq(Object, Object, Single, Single, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_4780505(object, object, int)" newName="$Iq" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_4780505(Object, Object, Int32)" newStackTraceSignature="$sB:$Iq(Object, Object, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_45707_4780505(object, int, object, int)" newName="$jq" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_45707_4780505(Object, Int32, Object, Int32)" newStackTraceSignature="$sB:$jq(Object, Int32, Object, Int32)" />
-      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_49321_4780505(object, int, long, object, int)" newName="$XdA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_49321_4780505(Object, Int32, Int64, Object, Int32)" newStackTraceSignature="$sB:$XdA(Object, Int32, Int64, Object, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_50754_4780505(object, object, object, int)" newName="$Jq" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_50754_4780505(Object, Object, Object, Int32)" newStackTraceSignature="$sB:$Jq(Object, Object, Object, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_51425_4780505(object, int, int)" newName="$kq" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_51425_4780505(Object, Int32, Int32)" newStackTraceSignature="$sB:$kq(Object, Int32, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_52007_4780505(object, object[], int)" newName="$Kq" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_52007_4780505(Object, Object[], Int32)" newStackTraceSignature="$sB:$Kq(Object, Object[], Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_52393_4780505(byte, int)" newName="$lq" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_52393_4780505(Byte, Int32)" newStackTraceSignature="$sB:$lq(Byte, Int32)" />
-      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_58859_4780505(object, object, object, object, int, int)" newName="$ydA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_58859_4780505(Object, Object, Object, Object, Int32, Int32)" newStackTraceSignature="$sB:$ydA(Object, Object, Object, Object, Int32, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_65528_4780505(object, System.DateTime, int)" newName="$Lq" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_65528_4780505(Object, DateTime, Int32)" newStackTraceSignature="$sB:$Lq(Object, DateTime, Int32)" />
       <method signature="[UnityEngine.CoreModule]UnityEngine.Camera $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_8674810(object, int)" newName="$mq" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_8674810(Object, Int32)" newStackTraceSignature="$sB:$mq(Object, Int32)" />
       <method signature="[UnityEngine.CoreModule]UnityEngine.Color $Obfuz$ProxyCall::@$Obfuz$Dispatch_63457_7536978([UnityEngine.CoreModule]UnityEngine.Color, float, int)" newName="$Mq" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_63457_7536978(Color, Single, Int32)" newStackTraceSignature="$sB:$Mq(Color, Single, Int32)" />
@@ -131,8 +125,6 @@
     <type fullName="$Obfuz$RVA$0" newFullName="$rB" status="Renamed">
       <field signature="[Builtin.Runtime]$ObfuzRVA$DataHolder2048 $RVA_Data0" newName="$tL" />
       <field signature="byte[] $RVA_Value0" newName="$TL" />
-      <field signature="[Builtin.Runtime]$ObfuzRVA$DataHolder2048 $RVA_Data1" newName="$EaA" />
-      <field signature="byte[] $RVA_Value1" newName="$faA" />
     </type>
     <type fullName="$ObfuzRVA$DataHolder2048" newFullName="$QB" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;" newFullName="$IB" status="Renamed">
@@ -424,24 +416,24 @@
       <field signature="string $Obfuz$RVA_Value46" newName="$sI" />
       <field signature="string $Obfuz$RVA_Value47" newName="$SI" />
       <field signature="float $Obfuz$RVA_Value48" newName="$By" />
-      <field signature="string $Obfuz$RVA_Value49" newName="$NO" />
-      <field signature="string $Obfuz$RVA_Value50" newName="$qO" />
-      <field signature="string $Obfuz$RVA_Value51" newName="$Hp" />
+      <field signature="int $Obfuz$RVA_Value49" newName="$mQ" />
+      <field signature="int $Obfuz$RVA_Value50" newName="$Ir" />
+      <field signature="int $Obfuz$RVA_Value51" newName="$HT" />
       <field signature="int $Obfuz$RVA_Value52" newName="$cy" />
       <field signature="int $Obfuz$RVA_Value53" newName="$dM" />
       <field signature="int $Obfuz$RVA_Value54" newName="$UN" />
       <field signature="int $Obfuz$RVA_Value55" newName="$kp" />
       <field signature="int $Obfuz$RVA_Value56" newName="$lp" />
-      <field signature="string $Obfuz$RVA_Value57" newName="$hy" />
+      <field signature="int $Obfuz$RVA_Value57" newName="$iT" />
       <field signature="int $Obfuz$RVA_Value58" newName="$Cy" />
-      <field signature="int $Obfuz$RVA_Value59" newName="$Hy" />
-      <field signature="int $Obfuz$RVA_Value60" newName="$iy" />
-      <field signature="int $Obfuz$RVA_Value61" newName="$Iy" />
-      <field signature="int $Obfuz$RVA_Value62" newName="$jy" />
-      <field signature="string $Obfuz$RVA_Value63" newName="$Jy" />
-      <field signature="string $Obfuz$RVA_Value64" newName="$Ky" />
-      <field signature="string $Obfuz$RVA_Value65" newName="$my" />
-      <field signature="float $Obfuz$RVA_Value66" newName="$My" />
+      <field signature="string $Obfuz$RVA_Value59" newName="$hy" />
+      <field signature="string $Obfuz$RVA_Value60" newName="$Hy" />
+      <field signature="string $Obfuz$RVA_Value61" newName="$iy" />
+      <field signature="float $Obfuz$RVA_Value62" newName="$Iy" />
+      <field signature="int $Obfuz$RVA_Value63" newName="$jy" />
+      <field signature="int $Obfuz$RVA_Value64" newName="$Jy" />
+      <field signature="int $Obfuz$RVA_Value65" newName="$ky" />
+      <field signature="int $Obfuz$RVA_Value66" newName="$Ky" />
       <field signature="int $Obfuz$RVA_Value67" newName="$Gy" />
       <field signature="int $Obfuz$RVA_Value68" newName="$nP" />
       <field signature="int $Obfuz$RVA_Value69" newName="$NP" />
@@ -452,31 +444,31 @@
       <field signature="int $Obfuz$RVA_Value74" newName="$iQ" />
       <field signature="int $Obfuz$RVA_Value75" newName="$IQ" />
       <field signature="int $Obfuz$RVA_Value76" newName="$jQ" />
-      <field signature="int $Obfuz$RVA_Value77" newName="$ny" />
-      <field signature="int $Obfuz$RVA_Value78" newName="$oy" />
-      <field signature="int $Obfuz$RVA_Value79" newName="$Qy" />
-      <field signature="int $Obfuz$RVA_Value80" newName="$ry" />
+      <field signature="float $Obfuz$RVA_Value77" newName="$my" />
+      <field signature="float $Obfuz$RVA_Value78" newName="$My" />
+      <field signature="float $Obfuz$RVA_Value79" newName="$ny" />
+      <field signature="float $Obfuz$RVA_Value80" newName="$oy" />
       <field signature="float $Obfuz$RVA_Value81" newName="$Ry" />
       <field signature="float $Obfuz$RVA_Value82" newName="$sy" />
-      <field signature="float $Obfuz$RVA_Value83" newName="$Sy" />
-      <field signature="float $Obfuz$RVA_Value84" newName="$ky" />
-      <field signature="float $Obfuz$RVA_Value85" newName="$mQ" />
-      <field signature="float $Obfuz$RVA_Value86" newName="$ty" />
+      <field signature="int $Obfuz$RVA_Value83" newName="$Qy" />
+      <field signature="int $Obfuz$RVA_Value84" newName="$ry" />
+      <field signature="int $Obfuz$RVA_Value85" newName="$Sy" />
+      <field signature="long $Obfuz$RVA_Value86" newName="$ty" />
       <field signature="int $Obfuz$RVA_Value87" newName="$ly" />
       <field signature="int $Obfuz$RVA_Value88" newName="$MQ" />
       <field signature="int $Obfuz$RVA_Value89" newName="$oQ" />
-      <field signature="long $Obfuz$RVA_Value90" newName="$Ty" />
+      <field signature="int $Obfuz$RVA_Value90" newName="$Ty" />
       <field signature="int $Obfuz$RVA_Value91" newName="$Ly" />
-      <field signature="int $Obfuz$RVA_Value92" newName="$Uy" />
-      <field signature="int $Obfuz$RVA_Value93" newName="$vy" />
-      <field signature="int $Obfuz$RVA_Value94" newName="$Vy" />
+      <field signature="float $Obfuz$RVA_Value92" newName="$uy" />
+      <field signature="float $Obfuz$RVA_Value93" newName="$Uy" />
+      <field signature="float $Obfuz$RVA_Value94" newName="$vy" />
       <field signature="int $Obfuz$RVA_Value95" newName="$Ny" />
-      <field signature="float $Obfuz$RVA_Value96" newName="$Wy" />
-      <field signature="float $Obfuz$RVA_Value97" newName="$xy" />
-      <field signature="float $Obfuz$RVA_Value98" newName="$Xy" />
+      <field signature="string $Obfuz$RVA_Value96" newName="$Vy" />
+      <field signature="string $Obfuz$RVA_Value97" newName="$wy" />
+      <field signature="int $Obfuz$RVA_Value98" newName="$Wy" />
       <field signature="int $Obfuz$RVA_Value99" newName="$tQ" />
-      <field signature="string $Obfuz$RVA_Value100" newName="$yy" />
-      <field signature="string $Obfuz$RVA_Value101" newName="$Yy" />
+      <field signature="int $Obfuz$RVA_Value100" newName="$xy" />
+      <field signature="int $Obfuz$RVA_Value101" newName="$Xy" />
       <field signature="int $Obfuz$RVA_Value102" newName="$Oy" />
       <field signature="int $Obfuz$RVA_Value103" newName="$vQ" />
       <field signature="int $Obfuz$RVA_Value104" newName="$py" />
@@ -485,37 +477,37 @@
       <field signature="int $Obfuz$RVA_Value107" newName="$qy" />
       <field signature="int $Obfuz$RVA_Value108" newName="$zy" />
       <field signature="int $Obfuz$RVA_Value109" newName="$Zy" />
-      <field signature="int $Obfuz$RVA_Value110" newName="$aY" />
-      <field signature="int $Obfuz$RVA_Value111" newName="$AY" />
-      <field signature="int $Obfuz$RVA_Value112" newName="$bY" />
-      <field signature="int $Obfuz$RVA_Value113" newName="$CY" />
-      <field signature="float $Obfuz$RVA_Value114" newName="$dY" />
-      <field signature="float $Obfuz$RVA_Value115" newName="$DY" />
-      <field signature="float $Obfuz$RVA_Value116" newName="$uy" />
-      <field signature="string $Obfuz$RVA_Value117" newName="$eY" />
-      <field signature="string $Obfuz$RVA_Value118" newName="$EY" />
-      <field signature="string $Obfuz$RVA_Value119" newName="$haA" />
-      <field signature="string $Obfuz$RVA_Value120" newName="$HaA" />
-      <field signature="int $Obfuz$RVA_Value121" newName="$wy" />
-      <field signature="float $Obfuz$RVA_Value122" newName="$iaA" />
-      <field signature="int $Obfuz$RVA_Value123" newName="$Ir" />
+      <field signature="float $Obfuz$RVA_Value110" newName="$yy" />
+      <field signature="float $Obfuz$RVA_Value111" newName="$Yy" />
+      <field signature="float $Obfuz$RVA_Value112" newName="$aY" />
+      <field signature="string $Obfuz$RVA_Value113" newName="$AY" />
+      <field signature="string $Obfuz$RVA_Value114" newName="$bY" />
+      <field signature="string $Obfuz$RVA_Value115" newName="$CY" />
+      <field signature="int $Obfuz$RVA_Value116" newName="$dY" />
+      <field signature="float $Obfuz$RVA_Value117" newName="$DY" />
+      <field signature="int $Obfuz$RVA_Value118" newName="$eY" />
+      <field signature="int $Obfuz$RVA_Value119" newName="$EY" />
+      <field signature="float $Obfuz$RVA_Value120" newName="$CaA" />
+      <field signature="float $Obfuz$RVA_Value121" newName="$daA" />
+      <field signature="int $Obfuz$RVA_Value122" newName="$DaA" />
+      <field signature="string $Obfuz$RVA_Value123" newName="$eaA" />
       <field signature="int $Obfuz$RVA_Value124" newName="$Fr" />
-      <field signature="float $Obfuz$RVA_Value125" newName="$IaA" />
-      <field signature="float $Obfuz$RVA_Value126" newName="$jaA" />
+      <field signature="int $Obfuz$RVA_Value125" newName="$EaA" />
+      <field signature="int $Obfuz$RVA_Value126" newName="$faA" />
       <field signature="int $Obfuz$RVA_Value127" newName="$gr" />
-      <field signature="string $Obfuz$RVA_Value128" newName="$JaA" />
+      <field signature="int $Obfuz$RVA_Value128" newName="$FaA" />
       <field signature="int $Obfuz$RVA_Value129" newName="$Jr" />
       <field signature="int $Obfuz$RVA_Value130" newName="$Hr" />
       <field signature="int $Obfuz$RVA_Value131" newName="$ir" />
       <field signature="int $Obfuz$RVA_Value132" newName="$Sr" />
       <field signature="int $Obfuz$RVA_Value133" newName="$kaA" />
-      <field signature="int $Obfuz$RVA_Value134" newName="$KaA" />
-      <field signature="int $Obfuz$RVA_Value135" newName="$UI" />
+      <field signature="float $Obfuz$RVA_Value134" newName="$gaA" />
+      <field signature="string $Obfuz$RVA_Value135" newName="$GaA" />
       <field signature="int $Obfuz$RVA_Value136" newName="$vI" />
       <field signature="int $Obfuz$RVA_Value137" newName="$VI" />
       <field signature="int $Obfuz$RVA_Value138" newName="$wI" />
-      <field signature="float $Obfuz$RVA_Value139" newName="$laA" />
-      <field signature="string $Obfuz$RVA_Value140" newName="$LaA" />
+      <field signature="int $Obfuz$RVA_Value139" newName="$haA" />
+      <field signature="int $Obfuz$RVA_Value140" newName="$HaA" />
       <field signature="int $Obfuz$RVA_Value141" newName="$XI" />
       <field signature="int $Obfuz$RVA_Value142" newName="$yI" />
       <field signature="int $Obfuz$RVA_Value143" newName="$YI" />
@@ -649,33 +641,33 @@
       <field signature="int $Obfuz$RVA_Value271" newName="$Kk" />
       <field signature="int $Obfuz$RVA_Value272" newName="$maA" />
       <field signature="int $Obfuz$RVA_Value273" newName="$MaA" />
-      <field signature="int $Obfuz$RVA_Value274" newName="$naA" />
-      <field signature="int $Obfuz$RVA_Value275" newName="$NaA" />
-      <field signature="int $Obfuz$RVA_Value276" newName="$oaA" />
-      <field signature="int $Obfuz$RVA_Value277" newName="$OaA" />
-      <field signature="int $Obfuz$RVA_Value278" newName="$paA" />
+      <field signature="string $Obfuz$RVA_Value274" newName="$iaA" />
+      <field signature="string $Obfuz$RVA_Value275" newName="$IaA" />
+      <field signature="string $Obfuz$RVA_Value276" newName="$jaA" />
+      <field signature="string $Obfuz$RVA_Value277" newName="$JaA" />
+      <field signature="string $Obfuz$RVA_Value278" newName="$KaA" />
       <field signature="string $Obfuz$RVA_Value279" newName="$BY" />
       <field signature="string $Obfuz$RVA_Value280" newName="$cY" />
       <field signature="string $Obfuz$RVA_Value281" newName="$PaA" />
       <field signature="string $Obfuz$RVA_Value282" newName="$qaA" />
-      <field signature="string $Obfuz$RVA_Value283" newName="$QaA" />
-      <field signature="string $Obfuz$RVA_Value284" newName="$raA" />
-      <field signature="string $Obfuz$RVA_Value285" newName="$RaA" />
-      <field signature="string $Obfuz$RVA_Value286" newName="$saA" />
-      <field signature="string $Obfuz$RVA_Value287" newName="$SaA" />
+      <field signature="int $Obfuz$RVA_Value283" newName="$laA" />
+      <field signature="int $Obfuz$RVA_Value284" newName="$LaA" />
+      <field signature="int $Obfuz$RVA_Value285" newName="$naA" />
+      <field signature="int $Obfuz$RVA_Value286" newName="$NaA" />
+      <field signature="int $Obfuz$RVA_Value287" newName="$oaA" />
       <field signature="int $Obfuz$RVA_Value288" newName="$tk" />
       <field signature="int $Obfuz$RVA_Value289" newName="$taA" />
       <field signature="int $Obfuz$RVA_Value290" newName="$TaA" />
-      <field signature="int $Obfuz$RVA_Value291" newName="$uaA" />
-      <field signature="int $Obfuz$RVA_Value292" newName="$UaA" />
-      <field signature="int $Obfuz$RVA_Value293" newName="$vaA" />
-      <field signature="int $Obfuz$RVA_Value294" newName="$wk" />
-      <field signature="int $Obfuz$RVA_Value295" newName="$Wk" />
-      <field signature="float $Obfuz$RVA_Value296" newName="$VaA" />
-      <field signature="float $Obfuz$RVA_Value297" newName="$waA" />
-      <field signature="float $Obfuz$RVA_Value298" newName="$WaA" />
-      <field signature="float $Obfuz$RVA_Value299" newName="$xaA" />
-      <field signature="float $Obfuz$RVA_Value300" newName="$XaA" />
+      <field signature="float $Obfuz$RVA_Value291" newName="$OaA" />
+      <field signature="float $Obfuz$RVA_Value292" newName="$paA" />
+      <field signature="float $Obfuz$RVA_Value293" newName="$QaA" />
+      <field signature="float $Obfuz$RVA_Value294" newName="$raA" />
+      <field signature="float $Obfuz$RVA_Value295" newName="$RaA" />
+      <field signature="int $Obfuz$RVA_Value296" newName="$saA" />
+      <field signature="int $Obfuz$RVA_Value297" newName="$SaA" />
+      <field signature="int $Obfuz$RVA_Value298" newName="$uaA" />
+      <field signature="int $Obfuz$RVA_Value299" newName="$UaA" />
+      <field signature="int $Obfuz$RVA_Value300" newName="$vaA" />
       <field signature="int $Obfuz$RVA_Value301" newName="$Zk" />
       <field signature="int $Obfuz$RVA_Value302" newName="$aK" />
       <field signature="int $Obfuz$RVA_Value303" newName="$AK" />
@@ -957,11 +949,6 @@
       <field signature="int $Obfuz$RVA_Value579" newName="$zZ" />
       <field signature="int $Obfuz$RVA_Value580" newName="$yaA" />
       <field signature="int $Obfuz$RVA_Value581" newName="$YaA" />
-      <field signature="int $Obfuz$RVA_Value582" newName="$zaA" />
-      <field signature="int $Obfuz$RVA_Value583" newName="$ZaA" />
-      <field signature="int $Obfuz$RVA_Value584" newName="$aAA" />
-      <field signature="int $Obfuz$RVA_Value585" newName="$AAA" />
-      <field signature="int $Obfuz$RVA_Value586" newName="$bAA" />
     </type>
     <type fullName="$Obfuz$ProxyCall" newFullName="$Xb" status="Renamed">
       <method signature="[Hotfix]AdjustManager $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_6400162(int)" newName="$YaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_6400162(Int32)" newStackTraceSignature="$Xb:$YaA(Int32)" />
@@ -1227,9 +1214,7 @@
       <method signature="[Hotfix]GFEventArgs $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_9960230(int)" newName="$el" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_9960230(Int32)" newStackTraceSignature="$Xb:$el(Int32)" />
       <method signature="[Hotfix]GFEventArgs $Obfuz$ProxyCall::@$Obfuz$Dispatch_31765_9960230(int, object, int)" newName="$El" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_31765_9960230(Int32, Object, Int32)" newStackTraceSignature="$Xb:$El(Int32, Object, Int32)" />
       <method signature="[Hotfix]GFEventType $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_6721379(object, int)" newName="$fl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_6721379(Object, Int32)" newStackTraceSignature="$Xb:$fl(Object, Int32)" />
-      <method signature="[GoogleMobileAds.Core]GoogleMobileAds.Api.AdapterState $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_14421919(object, int)" newName="$ZFA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_14421919(Object, Int32)" newStackTraceSignature="$Xb:$ZFA(Object, Int32)" />
       <method signature="[GoogleMobileAds]GoogleMobileAds.Api.ResponseInfo $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_11885318(object, int)" newName="$agA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_11885318(Object, Int32)" newStackTraceSignature="$Xb:$agA(Object, Int32)" />
-      <method signature="[GoogleMobileAds.Ump]GoogleMobileAds.Ump.Api.ConsentStatus $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_15279057(int)" newName="$AgA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_15279057(Int32)" newStackTraceSignature="$Xb:$AgA(Int32)" />
       <method signature="[Hotfix]GuideManager $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_11113619(int)" newName="$Fl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_11113619(Int32)" newStackTraceSignature="$Xb:$Fl(Int32)" />
       <method signature="[Hotfix]InitOnStart $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_16359773(object, int)" newName="$gl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_16359773(Object, Int32)" newStackTraceSignature="$Xb:$gl(Object, Int32)" />
       <method signature="[Hotfix]Inventory.InventoryItemType $Obfuz$ProxyCall::@$Obfuz$Dispatch_2966_1887473(nint, int)" newName="$TbA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2966_1887473(IntPtr, Int32)" newStackTraceSignature="$Xb:$TbA(IntPtr, Int32)" />
@@ -1248,7 +1233,6 @@
       <method signature="[Hotfix]MainThreadDispatcher $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_462328(object, int)" newName="$zbA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_462328(Object, Int32)" newStackTraceSignature="$Xb:$zbA(Object, Int32)" />
       <method signature="[Hotfix]MainThreadDispatcher $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_462328(int)" newName="$ZbA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_462328(Int32)" newStackTraceSignature="$Xb:$ZbA(Int32)" />
       <method signature="[Hotfix]MakeupTask[] $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_12922581(object, int)" newName="$aBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_12922581(Object, Int32)" newStackTraceSignature="$Xb:$aBA(Object, Int32)" />
-      <method signature="[MaxSdk.Scripts]MaxSdkBase/ErrorCode $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_1855015(object, int)" newName="$ABA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_1855015(Object, Int32)" newStackTraceSignature="$Xb:$ABA(Object, Int32)" />
       <method signature="[MaxSdk.Scripts]MaxSdkBase/SdkConfiguration $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_671434(int)" newName="$lY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_671434(Int32)" newStackTraceSignature="$Xb:$lY(Int32)" />
       <method signature="[Hotfix]Menu.BottomNavigation.BottomNavigationController $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_16475737(int)" newName="$bBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_16475737(Int32)" newStackTraceSignature="$Xb:$bBA(Int32)" />
       <method signature="[Newtonsoft.Json]Newtonsoft.Json.Linq.JObject $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_15054236(object, int)" newName="$rW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_15054236(Object, Int32)" newStackTraceSignature="$Xb:$rW(Object, Int32)" />
@@ -1862,12 +1846,6 @@
       <field signature="byte[] $RVA_Value2" newName="$baA" />
       <field signature="[Hotfix]$ObfuzRVA$DataHolder2048 $RVA_Data3" newName="$BaA" />
       <field signature="byte[] $RVA_Value3" newName="$caA" />
-      <field signature="[Hotfix]$ObfuzRVA$DataHolder2048 $RVA_Data4" newName="$CaA" />
-      <field signature="byte[] $RVA_Value4" newName="$daA" />
-      <field signature="[Hotfix]$ObfuzRVA$DataHolder2048 $RVA_Data5" newName="$DaA" />
-      <field signature="byte[] $RVA_Value5" newName="$eaA" />
-      <field signature="[Hotfix]$ObfuzRVA$DataHolder2048 $RVA_Data6" newName="$BAA" />
-      <field signature="byte[] $RVA_Value6" newName="$cAA" />
     </type>
     <type fullName="$Obfuz$RVA$2" newFullName="$RD" status="Renamed">
       <field signature="[Hotfix]$ObfuzRVA$DataHolder2048 $RVA_Data0" newName="$lbA" />
@@ -6616,8 +6594,6 @@
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$zbA" />
       <field signature="[Hotfix]Gameplay.GameController &lt;&gt;4__this" newName="$ZbA" />
       <field signature="System.Threading.CancellationToken cancellationToken" newName="$aBA" />
-      <field signature="double &lt;loadStart&gt;5__2" newName="$ABA" />
-      <field signature="double &lt;jsonReady&gt;5__3" newName="$bBA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__1" newName="$BBA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Level.GameplayAssetCache/Lease&gt; &lt;&gt;u__2" newName="$cBA" />
     </type>
@@ -7261,9 +7237,7 @@
       <field signature="int &lt;&gt;1__state" newName="$BU" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$cU" />
       <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Entry entry" newName="$CU" />
-      <field signature="double &lt;started&gt;5__2" newName="$SM" />
-      <field signature="bool &lt;success&gt;5__3" newName="$HT" />
-      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Entry &lt;&gt;7__wrap3" newName="$iT" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Entry &lt;&gt;7__wrap1" newName="$Hp" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;!0&gt; &lt;&gt;u__1" newName="$DU" />
     </type>
     <type fullName="Gameplay.Level.GameplayAssetCache/&lt;Preload&gt;d__17" newFullName="$i.$XC/$bd" status="Renamed">
@@ -7295,12 +7269,9 @@
       <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/&lt;&gt;c__DisplayClass18_0 &lt;&gt;8__1" newName="$RAA" />
       <field signature="[Hotfix]Level.LevelData level" newName="$OU" />
       <field signature="[Hotfix]Gameplay.Particles.ParticleData &lt;effects&gt;5__2" newName="$sAA" />
-      <field signature="[System.Core]System.Collections.Generic.HashSet`1&lt;[Hotfix]Gameplay.Particles.ParticleType&gt; &lt;wantedEffects&gt;5__3" newName="$SAA" />
-      <field signature="[System.Core]System.Collections.Generic.HashSet`1&lt;System.ValueTuple`2&lt;[Hotfix]Gameplay.Objects.ObjectType,[Hotfix]Util.FloatTriplet&gt;&gt; &lt;wantedObjects&gt;5__4" newName="$tAA" />
-      <field signature="System.Collections.Generic.List`1&lt;System.Func`1&lt;[UniTask]Cysharp.Threading.Tasks.UniTask&gt;&gt; &lt;loads&gt;5__5" newName="$TAA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Objects.ObjectData&gt; &lt;&gt;u__1" newName="$sU" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Particles.ParticleData&gt; &lt;&gt;u__2" newName="$SU" />
-      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Lease &lt;&gt;7__wrap5" newName="$uAA" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Lease &lt;&gt;7__wrap2" newName="$Fq" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt; &lt;&gt;u__3" newName="$TU" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__4" newName="$UAA" />
     </type>
@@ -8600,7 +8571,6 @@
       <field signature="int &lt;&gt;1__state" newName="$eq" />
       <field signature="System.Runtime.CompilerServices.AsyncVoidMethodBuilder &lt;&gt;t__builder" newName="$Eq" />
       <field signature="[Hotfix]InterstitialAdController/&lt;&gt;c__DisplayClass9_0 &lt;&gt;4__this" newName="$fq" />
-      <field signature="[GoogleMobileAds]GoogleMobileAds.Api.AdError error" newName="$Fq" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.SwitchToMainThreadAwaitable/Awaiter &lt;&gt;u__1" newName="$gq" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__2" newName="$Gq" />
     </type>
@@ -9446,13 +9416,12 @@
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask PlayLoadingUIForm::@PrepareSceneAsync(string, System.Threading.CancellationToken, System.Action`1&lt;string&gt;, System.Action)" newName="$Mi" oldStackTraceSignature="PlayLoadingUIForm:PrepareSceneAsync(String, CancellationToken, Action`1, Action)" newStackTraceSignature="PlayLoadingUIForm:$Mi(String, CancellationToken, Action`1, Action)" />
       <method signature="void PlayLoadingUIForm::@HideGameplayScene()" newName="$ni" oldStackTraceSignature="PlayLoadingUIForm:HideGameplayScene()" newStackTraceSignature="PlayLoadingUIForm:$ni()" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTaskVoid PlayLoadingUIForm::@CleanupSceneAsync([UniTask]Cysharp.Threading.Tasks.UniTask, string)" newName="$Ni" oldStackTraceSignature="PlayLoadingUIForm:CleanupSceneAsync(UniTask, String)" newStackTraceSignature="PlayLoadingUIForm:$Ni(UniTask, String)" />
+      <method signature="void PlayLoadingUIForm::@&lt;LoadGameplayAsync&gt;g__EndStage|14_1()" newName="$ABA" oldStackTraceSignature="PlayLoadingUIForm:&lt;LoadGameplayAsync&gt;g__EndStage|14_1()" newStackTraceSignature="PlayLoadingUIForm:$ABA()" />
     </type>
     <type fullName="PlayLoadingUIForm/&lt;&gt;c__DisplayClass14_0" newFullName="" status="NotRenamed">
       <field signature="string stage" newName="$hG" />
       <field signature="double stageStarted" newName="$HG" />
-      <field signature="double loadStarted" newName="$iG" />
       <method signature="void PlayLoadingUIForm/&lt;&gt;c__DisplayClass14_0::&lt;LoadGameplayAsync&gt;g__BeginStage|0([Hotfix]PlayLoadingUIForm/&lt;&gt;c__DisplayClass14_0, string)" newName="$bGA" oldStackTraceSignature="&lt;&gt;c__DisplayClass14_0:&lt;LoadGameplayAsync&gt;g__BeginStage|0(String)" newStackTraceSignature="&lt;&gt;c__DisplayClass14_0:$bGA(String)" />
-      <method signature="void PlayLoadingUIForm/&lt;&gt;c__DisplayClass14_0::&lt;LoadGameplayAsync&gt;g__EndStage|1([Hotfix]PlayLoadingUIForm/&lt;&gt;c__DisplayClass14_0)" newName="$BGA" oldStackTraceSignature="&lt;&gt;c__DisplayClass14_0:&lt;LoadGameplayAsync&gt;g__EndStage|1()" newStackTraceSignature="&lt;&gt;c__DisplayClass14_0:$BGA()" />
     </type>
     <type fullName="PlayLoadingUIForm/&lt;&gt;c__DisplayClass15_0" newFullName="" status="NotRenamed">
       <field signature="int serialId" newName="$IG" />
@@ -9544,14 +9513,13 @@
       <field signature="int &lt;&gt;1__state" newName="$bbA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$BbA" />
       <field signature="string &lt;sceneAsset&gt;5__2" newName="$cbA" />
-      <field signature="double &lt;started&gt;5__3" newName="$CbA" />
-      <field signature="int &lt;level&gt;5__4" newName="$dbA" />
-      <field signature="System.Threading.CancellationTokenSource &lt;cancellation&gt;5__5" newName="$DbA" />
-      <field signature="System.IDisposable &lt;timeout&gt;5__6" newName="$ebA" />
-      <field signature="System.Threading.CancellationToken &lt;token&gt;5__7" newName="$EbA" />
-      <field signature="bool &lt;prepared&gt;5__8" newName="$fbA" />
-      <field signature="object &lt;&gt;7__wrap8" newName="$FbA" />
-      <field signature="int &lt;&gt;7__wrap9" newName="$gbA" />
+      <field signature="int &lt;level&gt;5__3" newName="$iG" />
+      <field signature="System.Threading.CancellationTokenSource &lt;cancellation&gt;5__4" newName="$UI" />
+      <field signature="System.IDisposable &lt;timeout&gt;5__5" newName="$wk" />
+      <field signature="System.Threading.CancellationToken &lt;token&gt;5__6" newName="$Wk" />
+      <field signature="bool &lt;prepared&gt;5__7" newName="$SM" />
+      <field signature="object &lt;&gt;7__wrap7" newName="$NO" />
+      <field signature="int &lt;&gt;7__wrap8" newName="$qO" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;bool&gt; &lt;&gt;u__1" newName="$GbA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Level.LevelData&gt; &lt;&gt;u__2" newName="$hbA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Level.GameplayAssetCache/Lease&gt; &lt;&gt;u__3" newName="$HbA" />
