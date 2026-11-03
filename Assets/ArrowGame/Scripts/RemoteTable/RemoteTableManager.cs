@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
@@ -65,14 +65,25 @@ public static class RemoteTableManager
 
     public static string GetRemoteBaseUrl()
     {
-        string baseUrl = AppSettings.Instance?.RemoteTableBaseUrl;
-        if (string.IsNullOrWhiteSpace(baseUrl))
-        {
-            return string.Empty;
-        }
+        return AppSettings.Instance?.RemoteTableBaseUrl?.Trim().TrimEnd('/') ?? string.Empty;
+    }
 
-        string normalizedBaseUrl = baseUrl.EndsWith("/") ? baseUrl : baseUrl + "/";
-        return UtilityBuiltin.AssetsPath.GetCombinePath(normalizedBaseUrl, GetAppVersion()) + "/";
+    public static string GetPlatform()
+    {
+#if UNITY_EDITOR
+        switch (UnityEditor.EditorUserBuildSettings.activeBuildTarget)
+        {
+            case UnityEditor.BuildTarget.Android: return "android";
+            case UnityEditor.BuildTarget.iOS: return "ios";
+            default: throw new InvalidOperationException("Remote tables require an Android or iOS build target.");
+        }
+#elif UNITY_ANDROID
+        return "android";
+#elif UNITY_IOS
+        return "ios";
+#else
+        throw new InvalidOperationException("Remote tables support Android and iOS only.");
+#endif
     }
 
     public static bool IsRemoteSyncTable(string tableName)

@@ -1,262 +1,227 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Text;
+using System.IO;
+using System.Linq;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using GameFramework;
+using GameFramework.DataTable;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityGameFramework.Runtime;
 
 public static class RemoteTableSyncService
 {
-    private const string ManifestFileName = "manifest.json";
-
-    private const float ManifestProgressWeight = 0.1f;
+    private static bool s_Syncing;
 
     public static async UniTask SyncAsync(int timeoutSeconds, Action<float> onProgress = null)
     {
-        using CancellationTokenSource timeoutCts = new CancellationTokenSource(TimeSpan.FromSeconds(timeoutSeconds));
-        CancellationToken token = timeoutCts.Token;
-        RemoteTableManifest mergedManifest = null;
-        bool hasSuccessfulUpdate = false;
-
-        void ReportProgress(float progress)
-        {
-            onProgress?.Invoke(Mathf.Clamp01(progress));
-        }
-
-        ReportProgress(0f);
-
+        if (s_Syncing || !RemoteTableManager.IsEnabled()) return;
+        s_Syncing = true;
+        string batch = null;
+        using CancellationTokenSource timeout = new CancellationTokenSource(TimeSpan.FromSeconds(timeoutSeconds));
+        CancellationToken token = timeout.Token;
         try
         {
-            string manifestUrl = RemoteTableManager.GetRemoteBaseUrl() + ManifestFileName;
-            Log.Info("Remote table sync start. AppVersion='{0}', Url='{1}', Timeout={2}s.",
-                RemoteTableManager.GetAppVersion(), manifestUrl, timeoutSeconds);
+            onProgress?.Invoke(0f);
+            string root = RemoteTableManager.GetRemoteBaseUrl();
+            if (!Uri.TryCreate(root, UriKind.Absolute, out Uri endpoint)
+                || (endpoint.Scheme != "https" && endpoint.Scheme != "http")
+                || !string.IsNullOrEmpty(endpoint.Query) || !string.IsNullOrEmpty(endpoint.Fragment))
+                throw new InvalidDataException("Invalid remote table API base URL.");
 
-            byte[] manifestBytes = await DownloadBytesAsync(manifestUrl, token, p =>
-                ReportProgress(ManifestProgressWeight * p));
-            Log.Info("Remote table manifest downloaded. Size={0}.", manifestBytes?.Length ?? 0);
-            ReportProgress(ManifestProgressWeight);
-
-            string manifestJson = RemoteTableTextUtility.BytesToJsonString(manifestBytes);
-            RemoteTableManifest remoteManifest = JsonConvert.DeserializeObject<RemoteTableManifest>(manifestJson);
-            if (remoteManifest?.Files == null || remoteManifest.Files.Count == 0)
+            string body = JsonConvert.SerializeObject(new Dictionary<string, object>
             {
-                Log.Warning("Remote table manifest is empty.");
+                ["package_name"] = Application.identifier,
+                ["version"] = RemoteTableManager.GetAppVersion(),
+                ["platform"] = RemoteTableManager.GetPlatform(),
+                ["config_id"] = RemoteTableLocalStore.LoadAssignedConfigId()
+            });
+            using UnityWebRequest resolve = new UnityWebRequest(root + "/api/public/config-file-groups/resolve", "POST");
+            resolve.uploadHandler = new UploadHandlerRaw(RemoteTableTextUtility.Utf8NoBom.GetBytes(body));
+            resolve.downloadHandler = new DownloadHandlerBuffer();
+            resolve.SetRequestHeader("Content-Type", "application/json");
+            byte[] manifestBytes = await SendAsync(resolve, token, p => onProgress?.Invoke(p * 0.1f));
+            if (!long.TryParse(resolve.GetResponseHeader("X-Config-Id"), out long configId) || configId <= 0)
+                throw new InvalidDataException("Resolve response is missing a valid X-Config-Id.");
+            JObject manifestJson = JObject.Parse(RemoteTableTextUtility.BytesToJsonString(manifestBytes),
+                new JsonLoadSettings { DuplicatePropertyNameHandling = DuplicatePropertyNameHandling.Error });
+            if (!(manifestJson["files"] is JObject)) throw new InvalidDataException("Resolve response has no files object.");
+            RemoteTableManifest manifest = manifestJson.ToObject<RemoteTableManifest>();
+            RemoteTableManifest selected = SelectTables(manifest);
+            // Keep assignment even if downloading this batch later fails. Do not redraw.
+            RemoteTableLocalStore.SaveAssignedConfigId(configId);
+            RemoteTableLocalStore.Snapshot active = RemoteTableLocalStore.LoadActive();
+            if (IsUnchanged(active, configId, selected))
+            {
+                Log.Info("Remote tables unchanged. ConfigId={0}.", configId);
                 return;
             }
 
-            Log.Info("Remote table manifest parsed. Version='{0}', FileCount={1}.", remoteManifest.Version, remoteManifest.Files.Count);
-
-            RemoteTableManifest localManifest = RemoteTableLocalStore.LoadManifest();
-            List<KeyValuePair<string, RemoteTableManifestEntry>> updateList = BuildUpdateList(remoteManifest, localManifest);
-            if (updateList.Count == 0)
+            batch = RemoteTableLocalStore.CreateBatch();
+            var pending = new RemoteTableLocalStore.Snapshot
             {
-                Log.Info("Remote table sync skipped, local cache is up to date.");
-                return;
-            }
-
-            Log.Info("Remote table sync update count: {0}.", updateList.Count);
-            mergedManifest = CloneManifest(localManifest);
-            mergedManifest.Version = remoteManifest.Version;
-
-            float tableProgressRange = 1f - ManifestProgressWeight;
-            int updateCount = updateList.Count;
-            for (int updateIndex = 0; updateIndex < updateCount; updateIndex++)
+                ConfigId = configId, Batch = batch, Manifest = selected
+            };
+            int completed = 0;
+            foreach (var pair in selected.Files)
             {
-                KeyValuePair<string, RemoteTableManifestEntry> updateItem = updateList[updateIndex];
                 token.ThrowIfCancellationRequested();
-
-                string tableName = updateItem.Key;
-                RemoteTableManifestEntry remoteEntry = updateItem.Value;
-                float tableBase = ManifestProgressWeight + tableProgressRange * updateIndex / updateCount;
-                float tableStep = tableProgressRange / updateCount;
-
-                if (!RemoteTableManager.TryGetTableKind(tableName, out RemoteTableKind kind))
+                string name = pair.Key;
+                RemoteTableManifestEntry entry = pair.Value;
+                RemoteTableManager.TryGetTableKind(name, out RemoteTableKind kind);
+                byte[] tableBytes;
+                if (active != null && active.ConfigId == configId
+                    && active.Manifest.Files.TryGetValue(name, out RemoteTableManifestEntry oldEntry)
+                    && SameContent(entry, oldEntry))
                 {
-                    ReportProgress(tableBase + tableStep);
-                    continue;
+                    tableBytes = active.Data[name];
+                    if (!string.Equals(RemoteTableManager.ComputeMd5(tableBytes), active.BytesMd5[name], StringComparison.OrdinalIgnoreCase))
+                        throw new InvalidDataException("Cached table changed during sync: " + name);
                 }
-
-                if (string.IsNullOrWhiteSpace(remoteEntry.Path))
+                else
                 {
-                    Log.Warning("Remote table entry path is empty. Table='{0}'.", tableName);
-                    ReportProgress(tableBase + tableStep);
-                    continue;
+                    string path = string.Join("/", entry.Path.Split('/').Select(Uri.EscapeDataString));
+                    string url = root + "/api/public/config-folders/" + configId.ToString(System.Globalization.CultureInfo.InvariantCulture) + "/" + path;
+                    using UnityWebRequest download = UnityWebRequest.Get(url);
+                    byte[] raw = await SendAsync(download, token,
+                        p => onProgress?.Invoke(0.1f + 0.9f * (completed + p) / Math.Max(1, selected.Files.Count)));
+                    // The manifest hashes the actual UTF-8 file, including any BOM or whitespace.
+                    if (raw.LongLength != entry.Size || !string.Equals(RemoteTableManager.ComputeMd5(raw), entry.Md5, StringComparison.OrdinalIgnoreCase))
+                        throw new InvalidDataException("Remote table size/MD5 mismatch: " + name);
+                    tableBytes = JsonTableConverter.ConvertToBytes(kind, name, RemoteTableTextUtility.BytesToJsonString(raw));
                 }
-
-                try
-                {
-                    string fileUrl = RemoteTableManager.GetRemoteBaseUrl() + remoteEntry.Path.TrimStart('/');
-                    byte[] jsonBytes = await DownloadBytesAsync(fileUrl, token, p =>
-                        ReportProgress(tableBase + tableStep * 0.85f * p));
-                    string jsonText = RemoteTableTextUtility.BytesToJsonString(jsonBytes);
-                    string jsonMd5 = RemoteTableManager.ComputeMd5(
-                        RemoteTableTextUtility.Utf8NoBom.GetBytes(jsonText));
-                    if (!string.IsNullOrWhiteSpace(remoteEntry.Md5)
-                        && !string.Equals(jsonMd5, remoteEntry.Md5, StringComparison.OrdinalIgnoreCase))
-                    {
-                        Log.Warning("Remote table md5 mismatch. Table='{0}'.", tableName);
-                        ReportProgress(tableBase + tableStep);
-                        continue;
-                    }
-
-                    byte[] tableBytes = JsonTableConverter.ConvertToBytes(kind, tableName, jsonText);
-                    RemoteTableLocalStore.SaveBytes(kind, tableName, tableBytes);
-
-                    mergedManifest.Files[tableName] = new RemoteTableManifestEntry
-                    {
-                        Version = remoteEntry.Version,
-                        Md5 = string.IsNullOrWhiteSpace(remoteEntry.Md5) ? jsonMd5 : remoteEntry.Md5,
-                        Size = tableBytes.LongLength,
-                        Path = remoteEntry.Path
-                    };
-                    hasSuccessfulUpdate = true;
-
-                    Log.Info("Remote table synced. Table='{0}'.", tableName);
-                    ReportProgress(tableBase + tableStep);
-                }
-                catch (OperationCanceledException)
-                {
-                    throw;
-                }
-                catch (Exception exception)
-                {
-                    Log.Warning("Remote table sync failed. Table='{0}', Error='{1}'.", tableName, exception.Message);
-                    ReportProgress(tableBase + tableStep);
-                }
+                ValidateTableBytes(kind, name, tableBytes);
+                File.WriteAllBytes(RemoteTableLocalStore.GetBatchFile(batch, name), tableBytes);
+                pending.BytesMd5.Add(name, RemoteTableManager.ComputeMd5(tableBytes));
+                pending.Data.Add(name, tableBytes);
+                completed++;
+                onProgress?.Invoke(0.1f + 0.9f * completed / Math.Max(1, selected.Files.Count));
             }
-
-            Log.Info("Remote table sync finished.");
+            token.ThrowIfCancellationRequested();
+            RemoteTableLocalStore.Commit(pending);
+            batch = null;
+            Log.Info("Remote table batch activated. ConfigId={0}, Tables={1}.", configId, selected.Files.Count);
         }
         catch (OperationCanceledException)
         {
-            Log.Warning("Remote table sync timeout.");
+            Log.Warning("Remote table sync timed out; keep the previous complete batch.");
         }
-        catch (Exception exception)
+        catch (Exception e)
         {
-            Log.Warning("Remote table sync failed. Error='{0}'.", exception.Message);
+            Log.Warning("Remote table sync failed; keep the previous complete batch. Error='{0}'.", e.Message);
         }
         finally
         {
-            ReportProgress(1f);
-            if (hasSuccessfulUpdate && mergedManifest != null)
-            {
-                RemoteTableLocalStore.SaveManifest(mergedManifest);
-            }
+            RemoteTableLocalStore.DiscardBatch(batch);
+            s_Syncing = false;
+            onProgress?.Invoke(1f);
         }
     }
 
-    private static List<KeyValuePair<string, RemoteTableManifestEntry>> BuildUpdateList(
-        RemoteTableManifest remoteManifest,
-        RemoteTableManifest localManifest)
+    internal static RemoteTableManifest SelectTables(RemoteTableManifest manifest)
     {
-        List<KeyValuePair<string, RemoteTableManifestEntry>> updateList = new List<KeyValuePair<string, RemoteTableManifestEntry>>();
-        foreach (KeyValuePair<string, RemoteTableManifestEntry> remotePair in remoteManifest.Files)
-        {
-            string tableName = remotePair.Key;
-            if (!RemoteTableManager.IsRemoteSyncTable(tableName))
-            {
-                continue;
-            }
-
-            RemoteTableManifestEntry remoteEntry = remotePair.Value;
-            if (remoteEntry == null)
-            {
-                continue;
-            }
-
-            if (!localManifest.Files.TryGetValue(tableName, out RemoteTableManifestEntry localEntry))
-            {
-                updateList.Add(remotePair);
-                continue;
-            }
-
-            if (!string.IsNullOrWhiteSpace(remoteEntry.Md5)
-                && !string.Equals(remoteEntry.Md5, localEntry.Md5, StringComparison.OrdinalIgnoreCase))
-            {
-                updateList.Add(remotePair);
-                continue;
-            }
-
-            if (!string.IsNullOrWhiteSpace(remoteEntry.Version)
-                && !string.Equals(remoteEntry.Version, localEntry.Version, StringComparison.Ordinal))
-            {
-                updateList.Add(remotePair);
-            }
-        }
-
-        return updateList;
-    }
-
-    private static RemoteTableManifest CloneManifest(RemoteTableManifest source)
-    {
-        RemoteTableManifest clone = new RemoteTableManifest
-        {
-            Version = source?.Version,
-            Files = new Dictionary<string, RemoteTableManifestEntry>(StringComparer.Ordinal)
-        };
-
-        if (source?.Files == null)
-        {
-            return clone;
-        }
-
-        foreach (KeyValuePair<string, RemoteTableManifestEntry> pair in source.Files)
+        if (manifest?.Files == null) throw new InvalidDataException("Invalid remote manifest.");
+        var selected = new RemoteTableManifest { Version = manifest.Version };
+        var paths = new HashSet<string>(StringComparer.Ordinal);
+        foreach (var pair in manifest.Files)
         {
             RemoteTableManifestEntry entry = pair.Value;
-            if (entry == null)
-            {
-                continue;
-            }
-
-            clone.Files[pair.Key] = new RemoteTableManifestEntry
-            {
-                Version = entry.Version,
-                Md5 = entry.Md5,
-                Size = entry.Size,
-                Path = entry.Path
-            };
+            if (entry == null) throw new InvalidDataException("Null manifest entry.");
+            ValidatePath(entry.Path);
+            if (!paths.Add(entry.Path)) throw new InvalidDataException("Duplicate manifest path: " + entry.Path);
+            // Server dictionary keys are not stable when filenames collide; use path only.
+            if (!TryResolveTable(entry.Path, out string name, out _)) continue;
+            if (entry.Size <= 0 || entry.Md5 == null || entry.Md5.Length != 32 || !entry.Md5.All(Uri.IsHexDigit))
+                throw new InvalidDataException("Invalid size/MD5 for table: " + name);
+            if (selected.Files.ContainsKey(name)) throw new InvalidDataException("Duplicate table: " + name);
+            selected.Files.Add(name, entry);
         }
-
-        return clone;
+        return selected;
     }
 
-    private static async UniTask<byte[]> DownloadBytesAsync(string url, CancellationToken token, Action<float> onDownloadProgress = null)
+    internal static bool TryResolveTable(string path, out string name, out RemoteTableKind kind)
     {
-        using UnityWebRequest request = UnityWebRequest.Get(url);
-        request.timeout = Mathf.Max(RemoteTableManager.GetSyncTimeoutSeconds(), 10);
+        ValidatePath(path);
+        name = null;
+        kind = default;
+        string prefix;
+        if (path.StartsWith("config/", StringComparison.Ordinal)) { prefix = "config/"; kind = RemoteTableKind.Config; }
+        else if (path.StartsWith("datatable/", StringComparison.Ordinal)) { prefix = "datatable/"; kind = RemoteTableKind.DataTable; }
+        else return false;
+        if (!path.EndsWith(".json", StringComparison.Ordinal)) return false;
+        name = path.Substring(prefix.Length, path.Length - prefix.Length - 5);
+        return RemoteTableManager.IsRemoteSyncTable(name) && RemoteTableManager.TryGetTableKind(name, out RemoteTableKind registered) && registered == kind;
+    }
+
+    private static void ValidatePath(string path)
+    {
+        if (string.IsNullOrWhiteSpace(path) || path.IndexOfAny(new[] { '\\', ':', '?', '#', '%', '\0' }) >= 0
+            || path.Any(char.IsControl) || path.Split('/').Any(p => p.Length == 0 || p == "." || p == ".."))
+            throw new InvalidDataException("Invalid manifest relative path.");
+    }
+
+    private static bool SameContent(RemoteTableManifestEntry a, RemoteTableManifestEntry b)
+    {
+        return b != null && a.Path == b.Path && a.Size == b.Size && string.Equals(a.Md5, b.Md5, StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static bool IsUnchanged(RemoteTableLocalStore.Snapshot active, long configId, RemoteTableManifest selected)
+    {
+        return active != null && active.ConfigId == configId && active.Manifest.Files.Count == selected.Files.Count
+            && selected.Files.All(p => active.Manifest.Files.TryGetValue(p.Key, out RemoteTableManifestEntry old) && SameContent(p.Value, old));
+    }
+
+    // Validate without adding anything to the live GF.Config/GF.DataTable registries.
+    internal static void ValidateTableBytes(RemoteTableKind kind, string name, byte[] bytes)
+    {
+        if (bytes == null || bytes.Length == 0) throw new InvalidDataException("Empty table: " + name);
+        using var stream = new MemoryStream(bytes, false);
+        using var reader = new BinaryReader(stream, System.Text.Encoding.UTF8);
+        if (kind == RemoteTableKind.Config)
+        {
+            var keys = new HashSet<string>(StringComparer.Ordinal);
+            while (stream.Position < stream.Length)
+            {
+                string key = reader.ReadString();
+                reader.ReadString();
+                if (string.IsNullOrEmpty(key) || !keys.Add(key)) throw new InvalidDataException("Invalid/duplicate config key: " + key);
+            }
+            return;
+        }
+        Type rowType = Type.GetType(Path.GetFileName(name.Split('_')[0]));
+        if (rowType == null || !typeof(DataRowBase).IsAssignableFrom(rowType)) throw new InvalidDataException("Unknown row type: " + name);
+        var ids = new HashSet<int>();
+        while (stream.Position < stream.Length)
+        {
+            int length = reader.Read7BitEncodedInt32();
+            if (length <= 0 || length > stream.Length - stream.Position) throw new InvalidDataException("Invalid row length: " + name);
+            var row = (DataRowBase)Activator.CreateInstance(rowType);
+            if (!row.ParseDataRow(bytes, (int)stream.Position, length, null) || !ids.Add(row.Id))
+                throw new InvalidDataException("Invalid/duplicate row: " + name);
+            stream.Position += length;
+        }
+    }
+
+    private static async UniTask<byte[]> SendAsync(UnityWebRequest request, CancellationToken token, Action<float> progress)
+    {
+        token.ThrowIfCancellationRequested();
+        request.timeout = Math.Max(1, RemoteTableManager.GetSyncTimeoutSeconds());
         UnityWebRequestAsyncOperation operation = request.SendWebRequest();
         while (!operation.isDone)
         {
-            if (token.IsCancellationRequested)
-            {
-                request.Abort();
-                token.ThrowIfCancellationRequested();
-            }
-
-            onDownloadProgress?.Invoke(request.downloadProgress);
+            if (token.IsCancellationRequested) { request.Abort(); token.ThrowIfCancellationRequested(); }
+            progress?.Invoke(Mathf.Clamp01(request.downloadProgress));
             await UniTask.Yield(PlayerLoopTiming.Update);
         }
-
-        onDownloadProgress?.Invoke(1f);
-
+        token.ThrowIfCancellationRequested();
         if (request.result != UnityWebRequest.Result.Success)
-        {
-            throw new GameFrameworkException(Utility.Text.Format(
-                "Download remote table failed. Url='{0}', Result='{1}', Error='{2}'.",
-                url, request.result, request.error));
-        }
-
+            throw new IOException("Remote API HTTP " + request.responseCode + ": " + request.error);
         byte[] data = request.downloadHandler?.data;
-        if (data == null || data.Length == 0)
-        {
-            throw new GameFrameworkException(Utility.Text.Format(
-                "Download remote table returned empty data. Url='{0}'.", url));
-        }
-
+        if (data == null || data.Length == 0) throw new InvalidDataException("Empty remote API response.");
+        progress?.Invoke(1f);
         return data;
     }
 }

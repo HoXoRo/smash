@@ -11,48 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48c1c3b4-2b47-4b58-848e-c5dcf45a4647" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/English.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/English.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Filipino.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Filipino.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/French.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/French.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Hindi.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Hindi.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Indonesian.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Indonesian.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Japanese.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Japanese.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/PortugueseBrazil.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/PortugueseBrazil.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/PortuguesePortugal.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/PortuguesePortugal.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Russian.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Russian.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Spanish.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Spanish.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Thai.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Thai.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AAAGameData/Languages/Turkish.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Languages/Turkish.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/Japanese SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/Japanese SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/KingnamypeYuanmoSC SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/KingnamypeYuanmoSC SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/Thai SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/Thai SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/Items/MakeupItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/Items/MakeupItem.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/SettingPageUIForm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/SettingPageUIForm.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scene/SmashLaunch.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scene/SmashLaunch.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/ScriptableAssets/Core/AppConfigs.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/ScriptableAssets/Core/AppConfigs.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/BannerViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/BannerViewController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Runtime/Obfuz/SymbolObfus/symbol-mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Runtime/Obfuz/SymbolObfus/symbol-mapping.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/Common/Common_Atlas.spriteatlasv2" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/Common/Common_Atlas.spriteatlasv2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/Common/Common_Atlas.spriteatlasv2.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/Common/Common_Atlas.spriteatlasv2.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/UI/LoginAtlas/LoginAtlas_Atlas.spriteatlasv2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/UI/LoginAtlas/LoginAtlas_Atlas.spriteatlasv2.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/UI/SettingAtlas/SettingAtlas_Atlas.spriteatlasv2" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Sprites/UI/SettingAtlas/SettingAtlas_Atlas.spriteatlasv2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Banners/BANNER.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Banners/BANNER.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Interstitials/768x1024.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Interstitials/768x1024.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Rewarded/768x1024.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Rewarded/768x1024.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunInfo.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunInfo.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunSettings.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/GameFrameworkVersion.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/GameFrameworkVersion.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/cfig.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/cfig.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat5.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat5.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat7.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat7.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/RemoteTable/RemoteTableLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/RemoteTable/RemoteTableLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/RemoteTable/RemoteTableLocalStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/RemoteTable/RemoteTableLocalStore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/RemoteTable/RemoteTableManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/RemoteTable/RemoteTableManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/RemoteTable/RemoteTableSyncService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/RemoteTable/RemoteTableSyncService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Runtime/ScriptableObject/AppSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Runtime/ScriptableObject/AppSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/AppSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AppSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,27 +123,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AcpAgentsConfigurable&quot;,
-    &quot;unity.profiler.toolWindow.autoShown&quot;: &quot;true&quot;,
-    &quot;附加到 Unity 编辑器.附加到 Unity 编辑器.executor&quot;: &quot;Debug&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "newConfig",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "ml.llm.AcpAgentsConfigurable",
+    "unity.profiler.toolWindow.autoShown": "true",
+    "附加到 Unity 编辑器.附加到 Unity 编辑器.executor": "Debug"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="附加到 Unity 编辑器.附加到 Unity 编辑器">
     <configuration name="启动 Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Program Files\Unity Editor\6000.0.66f2\Editor\Unity.exe" />

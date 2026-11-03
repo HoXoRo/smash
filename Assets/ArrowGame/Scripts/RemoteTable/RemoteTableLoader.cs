@@ -12,7 +12,7 @@ public static class RemoteTableLoader
 {
     public static bool TryLoadConfig(ConfigComponent configComponent, string configName, bool useBytes, object userData)
     {
-        if (configComponent == null || !RemoteTableManager.IsRemoteSyncTable(configName))
+        if (!RemoteTableManager.IsEnabled() || configComponent == null || !RemoteTableManager.IsRemoteSyncTable(configName))
         {
             return false;
         }
@@ -28,7 +28,7 @@ public static class RemoteTableLoader
 
     public static bool TryLoadDataTable(DataTableComponent dataTableComponent, DataTableBase dataTable, string dataTableName, bool useBytes, object userData)
     {
-        if (dataTableComponent == null || dataTable == null || !RemoteTableManager.IsRemoteSyncTable(dataTableName))
+        if (!RemoteTableManager.IsEnabled() || dataTableComponent == null || dataTable == null || !RemoteTableManager.IsRemoteSyncTable(dataTableName))
         {
             return false;
         }

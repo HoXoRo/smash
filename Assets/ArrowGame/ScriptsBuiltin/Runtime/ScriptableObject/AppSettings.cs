@@ -24,10 +24,10 @@ public class AppSettings : ScriptableObject
     public Vector2Int DesignResolution = new Vector2Int(1080, 1920);
 
     [Header("远程配表")]
-    [Tooltip("是否启用远程配表同步")]
+    [Tooltip("是否启用远程配表（关闭后不下载，也不读取远程缓存）")]
     public bool EnableRemoteTableSync = true;
-    [Tooltip("远程配表 CDN 根地址，运行时自动追加 Application.version 子目录，例如 https://cdn.example.com/arrow/config/ -> .../config/1.0.0/")]
-    public string RemoteTableBaseUrl = string.Empty;
+    [Tooltip("配表 API 服务根地址，例如 https://x.gamedevs.pro，不包含 /api 路径")]
+    public string RemoteTableBaseUrl = "https://x.gamedevs.pro";
     [Tooltip("远程配表同步超时（秒）")]
     public int RemoteTableSyncTimeoutSeconds = 10;
     [Tooltip("远程配表 JSON 是否加密")]
