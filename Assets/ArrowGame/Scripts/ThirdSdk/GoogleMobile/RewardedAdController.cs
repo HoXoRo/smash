@@ -196,9 +196,6 @@ public class RewardedAdController
         ad.OnAdFullScreenContentClosed += () =>
         {
             Log.Info("Rewarded ad full screen content closed.");
-            Action<bool> pending = callBcak;
-            callBcak = null;
-            pending?.Invoke(false);
             LoadAd();
         };
         // Raised when the ad failed to open full screen content.
