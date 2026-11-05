@@ -415,27 +415,27 @@
       <field signature="string $Obfuz$RVA_Value45" newName="$by" />
       <field signature="string $Obfuz$RVA_Value46" newName="$sI" />
       <field signature="string $Obfuz$RVA_Value47" newName="$SI" />
-      <field signature="float $Obfuz$RVA_Value48" newName="$By" />
+      <field signature="string $Obfuz$RVA_Value48" newName="$my" />
       <field signature="int $Obfuz$RVA_Value49" newName="$mQ" />
-      <field signature="int $Obfuz$RVA_Value50" newName="$Ir" />
-      <field signature="int $Obfuz$RVA_Value51" newName="$HT" />
-      <field signature="int $Obfuz$RVA_Value52" newName="$cy" />
-      <field signature="int $Obfuz$RVA_Value53" newName="$dM" />
+      <field signature="string $Obfuz$RVA_Value50" newName="$My" />
+      <field signature="string $Obfuz$RVA_Value51" newName="$ny" />
+      <field signature="float $Obfuz$RVA_Value52" newName="$oy" />
+      <field signature="float $Obfuz$RVA_Value53" newName="$Oy" />
       <field signature="int $Obfuz$RVA_Value54" newName="$UN" />
       <field signature="int $Obfuz$RVA_Value55" newName="$kp" />
       <field signature="int $Obfuz$RVA_Value56" newName="$lp" />
       <field signature="int $Obfuz$RVA_Value57" newName="$iT" />
       <field signature="int $Obfuz$RVA_Value58" newName="$Cy" />
-      <field signature="string $Obfuz$RVA_Value59" newName="$hy" />
-      <field signature="string $Obfuz$RVA_Value60" newName="$Hy" />
-      <field signature="string $Obfuz$RVA_Value61" newName="$iy" />
-      <field signature="float $Obfuz$RVA_Value62" newName="$Iy" />
+      <field signature="int $Obfuz$RVA_Value59" newName="$vQ" />
+      <field signature="int $Obfuz$RVA_Value60" newName="$Qy" />
+      <field signature="int $Obfuz$RVA_Value61" newName="$ry" />
+      <field signature="int $Obfuz$RVA_Value62" newName="$Ry" />
       <field signature="int $Obfuz$RVA_Value63" newName="$jy" />
-      <field signature="int $Obfuz$RVA_Value64" newName="$Jy" />
-      <field signature="int $Obfuz$RVA_Value65" newName="$ky" />
-      <field signature="int $Obfuz$RVA_Value66" newName="$Ky" />
-      <field signature="int $Obfuz$RVA_Value67" newName="$Gy" />
-      <field signature="int $Obfuz$RVA_Value68" newName="$nP" />
+      <field signature="string $Obfuz$RVA_Value64" newName="$Fr" />
+      <field signature="string $Obfuz$RVA_Value65" newName="$sy" />
+      <field signature="string $Obfuz$RVA_Value66" newName="$Sy" />
+      <field signature="float $Obfuz$RVA_Value67" newName="$gr" />
+      <field signature="int $Obfuz$RVA_Value68" newName="$Ir" />
       <field signature="int $Obfuz$RVA_Value69" newName="$NP" />
       <field signature="int $Obfuz$RVA_Value70" newName="$oP" />
       <field signature="int $Obfuz$RVA_Value71" newName="$dQ" />
@@ -444,71 +444,71 @@
       <field signature="int $Obfuz$RVA_Value74" newName="$iQ" />
       <field signature="int $Obfuz$RVA_Value75" newName="$IQ" />
       <field signature="int $Obfuz$RVA_Value76" newName="$jQ" />
-      <field signature="float $Obfuz$RVA_Value77" newName="$my" />
-      <field signature="float $Obfuz$RVA_Value78" newName="$My" />
-      <field signature="float $Obfuz$RVA_Value79" newName="$ny" />
-      <field signature="float $Obfuz$RVA_Value80" newName="$oy" />
-      <field signature="float $Obfuz$RVA_Value81" newName="$Ry" />
-      <field signature="float $Obfuz$RVA_Value82" newName="$sy" />
-      <field signature="int $Obfuz$RVA_Value83" newName="$Qy" />
-      <field signature="int $Obfuz$RVA_Value84" newName="$ry" />
-      <field signature="int $Obfuz$RVA_Value85" newName="$Sy" />
-      <field signature="long $Obfuz$RVA_Value86" newName="$ty" />
-      <field signature="int $Obfuz$RVA_Value87" newName="$ly" />
-      <field signature="int $Obfuz$RVA_Value88" newName="$MQ" />
+      <field signature="int $Obfuz$RVA_Value77" newName="$Uy" />
+      <field signature="int $Obfuz$RVA_Value78" newName="$vy" />
+      <field signature="int $Obfuz$RVA_Value79" newName="$Vy" />
+      <field signature="int $Obfuz$RVA_Value80" newName="$wy" />
+      <field signature="int $Obfuz$RVA_Value81" newName="$Wy" />
+      <field signature="float $Obfuz$RVA_Value82" newName="$Jr" />
+      <field signature="float $Obfuz$RVA_Value83" newName="$yy" />
+      <field signature="float $Obfuz$RVA_Value84" newName="$Yy" />
+      <field signature="float $Obfuz$RVA_Value85" newName="$aY" />
+      <field signature="float $Obfuz$RVA_Value86" newName="$AY" />
+      <field signature="float $Obfuz$RVA_Value87" newName="$bY" />
+      <field signature="int $Obfuz$RVA_Value88" newName="$HT" />
       <field signature="int $Obfuz$RVA_Value89" newName="$oQ" />
       <field signature="int $Obfuz$RVA_Value90" newName="$Ty" />
-      <field signature="int $Obfuz$RVA_Value91" newName="$Ly" />
-      <field signature="float $Obfuz$RVA_Value92" newName="$uy" />
-      <field signature="float $Obfuz$RVA_Value93" newName="$Uy" />
-      <field signature="float $Obfuz$RVA_Value94" newName="$vy" />
+      <field signature="long $Obfuz$RVA_Value91" newName="$lX" />
+      <field signature="int $Obfuz$RVA_Value92" newName="$mX" />
+      <field signature="int $Obfuz$RVA_Value93" newName="$dY" />
+      <field signature="int $Obfuz$RVA_Value94" newName="$eY" />
       <field signature="int $Obfuz$RVA_Value95" newName="$Ny" />
-      <field signature="string $Obfuz$RVA_Value96" newName="$Vy" />
-      <field signature="string $Obfuz$RVA_Value97" newName="$wy" />
-      <field signature="int $Obfuz$RVA_Value98" newName="$Wy" />
-      <field signature="int $Obfuz$RVA_Value99" newName="$tQ" />
-      <field signature="int $Obfuz$RVA_Value100" newName="$xy" />
-      <field signature="int $Obfuz$RVA_Value101" newName="$Xy" />
-      <field signature="int $Obfuz$RVA_Value102" newName="$Oy" />
-      <field signature="int $Obfuz$RVA_Value103" newName="$vQ" />
+      <field signature="int $Obfuz$RVA_Value96" newName="$EY" />
+      <field signature="float $Obfuz$RVA_Value97" newName="$MX" />
+      <field signature="float $Obfuz$RVA_Value98" newName="$daA" />
+      <field signature="float $Obfuz$RVA_Value99" newName="$eaA" />
+      <field signature="int $Obfuz$RVA_Value100" newName="$nX" />
+      <field signature="string $Obfuz$RVA_Value101" newName="$NX" />
+      <field signature="string $Obfuz$RVA_Value102" newName="$gaA" />
+      <field signature="int $Obfuz$RVA_Value103" newName="$oX" />
       <field signature="int $Obfuz$RVA_Value104" newName="$py" />
       <field signature="int $Obfuz$RVA_Value105" newName="$xQ" />
       <field signature="int $Obfuz$RVA_Value106" newName="$Py" />
       <field signature="int $Obfuz$RVA_Value107" newName="$qy" />
       <field signature="int $Obfuz$RVA_Value108" newName="$zy" />
       <field signature="int $Obfuz$RVA_Value109" newName="$Zy" />
-      <field signature="float $Obfuz$RVA_Value110" newName="$yy" />
-      <field signature="float $Obfuz$RVA_Value111" newName="$Yy" />
-      <field signature="float $Obfuz$RVA_Value112" newName="$aY" />
-      <field signature="string $Obfuz$RVA_Value113" newName="$AY" />
-      <field signature="string $Obfuz$RVA_Value114" newName="$bY" />
-      <field signature="string $Obfuz$RVA_Value115" newName="$CY" />
-      <field signature="int $Obfuz$RVA_Value116" newName="$dY" />
-      <field signature="float $Obfuz$RVA_Value117" newName="$DY" />
-      <field signature="int $Obfuz$RVA_Value118" newName="$eY" />
-      <field signature="int $Obfuz$RVA_Value119" newName="$EY" />
-      <field signature="float $Obfuz$RVA_Value120" newName="$CaA" />
-      <field signature="float $Obfuz$RVA_Value121" newName="$daA" />
+      <field signature="int $Obfuz$RVA_Value110" newName="$HaA" />
+      <field signature="int $Obfuz$RVA_Value111" newName="$iaA" />
+      <field signature="int $Obfuz$RVA_Value112" newName="$IaA" />
+      <field signature="int $Obfuz$RVA_Value113" newName="$jaA" />
+      <field signature="float $Obfuz$RVA_Value114" newName="$hy" />
+      <field signature="float $Obfuz$RVA_Value115" newName="$KaA" />
+      <field signature="float $Obfuz$RVA_Value116" newName="$laA" />
+      <field signature="string $Obfuz$RVA_Value117" newName="$Jy" />
+      <field signature="string $Obfuz$RVA_Value118" newName="$LaA" />
+      <field signature="string $Obfuz$RVA_Value119" newName="$naA" />
+      <field signature="int $Obfuz$RVA_Value120" newName="$Ly" />
+      <field signature="float $Obfuz$RVA_Value121" newName="$ty" />
       <field signature="int $Obfuz$RVA_Value122" newName="$DaA" />
-      <field signature="string $Obfuz$RVA_Value123" newName="$eaA" />
-      <field signature="int $Obfuz$RVA_Value124" newName="$Fr" />
-      <field signature="int $Obfuz$RVA_Value125" newName="$EaA" />
-      <field signature="int $Obfuz$RVA_Value126" newName="$faA" />
-      <field signature="int $Obfuz$RVA_Value127" newName="$gr" />
+      <field signature="int $Obfuz$RVA_Value123" newName="$uy" />
+      <field signature="float $Obfuz$RVA_Value124" newName="$xy" />
+      <field signature="float $Obfuz$RVA_Value125" newName="$Xy" />
+      <field signature="int $Obfuz$RVA_Value126" newName="$BY" />
+      <field signature="string $Obfuz$RVA_Value127" newName="$CY" />
       <field signature="int $Obfuz$RVA_Value128" newName="$FaA" />
-      <field signature="int $Obfuz$RVA_Value129" newName="$Jr" />
+      <field signature="int $Obfuz$RVA_Value129" newName="$DY" />
       <field signature="int $Obfuz$RVA_Value130" newName="$Hr" />
       <field signature="int $Obfuz$RVA_Value131" newName="$ir" />
       <field signature="int $Obfuz$RVA_Value132" newName="$Sr" />
       <field signature="int $Obfuz$RVA_Value133" newName="$kaA" />
-      <field signature="float $Obfuz$RVA_Value134" newName="$gaA" />
-      <field signature="string $Obfuz$RVA_Value135" newName="$GaA" />
+      <field signature="int $Obfuz$RVA_Value134" newName="$RaA" />
+      <field signature="int $Obfuz$RVA_Value135" newName="$SaA" />
       <field signature="int $Obfuz$RVA_Value136" newName="$vI" />
       <field signature="int $Obfuz$RVA_Value137" newName="$VI" />
-      <field signature="int $Obfuz$RVA_Value138" newName="$wI" />
-      <field signature="int $Obfuz$RVA_Value139" newName="$haA" />
-      <field signature="int $Obfuz$RVA_Value140" newName="$HaA" />
-      <field signature="int $Obfuz$RVA_Value141" newName="$XI" />
+      <field signature="float $Obfuz$RVA_Value138" newName="$CaA" />
+      <field signature="string $Obfuz$RVA_Value139" newName="$EaA" />
+      <field signature="int $Obfuz$RVA_Value140" newName="$faA" />
+      <field signature="int $Obfuz$RVA_Value141" newName="$GaA" />
       <field signature="int $Obfuz$RVA_Value142" newName="$yI" />
       <field signature="int $Obfuz$RVA_Value143" newName="$YI" />
       <field signature="int $Obfuz$RVA_Value144" newName="$zI" />
@@ -641,34 +641,34 @@
       <field signature="int $Obfuz$RVA_Value271" newName="$Kk" />
       <field signature="int $Obfuz$RVA_Value272" newName="$maA" />
       <field signature="int $Obfuz$RVA_Value273" newName="$MaA" />
-      <field signature="string $Obfuz$RVA_Value274" newName="$iaA" />
-      <field signature="string $Obfuz$RVA_Value275" newName="$IaA" />
-      <field signature="string $Obfuz$RVA_Value276" newName="$jaA" />
-      <field signature="string $Obfuz$RVA_Value277" newName="$JaA" />
-      <field signature="string $Obfuz$RVA_Value278" newName="$KaA" />
-      <field signature="string $Obfuz$RVA_Value279" newName="$BY" />
+      <field signature="int $Obfuz$RVA_Value274" newName="$vaA" />
+      <field signature="int $Obfuz$RVA_Value275" newName="$VaA" />
+      <field signature="int $Obfuz$RVA_Value276" newName="$waA" />
+      <field signature="int $Obfuz$RVA_Value277" newName="$WaA" />
+      <field signature="string $Obfuz$RVA_Value278" newName="$haA" />
+      <field signature="string $Obfuz$RVA_Value279" newName="$JaA" />
       <field signature="string $Obfuz$RVA_Value280" newName="$cY" />
       <field signature="string $Obfuz$RVA_Value281" newName="$PaA" />
       <field signature="string $Obfuz$RVA_Value282" newName="$qaA" />
-      <field signature="int $Obfuz$RVA_Value283" newName="$laA" />
-      <field signature="int $Obfuz$RVA_Value284" newName="$LaA" />
-      <field signature="int $Obfuz$RVA_Value285" newName="$naA" />
-      <field signature="int $Obfuz$RVA_Value286" newName="$NaA" />
-      <field signature="int $Obfuz$RVA_Value287" newName="$oaA" />
-      <field signature="int $Obfuz$RVA_Value288" newName="$tk" />
+      <field signature="string $Obfuz$RVA_Value283" newName="$zaA" />
+      <field signature="string $Obfuz$RVA_Value284" newName="$ZaA" />
+      <field signature="string $Obfuz$RVA_Value285" newName="$aAA" />
+      <field signature="string $Obfuz$RVA_Value286" newName="$AAA" />
+      <field signature="int $Obfuz$RVA_Value287" newName="$NaA" />
+      <field signature="int $Obfuz$RVA_Value288" newName="$oaA" />
       <field signature="int $Obfuz$RVA_Value289" newName="$taA" />
       <field signature="int $Obfuz$RVA_Value290" newName="$TaA" />
-      <field signature="float $Obfuz$RVA_Value291" newName="$OaA" />
-      <field signature="float $Obfuz$RVA_Value292" newName="$paA" />
-      <field signature="float $Obfuz$RVA_Value293" newName="$QaA" />
-      <field signature="float $Obfuz$RVA_Value294" newName="$raA" />
-      <field signature="float $Obfuz$RVA_Value295" newName="$RaA" />
-      <field signature="int $Obfuz$RVA_Value296" newName="$saA" />
-      <field signature="int $Obfuz$RVA_Value297" newName="$SaA" />
-      <field signature="int $Obfuz$RVA_Value298" newName="$uaA" />
-      <field signature="int $Obfuz$RVA_Value299" newName="$UaA" />
-      <field signature="int $Obfuz$RVA_Value300" newName="$vaA" />
-      <field signature="int $Obfuz$RVA_Value301" newName="$Zk" />
+      <field signature="int $Obfuz$RVA_Value291" newName="$cAA" />
+      <field signature="int $Obfuz$RVA_Value292" newName="$SAA" />
+      <field signature="int $Obfuz$RVA_Value293" newName="$tAA" />
+      <field signature="int $Obfuz$RVA_Value294" newName="$TAA" />
+      <field signature="float $Obfuz$RVA_Value295" newName="$OaA" />
+      <field signature="float $Obfuz$RVA_Value296" newName="$paA" />
+      <field signature="float $Obfuz$RVA_Value297" newName="$CbA" />
+      <field signature="float $Obfuz$RVA_Value298" newName="$dbA" />
+      <field signature="float $Obfuz$RVA_Value299" newName="$DbA" />
+      <field signature="int $Obfuz$RVA_Value300" newName="$QaA" />
+      <field signature="int $Obfuz$RVA_Value301" newName="$raA" />
       <field signature="int $Obfuz$RVA_Value302" newName="$aK" />
       <field signature="int $Obfuz$RVA_Value303" newName="$AK" />
       <field signature="int $Obfuz$RVA_Value304" newName="$bK" />
@@ -949,6 +949,10 @@
       <field signature="int $Obfuz$RVA_Value579" newName="$zZ" />
       <field signature="int $Obfuz$RVA_Value580" newName="$yaA" />
       <field signature="int $Obfuz$RVA_Value581" newName="$YaA" />
+      <field signature="int $Obfuz$RVA_Value582" newName="$fbA" />
+      <field signature="int $Obfuz$RVA_Value583" newName="$FbA" />
+      <field signature="int $Obfuz$RVA_Value584" newName="$gbA" />
+      <field signature="int $Obfuz$RVA_Value585" newName="$ABA" />
     </type>
     <type fullName="$Obfuz$ProxyCall" newFullName="$Xb" status="Renamed">
       <method signature="[Hotfix]AdjustManager $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_6400162(int)" newName="$YaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_6400162(Int32)" newStackTraceSignature="$Xb:$YaA(Int32)" />
@@ -1236,6 +1240,7 @@
       <method signature="[MaxSdk.Scripts]MaxSdkBase/SdkConfiguration $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_671434(int)" newName="$lY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_671434(Int32)" newStackTraceSignature="$Xb:$lY(Int32)" />
       <method signature="[Hotfix]Menu.BottomNavigation.BottomNavigationController $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_16475737(int)" newName="$bBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_16475737(Int32)" newStackTraceSignature="$Xb:$bBA(Int32)" />
       <method signature="[Newtonsoft.Json]Newtonsoft.Json.Linq.JObject $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_15054236(object, int)" newName="$rW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_15054236(Object, Int32)" newStackTraceSignature="$Xb:$rW(Object, Int32)" />
+      <method signature="[Newtonsoft.Json]Newtonsoft.Json.Linq.JObject $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_15054236(object, object, int)" newName="$vGA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_15054236(Object, Object, Int32)" newStackTraceSignature="$Xb:$vGA(Object, Object, Int32)" />
       <method signature="[Newtonsoft.Json]Newtonsoft.Json.Linq.JToken $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_15251418(object, int)" newName="$RW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_15251418(Object, Int32)" newStackTraceSignature="$Xb:$RW(Object, Int32)" />
       <method signature="[Newtonsoft.Json]Newtonsoft.Json.Linq.JToken $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_15251418(object, object, int)" newName="$sW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_15251418(Object, Object, Int32)" newStackTraceSignature="$Xb:$sW(Object, Object, Int32)" />
       <method signature="[Newtonsoft.Json]Newtonsoft.Json.Linq.JToken $Obfuz$ProxyCall::@$Obfuz$Dispatch_59003_15251418(float, int)" newName="$BBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_59003_15251418(Single, Int32)" newStackTraceSignature="$Xb:$BBA(Single, Int32)" />
@@ -1247,8 +1252,9 @@
       <method signature="[Hotfix]PlayerDataType $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_8058873(object, int)" newName="$ol" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_8058873(Object, Int32)" newStackTraceSignature="$Xb:$ol(Object, Int32)" />
       <method signature="[Hotfix]RefParams $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_11051435(object, int)" newName="$Ol" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_11051435(Object, Int32)" newStackTraceSignature="$Xb:$Ol(Object, Int32)" />
       <method signature="[Hotfix]RefParams $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_11051435(int)" newName="$pl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_11051435(Int32)" newStackTraceSignature="$Xb:$pl(Int32)" />
+      <method signature="[Hotfix]RemoteTableLocalStore/Snapshot $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_1674448(object, int)" newName="$VGA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_1674448(Object, Int32)" newStackTraceSignature="$Xb:$VGA(Object, Int32)" />
+      <method signature="[Hotfix]RemoteTableLocalStore/Snapshot $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_1674448(int)" newName="$wGA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_1674448(Int32)" newStackTraceSignature="$Xb:$wGA(Int32)" />
       <method signature="[Hotfix]RemoteTableManifest $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_14532407(object, int)" newName="$TW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_14532407(Object, Int32)" newStackTraceSignature="$Xb:$TW(Object, Int32)" />
-      <method signature="[Hotfix]RemoteTableManifest $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_14532407(int)" newName="$uW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_14532407(Int32)" newStackTraceSignature="$Xb:$uW(Int32)" />
       <method signature="[Hotfix]RequestHandle $Obfuz$ProxyCall::@$Obfuz$Dispatch_56615_6823857(object, object, byte, float, float, int)" newName="$CBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_56615_6823857(Object, Object, Byte, Single, Single, Int32)" newStackTraceSignature="$Xb:$CBA(Object, Object, Byte, Single, Single, Int32)" />
       <method signature="[Hotfix]RewardDialogParams $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_9556185(object, int)" newName="$Pl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_9556185(Object, Int32)" newStackTraceSignature="$Xb:$Pl(Object, Int32)" />
       <method signature="[Hotfix]Scene.SceneType $Obfuz$ProxyCall::@$Obfuz$Dispatch_25763_3760644(int, int)" newName="$dBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_25763_3760644(Int32, Int32)" newStackTraceSignature="$Xb:$dBA(Int32, Int32)" />
@@ -1266,13 +1272,16 @@
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_12519_12616511(object, byte, int)" newName="$ul" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_12519_12616511(Object, Byte, Int32)" newStackTraceSignature="$Xb:$ul(Object, Byte, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_13194_12616511([UnityEngine.CoreModule]UnityEngine.Vector3, [UnityEngine.CoreModule]UnityEngine.Vector3, int)" newName="$Ul" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_13194_12616511(Vector3, Vector3, Int32)" newStackTraceSignature="$Xb:$Ul(Vector3, Vector3, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_15535_12616511(object, nuint, int)" newName="$vl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_15535_12616511(Object, UIntPtr, Int32)" newStackTraceSignature="$Xb:$vl(Object, UIntPtr, Int32)" />
+      <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_16202_12616511(object, byte[], int, int, object, int)" newName="$WGA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_16202_12616511(Object, Byte[], Int32, Int32, Object, Int32)" newStackTraceSignature="$Xb:$WGA(Object, Byte[], Int32, Int32, Object, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_20210_12616511(int, object, nuint, int)" newName="$UW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_20210_12616511(Int32, Object, UIntPtr, Int32)" newStackTraceSignature="$Xb:$UW(Int32, Object, UIntPtr, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_20540_12616511(object, object, byte, byte, float, int, int)" newName="$Vl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_20540_12616511(Object, Object, Byte, Byte, Single, Int32, Int32)" newStackTraceSignature="$Xb:$Vl(Object, Object, Byte, Byte, Single, Int32, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_21268_12616511(nint, [Hotfix]Util.FloatTriplet, int)" newName="$EBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_21268_12616511(IntPtr, FloatTriplet, Int32)" newStackTraceSignature="$Xb:$EBA(IntPtr, FloatTriplet, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_21414_12616511(object, int, byte, int)" newName="$wl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_21414_12616511(Object, Int32, Byte, Int32)" newStackTraceSignature="$Xb:$wl(Object, Int32, Byte, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_21745_12616511(object, [UnityEngine.CoreModule]UnityEngine.Vector3, int)" newName="$bgA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_21745_12616511(Object, Vector3, Int32)" newStackTraceSignature="$Xb:$bgA(Object, Vector3, Int32)" />
+      <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_22094_12616511(object, long, object, int)" newName="$xGA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22094_12616511(Object, Int64, Object, Int32)" newStackTraceSignature="$Xb:$xGA(Object, Int64, Object, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_2221_12616511(nint, [Hotfix]Util.IntTriplet, int)" newName="$fBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2221_12616511(IntPtr, IntTriplet, Int32)" newStackTraceSignature="$Xb:$fBA(IntPtr, IntTriplet, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_12616511(int)" newName="$Wl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_12616511(Int32)" newStackTraceSignature="$Xb:$Wl(Int32)" />
+      <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_24430_12616511(object, int, nuint, int)" newName="$XGA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_24430_12616511(Object, Int32, UIntPtr, Int32)" newStackTraceSignature="$Xb:$XGA(Object, Int32, UIntPtr, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_24926_12616511(object, object, byte[], object, int)" newName="$vW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_24926_12616511(Object, Object, Byte[], Object, Int32)" newStackTraceSignature="$Xb:$vW(Object, Object, Byte[], Object, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_25763_12616511(int, int)" newName="$xl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_25763_12616511(Int32, Int32)" newStackTraceSignature="$Xb:$xl(Int32, Int32)" />
       <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_26102_12616511([Hotfix]TypeIdPair, [Hotfix]TypeIdPair, int)" newName="$Xl" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_26102_12616511(TypeIdPair, TypeIdPair, Int32)" newStackTraceSignature="$Xb:$Xl($w, $w, Int32)" />
@@ -1324,6 +1333,7 @@
       <method signature="System.Collections.Generic.IEnumerable`1&lt;[Hotfix]Level.LevelStageData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_11505432(object, object, int)" newName="$OBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_11505432(Object, Object, Int32)" newStackTraceSignature="$Xb:$OBA(Object, Object, Int32)" />
       <method signature="System.Collections.Generic.IEnumerable`1&lt;[Newtonsoft.Json]Newtonsoft.Json.Linq.JProperty&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_13013348(object, int)" newName="$zW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_13013348(Object, Int32)" newStackTraceSignature="$Xb:$zW(Object, Int32)" />
       <method signature="System.Collections.Generic.IEnumerable`1&lt;int&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_10764301(object, object, int)" newName="$pBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_10764301(Object, Object, Int32)" newStackTraceSignature="$Xb:$pBA(Object, Object, Int32)" />
+      <method signature="System.Collections.Generic.IEnumerable`1&lt;string&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_6857708(object, object, int)" newName="$yGA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_6857708(Object, Object, Int32)" newStackTraceSignature="$Xb:$yGA(Object, Object, Int32)" />
       <method signature="System.Collections.Generic.IEnumerable`1&lt;[UnityEngine.CoreModule]UnityEngine.Color&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_13835716(object, object, int)" newName="$PBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_13835716(Object, Object, Int32)" newStackTraceSignature="$Xb:$PBA(Object, Object, Int32)" />
       <method signature="System.Collections.Generic.IEnumerable`1&lt;[UnityEngine.CoreModule]UnityEngine.Material&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_13458782(object, object, int)" newName="$qBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_13458782(Object, Object, Int32)" newStackTraceSignature="$Xb:$qBA(Object, Object, Int32)" />
       <method signature="System.Collections.Generic.IEnumerable`1&lt;[UnityEngine.CoreModule]UnityEngine.Transform&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_6893227(object, object, int)" newName="$QBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_6893227(Object, Object, Int32)" newStackTraceSignature="$Xb:$QBA(Object, Object, Int32)" />
@@ -1334,7 +1344,6 @@
       <method signature="System.Collections.Generic.List`1&lt;[Hotfix]Gameplay.Objects.ObjectType&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_9600313(object, int)" newName="$tBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_9600313(Object, Int32)" newStackTraceSignature="$Xb:$tBA(Object, Int32)" />
       <method signature="System.Collections.Generic.List`1&lt;[Hotfix]LoopListBankData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_9885827(object, int)" newName="$LL" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_9885827(Object, Int32)" newStackTraceSignature="$Xb:$LL(Object, Int32)" />
       <method signature="System.Collections.Generic.List`1&lt;[Hotfix]RewardData&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_8746291(object, int)" newName="$ML" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_8746291(Object, Int32)" newStackTraceSignature="$Xb:$ML(Object, Int32)" />
-      <method signature="System.Collections.Generic.List`1&lt;System.Collections.Generic.KeyValuePair`2&lt;string,[Hotfix]RemoteTableManifestEntry&gt;&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_1404380(object, object, int)" newName="$ZW" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_1404380(Object, Object, Int32)" newStackTraceSignature="$Xb:$ZW(Object, Object, Int32)" />
       <method signature="System.Collections.Generic.List`1&lt;int&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_16631448(object, int)" newName="$TBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_16631448(Object, Int32)" newStackTraceSignature="$Xb:$TBA(Object, Int32)" />
       <method signature="System.Collections.Generic.List`1&lt;float&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_1886502(int)" newName="$uBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_1886502(Int32)" newStackTraceSignature="$Xb:$uBA(Int32)" />
       <method signature="System.Collections.Generic.List`1&lt;[UnityEngine.CoreModule]UnityEngine.Color&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_2925647(object, int)" newName="$UBA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_2925647(Object, Int32)" newStackTraceSignature="$Xb:$UBA(Object, Int32)" />
@@ -1405,6 +1414,7 @@
       <method signature="System.Nullable`1&lt;[Hotfix]Gameplay.Particles.ParticleType&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_16539244(object, int)" newName="$icA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_16539244(Object, Int32)" newStackTraceSignature="$Xb:$icA(Object, Int32)" />
       <method signature="System.Nullable`1&lt;bool&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_2945278(object, int)" newName="$em" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_2945278(Object, Int32)" newStackTraceSignature="$Xb:$em(Object, Int32)" />
       <method signature="System.Nullable`1&lt;int&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_12608605(object, int)" newName="$Em" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_12608605(Object, Int32)" newStackTraceSignature="$Xb:$Em(Object, Int32)" />
+      <method signature="System.Nullable`1&lt;long&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_14663348(int)" newName="$YGA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_14663348(Int32)" newStackTraceSignature="$Xb:$YGA(Int32)" />
       <method signature="System.Nullable`1&lt;[UnityEngine.CoreModule]UnityEngine.Vector3&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_1725639(object, int)" newName="$fm" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_1725639(Object, Int32)" newStackTraceSignature="$Xb:$fm(Object, Int32)" />
       <method signature="object $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_10087402(object, int)" newName="$Fm" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_10087402(Object, Int32)" newStackTraceSignature="$Xb:$Fm(Object, Int32)" />
       <method signature="float $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_3119315(object, int)" newName="$gm" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_3119315(Object, Int32)" newStackTraceSignature="$Xb:$gm(Object, Int32)" />
@@ -1433,7 +1443,6 @@
       <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_12519_11558398(object, byte, int)" newName="$qm" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_12519_11558398(Object, Byte, Int32)" newStackTraceSignature="$Xb:$qm(Object, Byte, Int32)" />
       <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_16665_11558398(object, object, int, object, int)" newName="$Ax" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_16665_11558398(Object, Object, Int32, Object, Int32)" newStackTraceSignature="$Xb:$Ax(Object, Object, Int32, Object, Int32)" />
       <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_17385_11558398(float, byte, byte, int)" newName="$Hu" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_17385_11558398(Single, Byte, Byte, Int32)" newStackTraceSignature="$Xb:$Hu(Single, Byte, Byte, Int32)" />
-      <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_17613_11558398(string[], int)" newName="$WY" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_17613_11558398(String[], Int32)" newStackTraceSignature="$Xb:$WY(String[], Int32)" />
       <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_18285_11558398(object, int, [Newtonsoft.Json]Newtonsoft.Json.JsonConverter[], int)" newName="$bx" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_18285_11558398(Object, Int32, JsonConverter[], Int32)" newStackTraceSignature="$Xb:$bx(Object, Int32, JsonConverter[], Int32)" />
       <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_2052_11558398(byte[], int)" newName="$Bx" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_2052_11558398(Byte[], Int32)" newStackTraceSignature="$Xb:$Bx(Byte[], Int32)" />
       <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_11558398(int)" newName="$Qm" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_11558398(Int32)" newStackTraceSignature="$Xb:$Qm(Int32)" />
@@ -1555,6 +1564,7 @@
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_41214_4780505(object, [Unity.TextMeshPro]TMPro.TMP_MeshInfo[], object, int)" newName="$dCA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_41214_4780505(Object, TMP_MeshInfo[], Object, Int32)" newStackTraceSignature="$Xb:$dCA(Object, TMP_MeshInfo[], Object, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_413_4780505(object, object, object[], int)" newName="$xaA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_413_4780505(Object, Object, Object[], Int32)" newStackTraceSignature="$Xb:$xaA(Object, Object, Object[], Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_42615_4780505([UnityEngine.CoreModule]UnityEngine.MeshRenderer[], nuint, nuint, nuint, int)" newName="$DCA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_42615_4780505(MeshRenderer[], UIntPtr, UIntPtr, UIntPtr, Int32)" newStackTraceSignature="$Xb:$DCA(MeshRenderer[], UIntPtr, UIntPtr, UIntPtr, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_43178_4780505(long, int)" newName="$ZGA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_43178_4780505(Int64, Int32)" newStackTraceSignature="$Xb:$ZGA(Int64, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_43275_4780505(object, string[], int)" newName="$cn" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_43275_4780505(Object, String[], Int32)" newStackTraceSignature="$Xb:$cn(Object, String[], Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_44512_4780505([Hotfix]Inventory.TimedInventory.TimedInventoryPayload, int)" newName="$eCA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_44512_4780505(TimedInventoryPayload, Int32)" newStackTraceSignature="$Xb:$eCA(TimedInventoryPayload, Int32)" />
       <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_45585_4780505(object, object, int, float, float, int)" newName="$Dn" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_45585_4780505(Object, Object, Int32, Single, Single, Int32)" newStackTraceSignature="$Xb:$Dn(Object, Object, Int32, Single, Single, Int32)" />
@@ -1853,27 +1863,28 @@
     </type>
     <type fullName="$ObfuzRVA$DataHolder2048" newFullName="$wb" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;" newFullName="$ob" status="Renamed">
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize40_10 $Obfuz$WatermarkDataHolderField12" newName="$lX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=16 B1B3D3C4982B746C53DAB2F01202E8F0DA0CEB9CF3D8F94234A436F7ED8D0A4D" newName="$LX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_16 $Obfuz$WatermarkDataHolderField18" newName="$mX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_11 $Obfuz$WatermarkDataHolderField13" newName="$MX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize40_6 $Obfuz$WatermarkDataHolderField8" newName="$nX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize40_9 $Obfuz$WatermarkDataHolderField11" newName="$NX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_13 $Obfuz$WatermarkDataHolderField15" newName="$oX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_8 $Obfuz$WatermarkDataHolderField10" newName="$OX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize32_17 $Obfuz$WatermarkDataHolderField19" newName="$pX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize44_15 $Obfuz$WatermarkDataHolderField17" newName="$PX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize40_14 $Obfuz$WatermarkDataHolderField16" newName="$qX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize32_12 $Obfuz$WatermarkDataHolderField14" newName="$QX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10292 991B271530DDF3FB1C4F558C699A6594D1460A101D48E4E99CB2DF1E66F2BDFF" newName="$kBA" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_7 $Obfuz$WatermarkDataHolderField9" newName="$RX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20681 693260A4A80916413F093608895BBF34E239C3011B12AD3CAB6121D356940859" newName="$KBA" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20 AAF43DE17A34E6B91BE41081ADF6E0415DCD2CAC51442E71F5158CC0476FCB26" newName="$rX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=12 FE2BC5B610FA2F21F48C2AF9EE607F1E75DDF01DEEEF014C2A3439BC7F3A2661" newName="$tX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=24 CD1E7D8370EA36F442606618E956669F8BABE52CE9C1CC82767A0E0FEEF4CAD7" newName="$TX" />
-      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize20_18 $Obfuz$WatermarkDataHolderField20" newName="$uX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_16 $Obfuz$WatermarkDataHolderField19" newName="$OX" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=24 26168C8195C8F665BA6223C0EDD4405B11D51547F6E20F3712913880AF764E93" newName="$sX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=12 C00AB428CAB86775AA31C44DB29B42A0576F69D4D8D1C7FB5EC58DC847015385" newName="$pX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize20_18 $Obfuz$WatermarkDataHolderField21" newName="$PX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=12 FE2BC5B610FA2F21F48C2AF9EE607F1E75DDF01DEEEF014C2A3439BC7F3A2661" newName="$tX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize40_9 $Obfuz$WatermarkDataHolderField12" newName="$qX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize32_17 $Obfuz$WatermarkDataHolderField20" newName="$QX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize40_6 $Obfuz$WatermarkDataHolderField9" newName="$RX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize32_12 $Obfuz$WatermarkDataHolderField15" newName="$uX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10327 148035EC5113EC8719AA93B6785B82C2679B857E35578BFA204D34DC13009708" newName="$By" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize40_10 $Obfuz$WatermarkDataHolderField13" newName="$cy" />
       <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20 CB129D7FC803D1A168D2797E2A9838A4BB0F390690311932C09E99C7D1CAD357" newName="$vX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=24 CD1E7D8370EA36F442606618E956669F8BABE52CE9C1CC82767A0E0FEEF4CAD7" newName="$TX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_8 $Obfuz$WatermarkDataHolderField11" newName="$Gy" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20681 A9375DB79F94CBBA3E2B281F8B3CFB2F072B34F0FAD11927ABC5FB0CCD8958AB" newName="$Hy" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_7 $Obfuz$WatermarkDataHolderField10" newName="$iy" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=16 B1B3D3C4982B746C53DAB2F01202E8F0DA0CEB9CF3D8F94234A436F7ED8D0A4D" newName="$LX" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize40_14 $Obfuz$WatermarkDataHolderField17" newName="$Iy" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_11 $Obfuz$WatermarkDataHolderField14" newName="$ky" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_13 $Obfuz$WatermarkDataHolderField16" newName="$Ky" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize44_15 $Obfuz$WatermarkDataHolderField18" newName="$ly" />
+      <field signature="[Hotfix]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=20 AAF43DE17A34E6B91BE41081ADF6E0415DCD2CAC51442E71F5158CC0476FCB26" newName="$rX" />
       <method signature="uint &lt;PrivateImplementationDetails&gt;::@ComputeStringHash(string)" newName="$FJ" oldStackTraceSignature="&lt;PrivateImplementationDetails&gt;:ComputeStringHash(String)" newStackTraceSignature="$ob:$FJ(String)" />
     </type>
     <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize20_14" newFullName="$ob/$Vb" status="Renamed" />
@@ -1915,6 +1926,7 @@
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10195" newFullName="$ob/$jc" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10245" newFullName="$ob/$GD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10292" newFullName="$ob/$VD" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10327" newFullName="$ob/$VD" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10552" newFullName="$ob/$sc" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=10710" newFullName="$ob/$Jc" status="Renamed" />
     <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=11256" newFullName="$ob/$Qc" status="Renamed" />
@@ -7237,7 +7249,7 @@
       <field signature="int &lt;&gt;1__state" newName="$BU" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$cU" />
       <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Entry entry" newName="$CU" />
-      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Entry &lt;&gt;7__wrap1" newName="$Hp" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Entry &lt;&gt;7__wrap1" newName="$MQ" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;!0&gt; &lt;&gt;u__1" newName="$DU" />
     </type>
     <type fullName="Gameplay.Level.GameplayAssetCache/&lt;Preload&gt;d__17" newFullName="$i.$XC/$bd" status="Renamed">
@@ -7271,7 +7283,7 @@
       <field signature="[Hotfix]Gameplay.Particles.ParticleData &lt;effects&gt;5__2" newName="$sAA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Objects.ObjectData&gt; &lt;&gt;u__1" newName="$sU" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Particles.ParticleData&gt; &lt;&gt;u__2" newName="$SU" />
-      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Lease &lt;&gt;7__wrap2" newName="$Fq" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Lease &lt;&gt;7__wrap2" newName="$tQ" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt; &lt;&gt;u__3" newName="$TU" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__4" newName="$UAA" />
     </type>
@@ -9416,7 +9428,7 @@
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask PlayLoadingUIForm::@PrepareSceneAsync(string, System.Threading.CancellationToken, System.Action`1&lt;string&gt;, System.Action)" newName="$Mi" oldStackTraceSignature="PlayLoadingUIForm:PrepareSceneAsync(String, CancellationToken, Action`1, Action)" newStackTraceSignature="PlayLoadingUIForm:$Mi(String, CancellationToken, Action`1, Action)" />
       <method signature="void PlayLoadingUIForm::@HideGameplayScene()" newName="$ni" oldStackTraceSignature="PlayLoadingUIForm:HideGameplayScene()" newStackTraceSignature="PlayLoadingUIForm:$ni()" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTaskVoid PlayLoadingUIForm::@CleanupSceneAsync([UniTask]Cysharp.Threading.Tasks.UniTask, string)" newName="$Ni" oldStackTraceSignature="PlayLoadingUIForm:CleanupSceneAsync(UniTask, String)" newStackTraceSignature="PlayLoadingUIForm:$Ni(UniTask, String)" />
-      <method signature="void PlayLoadingUIForm::@&lt;LoadGameplayAsync&gt;g__EndStage|14_1()" newName="$ABA" oldStackTraceSignature="PlayLoadingUIForm:&lt;LoadGameplayAsync&gt;g__EndStage|14_1()" newStackTraceSignature="PlayLoadingUIForm:$ABA()" />
+      <method signature="void PlayLoadingUIForm::@&lt;LoadGameplayAsync&gt;g__EndStage|14_1()" newName="$ZFA" oldStackTraceSignature="PlayLoadingUIForm:&lt;LoadGameplayAsync&gt;g__EndStage|14_1()" newStackTraceSignature="PlayLoadingUIForm:$ZFA()" />
     </type>
     <type fullName="PlayLoadingUIForm/&lt;&gt;c__DisplayClass14_0" newFullName="" status="NotRenamed">
       <field signature="string stage" newName="$hG" />
@@ -9513,13 +9525,13 @@
       <field signature="int &lt;&gt;1__state" newName="$bbA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$BbA" />
       <field signature="string &lt;sceneAsset&gt;5__2" newName="$cbA" />
-      <field signature="int &lt;level&gt;5__3" newName="$iG" />
-      <field signature="System.Threading.CancellationTokenSource &lt;cancellation&gt;5__4" newName="$UI" />
-      <field signature="System.IDisposable &lt;timeout&gt;5__5" newName="$wk" />
-      <field signature="System.Threading.CancellationToken &lt;token&gt;5__6" newName="$Wk" />
-      <field signature="bool &lt;prepared&gt;5__7" newName="$SM" />
-      <field signature="object &lt;&gt;7__wrap7" newName="$NO" />
-      <field signature="int &lt;&gt;7__wrap8" newName="$qO" />
+      <field signature="int &lt;level&gt;5__3" newName="$wI" />
+      <field signature="System.Threading.CancellationTokenSource &lt;cancellation&gt;5__4" newName="$sO" />
+      <field signature="System.IDisposable &lt;timeout&gt;5__5" newName="$SO" />
+      <field signature="System.Threading.CancellationToken &lt;token&gt;5__6" newName="$tO" />
+      <field signature="bool &lt;prepared&gt;5__7" newName="$Hp" />
+      <field signature="object &lt;&gt;7__wrap7" newName="$nP" />
+      <field signature="int &lt;&gt;7__wrap8" newName="$Fq" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;bool&gt; &lt;&gt;u__1" newName="$GbA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Level.LevelData&gt; &lt;&gt;u__2" newName="$hbA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Level.GameplayAssetCache/Lease&gt; &lt;&gt;u__3" newName="$HbA" />
@@ -9648,16 +9660,19 @@
       <method signature="void RemoteTableLoader::@FireDataTableSuccess(string, object)" newName="$gw" oldStackTraceSignature="RemoteTableLoader:FireDataTableSuccess(String, Object)" newStackTraceSignature="$jc:$gw(String, Object)" />
     </type>
     <type fullName="RemoteTableLocalStore" newFullName="$Jc" status="Renamed">
+      <field signature="[Hotfix]RemoteTableLocalStore/Snapshot s_Active" newName="$iG" />
+      <field signature="string s_LoadedRoot" newName="$UI" />
       <property signature="string RootPath" newName="$a" />
       <method signature="string RemoteTableLocalStore::@get_RootPath()" newName="$Gw" oldStackTraceSignature="RemoteTableLocalStore:get_RootPath()" newStackTraceSignature="$Jc:$Gw()" />
-      <method signature="string RemoteTableLocalStore::@GetBytesFilePath([Hotfix]RemoteTableKind, string)" newName="$hw" oldStackTraceSignature="RemoteTableLocalStore:GetBytesFilePath(RemoteTableKind, String)" newStackTraceSignature="$Jc:$hw($lc, String)" />
-      <method signature="string RemoteTableLocalStore::@GetManifestPath()" newName="$Hw" oldStackTraceSignature="RemoteTableLocalStore:GetManifestPath()" newStackTraceSignature="$Jc:$Hw()" />
+      <method signature="System.Nullable`1&lt;long&gt; RemoteTableLocalStore::@LoadAssignedConfigId()" newName="$hw" oldStackTraceSignature="RemoteTableLocalStore:LoadAssignedConfigId()" newStackTraceSignature="$Jc:$hw()" />
+      <method signature="void RemoteTableLocalStore::@SaveAssignedConfigId(long)" newName="$Hw" oldStackTraceSignature="RemoteTableLocalStore:SaveAssignedConfigId(Int64)" newStackTraceSignature="$Jc:$Hw(Int64)" />
+      <method signature="[Hotfix]RemoteTableLocalStore/Snapshot RemoteTableLocalStore::@LoadActive()" newName="$Iw" oldStackTraceSignature="RemoteTableLocalStore:LoadActive()" newStackTraceSignature="$Jc:$Iw()" />
       <method signature="bool RemoteTableLocalStore::@TryReadBytes([Hotfix]RemoteTableKind, string, byte[]&amp;)" newName="$iw" oldStackTraceSignature="RemoteTableLocalStore:TryReadBytes(RemoteTableKind, String, Byte[]&amp;)" newStackTraceSignature="$Jc:$iw($lc, String, Byte[]&amp;)" />
-      <method signature="[Hotfix]RemoteTableManifest RemoteTableLocalStore::@LoadManifest()" newName="$Iw" oldStackTraceSignature="RemoteTableLocalStore:LoadManifest()" newStackTraceSignature="$Jc:$Iw()" />
-      <method signature="void RemoteTableLocalStore::@SaveManifest([Hotfix]RemoteTableManifest)" newName="$jw" oldStackTraceSignature="RemoteTableLocalStore:SaveManifest(RemoteTableManifest)" newStackTraceSignature="$Jc:$jw(RemoteTableManifest)" />
-      <method signature="void RemoteTableLocalStore::@SaveBytes([Hotfix]RemoteTableKind, string, byte[])" newName="$Jw" oldStackTraceSignature="RemoteTableLocalStore:SaveBytes(RemoteTableKind, String, Byte[])" newStackTraceSignature="$Jc:$Jw($lc, String, Byte[])" />
-      <method signature="void RemoteTableLocalStore::@WriteAllBytesAtomic(string, byte[])" newName="$kw" oldStackTraceSignature="RemoteTableLocalStore:WriteAllBytesAtomic(String, Byte[])" newStackTraceSignature="$Jc:$kw(String, Byte[])" />
-      <method signature="void RemoteTableLocalStore::@WriteAllTextAtomic(string, string)" newName="$Kw" oldStackTraceSignature="RemoteTableLocalStore:WriteAllTextAtomic(String, String)" newStackTraceSignature="$Jc:$Kw(String, String)" />
+      <method signature="string RemoteTableLocalStore::@CreateBatch()" newName="$jw" oldStackTraceSignature="RemoteTableLocalStore:CreateBatch()" newStackTraceSignature="$Jc:$jw()" />
+      <method signature="string RemoteTableLocalStore::@GetBatchFile(string, string)" newName="$Jw" oldStackTraceSignature="RemoteTableLocalStore:GetBatchFile(String, String)" newStackTraceSignature="$Jc:$Jw(String, String)" />
+      <method signature="void RemoteTableLocalStore::@Commit([Hotfix]RemoteTableLocalStore/Snapshot)" newName="$kw" oldStackTraceSignature="RemoteTableLocalStore:Commit(Snapshot)" newStackTraceSignature="$Jc:$kw(Snapshot)" />
+      <method signature="void RemoteTableLocalStore::@DiscardBatch(string)" newName="$Kw" oldStackTraceSignature="RemoteTableLocalStore:DiscardBatch(String)" newStackTraceSignature="$Jc:$Kw(String)" />
+      <method signature="void RemoteTableLocalStore::@WriteTextAtomic(string, string)" newName="$FW" oldStackTraceSignature="RemoteTableLocalStore:WriteTextAtomic(String, String)" newStackTraceSignature="$Jc:$FW(String, String)" />
     </type>
     <type fullName="RemoteTableManager" newFullName="$kc" status="Renamed">
       <field signature="[System.Core]System.Collections.Generic.HashSet`1&lt;string&gt; s_SyncTableNames" newName="$dI" />
@@ -9668,6 +9683,7 @@
       <method signature="int RemoteTableManager::@GetSyncTimeoutSeconds()" newName="$mw" oldStackTraceSignature="RemoteTableManager:GetSyncTimeoutSeconds()" newStackTraceSignature="$kc:$mw()" />
       <method signature="string RemoteTableManager::@GetAppVersion()" newName="$rv" oldStackTraceSignature="RemoteTableManager:GetAppVersion()" newStackTraceSignature="$kc:$rv()" />
       <method signature="string RemoteTableManager::@GetRemoteBaseUrl()" newName="$Mw" oldStackTraceSignature="RemoteTableManager:GetRemoteBaseUrl()" newStackTraceSignature="$kc:$Mw()" />
+      <method signature="string RemoteTableManager::@GetPlatform()" newName="$gW" oldStackTraceSignature="RemoteTableManager:GetPlatform()" newStackTraceSignature="$kc:$gW()" />
       <method signature="bool RemoteTableManager::@IsRemoteSyncTable(string)" newName="$nw" oldStackTraceSignature="RemoteTableManager:IsRemoteSyncTable(String)" newStackTraceSignature="$kc:$nw(String)" />
       <method signature="bool RemoteTableManager::@TryGetTableKind(string, [Hotfix]RemoteTableKind&amp;)" newName="$Nw" oldStackTraceSignature="RemoteTableManager:TryGetTableKind(String, RemoteTableKind&amp;)" newStackTraceSignature="$kc:$Nw(String, $lc&amp;)" />
       <method signature="bool RemoteTableManager::@IsExcludedDataTable(string)" newName="$ow" oldStackTraceSignature="RemoteTableManager:IsExcludedDataTable(String)" newStackTraceSignature="$kc:$ow(String)" />
@@ -9711,10 +9727,31 @@
       <method signature="void RemoteTableManifestEntry::set_Path([Hotfix]RemoteTableManifestEntry, string)" newName="$EW" oldStackTraceSignature="RemoteTableManifestEntry:set_Path(String)" newStackTraceSignature="RemoteTableManifestEntry:$EW(String)" />
     </type>
     <type fullName="RemoteTableSyncService" newFullName="$Lc" status="Renamed">
+      <field signature="bool s_Syncing" newName="$XI" />
       <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask RemoteTableSyncService::@SyncAsync(int, System.Action`1&lt;float&gt;)" newName="$fW" oldStackTraceSignature="RemoteTableSyncService:SyncAsync(Int32, Action`1)" newStackTraceSignature="$Lc:$fW(Int32, Action`1)" />
-      <method signature="System.Collections.Generic.List`1&lt;System.Collections.Generic.KeyValuePair`2&lt;string,[Hotfix]RemoteTableManifestEntry&gt;&gt; RemoteTableSyncService::@BuildUpdateList([Hotfix]RemoteTableManifest, [Hotfix]RemoteTableManifest)" newName="$FW" oldStackTraceSignature="RemoteTableSyncService:BuildUpdateList(RemoteTableManifest, RemoteTableManifest)" newStackTraceSignature="$Lc:$FW(RemoteTableManifest, RemoteTableManifest)" />
-      <method signature="[Hotfix]RemoteTableManifest RemoteTableSyncService::@CloneManifest([Hotfix]RemoteTableManifest)" newName="$gW" oldStackTraceSignature="RemoteTableSyncService:CloneManifest(RemoteTableManifest)" newStackTraceSignature="$Lc:$gW(RemoteTableManifest)" />
-      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;byte[]&gt; RemoteTableSyncService::@DownloadBytesAsync(string, System.Threading.CancellationToken, System.Action`1&lt;float&gt;)" newName="$GW" oldStackTraceSignature="RemoteTableSyncService:DownloadBytesAsync(String, CancellationToken, Action`1)" newStackTraceSignature="$Lc:$GW(String, CancellationToken, Action`1)" />
+      <method signature="[Hotfix]RemoteTableManifest RemoteTableSyncService::@SelectTables([Hotfix]RemoteTableManifest)" newName="$GW" oldStackTraceSignature="RemoteTableSyncService:SelectTables(RemoteTableManifest)" newStackTraceSignature="$Lc:$GW(RemoteTableManifest)" />
+      <method signature="bool RemoteTableSyncService::@TryResolveTable(string, string&amp;, [Hotfix]RemoteTableKind&amp;)" newName="$hW" oldStackTraceSignature="RemoteTableSyncService:TryResolveTable(String, String&amp;, RemoteTableKind&amp;)" newStackTraceSignature="$Lc:$hW(String, String&amp;, $lc&amp;)" />
+      <method signature="void RemoteTableSyncService::@ValidatePath(string)" newName="$HW" oldStackTraceSignature="RemoteTableSyncService:ValidatePath(String)" newStackTraceSignature="$Lc:$HW(String)" />
+      <method signature="bool RemoteTableSyncService::@SameContent([Hotfix]RemoteTableManifestEntry, [Hotfix]RemoteTableManifestEntry)" newName="$iW" oldStackTraceSignature="RemoteTableSyncService:SameContent(RemoteTableManifestEntry, RemoteTableManifestEntry)" newStackTraceSignature="$Lc:$iW(RemoteTableManifestEntry, RemoteTableManifestEntry)" />
+      <method signature="bool RemoteTableSyncService::@IsUnchanged([Hotfix]RemoteTableLocalStore/Snapshot, long, [Hotfix]RemoteTableManifest)" newName="$uW" oldStackTraceSignature="RemoteTableSyncService:IsUnchanged(Snapshot, Int64, RemoteTableManifest)" newStackTraceSignature="$Lc:$uW(Snapshot, Int64, RemoteTableManifest)" />
+      <method signature="void RemoteTableSyncService::@ValidateTableBytes([Hotfix]RemoteTableKind, string, byte[])" newName="$ZW" oldStackTraceSignature="RemoteTableSyncService:ValidateTableBytes(RemoteTableKind, String, Byte[])" newStackTraceSignature="$Lc:$ZW($lc, String, Byte[])" />
+      <method signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1&lt;byte[]&gt; RemoteTableSyncService::@SendAsync([UnityEngine.UnityWebRequestModule]UnityEngine.Networking.UnityWebRequest, System.Threading.CancellationToken, System.Action`1&lt;float&gt;)" newName="$WY" oldStackTraceSignature="RemoteTableSyncService:SendAsync(UnityWebRequest, CancellationToken, Action`1)" newStackTraceSignature="$Lc:$WY(UnityWebRequest, CancellationToken, Action`1)" />
+    </type>
+    <type fullName="RemoteTableSyncService/&lt;&gt;c" newFullName="" status="NotRenamed">
+      <field signature="[Hotfix]RemoteTableSyncService/&lt;&gt;c &lt;&gt;9" newName="$tk" />
+      <field signature="System.Func`2&lt;string,bool&gt; &lt;&gt;9__4_0" newName="$wk" />
+      <method signature="bool RemoteTableSyncService/&lt;&gt;c::&lt;ValidatePath&gt;b__4_0([Hotfix]RemoteTableSyncService/&lt;&gt;c, string)" newName="$ABA" oldStackTraceSignature="&lt;&gt;c:&lt;ValidatePath&gt;b__4_0(String)" newStackTraceSignature="&lt;&gt;c:$ABA(String)" />
+    </type>
+    <type fullName="RemoteTableSyncService/&lt;&gt;c__DisplayClass1_0" newFullName="$Lc/$Kc" status="Renamed">
+      <field signature="System.Action`1&lt;float&gt; onProgress" newName="$Wk" />
+      <method signature="void RemoteTableSyncService/&lt;&gt;c__DisplayClass1_0::&lt;SyncAsync&gt;b__0([Hotfix]RemoteTableSyncService/&lt;&gt;c__DisplayClass1_0, float)" newName="$xdA" oldStackTraceSignature="&lt;&gt;c__DisplayClass1_0:&lt;SyncAsync&gt;b__0(Single)" newStackTraceSignature="$Kc:$xdA(Single)" />
+    </type>
+    <type fullName="RemoteTableSyncService/&lt;&gt;c__DisplayClass1_1" newFullName="$Lc/$mc" status="Renamed">
+      <field signature="int completed" newName="$Zk" />
+      <field signature="[Hotfix]RemoteTableManifest selected" newName="$dM" />
+      <field signature="[Hotfix]RemoteTableSyncService/&lt;&gt;c__DisplayClass1_0 CS$&lt;&gt;8__locals1" newName="$SM" />
+      <field signature="System.Action`1&lt;float&gt; &lt;&gt;9__1" newName="$Cn" />
+      <method signature="void RemoteTableSyncService/&lt;&gt;c__DisplayClass1_1::&lt;SyncAsync&gt;b__1([Hotfix]RemoteTableSyncService/&lt;&gt;c__DisplayClass1_1, float)" newName="$XdA" oldStackTraceSignature="&lt;&gt;c__DisplayClass1_1:&lt;SyncAsync&gt;b__1(Single)" newStackTraceSignature="$mc:$XdA(Single)" />
     </type>
     <type fullName="RemoteTableSyncService/&lt;&gt;c__DisplayClass2_0" newFullName="$Lc/$mc" status="Renamed">
       <field signature="System.Action`1&lt;float&gt; onProgress" newName="$Cn" />
@@ -9727,6 +9764,10 @@
       <field signature="[Hotfix]RemoteTableSyncService/&lt;&gt;c__DisplayClass2_0 CS$&lt;&gt;8__locals1" newName="$en" />
       <method signature="void RemoteTableSyncService/&lt;&gt;c__DisplayClass2_1::&lt;SyncAsync&gt;b__2([Hotfix]RemoteTableSyncService/&lt;&gt;c__DisplayClass2_1, float)" newName="$iW" oldStackTraceSignature="&lt;&gt;c__DisplayClass2_1:&lt;SyncAsync&gt;b__2(Single)" newStackTraceSignature="$Mc:$iW(Single)" />
     </type>
+    <type fullName="RemoteTableSyncService/&lt;&gt;c__DisplayClass6_0" newFullName="$Lc/$Mc" status="Renamed">
+      <field signature="[Hotfix]RemoteTableLocalStore/Snapshot active" newName="$dn" />
+      <method signature="bool RemoteTableSyncService/&lt;&gt;c__DisplayClass6_0::&lt;IsUnchanged&gt;b__0([Hotfix]RemoteTableSyncService/&lt;&gt;c__DisplayClass6_0, System.Collections.Generic.KeyValuePair`2&lt;string,[Hotfix]RemoteTableManifestEntry&gt;)" newName="$ydA" oldStackTraceSignature="&lt;&gt;c__DisplayClass6_0:&lt;IsUnchanged&gt;b__0(KeyValuePair`2)" newStackTraceSignature="$Mc:$ydA(KeyValuePair`2)" />
+    </type>
     <type fullName="RemoteTableSyncService/&lt;DownloadBytesAsync&gt;d__5" newFullName="$Lc/$nc" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$En" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1&lt;byte[]&gt; &lt;&gt;t__builder" newName="$vN" />
@@ -9736,6 +9777,37 @@
       <field signature="[UnityEngine.UnityWebRequestModule]UnityEngine.Networking.UnityWebRequest &lt;request&gt;5__2" newName="$bo" />
       <field signature="[UnityEngine.UnityWebRequestModule]UnityEngine.Networking.UnityWebRequestAsyncOperation &lt;operation&gt;5__3" newName="$co" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.YieldAwaitable/Awaiter &lt;&gt;u__1" newName="$eo" />
+    </type>
+    <type fullName="RemoteTableSyncService/&lt;SendAsync&gt;d__8" newFullName="$Lc/$nc" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$Dn" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1&lt;byte[]&gt; &lt;&gt;t__builder" newName="$en" />
+      <field signature="System.Threading.CancellationToken token" newName="$En" />
+      <field signature="[UnityEngine.UnityWebRequestModule]UnityEngine.Networking.UnityWebRequest request" newName="$vN" />
+      <field signature="System.Action`1&lt;float&gt; progress" newName="$VN" />
+      <field signature="[UnityEngine.UnityWebRequestModule]UnityEngine.Networking.UnityWebRequestAsyncOperation &lt;operation&gt;5__2" newName="$wN" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.YieldAwaitable/Awaiter &lt;&gt;u__1" newName="$XN" />
+    </type>
+    <type fullName="RemoteTableSyncService/&lt;SyncAsync&gt;d__1" newFullName="$Lc/$Nc" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$bo" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$co" />
+      <field signature="System.Action`1&lt;float&gt; onProgress" newName="$eo" />
+      <field signature="int timeoutSeconds" newName="$ko" />
+      <field signature="[Hotfix]RemoteTableSyncService/&lt;&gt;c__DisplayClass1_1 &lt;&gt;8__1" newName="$Qo" />
+      <field signature="[Hotfix]RemoteTableSyncService/&lt;&gt;c__DisplayClass1_0 &lt;&gt;8__2" newName="$ro" />
+      <field signature="string &lt;batch&gt;5__2" newName="$So" />
+      <field signature="System.Threading.CancellationTokenSource &lt;timeout&gt;5__3" newName="$To" />
+      <field signature="System.Threading.CancellationToken &lt;token&gt;5__4" newName="$uo" />
+      <field signature="string &lt;root&gt;5__5" newName="$Wo" />
+      <field signature="[UnityEngine.UnityWebRequestModule]UnityEngine.Networking.UnityWebRequest &lt;resolve&gt;5__6" newName="$Xo" />
+      <field signature="long &lt;configId&gt;5__7" newName="$yo" />
+      <field signature="[Hotfix]RemoteTableLocalStore/Snapshot &lt;active&gt;5__8" newName="$Zo" />
+      <field signature="[Hotfix]RemoteTableLocalStore/Snapshot &lt;pending&gt;5__9" newName="$mO" />
+      <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;byte[]&gt; &lt;&gt;u__1" newName="$MO" />
+      <field signature="System.Collections.Generic.Dictionary`2/Enumerator&lt;string,[Hotfix]RemoteTableManifestEntry&gt; &lt;&gt;7__wrap9" newName="$nO" />
+      <field signature="string &lt;name&gt;5__11" newName="$NO" />
+      <field signature="[Hotfix]RemoteTableManifestEntry &lt;entry&gt;5__12" newName="$oO" />
+      <field signature="[Hotfix]RemoteTableKind &lt;kind&gt;5__13" newName="$qO" />
+      <field signature="[UnityEngine.UnityWebRequestModule]UnityEngine.Networking.UnityWebRequest &lt;download&gt;5__14" newName="$QO" />
     </type>
     <type fullName="RemoteTableSyncService/&lt;SyncAsync&gt;d__2" newFullName="$Lc/$Nc" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$ko" />
