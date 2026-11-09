@@ -149,16 +149,19 @@ public class InterstitialAdController
     {
         InterstitialCompletion completion = null;
         // Raised when the ad is estimated to have earned money.
-        ad.OnAdPaid += async (AdValue adValue) =>
+        ad.OnAdPaid += (AdValue adValue) =>
         {
-            await Cysharp.Threading.Tasks.UniTask.SwitchToMainThread();
-            if (completion == null && ad == _interstitialAd) completion = pendingCompletion;
             Log.Info(String.Format("Interstitial ad paid {0} {1}.",
                 adValue.Value,
                 adValue.CurrencyCode));
             var revenue = adValue.Value / 1000000f;
             AdjustManager.Instance.LogAdRevenue(revenue, adValue.CurrencyCode, "admob_sdk");
-            PcardGiftRewardSession.Add(revenue);
+            // Submit revenue immediately; only game/UI state waits for the Unity thread.
+            Cysharp.Threading.Tasks.UniTask.Post(() =>
+            {
+                if (completion == null && ad == _interstitialAd) completion = pendingCompletion;
+                PcardGiftRewardSession.Add(revenue);
+            });
 
         };
         // Raised when an impression is recorded for an ad.
@@ -188,11 +191,8 @@ public class InterstitialAdController
             LoadAd();
         };
         // Raised when the ad failed to open full screen content.
-        ad.OnAdFullScreenContentFailed += async (AdError error) =>
+        ad.OnAdFullScreenContentFailed += (AdError error) =>
         {
-            await Cysharp.Threading.Tasks.UniTask.SwitchToMainThread();
-            if (completion == null && ad == _interstitialAd) completion = pendingCompletion;
-            if (completion != null) await completion.Finish();
             CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display_failed);
             Log.Error("Interstitial ad failed to open full screen content with error : "
                 + error);

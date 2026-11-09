@@ -190,7 +190,6 @@ public class ArrowMaxAdsController
     {
         // Interstitial ad failed to display. We recommend loading the next ad
         Log.Info("Interstitial failed to display with error code: " + errorInfo.Code);
-        CompleteInterstitial(adInfo);
         rewardedCallBack?.Invoke(false);
         rewardedCallBack = null;
         LoadInterstitial();
@@ -209,8 +208,6 @@ public class ArrowMaxAdsController
         CompleteInterstitial(adInfo);
         LoadInterstitial();
         
-
-
     }
 
     private async void CompleteInterstitial(MaxSdkBase.AdInfo adInfo)
@@ -222,17 +219,18 @@ public class ArrowMaxAdsController
         finally { interstitialCompletions.Remove(placement); }
     }
 
-    private async void OnInterstitialRevenuePaidEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
+    private void OnInterstitialRevenuePaidEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
     {
-        await Cysharp.Threading.Tasks.UniTask.SwitchToMainThread();
         // Interstitial ad revenue paid. Use this callback to track user revenue.
         Log.Info("Interstitial revenue paid");
         
-        PcardGiftRewardSession.Add(adInfo.Revenue);
-        
         TrackAdRevenue(adInfo);
-        
-        adsource = string.Empty;
+        // Submit revenue immediately; only game/UI state waits for the Unity thread.
+        Cysharp.Threading.Tasks.UniTask.Post(() =>
+        {
+            PcardGiftRewardSession.Add(adInfo.Revenue);
+            adsource = string.Empty;
+        });
     }
 
     #endregion
