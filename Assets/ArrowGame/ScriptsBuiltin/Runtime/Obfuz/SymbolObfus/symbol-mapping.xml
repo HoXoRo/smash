@@ -426,16 +426,16 @@
       <field signature="int $Obfuz$RVA_Value56" newName="$lp" />
       <field signature="int $Obfuz$RVA_Value57" newName="$iT" />
       <field signature="int $Obfuz$RVA_Value58" newName="$Cy" />
-      <field signature="int $Obfuz$RVA_Value59" newName="$vQ" />
+      <field signature="int $Obfuz$RVA_Value59" newName="$Aq" />
       <field signature="int $Obfuz$RVA_Value60" newName="$Qy" />
       <field signature="int $Obfuz$RVA_Value61" newName="$ry" />
       <field signature="int $Obfuz$RVA_Value62" newName="$Ry" />
       <field signature="int $Obfuz$RVA_Value63" newName="$jy" />
-      <field signature="string $Obfuz$RVA_Value64" newName="$Fr" />
+      <field signature="string $Obfuz$RVA_Value64" newName="$bq" />
       <field signature="string $Obfuz$RVA_Value65" newName="$sy" />
       <field signature="string $Obfuz$RVA_Value66" newName="$Sy" />
-      <field signature="float $Obfuz$RVA_Value67" newName="$gr" />
-      <field signature="int $Obfuz$RVA_Value68" newName="$Ir" />
+      <field signature="float $Obfuz$RVA_Value67" newName="$eq" />
+      <field signature="int $Obfuz$RVA_Value68" newName="$Eq" />
       <field signature="int $Obfuz$RVA_Value69" newName="$NP" />
       <field signature="int $Obfuz$RVA_Value70" newName="$oP" />
       <field signature="int $Obfuz$RVA_Value71" newName="$dQ" />
@@ -449,28 +449,28 @@
       <field signature="int $Obfuz$RVA_Value79" newName="$Vy" />
       <field signature="int $Obfuz$RVA_Value80" newName="$wy" />
       <field signature="int $Obfuz$RVA_Value81" newName="$Wy" />
-      <field signature="float $Obfuz$RVA_Value82" newName="$Jr" />
+      <field signature="float $Obfuz$RVA_Value82" newName="$fq" />
       <field signature="float $Obfuz$RVA_Value83" newName="$yy" />
       <field signature="float $Obfuz$RVA_Value84" newName="$Yy" />
       <field signature="float $Obfuz$RVA_Value85" newName="$aY" />
       <field signature="float $Obfuz$RVA_Value86" newName="$AY" />
       <field signature="float $Obfuz$RVA_Value87" newName="$bY" />
-      <field signature="int $Obfuz$RVA_Value88" newName="$HT" />
+      <field signature="int $Obfuz$RVA_Value88" newName="$Fq" />
       <field signature="int $Obfuz$RVA_Value89" newName="$oQ" />
       <field signature="int $Obfuz$RVA_Value90" newName="$Ty" />
-      <field signature="long $Obfuz$RVA_Value91" newName="$lX" />
-      <field signature="int $Obfuz$RVA_Value92" newName="$mX" />
+      <field signature="long $Obfuz$RVA_Value91" newName="$gq" />
+      <field signature="int $Obfuz$RVA_Value92" newName="$Gq" />
       <field signature="int $Obfuz$RVA_Value93" newName="$dY" />
       <field signature="int $Obfuz$RVA_Value94" newName="$eY" />
       <field signature="int $Obfuz$RVA_Value95" newName="$Ny" />
       <field signature="int $Obfuz$RVA_Value96" newName="$EY" />
-      <field signature="float $Obfuz$RVA_Value97" newName="$MX" />
+      <field signature="float $Obfuz$RVA_Value97" newName="$MQ" />
       <field signature="float $Obfuz$RVA_Value98" newName="$daA" />
       <field signature="float $Obfuz$RVA_Value99" newName="$eaA" />
-      <field signature="int $Obfuz$RVA_Value100" newName="$nX" />
-      <field signature="string $Obfuz$RVA_Value101" newName="$NX" />
+      <field signature="int $Obfuz$RVA_Value100" newName="$tQ" />
+      <field signature="string $Obfuz$RVA_Value101" newName="$vQ" />
       <field signature="string $Obfuz$RVA_Value102" newName="$gaA" />
-      <field signature="int $Obfuz$RVA_Value103" newName="$oX" />
+      <field signature="int $Obfuz$RVA_Value103" newName="$Fr" />
       <field signature="int $Obfuz$RVA_Value104" newName="$py" />
       <field signature="int $Obfuz$RVA_Value105" newName="$xQ" />
       <field signature="int $Obfuz$RVA_Value106" newName="$Py" />
@@ -481,22 +481,22 @@
       <field signature="int $Obfuz$RVA_Value111" newName="$iaA" />
       <field signature="int $Obfuz$RVA_Value112" newName="$IaA" />
       <field signature="int $Obfuz$RVA_Value113" newName="$jaA" />
-      <field signature="float $Obfuz$RVA_Value114" newName="$hy" />
+      <field signature="float $Obfuz$RVA_Value114" newName="$gr" />
       <field signature="float $Obfuz$RVA_Value115" newName="$KaA" />
       <field signature="float $Obfuz$RVA_Value116" newName="$laA" />
-      <field signature="string $Obfuz$RVA_Value117" newName="$Jy" />
+      <field signature="string $Obfuz$RVA_Value117" newName="$Ir" />
       <field signature="string $Obfuz$RVA_Value118" newName="$LaA" />
       <field signature="string $Obfuz$RVA_Value119" newName="$naA" />
-      <field signature="int $Obfuz$RVA_Value120" newName="$Ly" />
-      <field signature="float $Obfuz$RVA_Value121" newName="$ty" />
+      <field signature="int $Obfuz$RVA_Value120" newName="$Jr" />
+      <field signature="float $Obfuz$RVA_Value121" newName="$HT" />
       <field signature="int $Obfuz$RVA_Value122" newName="$DaA" />
-      <field signature="int $Obfuz$RVA_Value123" newName="$uy" />
-      <field signature="float $Obfuz$RVA_Value124" newName="$xy" />
-      <field signature="float $Obfuz$RVA_Value125" newName="$Xy" />
-      <field signature="int $Obfuz$RVA_Value126" newName="$BY" />
-      <field signature="string $Obfuz$RVA_Value127" newName="$CY" />
+      <field signature="int $Obfuz$RVA_Value123" newName="$lX" />
+      <field signature="float $Obfuz$RVA_Value124" newName="$mX" />
+      <field signature="float $Obfuz$RVA_Value125" newName="$MX" />
+      <field signature="int $Obfuz$RVA_Value126" newName="$nX" />
+      <field signature="string $Obfuz$RVA_Value127" newName="$NX" />
       <field signature="int $Obfuz$RVA_Value128" newName="$FaA" />
-      <field signature="int $Obfuz$RVA_Value129" newName="$DY" />
+      <field signature="int $Obfuz$RVA_Value129" newName="$oX" />
       <field signature="int $Obfuz$RVA_Value130" newName="$Hr" />
       <field signature="int $Obfuz$RVA_Value131" newName="$ir" />
       <field signature="int $Obfuz$RVA_Value132" newName="$Sr" />
@@ -505,10 +505,10 @@
       <field signature="int $Obfuz$RVA_Value135" newName="$SaA" />
       <field signature="int $Obfuz$RVA_Value136" newName="$vI" />
       <field signature="int $Obfuz$RVA_Value137" newName="$VI" />
-      <field signature="float $Obfuz$RVA_Value138" newName="$CaA" />
-      <field signature="string $Obfuz$RVA_Value139" newName="$EaA" />
-      <field signature="int $Obfuz$RVA_Value140" newName="$faA" />
-      <field signature="int $Obfuz$RVA_Value141" newName="$GaA" />
+      <field signature="float $Obfuz$RVA_Value138" newName="$hy" />
+      <field signature="string $Obfuz$RVA_Value139" newName="$Jy" />
+      <field signature="int $Obfuz$RVA_Value140" newName="$Ly" />
+      <field signature="int $Obfuz$RVA_Value141" newName="$ty" />
       <field signature="int $Obfuz$RVA_Value142" newName="$yI" />
       <field signature="int $Obfuz$RVA_Value143" newName="$YI" />
       <field signature="int $Obfuz$RVA_Value144" newName="$zI" />
@@ -645,8 +645,8 @@
       <field signature="int $Obfuz$RVA_Value275" newName="$VaA" />
       <field signature="int $Obfuz$RVA_Value276" newName="$waA" />
       <field signature="int $Obfuz$RVA_Value277" newName="$WaA" />
-      <field signature="string $Obfuz$RVA_Value278" newName="$haA" />
-      <field signature="string $Obfuz$RVA_Value279" newName="$JaA" />
+      <field signature="string $Obfuz$RVA_Value278" newName="$uy" />
+      <field signature="string $Obfuz$RVA_Value279" newName="$xy" />
       <field signature="string $Obfuz$RVA_Value280" newName="$cY" />
       <field signature="string $Obfuz$RVA_Value281" newName="$PaA" />
       <field signature="string $Obfuz$RVA_Value282" newName="$qaA" />
@@ -654,21 +654,21 @@
       <field signature="string $Obfuz$RVA_Value284" newName="$ZaA" />
       <field signature="string $Obfuz$RVA_Value285" newName="$aAA" />
       <field signature="string $Obfuz$RVA_Value286" newName="$AAA" />
-      <field signature="int $Obfuz$RVA_Value287" newName="$NaA" />
-      <field signature="int $Obfuz$RVA_Value288" newName="$oaA" />
+      <field signature="int $Obfuz$RVA_Value287" newName="$Xy" />
+      <field signature="int $Obfuz$RVA_Value288" newName="$BY" />
       <field signature="int $Obfuz$RVA_Value289" newName="$taA" />
       <field signature="int $Obfuz$RVA_Value290" newName="$TaA" />
       <field signature="int $Obfuz$RVA_Value291" newName="$cAA" />
       <field signature="int $Obfuz$RVA_Value292" newName="$SAA" />
       <field signature="int $Obfuz$RVA_Value293" newName="$tAA" />
       <field signature="int $Obfuz$RVA_Value294" newName="$TAA" />
-      <field signature="float $Obfuz$RVA_Value295" newName="$OaA" />
-      <field signature="float $Obfuz$RVA_Value296" newName="$paA" />
+      <field signature="float $Obfuz$RVA_Value295" newName="$CY" />
+      <field signature="float $Obfuz$RVA_Value296" newName="$DY" />
       <field signature="float $Obfuz$RVA_Value297" newName="$CbA" />
       <field signature="float $Obfuz$RVA_Value298" newName="$dbA" />
       <field signature="float $Obfuz$RVA_Value299" newName="$DbA" />
-      <field signature="int $Obfuz$RVA_Value300" newName="$QaA" />
-      <field signature="int $Obfuz$RVA_Value301" newName="$raA" />
+      <field signature="int $Obfuz$RVA_Value300" newName="$CaA" />
+      <field signature="int $Obfuz$RVA_Value301" newName="$EaA" />
       <field signature="int $Obfuz$RVA_Value302" newName="$aK" />
       <field signature="int $Obfuz$RVA_Value303" newName="$AK" />
       <field signature="int $Obfuz$RVA_Value304" newName="$bK" />
@@ -2594,6 +2594,11 @@
       <method signature="void ArrowMaxAdsController::&lt;InitializeSDK&gt;b__14_0([Hotfix]ArrowMaxAdsController, [MaxSdk.Scripts]MaxSdkBase/SdkConfiguration)" newName="$It" oldStackTraceSignature="ArrowMaxAdsController:&lt;InitializeSDK&gt;b__14_0(SdkConfiguration)" newStackTraceSignature="$Tb:$It(SdkConfiguration)" />
       <method signature="void ArrowMaxAdsController::&lt;OnInterstitialFailedEvent&gt;b__21_0([Hotfix]ArrowMaxAdsController)" newName="$jt" oldStackTraceSignature="ArrowMaxAdsController:&lt;OnInterstitialFailedEvent&gt;b__21_0()" newStackTraceSignature="$Tb:$jt()" />
       <method signature="void ArrowMaxAdsController::&lt;OnRewardedAdFailedEvent&gt;b__33_0([Hotfix]ArrowMaxAdsController)" newName="$Jt" oldStackTraceSignature="ArrowMaxAdsController:&lt;OnRewardedAdFailedEvent&gt;b__33_0()" newStackTraceSignature="$Tb:$Jt()" />
+    </type>
+    <type fullName="ArrowMaxAdsController/&lt;&gt;c__DisplayClass27_0" newFullName="$Tb/$DC" status="Renamed">
+      <field signature="[MaxSdk.Scripts]MaxSdkBase/AdInfo adInfo" newName="$wI" />
+      <field signature="[Hotfix]ArrowMaxAdsController &lt;&gt;4__this" newName="$tP" />
+      <method signature="void ArrowMaxAdsController/&lt;&gt;c__DisplayClass27_0::&lt;OnInterstitialRevenuePaidEvent&gt;b__0([Hotfix]ArrowMaxAdsController/&lt;&gt;c__DisplayClass27_0)" newName="$ux" oldStackTraceSignature="&lt;&gt;c__DisplayClass27_0:&lt;OnInterstitialRevenuePaidEvent&gt;b__0()" newStackTraceSignature="$DC:$ux()" />
     </type>
     <type fullName="ArrowMaxAdsController/&lt;CompleteInterstitial&gt;d__26" newFullName="$Tb/$cC" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$PP" />
@@ -7249,7 +7254,7 @@
       <field signature="int &lt;&gt;1__state" newName="$BU" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$cU" />
       <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Entry entry" newName="$CU" />
-      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Entry &lt;&gt;7__wrap1" newName="$MQ" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Entry &lt;&gt;7__wrap1" newName="$ZP" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;!0&gt; &lt;&gt;u__1" newName="$DU" />
     </type>
     <type fullName="Gameplay.Level.GameplayAssetCache/&lt;Preload&gt;d__17" newFullName="$i.$XC/$bd" status="Renamed">
@@ -7283,7 +7288,7 @@
       <field signature="[Hotfix]Gameplay.Particles.ParticleData &lt;effects&gt;5__2" newName="$sAA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Objects.ObjectData&gt; &lt;&gt;u__1" newName="$sU" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Particles.ParticleData&gt; &lt;&gt;u__2" newName="$SU" />
-      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Lease &lt;&gt;7__wrap2" newName="$tQ" />
+      <field signature="[Hotfix]Gameplay.Level.GameplayAssetCache/Lease &lt;&gt;7__wrap2" newName="$aq" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[UnityEngine.PhysicsModule]UnityEngine.PhysicsMaterial&gt; &lt;&gt;u__3" newName="$TU" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__4" newName="$UAA" />
     </type>
@@ -8553,9 +8558,11 @@
       <field signature="System.Action &lt;&gt;9__9_1" newName="$wP" />
       <field signature="System.Action &lt;&gt;9__9_2" newName="$WP" />
       <field signature="System.Action &lt;&gt;9__9_3" newName="$xP" />
+      <field signature="System.Action`1&lt;[GoogleMobileAds]GoogleMobileAds.Api.AdError&gt; &lt;&gt;9__9_5" newName="$TP" />
       <method signature="void InterstitialAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__9_1([Hotfix]InterstitialAdController/&lt;&gt;c)" newName="$mt" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__9_1()" newStackTraceSignature="&lt;&gt;c:$mt()" />
       <method signature="void InterstitialAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__9_2([Hotfix]InterstitialAdController/&lt;&gt;c)" newName="$Rv" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__9_2()" newStackTraceSignature="&lt;&gt;c:$Rv()" />
       <method signature="void InterstitialAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__9_3([Hotfix]InterstitialAdController/&lt;&gt;c)" newName="$LV" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__9_3()" newStackTraceSignature="&lt;&gt;c:$LV()" />
+      <method signature="void InterstitialAdController/&lt;&gt;c::&lt;RegisterEventHandlers&gt;b__9_5([Hotfix]InterstitialAdController/&lt;&gt;c, [GoogleMobileAds]GoogleMobileAds.Api.AdError)" newName="$BhA" oldStackTraceSignature="&lt;&gt;c:&lt;RegisterEventHandlers&gt;b__9_5(AdError)" newStackTraceSignature="&lt;&gt;c:$BhA(AdError)" />
     </type>
     <type fullName="InterstitialAdController/&lt;&gt;c__DisplayClass9_0" newFullName="$bC/$EC" status="Renamed">
       <field signature="[Hotfix]InterstitialCompletion completion" newName="$XP" />
@@ -8563,7 +8570,6 @@
       <field signature="[Hotfix]InterstitialAdController &lt;&gt;4__this" newName="$YP" />
       <method signature="void InterstitialAdController/&lt;&gt;c__DisplayClass9_0::&lt;RegisterEventHandlers&gt;b__0([Hotfix]InterstitialAdController/&lt;&gt;c__DisplayClass9_0, [GoogleMobileAds.Core]GoogleMobileAds.Api.AdValue)" newName="$tx" oldStackTraceSignature="&lt;&gt;c__DisplayClass9_0:&lt;RegisterEventHandlers&gt;b__0(AdValue)" newStackTraceSignature="$EC:$tx(AdValue)" />
       <method signature="void InterstitialAdController/&lt;&gt;c__DisplayClass9_0::&lt;RegisterEventHandlers&gt;b__4([Hotfix]InterstitialAdController/&lt;&gt;c__DisplayClass9_0)" newName="$Tx" oldStackTraceSignature="&lt;&gt;c__DisplayClass9_0:&lt;RegisterEventHandlers&gt;b__4()" newStackTraceSignature="$EC:$Tx()" />
-      <method signature="void InterstitialAdController/&lt;&gt;c__DisplayClass9_0::&lt;RegisterEventHandlers&gt;b__5([Hotfix]InterstitialAdController/&lt;&gt;c__DisplayClass9_0, [GoogleMobileAds]GoogleMobileAds.Api.AdError)" newName="$ux" oldStackTraceSignature="&lt;&gt;c__DisplayClass9_0:&lt;RegisterEventHandlers&gt;b__5(AdError)" newStackTraceSignature="$EC:$ux(AdError)" />
     </type>
     <type fullName="InterstitialAdController/&lt;&gt;c__DisplayClass9_0/&lt;&lt;RegisterEventHandlers&gt;b__0&gt;d" newFullName="$bC/$EC/$fC" status="Renamed">
       <field signature="int &lt;&gt;1__state" newName="$zP" />
@@ -8583,8 +8589,14 @@
       <field signature="int &lt;&gt;1__state" newName="$eq" />
       <field signature="System.Runtime.CompilerServices.AsyncVoidMethodBuilder &lt;&gt;t__builder" newName="$Eq" />
       <field signature="[Hotfix]InterstitialAdController/&lt;&gt;c__DisplayClass9_0 &lt;&gt;4__this" newName="$fq" />
+      <field signature="[GoogleMobileAds]GoogleMobileAds.Api.AdError error" newName="$wI" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.SwitchToMainThreadAwaitable/Awaiter &lt;&gt;u__1" newName="$gq" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter &lt;&gt;u__2" newName="$Gq" />
+    </type>
+    <type fullName="InterstitialAdController/&lt;&gt;c__DisplayClass9_1" newFullName="$bC/$fC" status="Renamed">
+      <field signature="float revenue" newName="$uP" />
+      <field signature="[Hotfix]InterstitialAdController/&lt;&gt;c__DisplayClass9_0 CS$&lt;&gt;8__locals1" newName="$UP" />
+      <method signature="void InterstitialAdController/&lt;&gt;c__DisplayClass9_1::&lt;RegisterEventHandlers&gt;b__6([Hotfix]InterstitialAdController/&lt;&gt;c__DisplayClass9_1)" newName="$chA" oldStackTraceSignature="&lt;&gt;c__DisplayClass9_1:&lt;RegisterEventHandlers&gt;b__6()" newStackTraceSignature="$fC:$chA()" />
     </type>
     <type fullName="InterstitialCompletion" newFullName="$Zc" status="Renamed">
       <field signature="System.Action callback" newName="$kP" />
@@ -9525,13 +9537,13 @@
       <field signature="int &lt;&gt;1__state" newName="$bbA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder &lt;&gt;t__builder" newName="$BbA" />
       <field signature="string &lt;sceneAsset&gt;5__2" newName="$cbA" />
-      <field signature="int &lt;level&gt;5__3" newName="$wI" />
-      <field signature="System.Threading.CancellationTokenSource &lt;cancellation&gt;5__4" newName="$sO" />
-      <field signature="System.IDisposable &lt;timeout&gt;5__5" newName="$SO" />
-      <field signature="System.Threading.CancellationToken &lt;token&gt;5__6" newName="$tO" />
-      <field signature="bool &lt;prepared&gt;5__7" newName="$Hp" />
-      <field signature="object &lt;&gt;7__wrap7" newName="$nP" />
-      <field signature="int &lt;&gt;7__wrap8" newName="$Fq" />
+      <field signature="int &lt;level&gt;5__3" newName="$sO" />
+      <field signature="System.Threading.CancellationTokenSource &lt;cancellation&gt;5__4" newName="$SO" />
+      <field signature="System.IDisposable &lt;timeout&gt;5__5" newName="$tO" />
+      <field signature="System.Threading.CancellationToken &lt;token&gt;5__6" newName="$Hp" />
+      <field signature="bool &lt;prepared&gt;5__7" newName="$nP" />
+      <field signature="object &lt;&gt;7__wrap7" newName="$vP" />
+      <field signature="int &lt;&gt;7__wrap8" newName="$zP" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;bool&gt; &lt;&gt;u__1" newName="$GbA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Level.LevelData&gt; &lt;&gt;u__2" newName="$hbA" />
       <field signature="[UniTask]Cysharp.Threading.Tasks.UniTask`1/Awaiter&lt;[Hotfix]Gameplay.Level.GameplayAssetCache/Lease&gt; &lt;&gt;u__3" newName="$HbA" />
