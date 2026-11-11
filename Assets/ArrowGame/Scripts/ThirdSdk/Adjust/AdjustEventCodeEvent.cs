@@ -1,7 +1,7 @@
 public static class AdjustEventCodeEvent
 {
     // 事件.xlsx: Adjust expects the event token, not the display name.
-    public const string install = "8nj8eo";
+    public const string install = "";
     public const string loading = "8ewutl";
     public const string ad_reward = "3wmq87";
     public const string cashout = "2sos46";

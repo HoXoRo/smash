@@ -1,6 +1,7 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -24,7 +25,7 @@ namespace UGF.EditorTools
                 return;
             }
 
-            string exportRoot = Path.GetFullPath(Path.Combine(Application.dataPath, "..", ExportRootFolderName, Application.version));
+            string exportRoot = GetNextExportDirectory(Application.version);
             Directory.CreateDirectory(exportRoot);
 
             RemoteTableManifest manifest = new RemoteTableManifest
@@ -59,6 +60,35 @@ namespace UGF.EditorTools
             AssetDatabase.Refresh();
             Debug.Log($"Export remote table json success: {exportRoot}");
             EditorUtility.RevealInFinder(exportRoot);
+        }
+
+        private static string GetNextExportDirectory(string appVersion)
+        {
+            string root = Path.GetFullPath(Path.Combine(Application.dataPath, "..", ExportRootFolderName));
+            string prefix = appVersion + "(";
+            int maxSequence = 0;
+
+            if (Directory.Exists(root))
+            {
+                foreach (string directory in Directory.EnumerateDirectories(root))
+                {
+                    string name = Path.GetFileName(directory);
+                    if (!name.StartsWith(prefix, StringComparison.Ordinal) || !name.EndsWith(")", StringComparison.Ordinal))
+                    {
+                        continue;
+                    }
+
+                    string sequenceText = name.Substring(prefix.Length, name.Length - prefix.Length - 1);
+                    if (int.TryParse(sequenceText, NumberStyles.None, CultureInfo.InvariantCulture, out int sequence)
+                        && sequence > maxSequence)
+                    {
+                        maxSequence = sequence;
+                    }
+                }
+            }
+
+            int nextSequence = checked(maxSequence + 1);
+            return Path.Combine(root, prefix + nextSequence.ToString(CultureInfo.InvariantCulture) + ")");
         }
 
         private static void ExportConfig(string configName, string exportRoot, RemoteTableManifest manifest)

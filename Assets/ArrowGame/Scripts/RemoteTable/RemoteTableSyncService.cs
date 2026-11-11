@@ -56,9 +56,18 @@ public static class RemoteTableSyncService
             RemoteTableLocalStore.Snapshot active = RemoteTableLocalStore.LoadActive();
             if (IsUnchanged(active, configId, selected))
             {
-                Log.Info("Remote tables unchanged. ConfigId={0}.", configId);
+                Log.Info("Remote tables unchanged. ConfigId={0}, Total={1}, Downloaded=0, Reused={1}.", configId, selected.Files.Count);
                 return;
             }
+
+            var added = selected.Files.Keys.Where(name => active == null || !active.Manifest.Files.ContainsKey(name)).OrderBy(name => name, StringComparer.Ordinal).ToArray();
+            var changed = selected.Files.Where(pair => active != null
+                && active.Manifest.Files.TryGetValue(pair.Key, out RemoteTableManifestEntry old)
+                && !SameContent(pair.Value, old)).Select(pair => pair.Key).OrderBy(name => name, StringComparer.Ordinal).ToArray();
+            var removed = active == null ? Array.Empty<string>()
+                : active.Manifest.Files.Keys.Where(name => !selected.Files.ContainsKey(name)).OrderBy(name => name, StringComparer.Ordinal).ToArray();
+            Log.Info("Remote table sync plan. PreviousConfigId={0}, ConfigId={1}, Total={2}, Added=[{3}], Changed=[{4}], Removed=[{5}].",
+                active?.ConfigId ?? 0, configId, selected.Files.Count, string.Join(", ", added), string.Join(", ", changed), string.Join(", ", removed));
 
             batch = RemoteTableLocalStore.CreateBatch();
             var pending = new RemoteTableLocalStore.Snapshot
@@ -66,6 +75,8 @@ public static class RemoteTableSyncService
                 ConfigId = configId, Batch = batch, Manifest = selected
             };
             int completed = 0;
+            int downloaded = 0;
+            int reused = 0;
             foreach (var pair in selected.Files)
             {
                 token.ThrowIfCancellationRequested();
@@ -73,7 +84,9 @@ public static class RemoteTableSyncService
                 RemoteTableManifestEntry entry = pair.Value;
                 RemoteTableManager.TryGetTableKind(name, out RemoteTableKind kind);
                 byte[] tableBytes;
-                if (active != null && active.ConfigId == configId
+                bool downloadedTable = false;
+                // Identical content can be reused across configuration groups.
+                if (active != null
                     && active.Manifest.Files.TryGetValue(name, out RemoteTableManifestEntry oldEntry)
                     && SameContent(entry, oldEntry))
                 {
@@ -92,18 +105,29 @@ public static class RemoteTableSyncService
                     if (raw.LongLength != entry.Size || !string.Equals(RemoteTableManager.ComputeMd5(raw), entry.Md5, StringComparison.OrdinalIgnoreCase))
                         throw new InvalidDataException("Remote table size/MD5 mismatch: " + name);
                     tableBytes = JsonTableConverter.ConvertToBytes(kind, name, RemoteTableTextUtility.BytesToJsonString(raw));
+                    downloadedTable = true;
                 }
                 ValidateTableBytes(kind, name, tableBytes);
                 File.WriteAllBytes(RemoteTableLocalStore.GetBatchFile(batch, name), tableBytes);
                 pending.BytesMd5.Add(name, RemoteTableManager.ComputeMd5(tableBytes));
                 pending.Data.Add(name, tableBytes);
+                if (downloadedTable)
+                {
+                    downloaded++;
+                    Log.Info("Remote table downloaded and validated (pending batch activation). ConfigId={0}, Table='{1}', Path='{2}', Size={3}, Md5={4}.",
+                        configId, name, entry.Path, entry.Size, entry.Md5);
+                }
+                else
+                {
+                    reused++;
+                }
                 completed++;
                 onProgress?.Invoke(0.1f + 0.9f * completed / Math.Max(1, selected.Files.Count));
             }
             token.ThrowIfCancellationRequested();
             RemoteTableLocalStore.Commit(pending);
             batch = null;
-            Log.Info("Remote table batch activated. ConfigId={0}, Tables={1}.", configId, selected.Files.Count);
+            Log.Info("Remote table batch activated. ConfigId={0}, Total={1}, Downloaded={2}, Reused={3}, Removed={4}.", configId, selected.Files.Count, downloaded, reused, removed.Length);
         }
         catch (OperationCanceledException)
         {
