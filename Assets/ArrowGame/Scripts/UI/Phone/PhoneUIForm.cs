@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 #if ENABLE_OBFUZ
@@ -85,6 +85,7 @@ public partial class PhoneUIForm : UIFormBase
         varBtnCollect.gameObject.SetActive(!full && !locked && fragmentSeconds == 0);
         varBtnCollect.interactable = !s_AdPending;
         varBtnRedeem.interactable = !s_AdPending;
+        varBtnView.interactable = !s_AdPending;
         fragmentTime.text = FormatTime(fragmentSeconds);
         long adSeconds = Remaining(m_Player.PhoneAdCooldownEnd);
         varBtnAd.gameObject.SetActive(adSeconds == 0);
@@ -106,9 +107,12 @@ public partial class PhoneUIForm : UIFormBase
     private void Redeem()
     {
         if (m_Task == null || s_AdPending || m_Player.PhoneStage != 1) return;
-        if (!m_Player.RedeemPhoneFragments(m_Task))
+        if (m_Player.PhoneFragments < m_Task.Fragment)
+        {
             GF.UI.ShowToast($"Collect {m_Task.Fragment} phone fragments first");
-        Refresh();
+            return;
+        }
+        OpenSubUIForm(UIViews.PhoneAddressUIForm);
     }
 
     private void Collect()
@@ -170,6 +174,30 @@ public partial class PhoneUIForm : UIFormBase
         Refresh();
     }
 
-    // Reserved for the completed-task details flow.
-    protected virtual void OnClickView() { }
+    protected virtual void OnClickView()
+    {
+        if (m_Task == null || s_AdPending || !m_IsOpen) return;
+        s_AdPending = true;
+        Refresh();
+        bool completed = false;
+        try
+        {
+            CommonHelper.ShowVideoAd("phone_view", success =>
+            {
+                if (completed) return;
+                completed = true;
+                s_AdPending = false;
+                if (this == null || !m_IsOpen) return;
+                Refresh();
+                if (success) OpenSubUIForm(UIViews.PhoneAddressStateUIForm);
+            });
+        }
+        catch (Exception exception)
+        {
+            completed = true;
+            s_AdPending = false;
+            Log.Error("PhoneUIForm: failed to show view ad: {0}", exception);
+            if (this != null && m_IsOpen) Refresh();
+        }
+    }
 }

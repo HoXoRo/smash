@@ -33,5 +33,6 @@ public enum UIViews : int
 	PlayLoadingUIForm = 27,
 	PhoneUIForm = 28,
 	PhoneCountryStateUIForm = 29,
-	PhoneAddressUIForm = 30
+	PhoneAddressUIForm = 30,
+	PhoneAddressStateUIForm = 31
 }

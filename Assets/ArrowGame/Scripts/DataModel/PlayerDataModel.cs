@@ -1,4 +1,4 @@
-using GameFramework;
+﻿using GameFramework;
 using GameFramework.Event;
 using Newtonsoft.Json;
 using System;
@@ -8,6 +8,31 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
+
+[Serializable]
+public sealed class PhoneAddressData
+{
+	[JsonProperty("country")]
+	public string Country { get; set; }
+
+	[JsonProperty("state")]
+	public string State { get; set; }
+
+	[JsonProperty("detailed_address")]
+	public string DetailedAddress { get; set; }
+
+	[JsonProperty("full_name")]
+	public string FullName { get; set; }
+
+	[JsonProperty("phone_number")]
+	public string PhoneNumber { get; set; }
+
+	[JsonProperty("time")]
+	public string Time { get; set; }
+
+	[JsonProperty("orderID")]
+	public string OrderID { get; set; }
+}
 
 public enum PlayerDataType
 {
@@ -57,6 +82,7 @@ public class PlayerDataModel : DataModelStorageBase
 
     // The first local calendar day is recorded on game login, not on opening this UI.
     public string FirstLoginDate { get; set; }
+    public PhoneAddressData PhoneAddress { get; set; }
     public int PhoneStage { get; set; } = 1;
     public int PhoneFragments { get; set; }
     public int PhoneAdCount { get; set; }
@@ -68,9 +94,10 @@ public class PlayerDataModel : DataModelStorageBase
         return FirstLoginDate == DateTime.Now.ToString("yyyyMMdd") && PhoneFragments >= task.FragmentFirstDayMax;
     }
 
-    public bool RedeemPhoneFragments(PhoneTask task)
+    public bool SubmitPhoneAddress(PhoneTask task, PhoneAddressData address)
     {
-        if (PhoneStage != 1 || PhoneFragments < task.Fragment) return false;
+        if (task == null || address == null || PhoneStage != 1 || PhoneFragments < task.Fragment) return false;
+        PhoneAddress = address;
         PhoneStage = task.AdNum > 0 ? 2 : 3;
         PhoneAdCount = 0;
         PhoneAdCooldownEnd = 0;

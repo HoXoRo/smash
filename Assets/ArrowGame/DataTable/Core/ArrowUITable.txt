@@ -32,3 +32,4 @@
 	28	手机模块	1	PhoneUIForm	False	2	False
 	29	手机模块	3	PhoneCountryStateUIForm	False	2	False
 	30	手机模块	2	PhoneAddressUIForm	False	2	False
+	31	手机模块	4	PhoneAddressStateUIForm	False	2	False

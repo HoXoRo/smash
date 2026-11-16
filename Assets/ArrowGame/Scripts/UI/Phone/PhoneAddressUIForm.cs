@@ -23,12 +23,16 @@ public partial class PhoneAddressUIForm : UIFormBase
         m_Countries ??= Array.Empty<PhoneCountryData>();
         
         varBtnClose.onClick.AddListener(OnClickClose);
+        varBtnSubmit.onClick.AddListener(OnClickSubmit);
 
     }
 
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        varDetailedAddressHint.SetActive(false);
+        varFullNameHint.SetActive(false);
+        varPhoneNumberHint.SetActive(false);
         if (m_Country == null)
         {
 #if UNITY_EDITOR
@@ -43,6 +47,49 @@ public partial class PhoneAddressUIForm : UIFormBase
 
     private void OpenCountries() => OpenSelector(PhoneCountrySelectionType.Country);
     private void OpenStates() => OpenSelector(PhoneCountrySelectionType.State);
+
+    private void OnClickSubmit()
+    {
+        bool addressEmpty = string.IsNullOrWhiteSpace(varInputDetailedAddress.text);
+        bool nameEmpty = string.IsNullOrWhiteSpace(varInputFullName.text);
+        bool phoneEmpty = string.IsNullOrWhiteSpace(varInputPhoneNumber.text);
+        varDetailedAddressHint.SetActive(addressEmpty);
+        varFullNameHint.SetActive(nameEmpty);
+        varPhoneNumberHint.SetActive(phoneEmpty);
+        if (addressEmpty || nameEmpty || phoneEmpty || m_Country == null || m_State == null) return;
+
+        var playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
+        var task = GF.DataTable.GetDataTable<PhoneTask>()?.GetDataRow(1);
+        if (task == null)
+        {
+            Log.Error("PhoneAddressUIForm: PhoneTask row 1 is not loaded.");
+            return;
+        }
+        if (playerData.PhoneStage != 1) return;
+        if (playerData.PhoneFragments < task.Fragment)
+        {
+            GF.UI.ShowToast($"Collect {task.Fragment} phone fragments first");
+            return;
+        }
+
+        var address = new PhoneAddressData
+        {
+            Country = m_Country.name,
+            State = m_State ?? string.Empty,
+            DetailedAddress = varInputDetailedAddress.text.Trim(),
+            FullName = varInputFullName.text.Trim(),
+            PhoneNumber = varInputPhoneNumber.text.Trim(),
+            Time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture),
+            OrderID = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0:D3}-{1:D7}-{2:D7}",
+                UnityEngine.Random.Range(0, 1000),
+                UnityEngine.Random.Range(0, 10000000),
+                UnityEngine.Random.Range(0, 10000000))
+        };
+        if (!playerData.SubmitPhoneAddress(task, address)) return;
+
+        OnClickClose();
+        GF.UI.OpenUIForm(UIViews.PhoneAddressStateUIForm);
+    }
 
     private void OpenSelector(PhoneCountrySelectionType type)
     {
