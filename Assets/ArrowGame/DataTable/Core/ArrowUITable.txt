@@ -29,3 +29,6 @@
 	25	加载界面	20	LoadingUIForm	False	3	False
 	26	金币奖励界面	21	CoinRewardUIForm	False	1	False
 	27	玩法Loading界面	30	PlayLoadingUIForm	False	1	False
+	28	手机模块	1	PhoneUIForm	False	2	False
+	29	手机模块	3	PhoneCountryStateUIForm	False	2	False
+	30	手机模块	2	PhoneAddressUIForm	False	2	False

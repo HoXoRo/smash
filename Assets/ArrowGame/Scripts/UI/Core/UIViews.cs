@@ -30,5 +30,8 @@ public enum UIViews : int
 	PrelevelUIForm = 24,
 	LoadingUIForm = 25,
 	CoinRewardUIForm = 26,
-	PlayLoadingUIForm = 27
+	PlayLoadingUIForm = 27,
+	PhoneUIForm = 28,
+	PhoneCountryStateUIForm = 29,
+	PhoneAddressUIForm = 30
 }

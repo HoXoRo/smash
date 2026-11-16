@@ -19,6 +19,7 @@ MonoBehaviour:
   - EliminateReward
   - LevelCompleteReward
   - MakeupTask
+  - PhoneTask
   - TaskReward
   - Core/ArrowLanguagesTable
   - Core/ArrowSoundGroupTable

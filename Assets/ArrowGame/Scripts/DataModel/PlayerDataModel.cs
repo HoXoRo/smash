@@ -55,6 +55,52 @@ public class PlayerDataModel : DataModelStorageBase
     // Only a freshly initialized profile skips the hall on startup.
     [JsonIgnore] public bool IsNewPlayer { get; private set; }
 
+    // The first local calendar day is recorded on game login, not on opening this UI.
+    public string FirstLoginDate { get; set; }
+    public int PhoneStage { get; set; } = 1;
+    public int PhoneFragments { get; set; }
+    public int PhoneAdCount { get; set; }
+    public long PhoneFragmentCooldownEnd { get; set; }
+    public long PhoneAdCooldownEnd { get; set; }
+
+    public bool IsPhoneFragmentLocked(PhoneTask task)
+    {
+        return FirstLoginDate == DateTime.Now.ToString("yyyyMMdd") && PhoneFragments >= task.FragmentFirstDayMax;
+    }
+
+    public bool RedeemPhoneFragments(PhoneTask task)
+    {
+        if (PhoneStage != 1 || PhoneFragments < task.Fragment) return false;
+        PhoneStage = task.AdNum > 0 ? 2 : 3;
+        PhoneAdCount = 0;
+        PhoneAdCooldownEnd = 0;
+        Save();
+        return true;
+    }
+
+    public void CompletePhoneAd(PhoneTask task, int stage)
+    {
+        if (PhoneStage != stage) return;
+        long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        if (stage == 1)
+        {
+            if (PhoneFragments >= task.Fragment || IsPhoneFragmentLocked(task) || now < PhoneFragmentCooldownEnd) return;
+            int limit = FirstLoginDate == DateTime.Now.ToString("yyyyMMdd")
+                ? Mathf.Min(task.Fragment, task.FragmentFirstDayMax) : task.Fragment;
+            PhoneFragments = (int)Math.Min(limit, (long)PhoneFragments + task.FragmentAd);
+            PhoneFragmentCooldownEnd = now + task.FragmentAdCD;
+        }
+        else if (stage == 2)
+        {
+            if (now < PhoneAdCooldownEnd) return;
+            PhoneAdCount = Mathf.Min(PhoneAdCount + 1, task.AdNum);
+            PhoneAdCooldownEnd = now + task.AdCD;
+            if (PhoneAdCount >= task.AdNum) PhoneStage = 3;
+        }
+        else return;
+        Save();
+    }
+
     public const int MaxLifeCount = 5;
     private const int LifeGainInterval = 1800;
     private int m_Life = MaxLifeCount;
@@ -187,6 +233,12 @@ public class PlayerDataModel : DataModelStorageBase
         PcardDisplayValue = 0f;
         PcardDisplayChanged = null;
         base.OnCreate(userdata);
+        // Older saves have no login date; migrate at the first login after upgrading.
+        if (string.IsNullOrEmpty(FirstLoginDate))
+        {
+            FirstLoginDate = DateTime.Now.ToString("yyyyMMdd");
+            Save();
+        }
     }
 
     protected override void OnRelease()
@@ -501,6 +553,12 @@ public class PlayerDataModel : DataModelStorageBase
     protected override void OnInitialDataModel()
     {
         IsNewPlayer = true;
+        FirstLoginDate = DateTime.Now.ToString("yyyyMMdd");
+        PhoneStage = 1;
+        PhoneFragments = 0;
+        PhoneAdCount = 0;
+        PhoneFragmentCooldownEnd = 0;
+        PhoneAdCooldownEnd = 0;
         LifeCount = MaxLifeCount;
         LifeTimerStart = 0;
         UnlimitedLifeEnd = 0;

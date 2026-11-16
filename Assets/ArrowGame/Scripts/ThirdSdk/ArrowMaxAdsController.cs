@@ -377,9 +377,6 @@ public class ArrowMaxAdsController
         PcardGiftRewardSession.Add(adInfo.Revenue);
         rewardedCallBack?.Invoke(true);
         rewardedCallBack = null;
-        
-
-
     }
 
     private void OnRewardedAdRevenuePaidEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
