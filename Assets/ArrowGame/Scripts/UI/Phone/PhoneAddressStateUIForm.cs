@@ -26,7 +26,7 @@ public partial class PhoneAddressStateUIForm : UIFormBase
         varTxtDetailedAddress.text = address?.DetailedAddress ?? string.Empty;
         varTxtCountryState.text = address == null ? string.Empty : $"{address.Country}, {address.State}";
         varTxtOrderId.text = address?.OrderID ?? string.Empty;
-        varTxtTimeCompleted.text = address?.Time ?? string.Empty;
+        varTxtTimeCompleted.text = address == null ? string.Empty : GF.Localization.GetString("PhoneAddressStateUIForm.completed", address.Time ?? string.Empty);
         m_HasOrderTime = DateTime.TryParseExact(address?.Time, "yyyy-MM-dd HH:mm:ss",
             System.Globalization.CultureInfo.InvariantCulture,
             System.Globalization.DateTimeStyles.AssumeLocal, out m_OrderTime);

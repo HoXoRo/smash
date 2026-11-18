@@ -11,15 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48c1c3b4-2b47-4b58-848e-c5dcf45a4647" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.smash/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAAGameData/Configs/GameConfig.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/AAAGameData/Configs/GameConfig.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/KingnamypeYuanmoSC SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Font/Common/KingnamypeYuanmoSC SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/Adjust/AdjustManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/Adjust/AdjustManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/RewardedAdController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/RewardedAdController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Runtime/Obfuz/SymbolObfus/symbol-mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArrowGame/ScriptsBuiltin/Runtime/Obfuz/SymbolObfus/symbol-mapping.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/GameFrameworkVersion.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/GameFrameworkVersion.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Scene.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/dat10.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +33,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/HomePageUIForm.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Prefabs/UI/Items/MakeupItem.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/ScriptableAssets/Core/AppConfigs.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/Adjust/AdjustManager.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/ThirdSdk/GoogleMobile/InterstitialAdController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/AddLifeUIForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Item/MakeupRecordItem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -49,6 +43,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupRecordUIForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/MakeupUIForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/PcardRewardUIForm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Phone/CountryStatesItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/Phone/PhoneCountryStateUIForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ArrowGame/Scripts/UI/PlayUIForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.code-philosophy.obfuz@25762369603f/Editor/Pipeline.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.code-philosophy.obfuz@25762369603f/Runtime/ObfuzIgnoreAttribute.cs" root0="SKIP_HIGHLIGHTING" />
@@ -60,61 +56,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="2.587634091756378E-254" />
-      <entry key="S30" value="5.928096787730266E-85" />
-      <entry key="S60" value="1.4956744953660168E-42" />
-      <entry key="M2" value="2.4294525711344942E-21" />
-      <entry key="M5" value="1.3025081245312822E-8" />
-      <entry key="M10" value="2.3030238337474871E-4" />
-      <entry key="M15" value="0.006328445686391147" />
-      <entry key="M30" value="0.23141800791397973" />
-      <entry key="H1" value="1.9179634584930385" />
-      <entry key="H2" value="7.020764291454613" />
-      <entry key="H4" value="19.02350682582132" />
-      <entry key="D1" value="102.45414872404582" />
-      <entry key="W1" value="949.302735627194" />
+      <entry key="MS100" value="3.928340381117336E-168" />
+      <entry key="MS500" value="3.302492365114657E-34" />
+      <entry key="S2" value="4.268113343735344E-9" />
+      <entry key="S5" value="4.808860082518138E-4" />
+      <entry key="S10" value="0.028024409507066306" />
+      <entry key="S30" value="0.6128935933393309" />
+      <entry key="S60" value="1.7245008310693062" />
+      <entry key="M2" value="3.2863602767517284" />
+      <entry key="M5" value="5.102648565609968" />
+      <entry key="M10" value="5.963034620266923" />
+      <entry key="M15" value="6.287272722211659" />
+      <entry key="M30" value="6.63545444965522" />
+      <entry key="H1" value="6.868344762860489" />
+      <entry key="H2" value="7.1405044731564455" />
+      <entry key="H4" value="7.4371295083600435" />
+      <entry key="D1" value="9.070369042887444" />
+      <entry key="W1" value="322.70699963807533" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0052262795108833" />
-      <entry key="MS500" value="1.3496540206846153" />
-      <entry key="S2" value="1.7689704156351342" />
-      <entry key="S5" value="1.9002514979094545" />
-      <entry key="S10" value="1.9488158398284963" />
-      <entry key="S30" value="1.9826389515130178" />
-      <entry key="S60" value="1.9912814693683212" />
-      <entry key="M2" value="1.9956311914400438" />
-      <entry key="M5" value="1.99825019046229" />
-      <entry key="M10" value="1.9992948661730554" />
-      <entry key="M15" value="2.0039054408922277" />
-      <entry key="M30" value="2.129163046805729" />
-      <entry key="H1" value="2.8326883855276375" />
-      <entry key="H2" value="4.916160676345431" />
-      <entry key="H4" value="10.80878136699507" />
-      <entry key="D1" value="49.56309846038554" />
-      <entry key="W1" value="112.958989212677" />
+      <entry key="MS100" value="1.0000000009313226" />
+      <entry key="MS500" value="1.015625" />
+      <entry key="S2" value="1.3535533905942359" />
+      <entry key="S5" value="1.6597876795437676" />
+      <entry key="S10" value="1.8247127321347172" />
+      <entry key="S30" value="2.618276520604242" />
+      <entry key="S60" value="3.9140748547543294" />
+      <entry key="M2" value="5.350699504712151" />
+      <entry key="M5" value="6.734453390335863" />
+      <entry key="M10" value="7.349790820796045" />
+      <entry key="M15" value="7.672965507699968" />
+      <entry key="M30" value="8.498075775035751" />
+      <entry key="H1" value="9.690851522044515" />
+      <entry key="H2" value="11.007864185147424" />
+      <entry key="H4" value="12.156855832101495" />
+      <entry key="D1" value="14.632852243762267" />
+      <entry key="W1" value="55.24100908001534" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.007812501667114108" />
-      <entry key="MS500" value="0.3964838276124689" />
-      <entry key="S2" value="1.1485814851465226" />
-      <entry key="S5" value="1.5750007679513731" />
-      <entry key="S10" value="1.7696334769997344" />
-      <entry key="S30" value="1.9188022451589424" />
-      <entry key="S60" value="1.9588200267671478" />
-      <entry key="M2" value="1.9792623865963106" />
-      <entry key="M5" value="1.9916692411181982" />
-      <entry key="M10" value="1.9962287954230171" />
-      <entry key="M15" value="2.008029836176278" />
-      <entry key="M30" value="2.35937774157912" />
-      <entry key="H1" value="4.749657185140981" />
-      <entry key="H2" value="11.935833418335996" />
-      <entry key="H4" value="29.83104912797214" />
-      <entry key="D1" value="152.01633120689053" />
-      <entry key="W1" value="1062.261389934803" />
+      <entry key="MS100" value="1.1229960506277423E-9" />
+      <entry key="MS500" value="0.01635960154959693" />
+      <entry key="S2" value="0.4653948177138305" />
+      <entry key="S5" value="1.0736667338597206" />
+      <entry key="S10" value="1.4792004114110742" />
+      <entry key="S30" value="2.9719919120599143" />
+      <entry key="S60" value="5.426398892924405" />
+      <entry key="M2" value="8.490683684925262" />
+      <entry key="M5" value="11.764009074272238" />
+      <entry key="M10" value="13.273154087049436" />
+      <entry key="M15" value="13.932742165319505" />
+      <entry key="M30" value="15.11850839791413" />
+      <entry key="H1" value="16.550814487536726" />
+      <entry key="H2" value="18.143742814277804" />
+      <entry key="H4" value="19.591500254931276" />
+      <entry key="D1" value="23.70274112834482" />
+      <entry key="W1" value="377.94780635572215" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{

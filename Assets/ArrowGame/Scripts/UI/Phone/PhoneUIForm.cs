@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 #if ENABLE_OBFUZ
@@ -8,6 +8,7 @@ using UnityGameFramework.Runtime;
 public partial class PhoneUIForm : UIFormBase
 {
     [SerializeField] private TMPro.TextMeshProUGUI fragmentTime;
+    [SerializeField] private TMPro.TextMeshProUGUI txtLeftAd;
     private PlayerDataModel m_Player;
     private PhoneTask m_Task;
     private bool m_IsOpen;
@@ -75,6 +76,7 @@ public partial class PhoneUIForm : UIFormBase
         string adProgress = $"{m_Player.PhoneAdCount}/{m_Task.AdNum}";
         varAdTxtProgress.text = adProgress;
         varTxtProgress.text = adProgress;
+        txtLeftAd.text = GF.Localization.GetString("PhoneUIForm.leftAd", Math.Max(0, m_Task.AdNum - m_Player.PhoneAdCount));
         bool full = m_Player.PhoneFragments >= m_Task.Fragment;
         bool locked = m_Player.IsPhoneFragmentLocked(m_Task);
         long fragmentSeconds = Remaining(m_Player.PhoneFragmentCooldownEnd);
