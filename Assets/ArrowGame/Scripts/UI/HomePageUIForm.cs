@@ -30,10 +30,6 @@ public partial class HomePageUIForm : UIFormBase
 
     void OnPlayClicked()
     {
-
-        GF.UI.OpenUIForm(UIViews.PhoneUIForm);
-        return;
-        
         if (isEnteringGameplay || PlayLoadingUIForm.IsLoading) return;
         if (!LifeHelper.HasLife())
         {

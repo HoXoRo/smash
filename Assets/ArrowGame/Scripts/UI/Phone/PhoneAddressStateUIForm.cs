@@ -25,7 +25,7 @@ public partial class PhoneAddressStateUIForm : UIFormBase
         varTxtContactInfo.text = address == null ? string.Empty : $"{address.FullName} | {address.PhoneNumber}";
         varTxtDetailedAddress.text = address?.DetailedAddress ?? string.Empty;
         varTxtCountryState.text = address == null ? string.Empty : $"{address.Country}, {address.State}";
-        varTxtOrderId.text = address?.OrderID ?? string.Empty;
+        varTxtOrderId.text = address == null ? string.Empty : GF.Localization.GetString("PhoneAddressStateUIForm.orderId", address.OrderID ?? string.Empty);
         varTxtTimeCompleted.text = address == null ? string.Empty : GF.Localization.GetString("PhoneAddressStateUIForm.completed", address.Time ?? string.Empty);
         m_HasOrderTime = DateTime.TryParseExact(address?.Time, "yyyy-MM-dd HH:mm:ss",
             System.Globalization.CultureInfo.InvariantCulture,
