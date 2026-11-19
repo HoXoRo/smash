@@ -85,7 +85,7 @@ public partial class ArrowFlyRewardItem : UIItemBase
             case PlayerDataType.Diamond:
                 return "Common/money_com.png";
             case PlayerDataType.PhoneFragment:
-                return "Phone/picture1.png";
+                return "Common/fragment_com.png";
             case PlayerDataType.Pcard:
                 return "Common/pcard_com.png";
             default:

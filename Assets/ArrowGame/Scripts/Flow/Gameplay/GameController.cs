@@ -1310,6 +1310,14 @@ namespace Gameplay
 							_eliminateRewardAwarded = total;
 							GF.Event.Fire(this, RewardCollectedEventArgs.Create(delta, Vector3.zero,
 								PlayerDataType.Diamond, playFlyAnimation));
+							if (playFlyAnimation)
+							{
+								int phoneFragments = PhoneManager.Instance.TryProducePhoneFragments();
+								Log.Info($"获取手机碎片：{phoneFragments}");
+								if (phoneFragments > 0)
+									GF.Event.Fire(this, RewardCollectedEventArgs.Create(phoneFragments, Vector3.zero,
+										PlayerDataType.PhoneFragment));
+							}
 						}
 						break;
 					}

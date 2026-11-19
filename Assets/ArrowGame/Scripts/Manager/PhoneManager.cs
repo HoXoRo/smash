@@ -30,6 +30,7 @@ public class PhoneManager
     {
         var player = Player;
         var task = Task;
+        Log.Info($"手机碎片任务: {task.Fragment}，任务状态：{player.PhoneStage}，当前碎片：{player.PhoneFragments}，当日上限：{GetFragmentLimit(player, task)}");
         if (task == null || player.PhoneStage != 1 || player.PhoneFragments >= GetFragmentLimit(player, task)) return 0;
         int rate = Mathf.Clamp(GF.Config.GetInt("PhoneFragmentRewardRate"), 0, 100);
         Log.Info($"手机碎片产出概率： {rate}");

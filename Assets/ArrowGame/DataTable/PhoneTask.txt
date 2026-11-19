@@ -2,4 +2,4 @@
 #	ID		Fragment	FragmentAd	FragmentAdCD	FragmentFirstDayMax	AdNum	AdCD
 #	int		int	int	int	int	int	int
 #		备注	目标碎片数（任务一）	看广告手机碎片数	看广告手机碎片CD	首日可获得的最大碎片数	累计广告次数（任务二）	广告任务CD
-	1		10	2	3	91	20	3
+	1		100	2	3	91	20	3
