@@ -31,6 +31,7 @@ public partial class PhoneUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(PhoneUIForm));
         CommonHelper.HideBannerAd();
         m_IsOpen = true;
         m_Player = GF.DataModel.GetOrCreate<PlayerDataModel>();
@@ -150,7 +151,7 @@ public partial class PhoneUIForm : UIFormBase
                 if (completed) return;
                 completed = true;
                 s_AdPending = false;
-                if (success) PhoneManager.Instance.CompletePhoneAd(player, task, stage);
+                if (success && stage == 1) PhoneManager.Instance.CompletePhoneAd(player, task, stage);
                 if (this != null && m_IsOpen) Refresh();
             });
         }

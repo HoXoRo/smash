@@ -149,6 +149,7 @@ public static class CommonHelper
         {
             case "addBalls": case "addLife": case "addProp":
             case "winCoins": case "task1": case "task2":
+            case "phone_fragment": case "phone_task": case "phone_view":
                 LogEvent(AdjustEventCodeEvent.ad_reward,
                     new Dictionary<string, string> { { "placement", placement } });
                 break;
@@ -337,17 +338,23 @@ public static class CommonHelper
 
 #if UNITY_EDITOR
         ResetInterstitialCancelAccum();
+        PhoneManager.Instance.RecordRewardedAdSuccess(adId == "phone_task");
         onCompleted?.Invoke(true);
         PcardGiftRewardSession.Add(0.00122);
         GF.Event.Fire(null, WatchVideoFinishEventArgs.Create());
         return;
 #endif
+        bool completed = false;
         AdsManager.Instance.ShowAd(
             isOk =>
             {
+                if (completed) return;
+                completed = true;
                 if (isOk)
                 {
+                    LogRewardAdPlacement(adId);
                     ResetInterstitialCancelAccum();
+                    PhoneManager.Instance.RecordRewardedAdSuccess(adId == "phone_task");
                     GF.Event.Fire(null, WatchVideoFinishEventArgs.Create());
                 }
                 else

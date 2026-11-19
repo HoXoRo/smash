@@ -25,6 +25,7 @@ public partial class PhoneCountryStateUIForm : UIFormBase, UnityEngine.UI.LoopSc
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(PhoneCountryStateUIForm));
         m_Request = Params.Get<VarObject>(SelectionKey)?.Value as PhoneCountrySelectionRequest;
         varLoopVerticalScrollRect.totalCount = m_Request == null ? 0 :
             m_Request.Type == PhoneCountrySelectionType.Country ? m_Request.Countries.Length :

@@ -268,7 +268,6 @@ public class ArrowMaxAdsController
         Log.Info("请求播放max激励视频广告");
         if (MaxSdk.IsRewardedAdReady(RewardedAdUnitId))
         {
-            CommonHelper.LogRewardAdPlacement(adsource);
             CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display);
             if (MaxSdk.IsInterstitialReady(InterstitialAdUnitId) && rewardedAdInfo != -1 && interstitialAdInfo != -1 && interstitialAdInfo > rewardedAdInfo)
             {

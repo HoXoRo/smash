@@ -68,6 +68,21 @@ public class PhoneManager
         return true;
     }
 
+    /// <summary>Any successful rewarded ad advances stage two, regardless of cooldown.</summary>
+    public void RecordRewardedAdSuccess(bool isPhoneTaskAd)
+    {
+        var player = Player;
+        if (player.PhoneStage != 2) return;
+        var task = Task;
+        if (task == null) return;
+        player.PhoneAdCount = (int)Math.Min((long)player.PhoneAdCount + 1, task.AdNum);
+        // The cooldown only belongs to the phone task's own ad button.
+        if (isPhoneTaskAd)
+            player.PhoneAdCooldownEnd = DateTimeOffset.UtcNow.ToUnixTimeSeconds() + task.AdCD;
+        if (player.PhoneAdCount >= task.AdNum) player.PhoneStage = 3;
+        player.Save();
+    }
+
     public void CompletePhoneAd(PlayerDataModel player, PhoneTask task, int stage)
     {
         if (player == null || task == null || player.PhoneStage != stage) return;
@@ -79,13 +94,7 @@ public class PhoneManager
             player.PhoneFragments = (int)Math.Min(limit, (long)player.PhoneFragments + task.FragmentAd);
             player.PhoneFragmentCooldownEnd = now + task.FragmentAdCD;
         }
-        else if (stage == 2)
-        {
-            if (now < player.PhoneAdCooldownEnd) return;
-            player.PhoneAdCount = Mathf.Min(player.PhoneAdCount + 1, task.AdNum);
-            player.PhoneAdCooldownEnd = now + task.AdCD;
-            if (player.PhoneAdCount >= task.AdNum) player.PhoneStage = 3;
-        }
+
         else return;
         player.Save();
     }

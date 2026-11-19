@@ -30,6 +30,7 @@ public partial class PhoneAddressUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(PhoneAddressUIForm));
         varDetailedAddressHint.SetActive(false);
         varFullNameHint.SetActive(false);
         varPhoneNumberHint.SetActive(false);

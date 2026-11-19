@@ -104,7 +104,6 @@ public class RewardedAdController
         if (_rewardedAd != null && _rewardedAd.CanShowAd())
         {
             Log.Info("admob Showing rewarded ad.");
-            CommonHelper.LogRewardAdPlacement(placement);
             CommonHelper.LogEvent(AdjustEventCodeEvent.ad_display);
             _rewardedAd.Show((Reward reward) =>
             {

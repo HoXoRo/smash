@@ -20,6 +20,7 @@ public partial class PhoneAddressStateUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.LogPopup(nameof(PhoneAddressStateUIForm));
         var address = GF.DataModel.GetOrCreate<PlayerDataModel>().PhoneAddress;
         m_HasOrder = address != null;
         varTxtContactInfo.text = address == null ? string.Empty : $"{address.FullName} | {address.PhoneNumber}";
