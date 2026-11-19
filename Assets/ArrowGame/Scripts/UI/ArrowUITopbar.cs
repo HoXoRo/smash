@@ -80,6 +80,10 @@ public partial class ArrowUITopbar : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        RewardCollectUI.EnsureOpen();
+        if (varCpEff != null) varCpEff.gameObject.SetActive(false);
+        RewardCollectTarget.Bind(PlayerDataType.Diamond, GetTargetIcon(PlayerDataType.Diamond));
+        RewardCollectTarget.Bind(PlayerDataType.Pcard, GetTargetIcon(PlayerDataType.Pcard));
         GF.Event.Subscribe(PlayerDataChangedEventArgs.EventId, OnPlayerDataChanged);
         GF.Event.Subscribe(RewardCollectedEventArgs.EventId, OnRewardCollected);
         GF.Event.Subscribe(LargeDollarRewardEventArgs.EventId, OnLargeDollarReward);
@@ -129,6 +133,7 @@ public partial class ArrowUITopbar : UIFormBase
                 playerDm.SetData(PlayerDataType.Diamond, pendingRewards[PlayerDataType.Diamond] + playerDm.Dollars, false);
         }
         FinishPcardAnimation();
+        RewardCollectUI.Cancel(this);
         // 清理所有计数器
         activeRewardCounts.Clear();
         pendingRewards.Clear();
@@ -159,6 +164,7 @@ public partial class ArrowUITopbar : UIFormBase
                     playerDm.SetData(PlayerDataType.Diamond, pendingRewards[PlayerDataType.Diamond] + playerDm.Dollars, false);
             }
             FinishPcardAnimation();
+            RewardCollectUI.Cancel(this);
             // 清理所有计数器
             activeRewardCounts.Clear();
             pendingRewards.Clear();
@@ -242,6 +248,7 @@ public partial class ArrowUITopbar : UIFormBase
             || (isRolling.TryGetValue(type, out bool rolling) && rolling)
             || (activeRewardCounts.TryGetValue(type, out int count) && count > 0);
         pcardAnimationVersion++;
+        RewardCollectUI.Cancel(this, PlayerDataType.Pcard);
         if (numberRollCoroutines.TryGetValue(type, out Coroutine routine) && routine != null)
             StopCoroutine(routine);
         numberRollCoroutines.Remove(type);
@@ -329,7 +336,7 @@ public partial class ArrowUITopbar : UIFormBase
         // 根据奖励类型确定货币类型
         PlayerDataType currencyType = args.type;
         float value = args.Value;
-        if (currencyType == PlayerDataType.Coins) return;
+        if (currencyType == PlayerDataType.Coins || currencyType == PlayerDataType.PhoneFragment) return;
 
         // 获取奖励位置并转换为本地坐标
         Vector3 startPosition = args.WorldPosition;
@@ -395,117 +402,26 @@ public partial class ArrowUITopbar : UIFormBase
             return;
         }
 
-        // 确保该类型的计数器存在
-        if (!activeRewardCounts.ContainsKey(type))
+        int count = Mathf.Max(1, UnityEngine.Random.Range(minRewardCount, maxRewardCount));
+        activeRewardCounts.TryGetValue(type, out int active);
+        activeRewardCounts[type] = active + 1;
+        int version = pcardAnimationVersion;
+        System.Action completed = () =>
         {
-            activeRewardCounts[type] = 0;
-        }
-
-        // 生成多个飞行货币
-        int rewardCount = UnityEngine.Random.Range(minRewardCount, maxRewardCount);
-        if (type == PlayerDataType.Pcard) rewardCount = Mathf.Max(1, rewardCount);
-        activeRewardCounts[type] += rewardCount;  // 更新对应类型的计数器
-
-        // 防止崩溃：在UI关闭或销毁时不再创建飞行货币
-        if (flyRewardItemPrefab == null || flyRewardParent == null || !flyRewardParent.gameObject.activeInHierarchy)
-        {
-            return;
-        }
-
-        // Sprite rewardSprite = type == PlayerDataType.Coins ? coinSprite : dollarSprite;
-
-        // 获取正确的目标位置
-        Vector2 targetPosition;
-        RectTransform targetIcon = GetTargetIcon(type);
-        if (targetIcon == null)
-        {
-            return;
-        }
-
-        // 将目标图标的坐标转换为flyRewardParent下的世界坐标
-        Vector3[] corners = new Vector3[4];
-        targetIcon.GetWorldCorners(corners);
-        Vector3 iconWorldPos = (corners[0] + corners[2]) * 0.5f; // 获取图标中心点的世界坐标
-
-        // 将世界坐标转换为flyRewardParent下的局部坐标
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            flyRewardParent as RectTransform,
-            RectTransformUtility.WorldToScreenPoint(null, iconWorldPos),
-            null,
-            out targetPosition
-        );
-
-        Log.Info($"目标图标: {targetIcon.name}, 世界坐标: {iconWorldPos}, 转换后坐标: {targetPosition}");
-
-        // 计算每个货币的出现延迟
-        float baseDelay = 0.02f; // 基础延迟时间
-        bool useDollarEffect = type == PlayerDataType.Diamond || type == PlayerDataType.Pcard;
-        varCpEff.gameObject.SetActive(useDollarEffect);
-        if(useDollarEffect)
-        {
-            varCpEff.transform.localPosition = startPosition;
-            varCpEff.Play();
-        }
-
-        int animationVersion = pcardAnimationVersion;
-        // 创建飞行货币
-        for (int i = 0; i < rewardCount; i++)
-        {
-            // 计算出现延迟，让货币逐个出现
-            float delay = baseDelay * i;
-
-            // 在起始位置周围随机生成位置
-            Vector2 randomOffset = rewardCount > 1 ? UnityEngine.Random.insideUnitCircle * 110f : Vector2.zero;
-            Vector2 randomStartPos = new Vector2(
-                startPosition.x + randomOffset.x,
-                startPosition.y + randomOffset.y
-            );
-
-            // 使用对象池创建飞行货币
-            var flyReward = SpawnItem<UIItemObject>(flyRewardItemPrefab, flyRewardParent).itemLogic as ArrowFlyRewardItem;
-            if (flyReward != null)
+            if (type == PlayerDataType.Pcard && version != pcardAnimationVersion) return;
+            if (!activeRewardCounts.TryGetValue(type, out int remaining) || remaining <= 0) return;
+            activeRewardCounts[type] = --remaining;
+            if (remaining > 0) return;
+            float delta = pendingRewards.TryGetValue(type, out float pending) ? pending : 0f;
+            if (delta > 0f)
             {
-                // 设置初始位置
-                flyReward.rectTransform.anchoredPosition = randomStartPos;
-                // Log.Info($"目标位置: {targetPosition}");
-                // 初始化飞行货币，传入延迟和索引
-                flyReward.InitReward(
-                    type,
-                    targetPosition,
-                    () =>
-                    {
-                        if (type == PlayerDataType.Pcard && animationVersion != pcardAnimationVersion) return;
-                        if (activeRewardCounts.ContainsKey(type))
-                        {
-                            activeRewardCounts[type]--;
-                            if (activeRewardCounts[type] <= 0)
-                            {
-                                if (type == PlayerDataType.Diamond)
-                                {
-                                    float delta = pendingRewards.ContainsKey(type) ? pendingRewards[type] : 0f;
-                                    if (delta > 0f)
-                                        PlayGemUpFloatText(delta);
-                                }
-                                else if (type == PlayerDataType.Pcard)
-                                {
-                                    float delta = pendingRewards.ContainsKey(type) ? pendingRewards[type] : 0f;
-                                    if (delta > 0f)
-                                        PlayPcardUpFloatText(delta);
-                                }
-                                UpdateNumberRoll(type);
-                            }
-                        }
-                        // 防止崩溃：UI关闭后回调执行时flyReward可能已被销毁
-                        if (flyReward != null && flyReward.gameObject != null && flyRewardItemPrefab != null)
-                        {
-                            UnspawnItem<UIItemObject>(flyRewardItemPrefab, flyReward.gameObject);
-                        }
-                    },
-                    delay,
-                    i
-                );
+                if (type == PlayerDataType.Diamond) PlayGemUpFloatText(delta);
+                else if (type == PlayerDataType.Pcard) PlayPcardUpFloatText(delta);
             }
-        }
+            UpdateNumberRoll(type);
+        };
+        var effect = type == PlayerDataType.Diamond || type == PlayerDataType.Pcard ? varCpEff : null;
+        if (!RewardCollectUI.Play(this, type, startPosition, flyRewardParent, count, completed, effect)) completed();
     }
 
     private void UpdateNumberRoll(PlayerDataType type)

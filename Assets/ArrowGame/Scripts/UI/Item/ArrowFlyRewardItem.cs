@@ -32,8 +32,11 @@ public partial class ArrowFlyRewardItem : UIItemBase
         ResetState();
     }
 
+    private void OnDisable() => DOTween.Kill(this);
+
     private void OnDestroy()
     {
+        DOTween.Kill(this);
         // 清理动画（添加空检查）
         if (rectTransform != null) DOTween.Kill(rectTransform);
         if (rewardIcon != null) DOTween.Kill(rewardIcon);
@@ -44,6 +47,7 @@ public partial class ArrowFlyRewardItem : UIItemBase
     /// </summary>
     private void ResetState()
     {
+        DOTween.Kill(this);
         if (rectTransform != null) DOTween.Kill(rectTransform);
         if (rewardIcon != null) DOTween.Kill(rewardIcon);
         if (rectTransform != null) rectTransform.localScale = Vector3.zero;
@@ -80,6 +84,8 @@ public partial class ArrowFlyRewardItem : UIItemBase
         {
             case PlayerDataType.Diamond:
                 return "Common/money_com.png";
+            case PlayerDataType.PhoneFragment:
+                return "Phone/picture1.png";
             case PlayerDataType.Pcard:
                 return "Common/pcard_com.png";
             default:
@@ -109,6 +115,7 @@ public partial class ArrowFlyRewardItem : UIItemBase
 
         // 设置动画忽略时间缩放
         sequence.SetUpdate(true);
+        sequence.SetId(this);
         float randomScale = UnityEngine.Random.Range(MIN_SCALE, MAX_SCALE);
 
         // 出现动画

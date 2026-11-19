@@ -33,3 +33,4 @@
 	29	手机模块	3	PhoneCountryStateUIForm	False	2	False
 	30	手机模块	2	PhoneAddressUIForm	False	2	False
 	31	手机模块	4	PhoneAddressStateUIForm	False	2	False
+	32	奖励收集动画	29701	RewardCollectUI	False	4	False

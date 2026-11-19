@@ -67,7 +67,11 @@ public enum PlayerDataType
     /// <summary>
     /// Pcard数量
     /// </summary>
-    Pcard
+    Pcard,
+    /// <summary>
+    /// 手机碎片
+    /// </summary>
+    PhoneFragment
 }
 
 [Obfuz.ObfuzIgnore(Obfuz.ObfuzScope.TypeName | Obfuz.ObfuzScope.MethodName)]

@@ -28,7 +28,6 @@ public partial class ArrowUITopbarSub : UIFormBase
     private int rewardGeneration;
     private bool rolling;
     private Coroutine rollCoroutine;
-    private readonly List<ArrowFlyRewardItem> flyingCoins = new List<ArrowFlyRewardItem>();
 
     public static void RefreshPageVisibility()
     {
@@ -107,6 +106,8 @@ public partial class ArrowUITopbarSub : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        RewardCollectUI.EnsureOpen();
+        RewardCollectTarget.Bind(PlayerDataType.Coins, varIcon_Coin);
         playerDm = GF.DataModel.GetOrCreate<PlayerDataModel>();
         pendingCoins = 0f;
         activeRewards = 0;
@@ -140,13 +141,7 @@ public partial class ArrowUITopbarSub : UIFormBase
     private void SettleCoins()
     {
         rewardGeneration++;
-        foreach (var item in flyingCoins)
-        {
-            if (item == null) continue;
-            DOTween.Kill(item);
-            UnspawnItem<UIItemObject>(flyRewardItemPrefab, item.gameObject);
-        }
-        flyingCoins.Clear();
+        RewardCollectUI.Cancel(this);
         if (rollCoroutine != null) StopCoroutine(rollCoroutine);
         rollCoroutine = null;
         float value = (rolling ? rollTarget : targetCoins) + pendingCoins;
@@ -193,37 +188,16 @@ public partial class ArrowUITopbarSub : UIFormBase
 
         Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(null, args.WorldPosition);
         RectTransformUtility.ScreenPointToLocalPointInRectangle(varFlyRewardParent, screenPoint, null, out Vector2 start);
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            varFlyRewardParent, RectTransformUtility.WorldToScreenPoint(null, varIcon_Coin.position), null, out Vector2 target);
-
-        int count = args.Value == 1f ? 1 : Random.Range(minRewardCount, maxRewardCount);
+        int count = args.Value == 1f ? 1 : Mathf.Max(1, Random.Range(minRewardCount, maxRewardCount));
         int generation = rewardGeneration;
-        activeRewards += count;
-        for (int i = 0; i < count; i++)
+        activeRewards++;
+        System.Action completed = () =>
         {
-            var item = SpawnItem<UIItemObject>(flyRewardItemPrefab, varFlyRewardParent).itemLogic as ArrowFlyRewardItem;
-            if (item == null)
-            {
-                activeRewards--;
-                continue;
-            }
-            Vector2 offset = count > 1 ? Random.insideUnitCircle * 110f : Vector2.zero;
-            item.rectTransform.anchoredPosition = start + offset;
-            var reward = item;
-            flyingCoins.Add(reward);
-            item.InitReward(PlayerDataType.Coins, target, () =>
-            {
-                flyingCoins.Remove(reward);
-                if (generation == rewardGeneration && activeRewards > 0)
-                {
-                    activeRewards--;
-                    if (activeRewards == 0) StartRoll();
-                }
-                if (reward != null && reward.gameObject != null)
-                    UnspawnItem<UIItemObject>(flyRewardItemPrefab, reward.gameObject);
-            }, 0.02f * i, i);
-        }
-        if (activeRewards == 0) StartRoll();
+            if (generation != rewardGeneration || activeRewards <= 0) return;
+            activeRewards--;
+            if (activeRewards == 0) StartRoll();
+        };
+        if (!RewardCollectUI.Play(this, PlayerDataType.Coins, start, varFlyRewardParent, count, completed)) completed();
     }
 
     private void StartRoll()

@@ -34,5 +34,6 @@ public enum UIViews : int
 	PhoneUIForm = 28,
 	PhoneCountryStateUIForm = 29,
 	PhoneAddressUIForm = 30,
-	PhoneAddressStateUIForm = 31
+	PhoneAddressStateUIForm = 31,
+	RewardCollectUI = 32
 }

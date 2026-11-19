@@ -12,4 +12,5 @@ public partial class PlayUIForm
 	[SerializeField] private Button varBtnSetting = null;
 	[SerializeField] private TextMeshProUGUI varTxtCount = null;
 	[SerializeField] private GameObject varTxtHint = null;
+	[SerializeField] private RectTransform varPhoneBtnItem = null;
 }

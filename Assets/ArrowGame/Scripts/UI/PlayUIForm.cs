@@ -128,6 +128,7 @@ public partial class PlayUIForm : UIFormBase
         base.OnOpen(userData);
         ResetHint();
         RefreshRemainingBallCount();
+        RewardCollectTarget.Bind(PlayerDataType.PhoneFragment, varPhoneBtnItem);
     }
 
     public static void SetRemainingBallCount(int count)

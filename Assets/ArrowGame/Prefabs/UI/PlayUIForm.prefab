@@ -457,6 +457,11 @@ MonoBehaviour:
     - {fileID: 4409321787365355300}
     VarType: UnityEngine.GameObject
     VarPrefix: 0
+  - VarName: varPhoneBtnItem
+    Targets:
+    - {fileID: 7317347655607591403}
+    VarType: UnityEngine.RectTransform
+    VarPrefix: 0
   m_UIAnimationType: 0
   m_OpenAnimation: {fileID: 0}
   m_CloseAnimation: {fileID: 0}
@@ -465,6 +470,7 @@ MonoBehaviour:
   varBtnSetting: {fileID: 27075822711504763}
   varTxtCount: {fileID: 104714233120117562}
   varTxtHint: {fileID: 4409321787365355300}
+  varPhoneBtnItem: {fileID: 5520121829701782317}
 --- !u!1 &4169168411463758976
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,5 +797,10 @@ PrefabInstance:
 --- !u!224 &5520121829701782317 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5789423693619884780, guid: 043344a2e7247cf48a4e83ef0a4368dc, type: 3}
+  m_PrefabInstance: {fileID: 2072574617929677249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7317347655607591403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8741261812633655338, guid: 043344a2e7247cf48a4e83ef0a4368dc, type: 3}
   m_PrefabInstance: {fileID: 2072574617929677249}
   m_PrefabAsset: {fileID: 0}
