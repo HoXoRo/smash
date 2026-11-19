@@ -33,7 +33,7 @@ public partial class PhoneUIForm : UIFormBase
         base.OnOpen(userData);
         m_IsOpen = true;
         m_Player = GF.DataModel.GetOrCreate<PlayerDataModel>();
-        m_Task = GF.DataTable.GetDataTable<PhoneTask>()?.GetDataRow(1);
+        m_Task = PhoneManager.Instance.Task;
         if (m_Task == null)
         {
             Log.Error("PhoneUIForm: PhoneTask row 1 is not loaded.");
@@ -78,7 +78,7 @@ public partial class PhoneUIForm : UIFormBase
         varTxtProgress.text = adProgress;
         txtLeftAd.text = GF.Localization.GetString("PhoneUIForm.leftAd", Math.Max(0, m_Task.AdNum - m_Player.PhoneAdCount));
         bool full = m_Player.PhoneFragments >= m_Task.Fragment;
-        bool locked = m_Player.IsPhoneFragmentLocked(m_Task);
+        bool locked = PhoneManager.Instance.IsPhoneFragmentLocked(m_Task);
         long fragmentSeconds = Remaining(m_Player.PhoneFragmentCooldownEnd);
         varBtnLock.gameObject.SetActive(!full && locked);
         varBtnLock.interactable = true;
@@ -120,7 +120,7 @@ public partial class PhoneUIForm : UIFormBase
     private void Collect()
     {
         if (m_Task == null || s_AdPending || m_Player.PhoneStage != 1 || m_Player.PhoneFragments >= m_Task.Fragment) return;
-        if (m_Player.IsPhoneFragmentLocked(m_Task)) { FragmentLockHint(); return; }
+        if (PhoneManager.Instance.IsPhoneFragmentLocked(m_Task)) { FragmentLockHint(); return; }
         if (Remaining(m_Player.PhoneFragmentCooldownEnd) > 0) { FragmentCooldownHint(); return; }
         ShowAd(1);
     }
@@ -147,7 +147,7 @@ public partial class PhoneUIForm : UIFormBase
                 if (completed) return;
                 completed = true;
                 s_AdPending = false;
-                if (success) player.CompletePhoneAd(task, stage);
+                if (success) PhoneManager.Instance.CompletePhoneAd(player, task, stage);
                 if (this != null && m_IsOpen) Refresh();
             });
         }
@@ -171,7 +171,7 @@ public partial class PhoneUIForm : UIFormBase
 
     private void FragmentLockHint()
     {
-        if (m_Player.IsPhoneFragmentLocked(m_Task))
+        if (PhoneManager.Instance.IsPhoneFragmentLocked(m_Task))
             GF.UI.ShowToast("That's all the phone fragments for today, come back tomorrow for more!");
         Refresh();
     }

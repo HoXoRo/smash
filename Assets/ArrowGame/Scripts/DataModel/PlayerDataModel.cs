@@ -1,4 +1,4 @@
-﻿using GameFramework;
+using GameFramework;
 using GameFramework.Event;
 using Newtonsoft.Json;
 using System;
@@ -92,45 +92,6 @@ public class PlayerDataModel : DataModelStorageBase
     public int PhoneAdCount { get; set; }
     public long PhoneFragmentCooldownEnd { get; set; }
     public long PhoneAdCooldownEnd { get; set; }
-
-    public bool IsPhoneFragmentLocked(PhoneTask task)
-    {
-        return FirstLoginDate == DateTime.Now.ToString("yyyyMMdd") && PhoneFragments >= task.FragmentFirstDayMax;
-    }
-
-    public bool SubmitPhoneAddress(PhoneTask task, PhoneAddressData address)
-    {
-        if (task == null || address == null || PhoneStage != 1 || PhoneFragments < task.Fragment) return false;
-        PhoneAddress = address;
-        PhoneStage = task.AdNum > 0 ? 2 : 3;
-        PhoneAdCount = 0;
-        PhoneAdCooldownEnd = 0;
-        Save();
-        return true;
-    }
-
-    public void CompletePhoneAd(PhoneTask task, int stage)
-    {
-        if (PhoneStage != stage) return;
-        long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-        if (stage == 1)
-        {
-            if (PhoneFragments >= task.Fragment || IsPhoneFragmentLocked(task) || now < PhoneFragmentCooldownEnd) return;
-            int limit = FirstLoginDate == DateTime.Now.ToString("yyyyMMdd")
-                ? Mathf.Min(task.Fragment, task.FragmentFirstDayMax) : task.Fragment;
-            PhoneFragments = (int)Math.Min(limit, (long)PhoneFragments + task.FragmentAd);
-            PhoneFragmentCooldownEnd = now + task.FragmentAdCD;
-        }
-        else if (stage == 2)
-        {
-            if (now < PhoneAdCooldownEnd) return;
-            PhoneAdCount = Mathf.Min(PhoneAdCount + 1, task.AdNum);
-            PhoneAdCooldownEnd = now + task.AdCD;
-            if (PhoneAdCount >= task.AdNum) PhoneStage = 3;
-        }
-        else return;
-        Save();
-    }
 
     public const int MaxLifeCount = 5;
     private const int LifeGainInterval = 1800;

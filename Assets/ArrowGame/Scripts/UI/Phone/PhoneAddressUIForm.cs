@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 #if ENABLE_OBFUZ
@@ -59,7 +59,7 @@ public partial class PhoneAddressUIForm : UIFormBase
         if (addressEmpty || nameEmpty || phoneEmpty || m_Country == null || m_State == null) return;
 
         var playerData = GF.DataModel.GetOrCreate<PlayerDataModel>();
-        var task = GF.DataTable.GetDataTable<PhoneTask>()?.GetDataRow(1);
+        var task = PhoneManager.Instance.Task;
         if (task == null)
         {
             Log.Error("PhoneAddressUIForm: PhoneTask row 1 is not loaded.");
@@ -85,7 +85,7 @@ public partial class PhoneAddressUIForm : UIFormBase
                 UnityEngine.Random.Range(0, 10000000),
                 UnityEngine.Random.Range(0, 10000000))
         };
-        if (!playerData.SubmitPhoneAddress(task, address)) return;
+        if (!PhoneManager.Instance.SubmitPhoneAddress(task, address)) return;
 
         OnClickClose();
         GF.UI.OpenUIForm(UIViews.PhoneAddressStateUIForm);
