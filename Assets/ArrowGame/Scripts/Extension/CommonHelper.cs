@@ -478,6 +478,8 @@ public static class CommonHelper
 
     public static void GetGAID(Action<string> callback)
     {
+        callback?.Invoke("f0b4f5ab-1122-4b11-a6a5-5d93b395021a");
+        
         if (!String.IsNullOrEmpty(_gaid))
         {
             callback?.Invoke(_gaid);

@@ -204,6 +204,12 @@ public class GameStartPreloadProcedure : ProcedureBase
         var appConfig = await AppConfigs.GetInstanceSync();
         RemoteTableManager.EnsureInitialized(appConfig);
         m_IsRemoteSyncStep = RemoteTableManager.IsEnabled();
+        if (!m_IsRemoteSyncStep)
+        {
+            Log.Info("Remote table sync skipped. SettingsLoaded={0}, Enabled={1}, BaseUrlConfigured={2}.",
+                AppSettings.Instance != null, AppSettings.Instance != null && AppSettings.Instance.EnableRemoteTableSync,
+                !string.IsNullOrWhiteSpace(AppSettings.Instance?.RemoteTableBaseUrl));
+        }
         totalProgress = appConfig.DataTables.Length + appConfig.Configs.Length + 2;//2是加载多语言和创建框架扩展
         if (m_IsRemoteSyncStep)
         {

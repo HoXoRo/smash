@@ -20,19 +20,20 @@ public static class RemoteTableLocalStore
     [Serializable]
     public sealed class Snapshot
     {
-        [JsonProperty("configId")] public long ConfigId;
+        [JsonProperty("configId")] public string ConfigId;
         [JsonProperty("batch")] public string Batch;
         [JsonProperty("manifest")] public RemoteTableManifest Manifest;
         [JsonProperty("bytesMd5")] public Dictionary<string, string> BytesMd5 = new Dictionary<string, string>();
         [JsonIgnore] public Dictionary<string, byte[]> Data = new Dictionary<string, byte[]>();
     }
 
-    public static long? LoadAssignedConfigId()
+    public static string LoadAssignedConfigId()
     {
         string path = Path.Combine(RootPath, "assigned-id.txt");
         try
         {
-            return File.Exists(path) && long.TryParse(File.ReadAllText(path), out long id) && id > 0 ? id : (long?)null;
+            string id = File.Exists(path) ? File.ReadAllText(path) : null;
+            return string.IsNullOrWhiteSpace(id) ? null : id;
         }
         catch (Exception e)
         {
@@ -41,10 +42,10 @@ public static class RemoteTableLocalStore
         }
     }
 
-    public static void SaveAssignedConfigId(long id)
+    public static void SaveAssignedConfigId(string id)
     {
-        if (id <= 0) throw new ArgumentOutOfRangeException(nameof(id));
-        WriteTextAtomic(Path.Combine(RootPath, "assigned-id.txt"), id.ToString(System.Globalization.CultureInfo.InvariantCulture));
+        if (string.IsNullOrWhiteSpace(id)) throw new ArgumentException("Configuration ID must not be empty.", nameof(id));
+        WriteTextAtomic(Path.Combine(RootPath, "assigned-id.txt"), id);
     }
 
     public static Snapshot LoadActive()
@@ -58,7 +59,7 @@ public static class RemoteTableLocalStore
             string path = Path.Combine(root, "active.json");
             if (!File.Exists(path)) return null;
             Snapshot snapshot = JsonConvert.DeserializeObject<Snapshot>(File.ReadAllText(path));
-            if (snapshot == null || snapshot.ConfigId <= 0 || !Guid.TryParseExact(snapshot.Batch, "N", out _)
+            if (snapshot == null || string.IsNullOrWhiteSpace(snapshot.ConfigId) || !Guid.TryParseExact(snapshot.Batch, "N", out _)
                 || snapshot.Manifest?.Files == null || snapshot.BytesMd5 == null)
                 throw new InvalidDataException("Invalid remote snapshot metadata.");
             // Reject the entire snapshot if any member is missing or corrupt.

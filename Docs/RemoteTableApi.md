@@ -1,14 +1,14 @@
 # 远程配表 API 读取
 
 服务根地址：`AppSettings.RemoteTableBaseUrl`，当前为 `https://x.gamedevs.pro`。
-`EnableRemoteTableSync` 当前保持关闭；开启后下次启动执行远程同步。关闭时不下载、不读取远程缓存，使用项目资源。
+`EnableRemoteTableSync` 当前已开启；下次启动执行远程同步。关闭时不下载、不读取远程缓存，使用项目资源。
 
 ## 请求流程
 
-1. POST `/api/public/config-file-groups/resolve`，JSON 包含 `package_name`（Application.identifier）、`version`（Application.version）、`platform`（android/ios）、`config_id`（首次 null，后续使用本地领取 ID）。编辑器按当前构建目标选平台。
-2. 成功响应体直接是 manifest，从响应头 `X-Config-Id` 取得正整数 ID。没有 code/data 包装。响应有效后保存 ID，后续下载失败也不重新抽签。
+1. POST `/api/public/config-file-groups/resolve`，JSON 包含 `package_name`（Application.identifier）、`version`（Application.version）、`platform`（android/ios）、`config_id`（首次 null，后续原样回传本地领取 ID 字符串）。编辑器按当前构建目标选平台。Android 真机使用 CommonHelper.GetGAID() 同步重载，在附加 JNI 的后台线程获取 GAID，最多等待 1 秒且计入同步总超时；有效 UUID 才传 gaid，空值、全零、全 F、非法值、异常或超时不传。iOS 和编辑器不获取或发送 GAID。不使用其他设备 ID 替代，不等待本地 Adjust 归因。
+2. 成功响应体直接是 manifest，从响应头 `X-Config-Id` 取得非空字符串 ID，不进行整数转换，从 `X-Config-Key` 取得 32 位小写十六进制下载 Key。读取 `X-Config-Audience`（all/paid/organic）记录诊断日志，缺失或未知值记为 unknown，不改写本地 A/B 状态。没有 code/data 包装。响应有效后保存 ID，后续下载失败也不重新抽签。
 3. 以 manifest 每个文件的 `path` 匹配 AppConfigs 中注册的表，不依赖 files 的字典键；例如 `datatable/Core/ArrowUITable.json` 映射为 `Core/ArrowUITable`。
-4. GET `/api/public/config-folders/{ID}/{path}`。比较 MD5、大小和路径决定更新，不依赖固定为 1 的版本字段。缓存不完整时重新下载。
+4. GET `/api/public/config-folders/{config_key}/{path}`。比较 MD5、大小和路径决定更新，不依赖固定为 1 的版本字段。缓存不完整时重新下载。优先使用本次 resolve 返回的 X-Config-Key。兼容线上旧协议：仅当该头缺失或为空且 X-Config-Id 是 32 位小写十六进制时，使用该 ID 作为下载 Key，并输出 compatibility 日志。显式返回但格式非法的 Key 不回退，数值 ID 不用于下载。已用线上接口验证旧协议下载的 size/MD5 及字符串 ID 回传。Key 和 Audience 不落盘，旧 assigned-id.txt 和有效批次继续兼容，包括旧 active.json 中的数值型 ID（读取为字符串）。
 5. 先校验下载原始字节的 size/MD5（包含 BOM），再去 BOM、按原有逻辑解密和转换 bytes，并用对应行解析器检查数据。解析验证不写入游戏中的表。
 6. 下载、校验与解析全部通过后，原子替换有效批次指针，再进入原有启动加载流程。
 
@@ -26,6 +26,6 @@
 
 运行 `Tools/RemoteTables/Tests/Run-RemoteTableTests.ps1`（可传 `-UnityEditorData`）。测试使用真实同步、管理、转换和存储代码；用模拟 Unity 网络层与运行环境执行，不访问线上服务。测试加密层为替身，真实加密逻辑未改动。
 
-覆盖首次/后续领取、配置重分配、部分失败、整批提交、固定版本但 MD5 变化、缓存损坏与重新下载、删除表、关闭开关、错误状态码、缺失响应头、无效清单、超时、BOM、路径与重复行验证、版本和环境隔离。测试脚本同时编译 Hotfix 程序集。
+覆盖首次/后续领取、配置重分配、部分失败、整批提交、固定版本但 MD5 变化、缓存损坏与重新下载、删除表、关闭开关、错误状态码、缺失/非法下载 Key、最新 Key 下载、字符串 ID 持久化及原样回传、旧数值 ID 缓存兼容、GAID 获取成功/异常/超时、无效清单、超时、BOM、路径与重复行验证、版本和环境隔离。测试脚本同时编译 Hotfix 程序集。
 
 仍需在目标 Android/iOS 设备启用开关进行真实接口联调，确认后台已为实际包名、版本和平台配置文件，并验证移动端持久化文件系统。

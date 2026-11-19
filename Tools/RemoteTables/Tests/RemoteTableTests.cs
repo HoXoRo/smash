@@ -51,6 +51,7 @@ namespace Cysharp.Threading.Tasks
 namespace UnityEngine
 {
     public static class Application { public static string persistentDataPath, identifier = "com.test.game", version = "1.0"; }
+    public static class AndroidJNI { public static int AttachCurrentThread()=>0; public static int DetachCurrentThread()=>0; }
     public static class Mathf { public static float Clamp01(float n) => Math.Max(0, Math.Min(1, n)); }
 }
 namespace UnityGameFramework.Runtime { public static class Log { public static void Info(string s, params object[] a) {} public static void Warning(string s, params object[] a) { Console.WriteLine("  " + string.Format(s,a)); } } }
@@ -77,6 +78,7 @@ public class TestRow:GameFramework.DataTable.DataRowBase
     private int id; public override int Id=>id;
     public override bool ParseDataRow(byte[] b,int start,int length,object data) { if(length!=1) return false; id=b[start]; return true; }
 }
+public static class CommonHelper { public static Func<string> Gaid = () => null; public static string GetGAID() => Gaid(); }
 public class AppConfigs { public string[] Configs,DataTables; }
 public class AppSettings
 {
@@ -96,13 +98,13 @@ namespace UnityEngine.Networking
         public enum Result { Success,ConnectionError }
         public static Queue<Action<UnityWebRequest>> Responses=new Queue<Action<UnityWebRequest>>();
         public static List<UnityWebRequest> Requests=new List<UnityWebRequest>();
-        public string url,method,error,configId; public int timeout; public long responseCode=200; public float downloadProgress=1;
+        public string url,method,error,configId,configKey,audience; public int timeout; public long responseCode=200; public float downloadProgress=1;
         public Result result=Result.Success; public bool stall,aborted;
         public UploadHandlerRaw uploadHandler; public DownloadHandlerBuffer downloadHandler=new DownloadHandlerBuffer();
         public UnityWebRequest(string u,string m){url=u;method=m;}
         public static UnityWebRequest Get(string u)=>new UnityWebRequest(u,"GET");
         public void SetRequestHeader(string k,string v) {if(k!="Content-Type" || v!="application/json") throw new Exception("header");}
-        public string GetResponseHeader(string key)=>key=="X-Config-Id"?configId:null;
+        public string GetResponseHeader(string key)=>key=="X-Config-Id"?configId:key=="X-Config-Key"?configKey:key=="X-Config-Audience"?audience:null;
         public UnityWebRequestAsyncOperation SendWebRequest(){Requests.Add(this); if(Responses.Count==0) throw new Exception("Unexpected request: "+url); Responses.Dequeue()(this); return new UnityWebRequestAsyncOperation {isDone=!stall};}
         public void Abort(){aborted=true;}
         public void Dispose(){}
@@ -120,7 +122,8 @@ class RemoteTableTests
         foreach(var f in files) m.Files.Add("arbitrary-server-key-"+(i++),new RemoteTableManifestEntry {Version="1",Path=f.path,Size=f.bytes.Length,Md5=RemoteTableManager.ComputeMd5(f.bytes)});
         return m;
     }
-    static void Resolve(long id,RemoteTableManifest m){UnityWebRequest.Responses.Enqueue(r=>{r.configId=id.ToString();r.downloadHandler.data=Utf8(JsonConvert.SerializeObject(m));});}
+    static string Key(long id)=>id.ToString("x32");
+    static void Resolve(long id,RemoteTableManifest m){UnityWebRequest.Responses.Enqueue(r=>{r.configId=id.ToString();r.configKey=Key(id);r.audience="all";r.downloadHandler.data=Utf8(JsonConvert.SerializeObject(m));});}
     static void FileResponse(byte[] data){UnityWebRequest.Responses.Enqueue(r=>r.downloadHandler.data=data);}
     static void Sync()=>RemoteTableManager.SyncAsync().GetAwaiter().GetResult();
     static string Batch()=>RemoteTableLocalStore.LoadActive()?.Batch;
@@ -136,28 +139,28 @@ class RemoteTableTests
             var one=Manifest(("config/GameConfig.json",first));
             Resolve(101,one);FileResponse(first);Sync();
             string original=Batch();
-            Check(original!=null && RemoteTableLocalStore.LoadAssignedConfigId()==101,"first assignment and batch activation");
+            Check(original!=null && RemoteTableLocalStore.LoadAssignedConfigId()=="101","first assignment and batch activation");
             Check(UnityWebRequest.Requests[0].method=="POST" && JObject.Parse(Encoding.UTF8.GetString(UnityWebRequest.Requests[0].uploadHandler.data))["config_id"].Type==JTokenType.Null,"first resolve has no prior assignment");
-            Check(UnityWebRequest.Requests[1].url=="https://test.invalid/api/public/config-folders/101/config/GameConfig.json","file URL uses response config ID and path");
+            Check(UnityWebRequest.Requests[1].url=="https://test.invalid/api/public/config-folders/"+Key(101)+"/config/GameConfig.json","file URL uses response config key and path");
             Resolve(101,one);int before=UnityWebRequest.Requests.Count;Sync();
             Check(UnityWebRequest.Requests.Count==before+1 && Batch()==original,"unchanged MD5 does not download or switch batch");
-            Check((long)JObject.Parse(Encoding.UTF8.GetString(UnityWebRequest.Requests.Last().uploadHandler.data))["config_id"]==101,"subsequent resolve keeps assignment");
+            Check((string)JObject.Parse(Encoding.UTF8.GetString(UnityWebRequest.Requests.Last().uploadHandler.data))["config_id"]=="101","subsequent resolve keeps assignment");
             Resolve(102,one);before=UnityWebRequest.Requests.Count;Sync();
-            Check(UnityWebRequest.Requests.Count==before+1 && Batch()!=original && RemoteTableLocalStore.LoadActive().ConfigId==102,"identical cross-ID content skips downloads but activates new ID");
+            Check(UnityWebRequest.Requests.Count==before+1 && Batch()!=original && RemoteTableLocalStore.LoadActive().ConfigId=="102","identical cross-ID content skips downloads but activates new ID");
             Restart();
-            Check(RemoteTableLocalStore.LoadActive().ConfigId==102,"cross-ID activation persists across restart");
+            Check(RemoteTableLocalStore.LoadActive().ConfigId=="102","cross-ID activation persists across restart");
             original=Batch();
             var mixed=Manifest(("config/GameConfig.json",first),("config/Extra.json",extra));
             Resolve(103,mixed);UnityWebRequest.Responses.Enqueue(r=>{r.result=UnityWebRequest.Result.ConnectionError;r.responseCode=503;});before=UnityWebRequest.Requests.Count;Sync();
-            Check(UnityWebRequest.Requests.Count==before+2 && Batch()==original && RemoteTableLocalStore.LoadActive().ConfigId==102 && RemoteTableLocalStore.LoadAssignedConfigId()==103,"cross-ID partial failure preserves previous complete batch");
+            Check(UnityWebRequest.Requests.Count==before+2 && Batch()==original && RemoteTableLocalStore.LoadActive().ConfigId=="102" && RemoteTableLocalStore.LoadAssignedConfigId()=="103","cross-ID partial failure preserves previous complete batch");
             Resolve(103,mixed);FileResponse(extra);before=UnityWebRequest.Requests.Count;Sync();
-            Check(UnityWebRequest.Requests.Count==before+2 && UnityWebRequest.Requests.Last().url.EndsWith("/103/config/Extra.json") && RemoteTableLocalStore.LoadActive().ConfigId==103 && RemoteTableLocalStore.LoadActive().Manifest.Files.Count==2,"cross-ID sync downloads only new content and commits complete batch");
+            Check(UnityWebRequest.Requests.Count==before+2 && UnityWebRequest.Requests.Last().url.EndsWith("/"+Key(103)+"/config/Extra.json") && RemoteTableLocalStore.LoadActive().ConfigId=="103" && RemoteTableLocalStore.LoadActive().Manifest.Files.Count==2,"cross-ID sync downloads only new content and commits complete batch");
             Resolve(104,one);before=UnityWebRequest.Requests.Count;Sync();
-            Check(UnityWebRequest.Requests.Count==before+1 && RemoteTableLocalStore.LoadActive().ConfigId==104 && !RemoteTableLocalStore.TryReadBytes(RemoteTableKind.Config,"Extra",out _),"cross-ID reuse excludes removed tables");
+            Check(UnityWebRequest.Requests.Count==before+1 && RemoteTableLocalStore.LoadActive().ConfigId=="104" && !RemoteTableLocalStore.TryReadBytes(RemoteTableKind.Config,"Extra",out _),"cross-ID reuse excludes removed tables");
             original=Batch();
             var two=Manifest(("config/GameConfig.json",second),("config/Extra.json",extra));
             Resolve(202,two);FileResponse(second);UnityWebRequest.Responses.Enqueue(r=>{r.result=UnityWebRequest.Result.ConnectionError;r.responseCode=503;});Sync();
-            Check(Batch()==original && RemoteTableLocalStore.LoadAssignedConfigId()==202,"partial download failure preserves active batch but saves new assignment");
+            Check(Batch()==original && RemoteTableLocalStore.LoadAssignedConfigId()=="202","partial download failure preserves active batch but saves new assignment");
             Resolve(202,two);FileResponse(second);FileResponse(extra);Sync();
             Check(Batch()!=original && RemoteTableLocalStore.LoadActive().Manifest.Files.Count==2,"complete batch switches together with fixed version 1");
             string complete=Batch();
@@ -173,14 +176,14 @@ class RemoteTableTests
             Resolve(202,Manifest(("config/GameConfig.json",second)));FileResponse(second);Sync();
             Check(Batch()!=null,"missing/corrupt bytes redownload despite unchanged manifest hash");
             complete=Batch();UnityWebRequest.Responses.Enqueue(r=>{r.downloadHandler.data=Utf8(JsonConvert.SerializeObject(one));});Sync();
-            Check(Batch()==complete && RemoteTableLocalStore.LoadAssignedConfigId()==202,"missing response ID leaves state unchanged");
-            UnityWebRequest.Responses.Enqueue(r=>{r.configId="999";r.downloadHandler.data=Utf8("{}");});Sync();
-            Check(Batch()==complete && RemoteTableLocalStore.LoadAssignedConfigId()==202,"malformed manifest cannot clear active tables or assignment");
+            Check(Batch()==complete && RemoteTableLocalStore.LoadAssignedConfigId()=="202","missing response ID leaves state unchanged");
+            UnityWebRequest.Responses.Enqueue(r=>{r.configId="999";r.configKey=Key(999);r.downloadHandler.data=Utf8("{}");});Sync();
+            Check(Batch()==complete && RemoteTableLocalStore.LoadAssignedConfigId()=="202","malformed manifest cannot clear active tables or assignment");
             byte[] bom=new byte[]{239,187,191}.Concat(first).ToArray();Resolve(202,Manifest(("config/GameConfig.json",bom)));FileResponse(bom);Sync();
             Check(Batch()!=complete,"BOM is included in raw MD5 then stripped before parsing");
             complete=Batch();Resolve(202,Manifest(("config/GameConfig.json",second)));UnityWebRequest.Responses.Enqueue(r=>r.stall=true);AppSettings.Instance.RemoteTableSyncTimeoutSeconds=1;Sync();
             Check(Batch()==complete && UnityWebRequest.Requests.Last().aborted,"whole-sync timeout aborts download and retains batch");AppSettings.Instance.RemoteTableSyncTimeoutSeconds=10;
-            foreach(int status in new[]{404,422,503}) {UnityWebRequest.Responses.Enqueue(r=>{r.result=UnityWebRequest.Result.ConnectionError;r.responseCode=status;});Sync();Check(Batch()==complete && RemoteTableLocalStore.LoadAssignedConfigId()==202,"HTTP "+status+" keeps assignment and active batch");}
+            foreach(int status in new[]{404,422,503}) {UnityWebRequest.Responses.Enqueue(r=>{r.result=UnityWebRequest.Result.ConnectionError;r.responseCode=status;});Sync();Check(Batch()==complete && RemoteTableLocalStore.LoadAssignedConfigId()=="202","HTTP "+status+" keeps assignment and active batch");}
             Reject(()=>RemoteTableSyncService.SelectTables(Manifest(("config/../GameConfig.json",first))),"reject path traversal");
             var dup=Manifest(("config/GameConfig.json",first),("config/GameConfig.json",first));Reject(()=>RemoteTableSyncService.SelectTables(dup),"reject duplicate mapped path");
             Check(RemoteTableSyncService.SelectTables(Manifest(("unrelated/file.json",first))).Files.Count==0,"skip unregistered files");
@@ -188,6 +191,70 @@ class RemoteTableTests
             RemoteTableSyncService.ValidateTableBytes(RemoteTableKind.DataTable,"Core/TestRow",new byte[]{1,7,1,9});
             Reject(()=>RemoteTableSyncService.ValidateTableBytes(RemoteTableKind.DataTable,"Core/TestRow",new byte[]{1,7,1,7}),"reject duplicate row IDs before activation");
             Reject(()=>RemoteTableSyncService.ValidateTableBytes(RemoteTableKind.DataTable,"Core/TestRow",new byte[]{9,7}),"reject truncated row bytes before activation");
+            // Protocol validation must preserve both the assigned ID and the active batch.
+            foreach (string badKey in new[]{null, "", "101", new string('A',32), new string('g',32), new string('a',31)})
+            {
+                before=UnityWebRequest.Requests.Count;
+                UnityWebRequest.Responses.Enqueue(r=>{r.configId="999";r.configKey=badKey;r.downloadHandler.data=Utf8(JsonConvert.SerializeObject(one));});
+                Sync();
+                Check(Batch()==complete && RemoteTableLocalStore.LoadAssignedConfigId()=="202" && UnityWebRequest.Requests.Count==before+1,"invalid key does not download or alter state");
+            }
+            foreach(string invalid in new[]{null,"","unknown","00000000-0000-0000-0000-000000000000","ffffffff-ffff-ffff-ffff-ffffffffffff",new string('a',65)})
+                Check(RemoteTableSyncService.NormalizeGaid(invalid)==null,"invalid GAID omitted");
+            const string validGaid="3f1c2b7a-9d4e-4c1a-8f2b-6e5d4c3b2a10";
+            foreach(var provider in new Func<string>[] {()=>validGaid,()=>null,()=>throw new Exception("GAID unavailable")})
+            {
+                CommonHelper.Gaid=provider;
+                Resolve(202,Manifest(("config/GameConfig.json",bom)));Sync();
+                var sent=JObject.Parse(Encoding.UTF8.GetString(UnityWebRequest.Requests.Last().uploadHandler.data));
+                string expected;
+                try { expected=provider(); } catch { expected=null; }
+                Check((string)sent["gaid"]==expected,"CommonHelper GAID success/failure is reflected in resolve payload");
+                Check(Batch()==complete,"GAID acquisition does not invalidate active cache");
+            }
+            CommonHelper.Gaid=()=>{System.Threading.Thread.Sleep(1400);return validGaid;};
+            Resolve(202,Manifest(("config/GameConfig.json",bom)));Sync();
+            Check(JObject.Parse(Encoding.UTF8.GetString(UnityWebRequest.Requests.Last().uploadHandler.data))["gaid"]==null,"GAID timeout proceeds without identifier");
+            CommonHelper.Gaid=()=>null;
+            // Use this resolve's key even if the configuration ID remains unchanged.
+            UnityWebRequest.Responses.Enqueue(r=>{r.configId="202";r.configKey=new string('a',32);r.audience="paid";r.downloadHandler.data=Utf8(JsonConvert.SerializeObject(Manifest(("config/GameConfig.json",second))));});
+            FileResponse(second);Sync();
+            Check(UnityWebRequest.Requests.Last().url.EndsWith("/"+new string('a',32)+"/config/GameConfig.json"),"latest response key used with unchanged ID");
+            Restart();
+            Check(RemoteTableLocalStore.LoadActive()!=null,"cache remains compatible without key or audience fields");
+            // Numeric snapshots from the previous client remain readable as string IDs.
+            string pointer=Path.Combine(RemoteTableLocalStore.RootPath,"active.json");
+            var legacy=JObject.Parse(File.ReadAllText(pointer));legacy["configId"]=202;
+            File.WriteAllText(pointer,legacy.ToString());Restart();
+            Check(RemoteTableLocalStore.LoadActive()?.ConfigId=="202","legacy numeric snapshot ID loads as string");
+            const string opaqueId="78392bfba4971b4138ff047c5ed16931";
+            Action resolveOpaque=()=>UnityWebRequest.Responses.Enqueue(r=>{r.configId=opaqueId;r.configKey=new string('b',32);r.audience="all";r.downloadHandler.data=Utf8(JsonConvert.SerializeObject(Manifest(("config/GameConfig.json",second))));});
+            resolveOpaque();Sync();Restart();
+            Check(RemoteTableLocalStore.LoadAssignedConfigId()==opaqueId && RemoteTableLocalStore.LoadActive()?.ConfigId==opaqueId,"opaque ID persists in assignment and active snapshot");
+            resolveOpaque();Sync();
+            var opaqueRequest=JObject.Parse(Encoding.UTF8.GetString(UnityWebRequest.Requests.Last().uploadHandler.data));
+            Check(opaqueRequest["config_id"].Type==JTokenType.String && (string)opaqueRequest["config_id"]==opaqueId,"opaque ID is returned unchanged as JSON string");
+            complete=Batch();before=UnityWebRequest.Requests.Count;
+            UnityWebRequest.Responses.Enqueue(r=>{r.configId=opaqueId;r.downloadHandler.data=Utf8(JsonConvert.SerializeObject(one));});FileResponse(first);Sync();
+            Check(Batch()!=complete && UnityWebRequest.Requests.Count==before+2
+                && UnityWebRequest.Requests.Last().url.EndsWith("/"+opaqueId+"/config/GameConfig.json"),"legacy ID downloads and activates validated content when key is absent");
+            complete=Batch();
+            UnityWebRequest.Responses.Enqueue(r=>{r.configId=opaqueId;r.downloadHandler.data=Utf8(JsonConvert.SerializeObject(Manifest(("config/GameConfig.json",second))));});FileResponse(first);Sync();
+            Check(Batch()==complete,"legacy download still rejects content hash mismatch");
+            foreach(string invalidKey in new[]{"invalid",new string('A',32)})
+            {
+                before=UnityWebRequest.Requests.Count;
+                UnityWebRequest.Responses.Enqueue(r=>{r.configId=opaqueId;r.configKey=invalidKey;r.downloadHandler.data=Utf8(JsonConvert.SerializeObject(one));});Sync();
+                Check(Batch()==complete && UnityWebRequest.Requests.Count==before+1,"malformed explicit key never falls back to legacy ID");
+            }
+            resolveOpaque();FileResponse(second);Sync();
+            Check(UnityWebRequest.Requests.Last().url.EndsWith("/"+new string('b',32)+"/config/GameConfig.json"),"explicit download key takes precedence over legacy-shaped ID");
+            complete=Batch();
+            foreach(string invalidId in new[]{"","  "})
+            {
+                UnityWebRequest.Responses.Enqueue(r=>{r.configId=invalidId;r.configKey=Key(202);r.downloadHandler.data=Utf8(JsonConvert.SerializeObject(one));});Sync();
+                Check(Batch()==complete && RemoteTableLocalStore.LoadAssignedConfigId()==opaqueId,"blank ID preserves assignment and active batch");
+            }
             string scope=RemoteTableLocalStore.RootPath;UnityEngine.Application.version="2.0";
             Check(RemoteTableLocalStore.RootPath!=scope && RemoteTableLocalStore.LoadAssignedConfigId()==null && RemoteTableLocalStore.LoadActive()==null,"app versions isolate IDs and caches");
             UnityEngine.Application.version="1.0";AppSettings.Instance.RemoteTableBaseUrl="https://staging.invalid";

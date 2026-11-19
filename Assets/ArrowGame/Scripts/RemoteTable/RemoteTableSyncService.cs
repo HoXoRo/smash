@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using GameFramework;
 using GameFramework.DataTable;
@@ -32,20 +33,36 @@ public static class RemoteTableSyncService
                 || !string.IsNullOrEmpty(endpoint.Query) || !string.IsNullOrEmpty(endpoint.Fragment))
                 throw new InvalidDataException("Invalid remote table API base URL.");
 
-            string body = JsonConvert.SerializeObject(new Dictionary<string, object>
+            string gaid = await GetGaidAsync(token);
+            var payload = new Dictionary<string, object>
             {
                 ["package_name"] = Application.identifier,
                 ["version"] = RemoteTableManager.GetAppVersion(),
                 ["platform"] = RemoteTableManager.GetPlatform(),
                 ["config_id"] = RemoteTableLocalStore.LoadAssignedConfigId()
-            });
+            };
+            if (gaid != null) payload["gaid"] = gaid;
+            string body = JsonConvert.SerializeObject(payload);
             using UnityWebRequest resolve = new UnityWebRequest(root + "/api/public/config-file-groups/resolve", "POST");
             resolve.uploadHandler = new UploadHandlerRaw(RemoteTableTextUtility.Utf8NoBom.GetBytes(body));
             resolve.downloadHandler = new DownloadHandlerBuffer();
             resolve.SetRequestHeader("Content-Type", "application/json");
             byte[] manifestBytes = await SendAsync(resolve, token, p => onProgress?.Invoke(p * 0.1f));
-            if (!long.TryParse(resolve.GetResponseHeader("X-Config-Id"), out long configId) || configId <= 0)
+            string configId = resolve.GetResponseHeader("X-Config-Id");
+            if (string.IsNullOrWhiteSpace(configId))
                 throw new InvalidDataException("Resolve response is missing a valid X-Config-Id.");
+            string configKey = resolve.GetResponseHeader("X-Config-Key");
+            // Older deployed servers return the download key in X-Config-Id only.
+            // Never override a supplied key or use a numeric/invalid ID as a path segment.
+            if (string.IsNullOrEmpty(configKey) && IsDownloadKey(configId))
+            {
+                configKey = configId;
+                Log.Info("Remote table compatibility: X-Config-Key absent; using legacy X-Config-Id download key.");
+            }
+            if (!IsDownloadKey(configKey))
+                throw new InvalidDataException("Resolve response has no valid download key (X-Config-Key or legacy X-Config-Id).");
+            string audience = resolve.GetResponseHeader("X-Config-Audience");
+            if (audience != "all" && audience != "paid" && audience != "organic") audience = "unknown";
             JObject manifestJson = JObject.Parse(RemoteTableTextUtility.BytesToJsonString(manifestBytes),
                 new JsonLoadSettings { DuplicatePropertyNameHandling = DuplicatePropertyNameHandling.Error });
             if (!(manifestJson["files"] is JObject)) throw new InvalidDataException("Resolve response has no files object.");
@@ -53,6 +70,7 @@ public static class RemoteTableSyncService
             RemoteTableManifest selected = SelectTables(manifest);
             // Keep assignment even if downloading this batch later fails. Do not redraw.
             RemoteTableLocalStore.SaveAssignedConfigId(configId);
+            Log.Info("Remote table assignment resolved. ConfigId={0}, Audience={1}.", configId, audience);
             RemoteTableLocalStore.Snapshot active = RemoteTableLocalStore.LoadActive();
             if (IsUnchanged(active, configId, selected))
             {
@@ -67,7 +85,7 @@ public static class RemoteTableSyncService
             var removed = active == null ? Array.Empty<string>()
                 : active.Manifest.Files.Keys.Where(name => !selected.Files.ContainsKey(name)).OrderBy(name => name, StringComparer.Ordinal).ToArray();
             Log.Info("Remote table sync plan. PreviousConfigId={0}, ConfigId={1}, Total={2}, Added=[{3}], Changed=[{4}], Removed=[{5}].",
-                active?.ConfigId ?? 0, configId, selected.Files.Count, string.Join(", ", added), string.Join(", ", changed), string.Join(", ", removed));
+                active?.ConfigId ?? "none", configId, selected.Files.Count, string.Join(", ", added), string.Join(", ", changed), string.Join(", ", removed));
 
             batch = RemoteTableLocalStore.CreateBatch();
             var pending = new RemoteTableLocalStore.Snapshot
@@ -97,7 +115,7 @@ public static class RemoteTableSyncService
                 else
                 {
                     string path = string.Join("/", entry.Path.Split('/').Select(Uri.EscapeDataString));
-                    string url = root + "/api/public/config-folders/" + configId.ToString(System.Globalization.CultureInfo.InvariantCulture) + "/" + path;
+                    string url = root + "/api/public/config-folders/" + configKey + "/" + path;
                     using UnityWebRequest download = UnityWebRequest.Get(url);
                     byte[] raw = await SendAsync(download, token,
                         p => onProgress?.Invoke(0.1f + 0.9f * (completed + p) / Math.Max(1, selected.Files.Count)));
@@ -143,6 +161,52 @@ public static class RemoteTableSyncService
             s_Syncing = false;
             onProgress?.Invoke(1f);
         }
+    }
+
+    private static bool IsDownloadKey(string value)
+    {
+        return value != null && value.Length == 32
+            && value.All(c => (c >= '0' && c <= '9') || (c >= 'a' && c <= 'f'));
+    }
+
+    private static async UniTask<string> GetGaidAsync(CancellationToken token)
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        // AdvertisingIdClient blocks: call CommonHelper off the Unity main thread.
+        // Bound the wait; a late native result cannot change this sync's request.
+        Task<string> request = Task.Run(() =>
+        {
+            bool attached = false;
+            try
+            {
+                attached = AndroidJNI.AttachCurrentThread() == 0;
+                return attached ? CommonHelper.GetGAID() : null;
+            }
+            catch { return null; }
+            finally { if (attached) AndroidJNI.DetachCurrentThread(); }
+        });
+        var elapsed = System.Diagnostics.Stopwatch.StartNew();
+        while (!request.IsCompleted && elapsed.ElapsedMilliseconds < 1000)
+        {
+            token.ThrowIfCancellationRequested();
+            await UniTask.Yield(PlayerLoopTiming.Update);
+        }
+        token.ThrowIfCancellationRequested();
+        if (!request.IsCompleted || request.IsFaulted || request.IsCanceled) return null;
+        return NormalizeGaid(request.Result);
+#else
+        await UniTask.Yield(PlayerLoopTiming.Update);
+        token.ThrowIfCancellationRequested();
+        return null;
+#endif
+    }
+
+    internal static string NormalizeGaid(string value)
+    {
+        value = value?.Trim();
+        if (value == null || value.Length > 64 || !Guid.TryParseExact(value, "D", out Guid id)
+            || id == Guid.Empty || id == new Guid("ffffffff-ffff-ffff-ffff-ffffffffffff")) return null;
+        return id.ToString("D");
     }
 
     internal static RemoteTableManifest SelectTables(RemoteTableManifest manifest)
@@ -192,7 +256,7 @@ public static class RemoteTableSyncService
         return b != null && a.Path == b.Path && a.Size == b.Size && string.Equals(a.Md5, b.Md5, StringComparison.OrdinalIgnoreCase);
     }
 
-    private static bool IsUnchanged(RemoteTableLocalStore.Snapshot active, long configId, RemoteTableManifest selected)
+    private static bool IsUnchanged(RemoteTableLocalStore.Snapshot active, string configId, RemoteTableManifest selected)
     {
         return active != null && active.ConfigId == configId && active.Manifest.Files.Count == selected.Files.Count
             && selected.Files.All(p => active.Manifest.Files.TryGetValue(p.Key, out RemoteTableManifestEntry old) && SameContent(p.Value, old));
