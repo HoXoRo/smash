@@ -11,7 +11,7 @@ namespace UGF.EditorTools
     {
         private const string ArrowGameRoot = "Assets/ArrowGame";
 
-        [MenuItem("ArrowGame/iOS压缩/应用到 ArrowGame 全部资源", false, 100)]
+        [MenuItem("Tools/iOS压缩/应用到 ArrowGame 全部资源", false, 100)]
         public static void ApplyToAllArrowGame()
         {
             if (!EditorUtility.DisplayDialog(
@@ -30,7 +30,7 @@ namespace UGF.EditorTools
             Debug.Log($"[iOS压缩] 完成：贴图 {texturePaths.Count}，图集 {atlasPaths.Count}");
         }
 
-        [MenuItem("ArrowGame/iOS压缩/应用到选中资源", false, 101)]
+        [MenuItem("Tools/iOS压缩/应用到选中资源", false, 101)]
         public static void ApplyToSelection()
         {
             var texturePaths = new List<string>();
