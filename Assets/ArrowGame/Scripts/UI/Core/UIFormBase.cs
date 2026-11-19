@@ -1,4 +1,4 @@
-﻿
+
 using UnityEngine;
 using GameFramework;
 using UnityGameFramework.Runtime;
@@ -20,7 +20,8 @@ public class UIFormBase : UIFormLogic, ISerializeFieldTool
     /// UI打开动画
     /// </summary>
     [HideInInspector][SerializeField] DOTweenSequence m_OpenAnimation = null;
-    /// <summary>    /// UI关闭动画, 若为空,默认使用UI打开动画倒放
+    /// <summary>
+    /// UI关闭动画, 若为空则直接关闭
     /// </summary>
     [HideInInspector][SerializeField] DOTweenSequence m_CloseAnimation = null;
     [HideInInspector][SerializeField] string m_OpenAnimationName = null;
@@ -295,7 +296,7 @@ public class UIFormBase : UIFormLogic, ISerializeFieldTool
         {
             case UIFormAnimationType.DOTween:
                 {
-                    //如果关闭动画未配置, 默认将打开动画倒放作为关闭动画
+                    //如果关闭动画未配置, 直接关闭
                     if (m_CloseAnimation != null)
                     {
                         var anim = m_CloseAnimation.DOPlay();
@@ -303,15 +304,7 @@ public class UIFormBase : UIFormLogic, ISerializeFieldTool
                     }
                     else
                     {
-                        if (m_OpenAnimation != null)
-                        {
-                            var anim = m_OpenAnimation.DORewind();
-                            if (onAnimComplete != null) anim.OnComplete(onAnimComplete.Invoke);
-                        }
-                        else
-                        {
-                            onAnimComplete?.Invoke();
-                        }
+                        onAnimComplete?.Invoke();
                     }
                 }
                 break;
