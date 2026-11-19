@@ -31,6 +31,7 @@ public partial class PhoneUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        CommonHelper.HideBannerAd();
         m_IsOpen = true;
         m_Player = GF.DataModel.GetOrCreate<PlayerDataModel>();
         m_Task = PhoneManager.Instance.Task;
@@ -49,6 +50,7 @@ public partial class PhoneUIForm : UIFormBase
     {
         m_IsOpen = false;
         base.OnClose(isShutdown, userData);
+        if (!isShutdown) CommonHelper.ShowBannerAd();
     }
 
     protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
@@ -78,6 +80,7 @@ public partial class PhoneUIForm : UIFormBase
         varTxtProgress.text = adProgress;
         txtLeftAd.text = GF.Localization.GetString("PhoneUIForm.leftAd", Math.Max(0, m_Task.AdNum - m_Player.PhoneAdCount));
         bool full = m_Player.PhoneFragments >= m_Task.Fragment;
+        varAdCollect.SetActive(!full);
         bool locked = PhoneManager.Instance.IsPhoneFragmentLocked(m_Task);
         long fragmentSeconds = Remaining(m_Player.PhoneFragmentCooldownEnd);
         varBtnLock.gameObject.SetActive(!full && locked);

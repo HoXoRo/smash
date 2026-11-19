@@ -28,4 +28,5 @@ public partial class PhoneUIForm
 	[SerializeField] private TextMeshProUGUI varTxtProgress = null;
 	[SerializeField] private Button varBtnView = null;
 	[SerializeField] private Button varBtnClose = null;
+	[SerializeField] private GameObject varAdCollect = null;
 }

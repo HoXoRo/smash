@@ -156,8 +156,10 @@ public sealed class RewardCollectUI : UIFormBase
     private void OnRewardCollected(object sender, GameEventArgs e)
     {
         if (!(e is RewardCollectedEventArgs args) || args.type != PlayerDataType.PhoneFragment || !args.PlayFlyAnimation) return;
+        // Phone fragments appear around the screen center, not screen pixel (0, 0).
+        Vector2 screenCenter = new Vector2(Screen.width * 0.5f, Screen.height * 0.5f);
         RectTransformUtility.ScreenPointToLocalPointInRectangle(rect,
-            RectTransformUtility.WorldToScreenPoint(null, args.WorldPosition), CameraFor(canvas), out Vector2 start);
+            screenCenter, CameraFor(canvas), out Vector2 start);
         Play(this, args.type, start, rect, Mathf.RoundToInt(args.Value));
     }
 }
