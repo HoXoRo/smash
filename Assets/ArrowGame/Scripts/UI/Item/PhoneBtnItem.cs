@@ -7,6 +7,9 @@ using UnityGameFramework.Runtime;
 public sealed class PhoneBtnItem : MonoBehaviour
 {
     [SerializeField] private RectTransform lightTransform;
+    [SerializeField] private TMPro.TextMeshProUGUI txtProgress;
+    private int m_LastFragments = -1;
+    private int m_LastFragmentTarget = -1;
     [SerializeField] private float rotationSpeed = -36f;
     private UnityEngine.UI.Button m_Button;
     private Coroutine m_GuideRoutine;
@@ -19,6 +22,7 @@ public sealed class PhoneBtnItem : MonoBehaviour
 
     private void OnEnable()
     {
+        RefreshProgress();
         m_Button.onClick.AddListener(OpenPhoneUI);
         m_GuideRoutine = StartCoroutine(ShowPhoneGuideWhenReady());
     }
@@ -62,8 +66,29 @@ public sealed class PhoneBtnItem : MonoBehaviour
 
     private void Update()
     {
+        RefreshProgress();
         if (lightTransform != null)
             lightTransform.Rotate(0f, 0f, rotationSpeed * Time.unscaledDeltaTime, Space.Self);
+    }
+
+    private void RefreshProgress()
+    {
+        if (txtProgress == null) return;
+        var task = PhoneManager.Instance.Task;
+        if (task == null)
+        {
+            txtProgress.gameObject.SetActive(false);
+            return;
+        }
+
+        int fragments = GF.DataModel.GetOrCreate<PlayerDataModel>().PhoneFragments;
+        bool visible = fragments < task.Fragment;
+        if (txtProgress.gameObject.activeSelf != visible)
+            txtProgress.gameObject.SetActive(visible);
+        if (m_LastFragments == fragments && m_LastFragmentTarget == task.Fragment) return;
+        m_LastFragments = fragments;
+        m_LastFragmentTarget = task.Fragment;
+        txtProgress.text = $"{fragments}/{task.Fragment}";
     }
 
     private void OpenPhoneUI()
