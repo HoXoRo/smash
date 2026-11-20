@@ -43,7 +43,9 @@ public static class RemoteTableSyncService
             };
             if (gaid != null) payload["gaid"] = gaid;
             string body = JsonConvert.SerializeObject(payload);
-            using UnityWebRequest resolve = new UnityWebRequest(root + "/api/public/config-file-groups/resolve", "POST");
+            string resolveUrl = root + "/api/public/config-file-groups/resolve";
+            Log.Info("Remote table resolve request. Method=POST, Url={0}, Body={1}", resolveUrl, body);
+            using UnityWebRequest resolve = new UnityWebRequest(resolveUrl, "POST");
             resolve.uploadHandler = new UploadHandlerRaw(RemoteTableTextUtility.Utf8NoBom.GetBytes(body));
             resolve.downloadHandler = new DownloadHandlerBuffer();
             resolve.SetRequestHeader("Content-Type", "application/json");
@@ -171,6 +173,8 @@ public static class RemoteTableSyncService
 
     private static async UniTask<string> GetGaidAsync(CancellationToken token)
     {
+        // 暂时不需要做区分
+        return null;
 #if UNITY_ANDROID && !UNITY_EDITOR
         // AdvertisingIdClient blocks: call CommonHelper off the Unity main thread.
         // Bound the wait; a late native result cannot change this sync's request.
