@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using GameFramework;
 using UnityEngine;
@@ -20,7 +19,6 @@ public partial class LevelCompleteUIForm : UIFormBase
     private const float CoinCollectDuration = 2.1f;
 
     private int m_BaseReward;
-    private int m_CompletedLevel;
     private int m_AdMulti;
     private bool m_IsClaiming;
     private Action m_OnNext;
@@ -41,7 +39,6 @@ public partial class LevelCompleteUIForm : UIFormBase
 
         int fallbackLevel = Mathf.Max(1, GF.DataModel.GetOrCreate<PlayerDataModel>().LevelId - 1);
         int completedLevel = Params.Get<VarInt32>(P_LevelId, fallbackLevel);
-        m_CompletedLevel = completedLevel;
         varLeveltxt.text = GF.Localization.GetString("level", completedLevel);
         m_OnNext = Params.Get<VarAction>(P_OnNext)?.Value;
         m_IsClaiming = false;
@@ -151,8 +148,6 @@ public partial class LevelCompleteUIForm : UIFormBase
         }
 
         Action onNext = m_OnNext;
-        bool returnToHall = m_CompletedLevel >= 20;
-        int sourceUIId = Id;
         m_OnNext = null;
 
         GF.Event.Fire(this, RewardCollectedEventArgs.Create(
@@ -165,14 +160,7 @@ public partial class LevelCompleteUIForm : UIFormBase
         DOVirtual.DelayedCall(CoinCollectDuration, () =>
             {
                 GF.DataModel.GetOrCreate<PlayerDataModel>().Save();
-                if (returnToHall)
-                {
-                    GameFlowHelper.ReturnToHallAsync(sourceUIId).Forget();
-                }
-                else
-                {
-                    onNext?.Invoke();
-                }
+                onNext?.Invoke();
             })
             .SetUpdate(true);
     }
