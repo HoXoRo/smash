@@ -41,6 +41,11 @@ public class GuideManager
         }
 
         if (targetTransform == null) return -1;
+        if (GF.DataTable.GetDataTable<ArrowGuideTable>()?.GetDataRow(guideId) == null)
+        {
+            Log.Warning("Guide {0} is missing from the loaded ArrowGuideTable. Check the remote table version when remote sync is enabled.", guideId);
+            return -1;
+        }
         var uiParams = UIParams.Create();
         uiParams.Set<VarInt32>("GuideId", guideId);
         uiParams.Set<VarBoolean>("ShowFinger", showFinger);

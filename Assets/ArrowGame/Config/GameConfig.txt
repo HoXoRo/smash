@@ -39,3 +39,4 @@
 	BonusesPoolAdd	奖金池递增值	1000,2000
 	PhoneFragmentReward	手机碎片产出数量	1,2
 	PhoneFragmentRewardRate	手机碎片产出概率	50
+	PhoneUnlockLevel	手机功能及碎片开启关卡	3

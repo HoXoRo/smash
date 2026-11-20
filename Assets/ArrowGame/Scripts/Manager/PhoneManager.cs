@@ -20,6 +20,8 @@ public class PhoneManager
     private PlayerDataModel Player => GF.DataModel.GetOrCreate<PlayerDataModel>();
     public PhoneTask Task => GF.DataTable.GetDataTable<PhoneTask>()?.GetDataRow(1);
 
+    public bool IsUnlocked => Player.LevelId >= Mathf.Max(1, GF.Config.GetInt("PhoneUnlockLevel", 3));
+
     private static int GetFragmentLimit(PlayerDataModel player, PhoneTask task)
     {
         return player.FirstLoginDate == DateTime.Now.ToString("yyyyMMdd")
@@ -28,8 +30,10 @@ public class PhoneManager
 
     public int TryProducePhoneFragments()
     {
+        if (!IsUnlocked) return 0;
         var player = Player;
         var task = Task;
+        if (task == null) return 0;
         Log.Info($"手机碎片任务: {task.Fragment}，任务状态：{player.PhoneStage}，当前碎片：{player.PhoneFragments}，当日上限：{GetFragmentLimit(player, task)}");
         if (task == null || player.PhoneStage != 1 || player.PhoneFragments >= GetFragmentLimit(player, task)) return 0;
         int rate = Mathf.Clamp(GF.Config.GetInt("PhoneFragmentRewardRate"), 0, 100);
@@ -85,7 +89,7 @@ public class PhoneManager
 
     public void CompletePhoneAd(PlayerDataModel player, PhoneTask task, int stage)
     {
-        if (player == null || task == null || player.PhoneStage != stage) return;
+        if (!IsUnlocked || player == null || task == null || player.PhoneStage != stage) return;
         long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         if (stage == 1)
         {

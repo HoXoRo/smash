@@ -18,6 +18,8 @@ public partial class HomePageUIForm : UIFormBase
     protected override void OnOpen(object userData)
     {
         base.OnOpen(userData);
+        foreach (var phoneButton in GetComponentsInChildren<PhoneBtnItem>(true))
+            phoneButton.gameObject.SetActive(PhoneManager.Instance.IsUnlocked);
         int currentLevel = GetCurrentLevel();
         varLevelTxt.text = GF.Localization.GetString("level", currentLevel);
     }

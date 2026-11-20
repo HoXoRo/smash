@@ -128,6 +128,7 @@ public partial class PlayUIForm : UIFormBase
         base.OnOpen(userData);
         ResetHint();
         RefreshRemainingBallCount();
+        varPhoneBtnItem.gameObject.SetActive(PhoneManager.Instance.IsUnlocked);
         RewardCollectTarget.Bind(PlayerDataType.PhoneFragment, varPhoneBtnItem);
     }
 
