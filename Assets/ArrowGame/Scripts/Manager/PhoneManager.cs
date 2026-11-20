@@ -87,6 +87,16 @@ public class PhoneManager
         player.Save();
     }
 
+    /// <summary>Reconcile completed ad progress, including previously saved progress.</summary>
+    public void RefreshAdTaskStage()
+    {
+        var player = Player;
+        var task = Task;
+        if (task == null || player.PhoneStage != 2 || player.PhoneAdCount < task.AdNum) return;
+        player.PhoneStage = 3;
+        player.Save();
+    }
+
     public void CompletePhoneAd(PlayerDataModel player, PhoneTask task, int stage)
     {
         if (!IsUnlocked || player == null || task == null || player.PhoneStage != stage) return;

@@ -67,6 +67,7 @@ public partial class PhoneUIForm : UIFormBase
     private void Refresh()
     {
         m_LastRefreshSecond = Now;
+        PhoneManager.Instance.RefreshAdTaskStage();
         int stage = m_Player.PhoneStage;
         varTask1.SetActive(stage == 1);
         varTask2.SetActive(stage == 2);

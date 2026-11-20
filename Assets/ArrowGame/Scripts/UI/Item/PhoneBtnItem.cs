@@ -96,9 +96,10 @@ public sealed class PhoneBtnItem : MonoBehaviour
 
         var player = GF.DataModel.GetOrCreate<PlayerDataModel>();
         int fragments = player.PhoneFragments;
-        bool visible = fragments < task.Fragment;
-        if (visible) m_FragmentGuideClicked = false;
-        bool showFinger = !visible && player.PhoneStage == 1 && !m_FragmentGuideClicked;
+        bool fragmentsFull = fragments >= task.Fragment;
+        bool visible = player.PhoneStage == 1 && !fragmentsFull;
+        if (!fragmentsFull) m_FragmentGuideClicked = false;
+        bool showFinger = fragmentsFull && player.PhoneStage == 1 && !m_FragmentGuideClicked;
         SetFingerVisible(showFinger);
         if (txtProgress == null) return;
         if (txtProgress.gameObject.activeSelf != visible)
